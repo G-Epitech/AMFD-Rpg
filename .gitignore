@@ -17,7 +17,7 @@ include/my.h
 file
 *.dSYM
 .DS_Store
-lem_in
+my_rpg
 cmake-build-debug/
 .idea/
 unitests
