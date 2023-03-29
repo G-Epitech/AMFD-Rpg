@@ -23,7 +23,7 @@ static unsigned long allocation(char const *str)
     int memory = 1;
 
     for (int i = 0; i < my_strlen(str); i++) {
-        if (i > 0 && !is_space(str[i]) && is_space(str[i-1]))
+        if (i > 0 && !is_space(str[i]) && is_space(str[i - 1]))
             memory++;
     }
     return sizeof(char *) * (memory + 1) + sizeof(char) * my_strlen(str);
