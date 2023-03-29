@@ -1,0 +1,95 @@
+name: CI Pull Request Checker
+
+on:
+  pull_request:
+  workflow_dispatch:
+  workflow_call:
+
+jobs:
+  coding_style:
+    name: Coding Style
+
+    runs-on: ubuntu-latest
+
+    outputs:
+      coding_style: ${{ steps.coding_style.outputs.coding_style }}
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Run conding-style
+      id: coding_style
+      run: |
+        docker run --rm -i -v "$(pwd):/mnt/delivery" -v "$(pwd):/mnt/reports" ghcr.io/epitech/coding-style-checker:latest /mnt/delivery /mnt/reports
+        echo 'coding_style<<EOF' >> $GITHUB_OUTPUT
+        cat coding-style-reports.log >> $GITHUB_OUTPUT
+        echo 'EOF' >> $GITHUB_OUTPUT
+        rm -f coding-style-reports.log
+
+    - name: Debug
+      run: echo "${{ steps.coding_style.outputs.coding_style }}"
+
+    - name: Set status
+      if: ${{ steps.coding_style.outputs.coding_style != '' }}
+      run: |
+        echo "Bad coding style."
+        exit 1
+
+  project_tests:
+    name: Project tests
+
+    needs: [ coding_style ]
+    if: needs.coding_style.result == 'success'
+
+    strategy:
+      matrix:
+        type: ['criterion', 'ftest', 'custom']
+
+    runs-on: ubuntu-latest
+    container:
+      image: epitechcontent/epitest-docker:latest
+
+    continue-on-error: false
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Run ${{ matrix.type }}
+      run: make ${{ matrix.type }}
+
+  coverage:
+    name: Coverage
+
+    needs: [ project_tests ]
+    if: needs.project_tests.result == 'success'
+
+    runs-on: ubuntu-latest
+    container:
+      image: epitechcontent/epitest-docker:latest
+
+    outputs:
+      coverage_line: ${{ steps.coverage_line.outputs.coverage }}
+      coverage_branch: ${{ steps.coverage_branch.outputs.coverage }}
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+    
+    - name: Run tests
+      run: make tests_run
+
+    - name: Get lines coverage
+      id: coverage_line
+      run: |
+        echo 'coverage<<EOF' >> $GITHUB_OUTPUT
+        gcovr --exclude tests/ >> $GITHUB_OUTPUT
+        echo 'EOF' >> $GITHUB_OUTPUT
+
+    - name: Get branches coverage
+      id: coverage_branch
+      run: |
+        echo 'coverage_branch<<EOF' >> $GITHUB_OUTPUT
+        gcovr --exclude tests/ --branches >> $GITHUB_OUTPUT
+        echo 'EOF' >> $GITHUB_OUTPUT
