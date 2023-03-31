@@ -7,17 +7,15 @@
 */
 
 #include <SFML/Graphics.h>
+#include "app/window/window.h"
 
 sfRenderWindow *window_init(void)
 {
-    sfRenderWindow *window;
-    sfVideoMode video_mode;
+    sfRenderWindow *window = NULL;
+    sfVideoMode video_mode = WIN_VIDEO_MODE;
     char *name = "RPG";
-    int fps = 120;
+    int fps = WIN_FPS;
 
-    video_mode.width = 1920;
-    video_mode.height = 1080;
-    video_mode.bitsPerPixel = 32;
     window = sfRenderWindow_create(video_mode, name, sfResize | sfClose, NULL);
     sfRenderWindow_setFramerateLimit(window, fps);
     return window;
