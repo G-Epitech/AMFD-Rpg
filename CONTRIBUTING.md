@@ -5,6 +5,7 @@
 `🔨` Utils functions  
 `💡` Display functions  
 `📑` Files functions  
+`📒` Types functions  
 `⚡️` Optimisation / Performance  
 `🏗️` Code architecture  
 `🍱` Assets  
