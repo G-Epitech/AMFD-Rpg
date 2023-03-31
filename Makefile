@@ -24,15 +24,18 @@ FTEST_REPO = https://github.com/Atomot/ftest/
 
 FTEST_V = ftest-0.1.0-1.x86_64.rpm
 
-CFLAGS += -Wall -Wextra -I./include -I./lib/my/include\
--Wno-unused-command-line-argument
+CFLAGS += -Wall -Wextra -Wno-unused-command-line-argument
+
+INC = -I./include -I./lib/my/include
 
 LDFLAGS = -lcsfml-graphics -lcsfml-system -lcsfml-audio -lcsfml-window \
--L./lib -lmy
+-L./lib -lmy -lcjson
 
 OBJ = $(SRC:.c=.o)
 
 PATH_MY = lib/my
+
+PATH_CJSON = lib/cjson
 
 COLOUR_GREEN=\033[0;32m
 
@@ -49,26 +52,30 @@ COLOUR_END=\033[0m
 .PHONY: all clean fclean re
 
 $(NAME):	$(OBJ)
-			@echo "$(COLOUR_RED)🚚 Lib compliation...$(COLOUR_END)"
+			@echo "$(COLOUR_RED)🚚 Lib 'My' compliation...$(COLOUR_END)"
 			@make -C$(PATH_MY)
+			@echo "$(COLOUR_RED)🚚 Lib 'CJSON' compliation...$(COLOUR_END)"
+			@make -C$(PATH_CJSON)
 			@echo "$(COLOUR_RED)🚚 Main compliation...$(COLOUR_END)"
-			gcc -o $(NAME) $(OBJ) $(LDFLAGS)
+			@gcc -o $(NAME) $(OBJ) $(LDFLAGS) $(INC)
 			@echo "$(COLOUR_GREEN)✅ Hackers-Quest was successfully built\
 			$(COLOUR_END)"
 
 %.o: 		%.c
 			@echo "$(COLOUR_BLUE)📑 Compiling $(BOLD_BLUE)[$<]$(COLOUR_END)"
-			@gcc $(LDFLAGS) $(CFLAGS) -c $< -o $@
+			@gcc $(LDFLAGS) $(CFLAGS) $(INC) -c $< -o $@
 
 all: 		$(NAME)
 
 clean:
 			@make -C$(PATH_MY) clean -s
+			@make -C$(PATH_CJSON) clean -s
 
 fclean: 	clean
 			@rm -f $(NAME)
 			@rm -f $(OBJ)
 			@make -C$(PATH_MY) fclean -s
+			@make -C$(PATH_CJSON) fclean -s
 			@echo "$(COLOUR_ORANGE)🧽 Hackers-Quest was successfully clean\
 			$(COLOUR_END)"
 
