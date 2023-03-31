@@ -55,10 +55,11 @@ $(NAME):	$(OBJ)
 			ar rc lib$(NAME).a *.o
 			cp lib$(NAME).a ../
 			mkdir -p ../../include
-			cp include/$(NAME).h ../../include/
+			cp $(NAME).h ../../include/
 clean:
 			rm -f $(OBJ)
 fclean: 	clean
 			rm -f lib$(NAME).a
 			rm -f ../lib$(NAME).a
+			rm -f ../../include/$(NAME).h
 re: 		fclean all

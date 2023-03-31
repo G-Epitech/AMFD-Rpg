@@ -5,7 +5,7 @@
 ## @Made by Math alias T1nt1n
 ##
 
-SRC_FILES = \
+SRC_FILES = main.c
 
 
 NAME = my_rpg
