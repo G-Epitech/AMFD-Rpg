@@ -68,9 +68,8 @@ COLOUR_END=\033[0m
 all: 		$(NAME)
 
 $(NAME):	$(OBJ)
-			@ar rc lib$(NAME).a *.o
+			@ar rc lib$(NAME).a $(OBJ)
 			@cp lib$(NAME).a ../
-
 %.o: %.c
 			@echo "$(COLOUR_BLUE)📦 Compiling lib$(NAME) - $(BOLD_BLUE)\
 [$<]$(COLOUR_END)"

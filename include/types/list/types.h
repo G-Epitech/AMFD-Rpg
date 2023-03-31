@@ -9,7 +9,7 @@
     #define TYPES_H_
 
     #include <stdbool.h>
-    #include "types/palyers/types.h"
+    #include "types/players/types.h"
 
 typedef struct s_list list_t;
 

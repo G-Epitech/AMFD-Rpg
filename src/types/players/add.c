@@ -6,7 +6,7 @@
 */
 
 #include <stdlib.h>
-#include "types/palyers/types.h"
+#include "types/players/types.h"
 #include "types/list/types.h"
 #include "types/list/list.h"
 
