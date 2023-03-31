@@ -6,7 +6,7 @@
 */
 
 #include <stdlib.h>
-#include "my.h"
+#include "include/my.h"
 #include <stdbool.h>
 #include <stdio.h>
 
