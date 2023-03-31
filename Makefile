@@ -52,7 +52,8 @@ $(NAME):	$(OBJ)
 			@make -C$(PATH_MY)
 			@echo "$(COLOUR_RED)🚚 Main compliation...$(COLOUR_END)"
 			gcc -o $(NAME) $(OBJ) $(LDFLAGS)
-			@echo "$(COLOUR_GREEN)✅ Hackers-Quest was successfully built$(COLOUR_END)"
+			@echo "$(COLOUR_GREEN)✅ Hackers-Quest was successfully built\
+			$(COLOUR_END)"
 
 %.o: 		%.c
 			@echo "$(COLOUR_BLUE)📑 Compiling $(BOLD_BLUE)[$<]$(COLOUR_END)"
@@ -67,7 +68,8 @@ fclean: 	clean
 			@rm -f $(NAME)
 			@rm -f $(OBJ)
 			@make -C$(PATH_MY) fclean -s
-			@echo "$(COLOUR_ORANGE)🧽 Hackers-Quest was successfully clean$(COLOUR_END)"
+			@echo "$(COLOUR_ORANGE)🧽 Hackers-Quest was successfully clean\
+			$(COLOUR_END)"
 
 re: 		fclean all
 
