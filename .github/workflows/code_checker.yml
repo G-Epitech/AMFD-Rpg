@@ -6,41 +6,41 @@ on:
   workflow_call:
 
 jobs:
-  coding_style:
+  check_coding_style:
     name: Coding Style
 
     runs-on: ubuntu-latest
-
-    outputs:
-      coding_style: ${{ steps.coding_style.outputs.coding_style }}
+    container:
+      image: ghcr.io/epitech/coding-style-checker:latest
 
     steps:
     - name: Checkout repository
       uses: actions/checkout@v3
 
-    - name: Run conding-style
+    - name: Lunch conding-style
       id: coding_style
       run: |
-        docker run --rm -i -v "$(pwd):/mnt/delivery" -v "$(pwd):/mnt/reports" ghcr.io/epitech/coding-style-checker:latest /mnt/delivery /mnt/reports
         echo 'coding_style<<EOF' >> $GITHUB_OUTPUT
-        cat coding-style-reports.log >> $GITHUB_OUTPUT
+        check.sh $(pwd) $(pwd);cat coding-style-reports.log >> $GITHUB_OUTPUT
         echo 'EOF' >> $GITHUB_OUTPUT
-        rm -f coding-style-reports.log
 
-    - name: Debug
-      run: echo "${{ steps.coding_style.outputs.coding_style }}"
-
-    - name: Set status
+    - name: Add errors
       if: ${{ steps.coding_style.outputs.coding_style != '' }}
       run: |
-        echo "Bad coding style."
+        while read -r line
+        do error_type=$(echo $line | cut -d ':' -f 3 | cut -c 2-)
+        code=$(echo $line | cut -d ':' -f 4)
+        filename=$(echo $line | cut -d ':' -f 1)
+        line_number=$(echo $line | cut -d ':' -f 2)
+        echo "::error title=$error_type coding style error,file=$filename,line=$line_number::$code"
+        done < coding-style-reports.log
         exit 1
 
   project_tests:
     name: Project tests
 
-    needs: [ coding_style ]
-    if: needs.coding_style.result == 'success'
+    needs: [ check_coding_style ]
+    if: needs.check_coding_style.result == 'success'
 
     strategy:
       matrix:
