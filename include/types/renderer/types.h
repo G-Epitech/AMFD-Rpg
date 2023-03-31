@@ -13,7 +13,7 @@
 /**
  * @brief Renderer structure
 */
-typedef struct renderer {
+typedef struct s_renderer {
     sfSprite *sprite;
     sfCircleShape *circle;
     sfRectangleShape *rectangle;
