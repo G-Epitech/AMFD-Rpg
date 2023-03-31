@@ -24,7 +24,8 @@ FTEST_REPO = https://github.com/Atomot/ftest/
 
 FTEST_V = ftest-0.1.0-1.x86_64.rpm
 
-CFLAGS += -Wall -Wextra -I./include -Wno-unused-command-line-argument
+CFLAGS += -Wall -Wextra -I./include -I./lib/my/include\
+-Wno-unused-command-line-argument
 
 LDFLAGS = -lcsfml-graphics -lcsfml-system -lcsfml-audio -lcsfml-window \
 -L./lib -lmy

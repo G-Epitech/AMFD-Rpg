@@ -70,11 +70,10 @@ all: 		$(NAME)
 $(NAME):	$(OBJ)
 			@ar rc lib$(NAME).a *.o
 			@cp lib$(NAME).a ../
-			@mkdir -p ../../include
 
 %.o: %.c
 			@echo "$(COLOUR_BLUE)📦 Compiling lib$(NAME) - $(BOLD_BLUE)\
-                  [$<]$(COLOUR_END)"
+[$<]$(COLOUR_END)"
 			@gcc -c $< -o $@
 
 clean:
