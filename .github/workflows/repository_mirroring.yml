@@ -8,7 +8,7 @@ on:
 jobs:
   code_checker:
     name: Checking the code
-    if: !startsWith(github.repositoryUrl, 'git://github.com/EpitechPromo2027')
+    if: ${{ !startsWith(github.repositoryUrl, 'git://github.com/EpitechPromo2027') }}
     uses: ./.github/workflows/code_checker.yml
 
   repository_mirroring:
