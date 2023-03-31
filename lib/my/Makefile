@@ -73,7 +73,7 @@ $(NAME):	$(OBJ)
 			@mkdir -p ../../include
 
 %.o: %.c
-			@echo "$(COLOUR_BLUE)📦 Compiling $(BOLD_BLUE)[$<]$(COLOUR_END)"
+			@echo "$(COLOUR_BLUE)📦 Compiling lib$(NAME) - $(BOLD_BLUE)[$<]$(COLOUR_END)"
 			@gcc -c $< -o $@
 
 clean:

@@ -9,6 +9,12 @@ SRC = main.c \
 			\
 			src/types/renderer/init.c \
 			src/types/renderer/destroy.c \
+			src/types/list/append.c \
+			src/types/list/list.c \
+			src/types/node/node.c \
+			src/types/node/swap.c \
+			src/types/players/init.c \
+			src/types/players/add.c \
 			\
 			src/app/window/init.c
 
