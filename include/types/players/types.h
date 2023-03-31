@@ -24,6 +24,7 @@ typedef struct s_skin {
 */
 typedef struct s_player {
     char *name;             //Name of the player
+    int xp;                 //Player exeprience
     sfVector2f position;    //Position of the player
     list_t *inventory;      //Inventory with all objects
     skin_t *skin;           //Representation of the player (visual)

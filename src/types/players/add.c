@@ -20,6 +20,7 @@ player_t *players_add(list_t *list, char *name)
     data.player->position = (sfVector2f) {0, 0};
     data.player->skin = NULL;
     data.player->name = name;
+    data.player->xp = 1;
     list_append(list, node_new(data));
     return data.player;
 }

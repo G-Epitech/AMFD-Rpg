@@ -8,7 +8,7 @@
 #ifndef PLAYERS_H_
     #define PLAYERS_H_
 
-    #include "types/players/types.h"
+    #include "types.h"
 
 /**
  * @brief Initialisation of a player list
