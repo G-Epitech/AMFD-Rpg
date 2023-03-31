@@ -48,18 +48,39 @@ SRC = my_compute_factorial_it.c	\
       nbr_to_str.c
 
 OBJ = $(SRC:.c=.o)
+
 NAME = my
 
+COLOUR_GREEN=\033[0;32m
+
+COLOUR_ORANGE=\033[0;33m
+
+COLOUR_RED=\033[0;31m
+
+COLOUR_BLUE=\033[0;34m
+
+BOLD_BLUE=\033[1;34m
+
+COLOUR_GREY=\033[0;30m
+
+COLOUR_END=\033[0m
+
 all: 		$(NAME)
+
 $(NAME):	$(OBJ)
-			ar rc lib$(NAME).a *.o
-			cp lib$(NAME).a ../
-			mkdir -p ../../include
-			cp $(NAME).h ../../include/
+			@ar rc lib$(NAME).a *.o
+			@cp lib$(NAME).a ../
+			@mkdir -p ../../include
+
+%.o: %.c
+			@echo "$(COLOUR_BLUE)📦 Compiling $(BOLD_BLUE)[$<]$(COLOUR_END)"
+			@gcc -c $< -o $@
+
 clean:
 			rm -f $(OBJ)
+
 fclean: 	clean
 			rm -f lib$(NAME).a
 			rm -f ../lib$(NAME).a
-			rm -f ../../include/$(NAME).h
+
 re: 		fclean all
