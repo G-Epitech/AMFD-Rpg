@@ -9,8 +9,10 @@
 
 static void sort_array(int min_nb, int x, int size, int *array)
 {
+    int addr = 0;
+
     for (int y = x + 1; y < size; y++) {
-        int addr = x;
+        addr = x;
         if (*(array + y) < min_nb) {
             min_nb = *(array + y);
             addr = y;

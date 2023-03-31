@@ -10,6 +10,7 @@
 int power (int nb,int power)
 {
     int result = 1;
+
     for (int i = power; i > 0; i--) {
         result *= nb;
     }

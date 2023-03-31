@@ -7,7 +7,7 @@
 
 #include "include/my.h"
 
-int my_str_isalpha (char const *str)
+int my_str_isalpha(char const *str)
 {
     int ok = 0;
 
@@ -24,7 +24,6 @@ int my_str_isalpha (char const *str)
     if (my_strlen(str) != ok){
         return 0;
     }
-
     return 1;
 }
 

@@ -7,7 +7,7 @@
 
 #include "include/my.h"
 
-char * my_revstr(char *str)
+char *my_revstr(char *str)
 {
     int last = my_strlen(str);
 

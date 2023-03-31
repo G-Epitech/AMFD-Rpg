@@ -7,7 +7,7 @@
 
 #include "include/my.h"
 
-char *my_strlowcase (char *str)
+char *my_strlowcase(char *str)
 {
     int a = 0;
 
@@ -16,6 +16,5 @@ char *my_strlowcase (char *str)
             str[a] += 32;
         }
     }
-
     return str;
 }

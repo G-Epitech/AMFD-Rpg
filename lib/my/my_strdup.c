@@ -8,10 +8,10 @@
 #include <stdlib.h>
 #include "include/my.h"
 
-char *my_strdup (char const *src)
+char *my_strdup(char const *src)
 {
     char *newstr = malloc(my_strlen(src) + 1);
-    my_strcpy(newstr, src);
 
+    my_strcpy(newstr, src);
     return newstr;
 }

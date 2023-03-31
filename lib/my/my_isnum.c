@@ -21,7 +21,6 @@ int my_str_isnum(char const *str)
     if (my_strlen(str) != ok){
         return 0;
     }
-
     return 1;
 }
 

@@ -7,9 +7,10 @@
 
 #include "include/my.h"
 
-int my_compute_square_root (int nb)
+int my_compute_square_root(int nb)
 {
     int result = nb;
+
     while (my_compute_power_it(result, 2) != nb && result != 0) {
         result--;
     }

@@ -7,7 +7,7 @@
 
 #include "include/my.h"
 
-char * my_evil_str ( char * str )
+char * my_evil_str(char *str)
 {
     int last = my_strlen(str);
 

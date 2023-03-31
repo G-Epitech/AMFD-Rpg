@@ -7,7 +7,7 @@
 
 #include "include/my.h"
 
-char* my_strupcase (char *str)
+char *my_strupcase (char *str)
 {
     int a = 0;
 

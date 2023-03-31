@@ -6,8 +6,8 @@
 ** Error file
 */
 
-#include "include/my.h"
 #include <unistd.h>
+#include "include/my.h"
 
 static int my_put_error(char const *str)
 {

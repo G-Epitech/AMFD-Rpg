@@ -7,7 +7,7 @@
 
 #include "include/my.h"
 
-char *my_strcapitalize (char *str)
+char *my_strcapitalize(char *str)
 {
     int a = 0;
     int have_upper = 0;
@@ -25,6 +25,5 @@ char *my_strcapitalize (char *str)
             have_upper = 0;
         }
     }
-
     return str;
 }

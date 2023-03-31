@@ -5,10 +5,10 @@
 ** Day 09, task04
 */
 
-#include <stdlib.h>
-#include "include/my.h"
 #include <stdbool.h>
+#include <stdlib.h>
 #include <stdio.h>
+#include "include/my.h"
 
 static bool is_space(char a, const char *del)
 {
@@ -59,7 +59,7 @@ static char **fill_array(char **arr, char const *str, char *del)
     return arr;
 }
 
-char **my_str_to_word_array (char const *str, char *del)
+char **my_str_to_word_array(char const *str, char *del)
 {
     char **arr = malloc(allocation(str, del));
 

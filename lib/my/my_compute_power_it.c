@@ -7,7 +7,7 @@
 
 #include "include/my.h"
 
-int my_compute_power_it (int nb , int p)
+int my_compute_power_it(int nb, int p)
 {
     int result = 1;
 
