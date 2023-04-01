@@ -5,23 +5,30 @@
 ## @Made by Math alias T1nt1n
 ##
 
-SRC = main.c \
+SRC = 		main.c \
 			\
 			src/types/renderer/init.c \
 			src/types/renderer/destroy.c \
+			\
 			src/types/list/append.c \
 			src/types/list/list.c \
+			\
 			src/types/node/node.c \
 			src/types/node/swap.c \
+			\
 			src/types/players/init.c \
 			src/types/players/add.c \
+			\
 			src/types/components/load.c \
 			src/types/components/buttons/append.c \
 			src/types/components/buttons/load.c \
 			src/types/components/levers/append.c \
 			src/types/components/levers/load.c \
 			\
-			src/app/window/init.c
+			src/app/window/init.c \
+			\
+			src/app/events/handle.c \
+			src/app/events/window/close.c
 
 NAME = my_rpg
 
