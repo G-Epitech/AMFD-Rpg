@@ -45,7 +45,7 @@ void buttons_load(components_t *components, cjson_array_t *buttons)
 {
     cjson_t *button = buttons->first;
     sfVector2f position = {0, 0};
-    app_states_t state = 0;
+    app_states_t state = ST_LOADING;
     button_t *data = NULL;
 
     while (button) {
