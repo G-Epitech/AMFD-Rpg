@@ -15,6 +15,7 @@ lever_t *levers_append(list_t *list, sfVector2f position,
 app_states_t app_state)
 {
     node_data_t data;
+    node_t *node = NULL;
     lever_t *lever = malloc(sizeof(lever_t));
 
     if (!lever)
@@ -24,6 +25,11 @@ app_states_t app_state)
     lever->scale = 1.0;
     lever->state = ST_LV_OFF;
     lever->app_state = app_state;
-    list_append(list, node_new(data));
+    node = node_new(data);
+    if (!node) {
+        free(lever);
+        return NULL;
+    }
+    list_append(list, node);
     return lever;
 }

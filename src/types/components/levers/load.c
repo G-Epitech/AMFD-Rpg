@@ -30,7 +30,7 @@ void levers_load(components_t *components, cjson_array_t *levers)
 {
     cjson_t *lever = levers->first;
     sfVector2f position = {0, 0};
-    app_states_t state = 0;
+    app_states_t state = ST_LOADING;
     lever_t *data = NULL;
 
     while (lever) {
