@@ -38,5 +38,6 @@ components_t *components_load(void)
         return NULL;
     buttons_load(components, buttons);
     levers_load(components, levers);
+    cjson_free(config);
     return components;
 }
