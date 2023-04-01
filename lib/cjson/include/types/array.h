@@ -8,7 +8,7 @@
 #ifndef CJSON_ARRAY_H_
     #define CJSON_ARRAY_H_
 
-    #include "types.h"
+    #include "../types.h"
 
 /**
  * @brief Create a new CJSON array
