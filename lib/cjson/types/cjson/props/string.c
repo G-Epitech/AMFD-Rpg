@@ -16,7 +16,7 @@ bool cjson_get_prop_string(cjson_t *object, char *key, char **value)
 
     if (!prop)
         return false;
-    if (!CJSON_IS_STRING(object))
+    if (!CJSON_IS_STRING(prop))
         return false;
     *value = internal_cjson_strdup(prop->value.v_string);
     return (*value) ? true : false;

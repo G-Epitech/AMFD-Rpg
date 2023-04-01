@@ -1,0 +1,17 @@
+{
+    "buttons": [
+        {
+            "title": "Test",
+            "position": {"x": 10.0, "y": 10.0},
+            "app_state": 1,
+            "color": {"r": 10, "g": 10, "b": 10, "a": 255}
+        }
+    ],
+
+    "levers": [
+        {
+            "position": {"x": 10.0, "y": 10.0},
+            "app_state": 2
+        }
+    ]
+}

@@ -15,6 +15,11 @@ SRC = main.c \
 			src/types/node/swap.c \
 			src/types/players/init.c \
 			src/types/players/add.c \
+			src/types/components/load.c \
+			src/types/components/buttons/append.c \
+			src/types/components/buttons/load.c \
+			src/types/components/levers/append.c \
+			src/types/components/levers/load.c \
 			\
 			src/app/window/init.c
 
@@ -26,7 +31,7 @@ FTEST_V = ftest-0.1.0-1.x86_64.rpm
 
 CFLAGS += -Wall -Wextra -Wno-unused-command-line-argument
 
-INC = -I./include -I./lib/my/include
+INC = -I./include -I./lib
 
 LDFLAGS = -lcsfml-graphics -lcsfml-system -lcsfml-audio -lcsfml-window \
 -L./lib -lmy -lcjson

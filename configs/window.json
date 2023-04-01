@@ -1,0 +1,8 @@
+{
+    "fps": 120,
+    "video_mode": {
+        "width": 1920,
+        "height": 1080,
+        "bpp": 32
+    }
+}
