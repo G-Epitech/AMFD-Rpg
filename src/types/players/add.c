@@ -13,7 +13,11 @@
 player_t *players_add(list_t *list, char *name)
 {
     node_data_t data;
+    player_t *player = malloc(sizeof(player_t));
 
+    if (!player)
+        return NULL;
+    data.player = player;
     data.player->inventory = list_new();
     if (!data.player->inventory)
         return NULL;
