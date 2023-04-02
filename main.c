@@ -14,17 +14,18 @@
 #include "my/include/my.h"
 #include "app/events/events.h"
 #include "types/ressources/ressources.h"
+#include "app/display/display.h"
 
 int main(void)
 {
     renderer_t *renderer = renderer_init();
-    components_t *components = components_load();
-    ressources_t *ressources = ressources_load();
     sfEvent event;
+    app_t app = {ST_INGAME, WL_VILLAGE};
 
     while (sfRenderWindow_isOpen(renderer->window)) {
         event_handle(renderer->window, event);
         sfRenderWindow_clear(renderer->window, sfBlack);
+        display_handle(renderer, &app);
     }
     renderer_destroy(renderer);
     return 0;

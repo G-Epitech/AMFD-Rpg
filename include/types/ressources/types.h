@@ -9,6 +9,7 @@
     #define RESSOURCES_TYPES_H_
 
     #include <SFML/Graphics.h>
+    #include "app/types.h"
 
     #define RESSOURCES_MAPS_CONFIG "configs/maps.json"
     #define RESSOURCES_SKINS_CONFIG "configs/skin.json"
@@ -26,7 +27,7 @@ typedef struct s_skin {
  * @brief Structure of a map
 */
 typedef struct s_map {
-    int world;              //Id of the world where the map must be display
+    worlds_t world;         //Id of the world where the map must be display
     sfTexture *back;        //Texture of the back of the map
     sfTexture *front;       //Texture of the front of the map
 } map_t;

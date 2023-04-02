@@ -30,10 +30,17 @@ SRC = 		main.c \
 			src/types/ressources/maps/load.c \
 			src/types/ressources/maps/free.c \
 			\
+			src/types/view/init.c \
+			\
 			src/app/window/init.c \
 			\
 			src/app/events/handle.c \
-			src/app/events/window/close.c
+			src/app/events/window/close.c \
+			\
+			src/app/display/handle.c \
+			src/app/display/map/map.c \
+			src/app/display/map/back.c \
+			src/app/display/map/front.c
 
 NAME = my_rpg
 
