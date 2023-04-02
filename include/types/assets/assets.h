@@ -9,12 +9,19 @@
     #define ASSETS_H_
 
     #include "types.h"
+    #include "types/list/types.h"
 
 /**
  * @brief Free assets
  * @param assets Structures of assets
 */
 void assets_free(assets_t *assets);
+
+/**
+ * @brief Free all maps data
+ * @param maps List of maps
+*/
+void maps_free_data(list_t *maps);
 
 /**
  * @brief Load all assets from configs
