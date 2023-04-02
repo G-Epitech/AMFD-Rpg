@@ -9,15 +9,9 @@
     #define PLAYERS_TYPES_H_
 
     #include <SFML/Graphics.h>
+    #include "types/assets/types.h"
 
 typedef struct s_list list_t;
-
-/**
- * @brief Structure of a skin
-*/
-typedef struct s_skin {
-    int id;                 //Id of the skin
-} skin_t;
 
 /**
  * @brief Structure of a player
