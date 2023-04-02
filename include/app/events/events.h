@@ -8,7 +8,7 @@
 #ifndef EVENTS_H_
     #define EVENTS_H_
 
-    #include "SFML/Graphics.h"
+    #include <SFML/Graphics.h>
 
 /**
  * @brief Handle all events
