@@ -1,21 +1,21 @@
 /*
 ** EPITECH PROJECT, 2023
-** assets.h
+** ressources.h
 ** File description:
-** Assets functions
+** ressources functions
 */
 
-#ifndef ASSETS_H_
-    #define ASSETS_H_
+#ifndef RESSOURCES_H_
+    #define RESSOURCES_H_
 
     #include "types.h"
     #include "types/list/types.h"
 
 /**
- * @brief Free assets
- * @param assets Structures of assets
+ * @brief Free ressources
+ * @param ressources Structures of ressources
 */
-void assets_free(assets_t *assets);
+void ressources_free(ressources_t *ressources);
 
 /**
  * @brief Free all maps data
@@ -24,10 +24,10 @@ void assets_free(assets_t *assets);
 void maps_free_data(list_t *maps);
 
 /**
- * @brief Load all assets from configs
- * @return The structure of assets (lists for any types of assets)
+ * @brief Load all ressources from configs
+ * @return The structure of ressources (lists for any types of ressources)
 */
-assets_t *assets_load(void);
+ressources_t *ressources_load(void);
 
 /**
  * @brief Load all maps from configs
@@ -37,4 +37,4 @@ assets_t *assets_load(void);
 */
 void maps_load(list_t *maps);
 
-#endif /* !ASSETS_H_ */
+#endif /* !RESSOURCES_H_ */

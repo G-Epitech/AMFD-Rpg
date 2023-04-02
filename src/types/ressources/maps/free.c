@@ -6,7 +6,7 @@
 */
 
 #include <SFML/Graphics.h>
-#include "types/assets/types.h"
+#include "types/ressources/types.h"
 #include "types/list/types.h"
 
 void maps_free_data(list_t *maps)

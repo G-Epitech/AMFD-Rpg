@@ -13,13 +13,13 @@
 #include "types/list/types.h"
 #include "my/include/my.h"
 #include "app/events/events.h"
-#include "types/assets/assets.h"
+#include "types/ressources/ressources.h"
 
 int main(void)
 {
     renderer_t *renderer = renderer_init();
     components_t *components = components_load();
-    assets_t *assets = assets_load();
+    ressources_t *ressources = ressources_load();
     sfEvent event;
 
     while (sfRenderWindow_isOpen(renderer->window)) {

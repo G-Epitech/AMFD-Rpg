@@ -11,7 +11,7 @@
     #include <stdbool.h>
     #include "types/players/types.h"
     #include "types/components/types.h"
-    #include "types/assets/types.h"
+    #include "types/ressources/types.h"
 
 typedef struct s_list list_t;
 

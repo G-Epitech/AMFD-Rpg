@@ -25,9 +25,10 @@ SRC = 		main.c \
 			src/types/components/levers/append.c \
 			src/types/components/levers/load.c \
 			\
-			src/types/assets/load.c \
-			src/types/assets/free.c \
-			src/types/assets/maps/load.c \
+			src/types/ressources/load.c \
+			src/types/ressources/free.c \
+			src/types/ressources/maps/load.c \
+			src/types/ressources/maps/free.c \
 			\
 			src/app/window/init.c \
 			\

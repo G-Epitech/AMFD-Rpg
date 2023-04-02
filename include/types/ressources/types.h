@@ -2,16 +2,16 @@
 ** EPITECH PROJECT, 2023
 ** types.h
 ** File description:
-** Assets types
+** Ressources types
 */
 
-#ifndef ASSETS_TYPES_H_
-    #define ASSETS_TYPES_H_
+#ifndef RESSOURCES_TYPES_H_
+    #define RESSOURCES_TYPES_H_
 
     #include <SFML/Graphics.h>
 
-    #define ASSETS_MAPS_CONFIG "configs/maps.json"
-    #define ASSETS_SKINS_CONFIG "configs/skin.json"
+    #define RESSOURCES_MAPS_CONFIG "configs/maps.json"
+    #define RESSOURCES_SKINS_CONFIG "configs/skin.json"
 
 typedef struct s_list list_t;
 
@@ -32,12 +32,12 @@ typedef struct s_map {
 } map_t;
 
 /**
- * @brief Structure of assets (textures)
+ * @brief Structure of ressources (textures)
 */
-typedef struct s_assets {
+typedef struct s_ressources {
     list_t *maps;           //List of maps (textures)
     list_t *skins;          //List of skins (textures)
     list_t *props;          //List of props (textures)
-} assets_t;
+} ressources_t;
 
-#endif /* !ASSETS_TYPES_H_ */
+#endif /* !RESSOURCES_TYPES_H_ */

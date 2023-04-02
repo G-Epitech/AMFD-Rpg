@@ -9,7 +9,7 @@
     #define PLAYERS_TYPES_H_
 
     #include <SFML/Graphics.h>
-    #include "types/assets/types.h"
+    #include "types/ressources/types.h"
 
 typedef struct s_list list_t;
 

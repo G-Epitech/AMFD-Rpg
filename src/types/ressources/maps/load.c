@@ -9,8 +9,8 @@
 #include <stdlib.h>
 #include "types/list/types.h"
 #include "types/list/list.h"
-#include "types/assets/types.h"
-#include "types/assets/assets.h"
+#include "types/ressources/types.h"
+#include "types/ressources/ressources.h"
 #include "types/players/types.h"
 #include "cjson/include/cjson.h"
 
@@ -44,7 +44,7 @@ static void maps_append(list_t *maps, cjson_t *map_config)
 
 void maps_load(list_t *maps)
 {
-    cjson_t *maps_config = cjson_parse_file(ASSETS_MAPS_CONFIG);
+    cjson_t *maps_config = cjson_parse_file(RESSOURCES_MAPS_CONFIG);
     cjson_array_t *array = NULL;
     cjson_t *map = NULL;
 
@@ -59,4 +59,5 @@ void maps_load(list_t *maps)
         maps_append(maps, map);
         map = map->next;
     }
+    cjson_free(maps_config);
 }
