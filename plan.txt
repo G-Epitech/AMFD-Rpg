@@ -1,0 +1,36 @@
+-> Renderer
+-> Init le display
+--> Display map
+--> Display maps
+---> Display back
+---> Display front
+--> Display Players
+---> Main Player 
+---> Second Player
+
+---> After all display 
+
+Player list ?
+-> Name
+-> Position
+
+Skin list
+-> Related Player
+-> Skin
+
+Props list
+-> Name
+-> Position
+
+-> Id
+-> Action ?
+-> Animation ?
+
+Network functions
+-> 
+
+-> Components
+--> Buttons (4 states)
+--> Check (2 states)
+-> Add menu struct in order to save all infos in a menu. Like : page, ...
+----> https://github.com/Hackers-Quest/RPG/issues/1. All infos about components

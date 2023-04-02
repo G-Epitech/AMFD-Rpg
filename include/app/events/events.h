@@ -19,7 +19,7 @@ void event_handle(sfRenderWindow *window, sfEvent event);
 
 /**
  * @brief Close window
- * @param window Window of the app 
+ * @param window Window of the app
 */
 void event_window_close(sfRenderWindow *window);
 

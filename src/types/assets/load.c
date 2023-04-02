@@ -34,7 +34,7 @@ assets_t *assets_init(void)
 assets_t *assets_load(void)
 {
     assets_t *assets = assets_init();
-    
+
     if (!assets)
         return NULL;
     maps_load(assets->maps);
