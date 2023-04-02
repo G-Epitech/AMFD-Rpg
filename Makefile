@@ -32,10 +32,13 @@ SRC = 		main.c \
 			\
 			src/types/view/init.c \
 			\
+			src/app/init.c \
+			\
 			src/app/window/init.c \
 			\
 			src/app/events/handle.c \
 			src/app/events/window/close.c \
+			src/app/events/keyboard/move.c \
 			\
 			src/app/display/handle.c \
 			src/app/display/map/map.c \

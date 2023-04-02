@@ -9,9 +9,11 @@
     #define PLAYERS_TYPES_H_
 
     #include <SFML/Graphics.h>
-    #include "types/ressources/types.h"
+
+    #define PLAYER_DEFAULT_SPAWN (sfVector2f) {3000, 3000}
 
 typedef struct s_list list_t;
+typedef struct s_skin skin_t;
 
 /**
  * @brief Structure of a player

@@ -21,7 +21,7 @@ player_t *players_add(list_t *list, char *name)
     data.player->inventory = list_new();
     if (!data.player->inventory)
         return NULL;
-    data.player->position = (sfVector2f) {0, 0};
+    data.player->position = PLAYER_DEFAULT_SPAWN;
     data.player->skin = NULL;
     data.player->name = name;
     data.player->xp = 1;
