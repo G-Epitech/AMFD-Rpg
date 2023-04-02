@@ -6,7 +6,7 @@
 */
 
 #include <stdio.h>
-#include "SFML/Graphics.h"
+#include <SFML/Graphics.h>
 #include "app/events/events.h"
 
 static void event_analyse(sfRenderWindow *window, sfEvent event)

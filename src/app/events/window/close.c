@@ -5,7 +5,7 @@
 ** Close windows
 */
 
-#include "SFML/Graphics.h"
+#include <SFML/Graphics.h>
 
 void event_window_close(sfRenderWindow *window)
 {
