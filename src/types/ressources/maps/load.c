@@ -22,6 +22,10 @@ static void maps_append_data(map_t *map, cjson_t *map_config)
     map->world = cjson_get_prop_int_unsafe(map_config, "world");
     map->back = sfTexture_createFromFile(back, NULL);
     map->front = sfTexture_createFromFile(front, NULL);
+    if (back)
+        free(back);
+    if (front)
+        free(front);
 }
 
 static void maps_append(list_t *maps, cjson_t *map_config)
