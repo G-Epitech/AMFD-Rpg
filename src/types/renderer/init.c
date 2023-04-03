@@ -12,6 +12,7 @@
 #include "types/renderer/types.h"
 #include "types/components/components.h"
 #include "types/ressources/ressources.h"
+#include "types/renderer/renderer.h"
 
 renderer_t *renderer_init(void)
 {
@@ -19,13 +20,9 @@ renderer_t *renderer_init(void)
 
     if (!renderer)
         return NULL;
-    renderer->sprite = sfSprite_create();
-    renderer->rectangle = sfRectangleShape_create();
-    renderer->circle = sfCircleShape_create();
-    renderer->text = sfText_create();
     renderer->window = window_init();
+    renderer->objects = renderer_objects_init(renderer->window);
     renderer->components = components_load();
     renderer->ressources = ressources_load();
-    renderer->view = view_init();
     return renderer;
 }

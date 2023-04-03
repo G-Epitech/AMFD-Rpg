@@ -9,6 +9,9 @@ SRC = 		main.c \
 			\
 			src/types/renderer/init.c \
 			src/types/renderer/destroy.c \
+			src/types/renderer/objects/init.c \
+			src/types/renderer/objects/destroy.c \
+			src/types/renderer/objects/reset.c \
 			\
 			src/types/list/append.c \
 			src/types/list/list.c \

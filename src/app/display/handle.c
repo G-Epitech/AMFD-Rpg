@@ -12,13 +12,13 @@
 
 void display_handle(renderer_t *renderer, app_t *app)
 {
-    ressources_t *ressoruces = renderer->ressources;
-
-    display_map_back(ressoruces->maps, renderer->window, renderer->sprite,
+    ressources_t *ressources = renderer->ressources;
+    renderer_objects_t *objects = &renderer->objects;
+    display_map_back(ressources->maps, objects->window, objects->sprite,
     app->world);
-    display_map_front(ressoruces->maps, renderer->window, renderer->sprite,
+    display_map_front(ressources->maps, objects->window, objects->sprite,
     app->world);
-    sfView_setCenter(renderer->view, app->player->position);
-    sfRenderWindow_setView(renderer->window, renderer->view);
-    sfRenderWindow_display(renderer->window);
+    sfView_setCenter(objects->view, app->player->position);
+    sfRenderWindow_setView(objects->window, objects->view);
+    sfRenderWindow_display(objects->window);
 }

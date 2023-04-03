@@ -12,18 +12,24 @@
     #include "types/components/types.h"
     #include "types/ressources/types.h"
 
+//Set of objects used in rendering phasis
+typedef struct s_render_objects {
+    sfRenderWindow *window;
+    sfView *view;
+    sfSprite *sprite;
+    sfText *text;
+    sfCircleShape *circle;
+    sfRectangleShape *rectangle;
+} renderer_objects_t;
+
 /**
  * @brief Renderer structure
 */
 typedef struct s_renderer {
-    sfSprite *sprite;
-    sfCircleShape *circle;
-    sfRectangleShape *rectangle;
-    sfText *text;
-    sfRenderWindow *window;
-    sfView *view;
     components_t *components;
     ressources_t *ressources;
+    sfRenderWindow *window;
+    renderer_objects_t objects;
 } renderer_t;
 
 #endif /* !RENDERER_TYPES_H_ */
