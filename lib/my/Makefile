@@ -71,8 +71,8 @@ $(NAME):	$(OBJ)
 			@ar rc lib$(NAME).a $(OBJ)
 			@cp lib$(NAME).a ../
 %.o: %.c
-			@echo "$(COLOUR_BLUE)📦 Compiling lib$(NAME) - $(BOLD_BLUE)\
-[$<]$(COLOUR_END)"
+			@printf "$(COLOUR_BLUE)📦 Compiling lib$(NAME) - $(BOLD_BLUE)\
+[$<]$(COLOUR_END)\n"
 			@gcc -c $< -o $@
 
 clean:
