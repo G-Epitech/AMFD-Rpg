@@ -14,6 +14,8 @@
 
 void core_handler(renderer_t *renderer, app_t *app)
 {
+    map_t *current_map = renderer->ressources->maps->first->data.map;
+
     core_handle_movement(app->player, app->control,
-    renderer->ressources->maps->first->data.map->collision_layer);
+    current_map->collision_layer);
 }
