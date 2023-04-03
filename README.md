@@ -8,5 +8,9 @@ It’s your turn to create your final fantasy
 ### Usage
 To test this project, compile it, and then launch it with follwing command : `./my_rpg`.
 
+### Code time
+**- Math :**  
+[![wakatime](https://wakatime.com/badge/user/a55ca80c-05ef-42ae-8e59-300b6ff5896d/project/76cb1392-87cb-41a5-a87b-01909e09b09e.svg)](https://wakatime.com/badge/user/a55ca80c-05ef-42ae-8e59-300b6ff5896d/project/76cb1392-87cb-41a5-a87b-01909e09b09e)
+
 #
 Made by [AxelF44](https://github.com/AxelF44), [Math](https://github.com/TekMath), [sdragos1](https://github.com/sdragos1) & [Flavien Chenu](https://github.com/flavien-chenu)

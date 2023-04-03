@@ -8,7 +8,7 @@
 #ifndef WINDOW_H_
     #define WINDOW_H_
 
-    #include "SFML/Graphics.h"
+    #include <SFML/Graphics.h>
 
     #define WIN_FPS 120
     #define WIN_VIDEO_MODE ((sfVideoMode) {1920, 1080, 32})

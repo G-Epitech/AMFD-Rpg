@@ -20,3 +20,4 @@ my_rpg
 cmake-build-debug/
 .idea/
 unitests
+plan.txt

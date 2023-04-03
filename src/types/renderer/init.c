@@ -7,8 +7,11 @@
 
 #include <stdlib.h>
 #include <SFML/Graphics.h>
+#include "types/view/view.h"
 #include "app/window/window.h"
 #include "types/renderer/types.h"
+#include "types/components/components.h"
+#include "types/ressources/ressources.h"
 
 renderer_t *renderer_init(void)
 {
@@ -21,5 +24,8 @@ renderer_t *renderer_init(void)
     renderer->circle = sfCircleShape_create();
     renderer->text = sfText_create();
     renderer->window = window_init();
+    renderer->components = components_load();
+    renderer->ressources = ressources_load();
+    renderer->view = view_init();
     return renderer;
 }

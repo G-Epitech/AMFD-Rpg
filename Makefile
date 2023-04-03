@@ -5,23 +5,45 @@
 ## @Made by Math alias T1nt1n
 ##
 
-SRC = main.c \
+SRC = 		main.c \
 			\
 			src/types/renderer/init.c \
 			src/types/renderer/destroy.c \
+			\
 			src/types/list/append.c \
 			src/types/list/list.c \
+			\
 			src/types/node/node.c \
 			src/types/node/swap.c \
+			\
 			src/types/players/init.c \
 			src/types/players/add.c \
+			\
 			src/types/components/load.c \
 			src/types/components/buttons/append.c \
 			src/types/components/buttons/load.c \
 			src/types/components/levers/append.c \
 			src/types/components/levers/load.c \
 			\
-			src/app/window/init.c
+			src/types/ressources/load.c \
+			src/types/ressources/free.c \
+			src/types/ressources/maps/load.c \
+			src/types/ressources/maps/free.c \
+			\
+			src/types/view/init.c \
+			\
+			src/app/init.c \
+			\
+			src/app/window/init.c \
+			\
+			src/app/events/handle.c \
+			src/app/events/window/close.c \
+			src/app/events/keyboard/move.c \
+			\
+			src/app/display/handle.c \
+			src/app/display/map/map.c \
+			src/app/display/map/back.c \
+			src/app/display/map/front.c
 
 NAME = my_rpg
 

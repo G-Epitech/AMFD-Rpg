@@ -8,6 +8,7 @@
 #include <stdlib.h>
 #include <SFML/Graphics.h>
 #include "types/renderer/types.h"
+#include "types/ressources/ressources.h"
 
 void renderer_destroy(renderer_t *renderer)
 {
@@ -16,5 +17,7 @@ void renderer_destroy(renderer_t *renderer)
     sfCircleShape_destroy(renderer->circle);
     sfText_destroy(renderer->text);
     sfRenderWindow_close(renderer->window);
+    sfView_destroy(renderer->view);
+    ressources_free(renderer->ressources);
     free(renderer);
 }

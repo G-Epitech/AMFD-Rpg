@@ -10,14 +10,10 @@
 
     #include <SFML/Graphics.h>
 
-typedef struct s_list list_t;
+    #define PLAYER_DEFAULT_SPAWN ((sfVector2f) {3000, 3000})
 
-/**
- * @brief Structure of a skin
-*/
-typedef struct s_skin {
-    int id;                 //Id of the skin
-} skin_t;
+typedef struct s_list list_t;
+typedef struct s_skin skin_t;
 
 /**
  * @brief Structure of a player
