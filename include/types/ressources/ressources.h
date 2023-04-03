@@ -37,4 +37,23 @@ ressources_t *ressources_load(void);
 */
 void maps_load(list_t *maps);
 
+/**
+ * @biref Init components ressources
+ * @return components structure
+*/
+components_r_t *ressources_components_init(void);
+
+/**
+ * @brief Load all components ressources
+ * @param components Structure of ressources components
+ * @warning You must to previously init the components structure
+*/
+void ressources_components_load(components_r_t *components);
+
+/**
+ * @brief Load buttons textures
+ * @param button_config Configuration of button texture
+*/
+button_r_t *ressources_components_button_load(cjson_t *button_config);
+
 #endif /* !RESSOURCES_H_ */

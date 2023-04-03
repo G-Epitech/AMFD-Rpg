@@ -11,8 +11,9 @@
     #include <SFML/Graphics.h>
     #include "app/types.h"
 
-    #define RESSOURCES_MAPS_CONFIG "configs/maps.json"
-    #define RESSOURCES_SKINS_CONFIG "configs/skin.json"
+    #define RESSOURCES_MAPS_CONFIG "configs/ressources/maps.json"
+    #define RESSOURCES_SKINS_CONFIG "configs/ressources/skin.json"
+    #define RESSOURCES_COMPONENTS_CONFIG "configs/ressources/components.json"
 
 typedef struct s_list list_t;
 
@@ -32,13 +33,27 @@ typedef struct s_map {
     sfTexture *front;       //Texture of the front of the map
 } map_t;
 
+typedef struct s_button_r {
+    sfTexture *left;
+    sfTexture *right;
+    sfTexture *middle;
+} button_r_t;
+
+/**
+ * @biref Structure with components ressources
+*/
+typedef struct s_components_r {
+    button_r_t *button;        //Button textures
+} components_r_t;
+
 /**
  * @brief Structure of ressources (textures)
 */
 typedef struct s_ressources {
-    list_t *maps;           //List of maps (textures)
-    list_t *skins;          //List of skins (textures)
-    list_t *props;          //List of props (textures)
+    list_t *maps;               //List of maps (textures)
+    list_t *skins;              //List of skins (textures)
+    list_t *props;              //List of props (textures)
+    components_r_t *components; //Structure of components ressources
 } ressources_t;
 
 #endif /* !RESSOURCES_TYPES_H_ */

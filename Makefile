@@ -29,6 +29,9 @@ SRC = 		main.c \
 			src/types/ressources/free.c \
 			src/types/ressources/maps/load.c \
 			src/types/ressources/maps/free.c \
+			src/types/ressources/components/init.c \
+			src/types/ressources/components/load.c \
+			src/types/ressources/components/button/load.c \
 			\
 			src/types/view/init.c \
 			\
