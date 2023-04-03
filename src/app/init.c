@@ -17,7 +17,7 @@ static control_t *init_controller(void)
     sfVector2f move_offset[4] = {{0, -1}, {0, 1}, {-1, 0}, {1, 0}};
 
     if (!control)
-        exit(84);
+        return NULL;
     for (size_t i = 0; i < 4; i++) {
         control[i].direction = false;
         control[i].key = key_codes[i];
