@@ -79,17 +79,17 @@ COLOUR_END=\033[0m
 .PHONY: all clean fclean re
 
 $(NAME):	$(OBJ)
-			@echo "$(COLOUR_RED)🚚 Lib 'My' compliation...$(COLOUR_END)"
+			@printf "$(COLOUR_RED)🚚 Lib 'My' compliation...$(COLOUR_END)\n"
 			@make -C$(PATH_MY)
-			@echo "$(COLOUR_RED)🚚 Lib 'CJSON' compliation...$(COLOUR_END)"
+			@printf "$(COLOUR_RED)🚚 Lib 'CJSON' compliation...$(COLOUR_END)\n"
 			@make -C$(PATH_CJSON)
-			@echo "$(COLOUR_RED)🚚 Main compliation...$(COLOUR_END)"
+			@printf "$(COLOUR_RED)🚚 Main compliation...$(COLOUR_END)\n"
 			@gcc -o $(NAME) $(OBJ) $(LDFLAGS) $(INC)
-			@echo "$(COLOUR_GREEN)✅ Hackers-Quest was successfully built\
-			$(COLOUR_END)"
+			@printf "$(COLOUR_GREEN)✅ Hackers-Quest was successfully built\
+			$(COLOUR_END)\n"
 
 %.o: 		%.c
-			@echo "$(COLOUR_BLUE)📑 Compiling $(BOLD_BLUE)[$<]$(COLOUR_END)"
+			@printf "$(COLOUR_BLUE)📑 Compiling $(BOLD_BLUE)[$<]$(COLOUR_END)\n"
 			@gcc $(LDFLAGS) $(CFLAGS) $(INC) -c $< -o $@
 
 all: 		$(NAME)
