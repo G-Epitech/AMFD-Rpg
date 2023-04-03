@@ -108,6 +108,11 @@ fclean: 	clean
 
 re: 		fclean all
 
+style:	fclean
+		@echo "$(COLOUR_RED)🔍 Checking coding style...$(COLOUR_END)"
+		@coding-style . .
+		@cat coding-style-reports.log
+
 tests_run:
 		echo "pass"
 

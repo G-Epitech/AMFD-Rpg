@@ -1,0 +1,31 @@
+{
+    "name": "Pierre Huitric",
+    "id": 0,
+    "worlds_data": [
+        {
+            "world": 0,
+            "skin": 0,
+            "position": { "x": 0, "y": 0 },
+            "enemy": true,
+            "enemy_data": {
+                "life": 12,
+                "level": 0,
+                "attacks": [ 0, 1 ]
+            },
+            "dialogs": {
+                "hello": "Hello how are you ?",
+                "bye": "Bye, see you later"
+            }
+        },
+        {
+            "world": 1,
+            "skin": 2,
+            "position": { "x": 34, "y": 145 },
+            "enemy": true,
+            "dialogs": {
+                "hello": "Hello how are you ?",
+                "bye": "Bye, see you later"
+            }
+        }
+    ]
+}

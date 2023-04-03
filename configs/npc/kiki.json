@@ -1,0 +1,15 @@
+{
+    "name": "Kiki la Valgrind",
+    "id": 1,
+    "worlds_data": [
+        {
+            "world": 0,
+            "skin": 0,
+            "position": { "x": 12, "y": 78 },
+            "dialogs": {
+                "hello": "Hello how are you ? I am Kiki la valgrind more famous as 'THE KIKI'",
+                "bye": "Bye, see you later (Oh shit, I've broken VSCode)"
+            }
+        }
+    ]
+}

@@ -1,0 +1,6 @@
+{
+    "npc": [
+        "configs/npc/pierre-huitric.json",
+        "configs/npc/kiki.json"
+    ]
+}
