@@ -12,24 +12,16 @@
 
 void keyboard_press_move(sfEvent event, app_t *app)
 {
-    if (event.key.code == sfKeyZ)
-        app->control->up = true;
-    if (event.key.code == sfKeyS)
-        app->control->down = true;
-    if (event.key.code == sfKeyQ)
-        app->control->left = true;
-    if (event.key.code == sfKeyD)
-        app->control->right = true;
+    for (size_t i = 0; i < 4; i++) {
+        if (event.key.code == app->control[i].key)
+            app->control[i].direction = true;
+    }
 }
 
 void keyboard_release_move(sfEvent event, app_t *app)
 {
-    if (event.key.code == sfKeyZ)
-        app->control->up = false;
-    if (event.key.code == sfKeyS)
-        app->control->down = false;
-    if (event.key.code == sfKeyQ)
-        app->control->left = false;
-    if (event.key.code == sfKeyD)
-        app->control->right = false;
+    for (size_t i = 0; i < 4; i++) {
+        if (event.key.code == app->control[i].key)
+            app->control[i].direction = false;
+    }
 }

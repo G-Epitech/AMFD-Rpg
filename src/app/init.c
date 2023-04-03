@@ -12,14 +12,17 @@
 
 static control_t *init_controller(void)
 {
-    control_t *control = malloc(sizeof(control_t));
+    control_t *control = malloc(sizeof(control_t) * 4);
+    sfKeyCode key_codes[4] = {sfKeyZ, sfKeyS, sfKeyQ, sfKeyD};
+    sfVector2f move_offset[4] = {{0, -1}, {0, 1}, {-1, 0}, {1, 0}};
 
     if (!control)
         exit(84);
-    control->down = false;
-    control->up = false;
-    control->right = false;
-    control->left = false;
+    for (size_t i = 0; i < 4; i++) {
+        control[i].direction = false;
+        control[i].key = key_codes[i];
+        control[i].offset = move_offset[i];
+    }
     return control;
 }
 

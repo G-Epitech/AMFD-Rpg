@@ -32,10 +32,9 @@ typedef enum e_worlds {
 } worlds_t;
 
 typedef struct s_control {
-    bool up;                //Moving up
-    bool down;              //Moving down
-    bool right;             //Moving right
-    bool left;              //Moving left
+    bool direction;         //Move direction
+    sfVector2f offset;      //Move offset for the direction
+    sfKeyCode key;          //Move key code
 } control_t;
 
 typedef struct s_app {
