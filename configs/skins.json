@@ -11,5 +11,8 @@
             "profile": 1
         }
     ],
-    "profiles": "assets/profiles.png"
+    "profiles": {
+        "texture": "assets/profiles.png",
+        "size": { "x": 20, "y": 20 }
+    }
 }

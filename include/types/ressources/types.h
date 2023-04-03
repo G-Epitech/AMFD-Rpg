@@ -12,7 +12,7 @@
     #include "app/types.h"
 
     #define RESSOURCES_MAPS_CONFIG "configs/maps.json"
-    #define RESSOURCES_SKINS_CONFIG "configs/skin.json"
+    #define RESSOURCES_SKINS_CONFIG "configs/skins.json"
 
 typedef struct s_list list_t;
 
@@ -21,6 +21,8 @@ typedef struct s_list list_t;
 */
 typedef struct s_skin {
     int id;                 //Id of the skin
+    int profile_id;         //Profile id of skin
+    sfTexture *texture;     //Texture of corresponding to skin
 } skin_t;
 
 /**

@@ -19,7 +19,7 @@ typedef union u_node_data {
     player_t *player;
     button_t *button;
     lever_t *lever;
-    skin_t *skin;
+    skin_t skin;
     list_t *list;
     map_t *map;
 } node_data_t;
