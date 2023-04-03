@@ -8,8 +8,8 @@
 #ifndef APP_TYPES_H_
     #define APP_TYPES_H_
 
-    #include "types/players/types.h"
     #include <stdbool.h>
+    #include "types/players/types.h"
 
 typedef struct s_list list_t;
 

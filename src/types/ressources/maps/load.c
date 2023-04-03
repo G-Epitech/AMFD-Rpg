@@ -25,7 +25,7 @@ static void maps_load_line_collision(map_t *map, cjson_array_t *array)
         map->collision_layer[i] = malloc(sizeof(int) *
         line->value.v_array->len);
         if (map->collision_layer[i] == NULL)
-            exit(84);
+            return;
         cjson_get_array(line, &lines);
         map->collision_layer[i] = cjson_array_to_int_array(lines, &len);
         array->first = array->first->next;
