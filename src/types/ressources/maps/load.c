@@ -14,6 +14,38 @@
 #include "types/players/types.h"
 #include "cjson/include/cjson.h"
 
+static void maps_load_line_collision(map_t *map, cjson_array_t *array)
+{
+    cjson_t *line = NULL;
+    cjson_array_t *lines = NULL;
+    size_t len = 0;
+
+    for (size_t i = 0; i < array->len; i++) {
+        line = array->first;
+        map->collision_layer[i] = malloc(sizeof(int) *
+        line->value.v_array->len);
+        if (map->collision_layer[i] == NULL)
+            exit(84);
+        cjson_get_array(line, &lines);
+        map->collision_layer[i] = cjson_array_to_int_array(lines, &len);
+        array->first = array->first->next;
+    }
+}
+
+static void maps_load_collision(map_t *map, cjson_t *map_config)
+{
+    cjson_array_t *array = NULL;
+
+    if (!cjson_get_prop_array(map_config, "collision_layer", &array)) {
+        cjson_free(map_config);
+        return;
+    }
+    map->collision_layer = malloc(sizeof(int *) * array->len);
+    if (map->collision_layer == NULL)
+        exit(84);
+    maps_load_line_collision(map, array);
+}
+
 static void maps_append_data(map_t *map, cjson_t *map_config)
 {
     char *back = cjson_get_prop_string_unsafe(map_config, "back");
@@ -43,6 +75,7 @@ static void maps_append(list_t *maps, cjson_t *map_config)
         return;
     }
     maps_append_data(map, map_config);
+    maps_load_collision(map, map_config);
     list_append(maps, node);
 }
 

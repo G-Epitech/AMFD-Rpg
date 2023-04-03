@@ -25,8 +25,8 @@ app_t *app_init(void)
     }
     app->player = players_add(app->players, "Player1");
     if (!app->player) {
-        free(app);
         list_free(app->players);
+        free(app);
         return NULL;
     }
     return app;

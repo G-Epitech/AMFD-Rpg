@@ -3,7 +3,12 @@
         {
             "world": 0,
             "back": "assets/village/Village_Back.png",
-            "front": "assets/village/Village_Front.png"
+            "front": "assets/village/Village_Front.png",
+            "collision_layer": [
+              [0, 0, 0, 0, 1, 1, 1, 1, 1],
+              [0, 1, 1, 1, 1, 1, 1, 1, 1],
+              [0, 1, 1, 1, 1, 1, 1, 1, 0]
+            ]
         }
     ]
 }
