@@ -10,16 +10,26 @@
 #include "types/players/types.h"
 #include "app/events/types.h"
 
-void keyboard_move(sfEvent event, app_t *app)
+void keyboard_press_move(sfEvent event, app_t *app)
 {
-    player_t *player = app->player;
-
     if (event.key.code == sfKeyZ)
-        player->position = POSITION_UP(player->position);
+        app->control->up = true;
     if (event.key.code == sfKeyS)
-        player->position = POSITION_DOWN(player->position);
+        app->control->down = true;
     if (event.key.code == sfKeyQ)
-        player->position = POSITION_LEFT(player->position);
+        app->control->left = true;
     if (event.key.code == sfKeyD)
-        player->position = POSITION_RIGHT(player->position);
+        app->control->right = true;
+}
+
+void keyboard_release_move(sfEvent event, app_t *app)
+{
+    if (event.key.code == sfKeyZ)
+        app->control->up = false;
+    if (event.key.code == sfKeyS)
+        app->control->down = false;
+    if (event.key.code == sfKeyQ)
+        app->control->left = false;
+    if (event.key.code == sfKeyD)
+        app->control->right = false;
 }

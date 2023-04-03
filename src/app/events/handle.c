@@ -16,7 +16,10 @@ static void event_analyse(sfRenderWindow *window, sfEvent event, app_t *app)
         event_window_close(window);
     }
     if (event.type == sfEvtKeyPressed) {
-        keyboard_move(event, app);
+        keyboard_press_move(event, app);
+    }
+    if (event.type == sfEvtKeyReleased) {
+        keyboard_release_move(event, app);
     }
 }
 

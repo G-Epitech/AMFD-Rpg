@@ -9,6 +9,7 @@
     #define APP_TYPES_H_
 
     #include "types/players/types.h"
+    #include <stdbool.h>
 
 typedef struct s_list list_t;
 
@@ -30,11 +31,19 @@ typedef enum e_worlds {
     WL_CITY
 } worlds_t;
 
+typedef struct s_control {
+    bool up;                //Moving up
+    bool down;              //Moving down
+    bool right;             //Moving right
+    bool left;              //Moving left
+} control_t;
+
 typedef struct s_app {
     app_states_t state;     //State of the app
     worlds_t world;         //Actual wolrd where player is
     list_t *players;        //List of players
     player_t *player;       //Player of the client
+    control_t *control;     //Controller of the player
 } app_t;
 
 #endif /* !APP_TYPES_H_ */

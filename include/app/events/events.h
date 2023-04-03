@@ -25,10 +25,17 @@ void event_handle(sfRenderWindow *window, sfEvent event, app_t *app);
 void event_window_close(sfRenderWindow *window);
 
 /**
- * @brief Handle keyboard movements
+ * @brief Detects when a movement key is pressed
  * @param event The event
  * @param app Application structure
 */
-void keyboard_move(sfEvent event, app_t *app);
+void keyboard_press_move(sfEvent event, app_t *app);
+
+/**
+ * @brief Detects when a movement key is released
+ * @param event The event
+ * @param app Application structure
+*/
+void keyboard_release_move(sfEvent event, app_t *app);
 
 #endif /* !EVENTS_H_ */
