@@ -1,0 +1,15 @@
+{
+    "skins": [
+        { 
+            "id": 0,
+            "texture": "assets/skins/adam.png",
+            "profile": 0
+        },
+        { 
+            "id": 1,
+            "texture": "assets/skins/pierre.png",
+            "profile": 1
+        }
+    ],
+    "profiles": "assets/profiles.png"
+}
