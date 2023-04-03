@@ -7,6 +7,7 @@
 
 #include <SFML/Graphics.h>
 #include "app/display/display.h"
+#include "types/list/list.h"
 #include "types/renderer/types.h"
 
 void display_handle(renderer_t *renderer, app_t *app)

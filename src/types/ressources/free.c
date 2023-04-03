@@ -15,8 +15,9 @@ void ressources_free(ressources_t *ressources)
 {
     if (!ressources)
         return;
-    maps_free_data(ressources->maps);
-    list_free(ressources->maps);
+    maps_free(ressources->maps);
+    skins_free(ressources->skins);
     list_free(ressources->props);
-    list_free(ressources->skins);
+    if (ressources->profiles)
+        sfTexture_destroy(ressources->profiles);
 }

@@ -21,7 +21,6 @@ typedef struct s_list list_t;
 */
 typedef struct s_skin {
     int id;                 //Id of the skin
-    int profile_id;         //Profile id of skin
     sfTexture *texture;     //Texture of corresponding to skin
 } skin_t;
 
@@ -41,6 +40,7 @@ typedef struct s_ressources {
     list_t *maps;           //List of maps (textures)
     list_t *skins;          //List of skins (textures)
     list_t *props;          //List of props (textures)
+    sfTexture *profiles;    //Unique texture of player or NPC profiles
 } ressources_t;
 
 #endif /* !RESSOURCES_TYPES_H_ */

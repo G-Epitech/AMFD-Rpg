@@ -6,22 +6,21 @@
 */
 
 #include <SFML/Graphics.h>
+#include "types/list/types.h"
 #include "types/list/list.h"
 #include "types/ressources/types.h"
 
-void maps_free(list_t *maps)
+void skins_free(list_t *skins)
 {
     node_t *node = NULL;
 
-    if (!maps)
+    if (!skins)
         return;
-    node = maps->first;
+    node = skins->first;
     while (node) {
-        if (node->data.map->back)
-            sfTexture_destroy(node->data.map->back);
-        if (node->data.map->front)
-            sfTexture_destroy(node->data.map->front);
+        if (node->data.skin.texture)
+            sfTexture_destroy(node->data.skin.texture);
         node = node->next;
     }
-    list_free(maps);
+    list_free(skins);
 }
