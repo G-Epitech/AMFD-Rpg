@@ -14,7 +14,8 @@ void load_screen_text_display(renderer_t *renderer, char *load_text)
 {
     sfRenderWindow_clear(renderer->window, sfWhite);
     sfText_setCharacterSize(renderer->text, 40);
-    sfText_setFont(renderer->text, sfFont_createFromFile(FONT_PATH));
+    renderer->font = sfFont_createFromFile("assets/font.ttf");
+    sfText_setFont(renderer->text, renderer->font);
     sfText_setFillColor(renderer->text, sfBlack);
     sfText_setPosition(renderer->text, (sfVector2f) {800, 900});
     sfText_setString(renderer->text, load_text);
