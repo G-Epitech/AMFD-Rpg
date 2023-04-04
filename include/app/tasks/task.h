@@ -16,13 +16,8 @@ typedef union s_task_content {
     task_bash_t script;
 } task_content_t;
 
-typedef enum e_task_type {
-    TSK_BASH
-} task_type_t;
-
 typedef struct s_task {
     task_content_t content;
-    task_type_t type;
 } task_t;
 
 

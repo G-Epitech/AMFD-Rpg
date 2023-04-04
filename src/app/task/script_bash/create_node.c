@@ -95,5 +95,12 @@ node_t *task_create_nodes_bash(list_t *task_bash)
     init_list_cmd(bash.task->content.script.cmd, object_file);
     bash.task->content.script.prompt = list_new();
     init_list_prompt(bash.task->content.script.prompt, object_file);
+    bash.task->content.script.handler_placing = malloc(sizeof(placing_t));
+    bash.task->content.script.handler_placing->just_started = true;
+    bash.task->content.script.handler_placing->index_cmd = 1;
+    bash.task->content.script.handler_placing->index_life = 3;
+    bash.task->content.script.handler_time = malloc(sizeof(timer_t));
+    bash.task->content.script.handler_time->time_float = 0.0;
+    bash.task->content.script.handler_time->timer_int = 20;
     return node_new(bash);
 }
