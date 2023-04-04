@@ -15,13 +15,13 @@ static void display_rectangle(button_t *button, renderer_t *renderer,
 float scale)
 {
     components_r_t *ressources = renderer->ressources->components;
+    sfVector2u middle = sfTexture_getSize(ressources->button->middle);
 
     sfRectangleShape_setPosition(renderer->rectangle,
     (sfVector2f){button->position.x + 13 * button->scale, button->position.y});
     sfRectangleShape_setFillColor(renderer->rectangle, button->color);
-    sfRectangleShape_setSize(renderer->rectangle, (sfVector2f) {scale *
-    sfTexture_getSize(ressources->button->middle).x + 15 * button->scale,
-    button->scale * 152});
+    sfRectangleShape_setSize(renderer->rectangle,
+    (sfVector2f) {scale * middle.x + 15 * button->scale, button->scale * 152});
     sfRenderWindow_drawRectangleShape(renderer->window, renderer->rectangle,
     NULL);
 }
