@@ -9,6 +9,7 @@
 #include "app/types.h"
 #include "types/list/list.h"
 #include "types/players/players.h"
+#include "app/tasks/script_bash.h"
 
 app_t *app_init(void)
 {
@@ -29,6 +30,6 @@ app_t *app_init(void)
         list_free(app->players);
         return NULL;
     }
-    app->tasks_setup = 
+    app->tasks_setup = task_create();
     return app;
 }

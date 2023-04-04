@@ -1,0 +1,53 @@
+{
+    "cmd_model": {
+        "first_cmd_model": {
+            "x": 863, "y": 230
+        },
+        "second_cmd_model": {
+            "x": 863, "y": 330
+        },
+        "third_cmd_model": {
+            "x": 863, "y": 430
+        },
+        "fourth_cmd_model": {
+            "x": 863, "y": 530
+        },
+        "fifth_cmd_model": {
+            "x": 863, "y": 630
+        }
+    },
+    "cmd": {
+        "first_cmd": {
+            "x": 895, "y": 275
+        },
+        "second_cmd": {
+            "x": 895, "y": 375
+        },
+        "third_cmd": {
+            "x": 895, "y": 475
+        },
+        "fourth_cmd": {
+            "x": 895, "y": 575
+        },
+        "fifth_cmd": {
+            "x": 895, "y": 675
+        }
+    },
+    "prompt": {
+        "first_prompt": {
+            "x": 863, "y": 275
+        },
+        "second_prompt": {
+            "x": 863, "y": 375
+        },
+        "third_prompt": {
+            "x": 863, "y": 475
+        },
+        "fourth_prompt": {
+            "x": 863, "y": 575
+        },
+        "fifth_prompt": {
+            "x": 863, "y": 675
+        }
+    }
+}
