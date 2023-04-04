@@ -43,7 +43,9 @@ SRC = 		main.c \
 			src/app/display/handle.c \
 			src/app/display/map/map.c \
 			src/app/display/map/back.c \
-			src/app/display/map/front.c
+			src/app/display/map/front.c	\
+			\
+			src/app/loading/loading_screen.c
 
 NAME = my_rpg
 

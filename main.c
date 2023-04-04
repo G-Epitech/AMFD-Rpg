@@ -16,13 +16,16 @@
 #include "app/app.h"
 #include "types/ressources/ressources.h"
 #include "app/display/display.h"
+#include "app/loading/loading.h"
 
 int main(void)
 {
     renderer_t *renderer = renderer_init();
     sfEvent event;
-    app_t *app = app_init();
+    app_t *app;
 
+    loading_preload_screen(renderer);
+    app = app_init();
     if (!renderer)
         return 84;
     if (!app) {
