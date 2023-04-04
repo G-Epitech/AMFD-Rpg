@@ -18,6 +18,7 @@ void renderer_destroy(renderer_t *renderer)
     sfText_destroy(renderer->text);
     sfRenderWindow_close(renderer->window);
     sfView_destroy(renderer->view);
+    sfFont_destroy(renderer->font);
     ressources_free(renderer->ressources);
     free(renderer);
 }

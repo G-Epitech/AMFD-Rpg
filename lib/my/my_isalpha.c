@@ -37,6 +37,5 @@ int my_char_isalpha (char value)
     if (value >= 'a' && value <= 'z') {
         ok = 1;
     }
-
     return ok;
 }

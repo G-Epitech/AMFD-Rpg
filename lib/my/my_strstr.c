@@ -18,6 +18,7 @@ static int test (char *str, char const *to_find, int i, int x)
 static int find(char *str, char const *to_find, int i)
 {
     int ok = 1;
+
     if (str[i] == to_find[0]) {
         for (int x = 0; to_find[x] != '\0'; x++) {
             ok = test(str, to_find, i, x);

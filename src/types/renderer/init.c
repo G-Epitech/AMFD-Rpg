@@ -28,5 +28,7 @@ renderer_t *renderer_init(void)
     renderer->components = NULL;
     renderer->ressources = NULL;
     renderer->view = NULL;
+    renderer->font = sfFont_createFromFile(FONT_FILE);
+    renderer->default_view = sfRenderWindow_getDefaultView(renderer->window);
     return renderer;
 }

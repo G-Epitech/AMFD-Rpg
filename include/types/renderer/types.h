@@ -12,6 +12,8 @@
     #include "types/components/types.h"
     #include "types/ressources/types.h"
 
+    #define FONT_FILE "assets/font.ttf"
+
 /**
  * @brief Renderer structure
 */
@@ -22,6 +24,8 @@ typedef struct s_renderer {
     sfText *text;
     sfRenderWindow *window;
     sfView *view;
+    const sfView *default_view;
+    sfFont *font;
     components_t *components;
     ressources_t *ressources;
 } renderer_t;
