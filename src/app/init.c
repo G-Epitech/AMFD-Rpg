@@ -16,7 +16,7 @@ app_t *app_init(void)
 
     if (!app)
         return NULL;
-    app->state = ST_LOADING;
+    app->state = ST_TASK_BASH;
     app->world = WL_VILLAGE;
     app->players = players_list_init();
     if (!app->players) {
@@ -29,5 +29,6 @@ app_t *app_init(void)
         list_free(app->players);
         return NULL;
     }
+    app->tasks_setup = 
     return app;
 }

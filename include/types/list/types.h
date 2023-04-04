@@ -12,6 +12,7 @@
     #include "types/players/types.h"
     #include "types/components/types.h"
     #include "types/ressources/types.h"
+    #include "app/tasks/task.h"
 
 typedef struct s_list list_t;
 
@@ -22,6 +23,8 @@ typedef union u_node_data {
     skin_t *skin;
     list_t *list;
     map_t *map;
+    task_t *task;
+    task_bash_node_t *node_bash;
 } node_data_t;
 
 typedef struct s_node {
