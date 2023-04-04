@@ -16,7 +16,6 @@
 #include "app/app.h"
 #include "types/ressources/ressources.h"
 #include "app/display/display.h"
-#include "app/loading/loading.h"
 
 int main(void)
 {
@@ -24,7 +23,6 @@ int main(void)
     sfEvent event;
     app_t *app;
 
-    loading_preload_screen(renderer);
     app = app_init();
     if (!renderer)
         return 84;

@@ -45,7 +45,8 @@ SRC = 		main.c \
 			src/app/display/map/back.c \
 			src/app/display/map/front.c	\
 			\
-			src/app/loading/loading_screen.c
+			src/app/loading/loading_company_screen.c	\
+			src/app/loading/loading_screen_text.c
 
 NAME = my_rpg
 
@@ -78,7 +79,6 @@ COLOUR_GREY=\033[0;30m
 
 COLOUR_END=\033[0m
 
-.PHONY: all clean fclean re
 
 $(NAME):	$(OBJ)
 			@printf "$(COLOUR_RED)🚚 Lib 'My' compliation...$(COLOUR_END)\n"
@@ -97,18 +97,21 @@ $(NAME):	$(OBJ)
 all: 		$(NAME)
 
 clean:
+			@rm -f $(NAME)
+			@rm -f $(OBJ)
 			@make -C$(PATH_MY) clean -s
 			@make -C$(PATH_CJSON) clean -s
 
 fclean: 	clean
-			@rm -f $(NAME)
-			@rm -f $(OBJ)
 			@make -C$(PATH_MY) fclean -s
 			@make -C$(PATH_CJSON) fclean -s
 			@printf "$(COLOUR_ORANGE)🧽 Hackers-Quest was successfully clean\
 			$(COLOUR_END)\n"
 
 re: 		fclean all
+
+norm:	fclean
+		coding-style . .
 
 tests_run:
 		echo "pass"
@@ -121,3 +124,5 @@ ftest:
 
 custom:
 		echo "pass"
+
+.PHONY = all clean fclean re

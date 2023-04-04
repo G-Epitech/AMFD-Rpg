@@ -11,6 +11,7 @@
     #include <SFML/Graphics.h>
 
     #define LOGO_PATH "assets/loading_screen/logo_groupe.png"
+    #define FONT_PATH "assets/fonts/Hella Instegra.ttf"
 
 typedef struct s_loading {
     sfTexture *company_screen;
