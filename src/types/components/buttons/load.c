@@ -26,19 +26,17 @@ static sfVector2f cjson_vector(cjson_t *config)
     return position;
 }
 
-static void button_cjson_color(cjson_t *config, button_t *data)
+static void button_cjson_color(cjson_t *config, sfColor *color, char *key)
 {
     cjson_t *color_prop = NULL;
-    sfColor color = {0, 0, 0, 0};
 
-    color_prop = cjson_get_prop(config, "color");
+    color_prop = cjson_get_prop(config, key);
     if (!color_prop)
         return;
-    color.r = cjson_get_prop_int_unsafe(color_prop, "r");
-    color.g = cjson_get_prop_int_unsafe(color_prop, "g");
-    color.b = cjson_get_prop_int_unsafe(color_prop, "b");
-    color.a = cjson_get_prop_int_unsafe(color_prop, "a");
-    data->color = color;
+    color->r = cjson_get_prop_int_unsafe(color_prop, "r");
+    color->g = cjson_get_prop_int_unsafe(color_prop, "g");
+    color->b = cjson_get_prop_int_unsafe(color_prop, "b");
+    color->a = cjson_get_prop_int_unsafe(color_prop, "a");
 }
 
 void buttons_load(components_t *components, cjson_array_t *buttons)
@@ -54,7 +52,8 @@ void buttons_load(components_t *components, cjson_array_t *buttons)
         data = buttons_append(components->buttons, position, state);
         if (!data)
             return;
-        button_cjson_color(button, data);
+        button_cjson_color(button, &data->color, "color");
+        button_cjson_color(button, &data->text_color, "color_text");
         cjson_get_prop_string(button, "title", &data->title);
         cjson_get_prop_string(button, "description", &data->description);
         cjson_get_prop_float(button, "scale", &data->scale);
