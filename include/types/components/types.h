@@ -43,6 +43,7 @@ typedef struct s_button {
     char *description;
     float scale;
     sfColor color;
+    sfColor text_color;
     sfTexture *texture;
     sfVector2f position;
     app_states_t app_state;
