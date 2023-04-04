@@ -23,6 +23,7 @@ int main(void)
     sfEvent event;
     app_t *app;
 
+    load_renderer(renderer);
     app = app_init();
     if (!renderer)
         return 84;

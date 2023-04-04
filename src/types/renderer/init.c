@@ -25,12 +25,8 @@ renderer_t *renderer_init(void)
     renderer->circle = sfCircleShape_create();
     renderer->text = sfText_create();
     renderer->window = window_init();
-    loading_preload_screen(renderer);
-    load_screen_text_display(renderer, "Loading  Components. . .");
-    renderer->components = components_load();
-    load_screen_text_display(renderer, "Loading  Ressources. . .");
-    renderer->ressources = ressources_load();
-    load_screen_text_display(renderer, "Initializing  View. . .");
-    renderer->view = view_init();
+    renderer->components = NULL;
+    renderer->ressources = NULL;
+    renderer->view = NULL;
     return renderer;
 }

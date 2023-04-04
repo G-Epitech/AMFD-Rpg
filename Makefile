@@ -8,6 +8,7 @@
 SRC = 		main.c \
 			\
 			src/types/renderer/init.c \
+			src/types/renderer/load.c	\
 			src/types/renderer/destroy.c \
 			\
 			src/types/list/append.c \
