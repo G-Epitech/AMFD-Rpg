@@ -46,7 +46,9 @@ SRC = 		main.c \
 			src/app/display/handle.c \
 			src/app/display/map/map.c \
 			src/app/display/map/back.c \
-			src/app/display/map/front.c
+			src/app/display/map/front.c \
+			src/app/display/components/components.c \
+			src/app/display/components/buttons.c \
 
 NAME = my_rpg
 
@@ -110,6 +112,9 @@ fclean: 	clean
 			$(COLOUR_END)"
 
 re: 		fclean all
+
+exec:		$(NAME)
+			./$(NAME)
 
 tests_run:
 		echo "pass"
