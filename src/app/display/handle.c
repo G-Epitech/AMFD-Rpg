@@ -19,7 +19,7 @@ void display_handle(renderer_t *renderer, app_t *app)
     display_map_front(ressoruces->maps, renderer->window, renderer->sprite,
     app->world);
     sfView_setCenter(renderer->view, app->player->position);
-    sfRenderWindow_setView(renderer->window, sfRenderWindow_getDefaultView(renderer->window));
+    sfRenderWindow_setView(renderer->window, renderer->default_view);
     display_components(renderer, app);
     sfRenderWindow_display(renderer->window);
 }

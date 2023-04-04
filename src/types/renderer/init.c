@@ -28,5 +28,6 @@ renderer_t *renderer_init(void)
     renderer->components = components_load();
     renderer->ressources = ressources_load();
     renderer->view = view_init();
+    renderer->default_view = sfRenderWindow_getDefaultView(renderer->window);
     return renderer;
 }

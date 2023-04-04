@@ -24,6 +24,7 @@ typedef struct s_renderer {
     sfText *text;
     sfRenderWindow *window;
     sfView *view;
+    const sfView *default_view;
     sfFont *font;
     components_t *components;
     ressources_t *ressources;

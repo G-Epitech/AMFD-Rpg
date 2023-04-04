@@ -11,17 +11,19 @@
 #include "types/renderer/types.h"
 #include "types/list/types.h"
 
-static void display_rectangle(button_t *button, renderer_t *renderer, float scale)
+static void display_rectangle(button_t *button, renderer_t *renderer,
+float scale)
 {
     components_r_t *ressources = renderer->ressources->components;
 
-    sfRectangleShape_setPosition(renderer->rectangle, (sfVector2f)
-    {button->position.x + 13 * button->scale, button->position.y});
+    sfRectangleShape_setPosition(renderer->rectangle,
+    (sfVector2f){button->position.x + 13 * button->scale, button->position.y});
     sfRectangleShape_setFillColor(renderer->rectangle, button->color);
     sfRectangleShape_setSize(renderer->rectangle, (sfVector2f) {scale *
     sfTexture_getSize(ressources->button->middle).x + 15 * button->scale,
     button->scale * 152});
-    sfRenderWindow_drawRectangleShape(renderer->window, renderer->rectangle, NULL);
+    sfRenderWindow_drawRectangleShape(renderer->window, renderer->rectangle,
+    NULL);
 }
 
 static float setup_text(button_t *button, renderer_t *renderer)
