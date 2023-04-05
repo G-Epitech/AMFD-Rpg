@@ -36,13 +36,11 @@ static void maps_load_collision(map_t *map, cjson_t *map_config)
 {
     cjson_array_t *array = NULL;
 
-    if (!cjson_get_prop_array(map_config, "collision_layer", &array)) {
-        cjson_free(map_config);
+    if (!cjson_get_prop_array(map_config, "collision_layer", &array))
         return;
-    }
     map->collision_layer = malloc(sizeof(int *) * array->len);
     if (map->collision_layer == NULL)
-        exit(84);
+        return;
     maps_load_line_collision(map, array);
 }
 
