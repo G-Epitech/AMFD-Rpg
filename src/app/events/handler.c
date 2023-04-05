@@ -20,7 +20,7 @@ static void event_analyse(sfRenderWindow *window, sfEvent event, app_t *app)
     }
 }
 
-void event_handle(sfRenderWindow *window, sfEvent event, app_t *app)
+void event_handler(sfRenderWindow *window, sfEvent event, app_t *app)
 {
     while (sfRenderWindow_pollEvent(window, &event)) {
         event_analyse(window, event, app);

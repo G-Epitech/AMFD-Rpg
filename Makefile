@@ -39,7 +39,7 @@ SRC = 		main.c \
 			\
 			src/app/window/init.c \
 			\
-			src/app/events/handle.c \
+			src/app/events/handler.c \
 			src/app/events/window/close.c \
 			src/app/events/keyboard/move.c \
 			\
@@ -49,6 +49,8 @@ SRC = 		main.c \
 			src/app/display/map/front.c \
 			src/app/display/components/components.c \
 			src/app/display/components/buttons.c \
+			\
+			src/app/utils/test.c \
 
 NAME = my_rpg
 
