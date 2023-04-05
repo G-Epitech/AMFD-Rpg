@@ -35,7 +35,6 @@ static float setup_text(button_t *button, renderer_t *renderer)
 static sfVector2f get_rect_scale(button_t *button, renderer_t *renderer)
 {
     float text_scale = setup_text(button, renderer);
-    printf("Text scale %f\n", text_scale);
     components_r_t *ressources = renderer->ressources->components;
     sfVector2u middle = sfTexture_getSize(ressources->button->middle);
     sfVector2f rect_scale = {0, 0};
