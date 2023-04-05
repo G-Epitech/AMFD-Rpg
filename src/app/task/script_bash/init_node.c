@@ -7,13 +7,15 @@
 
 #include <SFML/Graphics.h>
 #include "types/renderer/types.h"
+#include "app/tasks/bash/types.h"
+#include "types/list/types.h"
 #include "app/tasks/task.h"
-#include "my.h"
+#include "my/include/my.h"
+#include <stdlib.h>
 
 static void init_cmd_model(app_t *app)
 {
     node_t *temp = STRUCT_BASH(app).cmd_model->first;
-    int index = 0;
     char *tab_cmd[5] = {"ls", "echo", "ls | grep l | grep m",
     "cat makefile", "ls; cat makefile | grep l"};
 
@@ -25,7 +27,7 @@ static void init_cmd_model(app_t *app)
     }
 }
 
-static init_task(app_t *app)
+void init_task(app_t *app)
 {
     STRUCT_BASH(app).handler_time->clock_time = sfClock_create();
     init_cmd_model(app);

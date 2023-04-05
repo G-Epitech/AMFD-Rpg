@@ -9,7 +9,7 @@
 #include "app/types.h"
 #include "types/list/list.h"
 #include "types/players/players.h"
-#include "app/tasks/script_bash.h"
+#include "app/tasks/bash/script_bash.h"
 
 app_t *app_init(void)
 {
@@ -26,8 +26,8 @@ app_t *app_init(void)
     }
     app->player = players_add(app->players, "Player1");
     if (!app->player) {
-        free(app);
         list_free(app->players);
+        free(app);
         return NULL;
     }
     app->tasks_setup = task_create();

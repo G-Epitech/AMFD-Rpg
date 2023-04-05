@@ -43,7 +43,15 @@ SRC = 		main.c \
 			src/app/display/handle.c \
 			src/app/display/map/map.c \
 			src/app/display/map/back.c \
-			src/app/display/map/front.c
+			src/app/display/map/front.c \
+			\
+			src/app/task/task.c \
+			src/app/task/create.c \
+			src/app/task/script_bash/create_node.c \
+			src/app/task/script_bash/display.c \
+			src/app/task/script_bash/init_node.c \
+			\
+			src/app/core/handler.c \
 
 NAME = my_rpg
 

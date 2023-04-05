@@ -8,6 +8,8 @@
 #include "types/list/list.h"
 #include "types/list/types.h"
 #include "cjson/include/cjson.h"
+#include "my/include/my.h"
+#include <stdlib.h>
 
 static node_t *create_node_list_cmd(void)
 {
@@ -44,7 +46,7 @@ static void init_list_prompt(list_t *prompt, cjson_t *object_file)
 static void init_list_cmd(list_t *cmd, cjson_t *object_file)
 {
     node_t *cmd_node = NULL;
-    cjson_t *object_pos = cjson_parse_file("./configs/tasks.json");
+    cjson_t *cmd_model_object = cjson_get_prop(object_file, "cmd");
     cjson_t *pos_cmd = NULL;
     char *cmd_tab[5] = {"first_cmd", "second_cmd", "third_cmd",
     "fourth_cmd", "fifth_cmd"};
@@ -52,7 +54,7 @@ static void init_list_cmd(list_t *cmd, cjson_t *object_file)
     for (int index = 0; index < 5; index++) {
         cmd_node = create_node_list_cmd();
         cmd_node->data.node_bash->cmd = NULL;
-        pos_cmd = cjson_get_prop(object_pos, cmd_tab[index]);
+        pos_cmd = cjson_get_prop(cmd_model_object, cmd_tab[index]);
         cmd_node->data.node_bash->pos.x =
         cjson_get_prop_int_unsafe(pos_cmd, "x");
         cmd_node->data.node_bash->pos.y =
@@ -77,15 +79,14 @@ static void init_list_cmd_model(list_t *cmd_model, cjson_t *object_file)
         cjson_get_prop_int_unsafe(pos_cmd_model, "x");
         cmd_model_node->data.node_bash->pos.y =
         cjson_get_prop_int_unsafe(pos_cmd_model, "y");
-        list_append(cmd_model_node, cmd_model_node);
+        list_append(cmd_model, cmd_model_node);
     }
 }
 
-node_t *task_create_nodes_bash(list_t *task_bash)
+node_t *task_create_nodes_bash(void)
 {
     node_data_t bash;
     task_t *task = malloc(sizeof(task_t));
-    node_t *script_bash = NULL;
     cjson_t *object_file = cjson_parse_file("./configs/tasks.json");
 
     bash.task = task;
@@ -99,8 +100,9 @@ node_t *task_create_nodes_bash(list_t *task_bash)
     bash.task->content.script.handler_placing->just_started = true;
     bash.task->content.script.handler_placing->index_cmd = 1;
     bash.task->content.script.handler_placing->index_life = 3;
-    bash.task->content.script.handler_time = malloc(sizeof(timer_t));
+    bash.task->content.script.handler_time = malloc(sizeof(timer_handler_t));
     bash.task->content.script.handler_time->time_float = 0.0;
     bash.task->content.script.handler_time->timer_int = 20;
+    bash.task->content.script.phone = sfTexture_createFromFile("assets/tasks/phone.png", NULL);
     return node_new(bash);
 }

@@ -12,7 +12,8 @@
     #include "types/players/types.h"
     #include "types/components/types.h"
     #include "types/ressources/types.h"
-    #include "app/tasks/task.h"
+    #include "app/tasks/bash/types.h"
+    #include "app/tasks/types.h"
 
 typedef struct s_list list_t;
 
