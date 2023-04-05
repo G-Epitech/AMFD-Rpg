@@ -13,6 +13,7 @@
 #include "types/renderer/types.h"
 #include "types/components/components.h"
 #include "types/ressources/ressources.h"
+#include "app/loading/loading.h"
 
 renderer_t *renderer_init(void)
 {
@@ -25,10 +26,10 @@ renderer_t *renderer_init(void)
     renderer->circle = sfCircleShape_create();
     renderer->text = sfText_create();
     renderer->window = window_init();
+    renderer->components = NULL;
+    renderer->ressources = NULL;
+    renderer->view = NULL;
     renderer->font = sfFont_createFromFile(FONT_FILE);
-    renderer->ressources = ressources_load();
-    renderer->components = components_load(renderer);
-    renderer->view = view_init();
     renderer->default_view = sfRenderWindow_getDefaultView(renderer->window);
     return renderer;
 }

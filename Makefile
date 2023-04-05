@@ -8,6 +8,7 @@
 SRC = 		main.c \
 			\
 			src/types/renderer/init.c \
+			src/types/renderer/load.c	\
 			src/types/renderer/destroy.c \
 			\
 			src/types/list/append.c \
@@ -52,6 +53,9 @@ SRC = 		main.c \
 			src/app/display/components/buttons.c \
 			\
 			src/app/utils/test.c \
+			\
+			src/app/loading/loading_company_screen.c \
+			src/app/loading/loading_screen_text.c
 
 NAME = my_rpg
 
@@ -84,37 +88,39 @@ COLOUR_GREY=\033[0;30m
 
 COLOUR_END=\033[0m
 
-.PHONY: all clean fclean re
 
 $(NAME):	$(OBJ)
-			@echo "$(COLOUR_RED)🚚 Lib 'My' compliation...$(COLOUR_END)"
+			@printf "$(COLOUR_RED)🚚 Lib 'My' compliation...$(COLOUR_END)\n"
 			@make -C$(PATH_MY)
-			@echo "$(COLOUR_RED)🚚 Lib 'CJSON' compliation...$(COLOUR_END)"
+			@printf "$(COLOUR_RED)🚚 Lib 'CJSON' compliation...$(COLOUR_END)\n"
 			@make -C$(PATH_CJSON)
-			@echo "$(COLOUR_RED)🚚 Main compliation...$(COLOUR_END)"
+			@printf "$(COLOUR_RED)🚚 Main compliation...$(COLOUR_END)\n"
 			@gcc -o $(NAME) $(OBJ) $(LDFLAGS) $(INC)
-			@echo "$(COLOUR_GREEN)✅ Hackers-Quest was successfully built\
-			$(COLOUR_END)"
+			@printf "$(COLOUR_GREEN)✅ Hackers-Quest was successfully built\
+			$(COLOUR_END)\n"
 
 %.o: 		%.c
-			@echo "$(COLOUR_BLUE)📑 Compiling $(BOLD_BLUE)[$<]$(COLOUR_END)"
+			@printf "$(COLOUR_BLUE)📑 Compiling $(BOLD_BLUE)[$<]$(COLOUR_END)\n"
 			@gcc $(LDFLAGS) $(CFLAGS) $(INC) -c $< -o $@
 
 all: 		$(NAME)
 
 clean:
+			@rm -f $(NAME)
+			@rm -f $(OBJ)
 			@make -C$(PATH_MY) clean -s
 			@make -C$(PATH_CJSON) clean -s
 
 fclean: 	clean
-			@rm -f $(NAME)
-			@rm -f $(OBJ)
 			@make -C$(PATH_MY) fclean -s
 			@make -C$(PATH_CJSON) fclean -s
-			@echo "$(COLOUR_ORANGE)🧽 Hackers-Quest was successfully clean\
-			$(COLOUR_END)"
+			@printf "$(COLOUR_ORANGE)🧽 Hackers-Quest was successfully clean\
+			$(COLOUR_END)\n"
 
 re: 		fclean all
+
+norm:	fclean
+		coding-style . .
 
 exec:		$(NAME)
 			./$(NAME)
@@ -130,3 +136,5 @@ ftest:
 
 custom:
 		echo "pass"
+
+.PHONY = all clean fclean re

@@ -104,8 +104,8 @@ $(NAME):	$(OBJ)
 			@mv lib$(NAME).a ../lib$(NAME).a
 
 %.o: %.c
-			@echo "$(COLOUR_BLUE)📦 Compiling lib$(NAME) - $(BOLD_BLUE)\
-[$<]$(COLOUR_END)"
+			@printf "$(COLOUR_BLUE)📦 Compiling lib$(NAME) - $(BOLD_BLUE)\
+[$<]$(COLOUR_END)\n"
 			@gcc -c $< -o $@ $(INC)
 
 clean:
