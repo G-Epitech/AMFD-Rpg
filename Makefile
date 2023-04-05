@@ -58,6 +58,9 @@ SRC = 		main.c \
 			src/app/task/script_bash/core/init_node.c \
 			src/app/task/script_bash/core/game_handler.c \
 			src/app/task/script_bash/display/display.c \
+			src/app/task/script_bash/core/write_cmd.c \
+			src/app/task/script_bash/core/valid_cmd.c \
+			src/app/task/script_bash/core/reset_setup.c \
 			\
 
 NAME = my_rpg

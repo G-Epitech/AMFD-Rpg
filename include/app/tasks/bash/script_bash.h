@@ -19,8 +19,16 @@ list_t *task_create(void);
 
 void app_task_bash_display(renderer_t *renderer, app_t *app);
 
-void app_task_bash_core(renderer_t *renderer, app_t *app);
+void app_task_bash_core(app_t *app);
 
 void init_task(app_t *app);
+
+void cmd_write(sfEvent event, app_t *app);
+
+void good_or_bad_result(sfEvent event, app_t *app);
+
+node_t *find_node_cmd(list_t *list, int index_cmd);
+
+void reset_setup(app_t *app);
 
 #endif /* !SCRIPT_BASH_H_ */

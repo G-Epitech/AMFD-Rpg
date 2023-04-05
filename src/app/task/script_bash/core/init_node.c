@@ -20,9 +20,20 @@ static void init_cmd_model(app_t *app)
     "cat makefile", "ls; cat makefile | grep l"};
 
     for(int index = 0; temp != NULL; index++) {
-        temp->data.node_bash->cmd = malloc(sizeof(my_strlen(tab_cmd[index])) + 1);
+        temp->data.node_bash->cmd = malloc(sizeof(char) * my_strlen(tab_cmd[index]) + 1);
         my_strcpy(temp->data.node_bash->cmd, tab_cmd[index]);
         temp->data.node_bash->cmd[my_strlen(tab_cmd[index])] = '\0';
+        temp = temp->next;
+    }
+}
+
+static void init_cmd(app_t *app)
+{
+    node_t *temp = STRUCT_BASH(app).cmd->first;
+
+    for(int index = 0; temp != NULL; index++) {
+        temp->data.node_bash->cmd = malloc(sizeof(char));
+        temp->data.node_bash->cmd[0] = '\0';
         temp = temp->next;
     }
 }
@@ -31,5 +42,6 @@ void init_task(app_t *app)
 {
     STRUCT_BASH(app).handler_time->clock_time = sfClock_create();
     init_cmd_model(app);
+    init_cmd(app);
     STRUCT_BASH(app).handler_placing->just_started = false;
 }

@@ -8,6 +8,8 @@
 #include <SFML/Graphics.h>
 #include "app/display/display.h"
 #include "types/renderer/types.h"
+#include "app/tasks/types.h"
+#include "app/tasks/task.h"
 
 void display_handle(renderer_t *renderer, app_t *app)
 {
@@ -21,6 +23,6 @@ void display_handle(renderer_t *renderer, app_t *app)
     sfView_setCenter(renderer->view, app->player->position);
     sfRenderWindow_setView(renderer->window, renderer->default_view);
     display_components(renderer, app);
-    
+    task(renderer, app, display);
     sfRenderWindow_display(renderer->window);
 }

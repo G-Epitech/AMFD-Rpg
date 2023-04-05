@@ -13,7 +13,7 @@
 #include "types/list/types.h"
 #include "my/include/my.h"
 
-void app_task_bash_core(renderer_t *renderer, app_t *app)
+void app_task_bash_core(app_t *app)
 {
     if (STRUCT_BASH(app).handler_placing->just_started) {
         init_task(app);

@@ -32,8 +32,8 @@ static void init_list_prompt(list_t *prompt, cjson_t *object_file)
 
     for (int index = 0; index < 5; index++) {
         prompt_node = create_node_list_cmd();
-        prompt_node->data.node_bash->cmd = malloc(sizeof(char) * 3);
-        my_strcpy(prompt_node->data.node_bash->cmd, "$>\0");
+        prompt_node->data.node_bash->cmd = malloc(sizeof(char) * 4);
+        my_strcpy(prompt_node->data.node_bash->cmd, "$> \0");
         pos_prompt = cjson_get_prop(prompt_object, prompt_tab[index]);
         prompt_node->data.node_bash->pos.x =
         cjson_get_prop_int_unsafe(pos_prompt, "x");
@@ -104,5 +104,6 @@ node_t *task_create_nodes_bash(void)
     bash.task->content.script.handler_time->time_float = 0.0;
     bash.task->content.script.handler_time->timer_int = 20;
     bash.task->content.script.phone = sfTexture_createFromFile("assets/tasks/phone.png", NULL);
+    bash.task->content.script.font_phone = sfFont_createFromFile("assets/pixel.otf");
     return node_new(bash);
 }
