@@ -35,8 +35,12 @@ ressources_t *ressources_load(void)
 {
     ressources_t *ressources = ressources_init();
 
-    if (!ressources)
+    ressources->components = ressources_components_init();
+    if (!ressources || !ressources->components) {
+        ressources_free(ressources);
         return NULL;
+    }
     maps_load(ressources->maps);
+    ressources_components_load(ressources->components);
     return ressources;
 }
