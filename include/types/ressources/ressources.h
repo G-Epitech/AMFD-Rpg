@@ -56,4 +56,12 @@ void ressources_components_load(components_r_t *components);
 */
 button_r_t *ressources_components_button_load(cjson_t *button_config);
 
+/**
+ * @brief Load backgrounds assets
+ * @param backgrounds_config Json array of backgrounds
+ * @return List of backgrounds
+*/
+list_t *ressources_components_backgrounds_load(cjson_array_t
+*backgrounds_config);
+
 #endif /* !RESSOURCES_H_ */
