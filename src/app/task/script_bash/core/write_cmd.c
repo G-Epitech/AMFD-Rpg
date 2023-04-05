@@ -19,7 +19,7 @@ node_t *find_node_cmd(list_t *list, int index_cmd)
     node_t *temp = list->first;
     int index = 1;
 
-    while(index_cmd != index) {
+    while (index_cmd != index) {
         temp = temp->next;
         index++;
     }

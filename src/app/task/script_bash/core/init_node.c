@@ -36,7 +36,7 @@ static void init_cmd_model(app_t *app)
     node_t *temp = STRUCT_BASH(app).cmd_model->first;
     char *cmd = NULL;
 
-    for(int index = 0; temp != NULL; index++) {
+    for (int index = 0; temp != NULL; index++) {
         cmd = find_cmd(index, object_file);
         temp->data.node_bash->cmd = malloc(sizeof(char) * my_strlen(cmd) + 1);
         my_strcpy(temp->data.node_bash->cmd, cmd);
@@ -49,7 +49,7 @@ static void init_cmd(app_t *app)
 {
     node_t *temp = STRUCT_BASH(app).cmd->first;
 
-    for(int index = 0; temp != NULL; index++) {
+    for (int index = 0; temp != NULL; index++) {
         temp->data.node_bash->cmd = malloc(sizeof(char));
         temp->data.node_bash->cmd[0] = '\0';
         temp = temp->next;
