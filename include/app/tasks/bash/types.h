@@ -32,6 +32,7 @@ typedef struct s_list list_t;
     #define TIME app->tasks_setup->first->data.task->content.\
     script.handler_time->time
     #define LEN_MAX_CMD 27
+    #define BASH_PATH bash.task->content.script
 
 typedef struct s_timer_handler {
     sfClock *clock_time;

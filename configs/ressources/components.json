@@ -5,5 +5,12 @@
         "middle": "assets/components/button/middle.png"
     },
     
-    "backgrounds": []
+    "backgrounds": [
+        {
+            "asset": "assets/tasks/phone.png",
+            "scale": 1,
+            "state": 51,
+            "position" : {"x": 690, "y": 140}
+        }
+    ]
 }

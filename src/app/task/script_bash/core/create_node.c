@@ -90,20 +90,19 @@ node_t *task_create_nodes_bash(void)
     cjson_t *object_file = cjson_parse_file("./configs/tasks/pos_text.json");
 
     bash.task = task;
-    bash.task->content.script.cmd_model = list_new();
-    init_list_cmd_model(bash.task->content.script.cmd_model, object_file);
-    bash.task->content.script.cmd = list_new();
-    init_list_cmd(bash.task->content.script.cmd, object_file);
-    bash.task->content.script.prompt = list_new();
-    init_list_prompt(bash.task->content.script.prompt, object_file);
-    bash.task->content.script.handler_placing = malloc(sizeof(placing_t));
-    bash.task->content.script.handler_placing->just_started = true;
-    bash.task->content.script.handler_placing->index_cmd = 1;
-    bash.task->content.script.handler_placing->index_life = 3;
-    bash.task->content.script.handler_time = malloc(sizeof(timer_handler_t));
-    bash.task->content.script.handler_time->time_float = 0.0;
-    bash.task->content.script.handler_time->timer_int = 20;
-    bash.task->content.script.phone = sfTexture_createFromFile("assets/tasks/phone.png", NULL);
-    bash.task->content.script.font_phone = sfFont_createFromFile("assets/pixel.otf");
+    BASH_PATH.cmd_model = list_new();
+    init_list_cmd_model(BASH_PATH.cmd_model, object_file);
+    BASH_PATH.cmd = list_new();
+    init_list_cmd(BASH_PATH.cmd, object_file);
+    BASH_PATH.prompt = list_new();
+    init_list_prompt(BASH_PATH.prompt, object_file);
+    BASH_PATH.handler_placing = malloc(sizeof(placing_t));
+    BASH_PATH.handler_placing->just_started = true;
+    BASH_PATH.handler_placing->index_cmd = 1;
+    BASH_PATH.handler_placing->index_life = 3;
+    BASH_PATH.handler_time = malloc(sizeof(timer_handler_t));
+    BASH_PATH.handler_time->time_float = 0.0;
+    BASH_PATH.handler_time->timer_int = 20;
+    BASH_PATH.font_phone = sfFont_createFromFile("assets/pixel.otf");
     return node_new(bash);
 }

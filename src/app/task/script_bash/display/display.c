@@ -56,16 +56,8 @@ static void display_life(renderer_t *renderer, app_t *app)
     sfRenderWindow_drawText(renderer->window, renderer->text, NULL);
 }
 
-static void display_phone(renderer_t *renderer, app_t *app)
-{
-    sfSprite_setTexture(renderer->sprite, STRUCT_BASH(app).phone, sfTrue);
-    sfSprite_setPosition(renderer->sprite, (sfVector2f) {690, 140});
-    sfRenderWindow_drawSprite(renderer->window, renderer->sprite, NULL);
-}
-
 void app_task_bash_display(renderer_t *renderer, app_t *app)
 {
-    display_phone(renderer, app);
     display_time(renderer, app);
     display_life(renderer, app);
     display_text(renderer, app, STRUCT_BASH(app).cmd_model->first);
