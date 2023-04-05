@@ -42,6 +42,7 @@ SRC = 		main.c \
 			src/app/events/handler.c \
 			src/app/events/window/close.c \
 			src/app/events/keyboard/move.c \
+			src/app/events/components/buttons.c \
 			\
 			src/app/display/handle.c \
 			src/app/display/map/map.c \
