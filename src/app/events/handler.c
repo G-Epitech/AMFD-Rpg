@@ -7,10 +7,12 @@
 
 #include <stdio.h>
 #include <SFML/Graphics.h>
+#include "types/renderer/types.h"
 #include "app/events/events.h"
 #include "app/app.h"
 
-static void event_analyse(sfRenderWindow *window, sfEvent event, app_t *app)
+static void event_analyse(sfRenderWindow *window, sfEvent event, app_t *app,
+renderer_t *renderer)
 {
     if (event.type == sfEvtClosed) {
         event_window_close(window);
@@ -21,11 +23,16 @@ static void event_analyse(sfRenderWindow *window, sfEvent event, app_t *app)
     if (event.type == sfEvtKeyReleased) {
         keyboard_release_move(event, app);
     }
+    if (event.type == sfEvtMouseButtonPressed) {
+        event_components_buttons(renderer, app, event);
+    }
 }
 
-void event_handle(sfRenderWindow *window, sfEvent event, app_t *app)
+void event_handler(sfRenderWindow *window, app_t *app, renderer_t *renderer)
 {
+    sfEvent event;
+
     while (sfRenderWindow_pollEvent(window, &event)) {
-        event_analyse(window, event, app);
+        event_analyse(window, event, app, renderer);
     }
 }

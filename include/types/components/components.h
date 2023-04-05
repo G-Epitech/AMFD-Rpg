@@ -16,7 +16,7 @@
 /**
  * @brief Load all components
 */
-components_t *components_load(void);
+components_t *components_load(renderer_t *renderer);
 
 /**
  * @brief Append a new button in a list
@@ -30,10 +30,12 @@ app_states_t app_state);
 
 /**
  * @brief Load all buttons with json configuration
+ * @param renderer Renderer structure
  * @param components Components list
  * @param buttons json array of all buttons
 */
-void buttons_load(components_t *components, cjson_array_t *buttons);
+void buttons_load(renderer_t *renderer, components_t *components,
+cjson_array_t *buttons);
 
 /**
  * @brief Append a new lever in a list

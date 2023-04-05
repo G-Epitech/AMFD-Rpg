@@ -34,17 +34,31 @@ typedef struct s_map {
     sfTexture *front;       //Texture of the front of the map
 } map_t;
 
+/**
+ * @biref Structure of a button ressource
+*/
 typedef struct s_button_r {
-    sfTexture *left;
-    sfTexture *right;
-    sfTexture *middle;
+    sfTexture *left;        //Left texture (first part)
+    sfTexture *right;       //Middle texture (second part)
+    sfTexture *middle;      //Right texture (last part)
 } button_r_t;
+
+/**
+ * @brief Structure of background
+*/
+typedef struct s_background {
+    sfTexture *texture;     //Texture of the background
+    float scale;            //Scale of the background
+    app_states_t app_state; //State when the background must be display
+    sfVector2f position;    //Position of the background
+} background_t;
 
 /**
  * @biref Structure with components ressources
 */
 typedef struct s_components_r {
-    button_r_t *button;        //Button textures
+    button_r_t *button;         //Button textures
+    list_t *backgrounds;        //Backgrounds list
 } components_r_t;
 
 /**

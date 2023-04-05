@@ -13,5 +13,6 @@
 
 void display_components(renderer_t *renderer, app_t *app)
 {
+    display_components_backgrounds(renderer, app);
     display_components_buttons(renderer, app);
 }

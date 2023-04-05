@@ -9,9 +9,40 @@
 #include <stdlib.h>
 #include "types/components/types.h"
 #include "types/components/components.h"
+#include "types/renderer/types.h"
 #include "types/list/types.h"
 #include "types/list/list.h"
 #include "cjson/include/cjson.h"
+
+static float setup_text(button_t *button, renderer_t *renderer)
+{
+    components_r_t *ressources = renderer->ressources->components;
+    sfFloatRect rect = {0, 0, 0, 0};
+    float total = 0;
+
+    sfText_setString(renderer->text, button->title);
+    sfText_setFont(renderer->text, renderer->font);
+    sfText_setColor(renderer->text, button->text_color);
+    sfText_setCharacterSize(renderer->text, 25 * button->scale);
+    rect = sfText_getGlobalBounds(renderer->text);
+    sfText_setPosition(renderer->text, (sfVector2f) {button->position.x +
+    (25 * button->scale), (button->position.y + (button->scale * 152 / 2))
+    - rect.height / 2});
+    total = ((50 * button->scale) + rect.width) - (40 * button->scale);
+    return total / sfTexture_getSize(ressources->button->middle).x;
+}
+
+static sfVector2f get_rect_scale(button_t *button, renderer_t *renderer)
+{
+    float text_scale = setup_text(button, renderer);
+    components_r_t *ressources = renderer->ressources->components;
+    sfVector2u middle = sfTexture_getSize(ressources->button->middle);
+    sfVector2f rect_scale = {0, 0};
+
+    rect_scale.x = text_scale * middle.x + 15 * button->scale;
+    rect_scale.y = button->scale * 152;
+    return rect_scale;
+}
 
 static sfVector2f cjson_vector(cjson_t *config)
 {
@@ -39,7 +70,8 @@ static void button_cjson_color(cjson_t *config, sfColor *color, char *key)
     color->a = cjson_get_prop_int_unsafe(color_prop, "a");
 }
 
-void buttons_load(components_t *components, cjson_array_t *buttons)
+void buttons_load(renderer_t *renderer, components_t *components,
+cjson_array_t *buttons)
 {
     cjson_t *button = buttons->first;
     sfVector2f position = {0, 0};
@@ -57,6 +89,7 @@ void buttons_load(components_t *components, cjson_array_t *buttons)
         cjson_get_prop_string(button, "title", &data->title);
         cjson_get_prop_string(button, "description", &data->description);
         cjson_get_prop_float(button, "scale", &data->scale);
+        data->rect_scale = get_rect_scale(data, renderer);
         button = button->next;
     }
 }

@@ -11,10 +11,12 @@
     #include <SFML/Graphics.h>
     #include "app/types.h"
     #include "cjson/include/cjson.h"
+    #include "app/utils/utils.h"
 
     #define COMPONENTS_CONFIG "configs/components.json"
 
 typedef struct s_list list_t;
+typedef struct s_renderer renderer_t;
 
 /**
  * @brief Enum of buttons states
@@ -42,10 +44,12 @@ typedef struct s_button {
     char *title;
     char *description;
     float scale;
+    int event;
     sfColor color;
     sfColor text_color;
     sfTexture *texture;
     sfVector2f position;
+    sfVector2f rect_scale;
     app_states_t app_state;
     buttons_states_t state;
 } button_t;
@@ -68,5 +72,11 @@ typedef struct s_components {
     list_t *buttons;
     list_t *levers;
 } components_t;
+
+const static struct {
+    int (*function) (renderer_t *renderer, app_t *app);
+} event_map[] = {
+    {test}
+};
 
 #endif /* !COMPONENTS_TYPES_H_ */
