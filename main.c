@@ -21,8 +21,10 @@ int main(void)
 {
     renderer_t *renderer = renderer_init();
     sfEvent event;
-    app_t *app = app_init();
+    app_t *app = NULL;
 
+    load_renderer(renderer);
+    app = app_init();
     if (!renderer)
         return 84;
     if (!app) {
