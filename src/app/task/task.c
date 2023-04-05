@@ -8,10 +8,14 @@
 #include <SFML/Graphics.h>
 #include "types/renderer/types.h"
 #include "app/tasks/bash/script_bash.h"
+#include "app/tasks/types.h"
 
-void task(renderer_t *renderer, app_t *app)
+void task(renderer_t *renderer, app_t *app, int states)
 {
     if (app->state == ST_TASK_BASH) {
-        app_task_bash_display(renderer, app);
+        if (states == display)
+            app_task_bash_display(renderer, app);
+        if (states == core)
+            app_task_bash_core(renderer, app);
     }
 }

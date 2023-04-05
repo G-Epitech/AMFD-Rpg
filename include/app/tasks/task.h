@@ -11,6 +11,6 @@
     #include "app/types.h"
     #include "types/renderer/types.h"
 
-void task(renderer_t *renderer, app_t *app);
+void task(renderer_t *renderer, app_t *app, int states);
 
 #endif /* !TASK_H_ */

@@ -13,9 +13,8 @@
 #include "types/list/types.h"
 #include "my/include/my.h"
 
-static void display_text(renderer_t *renderer, app_t *app)
+static void display_text(renderer_t *renderer, app_t *app, node_t *temp)
 {
-    node_t *temp = STRUCT_BASH(app).cmd_model->first;
 
     for (int index = 0; index < STRUCT_BASH(app).handler_placing->index_cmd; index++) {
         sfText_setString(renderer->text, temp->data.node_bash->cmd);
@@ -43,5 +42,6 @@ void app_task_bash_display(renderer_t *renderer, app_t *app)
     }
 
     display_phone(renderer, app);
-    display_text(renderer, app);
+    display_text(renderer, app, STRUCT_BASH(app).cmd_model->first);
+    display_text(renderer, app, STRUCT_BASH(app).prompt->first);
 }

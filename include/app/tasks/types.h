@@ -12,6 +12,9 @@
     #include "types/renderer/types.h"
     #include "app/tasks/bash/types.h"
 
+    #define core 1
+    #define display 2
+
 typedef union s_task_content {
     task_bash_t script;
 } task_content_t;

@@ -19,6 +19,8 @@ list_t *task_create(void);
 
 void app_task_bash_display(renderer_t *renderer, app_t *app);
 
+void app_task_bash_core(renderer_t *renderer, app_t *app);
+
 void init_task(app_t *app);
 
 #endif /* !SCRIPT_BASH_H_ */
