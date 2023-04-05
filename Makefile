@@ -29,6 +29,9 @@ SRC = 		main.c \
 			src/types/ressources/free.c \
 			src/types/ressources/maps/load.c \
 			src/types/ressources/maps/free.c \
+			src/types/ressources/components/init.c \
+			src/types/ressources/components/load.c \
+			src/types/ressources/components/button/load.c \
 			\
 			src/types/view/init.c \
 			\
@@ -43,7 +46,9 @@ SRC = 		main.c \
 			src/app/display/handle.c \
 			src/app/display/map/map.c \
 			src/app/display/map/back.c \
-			src/app/display/map/front.c
+			src/app/display/map/front.c \
+			src/app/display/components/components.c \
+			src/app/display/components/buttons.c \
 
 NAME = my_rpg
 
@@ -107,6 +112,9 @@ fclean: 	clean
 			$(COLOUR_END)\n"
 
 re: 		fclean all
+
+exec:		$(NAME)
+			./$(NAME)
 
 tests_run:
 		echo "pass"

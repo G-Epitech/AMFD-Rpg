@@ -36,7 +36,7 @@ void levers_load(components_t *components, cjson_array_t *levers)
     while (lever) {
         position = cjson_vector(lever);
         state = cjson_get_prop_int_unsafe(lever, "app_state");
-        data = levers_append(components->buttons, position, state);
+        data = levers_append(components->levers, position, state);
         if (!data)
             return;
         cjson_get_prop_float(lever, "scale", &data->scale);

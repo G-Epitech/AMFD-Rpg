@@ -45,7 +45,6 @@ int my_put_nbr(int nb)
         display_specific_num();
         return 1;
     }
-
     if (nb < 0) {
         nb *= -1;
         my_putchar('-');
