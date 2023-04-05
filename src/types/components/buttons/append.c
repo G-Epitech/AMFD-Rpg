@@ -18,6 +18,7 @@ app_states_t app_state)
 
     data.button = button;
     button->color = sfBlack;
+    button->text_color = sfBlack;
     button->position = position;
     button->scale = 1.0;
     button->state = ST_BTN_INACTIVE;
