@@ -34,7 +34,7 @@ static void append_world_data(npc_data_t *world_data, list_t *worlds_data)
 
 static bool load_world_data(cjson_t *config, list_t *worlds_data)
 {
-    npc_data_t world_data = {0, 0, CO_FACE, (sfVector2f) {0, 0}, NULL};
+    npc_data_t world_data = {0, 0, SO_FACE, (sfVector2f) {0, 0}, NULL};
     cjson_t *position = NULL;
     cjson_array_t *dialogs = NULL;
 

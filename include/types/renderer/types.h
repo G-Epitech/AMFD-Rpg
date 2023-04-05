@@ -29,7 +29,7 @@ typedef struct s_renderer {
     components_t *components;
     ressources_t *ressources;
     sfRenderWindow *window;
-    renderer_objects_t objects;
+    renderer_objects_t *objects;
 } renderer_t;
 
 #endif /* !RENDERER_TYPES_H_ */

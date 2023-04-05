@@ -63,7 +63,7 @@ FTEST_REPO = https://github.com/Atomot/ftest/
 
 FTEST_V = ftest-0.1.0-1.x86_64.rpm
 
-CFLAGS += -Wall -Wextra -Wno-unused-command-line-argument
+CFLAGS += -Wall -Wextra -Wno-unused-command-line-argument -g
 
 INC = -I./include -I./lib
 

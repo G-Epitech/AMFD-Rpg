@@ -51,4 +51,12 @@ void skins_load(list_t *skins);
 */
 void skins_free(list_t *skins);
 
+/**
+ * @brief Get expected skin
+ * @param skins Skins ressources
+ * @param skin_id ID of skin to get
+ * @return Expected skin or NULL if not found
+ */
+const skin_t *ressources_get_skin(list_t *skins, int skin_id);
+
 #endif /* !RESSOURCES_H_ */

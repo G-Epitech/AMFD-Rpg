@@ -5,21 +5,24 @@
 ** renderer
 */
 
+#include <stdlib.h>
 #include <SFML/Graphics.h>
-#include "types/renderer/types.h"
 #include "types/view/view.h"
+#include "types/renderer/types.h"
 
-renderer_objects_t renderer_objects_init(sfRenderWindow *window)
+renderer_objects_t *renderer_objects_init(sfRenderWindow *window)
 {
-    sfSprite *sprite = sfSprite_create();
-    sfText *text = sfText_create();
-    sfCircleShape *circle = sfCircleShape_create();
-    sfRectangleShape *rectangle = sfRectangleShape_create();
-    sfView *view = view_init();
-    renderer_objects_t objects = {  window, view, sprite, text,
-                                    circle, rectangle  };
+    renderer_objects_t *objects = malloc(sizeof(renderer_objects_t));
 
-    return (objects);
+    if (!objects)
+        return NULL;
+    objects->sprite = sfSprite_create();
+    objects->text = sfText_create();
+    objects->circle = sfCircleShape_create();
+    objects->rectangle = sfRectangleShape_create();
+    objects->view = view_init();
+    objects->window = window;
+    return objects;
 }
 
 void renderer_objects_free(renderer_objects_t *objects)
@@ -31,4 +34,5 @@ void renderer_objects_free(renderer_objects_t *objects)
         sfRectangleShape_destroy(objects->rectangle);
         sfView_destroy(objects->view);
     }
+    free(objects);
 }

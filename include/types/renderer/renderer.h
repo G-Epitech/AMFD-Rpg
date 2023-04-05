@@ -26,7 +26,7 @@ void renderer_destroy(renderer_t *renderer);
  * @param window Current window reference to insert in objects
  * @return Created set of objects
  */
-renderer_objects_t renderer_objects_init(sfRenderWindow *window);
+renderer_objects_t *renderer_objects_init(sfRenderWindow *window);
 
 /**
  * @brief Destroy given renderer objects

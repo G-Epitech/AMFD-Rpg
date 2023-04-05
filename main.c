@@ -29,7 +29,7 @@ int main(void)
         renderer_destroy(renderer);
         return 84;
     }
-    while (sfRenderWindow_isOpen(renderer->objects.window)) {
+    while (sfRenderWindow_isOpen(renderer->objects->window)) {
         event_handle(renderer->window, event, app);
         sfRenderWindow_clear(renderer->window, sfBlack);
         display_handle(renderer, app);

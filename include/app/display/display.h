@@ -10,6 +10,17 @@
 
     #include <SFML/Graphics.h>
     #include "types/renderer/types.h"
+    #include "types/character/types.h"
+
+/**
+ * @brief Display a character at specified position with given skin
+ * @param renderer Renderer object
+ * @param position Position to set to character
+ * @param skin_id ID of skin to set to given character
+ * @param orientation Orientation of character
+ */
+void display_character(renderer_t *renderer, sfVector2f position,
+int skin_id, skin_orientation_t orientation);
 
 /**
  * @brief Display a map

@@ -13,7 +13,7 @@
 void display_handle(renderer_t *renderer, app_t *app)
 {
     ressources_t *ressources = renderer->ressources;
-    renderer_objects_t *objects = &renderer->objects;
+    renderer_objects_t *objects = renderer->objects;
 
     display_map_back(ressources->maps, objects->window, objects->sprite,
     app->world);

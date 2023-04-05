@@ -12,7 +12,7 @@
 
 void renderer_destroy(renderer_t *renderer)
 {
-    renderer_objects_destroy(&renderer->objects);
+    renderer_objects_destroy(renderer->objects);
     ressources_free(renderer->ressources);
     free(renderer);
 }

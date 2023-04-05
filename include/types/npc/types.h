@@ -9,6 +9,7 @@
     #define NPC_TYPES_H_
 
     #include <SFML/Graphics.h>
+
 typedef struct s_list list_t;
 
 typedef struct s_npc_dialog {

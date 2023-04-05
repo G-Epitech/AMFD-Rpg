@@ -24,7 +24,7 @@ player_t *players_add(list_t *list, char *name)
         return NULL;
     data.player->position = PLAYER_DEFAULT_SPAWN;
     data.player->skin_id = 0;
-    data.player->orientation = CO_LEFT;
+    data.player->orientation = SO_LEFT;
     data.player->name = name;
     data.player->xp = 1;
     list_append(list, node_new(data));
