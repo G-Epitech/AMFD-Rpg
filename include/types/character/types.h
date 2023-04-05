@@ -18,11 +18,17 @@ typedef enum e_skin_orientation {
     SO_LEN
 } skin_orientation_t;
 
-static const sfVector2i skin_orientations[SO_LEN] = {
-    [SO_RIGHT] = {0, 0},
-    [SO_BACK] = {1, 0},
-    [SO_LEFT] = {2, 0},
-    [SO_FACE] = {3, 0}
+typedef struct s_skin_config {
+    unsigned int x;
+    unsigned int y;
+    unsigned int weight;
+} skin_config_t;
+
+static const skin_config_t skin_configs[SO_LEN] = {
+    [SO_RIGHT] = {0, 0, 1},
+    [SO_BACK] = {1, 0, 1},
+    [SO_LEFT] = {2, 0, 1},
+    [SO_FACE] = {3, 0, 1}
 };
 
 #endif /* !CHARACTER_TYPES_H_ */

@@ -40,7 +40,9 @@ static bool load_world_data(cjson_t *config, list_t *worlds_data)
 
     if (!cjson_get_prop_int(config, "world", &world_data.world))
         return false;
-    if (!cjson_get_prop_int(config, "skin", &world_data.skin))
+    if (!cjson_get_prop_int(config, "skin_id", &world_data.skin_id))
+        return false;
+    if (!cjson_get_prop_int(config, "orientation", &world_data.orientation))
         return false;
     position = cjson_get_prop(config, "position");
     if (!position)

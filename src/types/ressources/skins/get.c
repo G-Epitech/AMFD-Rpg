@@ -18,6 +18,7 @@ const skin_t *ressources_get_skin(list_t *skins, int skin_id)
     while (node && !skin) {
         if (node->data.skin.id == skin_id)
             skin = &node->data.skin;
+        node = node->next;
     }
     return skin;
 }

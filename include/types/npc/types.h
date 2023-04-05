@@ -19,7 +19,7 @@ typedef struct s_npc_dialog {
 
 typedef struct s_npc_data {
     int world;
-    int skin;
+    int skin_id;
     int orientation;
     sfVector2f position;
     list_t *dialogs;

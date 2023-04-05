@@ -41,6 +41,7 @@ SRC = 		main.c \
 			src/types/ressources/maps/free.c \
 			src/types/ressources/skins/load.c \
 			src/types/ressources/skins/free.c \
+			src/types/ressources/skins/get.c \
 			\
 			src/types/view/init.c \
 			\
@@ -55,7 +56,9 @@ SRC = 		main.c \
 			src/app/display/handle.c \
 			src/app/display/map/map.c \
 			src/app/display/map/back.c \
-			src/app/display/map/front.c
+			src/app/display/map/front.c \
+			src/app/display/npcs/npcs.c \
+			src/app/display/characters/character.c \
 
 NAME = my_rpg
 

@@ -17,7 +17,7 @@ void display_handle(renderer_t *renderer, app_t *app)
 
     display_map_back(ressources->maps, objects->window, objects->sprite,
     app->world);
-
+    display_npcs_of_world(renderer, app->npcs, app->world);
     display_map_front(ressources->maps, objects->window, objects->sprite,
     app->world);
     sfView_setCenter(objects->view, app->player->position);

@@ -13,6 +13,15 @@
     #include "types/character/types.h"
 
 /**
+ * @brief Display npcs of current world
+ * @param renderer Renderer object
+ * @param npcs List of npcs to display
+ * @param world Current world ID
+ */
+void display_npcs_of_world(renderer_t *renderer, list_t *npcs,
+worlds_t world);
+
+/**
  * @brief Display a character at specified position with given skin
  * @param renderer Renderer object
  * @param position Position to set to character
@@ -56,4 +65,5 @@ worlds_t world);
  * @param app Application informations
 */
 void display_handle(renderer_t *renderer, app_t *app);
+
 #endif /* !DISPLAY_H_ */

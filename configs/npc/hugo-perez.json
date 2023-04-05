@@ -1,0 +1,15 @@
+{
+    "name": "Hugo Perez",
+    "id": 2,
+    "worlds_data": [
+        {
+            "world": 0,
+            "skin_id": 3,
+            "orientation": 3,
+            "position": { "x": 2900, "y": 3035 },
+            "dialogs": [
+                { "label": "hello", "content": "Hello how are you ?" }
+            ]
+        }
+    ]
+}
