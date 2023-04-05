@@ -40,29 +40,30 @@ static void realloc_char(char **cmd, char chr)
 
 static void char_spec(sfEvent event, node_t *current_cmd)
 {
-    if (event.key.code == sfKeyHyphen && my_strlen(STR_CMD) <= LEN_MAX_CMD)
-        realloc_char(&STR_CMD, '|');
-    if (event.key.code == sfKeySemicolon && my_strlen(STR_CMD) <= LEN_MAX_CMD)
-        realloc_char(&STR_CMD, ';');
-    if (event.key.code == sfKeyPeriod && my_strlen(STR_CMD) <= LEN_MAX_CMD)
-        realloc_char(&STR_CMD, '.');
-    if (event.key.code == sfKeySlash && my_strlen(STR_CMD) <= LEN_MAX_CMD)
-        realloc_char(&STR_CMD, '/');
+    if (event.key.code == sfKeyHyphen && my_strlen(STR_CMD(app)) <= LEN_MAX_CMD)
+        realloc_char(&STR_CMD(app), '|');
+    if (event.key.code == sfKeySemicolon &&
+    my_strlen(STR_CMD(app)) <= LEN_MAX_CMD)
+        realloc_char(&STR_CMD(app), ';');
+    if (event.key.code == sfKeyPeriod && my_strlen(STR_CMD(app)) <= LEN_MAX_CMD)
+        realloc_char(&STR_CMD(app), '.');
+    if (event.key.code == sfKeySlash && my_strlen(STR_CMD(app)) <= LEN_MAX_CMD)
+        realloc_char(&STR_CMD(app), '/');
 }
 
 void cmd_write(sfEvent event, app_t *app)
 {
-    node_t *current_cmd = find_node_cmd(STRUCT_BASH(app).cmd,
-    STRUCT_BASH(app).handler_placing->index_cmd);
+    node_t *current_cmd = find_node_cmd(STRUCT_BASH(app).cmd, INDEX_CMD(app));
 
     if (sfKeyA <= event.key.code && event.key.code <= sfKeyZ
-    && my_strlen(STR_CMD) <= LEN_MAX_CMD)
-        realloc_char(&STR_CMD, event.key.code + 'a');
-    if (event.key.code == sfKeySpace && my_strlen(STR_CMD) <= LEN_MAX_CMD)
-        realloc_char(&STR_CMD, ' ');
-    if (event.key.code == sfKeySubtract && my_strlen(STR_CMD) <= LEN_MAX_CMD)
-        realloc_char(&STR_CMD, '-');
+    && my_strlen(STR_CMD(app)) <= LEN_MAX_CMD)
+        realloc_char(&STR_CMD(app), event.key.code + 'a');
+    if (event.key.code == sfKeySpace && my_strlen(STR_CMD(app)) <= LEN_MAX_CMD)
+        realloc_char(&STR_CMD(app), ' ');
+    if (event.key.code == sfKeySubtract &&
+    my_strlen(STR_CMD(app)) <= LEN_MAX_CMD)
+        realloc_char(&STR_CMD(app), '-');
     char_spec(event, current_cmd);
     if (event.key.code == sfKeyBackspace)
-        (STR_CMD)[my_strlen((STR_CMD)) - 1] = '\0';
+        (STR_CMD(app))[my_strlen((STR_CMD(app))) - 1] = '\0';
 }

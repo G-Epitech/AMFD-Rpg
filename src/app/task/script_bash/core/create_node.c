@@ -90,19 +90,19 @@ node_t *task_create_nodes_bash(void)
     cjson_t *object_file = cjson_parse_file("./configs/tasks/pos_text.json");
 
     bash.task = task;
-    BASH_PATH.cmd_model = list_new();
-    init_list_cmd_model(BASH_PATH.cmd_model, object_file);
-    BASH_PATH.cmd = list_new();
-    init_list_cmd(BASH_PATH.cmd, object_file);
-    BASH_PATH.prompt = list_new();
-    init_list_prompt(BASH_PATH.prompt, object_file);
-    BASH_PATH.handler_placing = malloc(sizeof(placing_t));
-    BASH_PATH.handler_placing->just_started = true;
-    BASH_PATH.handler_placing->index_cmd = 1;
-    BASH_PATH.handler_placing->index_life = 3;
-    BASH_PATH.handler_time = malloc(sizeof(timer_handler_t));
-    BASH_PATH.handler_time->time_float = 0.0;
-    BASH_PATH.handler_time->timer_int = 20;
-    BASH_PATH.font_phone = sfFont_createFromFile("assets/pixel.otf");
+    BASH_PATH(bash).cmd_model = list_new();
+    init_list_cmd_model(BASH_PATH(bash).cmd_model, object_file);
+    BASH_PATH(bash).cmd = list_new();
+    init_list_cmd(BASH_PATH(bash).cmd, object_file);
+    BASH_PATH(bash).prompt = list_new();
+    init_list_prompt(BASH_PATH(bash).prompt, object_file);
+    BASH_PATH(bash).handler_placing = malloc(sizeof(placing_t));
+    BASH_PATH(bash).handler_placing->just_started = true;
+    BASH_PATH(bash).handler_placing->index_cmd = 1;
+    BASH_PATH(bash).handler_placing->index_life = 3;
+    BASH_PATH(bash).handler_time = malloc(sizeof(timer_handler_t));
+    BASH_PATH(bash).handler_time->time_float = 0.0;
+    BASH_PATH(bash).handler_time->timer_int = 20;
+    BASH_PATH(bash).font_phone = sfFont_createFromFile("assets/pixel.otf");
     return node_new(bash);
 }

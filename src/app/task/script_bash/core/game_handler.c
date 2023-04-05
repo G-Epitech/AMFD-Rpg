@@ -15,8 +15,8 @@
 
 static void time_handler(app_t *app)
 {
-    TIME = sfClock_getElapsedTime(CLOCK);
-    TIME_FLOAT = TIME.microseconds / (1000000.0);
+    TIME(app) = sfClock_getElapsedTime(CLOCK(app));
+    TIME_FLOAT(app) = TIME(app).microseconds / (1000000.0);
 }
 
 void app_task_bash_core(app_t *app)

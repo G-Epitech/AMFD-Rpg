@@ -5,7 +5,7 @@
 ## @Made by Math alias T1nt1n
 ##
 
-SRC = 		main.c \
+SRC = 		src/main.c \
 			\
 			src/types/renderer/init.c \
 			src/types/renderer/load.c	\

@@ -14,6 +14,7 @@ int len_nb(int nb)
 {
     int l = 0;
     int nb_donne = nb;
+
     while ((nb_donne != 0)) {
         l = l + 1;
         nb_donne = nb_donne / 10;

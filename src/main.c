@@ -31,7 +31,6 @@ int main(void)
         renderer_destroy(renderer);
         return 84;
     }
-    app->state = ST_MAIN_MENU;
     while (sfRenderWindow_isOpen(renderer->window)) {
         event_handler(renderer->window, app, renderer);
         core_handler(renderer, app);

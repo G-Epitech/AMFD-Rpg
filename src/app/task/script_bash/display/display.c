@@ -23,14 +23,14 @@ static void display_time(renderer_t *renderer, app_t *app)
     sfText_setString(renderer->text, "timer:");
     sfRenderWindow_drawText(renderer->window, renderer->text, NULL);
     sfText_setPosition(renderer->text, (sfVector2f) {880, 220});
-    char_second = nbr_to_str(TIME_INT - ((int) TIME_FLOAT));
+    char_second = nbr_to_str(TIME_INT(app) - ((int) TIME_FLOAT(app)));
     sfText_setString(renderer->text, char_second);
     sfRenderWindow_drawText(renderer->window, renderer->text, NULL);
 }
 
 static void display_text(renderer_t *renderer, app_t *app, node_t *temp)
 {
-    for (int index = 0; index < INDEX_CMD; index++) {
+    for (int index = 0; index < INDEX_CMD(app); index++) {
         renderer->font = STRUCT_BASH(app).font_phone;
         sfText_setFont(renderer->text, renderer->font);
         sfText_setColor(renderer->text, sfBlack);

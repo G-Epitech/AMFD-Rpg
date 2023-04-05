@@ -29,7 +29,7 @@ app_t *app, int *index_life)
 {
     my_putstr("-1 vie\n");
     (*index_life)--;
-    STR_CMD[0] = '\0';
+    STR_CMD(app)[0] = '\0';
     if ((*index_life) == 0) {
         my_putstr("You lose\n");
         app->state = ST_INGAME;
@@ -47,8 +47,8 @@ void good_or_bad_result(sfEvent event, app_t *app)
         STRUCT_BASH(app).handler_placing->index_cmd);
         current_cmd_model = find_node_cmd(STRUCT_BASH(app).cmd_model,
         STRUCT_BASH(app).handler_placing->index_cmd);
-        if (my_strcmp(STR_CMD_MODEL, STR_CMD) == 0) {
-            good_result(&INDEX_CMD, app);
+        if (my_strcmp(STR_CMD_MODEL(app), STR_CMD(app)) == 0) {
+            good_result(&INDEX_CMD(app), app);
         } else {
             bad_result(current_cmd, app, &INDEX_LIFE(app));
         }
