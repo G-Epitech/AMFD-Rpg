@@ -18,7 +18,10 @@ renderer_t *renderer)
         event_window_close(window);
     }
     if (event.type == sfEvtKeyPressed) {
-        keyboard_move(event, app);
+        keyboard_press_move(event, app);
+    }
+    if (event.type == sfEvtKeyReleased) {
+        keyboard_release_move(event, app);
     }
     if (event.type == sfEvtMouseButtonPressed) {
         event_components_buttons(renderer, app, event);

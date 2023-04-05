@@ -16,6 +16,7 @@
 #include "app/app.h"
 #include "types/ressources/ressources.h"
 #include "app/display/display.h"
+#include "app/core/core.h"
 
 int main(void)
 {
@@ -32,6 +33,7 @@ int main(void)
     }
     while (sfRenderWindow_isOpen(renderer->window)) {
         event_handler(renderer->window, app, renderer);
+        core_handler(renderer, app);
         sfRenderWindow_clear(renderer->window, sfBlack);
         display_handle(renderer, app);
     }
