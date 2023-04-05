@@ -15,20 +15,55 @@
 
 node_t *task_create_nodes_bash(void);
 
+/**
+ * @brief Create list of struct for tasks
+*/
 list_t *task_create(void);
 
+/**
+ * @brief Display handler of task bash
+ * @param renderer Main renderer function
+ * @param app Application structure
+*/
 void app_task_bash_display(renderer_t *renderer, app_t *app);
 
+/**
+ * @brief Core handler of task bash
+ * @param app Application structure
+*/
 void app_task_bash_core(app_t *app);
 
+/**
+ * @brief Init task bash when first entrance
+ * @param app Application structure
+*/
 void init_task(app_t *app);
 
+/**
+ * @brief Add a char to cmd who was writing
+ * @param event The event
+ * @param app Application structure
+*/
 void cmd_write(sfEvent event, app_t *app);
 
+/**
+ * @brief Handle if after enter its a win or loose
+ * @param event The event
+ * @param app Application structure
+*/
 void good_or_bad_result(sfEvent event, app_t *app);
 
+/**
+ * @brief Find the node relative to index_cmd
+ * @param list The list of command
+ * @param index_cmd Index of current command
+*/
 node_t *find_node_cmd(list_t *list, int index_cmd);
 
+/**
+ * @brief Reset setup of bash struct when its finish
+ * @param app Application structure
+*/
 void reset_setup(app_t *app);
 
 #endif /* !SCRIPT_BASH_H_ */

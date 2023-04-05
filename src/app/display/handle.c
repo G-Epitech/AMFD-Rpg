@@ -13,14 +13,14 @@
 
 void display_handle(renderer_t *renderer, app_t *app)
 {
-    ressources_t *ressoruces = renderer->ressources;
+    ressources_t *ressources = renderer->ressources;
 
     sfRenderWindow_setView(renderer->window, renderer->view);
-    display_map_back(ressoruces->maps, renderer->window, renderer->sprite,
+    display_map_back(ressources->maps, renderer->window, renderer->sprite,
     app->world);
     sfRectangleShape_setPosition(renderer->rectangle, app->player->position);
     sfRectangleShape_setSize(renderer->rectangle, (sfVector2f) {6, 6});
-    display_map_front(ressoruces->maps, renderer->window, renderer->sprite,
+    display_map_front(ressources->maps, renderer->window, renderer->sprite,
     app->world);
     sfView_setCenter(renderer->view, app->player->position);
     sfRenderWindow_setView(renderer->window, renderer->default_view);
