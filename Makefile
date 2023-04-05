@@ -33,6 +33,7 @@ SRC = 		main.c \
 			src/types/ressources/components/init.c \
 			src/types/ressources/components/load.c \
 			src/types/ressources/components/button/load.c \
+			src/types/ressources/components/backgrounds/load.c \
 			\
 			src/types/view/init.c \
 			\
@@ -51,6 +52,7 @@ SRC = 		main.c \
 			src/app/display/map/front.c \
 			src/app/display/components/components.c \
 			src/app/display/components/buttons.c \
+			src/app/display/components/backgrounds.c \
 			\
 			src/app/utils/test.c \
 			\
