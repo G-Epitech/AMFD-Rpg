@@ -13,13 +13,21 @@
 #include "types/list/types.h"
 #include "my/include/my.h"
 
+static void time_handler(app_t *app)
+{
+    TIME = sfClock_getElapsedTime(CLOCK);
+    TIME_FLOAT = TIME.microseconds / (1000000.0);
+}
+
 void app_task_bash_core(app_t *app)
 {
     if (STRUCT_BASH(app).handler_placing->just_started) {
         init_task(app);
     }
+    time_handler(app);
     if (STRUCT_BASH(app).handler_time->time_float > 20.0) {
         app->state = ST_INGAME;
         my_putstr("You lose\n");
+        reset_setup(app);
     }
 }

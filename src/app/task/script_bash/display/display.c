@@ -14,6 +14,24 @@
 #include "types/list/types.h"
 #include "my/include/my.h"
 
+static void display_timer(renderer_t *renderer, app_t *app)
+{
+    sfText_setPosition(renderer->text, (sfVector2f) {770, 220});
+    sfText_setColor(renderer->text, sfWhite);
+    sfText_setString(renderer->text, "timer:");
+    sfRenderWindow_drawText(renderer->window, renderer->text, NULL);
+}
+
+static void display_time(renderer_t *renderer, app_t *app)
+{
+    char *char_second = NULL;
+
+    sfText_setPosition(renderer->text, (sfVector2f) {850, 220});
+    char_second = nbr_to_str(TIME_INT - ((int) TIME_FLOAT));
+    sfText_setString(renderer->text, char_second);
+    sfRenderWindow_drawText(renderer->window, renderer->text, NULL);
+}
+
 static void display_text(renderer_t *renderer, app_t *app, node_t *temp)
 {
 
@@ -39,6 +57,8 @@ static void display_phone(renderer_t *renderer, app_t *app)
 void app_task_bash_display(renderer_t *renderer, app_t *app)
 {
     display_phone(renderer, app);
+    display_timer(renderer, app);
+    display_time(renderer, app);
     display_text(renderer, app, STRUCT_BASH(app).cmd_model->first);
     display_text(renderer, app, STRUCT_BASH(app).prompt->first);
     display_text(renderer, app, STRUCT_BASH(app).cmd->first);
