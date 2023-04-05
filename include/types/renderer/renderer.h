@@ -20,4 +20,10 @@ renderer_t *renderer_init(void);
 */
 void renderer_destroy(renderer_t *renderer);
 
+/**
+ * @brief Loads the components ressources, view in renderer
+ * while also displaying what's loading on the screen
+*/
+void load_renderer(renderer_t *renderer);
+
 #endif /* !RENDERER_H_ */

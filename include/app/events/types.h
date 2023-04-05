@@ -10,10 +10,10 @@
 
     #include <SFML/Graphics.h>
 
-    #define POSITION_UP(position) ((sfVector2f) {position.x, position.y - 6})
-    #define POSITION_DOWN(position) ((sfVector2f) {position.x, position.y + 6})
-    #define POSITION_LEFT(position) ((sfVector2f) {position.x - 6, position.y})
+    #define POSITION_UP(position) ((sfVector2f) {position.x, position.y - 1})
+    #define POSITION_DOWN(position) ((sfVector2f) {position.x, position.y + 1})
+    #define POSITION_LEFT(position) ((sfVector2f) {position.x - 1, position.y})
     #define POSITION_RIGHT(position) ((sfVector2f)\
-    {position.x + 6, position.y})
+    {position.x + 1, position.y})
 
 #endif /* !EVENTS_TYPES_H_ */

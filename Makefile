@@ -8,6 +8,7 @@
 SRC = 		main.c \
 			\
 			src/types/renderer/init.c \
+			src/types/renderer/load.c	\
 			src/types/renderer/destroy.c \
 			\
 			src/types/list/append.c \
@@ -32,6 +33,7 @@ SRC = 		main.c \
 			src/types/ressources/components/init.c \
 			src/types/ressources/components/load.c \
 			src/types/ressources/components/button/load.c \
+			src/types/ressources/components/backgrounds/load.c \
 			\
 			src/types/view/init.c \
 			\
@@ -39,16 +41,26 @@ SRC = 		main.c \
 			\
 			src/app/window/init.c \
 			\
-			src/app/events/handle.c \
+			src/app/events/handler.c \
 			src/app/events/window/close.c \
 			src/app/events/keyboard/move.c \
+			src/app/events/components/buttons.c \
 			\
 			src/app/display/handle.c \
 			src/app/display/map/map.c \
 			src/app/display/map/back.c \
-			src/app/display/map/front.c \
-			src/app/display/components/components.c \
+			src/app/display/map/front.c	\
 			src/app/display/components/buttons.c \
+      		src/app/display/components/components.c \
+			src/app/display/components/backgrounds.c \
+			\
+			src/app/core/handler.c	\
+			src/app/core/movement.c	\
+			\
+			src/app/utils/test.c \
+			\
+			src/app/loading/loading_company_screen.c \
+			src/app/loading/loading_screen_text.c
 
 NAME = my_rpg
 
@@ -81,7 +93,6 @@ COLOUR_GREY=\033[0;30m
 
 COLOUR_END=\033[0m
 
-.PHONY: all clean fclean re
 
 $(NAME):	$(OBJ)
 			@printf "$(COLOUR_RED)🚚 Lib 'My' compliation...$(COLOUR_END)\n"
@@ -100,18 +111,21 @@ $(NAME):	$(OBJ)
 all: 		$(NAME)
 
 clean:
+			@rm -f $(NAME)
+			@rm -f $(OBJ)
 			@make -C$(PATH_MY) clean -s
 			@make -C$(PATH_CJSON) clean -s
 
 fclean: 	clean
-			@rm -f $(NAME)
-			@rm -f $(OBJ)
 			@make -C$(PATH_MY) fclean -s
 			@make -C$(PATH_CJSON) fclean -s
 			@printf "$(COLOUR_ORANGE)🧽 Hackers-Quest was successfully clean\
 			$(COLOUR_END)\n"
 
 re: 		fclean all
+
+norm:	fclean
+		coding-style . .
 
 exec:		$(NAME)
 			./$(NAME)
@@ -127,3 +141,5 @@ ftest:
 
 custom:
 		echo "pass"
+
+.PHONY = all clean fclean re

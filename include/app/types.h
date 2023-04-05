@@ -8,6 +8,7 @@
 #ifndef APP_TYPES_H_
     #define APP_TYPES_H_
 
+    #include <stdbool.h>
     #include "types/players/types.h"
 
 typedef struct s_list list_t;
@@ -30,11 +31,18 @@ typedef enum e_worlds {
     WL_CITY
 } worlds_t;
 
+typedef struct s_control {
+    bool direction;         //Move direction
+    sfVector2f offset;      //Move offset for the direction
+    sfKeyCode key;          //Move key code
+} control_t;
+
 typedef struct s_app {
     app_states_t state;     //State of the app
     worlds_t world;         //Actual wolrd where player is
     list_t *players;        //List of players
     player_t *player;       //Player of the client
+    control_t *control;     //Controller of the player
 } app_t;
 
 #endif /* !APP_TYPES_H_ */
