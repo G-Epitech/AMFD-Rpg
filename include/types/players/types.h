@@ -21,9 +21,10 @@ typedef struct s_skin skin_t;
 typedef struct s_player {
     char *name;             //Name of the player
     int xp;                 //Player exeprience
+    int orientation;        //Orientation of the player
     sfVector2f position;    //Position of the player
     list_t *inventory;      //Inventory with all objects
-    skin_t *skin;           //Representation of the player (visual)
+    int skin_id;            //Skin ID
 } player_t;
 
 #endif /* !PLAYERS_TYPES_H_ */

@@ -6,9 +6,10 @@
 */
 
 #include <stdlib.h>
-#include "types/players/types.h"
-#include "types/list/types.h"
 #include "types/list/list.h"
+#include "types/list/types.h"
+#include "types/players/types.h"
+#include "types/character/types.h"
 
 player_t *players_add(list_t *list, char *name)
 {
@@ -22,7 +23,8 @@ player_t *players_add(list_t *list, char *name)
     if (!data.player->inventory)
         return NULL;
     data.player->position = PLAYER_DEFAULT_SPAWN;
-    data.player->skin = NULL;
+    data.player->skin_id = 0;
+    data.player->orientation = CO_LEFT;
     data.player->name = name;
     data.player->xp = 1;
     list_append(list, node_new(data));

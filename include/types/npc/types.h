@@ -9,7 +9,6 @@
     #define NPC_TYPES_H_
 
     #include <SFML/Graphics.h>
-
 typedef struct s_list list_t;
 
 typedef struct s_npc_dialog {
@@ -20,6 +19,7 @@ typedef struct s_npc_dialog {
 typedef struct s_npc_data {
     int world;
     int skin;
+    int orientation;
     sfVector2f position;
     list_t *dialogs;
 } npc_data_t;

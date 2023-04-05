@@ -41,4 +41,16 @@ bool npc_load_worlds_data(cjson_array_t *config, npc_t *npc);
  */
 void npc_load_world_dialogs(cjson_array_t *dialogs, npc_data_t *world_data);
 
+/**
+ * @brief Destroy all worlds data of a npc
+ * @param worlds_data Worlds data of npc to destroy
+ */
+void npc_destroy_worlds_data(list_t *worlds_data);
+
+/**
+ * @brief Destroy all npcs
+ * @param npcs List of npcs to destroy
+ */
+void npcs_destroy(list_t *npcs);
+
 #endif /* !NPC_H_ */

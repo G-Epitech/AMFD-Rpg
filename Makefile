@@ -23,6 +23,8 @@ SRC = 		main.c \
 			src/types/npc/load/load_all.c \
 			src/types/npc/load/load.c \
 			src/types/npc/load/worlds_data.c \
+			src/types/npc/destroy/worlds_data.c \
+			src/types/npc/destroy/destroy_all.c \
 			\
 			src/types/players/init.c \
 			src/types/players/add.c \

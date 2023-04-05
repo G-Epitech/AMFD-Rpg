@@ -5,6 +5,7 @@
         {
             "world": 0,
             "skin": 0,
+            "orientation": 1,
             "position": { "x": 12, "y": 78 },
             "dialogs": [
                 {
