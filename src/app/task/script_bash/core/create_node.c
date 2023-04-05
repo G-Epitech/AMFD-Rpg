@@ -87,7 +87,7 @@ node_t *task_create_nodes_bash(void)
 {
     node_data_t bash;
     task_t *task = malloc(sizeof(task_t));
-    cjson_t *object_file = cjson_parse_file("./configs/tasks.json");
+    cjson_t *object_file = cjson_parse_file("./configs/tasks/pos_text.json");
 
     bash.task = task;
     bash.task->content.script.cmd_model = list_new();

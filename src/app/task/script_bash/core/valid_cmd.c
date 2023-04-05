@@ -50,7 +50,7 @@ void good_or_bad_result(sfEvent event, app_t *app)
         if (my_strcmp(STR_CMD_MODEL, STR_CMD) == 0) {
             good_result(&INDEX_CMD, app);
         } else {
-            bad_result(current_cmd, app, &INDEX_LIFE);
+            bad_result(current_cmd, app, &INDEX_LIFE(app));
         }
     }
 }

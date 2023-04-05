@@ -14,9 +14,9 @@
 #include "types/list/types.h"
 #include "my/include/my.h"
 
-static void display_timer(renderer_t *renderer, app_t *app)
+static void display_timer(renderer_t *renderer)
 {
-    sfText_setPosition(renderer->text, (sfVector2f) {770, 220});
+    sfText_setPosition(renderer->text, (sfVector2f) {800, 220});
     sfText_setColor(renderer->text, sfWhite);
     sfText_setString(renderer->text, "timer:");
     sfRenderWindow_drawText(renderer->window, renderer->text, NULL);
@@ -26,7 +26,7 @@ static void display_time(renderer_t *renderer, app_t *app)
 {
     char *char_second = NULL;
 
-    sfText_setPosition(renderer->text, (sfVector2f) {850, 220});
+    sfText_setPosition(renderer->text, (sfVector2f) {880, 220});
     char_second = nbr_to_str(TIME_INT - ((int) TIME_FLOAT));
     sfText_setString(renderer->text, char_second);
     sfRenderWindow_drawText(renderer->window, renderer->text, NULL);
@@ -34,7 +34,6 @@ static void display_time(renderer_t *renderer, app_t *app)
 
 static void display_text(renderer_t *renderer, app_t *app, node_t *temp)
 {
-
     for (int index = 0; index < STRUCT_BASH(app).handler_placing->index_cmd; index++) {
         renderer->font = STRUCT_BASH(app).font_phone;
         sfText_setFont(renderer->text, renderer->font);
@@ -47,6 +46,20 @@ static void display_text(renderer_t *renderer, app_t *app, node_t *temp)
     }
 }
 
+static void display_life(renderer_t *renderer, app_t *app)
+{
+    char *char_life = NULL;
+
+    sfText_setPosition(renderer->text, (sfVector2f) {980, 220});
+    sfText_setColor(renderer->text, sfWhite);
+    sfText_setString(renderer->text, ": life");
+    sfRenderWindow_drawText(renderer->window, renderer->text, NULL);
+    sfText_setPosition(renderer->text, (sfVector2f) {955, 220});
+    char_life = nbr_to_str(INDEX_LIFE(app));
+    sfText_setString(renderer->text, char_life);
+    sfRenderWindow_drawText(renderer->window, renderer->text, NULL);
+}
+
 static void display_phone(renderer_t *renderer, app_t *app)
 {
     sfSprite_setTexture(renderer->sprite, STRUCT_BASH(app).phone, sfTrue);
@@ -57,8 +70,9 @@ static void display_phone(renderer_t *renderer, app_t *app)
 void app_task_bash_display(renderer_t *renderer, app_t *app)
 {
     display_phone(renderer, app);
-    display_timer(renderer, app);
+    display_timer(renderer);
     display_time(renderer, app);
+    display_life(renderer, app);
     display_text(renderer, app, STRUCT_BASH(app).cmd_model->first);
     display_text(renderer, app, STRUCT_BASH(app).prompt->first);
     display_text(renderer, app, STRUCT_BASH(app).cmd->first);

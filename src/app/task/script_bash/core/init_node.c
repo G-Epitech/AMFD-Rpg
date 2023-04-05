@@ -6,23 +6,41 @@
 */
 
 #include <SFML/Graphics.h>
+#include <time.h>
+#include <stdlib.h>
+#include <stdio.h>
 #include "types/renderer/types.h"
 #include "app/tasks/bash/types.h"
 #include "types/list/types.h"
 #include "app/tasks/task.h"
 #include "my/include/my.h"
-#include <stdlib.h>
+
+static char *find_cmd(int index_cmd, cjson_t *object_file)
+{
+    char *index_level = nbr_to_str(index_cmd);
+    cjson_t *level_cmd = cjson_get_prop(object_file, index_level);
+    int cmd_random = 0;
+    char *new_cmd = NULL;
+    char *index_random = NULL;
+
+    srand(time(NULL));
+    cmd_random = rand() % 8;
+    index_random = nbr_to_str(cmd_random);
+    new_cmd = cjson_get_prop_string_unsafe(level_cmd, index_random);
+    return new_cmd;
+}
 
 static void init_cmd_model(app_t *app)
 {
+    cjson_t *object_file = cjson_parse_file("./configs/tasks/cmd.json");
     node_t *temp = STRUCT_BASH(app).cmd_model->first;
-    char *tab_cmd[5] = {"ls", "echo", "ls | grep l | grep m",
-    "cat makefile", "ls; cat makefile | grep l"};
+    char *cmd = NULL;
 
     for(int index = 0; temp != NULL; index++) {
-        temp->data.node_bash->cmd = malloc(sizeof(char) * my_strlen(tab_cmd[index]) + 1);
-        my_strcpy(temp->data.node_bash->cmd, tab_cmd[index]);
-        temp->data.node_bash->cmd[my_strlen(tab_cmd[index])] = '\0';
+        cmd = find_cmd(index, object_file);
+        temp->data.node_bash->cmd = malloc(sizeof(char) * my_strlen(cmd) + 1);
+        my_strcpy(temp->data.node_bash->cmd, cmd);
+        temp->data.node_bash->cmd[my_strlen(cmd)] = '\0';
         temp = temp->next;
     }
 }

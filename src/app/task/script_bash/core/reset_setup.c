@@ -42,6 +42,6 @@ void reset_setup(app_t *app)
     sfClock_destroy(CLOCK);
     TIME_FLOAT = 0.0;
     TIME_INT = 20;
-    INDEX_LIFE = 3;
+    INDEX_LIFE(app) = 3;
     INDEX_CMD = 1;
 }

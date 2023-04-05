@@ -38,6 +38,18 @@ static void realloc_char(char **cmd, char chr)
     free(save_cmd);
 }
 
+static void char_spec(sfEvent event, node_t *current_cmd)
+{
+    if (event.key.code == sfKeyHyphen && my_strlen(STR_CMD) <= LEN_MAX_CMD)
+        realloc_char(&STR_CMD, '|');
+    if (event.key.code == sfKeySemicolon && my_strlen(STR_CMD) <= LEN_MAX_CMD)
+        realloc_char(&STR_CMD, ';');
+    if (event.key.code == sfKeyPeriod && my_strlen(STR_CMD) <= LEN_MAX_CMD)
+        realloc_char(&STR_CMD, '.');
+    if (event.key.code == sfKeySlash && my_strlen(STR_CMD) <= LEN_MAX_CMD)
+        realloc_char(&STR_CMD, '/');
+}
+
 void cmd_write(sfEvent event, app_t *app)
 {
     node_t *current_cmd = find_node_cmd(STRUCT_BASH(app).cmd,
@@ -48,10 +60,9 @@ void cmd_write(sfEvent event, app_t *app)
         realloc_char(&STR_CMD, event.key.code + 'a');
     if (event.key.code == sfKeySpace && my_strlen(STR_CMD) <= LEN_MAX_CMD)
         realloc_char(&STR_CMD, ' ');
-    if (event.key.code == sfKeyHyphen && my_strlen(STR_CMD) <= LEN_MAX_CMD)
-        realloc_char(&STR_CMD, '|');
-    if (event.key.code == sfKeySemicolon && my_strlen(STR_CMD) <= LEN_MAX_CMD)
-        realloc_char(&STR_CMD, ';');
+    if (event.key.code == sfKeySubtract && my_strlen(STR_CMD) <= LEN_MAX_CMD)
+        realloc_char(&STR_CMD, '-');
+    char_spec(event, current_cmd);
     if (event.key.code == sfKeyBackspace)
         (STR_CMD)[my_strlen((STR_CMD)) - 1] = '\0';
 }
