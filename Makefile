@@ -33,6 +33,7 @@ SRC = 		main.c \
 			src/types/ressources/components/init.c \
 			src/types/ressources/components/load.c \
 			src/types/ressources/components/button/load.c \
+			src/types/ressources/components/backgrounds/load.c \
 			\
 			src/types/view/init.c \
 			\
@@ -40,18 +41,22 @@ SRC = 		main.c \
 			\
 			src/app/window/init.c \
 			\
-			src/app/events/handle.c \
+			src/app/events/handler.c \
 			src/app/events/window/close.c \
 			src/app/events/keyboard/move.c \
+			src/app/events/components/buttons.c \
 			\
 			src/app/display/handle.c \
 			src/app/display/map/map.c \
 			src/app/display/map/back.c \
-			src/app/display/map/front.c	\
-      src/app/display/components/buttons.c \
-      xsrc/app/display/components/components.c \
+			src/app/display/map/front.c \
+			src/app/display/components/components.c \
+			src/app/display/components/buttons.c \
+			src/app/display/components/backgrounds.c \
 			\
-			src/app/loading/loading_company_screen.c	\
+			src/app/utils/test.c \
+			\
+			src/app/loading/loading_company_screen.c \
 			src/app/loading/loading_screen_text.c
 
 NAME = my_rpg

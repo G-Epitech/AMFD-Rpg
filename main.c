@@ -20,7 +20,6 @@
 int main(void)
 {
     renderer_t *renderer = renderer_init();
-    sfEvent event;
     app_t *app = NULL;
 
     load_renderer(renderer);
@@ -32,7 +31,7 @@ int main(void)
         return 84;
     }
     while (sfRenderWindow_isOpen(renderer->window)) {
-        event_handle(renderer->window, event, app);
+        event_handler(renderer->window, app, renderer);
         sfRenderWindow_clear(renderer->window, sfBlack);
         display_handle(renderer, app);
     }

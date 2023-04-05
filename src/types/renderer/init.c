@@ -5,6 +5,7 @@
 ** Init renderer structure
 */
 
+#include <stdio.h>
 #include <stdlib.h>
 #include <SFML/Graphics.h>
 #include "types/view/view.h"

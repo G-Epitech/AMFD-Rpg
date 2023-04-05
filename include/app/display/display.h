@@ -66,4 +66,11 @@ void display_components_buttons(renderer_t *renderer, app_t *app);
 */
 void display_components(renderer_t *renderer, app_t *app);
 
+/**
+ * @brief Display backgrounds
+ * @param renderer Renderer structure
+ * @param app Application informations
+*/
+void display_components_backgrounds(renderer_t *renderer, app_t *app);
+
 #endif /* !DISPLAY_H_ */
