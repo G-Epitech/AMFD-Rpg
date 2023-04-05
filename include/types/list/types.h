@@ -18,6 +18,7 @@
 typedef struct s_list list_t;
 
 typedef union u_node_data {
+    background_t *background;
     player_t *player;
     button_t *button;
     lever_t *lever;
