@@ -50,6 +50,5 @@ void skins_load(list_t *skins)
         skins_append(skins, skin);
         skin = skin->next;
     }
-    cjson_display(skins_config);
     cjson_free(skins_config);
 }

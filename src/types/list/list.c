@@ -5,9 +5,9 @@
 ** list
 */
 
+#include <stdlib.h>
 #include "types/list/list.h"
 #include "types/list/types.h"
-#include <stdlib.h>
 
 list_t *list_new(void)
 {

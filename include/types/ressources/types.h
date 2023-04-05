@@ -13,7 +13,7 @@
 
     #define RESSOURCES_MAPS_CONFIG "configs/maps.json"
     #define RESSOURCES_SKINS_CONFIG "configs/skins.json"
-    #define RESSOURCES_SKINS_RECT ((sfVector2f) { 15, 20 })
+    #define RESSOURCES_SKINS_RECT ((sfVector2f) { 15, 25 })
 
 typedef struct s_list list_t;
 

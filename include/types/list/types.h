@@ -9,6 +9,7 @@
     #define TYPES_H_
 
     #include <stdbool.h>
+    #include "types/npc/types.h"
     #include "types/players/types.h"
     #include "types/components/types.h"
     #include "types/ressources/types.h"
@@ -16,12 +17,15 @@
 typedef struct s_list list_t;
 
 typedef union u_node_data {
+    npc_dialog_t npc_dialog;
+    npc_data_t npc_data;
     player_t *player;
     button_t *button;
     lever_t *lever;
-    skin_t skin;
     list_t *list;
+    skin_t skin;
     map_t *map;
+    npc_t npc;
 } node_data_t;
 
 typedef struct s_node {

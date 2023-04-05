@@ -9,6 +9,7 @@
 #include "app/types.h"
 #include "types/list/list.h"
 #include "types/players/players.h"
+#include "types/npc/npc.h"
 
 app_t *app_init(void)
 {
@@ -19,6 +20,7 @@ app_t *app_init(void)
     app->state = ST_LOADING;
     app->world = WL_VILLAGE;
     app->players = players_list_init();
+    app->npcs = npcs_load();
     if (!app->players) {
         free(app);
         return NULL;

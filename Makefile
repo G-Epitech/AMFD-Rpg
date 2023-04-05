@@ -19,6 +19,11 @@ SRC = 		main.c \
 			src/types/node/node.c \
 			src/types/node/swap.c \
 			\
+			src/types/npc/load/dialogs.c \
+			src/types/npc/load/load_all.c \
+			src/types/npc/load/load.c \
+			src/types/npc/load/worlds_data.c \
+			\
 			src/types/players/init.c \
 			src/types/players/add.c \
 			\
