@@ -10,13 +10,14 @@
 
     #include <SFML/Graphics.h>
     #include "app/types.h"
+    #include "types/renderer/types.h"
 
 /**
  * @brief Handle all events
  * @param window Window of the app
  * @param event The specific event
 */
-void event_handle(sfRenderWindow *window, sfEvent event, app_t *app);
+void event_handler(sfRenderWindow *window, app_t *app, renderer_t *renderer);
 
 /**
  * @brief Close window
@@ -30,5 +31,13 @@ void event_window_close(sfRenderWindow *window);
  * @param app Application structure
 */
 void keyboard_move(sfEvent event, app_t *app);
+
+/**
+ * @brief Handle events on buttons
+ * @param renderer Renderer structure
+ * @param app Application structure
+ * @param event Event click
+*/
+void event_components_buttons(renderer_t *renderer, app_t *app, sfEvent event);
 
 #endif /* !EVENTS_H_ */

@@ -26,6 +26,7 @@ app_states_t app_state)
     button->title = NULL;
     button->description = NULL;
     button->texture = NULL;
+    button->rect_scale = (sfVector2f) {1, 1};
     return data;
 }
 

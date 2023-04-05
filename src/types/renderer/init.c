@@ -5,6 +5,7 @@
 ** Init renderer structure
 */
 
+#include <stdio.h>
 #include <stdlib.h>
 #include <SFML/Graphics.h>
 #include "types/view/view.h"
@@ -25,8 +26,8 @@ renderer_t *renderer_init(void)
     renderer->text = sfText_create();
     renderer->window = window_init();
     renderer->font = sfFont_createFromFile(FONT_FILE);
-    renderer->components = components_load();
     renderer->ressources = ressources_load();
+    renderer->components = components_load(renderer);
     renderer->view = view_init();
     renderer->default_view = sfRenderWindow_getDefaultView(renderer->window);
     return renderer;
