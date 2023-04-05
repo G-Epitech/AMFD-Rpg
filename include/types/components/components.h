@@ -54,4 +54,11 @@ app_states_t app_state);
 */
 void levers_load(components_t *components, cjson_array_t *levers);
 
+/**
+ * @brief Get cjson vector
+ * @param config Json configuration
+ * @return New vector
+*/
+sfVector2f cjson_vector(cjson_t *config);
+
 #endif /* !COMPONENTS_H_ */

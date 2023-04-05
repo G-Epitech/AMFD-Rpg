@@ -73,4 +73,11 @@ void display_components(renderer_t *renderer, app_t *app);
 */
 void display_components_backgrounds(renderer_t *renderer, app_t *app);
 
+/**
+ * @brief Display a button by icon
+ * @param renderer Renderer structure
+ * @param button The specific button
+*/
+void display_components_icon(renderer_t *renderer, button_t *button);
+
 #endif /* !DISPLAY_H_ */
