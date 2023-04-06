@@ -5,12 +5,12 @@
 ** task
 */
 
+#include <stdlib.h>
 #include "types/list/list.h"
 #include "types/list/types.h"
 #include "cjson/include/cjson.h"
 #include "app/tasks/bash/script_bash.h"
 #include "my/include/my.h"
-#include <stdlib.h>
 
 
 static int init_list(node_data_t bash)

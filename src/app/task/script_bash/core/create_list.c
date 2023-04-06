@@ -5,11 +5,11 @@
 ** task
 */
 
+#include <stdlib.h>
 #include "types/list/list.h"
 #include "types/list/types.h"
 #include "cjson/include/cjson.h"
 #include "my/include/my.h"
-#include <stdlib.h>
 
 static node_t *create_node_list_cmd(void)
 {
