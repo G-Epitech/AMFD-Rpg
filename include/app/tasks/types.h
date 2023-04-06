@@ -11,12 +11,11 @@
     #include "app/types.h"
     #include "types/renderer/types.h"
     #include "app/tasks/bash/types.h"
-
-    #define CORE 1
-    #define DISPLAY 2
+    #include "app/tasks/bruteforce/types.h"
 
 typedef union s_task_content {
     task_bash_t script;
+    task_brute_t force;
 } task_content_t;
 
 typedef struct s_task {

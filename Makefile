@@ -99,7 +99,10 @@ SRC = 		src/main.c \
 			src/app/utils/test.c \
 			\
 			src/app/loading/loading_company_screen.c \
-			src/app/loading/loading_screen_text.c
+			src/app/loading/loading_screen_text.c \
+			\
+			src/app/core/tasks/brute_force/create_node.c \
+			src/app/display/tasks/brute_force/display.c \
 
 NAME = my_rpg
 
