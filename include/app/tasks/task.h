@@ -16,13 +16,13 @@
  * @param renderer Main renderer function
  * @param app Application structure
 */
-int tasks_display_handler(renderer_t *renderer, app_t *app);
+int display_tasks_handler(renderer_t *renderer, app_t *app);
 
 /**
  * @brief Handler of core task
  * @param renderer Main renderer function
  * @param app Application structure
 */
-int tasks_core_handler(renderer_t *renderer, app_t *app);
+int core_tasks_handler(renderer_t *renderer, app_t *app);
 
 #endif /* !TASK_H_ */
