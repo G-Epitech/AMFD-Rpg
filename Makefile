@@ -25,6 +25,7 @@ SRC = 		main.c \
 			src/types/npc/load/worlds_data.c \
 			src/types/npc/destroy/worlds_data.c \
 			src/types/npc/destroy/destroy_all.c \
+			src/types/npc/get.c \
 			\
 			src/types/players/init.c \
 			src/types/players/add.c \
@@ -58,6 +59,7 @@ SRC = 		main.c \
 			src/app/display/map/back.c \
 			src/app/display/map/front.c \
 			src/app/display/npcs/npcs.c \
+			src/app/display/player/player.c \
 			src/app/display/characters/character.c \
 
 NAME = my_rpg
@@ -110,6 +112,7 @@ $(NAME):	$(OBJ)
 all: 		$(NAME)
 
 clean:
+			@rm -f $(OBJ)
 			@make -C$(PATH_MY) clean -s
 			@make -C$(PATH_CJSON) clean -s
 

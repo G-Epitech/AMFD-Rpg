@@ -53,4 +53,13 @@ void npc_destroy_worlds_data(list_t *worlds_data);
  */
 void npcs_destroy(list_t *npcs);
 
+/**
+ * @brief Get data of expected world if exists
+ * @param npc NPC of which get world data
+ * @param world ID of world to get
+ * @return Pointer to world data or NULL if npc is not in
+ * given world
+ */
+npc_data_t * npc_get_data_of_world(npc_t *npc, int world);
+
 #endif /* !NPC_H_ */

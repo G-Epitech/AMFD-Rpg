@@ -13,6 +13,13 @@
     #include "types/character/types.h"
 
 /**
+ * @brief Display player on map
+ * @param renderer Renderer object
+ * @param player Player to display
+ */
+void display_player(renderer_t *renderer, player_t *player);
+
+/**
  * @brief Display npcs of current world
  * @param renderer Renderer object
  * @param npcs List of npcs to display

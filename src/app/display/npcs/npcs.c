@@ -6,6 +6,7 @@
 */
 
 #include "app/types.h"
+#include "types/npc/npc.h"
 #include "types/list/types.h"
 #include "app/display/display.h"
 #include "types/renderer/renderer.h"
@@ -20,22 +21,6 @@ static void display_npc(renderer_t *renderer, npc_data_t *world_data)
     display_character(renderer, position, skin_id, orientation);
 }
 
-static bool npc_is_in_world(npc_t *npc, npc_data_t **world_data,
-worlds_t world)
-{
-    node_t *node = npc->worlds_data ? npc->worlds_data->first : NULL;
-    bool in_world = false;
-
-    while (node && !in_world) {
-        if ((worlds_t) node->data.npc_data.world == world) {
-            in_world = true;
-            *world_data = &node->data.npc_data;
-        }
-        node = node->next;
-    }
-    return in_world;
-}
-
 void display_npcs_of_world(renderer_t *renderer, list_t *npcs,
 worlds_t world)
 {
@@ -43,7 +28,8 @@ worlds_t world)
     npc_data_t *world_data = NULL;
 
     while (node) {
-        if (npc_is_in_world(&node->data.npc, &world_data, world))
+        world_data = npc_get_data_of_world(&node->data.npc, world);
+        if (world_data)
             display_npc(renderer, world_data);
         node = node->next;
     }
