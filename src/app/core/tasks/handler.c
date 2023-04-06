@@ -11,7 +11,7 @@
 #include "app/tasks/bash/script_bash.h"
 #include "app/tasks/types.h"
 
-int core_tasks_handler(renderer_t *renderer, app_t *app)
+int core_tasks_handler(app_t *app)
 {
     if (app->state == ST_TASK_BASH) {
         if (app_task_bash_core(app) == 84)

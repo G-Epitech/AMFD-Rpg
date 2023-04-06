@@ -14,11 +14,11 @@
 #include "types/list/types.h"
 #include "app/app.h"
 
-int core_tasks_handler(renderer_t *renderer, app_t *app)
+int core_handler(renderer_t *renderer, app_t *app)
 {
     map_t *current_map = renderer->ressources->maps->first->data.map;
 
-    if (core_tasks_handler(renderer, app) == 84)
+    if (core_tasks_handler(app) == 84)
         return 84;
     core_handle_movement(app->player, app->control,
     current_map->collision_layer);
