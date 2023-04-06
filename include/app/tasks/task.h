@@ -12,11 +12,17 @@
     #include "types/renderer/types.h"
 
 /**
- * @brief Handler of task
+ * @brief Handler of display task
  * @param renderer Main renderer function
  * @param app Application structure
- * @param states Core or display
 */
-int task(renderer_t *renderer, app_t *app, int states);
+int display_tasks_handler(renderer_t *renderer, app_t *app);
+
+/**
+ * @brief Handler of core task
+ * @param renderer Main renderer function
+ * @param app Application structure
+*/
+int core_tasks_handler(renderer_t *renderer, app_t *app);
 
 #endif /* !TASK_H_ */

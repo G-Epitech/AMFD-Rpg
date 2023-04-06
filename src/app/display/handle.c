@@ -17,6 +17,7 @@ void display_handle(renderer_t *renderer, app_t *app)
     ressources_t *ressources = renderer->ressources;
     renderer_objects_t *objects = renderer->objects;
 
+    sfRenderWindow_clear(renderer->window, sfBlack);
     sfRenderWindow_setView(renderer->window, renderer->map_view);
     display_map_back(ressources->maps, renderer->window, objects->sprite,
     app->world);
@@ -27,6 +28,6 @@ void display_handle(renderer_t *renderer, app_t *app)
     sfView_setCenter(renderer->map_view, app->player->position);
     sfRenderWindow_setView(objects->window, renderer->default_view);
     display_components(renderer, app);
-    task(renderer, app, display);
+    display_tasks_handler(renderer, app);
     sfRenderWindow_display(renderer->window);
 }

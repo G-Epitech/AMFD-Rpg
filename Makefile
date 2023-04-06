@@ -72,16 +72,17 @@ SRC = 		src/main.c \
 			src/app/display/map/map.c \
 			src/app/display/map/back.c \
 			\
-			src/app/task/task.c \
-			src/app/task/create.c \
-			src/app/task/script_bash/core/create_node.c \
-			src/app/task/script_bash/core/init_node.c \
-			src/app/task/script_bash/core/game_handler.c \
-			src/app/task/script_bash/display/display.c \
-			src/app/task/script_bash/core/write_cmd.c \
-			src/app/task/script_bash/core/valid_cmd.c \
-			src/app/task/script_bash/core/reset_setup.c \
-			src/app/task/script_bash/core/create_list.c \
+			src/app/core/tasks/handler.c \
+			src/app/core/tasks/create.c \
+			src/app/core/tasks/script_bash/create_node.c \
+			src/app/core/tasks/script_bash/init_node.c \
+			src/app/core/tasks/script_bash/game_handler.c \
+			src/app/core/tasks/script_bash/write_cmd.c \
+			src/app/core/tasks/script_bash/valid_cmd.c \
+			src/app/core/tasks/script_bash/reset_setup.c \
+			src/app/core/tasks/script_bash/create_list.c \
+			src/app/display/tasks/script_bash/display.c \
+			src/app/display/tasks/handler.c \
 			\
 			src/app/display/npcs/npcs.c \
 			src/app/display/player/player.c \
