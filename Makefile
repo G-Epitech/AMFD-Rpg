@@ -7,8 +7,6 @@
 
 SRC = 		src/main.c \
 			\
-			src/app/run.c \
-			\
 			src/types/renderer/init.c \
 			src/types/renderer/load.c	\
 			src/types/renderer/destroy.c \
@@ -60,6 +58,8 @@ SRC = 		src/main.c \
 			src/types/view/init.c \
 			\
 			src/app/init.c \
+			src/app/run.c \
+			src/app/state.c \
 			\
 			src/app/window/init.c \
 			src/app/window/close.c \

@@ -68,6 +68,11 @@ static void button_get_extra(cjson_t *config, button_t *button)
     char *texture = NULL;
     int event = -1;
 
+    button_cjson_color(config, &button->color, "color");
+    button_cjson_color(config, &button->text_color, "color_text");
+    cjson_get_prop_string(config, "title", &button->title);
+    cjson_get_prop_string(config, "description", &button->description);
+    cjson_get_prop_float(config, "scale", &button->scale);
     cjson_get_prop_int(config, "event", &event);
     button->event = event;
     if (!cjson_get_prop_string(config, "icon", &texture))
@@ -81,20 +86,19 @@ cjson_array_t *buttons)
 {
     cjson_t *button = buttons->first;
     sfVector2f position = {0, 0};
-    app_states_t state = ST_LOADING;
+    cjson_array_t *array = NULL;
+    app_states_t *state = NULL;
     button_t *data = NULL;
+    size_t len = 0;
 
     while (button) {
         position = cjson_vector(button);
-        state = cjson_get_prop_int_unsafe(button, "app_state");
+        array = cjson_get_prop_array_unsafe(button, "app_state");
+        state = (app_states_t *) cjson_array_to_int_array(array, &len);
         data = buttons_append(components->buttons, position, state);
         if (!data)
             return;
-        button_cjson_color(button, &data->color, "color");
-        button_cjson_color(button, &data->text_color, "color_text");
-        cjson_get_prop_string(button, "title", &data->title);
-        cjson_get_prop_string(button, "description", &data->description);
-        cjson_get_prop_float(button, "scale", &data->scale);
+        data->state_size = len;
         button_get_extra(button, data);
         data->rect_scale = get_rect_scale(data, renderer);
         button = button->next;

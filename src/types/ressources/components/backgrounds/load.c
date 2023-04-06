@@ -30,6 +30,7 @@ static sfVector2f cjson_vector(cjson_t *config)
 background_t *background_load(cjson_t *config)
 {
     background_t *background = malloc(sizeof(background_t));
+    cjson_array_t *array = NULL;
     char *texture = NULL;
 
     if (!background)
@@ -37,7 +38,9 @@ background_t *background_load(cjson_t *config)
     cjson_get_prop_string(config, "asset", &texture);
     background->texture = sfTexture_createFromFile(texture, NULL);
     background->scale = cjson_get_prop_float_unsafe(config, "scale");
-    background->app_state = cjson_get_prop_int_unsafe(config, "state");
+    array = cjson_get_prop_array_unsafe(config, "state");
+    background->app_state = (app_states_t *) cjson_array_to_int_array(array,
+    &background->state_size);
     background->position = cjson_vector(config);
     return background;
 }

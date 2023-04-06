@@ -7,6 +7,7 @@
 
 #include <stdio.h>
 #include <SFML/Graphics.h>
+#include "app/app.h"
 #include "app/display/display.h"
 #include "types/renderer/types.h"
 #include "types/ressources/types.h"
@@ -31,7 +32,7 @@ void display_components_backgrounds(renderer_t *renderer, app_t *app)
 
     while (node) {
         background = node->data.background;
-        if (background->app_state == app->state) {
+        if (app_on_state(app, background->app_state, background->state_size)) {
             display_background(background, renderer);
         }
         node = node->next;

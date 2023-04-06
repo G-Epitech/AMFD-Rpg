@@ -10,6 +10,7 @@
 #include "app/display/display.h"
 #include "types/renderer/types.h"
 #include "types/list/types.h"
+#include "app/app.h"
 
 static void display_rectangle(button_t *button, renderer_t *renderer)
 {
@@ -89,12 +90,12 @@ void display_components_buttons(renderer_t *renderer, app_t *app)
 
     while (node) {
         button = node->data.button;
-        if (button->app_state == app->state && !button->texture) {
+        if (!app_on_state(app, button->app_state, button->state_size))
+            return;
+        if (!button->texture)
             display_button(button, renderer);
-        }
-        if (button->app_state == app->state && button->texture) {
+        if (button->texture)
             display_components_icon(renderer, button);
-        }
         node = node->next;
     }
 }

@@ -51,8 +51,9 @@ typedef struct s_button {
     sfTexture *texture;
     sfVector2f position;
     sfVector2f rect_scale;
-    app_states_t app_state;
+    app_states_t *app_state;
     buttons_states_t state;
+    size_t state_size;
 } button_t;
 
 /**
