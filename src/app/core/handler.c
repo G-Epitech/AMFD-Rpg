@@ -18,7 +18,7 @@ int core_handler(renderer_t *renderer, app_t *app)
 {
     map_t *current_map = renderer->ressources->maps->first->data.map;
 
-    if (task(renderer, app, core) == 84)
+    if (tasks_core_handler(renderer, app) == 84)
         return 84;
     core_handle_movement(app->player, app->control,
     current_map->collision_layer);

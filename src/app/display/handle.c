@@ -25,6 +25,6 @@ void display_handle(renderer_t *renderer, app_t *app)
     sfView_setCenter(renderer->view, app->player->position);
     sfRenderWindow_setView(renderer->window, renderer->default_view);
     display_components(renderer, app);
-    task(renderer, app, display);
+    tasks_display_handler(renderer, app);
     sfRenderWindow_display(renderer->window);
 }
