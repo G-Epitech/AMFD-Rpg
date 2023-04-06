@@ -27,6 +27,17 @@ static control_t *init_controller(void)
     return control;
 }
 
+static int init_player(app_t *app)
+{
+    app->player = players_add(app->players, "Player1");
+    if (!app->player) {
+        list_free(app->players);
+        free(app);
+        return 84;
+    }
+    return 0;
+}
+
 app_t *app_init(void)
 {
     app_t *app = malloc(sizeof(app_t));
@@ -41,12 +52,10 @@ app_t *app_init(void)
         free(app);
         return NULL;
     }
-    app->player = players_add(app->players, "Player1");
-    if (!app->player) {
-        list_free(app->players);
-        free(app);
+    if (init_player(app) == 84)
         return NULL;
-    }
     app->tasks_setup = task_create();
+    if (app->tasks_setup == NULL)
+        return NULL;
     return app;
 }

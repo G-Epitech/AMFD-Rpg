@@ -17,24 +17,15 @@
 #include "types/ressources/ressources.h"
 #include "app/display/display.h"
 #include "app/core/core.h"
+#include "app/utils/utils.h"
 
-int main(void)
+int app_run(renderer_t *renderer, app_t *app)
 {
-    renderer_t *renderer = renderer_init();
-    app_t *app = NULL;
-
-    load_renderer(renderer);
-    app = app_init();
-    if (!renderer)
+    event_handler(renderer->window, app, renderer);
+    if (core_handler(renderer, app) == 84)
         return 84;
-    if (!app) {
-        renderer_destroy(renderer);
-        return 84;
-    }
-    while (sfRenderWindow_isOpen(renderer->window)) {
-        if (app_run(renderer, app) == 84)
-            return 84;
-    }
-    renderer_destroy(renderer);
+    sfRenderWindow_clear(renderer->window, sfBlack);
+    core_handler(renderer, app);
+    display_handle(renderer, app);
     return 0;
 }

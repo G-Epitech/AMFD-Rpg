@@ -7,6 +7,8 @@
 
 SRC = 		src/main.c \
 			\
+			src/app/run.c \
+			\
 			src/types/renderer/init.c \
 			src/types/renderer/load.c	\
 			src/types/renderer/destroy.c \
@@ -59,6 +61,7 @@ SRC = 		src/main.c \
 			src/app/task/script_bash/core/write_cmd.c \
 			src/app/task/script_bash/core/valid_cmd.c \
 			src/app/task/script_bash/core/reset_setup.c \
+			src/app/task/script_bash/core/create_list.c \
 			\
 			src/app/display/map/front.c	\
 			src/app/display/components/buttons.c \

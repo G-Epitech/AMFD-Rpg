@@ -11,12 +11,23 @@
 #include "app/tasks/bash/script_bash.h"
 #include "app/tasks/types.h"
 
-void task(renderer_t *renderer, app_t *app, int states)
+static int task_bash(renderer_t *renderer, app_t *app, int states)
+{
+    if (states == display) {
+        app_task_bash_display(renderer, app);
+    }
+    if (states == core) {
+        if (app_task_bash_core(app) == 84)
+            return 84;
+    }
+    return 0;
+}
+
+int task(renderer_t *renderer, app_t *app, int states)
 {
     if (app->state == ST_TASK_BASH) {
-        if (states == display)
-            app_task_bash_display(renderer, app);
-        if (states == core)
-            app_task_bash_core(app);
+        if (task_bash(renderer, app, states) == 84)
+            return 84;
     }
+    return 0;
 }

@@ -19,10 +19,11 @@ static void time_handler(app_t *app)
     TIME_FLOAT(app) = TIME(app).microseconds / (1000000.0);
 }
 
-void app_task_bash_core(app_t *app)
+int app_task_bash_core(app_t *app)
 {
     if (STRUCT_BASH(app).handler_placing->just_started) {
-        init_task(app);
+        if (init_task(app) == 84)
+            return 84;
     }
     time_handler(app);
     if (STRUCT_BASH(app).handler_time->time_float > 20.0) {
@@ -30,4 +31,5 @@ void app_task_bash_core(app_t *app)
         my_putstr("You lose\n");
         reset_setup(app);
     }
+    return 0;
 }

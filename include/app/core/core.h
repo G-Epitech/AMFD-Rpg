@@ -29,6 +29,6 @@ int **collision_layer);
  * @param renderer Main renderer structure
  * @param app Main app structure
 */
-void core_handler(renderer_t *renderer, app_t *app);
+int core_handler(renderer_t *renderer, app_t *app);
 
 #endif /* !CORE_H_ */

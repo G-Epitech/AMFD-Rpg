@@ -30,7 +30,7 @@ static char *find_cmd(int index_cmd, cjson_t *object_file)
     return new_cmd;
 }
 
-static void init_cmd_model(app_t *app)
+static int init_cmd_model(app_t *app)
 {
     cjson_t *object_file = cjson_parse_file("./configs/tasks/cmd.json");
     node_t *temp = STRUCT_BASH(app).cmd_model->first;
@@ -39,27 +39,38 @@ static void init_cmd_model(app_t *app)
     for (int index = 0; temp != NULL; index++) {
         cmd = find_cmd(index, object_file);
         temp->data.node_bash->cmd = malloc(sizeof(char) * my_strlen(cmd) + 1);
+        if (temp->data.node_bash->cmd == NULL)
+            return 84;
         my_strcpy(temp->data.node_bash->cmd, cmd);
         temp->data.node_bash->cmd[my_strlen(cmd)] = '\0';
         temp = temp->next;
     }
+    return 0;
 }
 
-static void init_cmd(app_t *app)
+static int init_cmd(app_t *app)
 {
     node_t *temp = STRUCT_BASH(app).cmd->first;
 
     for (int index = 0; temp != NULL; index++) {
         temp->data.node_bash->cmd = malloc(sizeof(char));
+        if (temp->data.node_bash->cmd == NULL)
+            return 84;
         temp->data.node_bash->cmd[0] = '\0';
         temp = temp->next;
     }
+    return 0;
 }
 
-void init_task(app_t *app)
+int init_task(app_t *app)
 {
     STRUCT_BASH(app).handler_time->clock_time = sfClock_create();
-    init_cmd_model(app);
-    init_cmd(app);
+    if (STRUCT_BASH(app).handler_time->clock_time == NULL)
+        return 84;
+    if (init_cmd_model(app) == 84)
+        return 84;
+    if (init_cmd(app) == 84)
+        return 84;
     STRUCT_BASH(app).handler_placing->just_started = false;
+    return 0;
 }

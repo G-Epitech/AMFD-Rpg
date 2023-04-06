@@ -13,6 +13,9 @@
     #include <SFML/System/Clock.h>
     #include "types/list/types.h"
 
+/**
+ * @brief Create the node for task bash
+*/
 node_t *task_create_nodes_bash(void);
 
 /**
@@ -31,13 +34,13 @@ void app_task_bash_display(renderer_t *renderer, app_t *app);
  * @brief Core handler of task bash
  * @param app Application structure
 */
-void app_task_bash_core(app_t *app);
+int app_task_bash_core(app_t *app);
 
 /**
  * @brief Init task bash when first entrance
  * @param app Application structure
 */
-void init_task(app_t *app);
+int init_task(app_t *app);
 
 /**
  * @brief Add a char to cmd who was writing
@@ -65,5 +68,26 @@ node_t *find_node_cmd(list_t *list, int index_cmd);
  * @param app Application structure
 */
 void reset_setup(app_t *app);
+
+/**
+ * @brief Find the node relative to index_cmd
+ * @param list The list of prompt
+ * @param object_file file object of position
+*/
+int init_list_prompt(list_t *prompt, cjson_t *object_file);
+
+/**
+ * @brief Find the node relative to index_cmd
+ * @param list The list of cmd
+ * @param object_file file object of position
+*/
+int init_list_cmd(list_t *cmd, cjson_t *object_file);
+
+/**
+ * @brief Find the node relative to index_cmd
+ * @param list The list of cmd model
+ * @param object_file file object of position
+*/
+int init_list_cmd_model(list_t *cmd_model, cjson_t *object_file);
 
 #endif /* !SCRIPT_BASH_H_ */
