@@ -89,8 +89,11 @@ void display_components_buttons(renderer_t *renderer, app_t *app)
 
     while (node) {
         button = node->data.button;
-        if (button->app_state == app->state) {
+        if (button->app_state == app->state && !button->texture) {
             display_button(button, renderer);
+        }
+        if (button->app_state == app->state && button->texture) {
+            display_components_icon(renderer, button);
         }
         node = node->next;
     }

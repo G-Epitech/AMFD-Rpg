@@ -31,11 +31,9 @@ int main(void)
         renderer_destroy(renderer);
         return 84;
     }
-    while (sfRenderWindow_isOpen(renderer->objects->window)) {
-        event_handler(renderer->objects->window, app, renderer);
-        core_handler(renderer, app);
-        sfRenderWindow_clear(renderer->window, sfBlack);
-        display_handle(renderer, app);
+    while (sfRenderWindow_isOpen(renderer->window)) {
+        if (app_run(renderer, app) == 84)
+            return 84;
     }
     renderer_destroy(renderer);
     return 0;

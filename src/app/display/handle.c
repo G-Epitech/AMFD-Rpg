@@ -9,6 +9,8 @@
 #include "app/display/display.h"
 #include "types/list/list.h"
 #include "types/renderer/types.h"
+#include "app/tasks/types.h"
+#include "app/tasks/task.h"
 
 void display_handle(renderer_t *renderer, app_t *app)
 {
@@ -16,7 +18,7 @@ void display_handle(renderer_t *renderer, app_t *app)
     renderer_objects_t *objects = renderer->objects;
 
     sfRenderWindow_setView(renderer->window, renderer->map_view);
-    display_map_back(ressources->maps, objects->window, objects->sprite,
+    display_map_back(ressources->maps, renderer->window, objects->sprite,
     app->world);
     display_npcs_of_world(renderer, app->npcs, app->world);
     display_player(renderer, app->player);
@@ -25,5 +27,6 @@ void display_handle(renderer_t *renderer, app_t *app)
     sfView_setCenter(renderer->map_view, app->player->position);
     sfRenderWindow_setView(objects->window, renderer->default_view);
     display_components(renderer, app);
-    sfRenderWindow_display(objects->window);
+    task(renderer, app, display);
+    sfRenderWindow_display(renderer->window);
 }

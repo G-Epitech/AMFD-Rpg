@@ -1,0 +1,52 @@
+{
+    "0": {
+        "0": "ls",
+        "1": "cd",
+        "2": "echo",
+        "3": "cat",
+        "4": "grep",
+        "5": "mkdir",
+        "6": "touch",
+        "7": "mv"
+    },
+    "1": {
+        "0": "ls -l",
+        "1": "cd ..",
+        "2": "echo epitech",
+        "3": "cat axel",
+        "4": "wc - l | grep l",
+        "5": "mkdir brasgauche",
+        "6": "touch flavien",
+        "7": "mv test matheo"
+    },
+    "2": {
+        "0": "clear; ls -l",
+        "1": "cd | touch ./src",
+        "2": "echo carapacemarron",
+        "3": "cat kikilavalgrind",
+        "4": "axel | wc -l",
+        "5": "mv islandor ../bin",
+        "6": "touch ./src/axel",
+        "7": "cat ../flavien"
+    },
+    "3": {
+        "0": "ls -la | grep x",
+        "1": "cd .. | pwd | cd",
+        "2": "echo epitech | ls -l",
+        "3": "cat axel | grep a",
+        "4": "axel | wc -l | cat -e",
+        "5": "mkdir brasgauche | cd ..",
+        "6": "touch ./source/valgrind",
+        "7": "cat ../rpg/makefile"
+    },
+    "4": {
+        "0": "ls; cat makefile | grep l",
+        "1": "cd carapacemarron; touch dragos",
+        "2": "echo matheo; ls -l | grep l",
+        "3": "sudo rm -rf /bin/islandor",
+        "4": "cat ../rpg/makefile | grep name",
+        "5": "rm ./all; cd bin; mv ./all -",
+        "6": "echo mrlavalgrind | touch",
+        "7": "cat makefile | wc -l; ls; cd;"
+    }
+}

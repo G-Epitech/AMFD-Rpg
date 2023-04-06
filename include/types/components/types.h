@@ -73,7 +73,7 @@ typedef struct s_components {
     list_t *levers;
 } components_t;
 
-const static struct {
+static const struct {
     int (*function) (renderer_t *renderer, app_t *app);
 } event_map[] = {
     {test}

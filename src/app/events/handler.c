@@ -9,6 +9,7 @@
 #include <SFML/Graphics.h>
 #include "types/renderer/types.h"
 #include "app/events/events.h"
+#include "app/tasks/bash/script_bash.h"
 #include "app/app.h"
 
 static void event_analyse(sfRenderWindow *window, sfEvent event, app_t *app,
@@ -18,7 +19,12 @@ renderer_t *renderer)
         event_window_close(window);
     }
     if (event.type == sfEvtKeyPressed) {
-        keyboard_press_move(event, app);
+        if (app->state == ST_TASK_BASH) {
+            cmd_write(event, app);
+            good_or_bad_result(event, app);
+        }
+        if (app->state == ST_INGAME)
+            keyboard_press_move(event, app);
     }
     if (event.type == sfEvtKeyReleased) {
         keyboard_release_move(event, app);

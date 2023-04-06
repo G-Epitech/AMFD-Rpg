@@ -1,32 +1,57 @@
 /*
 ** EPITECH PROJECT, 2023
-** nbr_to_str.c
+** Project By Axel.F
 ** File description:
-** Number to string
+** Axel.F
 */
 
-#include <stdio.h>
+#include <stddef.h>
 #include <stdlib.h>
+#include <stdio.h>
+#include "include/my.h"
 
-char* nbr_to_str(int n)
+int len_nb(int nb)
 {
-    int num_digits = 0;
-    int tmp = n;
-    char *str = 0;
+    int l = 0;
+    int nb_donne = nb;
 
-    while (tmp != 0) {
-        num_digits++;
-        tmp /= 10;
+    while ((nb_donne != 0)) {
+        l = l + 1;
+        nb_donne = nb_donne / 10;
     }
-    str = malloc(num_digits + 1);
-    if (n == 0) {
-        str[0] = '0';
-        return str;
+    return (l);
+}
+
+int handle_negative(int *number, char *number_str, int *index_number)
+{
+    if ((*number) < 0) {
+        (*number) *= -1;
+        number_str[(*index_number)] = '-';
+        (*index_number)++;
     }
-    for (int i = num_digits - 1; i >= 0; i--) {
-        str[i] = (n % 10) + '0';
-        n /= 10;
+    return 0;
+}
+
+char *nbr_to_str(int num)
+{
+    int len_num = len_nb(num);
+    char *number_str = malloc(sizeof(char) * len_num + 1);
+    int index_number = 0;
+    int nb_moment = 0;
+
+    if (num == 0)
+        return "0";
+    handle_negative(&num, number_str, &index_number);
+    for (int index = 0; index < len_num; index++, index_number++) {
+        if (index == len_num - 1) {
+            nb_moment = num % (my_compute_power_rec(10, (len_num - index)));
+        } else {
+            nb_moment = num /
+            (my_compute_power_rec(10, (len_num - index - 1)));
+            num -= nb_moment * my_compute_power_rec(10, (len_num - index - 1));
+        }
+        number_str[index_number] = nb_moment + '0';
     }
-    str[num_digits] = '\0';
-    return str;
+    number_str[index_number] = '\0';
+    return number_str;
 }
