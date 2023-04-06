@@ -5,6 +5,7 @@
 ** Load all components
 */
 
+#include <stdio.h>
 #include <stdlib.h>
 #include "types/components/types.h"
 #include "types/components/components.h"
@@ -23,7 +24,7 @@ components_t *components_init(void)
     return components;
 }
 
-components_t *components_load(void)
+components_t *components_load(renderer_t *renderer)
 {
     components_t *components = components_init();
     cjson_t *config = cjson_parse_file(COMPONENTS_CONFIG);
@@ -36,7 +37,7 @@ components_t *components_load(void)
         return NULL;
     if (!cjson_get_prop_array(config, "levers", &levers))
         return NULL;
-    buttons_load(components, buttons);
+    buttons_load(renderer, components, buttons);
     levers_load(components, levers);
     cjson_free(config);
     return components;

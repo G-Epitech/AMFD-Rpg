@@ -14,5 +14,6 @@ void renderer_destroy(renderer_t *renderer)
 {
     renderer_objects_destroy(renderer->objects);
     ressources_free(renderer->ressources);
+    sfFont_destroy(renderer->font);
     free(renderer);
 }

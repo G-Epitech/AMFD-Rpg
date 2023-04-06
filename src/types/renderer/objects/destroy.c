@@ -15,6 +15,5 @@ void renderer_objects_destroy(renderer_objects_t *objects)
         sfText_destroy(objects->text);
         sfCircleShape_destroy(objects->circle);
         sfRectangleShape_destroy(objects->rectangle);
-        sfView_destroy(objects->view);
     }
 }

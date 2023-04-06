@@ -1,0 +1,9 @@
+{
+    "button": {
+        "left": "assets/components/button/left.png",
+        "right": "assets/components/button/right.png",
+        "middle": "assets/components/button/middle.png"
+    },
+    
+    "backgrounds": []
+}

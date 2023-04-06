@@ -11,6 +11,12 @@
     #include "types.h"
 
 /**
+ * @brief Load renderer of app
+ * @param renderer Renderer of app to load
+ */
+void load_renderer(renderer_t *renderer);
+
+/**
  * @brief Init a renderer structure
 */
 renderer_t *renderer_init(void);

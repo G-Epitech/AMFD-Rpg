@@ -22,7 +22,6 @@ ressources_t *ressources_init(void)
     ressources->maps = list_new();
     ressources->skins = list_new();
     ressources->props = list_new();
-    ressources->profiles = NULL;
     if (!ressources->maps || !ressources->skins || !ressources->props) {
         list_free(ressources->maps);
         list_free(ressources->skins);
@@ -36,9 +35,13 @@ ressources_t *ressources_load(void)
 {
     ressources_t *ressources = ressources_init();
 
-    if (!ressources)
+    ressources->components = ressources_components_init();
+    if (!ressources || !ressources->components) {
+        ressources_free(ressources);
         return NULL;
+    }
     maps_load(ressources->maps);
     skins_load(ressources->skins);
+    ressources_components_load(ressources->components);
     return ressources;
 }

@@ -20,7 +20,6 @@ renderer_objects_t *renderer_objects_init(sfRenderWindow *window)
     objects->text = sfText_create();
     objects->circle = sfCircleShape_create();
     objects->rectangle = sfRectangleShape_create();
-    objects->view = view_init();
     objects->window = window;
     return objects;
 }
@@ -32,7 +31,6 @@ void renderer_objects_free(renderer_objects_t *objects)
         sfText_destroy(objects->text);
         sfCircleShape_destroy(objects->circle);
         sfRectangleShape_destroy(objects->rectangle);
-        sfView_destroy(objects->view);
     }
     free(objects);
 }

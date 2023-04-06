@@ -8,6 +8,7 @@
 SRC = 		main.c \
 			\
 			src/types/renderer/init.c \
+			src/types/renderer/load.c	\
 			src/types/renderer/destroy.c \
 			src/types/renderer/objects/init.c \
 			src/types/renderer/objects/destroy.c \
@@ -43,9 +44,15 @@ SRC = 		main.c \
 			src/types/ressources/free.c \
 			src/types/ressources/maps/load.c \
 			src/types/ressources/maps/free.c \
+			\
 			src/types/ressources/skins/load.c \
 			src/types/ressources/skins/free.c \
 			src/types/ressources/skins/get.c \
+			\
+			src/types/ressources/components/init.c \
+			src/types/ressources/components/load.c \
+			src/types/ressources/components/button/load.c \
+			src/types/ressources/components/backgrounds/load.c \
 			\
 			src/types/view/init.c \
 			\
@@ -53,17 +60,30 @@ SRC = 		main.c \
 			\
 			src/app/window/init.c \
 			\
-			src/app/events/handle.c \
+			src/app/events/handler.c \
 			src/app/events/window/close.c \
 			src/app/events/keyboard/move.c \
+			src/app/events/components/buttons.c \
 			\
 			src/app/display/handle.c \
 			src/app/display/map/map.c \
 			src/app/display/map/back.c \
-			src/app/display/map/front.c \
+			\
 			src/app/display/npcs/npcs.c \
 			src/app/display/player/player.c \
 			src/app/display/characters/character.c \
+			src/app/display/map/front.c	\
+			src/app/display/components/buttons.c \
+      		src/app/display/components/components.c \
+			src/app/display/components/backgrounds.c \
+			\
+			src/app/core/handler.c	\
+			src/app/core/movement.c	\
+			\
+			src/app/utils/test.c \
+			\
+			src/app/loading/loading_company_screen.c \
+			src/app/loading/loading_screen_text.c
 
 NAME = my_rpg
 
@@ -71,7 +91,7 @@ FTEST_REPO = https://github.com/Atomot/ftest/
 
 FTEST_V = ftest-0.1.0-1.x86_64.rpm
 
-CFLAGS += -Wall -Wextra -Wno-unused-command-line-argument -g
+CFLAGS += -Wall -Wextra -Werror -Wno-unused-command-line-argument -g
 
 INC = -I./include -I./lib
 
@@ -96,52 +116,55 @@ COLOUR_GREY=\033[0;30m
 
 COLOUR_END=\033[0m
 
-.PHONY: all clean fclean re
 
 $(NAME):	$(OBJ)
-			@echo "$(COLOUR_RED)🚚 Lib 'My' compliation...$(COLOUR_END)"
+			@printf "$(COLOUR_RED)🚚 Lib 'My' compliation...$(COLOUR_END)\n"
 			@make -C$(PATH_MY)
-			@echo "$(COLOUR_RED)🚚 Lib 'CJSON' compliation...$(COLOUR_END)"
+			@printf "$(COLOUR_RED)🚚 Lib 'CJSON' compliation...$(COLOUR_END)\n"
 			@make -C$(PATH_CJSON)
-			@echo "$(COLOUR_RED)🚚 Main compliation...$(COLOUR_END)"
+			@printf "$(COLOUR_RED)🚚 Main compliation...$(COLOUR_END)\n"
 			@gcc -o $(NAME) $(OBJ) $(LDFLAGS) $(INC)
-			@echo "$(COLOUR_GREEN)✅ Hackers-Quest was successfully built\
-			$(COLOUR_END)"
+			@printf "$(COLOUR_GREEN)✅ Hackers-Quest was successfully built\
+			$(COLOUR_END)\n"
 
 %.o: 		%.c
-			@echo "$(COLOUR_BLUE)📑 Compiling $(BOLD_BLUE)[$<]$(COLOUR_END)"
+			@printf "$(COLOUR_BLUE)📑 Compiling $(BOLD_BLUE)[$<]$(COLOUR_END)\n"
 			@gcc $(LDFLAGS) $(CFLAGS) $(INC) -c $< -o $@
 
 all: 		$(NAME)
 
 clean:
+			@rm -f $(NAME)
 			@rm -f $(OBJ)
 			@make -C$(PATH_MY) clean -s
 			@make -C$(PATH_CJSON) clean -s
 
 fclean: 	clean
-			@rm -f $(NAME)
-			@rm -f $(OBJ)
 			@make -C$(PATH_MY) fclean -s
 			@make -C$(PATH_CJSON) fclean -s
-			@echo "$(COLOUR_ORANGE)🧽 Hackers-Quest was successfully clean\
-			$(COLOUR_END)"
+			@printf "$(COLOUR_ORANGE)🧽 Hackers-Quest was successfully clean\
+			$(COLOUR_END)\n"
 
 re: 		fclean all
 
-style:	fclean
-		@echo "$(COLOUR_RED)🔍 Checking coding style...$(COLOUR_END)"
-		@coding-style . .
-		@cat coding-style-reports.log
+style:		fclean
+			@echo "$(COLOUR_RED)🔍 Checking coding style...$(COLOUR_END)"
+			@coding-style . .
+			@cat coding-style-reports.log
+
+exec:		$(NAME)
+			./$(NAME)
 
 tests_run:
-		echo "pass"
+			echo "pass"
 
 criterion:
-		echo "pass"
+			echo "pass"
 
 ftest:
-		echo "pass"
+			echo "pass"
 
 custom:
-		echo "pass"
+			echo "pass"
+
+.PHONY = all clean fclean re

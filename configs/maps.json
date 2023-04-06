@@ -1,9 +1,0 @@
-{
-    "maps": [
-        {
-            "world": 0,
-            "back": "assets/village/village_back.png",
-            "front": "assets/village/village_front.png"
-        }
-    ]
-}

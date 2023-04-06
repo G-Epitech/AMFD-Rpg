@@ -58,10 +58,3 @@ void renderer_objects_reset_rectangle(renderer_objects_t *objects)
     sfRectangleShape_setSize(objects->rectangle, size);
     sfRectangleShape_setOutlineThickness(objects->rectangle, 0);
 }
-
-void renderer_objects_reset_view(renderer_objects_t *objects)
-{
-    sfFloatRect rect = { 0, 0, 1000, 1000 };
-
-    sfView_reset(objects->view, rect);
-}

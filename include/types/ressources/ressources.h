@@ -59,4 +59,31 @@ void skins_free(list_t *skins);
  */
 const skin_t *ressources_get_skin(list_t *skins, int skin_id);
 
+/**
+ * @brief Init components ressources
+ * @return components structure
+*/
+components_r_t *ressources_components_init(void);
+
+/**
+ * @brief Load all components ressources
+ * @param components Structure of ressources components
+ * @warning You must to previously init the components structure
+*/
+void ressources_components_load(components_r_t *components);
+
+/**
+ * @brief Load buttons textures
+ * @param button_config Configuration of button texture
+*/
+button_r_t *ressources_components_button_load(cjson_t *button_config);
+
+/**
+ * @brief Load backgrounds assets
+ * @param backgrounds_config Json array of backgrounds
+ * @return List of backgrounds
+*/
+list_t *ressources_components_backgrounds_load(cjson_array_t
+*backgrounds_config);
+
 #endif /* !RESSOURCES_H_ */

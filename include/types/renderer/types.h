@@ -12,10 +12,11 @@
     #include "types/components/types.h"
     #include "types/ressources/types.h"
 
+    #define FONT_FILE "assets/font.ttf"
+
 //Set of objects used in rendering phasis
 typedef struct s_render_objects {
     sfRenderWindow *window;
-    sfView *view;
     sfSprite *sprite;
     sfText *text;
     sfCircleShape *circle;
@@ -26,9 +27,12 @@ typedef struct s_render_objects {
  * @brief Renderer structure
 */
 typedef struct s_renderer {
+    sfFont *font;
+    sfRenderWindow *window;
     components_t *components;
     ressources_t *ressources;
-    sfRenderWindow *window;
+    sfView *map_view;
+    const sfView *default_view;
     renderer_objects_t *objects;
 } renderer_t;
 

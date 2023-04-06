@@ -19,12 +19,13 @@ typedef struct s_skin skin_t;
  * @brief Structure of a player
 */
 typedef struct s_player {
-    char *name;             //Name of the player
-    int xp;                 //Player exeprience
-    int orientation;        //Orientation of the player
-    sfVector2f position;    //Position of the player
-    list_t *inventory;      //Inventory with all objects
-    int skin_id;            //Skin ID
+    char *name;                 //Name of the player
+    int xp;                     //Player exeprience
+    int orientation;            //Orientation of the player
+    sfVector2f position;        //Position of the player
+    sfVector2f colision_pos;    //Position of the player in the colision layer
+    list_t *inventory;          //Inventory with all objects
+    int skin_id;                //Skin ID
 } player_t;
 
 #endif /* !PLAYERS_TYPES_H_ */
