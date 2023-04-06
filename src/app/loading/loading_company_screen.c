@@ -21,16 +21,17 @@ void loading_screen_events(renderer_t *renderer)
 
 void zoom_screen(renderer_t *renderer)
 {
+    renderer_objects_t *objects = renderer->objects;
     sfClock *clock = sfClock_create();
     sfTime elapsed = sfClock_getElapsedTime(clock);
     sfVector2f scale = (sfVector2f) {0.1, 0.1};
 
     while (sfTime_asSeconds(elapsed) <= 3 &&
     sfRenderWindow_isOpen(renderer->window)) {
-        sfSprite_setScale(renderer->sprite, scale);
+        sfSprite_setScale(objects->sprite, scale);
         loading_screen_events(renderer);
         sfRenderWindow_clear(renderer->window, sfBlack);
-        sfRenderWindow_drawSprite(renderer->window, renderer->sprite,
+        sfRenderWindow_drawSprite(renderer->window, objects->sprite,
         NULL);
         sfRenderWindow_display(renderer->window);
         elapsed = sfClock_getElapsedTime(clock);
@@ -43,11 +44,12 @@ void zoom_screen(renderer_t *renderer)
 void loading_preload_screen(renderer_t *renderer)
 {
     sfTexture *preload_screen = sfTexture_createFromFile(LOGO_PATH, NULL);
+    renderer_objects_t *objects = renderer->objects;
 
-    sfSprite_setTexture(renderer->sprite, preload_screen, sfTrue);
-    sfSprite_setPosition(renderer->sprite, (sfVector2f) {960, 400});
-    sfSprite_setOrigin(renderer->sprite, (sfVector2f) {500, 450});
+    sfSprite_setTexture(objects->sprite, preload_screen, sfTrue);
+    sfSprite_setPosition(objects->sprite, (sfVector2f) {960, 400});
+    sfSprite_setOrigin(objects->sprite, (sfVector2f) {500, 450});
     zoom_screen(renderer);
-    sfSprite_setOrigin(renderer->sprite, (sfVector2f) {0, 0});
+    sfSprite_setOrigin(objects->sprite, (sfVector2f) {0, 0});
     sfTexture_destroy(preload_screen);
 }

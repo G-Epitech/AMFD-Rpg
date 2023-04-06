@@ -11,5 +11,8 @@
 
 int test(renderer_t *renderer, app_t *app)
 {
+    (void) renderer;
+    (void) app;
     my_putstr("Test event function");
+    return 1;
 }

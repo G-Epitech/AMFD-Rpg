@@ -14,11 +14,13 @@
 
 static void display_background(background_t *background, renderer_t *renderer)
 {
-    sfSprite_setTexture(renderer->sprite, background->texture, sfTrue);
-    sfSprite_setPosition(renderer->sprite, background->position);
-    sfSprite_setScale(renderer->sprite, (sfVector2f) {background->scale,
+    renderer_objects_t *objects = renderer->objects;
+
+    sfSprite_setTexture(objects->sprite, background->texture, sfTrue);
+    sfSprite_setPosition(objects->sprite, background->position);
+    sfSprite_setScale(objects->sprite, (sfVector2f) {background->scale,
     background->scale});
-    sfRenderWindow_drawSprite(renderer->window, renderer->sprite, NULL);
+    sfRenderWindow_drawSprite(renderer->window, objects->sprite, NULL);
 }
 
 void display_components_backgrounds(renderer_t *renderer, app_t *app)

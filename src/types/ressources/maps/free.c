@@ -6,10 +6,10 @@
 */
 
 #include <SFML/Graphics.h>
+#include "types/list/list.h"
 #include "types/ressources/types.h"
-#include "types/list/types.h"
 
-void maps_free_data(list_t *maps)
+void maps_free(list_t *maps)
 {
     node_t *node = NULL;
 
@@ -23,4 +23,5 @@ void maps_free_data(list_t *maps)
             sfTexture_destroy(node->data.map->front);
         node = node->next;
     }
+    list_free(maps);
 }

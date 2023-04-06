@@ -8,15 +8,15 @@
 
 #include <stdio.h>
 #include <SFML/Graphics.h>
+#include "app/app.h"
+#include "my/include/my.h"
+#include "app/core/core.h"
+#include "types/list/types.h"
+#include "app/events/events.h"
+#include "app/display/display.h"
 #include "types/renderer/renderer.h"
 #include "types/components/components.h"
-#include "types/list/types.h"
-#include "my/include/my.h"
-#include "app/events/events.h"
-#include "app/app.h"
 #include "types/ressources/ressources.h"
-#include "app/display/display.h"
-#include "app/core/core.h"
 
 int main(void)
 {

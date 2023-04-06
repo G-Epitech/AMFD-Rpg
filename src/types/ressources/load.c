@@ -41,6 +41,7 @@ ressources_t *ressources_load(void)
         return NULL;
     }
     maps_load(ressources->maps);
+    skins_load(ressources->skins);
     ressources_components_load(ressources->components);
     return ressources;
 }

@@ -124,11 +124,10 @@ bool cjson_get_prop_bool(cjson_t *object, char *key, bool *value);
  * @param key Key of property
  * @return Extracted value
  * @warning Doesn't use this function if your not sure that CJSON element
- * type is number and property exsits. This function could return 0
- * if element is not a number or not found. In this case you will not
- * be able to do the difference between value 0 contained in given CJSON
+ * type is boolean and property exsits. This function could return false
+ * if element is not a boolean or not found. In this case you will not
+ * be able to do the difference between value false contained in given CJSON
  * element or if is an error. To prevent error use cjson_get_bool instead.
- * @note If number is bool, it will be truncate to bool.
  */
 bool cjson_get_prop_bool_unsafe(cjson_t *object, char *key);
 
@@ -147,11 +146,10 @@ bool cjson_get_prop_string(cjson_t *object, char *key, char **value);
  * @param key Key of property
  * @return Extracted value
  * @warning Doesn't use this function if your not sure that CJSON element
- * type is number and property exsits. This function could return 0
- * if element is not a number or not found. In this case you will not
- * be able to do the difference between value 0 contained in given CJSON
+ * type is string and property exsits. This function could return NULL
+ * if element is not a string or not found. In this case you will not
+ * be able to do the difference between value NULL contained in given CJSON
  * element or if is an error. To prevent error use cjson_get_string instead.
- * @note If number is string, it will be truncate to string.
  */
 char *cjson_get_prop_string_unsafe(cjson_t *object, char *key);
 

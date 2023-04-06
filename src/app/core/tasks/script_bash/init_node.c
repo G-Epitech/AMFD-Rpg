@@ -52,7 +52,7 @@ static int init_cmd(app_t *app)
 {
     node_t *temp = STRUCT_BASH(app).cmd->first;
 
-    for (int index = 0; temp != NULL; index++) {
+    while (temp) {
         temp->data.node_bash->cmd = malloc(sizeof(char));
         if (temp->data.node_bash->cmd == NULL)
             return 84;

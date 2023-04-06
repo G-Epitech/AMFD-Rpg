@@ -18,12 +18,6 @@
 void ressources_free(ressources_t *ressources);
 
 /**
- * @brief Free all maps data
- * @param maps List of maps
-*/
-void maps_free_data(list_t *maps);
-
-/**
  * @brief Load all ressources from configs
  * @return The structure of ressources (lists for any types of ressources)
 */
@@ -38,7 +32,35 @@ ressources_t *ressources_load(void);
 void maps_load(list_t *maps);
 
 /**
- * @biref Init components ressources
+ * @brief Free all maps
+ * @param maps List of maps
+*/
+void maps_free(list_t *maps);
+
+/**
+ * @brief Load all skins from configs
+ * @param skins List of skins
+ * @warning All textures could be NULL.
+ * Remember to check before using it in a sprite for example
+ */
+void skins_load(list_t *skins);
+
+/**
+ * @brief Free all skins
+ * @param maps List of skins
+*/
+void skins_free(list_t *skins);
+
+/**
+ * @brief Get expected skin
+ * @param skins Skins ressources
+ * @param skin_id ID of skin to get
+ * @return Expected skin or NULL if not found
+ */
+const skin_t *ressources_get_skin(list_t *skins, int skin_id);
+
+/**
+ * @brief Init components ressources
  * @return components structure
 */
 components_r_t *ressources_components_init(void);

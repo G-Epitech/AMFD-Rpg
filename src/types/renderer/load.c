@@ -19,5 +19,5 @@ void load_renderer(renderer_t *renderer)
     load_screen_text_display(renderer, "Loading  Components. . .");
     renderer->components = components_load(renderer);
     load_screen_text_display(renderer, "Initializing  View. . .");
-    renderer->view = view_init();
+    renderer->map_view = view_init();
 }

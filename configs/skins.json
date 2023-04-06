@@ -1,0 +1,18 @@
+[
+    {
+        "id": 0,
+        "texture": "assets/skins/adam.png"
+    },
+    {
+        "id": 1,
+        "texture": "assets/skins/pierre.png"
+    },
+    {
+        "id": 2,
+        "texture": "assets/skins/kiki.png"
+    },
+    {
+        "id": 3,
+        "texture": "assets/skins/police.png"
+    }
+]

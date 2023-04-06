@@ -8,6 +8,8 @@
 #ifndef LOADING_H_
     #define LOADING_H_
 
+    #include "types/renderer/types.h"
+
 /**
  * @brief Displays the G-Epitech screen when window is launched
  * @param renderer Main renderer

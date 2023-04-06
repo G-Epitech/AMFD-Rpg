@@ -13,7 +13,7 @@
 #include "types/renderer/types.h"
 #include "types/list/types.h"
 
-static bool on_button(button_t *button, renderer_t *renderer, app_t *app,
+static bool on_button(button_t *button, app_t *app,
 sfEvent event)
 {
     sfVector2f cursor = (sfVector2f) {event.mouseButton.x,
@@ -38,7 +38,7 @@ void event_components_buttons(renderer_t *renderer, app_t *app, sfEvent event)
 
     while (node) {
         button = node->data.button;
-        if (on_button(button, renderer, app, event)) {
+        if (on_button(button, app, event)) {
             event_map[button->event].function(renderer, app);
         }
         node = node->next;

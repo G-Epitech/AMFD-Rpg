@@ -7,18 +7,13 @@
 
 #include <stdlib.h>
 #include <SFML/Graphics.h>
-#include "types/renderer/types.h"
+#include "types/renderer/renderer.h"
 #include "types/ressources/ressources.h"
 
 void renderer_destroy(renderer_t *renderer)
 {
-    sfSprite_destroy(renderer->sprite);
-    sfRectangleShape_destroy(renderer->rectangle);
-    sfCircleShape_destroy(renderer->circle);
-    sfText_destroy(renderer->text);
-    sfRenderWindow_close(renderer->window);
-    sfView_destroy(renderer->view);
-    sfFont_destroy(renderer->font);
+    renderer_objects_destroy(renderer->objects);
     ressources_free(renderer->ressources);
+    sfFont_destroy(renderer->font);
     free(renderer);
 }

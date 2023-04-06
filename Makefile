@@ -12,12 +12,26 @@ SRC = 		src/main.c \
 			src/types/renderer/init.c \
 			src/types/renderer/load.c	\
 			src/types/renderer/destroy.c \
+			src/types/renderer/objects/init.c \
+			src/types/renderer/objects/destroy.c \
+			src/types/renderer/objects/reset.c \
 			\
 			src/types/list/append.c \
 			src/types/list/list.c \
 			\
 			src/types/node/node.c \
 			src/types/node/swap.c \
+			\
+			src/types/npc/load/dialogs.c \
+			src/types/npc/load/load_all.c \
+			src/types/npc/load/load.c \
+			src/types/npc/load/enemy.c \
+			src/types/npc/load/world_data.c \
+			src/types/npc/load/worlds_data.c \
+			src/types/npc/destroy/worlds_data.c \
+			src/types/npc/destroy/destroy_all.c \
+			src/types/npc/destroy/enemy.c \
+			src/types/npc/get.c \
 			\
 			src/types/players/init.c \
 			src/types/players/add.c \
@@ -33,6 +47,11 @@ SRC = 		src/main.c \
 			src/types/ressources/free.c \
 			src/types/ressources/maps/load.c \
 			src/types/ressources/maps/free.c \
+			\
+			src/types/ressources/skins/load.c \
+			src/types/ressources/skins/free.c \
+			src/types/ressources/skins/get.c \
+			\
 			src/types/ressources/components/init.c \
 			src/types/ressources/components/load.c \
 			src/types/ressources/components/button/load.c \
@@ -65,6 +84,9 @@ SRC = 		src/main.c \
 			src/app/display/tasks/script_bash/display.c \
 			src/app/display/tasks/handler.c \
 			\
+			src/app/display/npcs/npcs.c \
+			src/app/display/player/player.c \
+			src/app/display/characters/character.c \
 			src/app/display/map/front.c	\
 			src/app/display/components/buttons.c \
       		src/app/display/components/components.c \
@@ -85,7 +107,7 @@ FTEST_REPO = https://github.com/Atomot/ftest/
 
 FTEST_V = ftest-0.1.0-1.x86_64.rpm
 
-CFLAGS += -Wall -Wextra -Wno-unused-command-line-argument
+CFLAGS += -Wall -Wextra -Werror -Wno-unused-command-line-argument -g
 
 INC = -I./include -I./lib
 
@@ -141,22 +163,24 @@ fclean: 	clean
 
 re: 		fclean all
 
-norm:	fclean
-		coding-style . .
+style:		fclean
+			@echo "$(COLOUR_RED)🔍 Checking coding style...$(COLOUR_END)"
+			@coding-style . .
+			@cat coding-style-reports.log
 
 exec:		$(NAME)
 			./$(NAME)
 
 tests_run:
-		echo "pass"
+			echo "pass"
 
 criterion:
-		echo "pass"
+			echo "pass"
 
 ftest:
-		echo "pass"
+			echo "pass"
 
 custom:
-		echo "pass"
+			echo "pass"
 
 .PHONY = all clean fclean re

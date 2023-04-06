@@ -12,7 +12,8 @@
     #include "app/types.h"
 
     #define RESSOURCES_MAPS_CONFIG "configs/ressources/maps.json"
-    #define RESSOURCES_SKINS_CONFIG "configs/ressources/skin.json"
+    #define RESSOURCES_SKINS_CONFIG "configs/skins.json"
+    #define RESSOURCES_SKINS_RECT ((sfVector2i) { 16, 32 })
     #define RESSOURCES_COMPONENTS_CONFIG "configs/ressources/components.json"
 
 typedef struct s_list list_t;
@@ -22,6 +23,7 @@ typedef struct s_list list_t;
 */
 typedef struct s_skin {
     int id;                 //Id of the skin
+    sfTexture *texture;     //Texture of corresponding to skin
 } skin_t;
 
 /**

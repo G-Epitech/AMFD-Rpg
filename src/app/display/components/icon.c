@@ -13,9 +13,11 @@
 
 void display_components_icon(renderer_t *renderer, button_t *button)
 {
-    sfSprite_setTexture(renderer->sprite, button->texture, sfTrue);
-    sfSprite_setPosition(renderer->sprite, button->position);
-    sfSprite_setScale(renderer->sprite, (sfVector2f) {button->scale,
+    renderer_objects_t *objects = renderer->objects;
+
+    sfSprite_setTexture(objects->sprite, button->texture, sfTrue);
+    sfSprite_setPosition(objects->sprite, button->position);
+    sfSprite_setScale(objects->sprite, (sfVector2f) {button->scale,
     button->scale});
-    sfRenderWindow_drawSprite(renderer->window, renderer->sprite, NULL);
+    sfRenderWindow_drawSprite(renderer->window, objects->sprite, NULL);
 }

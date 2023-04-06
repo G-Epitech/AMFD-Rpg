@@ -21,8 +21,7 @@
 
 int app_run(renderer_t *renderer, app_t *app)
 {
-    event_handler(renderer->window, app, renderer);
-    sfRenderWindow_clear(renderer->window, sfBlack);
+    event_handler(renderer->objects->window, app, renderer);
     if (core_handler(renderer, app) == 84)
         return 84;
     display_handle(renderer, app);

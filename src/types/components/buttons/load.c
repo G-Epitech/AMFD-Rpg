@@ -17,15 +17,16 @@
 static float setup_text(button_t *button, renderer_t *renderer)
 {
     components_r_t *ressources = renderer->ressources->components;
+    renderer_objects_t *objects = renderer->objects;
     sfFloatRect rect = {0, 0, 0, 0};
     float total = 0;
 
-    sfText_setString(renderer->text, button->title);
-    sfText_setFont(renderer->text, renderer->font);
-    sfText_setColor(renderer->text, button->text_color);
-    sfText_setCharacterSize(renderer->text, 25 * button->scale);
-    rect = sfText_getGlobalBounds(renderer->text);
-    sfText_setPosition(renderer->text, (sfVector2f) {button->position.x +
+    sfText_setString(objects->text, button->title);
+    sfText_setFont(objects->text, renderer->font);
+    sfText_setColor(objects->text, button->text_color);
+    sfText_setCharacterSize(objects->text, 25 * button->scale);
+    rect = sfText_getGlobalBounds(objects->text);
+    sfText_setPosition(objects->text, (sfVector2f) {button->position.x +
     (25 * button->scale), (button->position.y + (button->scale * 152 / 2))
     - rect.height / 2});
     total = ((50 * button->scale) + rect.width) - (40 * button->scale);
