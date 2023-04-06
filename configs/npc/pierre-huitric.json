@@ -7,8 +7,7 @@
             "skin_id": 1,
             "orientation": 0,
             "position": { "x": 2950, "y": 3035 },
-            "enemy": true,
-            "enemy_data": {
+            "enemy": {
                 "life": 12,
                 "level": 0,
                 "attacks": [ 0, 1 ]
@@ -22,7 +21,6 @@
             "world": 1,
             "skin_id": 2,
             "position": { "x": 0, "y": 0 },
-            "enemy": true,
             "dialogs": [
                 { "label": "hello", "content": "Hello how are you ?" },
                 { "label": "bye", "content": "Bye, see you later" }

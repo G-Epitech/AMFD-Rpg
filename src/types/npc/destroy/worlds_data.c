@@ -28,6 +28,7 @@ void npc_destroy_worlds_data(list_t *worlds_data)
 
     while (node) {
         npc_destroy_world_data_dialogs(node->data.npc_data.dialogs);
+        npc_destroy_world_enemy(node->data.npc_data.enemy);
         node = node->next;
     }
     list_free(worlds_data);

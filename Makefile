@@ -22,9 +22,12 @@ SRC = 		main.c \
 			src/types/npc/load/dialogs.c \
 			src/types/npc/load/load_all.c \
 			src/types/npc/load/load.c \
+			src/types/npc/load/enemy.c \
+			src/types/npc/load/world_data.c \
 			src/types/npc/load/worlds_data.c \
 			src/types/npc/destroy/worlds_data.c \
 			src/types/npc/destroy/destroy_all.c \
+			src/types/npc/destroy/enemy.c \
 			src/types/npc/get.c \
 			\
 			src/types/players/init.c \

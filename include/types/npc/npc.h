@@ -35,11 +35,26 @@ list_t *npcs_load(void);
 bool npc_load_worlds_data(cjson_array_t *config, npc_t *npc);
 
 /**
+ * @brief Load given config into worlds data of npc
+ * @param config Configuration of current world for npc
+ * @param worlds_data List of npc worlds data
+ * @return Success of loading
+ */
+bool npc_load_world_data(cjson_t *config, list_t *worlds_data);
+
+/**
  * @brief Load dialog for given world
  * @param dialogs Dialogs to load
  * @param world_data Data for given world
  */
 void npc_load_world_dialogs(cjson_array_t *dialogs, npc_data_t *world_data);
+
+/**
+ * @brief Load enemy data if present
+ * @param config Enemy CJSON data configuration
+ * @param world_data Data for given world
+ */
+void npc_load_world_enemy(cjson_t *config, npc_data_t *world_data);
 
 /**
  * @brief Destroy all worlds data of a npc
@@ -52,6 +67,12 @@ void npc_destroy_worlds_data(list_t *worlds_data);
  * @param npcs List of npcs to destroy
  */
 void npcs_destroy(list_t *npcs);
+
+/**
+ * @brief Destroy given npc enemy data
+ * @param enemy Enemy data to free
+ */
+void npc_destroy_world_enemy(npc_enemy_t *enemy);
 
 /**
  * @brief Get data of expected world if exists
