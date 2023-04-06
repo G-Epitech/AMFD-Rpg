@@ -32,10 +32,8 @@ int main(void)
         return 84;
     }
     while (sfRenderWindow_isOpen(renderer->window)) {
-        event_handler(renderer->window, app, renderer);
-        core_handler(renderer, app);
-        sfRenderWindow_clear(renderer->window, sfBlack);
-        display_handle(renderer, app);
+        if (app_run(renderer, app) == 84)
+            return 84;
     }
     renderer_destroy(renderer);
     return 0;

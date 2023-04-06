@@ -43,6 +43,7 @@ typedef struct s_app {
     list_t *players;        //List of players
     player_t *player;       //Player of the client
     control_t *control;     //Controller of the player
+    list_t *tasks_setup;
 } app_t;
 
 #endif /* !APP_TYPES_H_ */
