@@ -12,6 +12,7 @@
     #include "app/types.h"
     #include "cjson/include/cjson.h"
     #include "app/utils/utils.h"
+    #include "app/window/window.h"
 
     #define COMPONENTS_CONFIG "configs/components.json"
 
@@ -76,7 +77,8 @@ typedef struct s_components {
 static const struct {
     int (*function) (renderer_t *renderer, app_t *app);
 } event_map[] = {
-    {test}
+    {test},
+    {window_close}
 };
 
 #endif /* !COMPONENTS_TYPES_H_ */

@@ -9,13 +9,23 @@
     #define WINDOW_H_
 
     #include <SFML/Graphics.h>
+    #include "app/types.h"
 
     #define WIN_FPS 120
     #define WIN_VIDEO_MODE ((sfVideoMode) {1920, 1080, 32})
+
+typedef struct s_renderer renderer_t;
 
 /**
  * Init a new window
  * @return The new window
  */
 sfRenderWindow *window_init(void);
+
+/**
+ * @brief Close the window
+ * @param renderer Renderer structure
+ * @param app App structure
+ */
+int window_close(renderer_t *renderer, app_t *app);
 #endif //WINDOW_H_

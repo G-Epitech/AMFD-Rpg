@@ -34,12 +34,12 @@ static float setup_text(button_t *button, renderer_t *renderer)
     sfText_setString(objects->text, button->title);
     sfText_setFont(objects->text, renderer->font);
     sfText_setColor(objects->text, button->text_color);
-    sfText_setCharacterSize(objects->text, 25 * button->scale);
+    sfText_setCharacterSize(objects->text, 30 * button->scale);
     rect = sfText_getGlobalBounds(objects->text);
     sfText_setPosition(objects->text, (sfVector2f) {button->position.x +
-    (25 * button->scale), (button->position.y + (button->scale * 152 / 2))
+    (40 * button->scale), (button->position.y + (button->scale * 132 / 2))
     - rect.height / 2});
-    total = ((50 * button->scale) + rect.width) - (40 * button->scale);
+    total = ((80 * button->scale) + rect.width) - (40 * button->scale);
     return total / sfTexture_getSize(ressources->button->middle).x;
 }
 
