@@ -39,22 +39,14 @@ static sfVector2f get_rect_scale(button_t *button, renderer_t *renderer)
     sfVector2u middle = sfTexture_getSize(ressources->button->middle);
     sfVector2f rect_scale = {0, 0};
 
-    rect_scale.x = text_scale * middle.x + 15 * button->scale;
-    rect_scale.y = button->scale * 152;
+    if (!button->texture) {
+        rect_scale.x = text_scale * middle.x + 15 * button->scale;
+        rect_scale.y = button->scale * 152;
+    } else {
+        rect_scale.x = button->scale * sfTexture_getSize(button->texture).x;
+        rect_scale.y = button->scale * sfTexture_getSize(button->texture).y;
+    }
     return rect_scale;
-}
-
-static sfVector2f cjson_vector(cjson_t *config)
-{
-    cjson_t *position_prop = NULL;
-    sfVector2f position = {0, 0};
-
-    position_prop = cjson_get_prop(config, "position");
-    if (!position_prop)
-        return position;
-    position.x = cjson_get_prop_float_unsafe(position_prop, "x");
-    position.y = cjson_get_prop_float_unsafe(position_prop, "y");
-    return position;
 }
 
 static void button_cjson_color(cjson_t *config, sfColor *color, char *key)
@@ -68,6 +60,19 @@ static void button_cjson_color(cjson_t *config, sfColor *color, char *key)
     color->g = cjson_get_prop_int_unsafe(color_prop, "g");
     color->b = cjson_get_prop_int_unsafe(color_prop, "b");
     color->a = cjson_get_prop_int_unsafe(color_prop, "a");
+}
+
+static void button_get_extra(cjson_t *config, button_t *button)
+{
+    char *texture = NULL;
+    int event = -1;
+
+    if (!cjson_get_prop_string(config, "icon", &texture))
+        return;
+    button->texture = sfTexture_createFromFile(texture, NULL);
+    cjson_get_prop_int(config, "event", &event);
+    button->event = event;
+    free(texture);
 }
 
 void buttons_load(renderer_t *renderer, components_t *components,
@@ -89,6 +94,7 @@ cjson_array_t *buttons)
         cjson_get_prop_string(button, "title", &data->title);
         cjson_get_prop_string(button, "description", &data->description);
         cjson_get_prop_float(button, "scale", &data->scale);
+        button_get_extra(button, data);
         data->rect_scale = get_rect_scale(data, renderer);
         button = button->next;
     }

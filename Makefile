@@ -21,6 +21,7 @@ SRC = 		main.c \
 			src/types/players/add.c \
 			\
 			src/types/components/load.c \
+			src/types/components/vector.c \
 			src/types/components/buttons/append.c \
 			src/types/components/buttons/load.c \
 			src/types/components/levers/append.c \
@@ -53,6 +54,7 @@ SRC = 		main.c \
 			src/app/display/components/buttons.c \
       		src/app/display/components/components.c \
 			src/app/display/components/backgrounds.c \
+			src/app/display/components/icon.c \
 			\
 			src/app/core/handler.c	\
 			src/app/core/movement.c	\

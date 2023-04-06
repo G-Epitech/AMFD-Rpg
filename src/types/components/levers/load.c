@@ -13,19 +13,6 @@
 #include "types/list/list.h"
 #include "cjson/include/cjson.h"
 
-static sfVector2f cjson_vector(cjson_t *config)
-{
-    cjson_t *position_prop = NULL;
-    sfVector2f position = {0, 0};
-
-    position_prop = cjson_get_prop(config, "position");
-    if (!position_prop)
-        return position;
-    position.x = cjson_get_prop_float_unsafe(position_prop, "x");
-    position.y = cjson_get_prop_float_unsafe(position_prop, "y");
-    return position;
-}
-
 void levers_load(components_t *components, cjson_array_t *levers)
 {
     cjson_t *lever = levers->first;
