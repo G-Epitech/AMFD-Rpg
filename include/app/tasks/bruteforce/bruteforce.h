@@ -25,4 +25,22 @@ node_t *task_create_nodes_brute(void);
 */
 void app_task_brute_display(renderer_t *renderer, app_t *app);
 
+/**
+ * @brief Core handler of task brute
+ * @param app Application structure
+*/
+int app_task_brute_core(app_t *app);
+
+/**
+ * @brief Reset setup of brute_force struct when its finish
+ * @param app Application structure
+*/
+void reset_setup_brute(app_t *app);
+
+/**
+ * @brief Init task brute when first entrance
+ * @param app Application structure
+*/
+int init_task_brute(app_t *app);
+
 #endif /* !BRUTEFORCE_H_ */

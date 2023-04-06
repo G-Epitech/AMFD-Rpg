@@ -62,7 +62,7 @@ static int init_cmd(app_t *app)
     return 0;
 }
 
-int init_task(app_t *app)
+int init_task_bash(app_t *app)
 {
     STRUCT_BASH(app).handler_time->clock_time = sfClock_create();
     if (STRUCT_BASH(app).handler_time->clock_time == NULL)

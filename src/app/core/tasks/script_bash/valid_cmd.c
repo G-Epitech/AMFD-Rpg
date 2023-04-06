@@ -20,7 +20,7 @@ static void good_result(int *index_cmd, app_t *app)
         (*index_cmd)--;
         my_putstr("You win\n");
         app->state = ST_INGAME;
-        reset_setup(app);
+        reset_setup_bash(app);
     }
 }
 
@@ -33,7 +33,7 @@ app_t *app, int *index_life)
     if ((*index_life) == 0) {
         my_putstr("You lose\n");
         app->state = ST_INGAME;
-        reset_setup(app);
+        reset_setup_bash(app);
     }
 }
 

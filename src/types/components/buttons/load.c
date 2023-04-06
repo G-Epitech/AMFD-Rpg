@@ -24,12 +24,12 @@ static float setup_text(button_t *button, renderer_t *renderer)
     sfText_setString(objects->text, button->title);
     sfText_setFont(objects->text, renderer->font);
     sfText_setColor(objects->text, button->text_color);
-    sfText_setCharacterSize(objects->text, 25 * button->scale);
+    sfText_setCharacterSize(objects->text, 30 * button->scale);
     rect = sfText_getGlobalBounds(objects->text);
     sfText_setPosition(objects->text, (sfVector2f) {button->position.x +
-    (25 * button->scale), (button->position.y + (button->scale * 152 / 2))
+    (40 * button->scale), (button->position.y + (button->scale * 132 / 2))
     - rect.height / 2});
-    total = ((50 * button->scale) + rect.width) - (40 * button->scale);
+    total = ((80 * button->scale) + rect.width) - (40 * button->scale);
     return total / sfTexture_getSize(ressources->button->middle).x;
 }
 
@@ -42,7 +42,7 @@ static sfVector2f get_rect_scale(button_t *button, renderer_t *renderer)
 
     if (!button->texture) {
         rect_scale.x = text_scale * middle.x + 15 * button->scale;
-        rect_scale.y = button->scale * 152;
+        rect_scale.y = button->scale * 132;
     } else {
         rect_scale.x = button->scale * sfTexture_getSize(button->texture).x;
         rect_scale.y = button->scale * sfTexture_getSize(button->texture).y;
@@ -68,11 +68,16 @@ static void button_get_extra(cjson_t *config, button_t *button)
     char *texture = NULL;
     int event = -1;
 
+    button_cjson_color(config, &button->color, "color");
+    button_cjson_color(config, &button->text_color, "color_text");
+    cjson_get_prop_string(config, "title", &button->title);
+    cjson_get_prop_string(config, "description", &button->description);
+    cjson_get_prop_float(config, "scale", &button->scale);
+    cjson_get_prop_int(config, "event", &event);
+    button->event = event;
     if (!cjson_get_prop_string(config, "icon", &texture))
         return;
     button->texture = sfTexture_createFromFile(texture, NULL);
-    cjson_get_prop_int(config, "event", &event);
-    button->event = event;
     free(texture);
 }
 
@@ -81,20 +86,19 @@ cjson_array_t *buttons)
 {
     cjson_t *button = buttons->first;
     sfVector2f position = {0, 0};
-    app_states_t state = ST_LOADING;
+    cjson_array_t *array = NULL;
+    app_states_t *state = NULL;
     button_t *data = NULL;
+    size_t len = 0;
 
     while (button) {
         position = cjson_vector(button);
-        state = cjson_get_prop_int_unsafe(button, "app_state");
+        array = cjson_get_prop_array_unsafe(button, "app_state");
+        state = (app_states_t *) cjson_array_to_int_array(array, &len);
         data = buttons_append(components->buttons, position, state);
         if (!data)
             return;
-        button_cjson_color(button, &data->color, "color");
-        button_cjson_color(button, &data->text_color, "color_text");
-        cjson_get_prop_string(button, "title", &data->title);
-        cjson_get_prop_string(button, "description", &data->description);
-        cjson_get_prop_float(button, "scale", &data->scale);
+        data->state_size = len;
         button_get_extra(button, data);
         data->rect_scale = get_rect_scale(data, renderer);
         button = button->next;

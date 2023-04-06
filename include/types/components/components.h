@@ -26,7 +26,7 @@ components_t *components_load(renderer_t *renderer);
  * @return The new button data
 */
 button_t *buttons_append(list_t *list, sfVector2f position,
-app_states_t app_state);
+app_states_t *app_state);
 
 /**
  * @brief Load all buttons with json configuration

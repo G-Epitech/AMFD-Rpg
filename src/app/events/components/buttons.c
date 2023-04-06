@@ -19,7 +19,7 @@ sfEvent event)
     sfVector2f cursor = (sfVector2f) {event.mouseButton.x,
     event.mouseButton.y};
 
-    if (button->app_state != app->state)
+    if (!app_on_state(app, button->app_state, button->state_size))
         return false;
     if (cursor.x < button->position.x || cursor.y < button->position.y)
         return false;

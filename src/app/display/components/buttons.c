@@ -10,6 +10,7 @@
 #include "app/display/display.h"
 #include "types/renderer/types.h"
 #include "types/list/types.h"
+#include "app/app.h"
 
 static void display_rectangle(button_t *button, renderer_t *renderer)
 {
@@ -34,12 +35,12 @@ static float setup_text(button_t *button, renderer_t *renderer)
     sfText_setString(objects->text, button->title);
     sfText_setFont(objects->text, renderer->font);
     sfText_setColor(objects->text, button->text_color);
-    sfText_setCharacterSize(objects->text, 25 * button->scale);
+    sfText_setCharacterSize(objects->text, 30 * button->scale);
     rect = sfText_getGlobalBounds(objects->text);
     sfText_setPosition(objects->text, (sfVector2f) {button->position.x +
-    (25 * button->scale), (button->position.y + (button->scale * 152 / 2))
+    (40 * button->scale), (button->position.y + (button->scale * 132 / 2))
     - rect.height / 2});
-    total = ((50 * button->scale) + rect.width) - (40 * button->scale);
+    total = ((80 * button->scale) + rect.width) - (40 * button->scale);
     return total / sfTexture_getSize(ressources->button->middle).x;
 }
 
@@ -89,12 +90,12 @@ void display_components_buttons(renderer_t *renderer, app_t *app)
 
     while (node) {
         button = node->data.button;
-        if (button->app_state == app->state && !button->texture) {
+        if (!app_on_state(app, button->app_state, button->state_size))
+            return;
+        if (!button->texture)
             display_button(button, renderer);
-        }
-        if (button->app_state == app->state && button->texture) {
+        if (button->texture)
             display_components_icon(renderer, button);
-        }
         node = node->next;
     }
 }

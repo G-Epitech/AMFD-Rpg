@@ -16,9 +16,11 @@ typedef struct s_list list_t;
 typedef enum e_app_states {
     ST_LOADING = 0,         //Loading of the game
     ST_MAIN_MENU,           //Start menu
-    ST_INGAME,              //Main state, ingame player
-    ST_INBUILDING,          //In building
+    ST_SETTINGS,            //Settings menu
+    ST_HELP,                //Help menu
     ST_INVENTORY,           //Inventory menu
+    ST_INGAME = 10,         //Main state, ingame player
+    ST_INBUILDING,          //In building
     ST_FIGHT,               //Fight interface
     ST_BREAK,               //Break menu (save/sound...)
     ST_TASK = 50,           //Task delimiter

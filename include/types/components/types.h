@@ -12,6 +12,7 @@
     #include "app/types.h"
     #include "cjson/include/cjson.h"
     #include "app/utils/utils.h"
+    #include "app/window/window.h"
 
     #define COMPONENTS_CONFIG "configs/components.json"
 
@@ -50,8 +51,9 @@ typedef struct s_button {
     sfTexture *texture;
     sfVector2f position;
     sfVector2f rect_scale;
-    app_states_t app_state;
+    app_states_t *app_state;
     buttons_states_t state;
+    size_t state_size;
 } button_t;
 
 /**
@@ -76,7 +78,8 @@ typedef struct s_components {
 static const struct {
     int (*function) (renderer_t *renderer, app_t *app);
 } event_map[] = {
-    {test}
+    {test},
+    {window_close}
 };
 
 #endif /* !COMPONENTS_TYPES_H_ */

@@ -49,10 +49,11 @@ typedef struct s_button_r {
  * @brief Structure of background
 */
 typedef struct s_background {
-    sfTexture *texture;     //Texture of the background
-    float scale;            //Scale of the background
-    app_states_t app_state; //State when the background must be display
-    sfVector2f position;    //Position of the background
+    sfTexture *texture;         //Texture of the background
+    float scale;                //Scale of the background
+    app_states_t *app_state;    //State when the background must be display
+    size_t state_size;          //Size of state array
+    sfVector2f position;        //Position of the background
 } background_t;
 
 /**

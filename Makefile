@@ -7,8 +7,6 @@
 
 SRC = 		src/main.c \
 			\
-			src/app/run.c \
-			\
 			src/types/renderer/init.c \
 			src/types/renderer/load.c	\
 			src/types/renderer/destroy.c \
@@ -60,8 +58,11 @@ SRC = 		src/main.c \
 			src/types/view/init.c \
 			\
 			src/app/init.c \
+			src/app/run.c \
+			src/app/state.c \
 			\
 			src/app/window/init.c \
+			src/app/window/close.c \
 			\
 			src/app/events/handler.c \
 			src/app/events/window/close.c \
@@ -92,6 +93,8 @@ SRC = 		src/main.c \
       		src/app/display/components/components.c \
 			src/app/display/components/backgrounds.c \
 			src/app/display/components/icon.c \
+			src/app/display/menus/menus.c \
+			src/app/display/menus/main_menu.c \
 			\
 			src/app/core/handler.c	\
 			src/app/core/movement.c	\
@@ -102,6 +105,9 @@ SRC = 		src/main.c \
 			src/app/loading/loading_screen_text.c \
 			\
 			src/app/core/tasks/brute_force/create_node.c \
+			src/app/core/tasks/brute_force/game_handler.c \
+			src/app/core/tasks/brute_force/reset_setup.c \
+			src/app/core/tasks/brute_force/init_node.c \
 			src/app/display/tasks/brute_force/display.c \
 
 NAME = my_rpg

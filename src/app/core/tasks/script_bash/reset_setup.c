@@ -34,14 +34,14 @@ static void free_cmd_model(app_t *app)
     }
 }
 
-void reset_setup(app_t *app)
+void reset_setup_bash(app_t *app)
 {
     STRUCT_BASH(app).handler_placing->just_started = true;
     free_cmd(app);
     free_cmd_model(app);
-    sfClock_destroy(CLOCK(app));
-    TIME_FLOAT(app) = 0.0;
-    TIME_INT(app) = 20;
+    sfClock_destroy(CLOCK(NODE_BASH));
+    TIME_FLOAT(NODE_BASH) = 0.0;
+    TIME_INT(NODE_BASH) = 20;
     INDEX_LIFE(app) = 3;
     INDEX_CMD(app) = 1;
 }
