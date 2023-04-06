@@ -14,7 +14,6 @@
 static void set_enemy_in_world(npc_enemy_t *enemy, npc_data_t *world_data)
 {
     world_data->enemy = malloc(sizeof(npc_enemy_t));
-
     if (!world_data->enemy)
         return;
     (*world_data->enemy) = *enemy;
