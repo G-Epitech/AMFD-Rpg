@@ -9,13 +9,13 @@
         {
             "asset": "assets/components/backgrounds/menu_background.png",
             "scale": 1,
-            "state": [1],
+            "state": [1, 2, 3],
             "position" : {"x": 0, "y": 0}
         },
         {
             "asset": "assets/components/backgrounds/menu.png",
             "scale": 1,
-            "state": [1],
+            "state": [1, 2, 3],
             "position" : {"x": 341, "y": 156}
         },
         {
@@ -29,6 +29,12 @@
             "scale": 1,
             "state": [1],
             "position" : {"x": 417, "y": 750}
+        },
+        {
+            "asset": "assets/components/backgrounds/param_icon.png",
+            "scale": 1,
+            "state": [2],
+            "position" : {"x": 727, "y": 306}
         },
         {
             "asset": "assets/tasks/phone.png",
