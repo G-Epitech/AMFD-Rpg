@@ -6,8 +6,8 @@
     },
 
     "lever": {
-        "left": "assets/components/button/on.png",
-        "right": "assets/components/button/off.png"
+        "on": "assets/components/button/on_switch.png",
+        "off": "assets/components/button/off_switch.png"
     },
 
     "backgrounds": [

@@ -62,6 +62,7 @@ typedef struct s_button {
  * It's majoritory use in a levers list
 */
 typedef struct s_lever {
+    bool active;
     float scale;
     sfVector2f position;
     app_states_t app_state;

@@ -5,6 +5,7 @@
 ** Append a new button to a list of buttons
 */
 
+#include <stdbool.h>
 #include <stdlib.h>
 #include <SFML/Graphics.h>
 #include "types/components/types.h"
@@ -25,6 +26,7 @@ app_states_t app_state)
     lever->scale = 1.0;
     lever->state = ST_LV_OFF;
     lever->app_state = app_state;
+    lever->active = false;
     node = node_new(data);
     if (!node) {
         free(lever);

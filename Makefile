@@ -74,6 +74,7 @@ SRC = 		src/main.c \
 			src/app/events/window/close.c \
 			src/app/events/keyboard/move.c \
 			src/app/events/components/buttons.c \
+			src/app/events/components/levers.c \
 			\
 			src/app/display/handle.c \
 			src/app/display/map/map.c \
@@ -98,6 +99,7 @@ SRC = 		src/main.c \
 			src/app/display/components/buttons.c \
       		src/app/display/components/components.c \
 			src/app/display/components/backgrounds.c \
+			src/app/display/components/levers.c \
 			src/app/display/components/icon.c \
 			src/app/display/menus/menus.c \
 			src/app/display/menus/main_menu.c \
