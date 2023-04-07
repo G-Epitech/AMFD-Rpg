@@ -10,9 +10,11 @@
 
     #include <SFML/Graphics.h>
     #include "app/types.h"
+    #include "app/app.h"
     #include "cjson/include/cjson.h"
     #include "app/utils/utils.h"
     #include "app/window/window.h"
+    #include "app/tasks/bruteforce/bruteforce.h"
 
     #define COMPONENTS_CONFIG "configs/components.json"
 
@@ -79,7 +81,13 @@ static const struct {
     int (*function) (renderer_t *renderer, app_t *app);
 } event_map[] = {
     {test},
-    {window_close}
+    {window_close},
+    {states_settings},
+    {states_main_menu},
+    {states_help},
+    {states_switch_left},
+    {states_switch_right},
+    {brute_force_click}
 };
 
 #endif /* !COMPONENTS_TYPES_H_ */

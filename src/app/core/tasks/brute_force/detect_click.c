@@ -14,8 +14,9 @@
 #include "types/list/types.h"
 #include "my/include/my.h"
 
-void brute_force_click(renderer_t *renderer, app_t *app)
+int brute_force_click(renderer_t *renderer, app_t *app)
 {
     (void) renderer;
-    (void) app;
+    NB_CLICK(app)++;
+    return 0;
 }

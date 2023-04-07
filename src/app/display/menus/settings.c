@@ -1,6 +1,6 @@
 /*
 ** EPITECH PROJECT, 2023
-** menus.c
+** settings.c
 ** File description:
 ** Display menus
 */
@@ -11,8 +11,9 @@
 #include "types/renderer/renderer.h"
 #include "types/ressources/ressources.h"
 
-void display_menus(renderer_t *renderer, app_t *app)
+void display_settings(renderer_t *renderer, app_t *app)
 {
-    display_main_menu(renderer, app);
-    display_settings(renderer, app);
+    (void) renderer;
+    if (app->state != ST_SETTINGS)
+        return;
 }

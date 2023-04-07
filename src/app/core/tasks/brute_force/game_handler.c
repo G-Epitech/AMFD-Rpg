@@ -27,12 +27,13 @@ int app_task_brute_core(app_t *app)
             return 84;
     }
     time_handler(app);
+    if (NB_CLICK(app) >= OBJECTIF(app)) {
+        my_putstr("You Win\n");
+        reset_setup_brute(app);
+        app->state = ST_INGAME;
+    }
     if (TIME_FLOAT(NODE_BRUTE) > 10.0) {
-        if (NB_CLICK(app) > 80) {
-            my_putstr("You Win\n");
-        } else {
-            my_putstr("You lose\n");
-        }
+        my_putstr("You lose\n");
         reset_setup_brute(app);
         app->state = ST_INGAME;
     }

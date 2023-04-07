@@ -18,6 +18,7 @@
     #define RIGHT_POS(size, middle, right, scale) ((sfVector2f)\
     {size.x + middle.x * scale+ right.x, right.y})
     #define GAME_TITLE "Hackers Quests"
+    #define SETTINGS_TITLE "Settings"
 
 /**
  * @brief Display player on map
@@ -121,5 +122,12 @@ void display_main_menu(renderer_t *renderer, app_t *app);
  * @param app 1pplication informations
  */
 void display_menus(renderer_t *renderer, app_t *app);
+
+/**
+ * @brief Display settings
+ * @param renderer Renderer structure
+ * @param app 1pplication informations
+ */
+void display_settings(renderer_t *renderer, app_t *app);
 
 #endif /* !DISPLAY_H_ */

@@ -9,13 +9,13 @@
         {
             "asset": "assets/components/backgrounds/menu_background.png",
             "scale": 1,
-            "state": [1],
+            "state": [1, 2, 3, 4],
             "position" : {"x": 0, "y": 0}
         },
         {
             "asset": "assets/components/backgrounds/menu.png",
             "scale": 1,
-            "state": [1, 52],
+            "state": [1, 2, 3, 4, 52],
             "position" : {"x": 341, "y": 156}
         },
         {
@@ -29,6 +29,18 @@
             "scale": 1,
             "state": [1],
             "position" : {"x": 417, "y": 750}
+        },
+        {
+            "asset": "assets/components/backgrounds/reglages.png",
+            "scale": 1,
+            "state": [2],
+            "position" : {"x": 575, "y": 292}
+        },
+        {
+            "asset": "assets/components/backgrounds/help_1.png",
+            "scale": 1,
+            "state": [3],
+            "position" : {"x": 457, "y": 292}
         },
         {
             "asset": "assets/tasks/phone.png",

@@ -28,7 +28,7 @@ static void display_objectif(renderer_t *renderer, app_t *app)
     sfText_setPosition(objects->text, (sfVector2f) {570, 300});
     sfText_setColor(objects->text, sfWhite);
     sfText_setCharacterSize(objects->text, 20);
-    sfText_setString(objects->text, nbr_to_str(80));
+    sfText_setString(objects->text, nbr_to_str(OBJECTIF(app)));
     sfRenderWindow_drawText(renderer->window, objects->text, NULL);
 }
 
