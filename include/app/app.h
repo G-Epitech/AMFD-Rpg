@@ -11,6 +11,9 @@
     #include "app/types.h"
     #include "app/utils/utils.h"
 
+typedef struct s_renderer renderer_t;
+typedef struct s_button button_t;
+
 /**
  * @brief Init application
  * @return The new app structure
@@ -39,34 +42,34 @@ bool app_on_state(app_t *app, app_states_t *states, size_t size);
  * @param renderer Main renderer function
  * @param app Application structure
  */
-int states_settings(renderer_t *renderer, app_t *app);
+int states_settings(renderer_t *renderer, app_t *app, button_t *button);
 
 /**
  * @brief Change state to help
  * @param renderer Main renderer function
  * @param app Application structure
  */
-int states_help(renderer_t *renderer, app_t *app);
+int states_help(renderer_t *renderer, app_t *app, button_t *button);
 
 /**
  * @brief Down state
  * @param renderer Main renderer function
  * @param app Application structure
  */
-int states_switch_left(renderer_t *renderer, app_t *app);
+int states_switch_left(renderer_t *renderer, app_t *app, button_t *button);
 
 /**
  * @brief Up state
  * @param renderer Main renderer function
  * @param app Application structure
  */
-int states_switch_right(renderer_t *renderer, app_t *app);
+int states_switch_right(renderer_t *renderer, app_t *app, button_t *button);
 
 /**
  * @brief Change state to main menu
  * @param renderer Main renderer function
  * @param app Application structure
  */
-int states_main_menu(renderer_t *renderer, app_t *app);
+int states_main_menu(renderer_t *renderer, app_t *app, button_t *button);
 
 #endif /* !APP_H_ */

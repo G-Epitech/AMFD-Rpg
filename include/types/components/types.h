@@ -77,7 +77,7 @@ typedef struct s_components {
 } components_t;
 
 static const struct {
-    int (*function) (renderer_t *renderer, app_t *app);
+    int (*function) (renderer_t *renderer, app_t *app, button_t *button);
 } event_map[] = {
     {test},
     {window_close},
