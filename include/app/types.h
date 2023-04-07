@@ -17,12 +17,13 @@ typedef enum e_app_states {
     ST_LOADING = 0,         //Loading of the game
     ST_MAIN_MENU,           //Start menu
     ST_SETTINGS,            //Settings menu
-    ST_HELP,                //Help menu
-    ST_INVENTORY,           //Inventory menu
-    ST_INGAME = 10,         //Main state, ingame player
-    ST_INBUILDING,          //In building
-    ST_FIGHT,               //Fight interface
+    ST_HELP_1,              //Help menu 1
+    ST_HELP_2,              //Help menu 2
     ST_BREAK,               //Break menu (save/sound...)
+    ST_INVENTORY = 25,      //Inventory menu
+    ST_INGAME = 30,         //Main state, ingame player
+    ST_INBUILDING,          //In building
+    ST_FIGHT = 40,          //Fight interface
     ST_TASK = 50,           //Task delimiter
     ST_TASK_BASH,           //Task n°1: bash
     ST_QUIT = 100           //Quit menu

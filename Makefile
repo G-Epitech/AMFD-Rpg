@@ -64,6 +64,7 @@ SRC = 		src/main.c \
 			src/app/states/settings.c \
 			src/app/states/main_menu.c \
 			src/app/states/help.c \
+			src/app/states/switch.c \
 			\
 			src/app/window/init.c \
 			src/app/window/close.c \

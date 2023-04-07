@@ -83,7 +83,9 @@ static const struct {
     {window_close},
     {states_settings},
     {states_main_menu},
-    {states_help}
+    {states_help},
+    {states_switch_left},
+    {states_switch_right}
 };
 
 #endif /* !COMPONENTS_TYPES_H_ */

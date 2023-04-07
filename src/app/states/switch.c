@@ -1,6 +1,6 @@
 /*
 ** EPITECH PROJECT, 2023
-** state.c
+** switch.c
 ** File description:
 ** Check if app is on a speicific state
 */
@@ -10,9 +10,17 @@
 #include "app/types.h"
 #include "types/renderer/types.h"
 
-int states_help(renderer_t *renderer, app_t *app)
+int states_switch_left(renderer_t *renderer, app_t *app)
 {
     (void) renderer;
-    app->state = ST_HELP_1;
+    app->state--;
+    return 0;
+}
+
+int states_switch_right(renderer_t *renderer, app_t *app)
+{
+    printf("Enter\n");
+    (void) renderer;
+    app->state++;
     return 0;
 }

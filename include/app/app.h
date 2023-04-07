@@ -49,6 +49,20 @@ int states_settings(renderer_t *renderer, app_t *app);
 int states_help(renderer_t *renderer, app_t *app);
 
 /**
+ * @brief Down state
+ * @param renderer Main renderer function
+ * @param app Application structure
+ */
+int states_switch_left(renderer_t *renderer, app_t *app);
+
+/**
+ * @brief Up state
+ * @param renderer Main renderer function
+ * @param app Application structure
+ */
+int states_switch_right(renderer_t *renderer, app_t *app);
+
+/**
  * @brief Change state to main menu
  * @param renderer Main renderer function
  * @param app Application structure
