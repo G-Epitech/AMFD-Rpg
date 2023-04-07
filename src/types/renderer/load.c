@@ -15,7 +15,7 @@ void load_renderer(renderer_t *renderer)
 {
     loading_preload_screen(renderer);
     load_screen_text_display(renderer, "Loading  Ressources. . .");
-    renderer->ressources = ressources_load();
+    renderer->ressources = ressources_load(renderer);
     load_screen_text_display(renderer, "Loading  Components. . .");
     renderer->components = components_load(renderer);
     load_screen_text_display(renderer, "Initializing  View. . .");

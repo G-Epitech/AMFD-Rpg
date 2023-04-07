@@ -12,6 +12,7 @@
 #include "types/ressources/ressources.h"
 #include "types/players/types.h"
 #include "cjson/include/cjson.h"
+#include "app/loading/loading.h"
 
 ressources_t *ressources_init(void)
 {
@@ -31,17 +32,25 @@ ressources_t *ressources_init(void)
     return ressources;
 }
 
-ressources_t *ressources_load(void)
+ressources_t *ressources_load(renderer_t *renderer)
 {
     ressources_t *ressources = ressources_init();
 
+    load_screen_add_bar(renderer, 1, "Chargement  Ressources. . .",
+    "Initialisation des ressources");
     ressources->components = ressources_components_init();
     if (!ressources || !ressources->components) {
         ressources_free(ressources);
         return NULL;
     }
-    maps_load(ressources->maps);
+    load_screen_add_bar(renderer, 2, "Chargement Ressources. . .",
+    "Chargement des maps");
+    maps_load(ressources->maps, renderer);
+    load_screen_add_bar(renderer, 4, "Chargement Ressources. . .",
+    "Chargement des skins");
     skins_load(ressources->skins);
+    load_screen_add_bar(renderer, 6, "Chargement Ressources. . .",
+    "Chargement des composents");
     ressources_components_load(ressources->components);
     return ressources;
 }

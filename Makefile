@@ -109,7 +109,8 @@ SRC = 		src/main.c \
 			src/app/utils/test.c \
 			\
 			src/app/loading/loading_company_screen.c \
-			src/app/loading/loading_screen_text.c
+			src/app/loading/loading_screen_text.c \
+			src/app/loading/loading_sleep.c
 
 NAME = my_rpg
 
