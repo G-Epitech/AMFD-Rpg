@@ -34,9 +34,37 @@
         },
         {
             "icon": "assets/components/button/home.png",
-            "app_state": [2, 3],
+            "app_state": [2],
             "position": {"x": 1408, "y": 788},
             "event": 3,
+            "scale": 1
+        },
+        {
+            "icon": "assets/components/button/home.png",
+            "app_state": [3, 4],
+            "position": {"x": 1408, "y": 678},
+            "event": 3,
+            "scale": 1
+        },
+        {
+            "icon": "assets/components/button/previous_block.png",
+            "app_state": [3],
+            "position": {"x": 1279, "y": 788},
+            "event": 0,
+            "scale": 1
+        },
+        {
+            "icon": "assets/components/button/previous.png",
+            "app_state": [4],
+            "position": {"x": 1279, "y": 788},
+            "event": 5,
+            "scale": 1
+        },
+        {
+            "icon": "assets/components/button/next.png",
+            "app_state": [3, 4],
+            "position": {"x": 1408, "y": 788},
+            "event": 6,
             "scale": 1
         }
     ],
