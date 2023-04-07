@@ -42,7 +42,7 @@ void good_or_bad_result(sfEvent event, app_t *app)
     node_t *current_cmd_model = NULL;
     node_t *current_cmd = NULL;
 
-    if (event.key.code == sfKeyEnter) {
+    if (event.text.unicode == '\r') {
         current_cmd = find_node_cmd(STRUCT_BASH(app).cmd,
         STRUCT_BASH(app).handler_placing->index_cmd);
         current_cmd_model = find_node_cmd(STRUCT_BASH(app).cmd_model,

@@ -18,11 +18,13 @@ renderer_t *renderer)
     if (event.type == sfEvtClosed) {
         event_window_close(window);
     }
-    if (event.type == sfEvtKeyPressed) {
+    if (event.type == sfEvtTextEntered) {
         if (app->state == ST_TASK_BASH) {
             cmd_write(event, app);
             good_or_bad_result(event, app);
         }
+    }
+    if (event.type == sfEvtKeyPressed) {
         if (app->state == ST_INGAME)
             keyboard_press_move(event, app);
     }
