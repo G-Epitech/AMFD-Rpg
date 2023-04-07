@@ -24,7 +24,8 @@ static void display_time(renderer_t *renderer, app_t *app)
     sfText_setString(objects->text, "timer:");
     sfRenderWindow_drawText(renderer->window, objects->text, NULL);
     sfText_setPosition(objects->text, (sfVector2f) {880, 220});
-    char_second = nbr_to_str(TIME_INT(NODE_BASH) - ((int) TIME_FLOAT(NODE_BASH)));
+    char_second =
+    nbr_to_str(TIME_INT(NODE_BASH) - ((int) TIME_FLOAT(NODE_BASH)));
     sfText_setString(objects->text, char_second);
     sfRenderWindow_drawText(renderer->window, objects->text, NULL);
 }

@@ -42,8 +42,9 @@ void cmd_write(sfEvent event, app_t *app)
 {
     node_t *current_cmd = find_node_cmd(STRUCT_BASH(app).cmd, INDEX_CMD(app));
 
-    if (0 < event.text.unicode && event.text.unicode < 128 && event.text.unicode != '\r'
-    && my_strlen(STR_CMD(app)) <= LEN_MAX_CMD && event.text.unicode != '\b')
+    if (0 < event.text.unicode && event.text.unicode < 128
+    && event.text.unicode != '\r' && my_strlen(STR_CMD(app)) <= LEN_MAX_CMD
+    && event.text.unicode != '\b')
         realloc_char(&STR_CMD(app), event.text.unicode);
     if (event.text.unicode == '\b')
         (STR_CMD(app))[my_strlen((STR_CMD(app))) - 1] = '\0';

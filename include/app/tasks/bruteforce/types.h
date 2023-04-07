@@ -12,8 +12,10 @@
     #include <SFML/Graphics/RenderWindow.h>
     #include <SFML/System/Clock.h>
 
-    #define NB_CLICK(app) app->tasks_setup->first->next->data.task->content.force.nb_click
-    #define JUST_STARTED(app) app->tasks_setup->first->next->data.task->content.force.just_started
+    #define NB_CLICK(app) app->tasks_setup->first->next->data.\
+    task->content.force.nb_click
+    #define JUST_STARTED(app) app->tasks_setup->first->next->data.\
+    task->content.force.just_started
     #define BRUTE(brute_force) brute_force.task->content.force
 
 typedef struct s_timer_handler timer_handler_t;
