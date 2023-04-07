@@ -5,6 +5,7 @@
 ** Handle the display of the map
 */
 
+#include <stdio.h>
 #include <SFML/Graphics.h>
 #include "app/display/display.h"
 #include "types/list/list.h"

@@ -10,6 +10,7 @@
 
     #include <SFML/Graphics.h>
     #include "app/types.h"
+    #include "app/app.h"
     #include "cjson/include/cjson.h"
     #include "app/utils/utils.h"
     #include "app/window/window.h"
@@ -79,7 +80,10 @@ static const struct {
     int (*function) (renderer_t *renderer, app_t *app);
 } event_map[] = {
     {test},
-    {window_close}
+    {window_close},
+    {states_settings},
+    {states_main_menu},
+    {states_help}
 };
 
 #endif /* !COMPONENTS_TYPES_H_ */

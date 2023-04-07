@@ -59,7 +59,11 @@ SRC = 		src/main.c \
 			\
 			src/app/init.c \
 			src/app/run.c \
-			src/app/state.c \
+			\
+			src/app/states/on_state.c \
+			src/app/states/settings.c \
+			src/app/states/main_menu.c \
+			src/app/states/help.c \
 			\
 			src/app/window/init.c \
 			src/app/window/close.c \
@@ -95,6 +99,7 @@ SRC = 		src/main.c \
 			src/app/display/components/icon.c \
 			src/app/display/menus/menus.c \
 			src/app/display/menus/main_menu.c \
+			src/app/display/menus/settings.c \
 			\
 			src/app/core/handler.c	\
 			src/app/core/movement.c	\

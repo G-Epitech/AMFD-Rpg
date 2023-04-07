@@ -40,6 +40,7 @@ void event_components_buttons(renderer_t *renderer, app_t *app, sfEvent event)
         button = node->data.button;
         if (on_button(button, app, event)) {
             event_map[button->event].function(renderer, app);
+            break;
         }
         node = node->next;
     }

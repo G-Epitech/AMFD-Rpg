@@ -90,12 +90,15 @@ void display_components_buttons(renderer_t *renderer, app_t *app)
 
     while (node) {
         button = node->data.button;
-        if (!app_on_state(app, button->app_state, button->state_size))
-            return;
-        if (!button->texture)
+        if (!app_on_state(app, button->app_state, button->state_size)) {
+            node = node->next;
+            continue;
+        }
+        if (!button->texture) {
             display_button(button, renderer);
-        if (button->texture)
+        } else {
             display_components_icon(renderer, button);
+        }
         node = node->next;
     }
 }

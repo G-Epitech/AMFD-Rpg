@@ -34,4 +34,25 @@ int app_run(renderer_t *renderer, app_t *app);
  */
 bool app_on_state(app_t *app, app_states_t *states, size_t size);
 
+/**
+ * @brief Change state to setting
+ * @param renderer Main renderer function
+ * @param app Application structure
+ */
+int states_settings(renderer_t *renderer, app_t *app);
+
+/**
+ * @brief Change state to help
+ * @param renderer Main renderer function
+ * @param app Application structure
+ */
+int states_help(renderer_t *renderer, app_t *app);
+
+/**
+ * @brief Change state to main menu
+ * @param renderer Main renderer function
+ * @param app Application structure
+ */
+int states_main_menu(renderer_t *renderer, app_t *app);
+
 #endif /* !APP_H_ */
