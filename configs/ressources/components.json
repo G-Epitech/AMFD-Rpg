@@ -5,6 +5,11 @@
         "middle": "assets/components/button/middle.png"
     },
 
+    "lever": {
+        "left": "assets/components/button/on.png",
+        "right": "assets/components/button/off.png"
+    },
+
     "backgrounds": [
         {
             "asset": "assets/components/backgrounds/menu_background.png",

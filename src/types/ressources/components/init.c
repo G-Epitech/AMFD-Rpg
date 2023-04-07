@@ -19,6 +19,7 @@ components_r_t *ressources_components_init(void)
     if (!components)
         return NULL;
     components->button = NULL;
+    components->lever = NULL;
     components->backgrounds = NULL;
     return components;
 }

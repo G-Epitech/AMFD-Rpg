@@ -54,6 +54,7 @@ SRC = 		src/main.c \
 			src/types/ressources/components/load.c \
 			src/types/ressources/components/button/load.c \
 			src/types/ressources/components/backgrounds/load.c \
+			src/types/ressources/components/lever/load.c \
 			\
 			src/types/view/init.c \
 			\

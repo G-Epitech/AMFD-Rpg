@@ -86,4 +86,10 @@ button_r_t *ressources_components_button_load(cjson_t *button_config);
 list_t *ressources_components_backgrounds_load(cjson_array_t
 *backgrounds_config);
 
+/**
+ * @brief Load levers textures
+ * @param lever_config Configuration of lever texture
+*/
+lever_r_t *ressources_components_lever_load(cjson_t *lever_config);
+
 #endif /* !RESSOURCES_H_ */
