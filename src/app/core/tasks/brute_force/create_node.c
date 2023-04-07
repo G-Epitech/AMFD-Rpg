@@ -30,6 +30,7 @@ node_t *task_create_nodes_brute(void)
         return NULL;
     brute_force.task = task;
     brute_force.task->content.force.nb_click = 0;
+    brute_force.task->content.force.size_text = 50;
     brute_force.task->content.force.just_started = true;
     if (init_time(brute_force) == 84)
         return NULL;

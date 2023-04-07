@@ -35,12 +35,6 @@
             "scale": 1,
             "state": [51],
             "position" : {"x": 690, "y": 140}
-        },
-        {
-            "asset": "assets/tasks/usb.png",
-            "scale": 2,
-            "state": [52],
-            "position" : {"x": 533, "y": 140}
         }
     ]
 }

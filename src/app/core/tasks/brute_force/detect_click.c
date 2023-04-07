@@ -12,12 +12,10 @@
 #include "app/tasks/bruteforce/bruteforce.h"
 #include "app/tasks/bruteforce/types.h"
 #include "types/list/types.h"
+#include "my/include/my.h"
 
-void reset_setup_brute(app_t *app)
+void brute_force_click(renderer_t *renderer, app_t *app)
 {
-    JUST_STARTED(app) = true;
-    SIZE_TEXT(app) = 50;
-    sfClock_destroy(CLOCK(NODE_BRUTE));
-    TIME_FLOAT(NODE_BRUTE) = 0.0;
-    NB_CLICK(app) = 0;
+    (void) renderer;
+    (void) app;
 }

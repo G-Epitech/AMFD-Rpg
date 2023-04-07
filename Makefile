@@ -108,7 +108,16 @@ SRC = 		src/main.c \
 			src/app/core/tasks/brute_force/game_handler.c \
 			src/app/core/tasks/brute_force/reset_setup.c \
 			src/app/core/tasks/brute_force/init_node.c \
+			src/app/core/tasks/brute_force/detect_click.c \
 			src/app/display/tasks/brute_force/display.c \
+			\
+			src/app/events/handler/closed.c \
+			src/app/events/handler/mouse_button_pressed.c \
+			src/app/events/handler/pressed.c \
+			src/app/events/handler/released.c \
+			src/app/events/handler/text_entered.c \
+			\
+
 
 NAME = my_rpg
 

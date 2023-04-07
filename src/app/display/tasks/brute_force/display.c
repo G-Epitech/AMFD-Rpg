@@ -64,9 +64,21 @@ static void display_clicker(renderer_t *renderer, app_t *app)
     sfRenderWindow_drawText(renderer->window, objects->text, NULL);
 }
 
+static void display_cliquer(renderer_t *renderer, app_t *app)
+{
+    renderer_objects_t *objects = renderer->objects;
+
+    sfText_setPosition(objects->text, (sfVector2f) {790, 780});
+    sfText_setColor(objects->text, sfWhite);
+    sfText_setString(objects->text, "Cliquez !");
+    sfText_setCharacterSize(objects->text, SIZE_TEXT(app));
+    sfRenderWindow_drawText(renderer->window, objects->text, NULL);
+}
+
 void app_task_brute_display(renderer_t *renderer, app_t *app)
 {
     display_clicker(renderer, app);
     display_time(renderer, app);
     display_objectif(renderer, app);
+    display_cliquer(renderer, app);
 }

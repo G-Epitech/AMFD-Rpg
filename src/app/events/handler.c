@@ -15,25 +15,11 @@
 static void event_analyse(sfRenderWindow *window, sfEvent event, app_t *app,
 renderer_t *renderer)
 {
-    if (event.type == sfEvtClosed) {
-        event_window_close(window);
-    }
-    if (event.type == sfEvtTextEntered) {
-        if (app->state == ST_TASK_BASH) {
-            cmd_write(event, app);
-            good_or_bad_result(event, app);
-        }
-    }
-    if (event.type == sfEvtKeyPressed) {
-        if (app->state == ST_INGAME)
-            keyboard_press_move(event, app);
-    }
-    if (event.type == sfEvtKeyReleased) {
-        keyboard_release_move(event, app);
-    }
-    if (event.type == sfEvtMouseButtonPressed) {
-        event_components_buttons(renderer, app, event);
-    }
+    event_close(window, event);
+    event_text_entered(event, app);
+    event_key_pressed(event, app);
+    event_key_released(event, app);
+    event_mouse_button_pressed(app, renderer, event);
 }
 
 void event_handler(sfRenderWindow *window, app_t *app, renderer_t *renderer)
