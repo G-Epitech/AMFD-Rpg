@@ -101,11 +101,12 @@ SRC = 		src/main.c \
 			src/app/display/player/player.c \
 			src/app/display/characters/character.c \
 			src/app/display/map/front.c	\
-			src/app/display/components/buttons.c \
       		src/app/display/components/components.c \
 			src/app/display/components/backgrounds.c \
 			src/app/display/components/levers.c \
-			src/app/display/components/icon.c \
+			src/app/display/components/buttons/buttons.c \
+			src/app/display/components/buttons/icon.c \
+			src/app/display/components/buttons/dispatch.c \
 			src/app/display/menus/menus.c \
 			src/app/display/menus/main_menu.c \
 			src/app/display/menus/settings.c \

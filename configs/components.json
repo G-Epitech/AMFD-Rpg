@@ -25,7 +25,7 @@
             "color": {"r": 191, "g": 173, "b": 147, "a": 255},
             "color_text": {"r": 103, "g": 81, "b": 82, "a":  255},
             "scale": 1.2,
-            "next_state": 200
+            "next_state": 100
         },
         {
             "title": "Lancer",
@@ -126,6 +126,15 @@
             "position": {"x": 1408, "y": 788},
             "event": 0,
             "scale": 1
+        },
+        {
+            "icon": "assets/components/button/reload.png",
+            "app_state": [0],
+            "position": {"x": 1800, "y": 20},
+            "event": 0,
+            "scale": 1,
+            "always_display": true,
+            "developer": true
         }
     ],
 

@@ -49,6 +49,8 @@ typedef struct s_button {
     float scale;
     int event;
     int next_state;
+    bool developer;
+    bool always_display;
     sfColor color;
     sfColor text_color;
     sfTexture *texture;

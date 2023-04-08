@@ -139,4 +139,18 @@ void display_settings(renderer_t *renderer, app_t *app);
  */
 void display_components_levers(renderer_t *renderer, app_t *app);
 
+/**
+ * @brief Dispatch display of buttons
+ * @param renderer Renderer structure
+ * @param app 1pplication informations
+ */
+void display_buttons_dispatch(button_t *button, renderer_t *renderer);
+
+/**
+ * @brief Display button
+ * @param renderer Renderer structure
+ * @param app 1pplication informations
+ */
+void display_button(button_t *button, renderer_t *renderer);
+
 #endif /* !DISPLAY_H_ */
