@@ -15,15 +15,15 @@
 
 static void get_position(size_t i, sfVector2f *position)
 {
-    int line = i / INVENTORY_MAIN_GRID_SIZE.x;
-    int col = i - (INVENTORY_MAIN_GRID_SIZE.x * line);
+    int line = i / INVENTORY_ACTIVE_GRID_SIZE.x;
+    int col = i - (INVENTORY_ACTIVE_GRID_SIZE.x * line);
 
-    position->x = INVENTORY_MAIN_GRID_POS.x;
-    position->x += INVENTORY_MAIN_GRID_MARGIN.x * col;
-    position->x += INVENTORY_MAIN_GRID_ITEM_SIZE * col;
-    position->y = INVENTORY_MAIN_GRID_POS.y;
-    position->y += INVENTORY_MAIN_GRID_MARGIN.y * line;
-    position->y += INVENTORY_MAIN_GRID_ITEM_SIZE * line;
+    position->x = INVENTORY_ACTIVE_GRID_POS.x;
+    position->x += INVENTORY_ACTIVE_GRID_MARGIN.x * col;
+    position->x += INVENTORY_ACTIVE_GRID_ITEM_SIZE * col;
+    position->y = INVENTORY_ACTIVE_GRID_POS.y;
+    position->y += INVENTORY_ACTIVE_GRID_MARGIN.y * line;
+    position->y += INVENTORY_ACTIVE_GRID_ITEM_SIZE * line;
 }
 
 static void display_item(renderer_t *renderer, size_t i)
@@ -32,8 +32,9 @@ static void display_item(renderer_t *renderer, size_t i)
     sfTexture *utils = renderer->ressources->inventory->grid;
     sfSprite *sprite = renderer->objects->sprite;
     sfIntRect rect = INVENTORY_GRID_ITEM_ACTIVE_RECT;
-    float scale = (float) INVENTORY_MAIN_GRID_ITEM_SIZE / (float) rect.width;
+    float scale = (float) INVENTORY_ACTIVE_GRID_ITEM_SIZE;
 
+    scale /= (float) rect.width;
     get_position(i, &position);
     if (!utils)
         return;
@@ -45,9 +46,9 @@ static void display_item(renderer_t *renderer, size_t i)
     sfRenderWindow_drawSprite(renderer->objects->window, sprite, NULL);
 }
 
-void display_inventory_main_grid(renderer_t *renderer, app_t *app)
+void display_inventory_active_grid(renderer_t *renderer, app_t *app)
 {
-    sfVector2i size = INVENTORY_MAIN_GRID_SIZE;
+    sfVector2i size = INVENTORY_ACTIVE_GRID_SIZE;
     size_t nb_items = size.x * size.y;
 
     (void) app;

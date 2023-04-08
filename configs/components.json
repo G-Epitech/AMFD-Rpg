@@ -66,6 +66,13 @@
             "position": {"x": 1408, "y": 788},
             "event": 6,
             "scale": 1
+        },
+        {
+            "icon": "assets/components/button/close1.png",
+            "app_state": [25],
+            "position": {"x": 1663, "y": 30},
+            "event": 6,
+            "scale": 1.83
         }
     ],
 

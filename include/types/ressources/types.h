@@ -14,7 +14,7 @@
     #define RESSOURCES_SKINS_CONFIG "configs/skins.json"
     #define RESSOURCES_SKINS_RECT ((sfVector2i) { 16, 32 })
     #define RESSOURCES_MAPS_CONFIG "configs/ressources/maps.json"
-    #define RESSOURCES_INVENTORY_CONFIG "configs/ressources/inventory.json"
+    #define RESSOURCES_INVENTORY_CONFIG "configs/inventory.json"
     #define RESSOURCES_COMPONENTS_CONFIG "configs/ressources/components.json"
 
 typedef struct s_list list_t;

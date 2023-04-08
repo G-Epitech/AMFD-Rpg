@@ -13,7 +13,7 @@ sfRenderWindow *window_init(void)
 {
     sfRenderWindow *window = NULL;
     sfVideoMode video_mode = WIN_VIDEO_MODE;
-    char *name = "RPG";
+    char *name = WIN_TITLE;
     int fps = WIN_FPS;
 
     window = sfRenderWindow_create(video_mode, name, sfResize | sfClose, NULL);

@@ -107,6 +107,10 @@ SRC = 		src/main.c \
 			src/app/display/menus/main_menu.c \
 			src/app/display/menus/settings.c \
 			\
+			src/app/display/inventory/main_grid.c \
+			src/app/display/inventory/active_grid.c \
+			src/app/display/inventory/inventory.c \
+			\
 			src/app/core/handler.c	\
 			src/app/core/movement.c	\
 			\

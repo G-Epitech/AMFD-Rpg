@@ -137,4 +137,25 @@ void display_settings(renderer_t *renderer, app_t *app);
  */
 void display_components_levers(renderer_t *renderer, app_t *app);
 
+/**
+ * @brief Display main grid of inventory
+ * @param renderer Renderer object
+ * @param app App object
+ */
+void display_inventory_main_grid(renderer_t *renderer, app_t *app);
+
+/**
+ * @brief Display main grid of inventory
+ * @param renderer Renderer object
+ * @param app App object
+ */
+void display_inventory_active_grid(renderer_t *renderer, app_t *app);
+
+/**
+ * @brief Display main grid of inventory
+ * @param renderer Renderer object
+ * @param app App object
+ */
+void display_inventory(renderer_t *renderer, app_t *app);
+
 #endif /* !DISPLAY_H_ */
