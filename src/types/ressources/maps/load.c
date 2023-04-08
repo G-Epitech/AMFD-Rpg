@@ -75,10 +75,10 @@ renderer_t *renderer)
         free(map);
         return;
     }
-    load_screen_add_bar(renderer, 3, "Chargement Ressources. . .",
+    load_screen_add_bar(renderer, 3, "Chargement des ressources...",
     my_strcat("Map sol ", nbr_to_str(i)));
     maps_append_data(map, map_config);
-    load_screen_add_bar(renderer, 3, "Chargement Ressources. . .",
+    load_screen_add_bar(renderer, 3, "Chargement des ressources...",
     my_strcat("Map collisions ", nbr_to_str(i)));
     maps_load_collision(map, map_config);
     list_append(maps, node);
@@ -91,12 +91,12 @@ void maps_load(list_t *maps, renderer_t *renderer)
     cjson_t *map = NULL;
     int i = 0;
 
+    load_screen_add_bar(renderer, 2, "Chargement des ressources...",
+    "Chargement des maps");
     if (!maps_config)
         return;
-    if (!cjson_get_prop_array(maps_config, "maps", &array)) {
-        cjson_free(maps_config);
-        return;
-    }
+    if (!cjson_get_prop_array(maps_config, "maps", &array))
+        return cjson_free(maps_config);
     map = array->first;
     while (map) {
         i++;
