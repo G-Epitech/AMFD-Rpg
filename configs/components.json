@@ -73,17 +73,20 @@
         {
             "position": {"x": 460, "y": 446},
             "app_state": 2,
-            "scale": 1
+            "scale": 1,
+            "event": 0
         },
         {
             "position": {"x": 460, "y": 540},
             "app_state": 2,
-            "scale": 1
+            "scale": 1,
+            "event": 1
         },
         {
             "position": {"x": 460, "y": 631},
             "app_state": 2,
-            "scale": 1
+            "scale": 1,
+            "event": 2
         }
     ]
 }
