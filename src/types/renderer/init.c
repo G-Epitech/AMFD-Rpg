@@ -22,7 +22,7 @@ renderer_t *renderer_init(void)
 
     if (!renderer)
         return NULL;
-    renderer->window = window_init();
+    renderer->window = window_init(false);
     renderer->objects = renderer_objects_init(renderer->window);
     renderer->components = NULL;
     renderer->ressources = NULL;

@@ -40,6 +40,14 @@ typedef struct s_control {
     sfKeyCode key;          //Move key code
 } control_t;
 
+typedef struct s_settings {
+    bool music;             //Music in game
+    int volume;             //Volume of the music
+    int fps;                //Framerate of the game
+    bool full_screen;       //Application in full screen
+    bool developer;         //Developer mode
+} settings_t;
+
 typedef struct s_app {
     app_states_t state;     //State of the app
     worlds_t world;         //Actual wolrd where player is
@@ -47,7 +55,8 @@ typedef struct s_app {
     player_t *player;       //Player of the client
     list_t *npcs;           //NPC of game
     control_t *control;     //Controller of the player
-    list_t *tasks_setup;
+    list_t *tasks_setup;    //Taks of the game
+    settings_t *settings;   //Settings of the application
 } app_t;
 
 #endif /* !APP_TYPES_H_ */

@@ -14,6 +14,7 @@
     #include "cjson/include/cjson.h"
     #include "app/utils/utils.h"
     #include "app/window/window.h"
+    #include "app/settings/settings.h"
 
     #define COMPONENTS_CONFIG "configs/components.json"
 
@@ -62,6 +63,7 @@ typedef struct s_button {
  * It's majoritory use in a levers list
 */
 typedef struct s_lever {
+    int event;
     bool active;
     float scale;
     sfVector2f position;
@@ -79,7 +81,7 @@ typedef struct s_components {
 
 static const struct {
     int (*function) (renderer_t *renderer, app_t *app, button_t *button);
-} event_map[] = {
+} event_button_map[] = {
     {test},
     {window_close},
     {states_settings},
@@ -87,6 +89,14 @@ static const struct {
     {states_help},
     {states_switch_left},
     {states_switch_right}
+};
+
+static const struct {
+    int (*function) (renderer_t *renderer, app_t *app, lever_t *lever);
+} event_lever_map[] = {
+    {settings_music},
+    {settings_fullscreen},
+    {settings_developer}
 };
 
 #endif /* !COMPONENTS_TYPES_H_ */

@@ -21,7 +21,7 @@ typedef struct s_button button_t;
  * Init a new window
  * @return The new window
  */
-sfRenderWindow *window_init(void);
+sfRenderWindow *window_init(bool fullscreen);
 
 /**
  * @brief Close the window
