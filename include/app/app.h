@@ -72,4 +72,11 @@ int states_switch_right(renderer_t *renderer, app_t *app, button_t *button);
  */
 int states_main_menu(renderer_t *renderer, app_t *app, button_t *button);
 
+/**
+ * @brief Change state to main menu
+ * @param renderer Main renderer function
+ * @param app Application structure
+ */
+int states_ingame(renderer_t *renderer, app_t *app, button_t *button);
+
 #endif /* !APP_H_ */

@@ -7,7 +7,7 @@
             "color": {"r": 191, "g": 173, "b": 147, "a": 255},
             "color_text": {"r": 103, "g": 81, "b": 82, "a":  255},
             "scale": 1.4,
-            "event": 0
+            "event": 11
         },
         {
             "title": "Quitter",
@@ -97,9 +97,16 @@
         },
         {
             "icon": "assets/components/button/next.png",
-            "app_state": [3, 4],
+            "app_state": [3],
             "position": {"x": 1408, "y": 788},
             "event": 6,
+            "scale": 1
+        },
+        {
+            "icon": "assets/components/button/next_block.png",
+            "app_state": [4],
+            "position": {"x": 1408, "y": 788},
+            "event": 0,
             "scale": 1
         }
     ],
