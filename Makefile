@@ -67,6 +67,10 @@ SRC = 		src/main.c \
 			src/app/states/help.c \
 			src/app/states/switch.c \
 			\
+			src/app/settings/music.c \
+			src/app/settings/fullscreen.c \
+			src/app/settings/developer.c \
+			\
 			src/app/window/init.c \
 			src/app/window/close.c \
 			\
