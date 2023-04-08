@@ -22,6 +22,12 @@ static void load_display_bar(renderer_t *renderer)
     sfRenderWindow_drawSprite(renderer->window, renderer->objects->sprite,
     NULL);
     sfTexture_destroy(texture);
+    texture = sfTexture_createFromFile(BRG_TEXTURE, NULL);
+    sfSprite_setTexture(renderer->objects->sprite, texture, sfTrue);
+    sfSprite_setPosition(renderer->objects->sprite, BRG_POSITION);
+    sfRenderWindow_drawSprite(renderer->window, renderer->objects->sprite,
+    NULL);
+    sfTexture_destroy(texture);
 }
 
 static void load_display_page(renderer_t *renderer, char *load_text)

@@ -17,6 +17,8 @@
     #define LOAD_TEXTURE "assets/components/backgrounds/loading.png"
     #define BAR_TEXTURE "assets/components/backgrounds/bar.png"
     #define LOAD_POSITION ((sfVector2f) {795, 985})
+    #define BRG_POSITION ((sfVector2f) {743, 194})
+    #define BRG_TEXTURE "assets/components/backgrounds/bras_gauche.png"
 
 typedef struct s_loading {
     sfTexture *company_screen;
