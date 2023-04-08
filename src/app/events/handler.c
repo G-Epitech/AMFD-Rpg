@@ -15,8 +15,9 @@
 static void mouse_event(sfEvent event, app_t *app,
 renderer_t *renderer)
 {
-    sfVector2f coords = sfRenderWindow_mapPixelToCoords(renderer->window, (sfVector2i)
-    {event.mouseButton.x, event.mouseButton.y}, renderer->default_view);
+    sfVector2f coords = sfRenderWindow_mapPixelToCoords(renderer->window,
+    (sfVector2i) {event.mouseButton.x, event.mouseButton.y},
+    renderer->default_view);
 
     event.mouseButton.x = coords.x;
     event.mouseButton.y = coords.y;
