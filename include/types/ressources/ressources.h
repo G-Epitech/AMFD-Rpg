@@ -41,11 +41,12 @@ void maps_free(list_t *maps);
 
 /**
  * @brief Load all skins from configs
+ * @param renderer Renderer object
  * @param skins List of skins
  * @warning All textures could be NULL.
  * Remember to check before using it in a sprite for example
  */
-void skins_load(list_t *skins);
+void skins_load(renderer_t *renderer, list_t *skins);
 
 /**
  * @brief Free all skins
@@ -63,16 +64,19 @@ const skin_t *ressources_get_skin(list_t *skins, int skin_id);
 
 /**
  * @brief Init components ressources
+ * @param renderer Renderer object
  * @return components structure
 */
-components_r_t *ressources_components_init(void);
+components_r_t *ressources_components_init(renderer_t *renderer);
 
 /**
  * @brief Load all components ressources
+ * @param renderer Renderer object
  * @param components Structure of ressources components
  * @warning You must to previously init the components structure
 */
-void ressources_components_load(components_r_t *components);
+void ressources_components_load(renderer_t *renderer,
+components_r_t *components);
 
 /**
  * @brief Load buttons textures
@@ -93,5 +97,12 @@ list_t *ressources_components_backgrounds_load(cjson_array_t
  * @param lever_config Configuration of lever texture
 */
 lever_r_t *ressources_components_lever_load(cjson_t *lever_config);
+
+/**
+ * @brief Load inventory ressources
+ * @param renderer Renderer object
+ * @param inventory Structure of inventory ressources
+ */
+void inventory_load(renderer_t *renderer, inventory_r_t *inventory);
 
 #endif /* !RESSOURCES_H_ */

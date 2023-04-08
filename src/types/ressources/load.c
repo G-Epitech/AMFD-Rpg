@@ -23,10 +23,13 @@ ressources_t *ressources_init(void)
     ressources->maps = list_new();
     ressources->skins = list_new();
     ressources->props = list_new();
-    if (!ressources->maps || !ressources->skins || !ressources->props) {
+    ressources->inventory = malloc(sizeof(inventory_r_t));
+    if (!ressources->maps || !ressources->skins || !ressources->props
+    || !ressources->inventory) {
         list_free(ressources->maps);
         list_free(ressources->skins);
         list_free(ressources->props);
+        free(ressources->inventory);
         return NULL;
     }
     return ressources;
@@ -36,21 +39,14 @@ ressources_t *ressources_load(renderer_t *renderer)
 {
     ressources_t *ressources = ressources_init();
 
-    load_screen_add_bar(renderer, 1, "Chargement  Ressources. . .",
-    "Initialisation des ressources");
-    ressources->components = ressources_components_init();
+    ressources->components = ressources_components_init(renderer);
     if (!ressources || !ressources->components) {
         ressources_free(ressources);
         return NULL;
     }
-    load_screen_add_bar(renderer, 2, "Chargement Ressources. . .",
-    "Chargement des maps");
     maps_load(ressources->maps, renderer);
-    load_screen_add_bar(renderer, 4, "Chargement Ressources. . .",
-    "Chargement des skins");
-    skins_load(ressources->skins);
-    load_screen_add_bar(renderer, 6, "Chargement Ressources. . .",
-    "Chargement des composents");
-    ressources_components_load(ressources->components);
+    skins_load(renderer, ressources->skins);
+    inventory_load(renderer, ressources->inventory);
+    ressources_components_load(renderer, ressources->components);
     return ressources;
 }

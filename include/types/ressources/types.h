@@ -77,7 +77,7 @@ typedef struct s_components_r {
 typedef struct s_inventory_ressources {
     sfTexture *grid;            //Grid utils texture
     sfTexture *items;           //Inventory items texture
-} inventory_ressources_t;
+} inventory_r_t;
 
 /**
  * @brief Structure of ressources (textures)
@@ -86,7 +86,7 @@ typedef struct s_ressources {
     list_t *maps;                       //List of maps (textures)
     list_t *skins;                      //List of skins (textures)
     list_t *props;                      //List of props (textures)
-    inventory_ressources_t *inventory;  //Structure of inventory ressources
+    inventory_r_t *inventory;  //Structure of inventory ressources
     components_r_t *components;         //Structure of components ressources
 } ressources_t;
 
