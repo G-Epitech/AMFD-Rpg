@@ -72,6 +72,8 @@ SRC = 		src/main.c \
 			src/app/settings/music.c \
 			src/app/settings/fullscreen.c \
 			src/app/settings/developer.c \
+			src/app/settings/volume.c \
+			src/app/settings/fps.c \
 			\
 			src/app/window/init.c \
 			src/app/window/close.c \

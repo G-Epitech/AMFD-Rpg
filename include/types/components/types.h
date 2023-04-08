@@ -88,7 +88,11 @@ static const struct {
     {states_main_menu},
     {states_help},
     {states_switch_left},
-    {states_switch_right}
+    {states_switch_right},
+    {settings_volume_malus},
+    {settings_volume_up},
+    {settings_fps_malus},
+    {settings_fps_up},
 };
 
 static const struct {

@@ -19,6 +19,8 @@
     {size.x + middle.x * scale+ right.x, right.y})
     #define GAME_TITLE "Hackers Quests"
     #define SETTINGS_TITLE "Settings"
+    #define VOLUME_POSITION ((sfVector2f) {1153, 490})
+    #define FPS_POSITION ((sfVector2f) {1142, 587})
 
 /**
  * @brief Display player on map

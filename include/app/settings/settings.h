@@ -37,4 +37,36 @@ int settings_fullscreen(renderer_t *renderer, app_t *app, lever_t *lever);
  */
 int settings_developer(renderer_t *renderer, app_t *app, lever_t *lever);
 
+/**
+ * @brief Update volume settings
+ * @param renderer Renderer structure
+ * @param app Application structure
+ * @param button Button associate
+ */
+int settings_volume_malus(renderer_t *renderer, app_t *app, button_t *button);
+
+/**
+ * @brief Update volume settings
+ * @param renderer Renderer structure
+ * @param app Application structure
+ * @param button Button associate
+ */
+int settings_volume_up(renderer_t *renderer, app_t *app, button_t *button);
+
+/**
+ * @brief Update volume settings
+ * @param renderer Renderer structure
+ * @param app Application structure
+ * @param button Button associate
+ */
+int settings_fps_malus(renderer_t *renderer, app_t *app, button_t *button);
+
+/**
+ * @brief Update volume settings
+ * @param renderer Renderer structure
+ * @param app Application structure
+ * @param button Button associate
+ */
+int settings_fps_up(renderer_t *renderer, app_t *app, button_t *button);
+
 #endif /* !SETTINGS_H_ */
