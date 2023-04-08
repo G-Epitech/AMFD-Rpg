@@ -45,7 +45,7 @@ app_t *app_init(void)
 
     if (!app)
         return NULL;
-    app->state = ST_MAIN_MENU;
+    app->state = ST_INVENTORY;
     app->world = WL_VILLAGE;
     app->control = init_controller();
     app->players = players_list_init();
