@@ -74,7 +74,8 @@
             "position": {"x": 460, "y": 446},
             "app_state": 2,
             "scale": 1,
-            "event": 0
+            "event": 0,
+            "on": true
         },
         {
             "position": {"x": 460, "y": 540},
