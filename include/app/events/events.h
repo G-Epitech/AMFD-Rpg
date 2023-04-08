@@ -47,4 +47,12 @@ void keyboard_release_move(sfEvent event, app_t *app);
 */
 void event_components_buttons(renderer_t *renderer, app_t *app, sfEvent event);
 
+/**
+ * @brief Handle events on levers
+ * @param renderer Renderer structure
+ * @param app Application structure
+ * @param event Event click
+*/
+void event_components_levers(renderer_t *renderer, app_t *app, sfEvent event);
+
 #endif /* !EVENTS_H_ */

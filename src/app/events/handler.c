@@ -31,6 +31,7 @@ renderer_t *renderer)
     }
     if (event.type == sfEvtMouseButtonPressed) {
         event_components_buttons(renderer, app, event);
+        event_components_levers(renderer, app, event);
     }
 }
 

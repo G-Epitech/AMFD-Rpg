@@ -47,6 +47,14 @@ typedef struct s_button_r {
 } button_r_t;
 
 /**
+ * @biref Structure of a button ressource
+*/
+typedef struct s_lever_r {
+    sfTexture *on;        //On texture (first part)
+    sfTexture *off;       //Off texture (second part)
+} lever_r_t;
+
+/**
  * @brief Structure of background
 */
 typedef struct s_background {
@@ -62,6 +70,7 @@ typedef struct s_background {
 */
 typedef struct s_components_r {
     button_r_t *button;         //Button textures
+    lever_r_t *lever;           //Lever textures
     list_t *backgrounds;        //Backgrounds list
 } components_r_t;
 

@@ -5,17 +5,22 @@
         "middle": "assets/components/button/middle.png"
     },
 
+    "lever": {
+        "on": "assets/components/button/on_switch.png",
+        "off": "assets/components/button/off_switch.png"
+    },
+
     "backgrounds": [
         {
             "asset": "assets/components/backgrounds/menu_background.png",
             "scale": 1,
-            "state": [1, 2, 3],
+            "state": [1, 2, 3, 4],
             "position" : {"x": 0, "y": 0}
         },
         {
             "asset": "assets/components/backgrounds/menu.png",
             "scale": 1,
-            "state": [1, 2, 3],
+            "state": [1, 2, 3, 4],
             "position" : {"x": 341, "y": 156}
         },
         {
@@ -31,10 +36,16 @@
             "position" : {"x": 417, "y": 750}
         },
         {
-            "asset": "assets/components/backgrounds/param_icon.png",
+            "asset": "assets/components/backgrounds/reglages.png",
             "scale": 1,
             "state": [2],
-            "position" : {"x": 727, "y": 306}
+            "position" : {"x": 575, "y": 292}
+        },
+        {
+            "asset": "assets/components/backgrounds/help_1.png",
+            "scale": 1,
+            "state": [3],
+            "position" : {"x": 457, "y": 292}
         },
         {
             "asset": "assets/tasks/phone.png",

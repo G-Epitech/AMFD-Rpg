@@ -11,10 +11,11 @@
     #include "app/types.h"
 
 typedef struct s_renderer renderer_t;
+typedef struct s_button button_t;
 
 /**
  * @brief Test function
 */
-int test(renderer_t *renderer, app_t *app);
+int test(renderer_t *renderer, app_t *app, button_t *button);
 
 #endif /* !UTILS_H_ */

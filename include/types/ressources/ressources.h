@@ -11,6 +11,8 @@
     #include "types.h"
     #include "types/list/types.h"
 
+typedef struct s_renderer renderer_t;
+
 /**
  * @brief Free ressources
  * @param ressources Structures of ressources
@@ -21,7 +23,7 @@ void ressources_free(ressources_t *ressources);
  * @brief Load all ressources from configs
  * @return The structure of ressources (lists for any types of ressources)
 */
-ressources_t *ressources_load(void);
+ressources_t *ressources_load(renderer_t *renderer);
 
 /**
  * @brief Load all maps from configs
@@ -29,7 +31,7 @@ ressources_t *ressources_load(void);
  * @warning All textures could be NULL.
  * Remember to check before using it in a sprite for example
 */
-void maps_load(list_t *maps);
+void maps_load(list_t *maps, renderer_t *renderer);
 
 /**
  * @brief Free all maps
@@ -85,5 +87,11 @@ button_r_t *ressources_components_button_load(cjson_t *button_config);
 */
 list_t *ressources_components_backgrounds_load(cjson_array_t
 *backgrounds_config);
+
+/**
+ * @brief Load levers textures
+ * @param lever_config Configuration of lever texture
+*/
+lever_r_t *ressources_components_lever_load(cjson_t *lever_config);
 
 #endif /* !RESSOURCES_H_ */

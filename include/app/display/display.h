@@ -112,22 +112,29 @@ void display_components_icon(renderer_t *renderer, button_t *button);
 /**
  * @brief Display main menu
  * @param renderer Renderer structure
- * @param app 1pplication informations
+ * @param app Application informations
  */
 void display_main_menu(renderer_t *renderer, app_t *app);
 
 /**
  * @brief Display main menu
  * @param renderer Renderer structure
- * @param app 1pplication informations
+ * @param app Application informations
  */
 void display_menus(renderer_t *renderer, app_t *app);
 
 /**
  * @brief Display settings
  * @param renderer Renderer structure
- * @param app 1pplication informations
+ * @param app Application informations
  */
 void display_settings(renderer_t *renderer, app_t *app);
+
+/**
+ * @brief Display levers
+ * @param renderer Renderer structure
+ * @param app 1pplication informations
+ */
+void display_components_levers(renderer_t *renderer, app_t *app);
 
 #endif /* !DISPLAY_H_ */

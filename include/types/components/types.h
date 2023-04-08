@@ -62,6 +62,7 @@ typedef struct s_button {
  * It's majoritory use in a levers list
 */
 typedef struct s_lever {
+    bool active;
     float scale;
     sfVector2f position;
     app_states_t app_state;
@@ -77,13 +78,15 @@ typedef struct s_components {
 } components_t;
 
 static const struct {
-    int (*function) (renderer_t *renderer, app_t *app);
+    int (*function) (renderer_t *renderer, app_t *app, button_t *button);
 } event_map[] = {
     {test},
     {window_close},
     {states_settings},
     {states_main_menu},
-    {states_help}
+    {states_help},
+    {states_switch_left},
+    {states_switch_right}
 };
 
 #endif /* !COMPONENTS_TYPES_H_ */

@@ -10,8 +10,9 @@
 #include "app/types.h"
 #include "types/renderer/types.h"
 
-int states_settings(renderer_t *renderer, app_t *app)
+int states_settings(renderer_t *renderer, app_t *app, button_t *button)
 {
+    (void) button;
     (void) renderer;
     app->state = ST_SETTINGS;
     return 0;

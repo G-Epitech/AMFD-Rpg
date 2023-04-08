@@ -13,6 +13,8 @@
 #include "types/ressources/ressources.h"
 #include "types/players/types.h"
 #include "cjson/include/cjson.h"
+#include "app/loading/loading.h"
+#include "my/include/my.h"
 
 static void maps_load_line_collision(map_t *map, cjson_array_t *array)
 {
@@ -58,7 +60,8 @@ static void maps_append_data(map_t *map, cjson_t *map_config)
         free(front);
 }
 
-static void maps_append(list_t *maps, cjson_t *map_config)
+static void maps_append(list_t *maps, cjson_t *map_config, int i,
+renderer_t *renderer)
 {
     node_data_t data;
     node_t *node = NULL;
@@ -72,16 +75,21 @@ static void maps_append(list_t *maps, cjson_t *map_config)
         free(map);
         return;
     }
+    load_screen_add_bar(renderer, 3, "Chargement Ressources. . .",
+    my_strcat("Map sol ", nbr_to_str(i)));
     maps_append_data(map, map_config);
+    load_screen_add_bar(renderer, 3, "Chargement Ressources. . .",
+    my_strcat("Map collisions ", nbr_to_str(i)));
     maps_load_collision(map, map_config);
     list_append(maps, node);
 }
 
-void maps_load(list_t *maps)
+void maps_load(list_t *maps, renderer_t *renderer)
 {
     cjson_t *maps_config = cjson_parse_file(RESSOURCES_MAPS_CONFIG);
     cjson_array_t *array = NULL;
     cjson_t *map = NULL;
+    int i = 0;
 
     if (!maps_config)
         return;
@@ -91,7 +99,8 @@ void maps_load(list_t *maps)
     }
     map = array->first;
     while (map) {
-        maps_append(maps, map);
+        i++;
+        maps_append(maps, map, i, renderer);
         map = map->next;
     }
     cjson_free(maps_config);

@@ -12,6 +12,11 @@
 
     #define LOGO_PATH "assets/loading_screen/logo_groupe.png"
     #define FONT_PATH "assets/fonts/Hella Instegra.ttf"
+    #define TEXT_COLOR ((sfColor) {103, 81, 82, 255})
+    #define BG_COLOR ((sfColor) {205, 190, 169, 255})
+    #define LOAD_TEXTURE "assets/components/backgrounds/loading.png"
+    #define BAR_TEXTURE "assets/components/backgrounds/bar.png"
+    #define LOAD_POSITION ((sfVector2f) {795, 985})
 
 typedef struct s_loading {
     sfTexture *company_screen;

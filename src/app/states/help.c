@@ -10,9 +10,10 @@
 #include "app/types.h"
 #include "types/renderer/types.h"
 
-int states_help(renderer_t *renderer, app_t *app)
+int states_help(renderer_t *renderer, app_t *app, button_t *button)
 {
+    (void) button;
     (void) renderer;
-    app->state = ST_HELP;
+    app->state = ST_HELP_1;
     return 0;
 }

@@ -9,8 +9,9 @@
 #include "types/renderer/types.h"
 #include "app/types.h"
 
-int test(renderer_t *renderer, app_t *app)
+int test(renderer_t *renderer, app_t *app, button_t *button)
 {
+    (void) button;
     (void) renderer;
     (void) app;
     my_putstr("Test event function");
