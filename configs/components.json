@@ -47,6 +47,41 @@
             "scale": 1
         },
         {
+            "icon": "assets/components/button/resolutions.png",
+            "app_state": [2],
+            "position": {"x": 460, "y": 788},
+            "event": 5,
+            "scale": 1
+        },
+        {
+            "icon": "assets/components/button/malus.png",
+            "app_state": [2],
+            "position": {"x": 1007, "y": 468},
+            "event": 5,
+            "scale": 1
+        },
+        {
+            "icon": "assets/components/button/malus.png",
+            "app_state": [2],
+            "position": {"x": 1007, "y": 558},
+            "event": 5,
+            "scale": 1
+        },
+        {
+            "icon": "assets/components/button/sup.png",
+            "app_state": [2],
+            "position": {"x": 1290, "y": 468},
+            "event": 5,
+            "scale": 1
+        },
+        {
+            "icon": "assets/components/button/sup.png",
+            "app_state": [2],
+            "position": {"x": 1290, "y": 558},
+            "event": 5,
+            "scale": 1
+        },
+        {
             "icon": "assets/components/button/previous_block.png",
             "app_state": [3],
             "position": {"x": 1279, "y": 788},

@@ -56,7 +56,7 @@
         {
             "asset": "assets/inventory/background.png",
             "scale": 1,
-            "state": [4],
+            "state": [25],
             "position" : {"x": 177, "y": 45}
         }
     ]
