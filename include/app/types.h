@@ -19,14 +19,14 @@ typedef enum e_app_states {
     ST_SETTINGS,            //Settings menu
     ST_HELP_1,              //Help menu 1
     ST_HELP_2,              //Help menu 2
+    ST_GAMEMODE,            //Gamemode (solo/duo)
+    ST_INGAME = 100,        //Main state, ingame player
+    ST_INVENTORY = 300,     //Inventory menu
     ST_BREAK,               //Break menu (save/sound...)
-    ST_INVENTORY = 25,      //Inventory menu
-    ST_INGAME = 30,         //Main state, ingame player
-    ST_INBUILDING,          //In building
-    ST_FIGHT = 40,          //Fight interface
-    ST_TASK = 50,           //Task delimiter
+    ST_FIGHT = 350,         //Fight interface
+    ST_TASK = 500,          //Task delimiter
     ST_TASK_BASH,           //Task n°1: bash
-    ST_QUIT = 100           //Quit menu
+    ST_QUIT = 1000          //Quit menu
 } app_states_t;
 
 typedef enum e_worlds {

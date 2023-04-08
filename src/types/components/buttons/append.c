@@ -28,6 +28,7 @@ app_states_t *app_state)
     button->texture = NULL;
     button->event = 0;
     button->rect_scale = (sfVector2f) {1, 1};
+    button->next_state = 0;
     return data;
 }
 

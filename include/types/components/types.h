@@ -48,6 +48,7 @@ typedef struct s_button {
     char *description;
     float scale;
     int event;
+    int next_state;
     sfColor color;
     sfColor text_color;
     sfTexture *texture;
@@ -84,16 +85,12 @@ static const struct {
 } event_button_map[] = {
     {test},
     {window_close},
-    {states_settings},
-    {states_main_menu},
-    {states_help},
     {states_switch_left},
     {states_switch_right},
     {settings_volume_malus},
     {settings_volume_up},
     {settings_fps_malus},
     {settings_fps_up},
-    {states_ingame}
 };
 
 static const struct {
