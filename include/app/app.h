@@ -51,4 +51,12 @@ int states_switch_left(renderer_t *renderer, app_t *app, button_t *button);
  */
 int states_switch_right(renderer_t *renderer, app_t *app, button_t *button);
 
+/**
+ * @brief Reload json
+ * @param renderer Renderer structure
+ * @param app Application structure
+ * @param button Button
+ */
+int developer_reload_json(renderer_t *renderer, app_t *app, button_t *button);
+
 #endif /* !APP_H_ */

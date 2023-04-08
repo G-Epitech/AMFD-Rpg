@@ -93,6 +93,7 @@ static const struct {
     {settings_volume_up},
     {settings_fps_malus},
     {settings_fps_up},
+    {developer_reload_json}
 };
 
 static const struct {
