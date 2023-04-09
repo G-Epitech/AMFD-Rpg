@@ -86,7 +86,7 @@ SRC = 		src/main.c \
 			\
 			src/app/developer/reload_json.c \
 			\
-			src/app/display/handle.c \
+			src/app/display/handler.c \
 			src/app/display/map/map.c \
 			src/app/display/map/back.c \
 			\

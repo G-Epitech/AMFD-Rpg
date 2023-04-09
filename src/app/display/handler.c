@@ -28,7 +28,7 @@ static void display_game(renderer_t *renderer, app_t *app)
     }
 }
 
-void display_handle(renderer_t *renderer, app_t *app)
+void display_handler(renderer_t *renderer, app_t *app)
 {
     renderer_objects_t *objects = renderer->objects;
 

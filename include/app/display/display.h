@@ -81,7 +81,7 @@ worlds_t world);
  * @param renderer Renderer structure
  * @param app Application informations
 */
-void display_handle(renderer_t *renderer, app_t *app);
+void display_handler(renderer_t *renderer, app_t *app);
 
 /**
  * @biref Display buttons components
