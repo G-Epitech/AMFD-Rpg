@@ -24,12 +24,14 @@ ressources_t *ressources_init(void)
     ressources->skins = list_new();
     ressources->props = list_new();
     ressources->inventory = malloc(sizeof(inventory_r_t));
+    ressources->icons = malloc(sizeof(icons_r_t));
     if (!ressources->maps || !ressources->skins || !ressources->props
-    || !ressources->inventory) {
+    || !ressources->inventory || !ressources->icons) {
         list_free(ressources->maps);
         list_free(ressources->skins);
         list_free(ressources->props);
         free(ressources->inventory);
+        free(ressources->icons);
         return NULL;
     }
     return ressources;
@@ -48,5 +50,6 @@ ressources_t *ressources_load(renderer_t *renderer)
     skins_load(renderer, ressources->skins);
     inventory_load(renderer, ressources->inventory);
     ressources_components_load(renderer, ressources->components);
+    icons_load(renderer, ressources->icons);
     return ressources;
 }

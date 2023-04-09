@@ -58,6 +58,8 @@ SRC = 		src/main.c \
 			\
 			src/types/ressources/inventory/load.c \
 			\
+			src/types/ressources/icons/load.c \
+			\
 			src/types/view/init.c \
 			\
 			src/app/init.c \
