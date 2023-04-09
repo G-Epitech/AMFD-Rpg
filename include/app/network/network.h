@@ -16,7 +16,7 @@ typedef struct s_button button_t;
 
 /**
  * @brief Init network structure
- * @return network_t* 
+ * @return network_t* The new structure
  */
 network_t *network_init(void);
 

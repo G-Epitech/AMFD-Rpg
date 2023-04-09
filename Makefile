@@ -136,7 +136,7 @@ CFLAGS += -Wall -Wextra -Werror -Wno-unused-command-line-argument -g
 
 INC = -I./include -I./lib
 
-LDFLAGS = -L/usr/local/lib -lcsfml-graphics -lcsfml-system -lcsfml-audio -lcsfml-window \
+LDFLAGS = -lcsfml-graphics -lcsfml-system -lcsfml-audio -lcsfml-window \
 -lcsfml-network -L./lib -lmy -lcjson
 
 OBJ = $(SRC:.c=.o)

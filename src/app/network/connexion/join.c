@@ -17,7 +17,8 @@ int network_connexion_join(renderer_t *renderer, app_t *app, button_t *button)
 
     (void) renderer;
     (void) button;
-    if (sfTcpSocket_connect(socket, server, 53000, sfTime_Zero) != sfSocketDone) {
+    if (sfTcpSocket_connect(socket, server, 53000, sfTime_Zero) !=
+    sfSocketDone) {
         app->state = ST_GAMEMODE;
         return 1;
     }
