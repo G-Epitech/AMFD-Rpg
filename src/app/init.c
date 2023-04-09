@@ -66,6 +66,7 @@ app_t *app_init(void)
     app->npcs = npcs_load();
     app->tasks_setup = task_create();
     app->settings = init_settings();
+    app->network = network_init();
     if (!app->players || !app->tasks_setup) {
         free(app);
         return NULL;

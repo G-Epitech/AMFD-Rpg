@@ -15,6 +15,7 @@
     #include "app/utils/utils.h"
     #include "app/window/window.h"
     #include "app/settings/settings.h"
+    #include "app/network/network.h"
 
     #define COMPONENTS_CONFIG "configs/components.json"
 
@@ -93,7 +94,9 @@ static const struct {
     {settings_volume_up},
     {settings_fps_malus},
     {settings_fps_up},
-    {developer_reload_json}
+    {developer_reload_json},
+    {network_connexion_host},
+    {network_connexion_join}
 };
 
 static const struct {

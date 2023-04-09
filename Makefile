@@ -87,6 +87,10 @@ SRC = 		src/main.c \
 			src/app/display/map/map.c \
 			src/app/display/map/back.c \
 			\
+			src/app/network/init.c \
+			src/app/network/connexion/host.c \
+			src/app/network/connexion/join.c \
+			\
 			src/app/core/tasks/handler.c \
 			src/app/core/tasks/create.c \
 			src/app/core/tasks/script_bash/create_node.c \
@@ -132,8 +136,8 @@ CFLAGS += -Wall -Wextra -Werror -Wno-unused-command-line-argument -g
 
 INC = -I./include -I./lib
 
-LDFLAGS = -lcsfml-graphics -lcsfml-system -lcsfml-audio -lcsfml-window \
--L./lib -lmy -lcjson
+LDFLAGS = -L/usr/local/lib -lcsfml-graphics -lcsfml-system -lcsfml-audio -lcsfml-window \
+-lcsfml-network -L./lib -lmy -lcjson
 
 OBJ = $(SRC:.c=.o)
 

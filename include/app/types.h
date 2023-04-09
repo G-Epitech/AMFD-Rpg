@@ -10,6 +10,7 @@
 
     #include <stdbool.h>
     #include "types/players/types.h"
+    #include "app/network/types.h"
 
 typedef struct s_list list_t;
 
@@ -20,6 +21,8 @@ typedef enum e_app_states {
     ST_HELP_1,              //Help menu 1
     ST_HELP_2,              //Help menu 2
     ST_GAMEMODE,            //Gamemode (solo/duo)
+    ST_CONNEXIONMODE,       //Connexion mode (host/join)
+    ST_CHOICE,              //Choice of the character
     ST_INGAME = 100,        //Main state, ingame player
     ST_INVENTORY = 300,     //Inventory menu
     ST_BREAK,               //Break menu (save/sound...)
@@ -57,6 +60,7 @@ typedef struct s_app {
     control_t *control;     //Controller of the player
     list_t *tasks_setup;    //Taks of the game
     settings_t *settings;   //Settings of the application
+    network_t *network;     //Network
 } app_t;
 
 #endif /* !APP_TYPES_H_ */

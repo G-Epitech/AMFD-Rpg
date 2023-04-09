@@ -34,7 +34,25 @@
             "color": {"r": 191, "g": 173, "b": 147, "a": 255},
             "color_text": {"r": 103, "g": 81, "b": 82, "a":  255},
             "scale": 1.2,
-            "next_state": 1
+            "next_state": 6
+        },
+        {
+            "title": "Connexion",
+            "position": {"x": 480, "y": 630},
+            "app_state": [6],
+            "color": {"r": 191, "g": 173, "b": 147, "a": 255},
+            "color_text": {"r": 103, "g": 81, "b": 82, "a":  255},
+            "scale": 1.2,
+            "event": 9
+        },
+        {
+            "title": "Connexion",
+            "position": {"x": 1050, "y": 630},
+            "app_state": [6],
+            "color": {"r": 191, "g": 173, "b": 147, "a": 255},
+            "color_text": {"r": 103, "g": 81, "b": 82, "a":  255},
+            "scale": 1.2,
+            "event": 10
         },
         {
             "icon": "assets/components/button/settings.png",
@@ -52,7 +70,7 @@
         },
         {
             "icon": "assets/components/button/home.png",
-            "app_state": [2, 5],
+            "app_state": [2, 5, 6],
             "position": {"x": 1408, "y": 788},
             "scale": 1,
             "next_state": 1
