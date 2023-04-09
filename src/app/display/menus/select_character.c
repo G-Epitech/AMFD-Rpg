@@ -40,6 +40,8 @@ void display_select_character(renderer_t *renderer, app_t *app)
         display_valid_character(renderer, VALID_LUCAS);
     if (app->player->skin_id == STX_TOM)
         display_valid_character(renderer, VALID_TOM);
+    if (!app->partner)
+        return;
     if (app->partner->skin_id == STX_LUCAS)
         display_refuse_character(renderer, REFUSE_LUCAS);
     if (app->partner->skin_id == STX_TOM)

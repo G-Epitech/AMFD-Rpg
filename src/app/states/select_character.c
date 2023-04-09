@@ -10,21 +10,27 @@
 #include "app/network/network.h"
 #include "app/types.h"
 
-static void set_select_skin(app_t *app, button_t *button)
+static void set_select_skin_duo(app_t *app, button_t *button)
 {
     if (button->position.x == LUCAS_POSITION && app->partner->skin_id !=
     STX_LUCAS) {
         app->player->skin_id = STX_LUCAS;
-        if (app->partner) {
-            network_send_character(app, STX_LUCAS);
-        }
+        network_send_character(app, STX_LUCAS);
     }
     if (button->position.x == TOM_POSITION && app->partner->skin_id !=
     STX_TOM) {
         app->player->skin_id = STX_TOM;
-        if (app->partner) {
-            network_send_character(app, STX_TOM);
-        }
+        network_send_character(app, STX_TOM);
+    }
+}
+
+static void set_select_skin_solo(app_t *app, button_t *button)
+{
+    if (button->position.x == LUCAS_POSITION) {
+        app->player->skin_id = STX_LUCAS;
+    }
+    if (button->position.x == TOM_POSITION) {
+        app->player->skin_id = STX_TOM;
     }
 }
 
@@ -32,12 +38,12 @@ int states_select_character(renderer_t *renderer, app_t *app, button_t *button)
 {
     (void) renderer;
     if (!app->partner) {
-        set_select_skin(app, button);
+        set_select_skin_solo(app, button);
         app->state = ST_INGAME;
         return 0;
     }
     if (app->player->skin_id != -1)
         return 1;
-    set_select_skin(app, button);
+    set_select_skin_duo(app, button);
     return 0;
 }
