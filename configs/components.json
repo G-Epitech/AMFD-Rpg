@@ -25,7 +25,7 @@
             "color": {"r": 191, "g": 173, "b": 147, "a": 255},
             "color_text": {"r": 103, "g": 81, "b": 82, "a":  255},
             "scale": 1.2,
-            "next_state": 100
+            "next_state": 7
         },
         {
             "title": "Lancer",
@@ -153,6 +153,20 @@
             "scale": 1,
             "always_display": true,
             "developer": true
+        },
+        {
+            "icon": "assets/components/button/lucas.png",
+            "app_state": [7],
+            "position": {"x": 524, "y": 267},
+            "event": 11,
+            "scale": 1
+        },
+        {
+            "icon": "assets/components/button/tom.png",
+            "app_state": [7],
+            "position": {"x": 1055, "y": 267},
+            "event": 11,
+            "scale": 1
         }
     ],
 

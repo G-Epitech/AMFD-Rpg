@@ -14,5 +14,13 @@
     {
         "id": 3,
         "texture": "assets/skins/police.png"
+    },
+    {
+        "id": 4,
+        "texture": "assets/skins/lucas.png"
+    },
+    {
+        "id": 5,
+        "texture": "assets/skins/tom.png"
     }
 ]
