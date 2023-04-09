@@ -96,7 +96,8 @@ static const struct {
     {settings_fps_up},
     {developer_reload_json},
     {network_connexion_host},
-    {network_connexion_join}
+    {network_connexion_join},
+    {states_select_character}
 };
 
 static const struct {

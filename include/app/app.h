@@ -52,6 +52,14 @@ int states_switch_left(renderer_t *renderer, app_t *app, button_t *button);
 int states_switch_right(renderer_t *renderer, app_t *app, button_t *button);
 
 /**
+ * @brief Select the charater in the choice menu
+ * @param renderer Main renderer function
+ * @param app Application structure
+ */
+int states_select_character(renderer_t *renderer, app_t *app,
+button_t *button);
+
+/**
  * @brief Reload json
  * @param renderer Renderer structure
  * @param app Application structure

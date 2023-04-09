@@ -10,6 +10,14 @@
 
     #include <SFML/Graphics.h>
 
+    #define LUCAS_POSITION 524
+    #define TOM_POSITION 1055
+
+typedef enum e_skin_textures {
+    STX_LUCAS = 4,
+    STX_TOM = 5
+} skin_textures_t;
+
 typedef enum e_skin_orientation {
     SO_RIGHT,
     SO_BACK,
