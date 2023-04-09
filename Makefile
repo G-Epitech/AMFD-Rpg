@@ -118,6 +118,7 @@ SRC = 		src/main.c \
 			src/app/display/menus/menus.c \
 			src/app/display/menus/main_menu.c \
 			src/app/display/menus/settings.c \
+			src/app/display/menus/select_character.c \
 			\
 			src/app/core/handler.c	\
 			src/app/core/movement.c	\

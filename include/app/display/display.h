@@ -11,16 +11,7 @@
     #include <SFML/Graphics.h>
     #include "types/renderer/types.h"
     #include "types/character/types.h"
-
-    #define SIZE_UP(pos, scale) ((sfVector2f) {pos.x * scale, pos.y * scale})
-    #define MIDDLE_POS(size, middle) ((sfVector2f)\
-    {size.x + middle.x, middle.y})
-    #define RIGHT_POS(size, middle, right, scale) ((sfVector2f)\
-    {size.x + middle.x * scale+ right.x, right.y})
-    #define GAME_TITLE "Hackers Quests"
-    #define SETTINGS_TITLE "Settings"
-    #define VOLUME_POSITION ((sfVector2f) {1153, 490})
-    #define FPS_POSITION ((sfVector2f) {1142, 587})
+    #include "app/display/types.h"
 
 /**
  * @brief Display player on map
@@ -152,5 +143,12 @@ void display_buttons_dispatch(button_t *button, renderer_t *renderer);
  * @param app 1pplication informations
  */
 void display_button(button_t *button, renderer_t *renderer);
+
+/**
+ * @brief Display select character
+ * @param renderer Renderer structure
+ * @param app 1pplication informations
+ */
+void display_select_character(renderer_t *renderer, app_t *app);
 
 #endif /* !DISPLAY_H_ */
