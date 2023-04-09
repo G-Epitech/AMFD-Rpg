@@ -86,10 +86,6 @@ SRC = 		src/main.c \
 			\
 			src/app/developer/reload_json.c \
 			\
-			src/app/display/handler.c \
-			src/app/display/map/map.c \
-			src/app/display/map/back.c \
-			\
 			src/app/network/init.c \
 			src/app/network/connexion/host.c \
 			src/app/network/connexion/join.c \
@@ -103,9 +99,12 @@ SRC = 		src/main.c \
 			src/app/core/tasks/script_bash/valid_cmd.c \
 			src/app/core/tasks/script_bash/reset_setup.c \
 			src/app/core/tasks/script_bash/create_list.c \
+			\
+			src/app/display/handler.c \
+			src/app/display/map/map.c \
+			src/app/display/map/back.c \
 			src/app/display/tasks/script_bash/display.c \
 			src/app/display/tasks/handler.c \
-			\
 			src/app/display/npcs/npcs.c \
 			src/app/display/player/player.c \
 			src/app/display/characters/character.c \
