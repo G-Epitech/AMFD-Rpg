@@ -7,8 +7,6 @@
 
 SRC = 		src/main.c \
 			\
-			src/app/run.c \
-			\
 			src/types/renderer/init.c \
 			src/types/renderer/load.c	\
 			src/types/renderer/destroy.c \
@@ -56,17 +54,36 @@ SRC = 		src/main.c \
 			src/types/ressources/components/load.c \
 			src/types/ressources/components/button/load.c \
 			src/types/ressources/components/backgrounds/load.c \
+			src/types/ressources/components/lever/load.c \
+			\
+			src/types/ressources/inventory/load.c \
 			\
 			src/types/view/init.c \
 			\
 			src/app/init.c \
+			src/app/run.c \
+			\
+			src/app/states/on_state.c \
+			src/app/states/settings.c \
+			src/app/states/main_menu.c \
+			src/app/states/help.c \
+			src/app/states/switch.c \
+			src/app/states/ingame.c \
+			\
+			src/app/settings/music.c \
+			src/app/settings/fullscreen.c \
+			src/app/settings/developer.c \
+			src/app/settings/volume.c \
+			src/app/settings/fps.c \
 			\
 			src/app/window/init.c \
+			src/app/window/close.c \
 			\
 			src/app/events/handler.c \
 			src/app/events/window/close.c \
 			src/app/events/keyboard/move.c \
 			src/app/events/components/buttons.c \
+			src/app/events/components/levers.c \
 			\
 			src/app/display/handle.c \
 			src/app/display/map/map.c \
@@ -91,7 +108,11 @@ SRC = 		src/main.c \
 			src/app/display/components/buttons.c \
       		src/app/display/components/components.c \
 			src/app/display/components/backgrounds.c \
+			src/app/display/components/levers.c \
 			src/app/display/components/icon.c \
+			src/app/display/menus/menus.c \
+			src/app/display/menus/main_menu.c \
+			src/app/display/menus/settings.c \
 			\
 			src/app/core/handler.c	\
 			src/app/core/movement.c	\
@@ -99,7 +120,8 @@ SRC = 		src/main.c \
 			src/app/utils/test.c \
 			\
 			src/app/loading/loading_company_screen.c \
-			src/app/loading/loading_screen_text.c
+			src/app/loading/loading_screen_text.c \
+			src/app/loading/loading_sleep.c
 
 NAME = my_rpg
 

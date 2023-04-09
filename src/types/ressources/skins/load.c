@@ -9,10 +9,12 @@
 #include <stdlib.h>
 #include "types/list/types.h"
 #include "types/list/list.h"
+#include "app/loading/loading.h"
 #include "types/ressources/types.h"
 #include "types/ressources/ressources.h"
 #include "types/players/types.h"
 #include "cjson/include/cjson.h"
+#include "app/loading/loading.h"
 
 static void skins_append(list_t *skins, cjson_t *skin_config)
 {
@@ -33,12 +35,14 @@ static void skins_append(list_t *skins, cjson_t *skin_config)
     free(skin_file);
 }
 
-void skins_load(list_t *skins)
+void skins_load(renderer_t *renderer, list_t *skins)
 {
     cjson_t *skins_config = cjson_parse_file(RESSOURCES_SKINS_CONFIG);
     cjson_array_t *array = NULL;
     cjson_t *skin = NULL;
 
+    load_screen_add_bar(renderer, 4, "Chargement des ressources...",
+    "Chargement des skins");
     if (!skins_config)
         return;
     if (!cjson_get_array(skins_config, &array)) {

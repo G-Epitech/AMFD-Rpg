@@ -14,10 +14,14 @@
 void load_renderer(renderer_t *renderer)
 {
     loading_preload_screen(renderer);
-    load_screen_text_display(renderer, "Loading  Ressources. . .");
-    renderer->ressources = ressources_load();
-    load_screen_text_display(renderer, "Loading  Components. . .");
+    load_screen_add_bar(renderer, 1, "Chargement des ressources...", "");
+    renderer->ressources = ressources_load(renderer);
+    load_screen_add_bar(renderer, 1, "Chargement des composants...",
+    "Composants de l'interface en cours de chargement");
     renderer->components = components_load(renderer);
-    load_screen_text_display(renderer, "Initializing  View. . .");
+    load_screen_add_bar(renderer, 4, "Initialisation de la vue...",
+    "Definition vue joueur");
     renderer->map_view = view_init();
+    load_screen_add_bar(renderer, 6, "Lancement...",
+    "Jeu en cours de lancement");
 }

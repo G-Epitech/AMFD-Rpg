@@ -1,18 +1,135 @@
 {
     "buttons": [
         {
-            "title": "Test",
-            "position": {"x": 10.0, "y": 10.0},
-            "app_state": 1,
-            "color": {"r": 10, "g": 10, "b": 10, "a": 255},
-            "event": 0
+            "title": "Jouer",
+            "position": {"x": 615, "y": 462},
+            "app_state": [1],
+            "color": {"r": 191, "g": 173, "b": 147, "a": 255},
+            "color_text": {"r": 103, "g": 81, "b": 82, "a":  255},
+            "scale": 1.4,
+            "event": 11
+        },
+        {
+            "title": "Quitter",
+            "position": {"x": 1000, "y": 462},
+            "app_state": [1],
+            "color": {"r": 191, "g": 173, "b": 147, "a": 255},
+            "color_text": {"r": 103, "g": 81, "b": 82, "a":  255},
+            "scale": 1.4,
+            "event": 1
+        },
+        {
+            "icon": "assets/components/button/settings.png",
+            "app_state": [1],
+            "position": {"x": 1408, "y": 788},
+            "event": 2,
+            "scale": 1
+        },
+        {
+            "icon": "assets/components/button/help.png",
+            "app_state": [1, 2],
+            "position": {"x": 1279, "y": 788},
+            "event": 4,
+            "scale": 1
+        },
+        {
+            "icon": "assets/components/button/home.png",
+            "app_state": [2],
+            "position": {"x": 1408, "y": 788},
+            "event": 3,
+            "scale": 1
+        },
+        {
+            "icon": "assets/components/button/home.png",
+            "app_state": [3, 4],
+            "position": {"x": 1408, "y": 678},
+            "event": 3,
+            "scale": 1
+        },
+        {
+            "icon": "assets/components/button/resolutions.png",
+            "app_state": [2],
+            "position": {"x": 460, "y": 788},
+            "event": 5,
+            "scale": 1
+        },
+        {
+            "icon": "assets/components/button/malus.png",
+            "app_state": [2],
+            "position": {"x": 1007, "y": 468},
+            "event": 7,
+            "scale": 1
+        },
+        {
+            "icon": "assets/components/button/malus.png",
+            "app_state": [2],
+            "position": {"x": 1007, "y": 558},
+            "event": 9,
+            "scale": 1
+        },
+        {
+            "icon": "assets/components/button/sup.png",
+            "app_state": [2],
+            "position": {"x": 1290, "y": 468},
+            "event": 8,
+            "scale": 1
+        },
+        {
+            "icon": "assets/components/button/sup.png",
+            "app_state": [2],
+            "position": {"x": 1290, "y": 558},
+            "event": 10,
+            "scale": 1
+        },
+        {
+            "icon": "assets/components/button/previous_block.png",
+            "app_state": [3],
+            "position": {"x": 1279, "y": 788},
+            "event": 0,
+            "scale": 1
+        },
+        {
+            "icon": "assets/components/button/previous.png",
+            "app_state": [4],
+            "position": {"x": 1279, "y": 788},
+            "event": 5,
+            "scale": 1
+        },
+        {
+            "icon": "assets/components/button/next.png",
+            "app_state": [3],
+            "position": {"x": 1408, "y": 788},
+            "event": 6,
+            "scale": 1
+        },
+        {
+            "icon": "assets/components/button/next_block.png",
+            "app_state": [4],
+            "position": {"x": 1408, "y": 788},
+            "event": 0,
+            "scale": 1
         }
     ],
 
     "levers": [
         {
-            "position": {"x": 10.0, "y": 10.0},
-            "app_state": 2
+            "position": {"x": 460, "y": 446},
+            "app_state": 2,
+            "scale": 1,
+            "event": 0,
+            "on": true
+        },
+        {
+            "position": {"x": 460, "y": 540},
+            "app_state": 2,
+            "scale": 1,
+            "event": 1
+        },
+        {
+            "position": {"x": 460, "y": 631},
+            "app_state": 2,
+            "scale": 1,
+            "event": 2
         }
     ]
 }

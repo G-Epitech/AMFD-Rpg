@@ -12,7 +12,7 @@
 #include "types/list/list.h"
 
 static node_data_t buttons_append_data(button_t *button, sfVector2f position,
-app_states_t app_state)
+app_states_t *app_state)
 {
     node_data_t data;
 
@@ -32,7 +32,7 @@ app_states_t app_state)
 }
 
 button_t *buttons_append(list_t *list, sfVector2f position,
-app_states_t app_state)
+app_states_t *app_state)
 {
     node_data_t data;
     node_t *node = NULL;

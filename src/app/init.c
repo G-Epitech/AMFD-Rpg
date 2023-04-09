@@ -12,6 +12,20 @@
 #include "types/players/players.h"
 #include "app/tasks/bash/script_bash.h"
 
+static settings_t *init_settings(void)
+{
+    settings_t *settings = malloc(sizeof(settings_t));
+
+    if (!settings)
+        return NULL;
+    settings->developer = false;
+    settings->fps = 120;
+    settings->full_screen = false;
+    settings->music = true;
+    settings->volume = 15;
+    return settings;
+}
+
 static control_t *init_controller(void)
 {
     control_t *control = malloc(sizeof(control_t) * 4);
@@ -45,19 +59,18 @@ app_t *app_init(void)
 
     if (!app)
         return NULL;
-    app->state = ST_LOADING;
+    app->state = ST_MAIN_MENU;
     app->world = WL_VILLAGE;
     app->control = init_controller();
     app->players = players_list_init();
     app->npcs = npcs_load();
-    if (!app->players) {
+    app->tasks_setup = task_create();
+    app->settings = init_settings();
+    if (!app->players || !app->tasks_setup) {
         free(app);
         return NULL;
     }
     if (init_player(app) == 84)
-        return NULL;
-    app->tasks_setup = task_create();
-    if (app->tasks_setup == NULL)
         return NULL;
     return app;
 }

@@ -12,6 +12,19 @@
 #include "app/tasks/bash/script_bash.h"
 #include "app/app.h"
 
+static void mouse_event(sfEvent event, app_t *app,
+renderer_t *renderer)
+{
+    sfVector2f coords = sfRenderWindow_mapPixelToCoords(renderer->window,
+    (sfVector2i) {event.mouseButton.x, event.mouseButton.y},
+    renderer->default_view);
+
+    event.mouseButton.x = coords.x;
+    event.mouseButton.y = coords.y;
+    event_components_buttons(renderer, app, event);
+    event_components_levers(renderer, app, event);
+}
+
 static void event_analyse(sfRenderWindow *window, sfEvent event, app_t *app,
 renderer_t *renderer)
 {
@@ -30,15 +43,16 @@ renderer_t *renderer)
         keyboard_release_move(event, app);
     }
     if (event.type == sfEvtMouseButtonPressed) {
-        event_components_buttons(renderer, app, event);
+        mouse_event(event, app, renderer);
     }
 }
 
 void event_handler(sfRenderWindow *window, app_t *app, renderer_t *renderer)
 {
+    (void) window;
     sfEvent event;
 
-    while (sfRenderWindow_pollEvent(window, &event)) {
-        event_analyse(window, event, app, renderer);
+    while (sfRenderWindow_pollEvent(renderer->window, &event)) {
+        event_analyse(renderer->window, event, app, renderer);
     }
 }

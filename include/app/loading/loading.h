@@ -23,4 +23,19 @@ void loading_preload_screen(renderer_t *renderer);
 */
 void load_screen_text_display(renderer_t *renderer, char *load_text);
 
+/**
+ * @brief Add a bar to load screen
+ * @param renderer Main renderer function
+ * @param stat Stat of the bar
+ * @param info Info of the loading
+ */
+void load_screen_add_bar(renderer_t *renderer, int stat, char *load_text,
+char *info);
+
+/**
+ * @brief Sleep function
+ * @param time Time to sleep
+ */
+void loading_sleep(int time);
+
 #endif /* !LOADING_H_ */
