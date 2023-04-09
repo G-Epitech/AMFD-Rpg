@@ -16,6 +16,7 @@ void keyboard_press_move(sfEvent event, app_t *app)
 
     for (size_t i = 0; i < 4; i++) {
         if (event.key.code == app->control[i].key) {
+            app->player->orientation = i;
             app->control[i].direction = true;
             current_dir = i;
             break;

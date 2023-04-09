@@ -29,8 +29,8 @@ static settings_t *init_settings(void)
 static control_t *init_controller(void)
 {
     control_t *control = malloc(sizeof(control_t) * 4);
-    sfKeyCode key_codes[4] = {sfKeyZ, sfKeyS, sfKeyQ, sfKeyD};
-    sfVector2f move_offset[4] = {{0, -1}, {0, 1}, {-1, 0}, {1, 0}};
+    sfKeyCode key_codes[4] = {sfKeyD, sfKeyZ, sfKeyQ, sfKeyS};
+    sfVector2f move_offset[4] = {{1, 0}, {0, -1}, {-1, 0}, {0, 1}};
 
     if (!control)
         return NULL;
