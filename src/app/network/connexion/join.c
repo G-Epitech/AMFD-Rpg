@@ -9,6 +9,7 @@
 #include <SFML/Network.h>
 #include "types/renderer/types.h"
 #include "app/types.h"
+#include "types/players/players.h"
 
 int network_connexion_join(renderer_t *renderer, app_t *app, button_t *button)
 {
@@ -22,7 +23,8 @@ int network_connexion_join(renderer_t *renderer, app_t *app, button_t *button)
         app->state = ST_GAMEMODE;
         return 1;
     }
-    app->network->socker = socket;
+    app->network->socket = socket;
     app->state = ST_CHOICE;
+    app->partner = players_add(app->players, "Player2");
     return 0;
 }

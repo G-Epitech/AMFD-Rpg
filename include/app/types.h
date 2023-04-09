@@ -56,6 +56,7 @@ typedef struct s_app {
     worlds_t world;         //Actual wolrd where player is
     list_t *players;        //List of players
     player_t *player;       //Player of the client
+    player_t *partner;      //Partner player
     list_t *npcs;           //NPC of game
     control_t *control;     //Controller of the player
     list_t *tasks_setup;    //Taks of the game

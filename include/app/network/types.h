@@ -12,7 +12,7 @@
 
 typedef struct s_network {
     sfTcpListener *listener;
-    sfTcpSocket *socker;
+    sfTcpSocket *socket;
 } network_t;
 
 #endif /* !NETWORK_TYPES_H_ */

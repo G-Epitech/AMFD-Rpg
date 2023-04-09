@@ -45,11 +45,9 @@ static control_t *init_controller(void)
 static int init_player(app_t *app)
 {
     app->player = players_add(app->players, "Player1");
-    if (!app->player) {
-        list_free(app->players);
-        free(app);
+    app->partner = NULL;
+    if (!app->player)
         return 84;
-    }
     return 0;
 }
 

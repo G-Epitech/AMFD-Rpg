@@ -9,6 +9,7 @@
     #define NETWORK_H_
 
     #include "types.h"
+    #include "types/character/types.h"
 
 typedef struct s_app app_t;
 typedef struct s_renderer renderer_t;
@@ -37,5 +38,24 @@ int network_connexion_host(renderer_t *renderer, app_t *app, button_t *button);
  * @return int Status of the function
  */
 int network_connexion_join(renderer_t *renderer, app_t *app, button_t *button);
+
+/**
+ * @brief Send new character
+ * @param app Application structure
+ * @param skin Skin of the character
+ */
+void network_send_character(app_t *app, skin_textures_t skin);
+
+/**
+ * @brief Receive a new character
+ * @param app Application structure
+ */
+void network_receive_character(app_t *app);
+
+/**
+ * @brief Handle receive packets
+ * @param app Application structure
+ */
+void network_receive(app_t *app);
 
 #endif /* !NETWORK_H_ */

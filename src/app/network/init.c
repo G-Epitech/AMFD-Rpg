@@ -15,6 +15,6 @@ network_t *network_init(void)
     if (!network)
         return NULL;
     network->listener = NULL;
-    network->socker = NULL;
+    network->socket = NULL;
     return network;
 }

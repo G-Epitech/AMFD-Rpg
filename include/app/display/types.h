@@ -19,5 +19,7 @@
     #define FPS_POSITION ((sfVector2f) {1142, 587})
     #define VALID_LUCAS ((sfVector2f) {642, 646})
     #define VALID_TOM ((sfVector2f) {1173, 646})
+    #define REFUSE_LUCAS ((sfVector2f) {653, 649})
+    #define REFUSE_TOM ((sfVector2f) {1184, 649})
 
 #endif /* !DISPLAY_TYPES_H_ */

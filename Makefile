@@ -89,6 +89,9 @@ SRC = 		src/main.c \
 			src/app/network/init.c \
 			src/app/network/connexion/host.c \
 			src/app/network/connexion/join.c \
+			src/app/network/send/character.c \
+			src/app/network/receive/receive.c \
+			src/app/network/receive/character.c \
 			\
 			src/app/core/tasks/handler.c \
 			src/app/core/tasks/create.c \
