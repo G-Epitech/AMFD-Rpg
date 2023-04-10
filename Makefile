@@ -95,6 +95,7 @@ SRC = 		src/main.c \
 			src/app/network/receive/receive.c \
 			src/app/network/receive/character.c \
 			src/app/network/receive/game.c \
+			src/app/network/receive/position.c \
 			\
 			src/app/core/tasks/handler.c \
 			src/app/core/tasks/create.c \

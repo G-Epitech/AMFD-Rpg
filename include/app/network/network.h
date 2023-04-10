@@ -10,6 +10,7 @@
 
     #include "types.h"
     #include "types/character/types.h"
+    #include "cjson/include/cjson.h"
 
 typedef struct s_app app_t;
 typedef struct s_renderer renderer_t;
@@ -76,4 +77,11 @@ void network_send_position(app_t *app);
  * @param app Application structure
  */
 void network_receive_game(app_t *app);
+
+/**
+ * @brief Receive position data
+ * @param app Application structure
+ * @param data Data in json
+ */
+void network_receive_position(app_t *app, cjson_t *data);
 #endif /* !NETWORK_H_ */

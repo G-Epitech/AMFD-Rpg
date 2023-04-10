@@ -10,10 +10,18 @@
 #include <SFML/Network.h>
 #include "app/types.h"
 #include "app/network/network.h"
+#include "cjson/include/cjson.h"
+#include "my/include/my.h"
 
 static void dispatch_data(app_t *app, char *data)
 {
+    cjson_t *json = cjson_parse(data);
+    char *event = NULL;
 
+    if (!cjson_get_prop_string(json, "event", &event))
+        return;
+    if (!my_strcmp(event, "position"))
+        network_receive_position(app, json);
 }
 
 void network_receive_game(app_t *app)

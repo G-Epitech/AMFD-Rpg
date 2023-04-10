@@ -16,9 +16,9 @@
 /**
  * @brief Display player on map
  * @param renderer Renderer object
- * @param player Player to display
+ * @param app Application structure
  */
-void display_player(renderer_t *renderer, player_t *player);
+void display_player(renderer_t *renderer, app_t *app);
 
 /**
  * @brief Display npcs of current world
