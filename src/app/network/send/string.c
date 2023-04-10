@@ -18,4 +18,5 @@ void network_send_string(app_t *app, char *data)
     sfPacket_writeString(packet, data);
     sfTcpSocket_sendPacket(app->network->socket, packet);
     sfPacket_destroy(packet);
+    free(data);
 }
