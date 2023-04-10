@@ -58,4 +58,22 @@ void network_receive_character(app_t *app);
  */
 void network_receive(app_t *app);
 
+/**
+ * @brief Send string by TCP
+ * @param app Application structure
+ * @param data String to send
+ */
+void network_send_string(app_t *app, char *data);
+
+/**
+ * @brief Send position of the player
+ * @param app Application structure
+ */
+void network_send_position(app_t *app);
+
+/**
+ * @brief Receive game data (json stringify)
+ * @param app Application structure
+ */
+void network_receive_game(app_t *app);
 #endif /* !NETWORK_H_ */
