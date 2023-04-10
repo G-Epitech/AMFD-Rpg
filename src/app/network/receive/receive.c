@@ -16,6 +16,6 @@ void network_receive(app_t *app)
         return;
     if (app->state == ST_CHOICE)
         network_receive_character(app);
-    if (app->state == ST_INGAME)
+    if (app->state == ST_INGAME && app->partner)
         network_receive_game(app);
 }

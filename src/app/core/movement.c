@@ -41,5 +41,6 @@ app_t *app)
             (sfVector2f) {control[i].offset.x / 16, control[i].offset.y / 16});
         }
     }
-    network_send_position(app);
+    if (app->partner)
+        network_send_position(app);
 }
