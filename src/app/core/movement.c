@@ -15,7 +15,7 @@ int **collision_layer)
 {
     position.x += offset.x / 16;
     position.y += offset.y / 16 + 2;
-    return (collision_layer[(int) position.y][(int) position.x] == 0 
+    return (collision_layer[(int) position.y][(int) position.x] == 0
     && collision_layer[(int) position.y - 1][(int) position.x] == 0);
 }
 
