@@ -74,6 +74,7 @@ static void button_get_extra(cjson_t *config, button_t *button)
     cjson_get_prop_string(config, "description", &button->description);
     cjson_get_prop_float(config, "scale", &button->scale);
     cjson_get_prop_int(config, "event", &event);
+    cjson_get_prop_int(config, "id", &button->id);
     button->event = event;
     if (!cjson_get_prop_string(config, "icon", &texture))
         return;

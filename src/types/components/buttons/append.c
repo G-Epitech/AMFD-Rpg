@@ -17,6 +17,7 @@ app_states_t *app_state)
     node_data_t data;
 
     data.button = button;
+    button->id = 0;
     button->color = sfBlack;
     button->text_color = sfBlack;
     button->position = position;

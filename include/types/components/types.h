@@ -44,6 +44,7 @@ typedef enum e_levers_states {
  * It's majoritory use in a buttons list
 */
 typedef struct s_button {
+    int id;
     char *title;
     char *description;
     float scale;
