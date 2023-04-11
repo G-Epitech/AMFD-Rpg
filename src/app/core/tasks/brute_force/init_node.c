@@ -15,8 +15,10 @@
 
 int init_task_brute(app_t *app)
 {
-    CLOCK(NODE_BRUTE) = sfClock_create();
-    if (CLOCK(NODE_BRUTE) == NULL)
+    task_content_t brute = find_task_node(app, 2);
+
+    CLOCK(brute.force) = sfClock_create();
+    if (CLOCK(brute.force) == NULL)
         return 84;
     JUST_STARTED(app) = false;
     return 0;

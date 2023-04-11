@@ -24,7 +24,6 @@
     #define BASH_PATH(bash) bash.task->content.script
 
 typedef struct s_node node_t;
-typedef struct s_node node_t;
 typedef struct s_timer_handler timer_handler_t;
 
 typedef struct s_placing {

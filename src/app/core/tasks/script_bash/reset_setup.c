@@ -36,12 +36,14 @@ static void free_cmd_model(app_t *app)
 
 void reset_setup_bash(app_t *app)
 {
+    task_content_t bash = find_task_node(app, 1);
+
     STRUCT_BASH(app).handler_placing->just_started = true;
     free_cmd(app);
     free_cmd_model(app);
-    sfClock_destroy(CLOCK(NODE_BASH));
-    TIME_FLOAT(NODE_BASH) = 0.0;
-    TIME_INT(NODE_BASH) = 20;
+    sfClock_destroy(CLOCK(bash.script));
+    TIME_FLOAT(bash.script) = 0.0;
+    TIME_INT(bash.script) = 20;
     INDEX_LIFE(app) = 3;
     INDEX_CMD(app) = 1;
 }

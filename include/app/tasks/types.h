@@ -13,8 +13,6 @@
     #include "app/tasks/bash/types.h"
     #include "app/tasks/bruteforce/types.h"
 
-    #define NODE_BASH app->tasks_setup->first->data.task->content.script
-    #define NODE_BRUTE app->tasks_setup->first->next->data.task->content.force
     #define CLOCK(node) node.handler_time->clock_time
     #define TIME_FLOAT(node) node.handler_time->time_float
     #define TIME_INT(node) node.handler_time->timer_int

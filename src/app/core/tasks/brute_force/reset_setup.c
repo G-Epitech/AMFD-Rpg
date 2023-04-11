@@ -15,9 +15,11 @@
 
 void reset_setup_brute(app_t *app)
 {
+    task_content_t brute = find_task_node(app, 2);
+
     JUST_STARTED(app) = true;
     SIZE_TEXT(app) = 50;
-    sfClock_destroy(CLOCK(NODE_BRUTE));
-    TIME_FLOAT(NODE_BRUTE) = 0.0;
+    sfClock_destroy(CLOCK(brute.force));
+    TIME_FLOAT(brute.force) = 0.0;
     NB_CLICK(app) = 0;
 }

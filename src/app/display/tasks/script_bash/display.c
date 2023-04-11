@@ -18,6 +18,7 @@ static void display_time(renderer_t *renderer, app_t *app)
 {
     char *char_second = NULL;
     renderer_objects_t *objects = renderer->objects;
+    task_content_t bash = find_task_node(app, 1);
 
     sfText_setPosition(objects->text, (sfVector2f) {800, 220});
     sfText_setColor(objects->text, sfWhite);
@@ -25,7 +26,7 @@ static void display_time(renderer_t *renderer, app_t *app)
     sfRenderWindow_drawText(renderer->window, objects->text, NULL);
     sfText_setPosition(objects->text, (sfVector2f) {880, 220});
     char_second =
-    nbr_to_str(TIME_INT(NODE_BASH) - ((int) TIME_FLOAT(NODE_BASH)));
+    nbr_to_str(TIME_INT(bash.script) - ((int) TIME_FLOAT(bash.script)));
     sfText_setString(objects->text, char_second);
     sfRenderWindow_drawText(renderer->window, objects->text, NULL);
 }

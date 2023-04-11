@@ -99,6 +99,7 @@ SRC = 		src/main.c \
 			\
 			src/app/core/tasks/handler.c \
 			src/app/core/tasks/create.c \
+			src/app/core/tasks/find_node.c \
 			src/app/core/tasks/script_bash/create_node.c \
 			src/app/core/tasks/script_bash/init_node.c \
 			src/app/core/tasks/script_bash/game_handler.c \

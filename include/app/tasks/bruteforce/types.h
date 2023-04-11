@@ -9,7 +9,6 @@
     #define TYPE_BRUTEFORCE_H_
 
     #include <SFML/Graphics.h>
-    #include <SFML/Graphics/RenderWindow.h>
     #include <SFML/System/Clock.h>
 
     #define NB_CLICK(app) app->tasks_setup->first->next->data.\
