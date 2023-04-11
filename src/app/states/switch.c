@@ -10,17 +10,18 @@
 #include "app/types.h"
 #include "types/renderer/types.h"
 
-int states_switch_left(renderer_t *renderer, app_t *app)
+int states_switch_left(renderer_t *renderer, app_t *app, button_t *button)
 {
     (void) renderer;
+    (void) button;
     app->state--;
     return 0;
 }
 
-int states_switch_right(renderer_t *renderer, app_t *app)
+int states_switch_right(renderer_t *renderer, app_t *app, button_t *button)
 {
-    printf("Enter\n");
     (void) renderer;
+    (void) button;
     app->state++;
     return 0;
 }

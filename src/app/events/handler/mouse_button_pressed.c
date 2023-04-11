@@ -12,10 +12,23 @@
 #include "app/tasks/bash/script_bash.h"
 #include "app/app.h"
 
+static void mouse_event(sfEvent event, app_t *app,
+renderer_t *renderer)
+{
+    sfVector2f coords = sfRenderWindow_mapPixelToCoords(renderer->window,
+    (sfVector2i) {event.mouseButton.x, event.mouseButton.y},
+    renderer->default_view);
+
+    event.mouseButton.x = coords.x;
+    event.mouseButton.y = coords.y;
+    event_components_buttons(renderer, app, event);
+    event_components_levers(renderer, app, event);
+}
+
 void event_mouse_button_pressed(app_t *app, renderer_t *renderer,
 sfEvent event)
 {
     if (event.type == sfEvtMouseButtonPressed) {
-        event_components_buttons(renderer, app, event);
+        mouse_event(event, app, renderer);
     }
 }

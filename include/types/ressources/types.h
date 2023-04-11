@@ -11,9 +11,10 @@
     #include <SFML/Graphics.h>
     #include "app/types.h"
 
-    #define RESSOURCES_MAPS_CONFIG "configs/ressources/maps.json"
     #define RESSOURCES_SKINS_CONFIG "configs/skins.json"
     #define RESSOURCES_SKINS_RECT ((sfVector2i) { 16, 32 })
+    #define RESSOURCES_MAPS_CONFIG "configs/ressources/maps.json"
+    #define RESSOURCES_INVENTORY_CONFIG "configs/ressources/inventory.json"
     #define RESSOURCES_COMPONENTS_CONFIG "configs/ressources/components.json"
 
 typedef struct s_list list_t;
@@ -46,6 +47,14 @@ typedef struct s_button_r {
 } button_r_t;
 
 /**
+ * @biref Structure of a button ressource
+*/
+typedef struct s_lever_r {
+    sfTexture *on;        //On texture (first part)
+    sfTexture *off;       //Off texture (second part)
+} lever_r_t;
+
+/**
  * @brief Structure of background
 */
 typedef struct s_background {
@@ -61,17 +70,24 @@ typedef struct s_background {
 */
 typedef struct s_components_r {
     button_r_t *button;         //Button textures
+    lever_r_t *lever;           //Lever textures
     list_t *backgrounds;        //Backgrounds list
 } components_r_t;
+
+typedef struct s_inventory_ressources {
+    sfTexture *grid;            //Grid utils texture
+    sfTexture *items;           //Inventory items texture
+} inventory_r_t;
 
 /**
  * @brief Structure of ressources (textures)
 */
 typedef struct s_ressources {
-    list_t *maps;               //List of maps (textures)
-    list_t *skins;              //List of skins (textures)
-    list_t *props;              //List of props (textures)
-    components_r_t *components; //Structure of components ressources
+    list_t *maps;                       //List of maps (textures)
+    list_t *skins;                      //List of skins (textures)
+    list_t *props;                      //List of props (textures)
+    inventory_r_t *inventory;  //Structure of inventory ressources
+    components_r_t *components;         //Structure of components ressources
 } ressources_t;
 
 #endif /* !RESSOURCES_TYPES_H_ */

@@ -5,6 +5,11 @@
         "middle": "assets/components/button/middle.png"
     },
 
+    "lever": {
+        "on": "assets/components/button/on_switch.png",
+        "off": "assets/components/button/off_switch.png"
+    },
+
     "backgrounds": [
         {
             "asset": "assets/components/backgrounds/menu_background.png",
@@ -47,6 +52,12 @@
             "scale": 1,
             "state": [51],
             "position" : {"x": 690, "y": 140}
+        },
+        {
+            "asset": "assets/inventory/background.png",
+            "scale": 1,
+            "state": [25],
+            "position" : {"x": 177, "y": 45}
         }
     ]
 }

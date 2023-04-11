@@ -24,9 +24,10 @@ renderer_t *renderer)
 
 void event_handler(sfRenderWindow *window, app_t *app, renderer_t *renderer)
 {
+    (void) window;
     sfEvent event;
 
-    while (sfRenderWindow_pollEvent(window, &event)) {
-        event_analyse(window, event, app, renderer);
+    while (sfRenderWindow_pollEvent(renderer->window, &event)) {
+        event_analyse(renderer->window, event, app, renderer);
     }
 }

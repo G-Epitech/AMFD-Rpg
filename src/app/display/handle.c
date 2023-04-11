@@ -18,7 +18,7 @@ static void display_game(renderer_t *renderer, app_t *app)
     ressources_t *ressources = renderer->ressources;
     renderer_objects_t *objects = renderer->objects;
 
-    if (app->state == ST_INGAME || app->state >= 50) {
+    if (app->state >= ST_INGAME) {
         display_map_back(ressources->maps, renderer->window, objects->sprite,
         app->world);
         display_npcs_of_world(renderer, app->npcs, app->world);

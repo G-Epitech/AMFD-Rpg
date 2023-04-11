@@ -5,17 +5,23 @@
 ** Day 07, Task 02
 */
 
+#include <stdio.h>
+#include <stdlib.h>
 #include "include/my.h"
 
 char *my_strcat(char *dest, char const *src)
 {
-    int start = my_strlen(dest);
+    int dest_len = my_strlen(dest);
+    int src_len = my_strlen(src);
     int i = 0;
+    char *final = malloc(sizeof(char) * dest_len + src_len + 1);
 
-    while (src[i] != '\0') {
-        dest[start + i] = src[i];
-        i++;
+    for (int y = 0; y < dest_len; y++) {
+        final[y] = dest[y];
     }
-    dest[start + i] = '\0';
-    return dest;
+    for (int y = 0; y < src_len; y++) {
+        final[dest_len + y] = src[y];
+    }
+    final[dest_len + src_len] = '\0';
+    return final;
 }

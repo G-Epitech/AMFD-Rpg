@@ -54,6 +54,9 @@ SRC = 		src/main.c \
 			src/types/ressources/components/load.c \
 			src/types/ressources/components/button/load.c \
 			src/types/ressources/components/backgrounds/load.c \
+			src/types/ressources/components/lever/load.c \
+			\
+			src/types/ressources/inventory/load.c \
 			\
 			src/types/view/init.c \
 			\
@@ -65,6 +68,13 @@ SRC = 		src/main.c \
 			src/app/states/main_menu.c \
 			src/app/states/help.c \
 			src/app/states/switch.c \
+			src/app/states/ingame.c \
+			\
+			src/app/settings/music.c \
+			src/app/settings/fullscreen.c \
+			src/app/settings/developer.c \
+			src/app/settings/volume.c \
+			src/app/settings/fps.c \
 			\
 			src/app/window/init.c \
 			src/app/window/close.c \
@@ -73,6 +83,7 @@ SRC = 		src/main.c \
 			src/app/events/window/close.c \
 			src/app/events/keyboard/move.c \
 			src/app/events/components/buttons.c \
+			src/app/events/components/levers.c \
 			\
 			src/app/display/handle.c \
 			src/app/display/map/map.c \
@@ -97,6 +108,7 @@ SRC = 		src/main.c \
 			src/app/display/components/buttons.c \
       		src/app/display/components/components.c \
 			src/app/display/components/backgrounds.c \
+			src/app/display/components/levers.c \
 			src/app/display/components/icon.c \
 			src/app/display/menus/menus.c \
 			src/app/display/menus/main_menu.c \
@@ -109,6 +121,7 @@ SRC = 		src/main.c \
 			\
 			src/app/loading/loading_company_screen.c \
 			src/app/loading/loading_screen_text.c \
+			src/app/loading/loading_sleep.c \
 			\
 			src/app/core/tasks/brute_force/create_node.c \
 			src/app/core/tasks/brute_force/game_handler.c \
@@ -122,8 +135,8 @@ SRC = 		src/main.c \
 			src/app/events/handler/pressed.c \
 			src/app/events/handler/released.c \
 			src/app/events/handler/text_entered.c \
+			src/app/events/handler/mouse_button_released.c \
 			\
-
 
 NAME = my_rpg
 

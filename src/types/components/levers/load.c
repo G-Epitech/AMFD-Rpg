@@ -27,6 +27,8 @@ void levers_load(components_t *components, cjson_array_t *levers)
         if (!data)
             return;
         cjson_get_prop_float(lever, "scale", &data->scale);
+        cjson_get_prop_int(lever, "event", &data->event);
+        cjson_get_prop_bool(lever, "on", &data->active);
         lever = lever->next;
     }
 }

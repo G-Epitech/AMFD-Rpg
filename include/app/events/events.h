@@ -48,6 +48,14 @@ void keyboard_release_move(sfEvent event, app_t *app);
 void event_components_buttons(renderer_t *renderer, app_t *app, sfEvent event);
 
 /**
+ * @brief Handle events on levers
+ * @param renderer Renderer structure
+ * @param app Application structure
+ * @param event Event click
+*/
+void event_components_levers(renderer_t *renderer, app_t *app, sfEvent event);
+
+/*
  * @brief Handler of event close
  * @param window Window of the app
  * @param event The specific event
@@ -82,6 +90,15 @@ void event_key_released(sfEvent event, app_t *app);
  * @param event The specific event
 */
 void event_mouse_button_pressed(app_t *app, renderer_t *renderer,
+sfEvent event);
+
+/**
+ * @brief Handler of event mouse button released
+ * @param app Application structure
+ * @param renderer Renderer structure
+ * @param event The specific event
+*/
+void event_mouse_button_released(app_t *app, renderer_t *renderer,
 sfEvent event);
 
 #endif /* !EVENTS_H_ */

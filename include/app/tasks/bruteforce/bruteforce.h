@@ -16,6 +16,7 @@
 
 typedef struct s_renderer renderer_t;
 typedef struct s_node node_t;
+typedef struct s_button button_t;
 
 /**
  * @brief Create the node for task brute force
@@ -46,12 +47,5 @@ void reset_setup_brute(app_t *app);
  * @param app Application structure
 */
 int init_task_brute(app_t *app);
-
-/**
- * @brief Handle click on usb key
- * @param renderer Main renderer function
- * @param app Application structure
-*/
-int brute_force_click(renderer_t *renderer, app_t *app);
 
 #endif /* !BRUTEFORCE_H_ */

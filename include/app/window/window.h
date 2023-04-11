@@ -15,17 +15,18 @@
     #define WIN_VIDEO_MODE ((sfVideoMode) {1920, 1080, 32})
 
 typedef struct s_renderer renderer_t;
+typedef struct s_button button_t;
 
 /**
  * Init a new window
  * @return The new window
  */
-sfRenderWindow *window_init(void);
+sfRenderWindow *window_init(bool fullscreen);
 
 /**
  * @brief Close the window
  * @param renderer Renderer structure
  * @param app App structure
  */
-int window_close(renderer_t *renderer, app_t *app);
+int window_close(renderer_t *renderer, app_t *app, button_t *button);
 #endif //WINDOW_H_
