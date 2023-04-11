@@ -57,8 +57,9 @@ void levers_load(components_t *components, cjson_array_t *levers);
 /**
  * @brief Get cjson vector
  * @param config Json configuration
+ * @param prop Key of property to get
  * @return New vector
 */
-sfVector2f cjson_vector(cjson_t *config);
+sfVector2f cjson_vector(cjson_t *config, char *prop);
 
 #endif /* !COMPONENTS_H_ */

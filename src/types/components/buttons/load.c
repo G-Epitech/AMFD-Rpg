@@ -96,7 +96,7 @@ cjson_array_t *buttons)
     size_t len = 0;
 
     while (button) {
-        position = cjson_vector(button);
+        position = cjson_vector(button, "position");
         array = cjson_get_prop_array_unsafe(button, "app_state");
         state = (app_states_t *) cjson_array_to_int_array(array, &len);
         data = buttons_append(components->buttons, position, state);
@@ -105,6 +105,7 @@ cjson_array_t *buttons)
         data->state_size = len;
         button_get_extra(button, data);
         data->rect_scale = get_rect_scale(data, renderer);
+        data->origin = cjson_vector(button, "origin");
         button = button->next;
     }
 }

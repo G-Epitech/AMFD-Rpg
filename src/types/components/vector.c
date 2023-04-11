@@ -14,12 +14,12 @@
 #include "types/list/list.h"
 #include "cjson/include/cjson.h"
 
-sfVector2f cjson_vector(cjson_t *config)
+sfVector2f cjson_vector(cjson_t *config, char *prop)
 {
     cjson_t *position_prop = NULL;
     sfVector2f position = {0, 0};
 
-    position_prop = cjson_get_prop(config, "position");
+    position_prop = cjson_get_prop(config, prop);
     if (!position_prop)
         return position;
     position.x = cjson_get_prop_float_unsafe(position_prop, "x");
