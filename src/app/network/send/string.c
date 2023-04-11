@@ -6,6 +6,7 @@
 */
 
 #include <stdio.h>
+#include <stdlib.h>
 #include <SFML/Network.h>
 #include "app/types.h"
 #include "app/network/network.h"
