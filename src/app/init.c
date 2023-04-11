@@ -57,7 +57,7 @@ app_t *app_init(void)
 
     if (!app)
         return NULL;
-    app->state = ST_TASK_BASH;
+    app->state = ST_LOADING;
     app->world = WL_VILLAGE;
     app->control = init_controller();
     app->players = players_list_init();
