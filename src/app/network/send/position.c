@@ -24,5 +24,5 @@ void network_send_position(app_t *app)
     cjson_set_prop(data, "orientation", CJSON_NUMBER(orientation),
     CJSON_NUMBER_T);
     network_send_string(app, cjson_stringify(data));
-    cjson_destroy(data);
+    cjson_free(data);
 }
