@@ -16,6 +16,7 @@
     #define RESSOURCES_MAPS_CONFIG "configs/ressources/maps.json"
     #define RESSOURCES_INVENTORY_CONFIG "configs/ressources/inventory.json"
     #define RESSOURCES_COMPONENTS_CONFIG "configs/ressources/components.json"
+    #define RESSOURCES_ICONS_CONFIG "configs/ressources/icons.json"
 
 typedef struct s_list list_t;
 
@@ -79,6 +80,11 @@ typedef struct s_inventory_ressources {
     sfTexture *items;           //Inventory items texture
 } inventory_r_t;
 
+typedef struct s_icons_ressources {
+    sfTexture *valid;           //Valid icon
+    sfTexture *refuse;          //Refuse icon
+} icons_r_t;
+
 /**
  * @brief Structure of ressources (textures)
 */
@@ -86,8 +92,9 @@ typedef struct s_ressources {
     list_t *maps;                       //List of maps (textures)
     list_t *skins;                      //List of skins (textures)
     list_t *props;                      //List of props (textures)
-    inventory_r_t *inventory;  //Structure of inventory ressources
+    inventory_r_t *inventory;           //Structure of inventory ressources
     components_r_t *components;         //Structure of components ressources
+    icons_r_t *icons;                   //Structure of icons ressources
 } ressources_t;
 
 #endif /* !RESSOURCES_TYPES_H_ */

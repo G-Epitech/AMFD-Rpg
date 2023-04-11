@@ -10,6 +10,7 @@
 
     #include <stdbool.h>
     #include "types/players/types.h"
+    #include "app/network/types.h"
 
 typedef struct s_list list_t;
 
@@ -19,15 +20,17 @@ typedef enum e_app_states {
     ST_SETTINGS,            //Settings menu
     ST_HELP_1,              //Help menu 1
     ST_HELP_2,              //Help menu 2
+    ST_GAMEMODE,            //Gamemode (solo/duo)
+    ST_CONNEXIONMODE,       //Connexion mode (host/join)
+    ST_CHOICE,              //Choice of the character
+    ST_INGAME = 100,        //Main state, ingame player
+    ST_INVENTORY = 300,     //Inventory menu
     ST_BREAK,               //Break menu (save/sound...)
-    ST_INVENTORY = 25,      //Inventory menu
-    ST_INGAME = 30,         //Main state, ingame player
-    ST_INBUILDING,          //In building
-    ST_FIGHT = 40,          //Fight interface
-    ST_TASK = 50,           //Task delimiter
+    ST_FIGHT = 350,         //Fight interface
+    ST_TASK = 500,          //Task delimiter
     ST_TASK_BASH,           //Task n°1: bash
-    ST_TASK_BRUTEFORCE,     //Task n°2: bruteforce
-    ST_QUIT = 100           //Quit menu
+    ST_TASK_BRUTEFORCE,
+    ST_QUIT = 1000          //Quit menu
 } app_states_t;
 
 typedef enum e_worlds {
@@ -54,10 +57,12 @@ typedef struct s_app {
     worlds_t world;         //Actual wolrd where player is
     list_t *players;        //List of players
     player_t *player;       //Player of the client
+    player_t *partner;      //Partner player
     list_t *npcs;           //NPC of game
     control_t *control;     //Controller of the player
     list_t *tasks_setup;    //Taks of the game
     settings_t *settings;   //Settings of the application
+    network_t *network;     //Network
 } app_t;
 
 #endif /* !APP_TYPES_H_ */

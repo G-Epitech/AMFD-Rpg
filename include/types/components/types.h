@@ -15,6 +15,7 @@
     #include "app/utils/utils.h"
     #include "app/window/window.h"
     #include "app/settings/settings.h"
+    #include "app/network/network.h"
     #include "app/tasks/bruteforce/bruteforce.h"
 
     #define COMPONENTS_CONFIG "configs/components.json"
@@ -45,15 +46,20 @@ typedef enum e_levers_states {
  * It's majoritory use in a buttons list
 */
 typedef struct s_button {
+    int id;
     char *title;
     char *description;
     float scale;
     int event;
+    int next_state;
+    bool developer;
+    bool always_display;
     sfColor color;
     sfColor text_color;
     sfTexture *texture;
     sfVector2f position;
     sfVector2f rect_scale;
+    sfVector2f origin;
     app_states_t *app_state;
     buttons_states_t state;
     size_t state_size;
@@ -85,16 +91,16 @@ static const struct {
 } event_button_map[] = {
     {test},
     {window_close},
-    {states_settings},
-    {states_main_menu},
-    {states_help},
     {states_switch_left},
     {states_switch_right},
     {settings_volume_malus},
     {settings_volume_up},
     {settings_fps_malus},
     {settings_fps_up},
-    {states_ingame},
+    {developer_reload_json},
+    {network_connexion_host},
+    {network_connexion_join},
+    {states_select_character},
     {brute_force_click}
 };
 
