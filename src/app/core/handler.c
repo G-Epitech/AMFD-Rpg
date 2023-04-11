@@ -13,6 +13,7 @@
 #include "app/core/core.h"
 #include "types/list/types.h"
 #include "app/app.h"
+#include "app/network/network.h"
 
 int core_handler(renderer_t *renderer, app_t *app)
 {
@@ -20,7 +21,8 @@ int core_handler(renderer_t *renderer, app_t *app)
 
     if (core_tasks_handler(app) == 84)
         return 84;
-    core_handle_movement(app->player, app->control,
-    current_map->collision_layer);
+    core_handle_movement(app->control,
+    current_map->collision_layer, app);
+    network_receive(app);
     return 0;
 }

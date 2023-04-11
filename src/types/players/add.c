@@ -23,7 +23,7 @@ player_t *players_add(list_t *list, char *name)
     if (!data.player->inventory)
         return NULL;
     data.player->position = PLAYER_DEFAULT_SPAWN;
-    data.player->skin_id = 0;
+    data.player->skin_id = -1;
     data.player->orientation = SO_LEFT;
     data.player->colision_pos = (sfVector2f) {4, 3};
     data.player->name = name;

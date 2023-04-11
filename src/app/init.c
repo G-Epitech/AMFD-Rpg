@@ -29,8 +29,8 @@ static settings_t *init_settings(void)
 static control_t *init_controller(void)
 {
     control_t *control = malloc(sizeof(control_t) * 4);
-    sfKeyCode key_codes[4] = {sfKeyZ, sfKeyS, sfKeyQ, sfKeyD};
-    sfVector2f move_offset[4] = {{0, -1}, {0, 1}, {-1, 0}, {1, 0}};
+    sfKeyCode key_codes[4] = {sfKeyD, sfKeyZ, sfKeyQ, sfKeyS};
+    sfVector2f move_offset[4] = {{1, 0}, {0, -1}, {-1, 0}, {0, 1}};
 
     if (!control)
         return NULL;
@@ -45,11 +45,9 @@ static control_t *init_controller(void)
 static int init_player(app_t *app)
 {
     app->player = players_add(app->players, "Player1");
-    if (!app->player) {
-        list_free(app->players);
-        free(app);
+    app->partner = NULL;
+    if (!app->player)
         return 84;
-    }
     return 0;
 }
 
@@ -66,6 +64,7 @@ app_t *app_init(void)
     app->npcs = npcs_load();
     app->tasks_setup = task_create();
     app->settings = init_settings();
+    app->network = network_init();
     if (!app->players || !app->tasks_setup) {
         free(app);
         return NULL;

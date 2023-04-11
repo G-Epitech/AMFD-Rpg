@@ -15,6 +15,7 @@
     #include "app/utils/utils.h"
     #include "app/window/window.h"
     #include "app/settings/settings.h"
+    #include "app/network/network.h"
 
     #define COMPONENTS_CONFIG "configs/components.json"
 
@@ -49,6 +50,9 @@ typedef struct s_button {
     char *description;
     float scale;
     int event;
+    int next_state;
+    bool developer;
+    bool always_display;
     sfColor color;
     sfColor text_color;
     sfTexture *texture;
@@ -85,16 +89,16 @@ static const struct {
 } event_button_map[] = {
     {test},
     {window_close},
-    {states_settings},
-    {states_main_menu},
-    {states_help},
     {states_switch_left},
     {states_switch_right},
     {settings_volume_malus},
     {settings_volume_up},
     {settings_fps_malus},
     {settings_fps_up},
-    {states_ingame}
+    {developer_reload_json},
+    {network_connexion_host},
+    {network_connexion_join},
+    {states_select_character}
 };
 
 static const struct {

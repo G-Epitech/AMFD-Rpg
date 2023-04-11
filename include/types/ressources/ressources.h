@@ -105,4 +105,11 @@ lever_r_t *ressources_components_lever_load(cjson_t *lever_config);
  */
 void inventory_load(renderer_t *renderer, inventory_r_t *inventory);
 
+/**
+ * @brief Load icons ressources
+ * @param renderer Renderer object
+ * @param inventory Structure of icons ressources
+ */
+void icons_load(renderer_t *renderer, icons_r_t *icons);
+
 #endif /* !RESSOURCES_H_ */

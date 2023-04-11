@@ -58,17 +58,16 @@ SRC = 		src/main.c \
 			\
 			src/types/ressources/inventory/load.c \
 			\
+			src/types/ressources/icons/load.c \
+			\
 			src/types/view/init.c \
 			\
 			src/app/init.c \
 			src/app/run.c \
 			\
 			src/app/states/on_state.c \
-			src/app/states/settings.c \
-			src/app/states/main_menu.c \
-			src/app/states/help.c \
 			src/app/states/switch.c \
-			src/app/states/ingame.c \
+			src/app/states/select_character.c \
 			\
 			src/app/settings/music.c \
 			src/app/settings/fullscreen.c \
@@ -85,9 +84,18 @@ SRC = 		src/main.c \
 			src/app/events/components/buttons.c \
 			src/app/events/components/levers.c \
 			\
-			src/app/display/handle.c \
-			src/app/display/map/map.c \
-			src/app/display/map/back.c \
+			src/app/developer/reload_json.c \
+			\
+			src/app/network/init.c \
+			src/app/network/connexion/host.c \
+			src/app/network/connexion/join.c \
+			src/app/network/send/character.c \
+			src/app/network/send/position.c \
+			src/app/network/send/string.c \
+			src/app/network/receive/receive.c \
+			src/app/network/receive/character.c \
+			src/app/network/receive/game.c \
+			src/app/network/receive/position.c \
 			\
 			src/app/core/tasks/handler.c \
 			src/app/core/tasks/create.c \
@@ -98,21 +106,26 @@ SRC = 		src/main.c \
 			src/app/core/tasks/script_bash/valid_cmd.c \
 			src/app/core/tasks/script_bash/reset_setup.c \
 			src/app/core/tasks/script_bash/create_list.c \
+			\
+			src/app/display/handler.c \
+			src/app/display/map/map.c \
+			src/app/display/map/back.c \
 			src/app/display/tasks/script_bash/display.c \
 			src/app/display/tasks/handler.c \
-			\
 			src/app/display/npcs/npcs.c \
 			src/app/display/player/player.c \
 			src/app/display/characters/character.c \
 			src/app/display/map/front.c	\
-			src/app/display/components/buttons.c \
       		src/app/display/components/components.c \
 			src/app/display/components/backgrounds.c \
 			src/app/display/components/levers.c \
-			src/app/display/components/icon.c \
+			src/app/display/components/buttons/buttons.c \
+			src/app/display/components/buttons/icon.c \
+			src/app/display/components/buttons/dispatch.c \
 			src/app/display/menus/menus.c \
 			src/app/display/menus/main_menu.c \
 			src/app/display/menus/settings.c \
+			src/app/display/menus/select_character.c \
 			\
 			src/app/core/handler.c	\
 			src/app/core/movement.c	\
@@ -134,7 +147,7 @@ CFLAGS += -Wall -Wextra -Werror -Wno-unused-command-line-argument -g
 INC = -I./include -I./lib
 
 LDFLAGS = -lcsfml-graphics -lcsfml-system -lcsfml-audio -lcsfml-window \
--L./lib -lmy -lcjson
+-lcsfml-network -L./lib -lmy -lcjson
 
 OBJ = $(SRC:.c=.o)
 

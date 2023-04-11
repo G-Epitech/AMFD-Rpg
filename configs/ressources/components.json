@@ -14,13 +14,13 @@
         {
             "asset": "assets/components/backgrounds/menu_background.png",
             "scale": 1,
-            "state": [1, 2, 3, 4],
+            "state": [1, 2, 3, 4, 5, 6, 7],
             "position" : {"x": 0, "y": 0}
         },
         {
             "asset": "assets/components/backgrounds/menu.png",
             "scale": 1,
-            "state": [1, 2, 3, 4],
+            "state": [1, 2, 3, 4, 5, 6, 7],
             "position" : {"x": 341, "y": 156}
         },
         {
@@ -48,15 +48,33 @@
             "position" : {"x": 457, "y": 292}
         },
         {
+            "asset": "assets/components/backgrounds/game_mode.png",
+            "scale": 1,
+            "state": [5],
+            "position" : {"x": 548, "y": 292}
+        },
+        {
+            "asset": "assets/components/backgrounds/connexion_mode.png",
+            "scale": 1,
+            "state": [6],
+            "position" : {"x": 475, "y": 303}
+        },
+        {
+            "asset": "assets/components/backgrounds/perso_names.png",
+            "scale": 1,
+            "state": [7],
+            "position" : {"x": 589, "y": 730}
+        },
+        {
             "asset": "assets/tasks/phone.png",
             "scale": 1,
-            "state": [51],
+            "state": [501],
             "position" : {"x": 690, "y": 140}
         },
         {
             "asset": "assets/inventory/background.png",
             "scale": 1,
-            "state": [25],
+            "state": [300],
             "position" : {"x": 177, "y": 45}
         }
     ]
