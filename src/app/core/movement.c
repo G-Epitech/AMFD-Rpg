@@ -14,8 +14,9 @@ static int movement_is_possible(sfVector2f position, sfVector2f offset,
 int **collision_layer)
 {
     position.x += offset.x / 16;
-    position.y += offset.y / 16;
-    return (collision_layer[(int) position.y][(int) position.x] == 1);
+    position.y += offset.y / 16 + 2;
+    return (collision_layer[(int) position.y][(int) position.x] == 0
+    && collision_layer[(int) position.y - 1][(int) position.x] == 0);
 }
 
 static sfVector2f increment_position(sfVector2f position, sfVector2f offset)
