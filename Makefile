@@ -140,7 +140,8 @@ SRC = 		src/main.c \
 			src/app/core/tasks/brute_force/game_handler.c \
 			src/app/core/tasks/brute_force/reset_setup.c \
 			src/app/core/tasks/brute_force/init_node.c \
-			src/app/core/tasks/brute_force/detect_click.c \
+			src/app/core/tasks/brute_force/click.c \
+			src/app/core/tasks/brute_force/released.c \
 			src/app/display/tasks/brute_force/display.c \
 			\
 			src/app/events/handler/closed.c \

@@ -48,4 +48,11 @@ void reset_setup_brute(app_t *app);
 */
 int init_task_brute(app_t *app);
 
+/**
+ * @brief Handle when mouse was released
+ * @param renderer Main renderer function
+ * @param app Application structure
+*/
+int brute_force_released(renderer_t *renderer, app_t *app);
+
 #endif /* !BRUTEFORCE_H_ */
