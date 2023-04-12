@@ -140,9 +140,9 @@
         },
         {
             "icon": "assets/components/button/close1.png",
-            "app_state": [25],
+            "app_state": [300],
             "position": {"x": 1663, "y": 30},
-            "event": 14,
+            "event": 13,
             "scale": 1.83
         },
         {
