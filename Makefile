@@ -34,6 +34,11 @@ SRC = 		src/main.c \
 			src/types/players/init.c \
 			src/types/players/add.c \
 			\
+			src/types/items/load_all.c \
+			src/types/items/load.c \
+			\
+			src/types/characters/rect.c \
+			\
 			src/types/components/load.c \
 			src/types/components/vector.c \
 			src/types/components/buttons/append.c \
@@ -77,6 +82,7 @@ SRC = 		src/main.c \
 			src/app/events/keyboard/move.c \
 			src/app/events/components/buttons.c \
 			src/app/events/components/levers.c \
+			src/app/events/inventory/close.c \
 			\
 			src/app/display/handle.c \
 			src/app/display/map/map.c \
@@ -109,6 +115,7 @@ SRC = 		src/main.c \
 			\
 			src/app/display/inventory/main_grid.c \
 			src/app/display/inventory/active_grid.c \
+			src/app/display/inventory/profile.c \
 			src/app/display/inventory/inventory.c \
 			\
 			src/app/core/handler.c	\

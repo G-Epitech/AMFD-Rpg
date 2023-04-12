@@ -10,7 +10,7 @@
 #include "types/list/types.h"
 #include "app/display/display.h"
 #include "types/renderer/renderer.h"
-#include "app/inventory/inventory.h"
+#include "app/inventory/types.h"
 #include "types/ressources/ressources.h"
 
 static void get_position(size_t i, sfVector2f *position)

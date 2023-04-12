@@ -8,6 +8,7 @@
 #include <stdlib.h>
 #include "app/types.h"
 #include "types/npc/npc.h"
+#include "app/items/items.h"
 #include "types/list/list.h"
 #include "types/players/players.h"
 #include "app/tasks/bash/script_bash.h"
@@ -50,6 +51,7 @@ app_t *app_init(void)
     app->control = init_controller();
     app->players = players_list_init();
     app->npcs = npcs_load();
+    app->items = items_load();
     if (!app->players) {
         free(app);
         return NULL;

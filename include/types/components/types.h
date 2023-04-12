@@ -9,11 +9,12 @@
     #define COMPONENTS_TYPES_H_
 
     #include <SFML/Graphics.h>
-    #include "app/types.h"
     #include "app/app.h"
-    #include "cjson/include/cjson.h"
+    #include "app/types.h"
     #include "app/utils/utils.h"
     #include "app/window/window.h"
+    #include "cjson/include/cjson.h"
+    #include "app/inventory/inventory.h"
 
     #define COMPONENTS_CONFIG "configs/components.json"
 
@@ -86,7 +87,8 @@ static const struct {
     {states_main_menu},
     {states_help},
     {states_switch_left},
-    {states_switch_right}
+    {states_switch_right},
+    {inventory_close}
 };
 
 #endif /* !COMPONENTS_TYPES_H_ */

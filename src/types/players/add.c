@@ -9,7 +9,7 @@
 #include "types/list/list.h"
 #include "types/list/types.h"
 #include "types/players/types.h"
-#include "types/character/types.h"
+#include "types/characters/types.h"
 
 player_t *players_add(list_t *list, char *name)
 {

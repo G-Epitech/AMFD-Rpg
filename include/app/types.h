@@ -43,6 +43,7 @@ typedef struct s_control {
 typedef struct s_app {
     app_states_t state;     //State of the app
     worlds_t world;         //Actual wolrd where player is
+    list_t *items;          //Items available in game
     list_t *players;        //List of players
     player_t *player;       //Player of the client
     list_t *npcs;           //NPC of game

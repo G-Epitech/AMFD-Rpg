@@ -38,5 +38,4 @@ void inventory_load(renderer_t *renderer, inventory_r_t *inventory)
         return cjson_free(config);
     inventory->items = NULL;
     inventory->grid = inventory_load_grid(config, renderer);
-
 }

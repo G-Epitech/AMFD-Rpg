@@ -71,7 +71,7 @@
             "icon": "assets/components/button/close1.png",
             "app_state": [25],
             "position": {"x": 1663, "y": 30},
-            "event": 6,
+            "event": 7,
             "scale": 1.83
         }
     ],

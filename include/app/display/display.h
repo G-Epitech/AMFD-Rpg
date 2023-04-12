@@ -10,7 +10,7 @@
 
     #include <SFML/Graphics.h>
     #include "types/renderer/types.h"
-    #include "types/character/types.h"
+    #include "types/characters/types.h"
 
     #define SIZE_UP(pos, scale) ((sfVector2f) {pos.x * scale, pos.y * scale})
     #define MIDDLE_POS(size, middle) ((sfVector2f)\
@@ -150,6 +150,14 @@ void display_inventory_main_grid(renderer_t *renderer, app_t *app);
  * @param app App object
  */
 void display_inventory_active_grid(renderer_t *renderer, app_t *app);
+
+/**
+ * @brief Display player profile on inventory
+ * @param renderer Renderer object
+ * @param app App object
+ */
+void display_inventory_profile(renderer_t *renderer, app_t *app);
+
 
 /**
  * @brief Display main grid of inventory
