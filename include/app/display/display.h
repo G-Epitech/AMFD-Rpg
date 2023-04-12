@@ -126,29 +126,36 @@ void display_settings(renderer_t *renderer, app_t *app);
 /**
  * @brief Display levers
  * @param renderer Renderer structure
- * @param app 1pplication informations
+ * @param app Application informations
  */
 void display_components_levers(renderer_t *renderer, app_t *app);
 
 /**
  * @brief Dispatch display of buttons
  * @param renderer Renderer structure
- * @param app 1pplication informations
+ * @param app Application informations
  */
 void display_buttons_dispatch(button_t *button, renderer_t *renderer);
 
 /**
  * @brief Display button
  * @param renderer Renderer structure
- * @param app 1pplication informations
+ * @param app Application informations
  */
 void display_button(button_t *button, renderer_t *renderer);
 
 /**
  * @brief Display select character
  * @param renderer Renderer structure
- * @param app 1pplication informations
+ * @param app Application informations
  */
 void display_select_character(renderer_t *renderer, app_t *app);
+
+/**
+ * @brief Display collisions box
+ * @param renderer Renderer structure
+ * @param app Application informations
+ */
+void display_developer_collisions(renderer_t *renderer, app_t *app);
 
 #endif /* !DISPLAY_H_ */
