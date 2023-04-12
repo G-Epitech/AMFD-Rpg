@@ -12,6 +12,25 @@
 #include "types/renderer/renderer.h"
 #include "types/list/list.h"
 
+static void display_collision_futur(renderer_t *renderer, app_t *app)
+{
+    int x = 0;
+    int y = 0;
+    sfRectangleShape *rectangle = renderer->objects->rectangle;
+
+    for (size_t i = 0; i < 4; i++) {
+        x = app->player->position.x + app->control[i].offset.x * 16;
+        y = app->player->position.y + app->control[i].offset.y * 16;
+        renderer_objects_reset_rectangle(renderer->objects);
+        sfRectangleShape_setPosition(rectangle, (sfVector2f) {x, y});
+        sfRectangleShape_setSize(rectangle, (sfVector2f) {16, 16});
+        sfRectangleShape_setFillColor(rectangle, (sfColor) {0, 0, 0, 0});
+        sfRectangleShape_setOutlineColor(rectangle, sfGreen);
+        sfRectangleShape_setOutlineThickness(rectangle, 0.5);
+        sfRenderWindow_drawRectangleShape(renderer->window, rectangle, NULL);
+    }
+}
+
 static void display_collision_player(renderer_t *renderer, app_t *app)
 {
     sfRectangleShape *rectangle = renderer->objects->rectangle;
@@ -53,12 +72,11 @@ void display_developer_collisions(renderer_t *renderer, app_t *app)
     map_size.y /= 16;
     if (!app->settings->developer)
         return;
-    for (size_t y = 0; y < map_size.y; y++)
-    {
-        for (size_t x = 0; x < map_size.x; x++)
-        {
+    for (size_t y = 0; y < map_size.y; y++) {
+        for (size_t x = 0; x < map_size.x; x++) {
             display_collision_box(renderer, current_map, x, y);
         }
     }
     display_collision_player(renderer, app);
+    display_collision_futur(renderer, app);
 }
