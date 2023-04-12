@@ -6,6 +6,7 @@
 */
 
 #include <SFML/Graphics.h>
+#include "types/renderer/renderer.h"
 
 void display_map(sfTexture *texture, sfRenderWindow *window, sfSprite *sprite)
 {

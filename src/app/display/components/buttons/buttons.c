@@ -58,7 +58,7 @@ float scale)
     sfRenderWindow_drawSprite(renderer->window, objects->sprite, NULL);
 }
 
-static void display_button(button_t *button, renderer_t *renderer)
+void display_button(button_t *button, renderer_t *renderer)
 {
     components_r_t *ressources = renderer->ressources->components;
     renderer_objects_t *objects = renderer->objects;
@@ -90,15 +90,16 @@ void display_components_buttons(renderer_t *renderer, app_t *app)
 
     while (node) {
         button = node->data.button;
-        if (!app_on_state(app, button->app_state, button->state_size)) {
+        if (!button->always_display && !app_on_state(app, button->app_state,
+        button->state_size)) {
             node = node->next;
             continue;
         }
-        if (!button->texture) {
-            display_button(button, renderer);
-        } else {
-            display_components_icon(renderer, button);
+        if (button->developer && !app->settings->developer) {
+            node = node->next;
+            continue;
         }
+        display_buttons_dispatch(button, renderer);
         node = node->next;
     }
 }

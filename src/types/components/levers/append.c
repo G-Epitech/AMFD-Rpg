@@ -12,6 +12,17 @@
 #include "types/list/types.h"
 #include "types/list/list.h"
 
+static void lever_data(lever_t *lever, sfVector2f position,
+app_states_t app_state)
+{
+    lever->position = position;
+    lever->scale = 1.0;
+    lever->state = ST_LV_OFF;
+    lever->app_state = app_state;
+    lever->active = false;
+    lever->event = 0;
+}
+
 lever_t *levers_append(list_t *list, sfVector2f position,
 app_states_t app_state)
 {
@@ -22,11 +33,7 @@ app_states_t app_state)
     if (!lever)
         return NULL;
     data.lever = lever;
-    lever->position = position;
-    lever->scale = 1.0;
-    lever->state = ST_LV_OFF;
-    lever->app_state = app_state;
-    lever->active = false;
+    lever_data(lever, position, app_state);
     node = node_new(data);
     if (!node) {
         free(lever);

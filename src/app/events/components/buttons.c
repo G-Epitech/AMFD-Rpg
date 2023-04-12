@@ -19,7 +19,10 @@ sfEvent event)
     sfVector2f cursor = (sfVector2f) {event.mouseButton.x,
     event.mouseButton.y};
 
-    if (!app_on_state(app, button->app_state, button->state_size))
+    if (!button->always_display && !app_on_state(app, button->app_state,
+    button->state_size))
+        return false;
+    if (button->developer && !app->settings->developer)
         return false;
     if (cursor.x < button->position.x || cursor.y < button->position.y)
         return false;
@@ -38,8 +41,12 @@ void event_components_buttons(renderer_t *renderer, app_t *app, sfEvent event)
 
     while (node) {
         button = node->data.button;
+        if (on_button(button, app, event) && button->next_state > 0) {
+            app->state = button->next_state;
+            break;
+        }
         if (on_button(button, app, event)) {
-            event_map[button->event].function(renderer, app, button);
+            event_button_map[button->event].function(renderer, app, button);
             break;
         }
         node = node->next;

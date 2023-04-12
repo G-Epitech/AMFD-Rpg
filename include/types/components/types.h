@@ -15,6 +15,9 @@
     #include "app/window/window.h"
     #include "cjson/include/cjson.h"
     #include "app/inventory/inventory.h"
+    #include "app/settings/settings.h"
+    #include "app/network/network.h"
+    #include "app/tasks/bruteforce/bruteforce.h"
 
     #define COMPONENTS_CONFIG "configs/components.json"
 
@@ -44,15 +47,20 @@ typedef enum e_levers_states {
  * It's majoritory use in a buttons list
 */
 typedef struct s_button {
+    int id;
     char *title;
     char *description;
     float scale;
     int event;
+    int next_state;
+    bool developer;
+    bool always_display;
     sfColor color;
     sfColor text_color;
     sfTexture *texture;
     sfVector2f position;
     sfVector2f rect_scale;
+    sfVector2f origin;
     app_states_t *app_state;
     buttons_states_t state;
     size_t state_size;
@@ -63,6 +71,7 @@ typedef struct s_button {
  * It's majoritory use in a levers list
 */
 typedef struct s_lever {
+    int event;
     bool active;
     float scale;
     sfVector2f position;
@@ -80,15 +89,29 @@ typedef struct s_components {
 
 static const struct {
     int (*function) (renderer_t *renderer, app_t *app, button_t *button);
-} event_map[] = {
+} event_button_map[] = {
     {test},
     {window_close},
-    {states_settings},
-    {states_main_menu},
-    {states_help},
     {states_switch_left},
     {states_switch_right},
+    {settings_volume_malus},
+    {settings_volume_up},
+    {settings_fps_malus},
+    {settings_fps_up},
+    {developer_reload_json},
+    {network_connexion_host},
+    {network_connexion_join},
+    {states_select_character},
+    {brute_force_click},
     {inventory_close}
+};
+
+static const struct {
+    int (*function) (renderer_t *renderer, app_t *app, lever_t *lever);
+} event_lever_map[] = {
+    {settings_music},
+    {settings_fullscreen},
+    {settings_developer}
 };
 
 #endif /* !COMPONENTS_TYPES_H_ */

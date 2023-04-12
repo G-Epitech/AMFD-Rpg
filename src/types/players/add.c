@@ -23,9 +23,10 @@ player_t *players_add(list_t *list, char *name)
     if (!data.player->inventory)
         return NULL;
     data.player->position = PLAYER_DEFAULT_SPAWN;
-    data.player->skin_id = 0;
+    data.player->skin_id = -1;
     data.player->orientation = SO_LEFT;
-    data.player->colision_pos = (sfVector2f) {4, 3};
+    data.player->colision_pos = (sfVector2f) {PLAYER_DEFAULT_SPAWN.x / 16,
+    PLAYER_DEFAULT_SPAWN.y / 16};
     data.player->name = name;
     data.player->xp = 1;
     list_append(list, node_new(data));

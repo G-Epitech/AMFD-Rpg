@@ -22,6 +22,12 @@ static void load_display_bar(renderer_t *renderer)
     sfRenderWindow_drawSprite(renderer->window, renderer->objects->sprite,
     NULL);
     sfTexture_destroy(texture);
+    texture = sfTexture_createFromFile(BRG_TEXTURE, NULL);
+    sfSprite_setTexture(renderer->objects->sprite, texture, sfTrue);
+    sfSprite_setPosition(renderer->objects->sprite, BRG_POSITION);
+    sfRenderWindow_drawSprite(renderer->window, renderer->objects->sprite,
+    NULL);
+    sfTexture_destroy(texture);
 }
 
 static void load_display_page(renderer_t *renderer, char *load_text)
@@ -78,7 +84,6 @@ char *info)
 
 void load_screen_text_display(renderer_t *renderer, char *load_text)
 {
-        renderer->font = sfFont_createFromFile("assets/font.ttf");
     sfRenderWindow_clear(renderer->window, BG_COLOR);
     load_display_page(renderer, load_text);
     sfRenderWindow_display(renderer->window);

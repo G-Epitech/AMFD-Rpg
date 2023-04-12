@@ -16,4 +16,5 @@ void display_menus(renderer_t *renderer, app_t *app)
     display_main_menu(renderer, app);
     display_inventory(renderer, app);
     display_settings(renderer, app);
+    display_select_character(renderer, app);
 }

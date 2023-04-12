@@ -21,12 +21,14 @@ void levers_load(components_t *components, cjson_array_t *levers)
     lever_t *data = NULL;
 
     while (lever) {
-        position = cjson_vector(lever);
+        position = cjson_vector(lever, "position");
         state = cjson_get_prop_int_unsafe(lever, "app_state");
         data = levers_append(components->levers, position, state);
         if (!data)
             return;
         cjson_get_prop_float(lever, "scale", &data->scale);
+        cjson_get_prop_int(lever, "event", &data->event);
+        cjson_get_prop_bool(lever, "on", &data->active);
         lever = lever->next;
     }
 }

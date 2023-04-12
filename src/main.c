@@ -36,5 +36,6 @@ int main(void)
             return 84;
     }
     renderer_destroy(renderer);
+    app_free(app);
     return 0;
 }

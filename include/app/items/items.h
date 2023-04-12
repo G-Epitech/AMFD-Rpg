@@ -20,6 +20,12 @@
 list_t *items_load(void);
 
 /**
+ * @brief Free all given items
+ * @param items List of items to free
+ */
+void items_free(list_t *items);
+
+/**
  * @brief Load item from config
  * @param config Configuration of item
  * @param item Item in which import config

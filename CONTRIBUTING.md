@@ -14,7 +14,7 @@
 `📦` Library  
 `🙈` Gitignore  
 `🍌` Coding-style  
-`🏷️` Header definition  
+`🏷️` Header definition
 `📝` Makefile / CMakeLists  
 `👷‍♂️` CI Github Action  
 `🐛` Simple fix  

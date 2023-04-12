@@ -17,6 +17,7 @@ app_states_t *app_state)
     node_data_t data;
 
     data.button = button;
+    button->id = 0;
     button->color = sfBlack;
     button->text_color = sfBlack;
     button->position = position;
@@ -28,6 +29,9 @@ app_states_t *app_state)
     button->texture = NULL;
     button->event = 0;
     button->rect_scale = (sfVector2f) {1, 1};
+    button->next_state = 0;
+    button->always_display = false;
+    button->developer = false;
     return data;
 }
 

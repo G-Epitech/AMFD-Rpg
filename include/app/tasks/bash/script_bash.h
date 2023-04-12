@@ -40,7 +40,7 @@ int app_task_bash_core(app_t *app);
  * @brief Init task bash when first entrance
  * @param app Application structure
 */
-int init_task(app_t *app);
+int init_task_bash(app_t *app);
 
 /**
  * @brief Add a char to cmd who was writing
@@ -67,7 +67,7 @@ node_t *find_node_cmd(list_t *list, int index_cmd);
  * @brief Reset setup of bash struct when its finish
  * @param app Application structure
 */
-void reset_setup(app_t *app);
+void reset_setup_bash(app_t *app);
 
 /**
  * @brief Find the node relative to index_cmd

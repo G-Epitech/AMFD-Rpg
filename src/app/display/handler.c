@@ -9,7 +9,7 @@
 #include <SFML/Graphics.h>
 #include "app/display/display.h"
 #include "types/list/list.h"
-#include "types/renderer/types.h"
+#include "types/renderer/renderer.h"
 #include "app/tasks/types.h"
 #include "app/tasks/task.h"
 
@@ -18,17 +18,18 @@ static void display_game(renderer_t *renderer, app_t *app)
     ressources_t *ressources = renderer->ressources;
     renderer_objects_t *objects = renderer->objects;
 
-    if (app->state == ST_INGAME || app->state == ST_INVENTORY) {
+    if (app->state >= ST_INGAME) {
+        renderer_objects_reset_sprite(objects);
         display_map_back(ressources->maps, renderer->window, objects->sprite,
         app->world);
         display_npcs_of_world(renderer, app->npcs, app->world);
-        display_player(renderer, app->player);
+        display_player(renderer, app);
         display_map_front(ressources->maps, objects->window, objects->sprite,
         app->world);
     }
 }
 
-void display_handle(renderer_t *renderer, app_t *app)
+void display_handler(renderer_t *renderer, app_t *app)
 {
     renderer_objects_t *objects = renderer->objects;
 

@@ -23,9 +23,9 @@
 /**
  * @brief Display player on map
  * @param renderer Renderer object
- * @param player Player to display
+ * @param app Application structure
  */
-void display_player(renderer_t *renderer, player_t *player);
+void display_player(renderer_t *renderer, app_t *app);
 
 /**
  * @brief Display npcs of current world
@@ -79,7 +79,7 @@ worlds_t world);
  * @param renderer Renderer structure
  * @param app Application informations
 */
-void display_handle(renderer_t *renderer, app_t *app);
+void display_handler(renderer_t *renderer, app_t *app);
 
 /**
  * @biref Display buttons components
@@ -138,32 +138,52 @@ void display_settings(renderer_t *renderer, app_t *app);
 void display_components_levers(renderer_t *renderer, app_t *app);
 
 /**
- * @brief Display main grid of inventory
+ * @brief Call all buttons displayers
+ * @param button Button to display
+ * @param renderer Renderer object
+ */
+void display_buttons_dispatch(button_t *button, renderer_t *renderer);
+
+/**
+ * @brief Display give button
+ * @param button Button to display
+ * @param renderer Renderer object
+ */
+void display_button(button_t *button, renderer_t *renderer);
+
+/**
+ * @brief Display inventory of game
+ * @param renderer Renderer object
+ * @param app App object
+ */
+void display_inventory(renderer_t *renderer, app_t *app);
+
+/**
+ * @brief Display character selector
+ * @param renderer Renderer object
+ * @param app App object
+ */
+void display_select_character(renderer_t *renderer, app_t *app);
+
+/**
+ * @brief Display main inventory grid
  * @param renderer Renderer object
  * @param app App object
  */
 void display_inventory_main_grid(renderer_t *renderer, app_t *app);
 
 /**
- * @brief Display main grid of inventory
+ * @brief Display main inventory grid
  * @param renderer Renderer object
  * @param app App object
  */
 void display_inventory_active_grid(renderer_t *renderer, app_t *app);
 
 /**
- * @brief Display player profile on inventory
+ * @brief Display player profile in inventory
  * @param renderer Renderer object
  * @param app App object
  */
 void display_inventory_profile(renderer_t *renderer, app_t *app);
-
-
-/**
- * @brief Display main grid of inventory
- * @param renderer Renderer object
- * @param app App object
- */
-void display_inventory(renderer_t *renderer, app_t *app);
 
 #endif /* !DISPLAY_H_ */

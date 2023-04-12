@@ -21,6 +21,12 @@ typedef struct s_button button_t;
 app_t *app_init(void);
 
 /**
+ * @brief Free given app
+ * @param app App object to free
+ */
+void app_free(app_t *app);
+
+/**
  * @brief Run application
  * @param renderer Main renderer function
  * @param app Application structure
@@ -38,18 +44,53 @@ int app_run(renderer_t *renderer, app_t *app);
 bool app_on_state(app_t *app, app_states_t *states, size_t size);
 
 /**
- * @brief Change state to setting
- * @param renderer Main renderer function
- * @param app Application structure
+ * @brief Initialize controller of app
+ * @param app App object on which init controller
+ * @return Initilalization success status
  */
-int states_settings(renderer_t *renderer, app_t *app, button_t *button);
+bool app_init_controller(app_t *app);
 
 /**
- * @brief Change state to help
- * @param renderer Main renderer function
- * @param app Application structure
+ * @brief Initialize settings of app
+ * @param app App object
+ * @return Initialization success status
  */
-int states_help(renderer_t *renderer, app_t *app, button_t *button);
+bool app_init_settings(app_t *app);
+
+/**
+ * @brief Initialize items of game
+ * @param app App object
+ * @return Initialization success status
+ */
+bool app_init_items(app_t *app);
+
+/**
+ * @brief Initialize network of game
+ * @param app App object
+ * @return Initialization success status
+ */
+bool app_init_network(app_t *app);
+
+/**
+ * @brief Initialize npcs of game
+ * @param app App object
+ * @return Initialization success status
+ */
+bool app_init_npcs(app_t *app);
+
+/**
+ * @brief Initialize tasks of game
+ * @param app App object
+ * @return Initialization success status
+ */
+bool app_init_tasks(app_t *app);
+
+/**
+ * @brief Initialize players of game
+ * @param app App object
+ * @return Initialization success status
+ */
+bool app_init_players(app_t *app);
 
 /**
  * @brief Down state
@@ -66,10 +107,27 @@ int states_switch_left(renderer_t *renderer, app_t *app, button_t *button);
 int states_switch_right(renderer_t *renderer, app_t *app, button_t *button);
 
 /**
- * @brief Change state to main menu
+ * @brief Select the charater in the choice menu
  * @param renderer Main renderer function
  * @param app Application structure
  */
-int states_main_menu(renderer_t *renderer, app_t *app, button_t *button);
+int states_select_character(renderer_t *renderer, app_t *app,
+button_t *button);
+
+/**
+ * @brief Reload json
+ * @param renderer Renderer structure
+ * @param app Application structure
+ * @param button Button
+ */
+int developer_reload_json(renderer_t *renderer, app_t *app, button_t *button);
+
+/**
+ * @brief Handle click on usb key
+ * @param renderer Main renderer function
+ * @param app Application structure
+ * @param button Button struct with all settings
+*/
+int brute_force_click(renderer_t *renderer, app_t *app, button_t *button);
 
 #endif /* !APP_H_ */

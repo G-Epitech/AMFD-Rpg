@@ -63,16 +63,32 @@ SRC = 		src/main.c \
 			\
 			src/types/ressources/inventory/load.c \
 			\
+			src/types/ressources/icons/load.c \
+			\
 			src/types/view/init.c \
 			\
-			src/app/init.c \
 			src/app/run.c \
 			\
+			src/app/init/controller.c \
+			src/app/init/init.c \
+			src/app/init/items.c \
+			src/app/init/network.c \
+			src/app/init/npcs.c \
+			src/app/init/players.c \
+			src/app/init/settings.c \
+			src/app/init/tasks.c \
+			\
+			src/app/free/free.c \
+			\
 			src/app/states/on_state.c \
-			src/app/states/settings.c \
-			src/app/states/main_menu.c \
-			src/app/states/help.c \
 			src/app/states/switch.c \
+			src/app/states/select_character.c \
+			\
+			src/app/settings/music.c \
+			src/app/settings/fullscreen.c \
+			src/app/settings/developer.c \
+			src/app/settings/volume.c \
+			src/app/settings/fps.c \
 			\
 			src/app/window/init.c \
 			src/app/window/close.c \
@@ -84,12 +100,22 @@ SRC = 		src/main.c \
 			src/app/events/components/levers.c \
 			src/app/events/inventory/close.c \
 			\
-			src/app/display/handle.c \
-			src/app/display/map/map.c \
-			src/app/display/map/back.c \
+			src/app/developer/reload_json.c \
+			\
+			src/app/network/init.c \
+			src/app/network/connexion/host.c \
+			src/app/network/connexion/join.c \
+			src/app/network/send/character.c \
+			src/app/network/send/position.c \
+			src/app/network/send/string.c \
+			src/app/network/receive/receive.c \
+			src/app/network/receive/character.c \
+			src/app/network/receive/game.c \
+			src/app/network/receive/position.c \
 			\
 			src/app/core/tasks/handler.c \
 			src/app/core/tasks/create.c \
+			src/app/core/tasks/find_node.c \
 			src/app/core/tasks/script_bash/create_node.c \
 			src/app/core/tasks/script_bash/init_node.c \
 			src/app/core/tasks/script_bash/game_handler.c \
@@ -97,21 +123,26 @@ SRC = 		src/main.c \
 			src/app/core/tasks/script_bash/valid_cmd.c \
 			src/app/core/tasks/script_bash/reset_setup.c \
 			src/app/core/tasks/script_bash/create_list.c \
+			\
+			src/app/display/handler.c \
+			src/app/display/map/map.c \
+			src/app/display/map/back.c \
 			src/app/display/tasks/script_bash/display.c \
 			src/app/display/tasks/handler.c \
-			\
 			src/app/display/npcs/npcs.c \
 			src/app/display/player/player.c \
 			src/app/display/characters/character.c \
 			src/app/display/map/front.c	\
-			src/app/display/components/buttons.c \
       		src/app/display/components/components.c \
 			src/app/display/components/backgrounds.c \
 			src/app/display/components/levers.c \
-			src/app/display/components/icon.c \
+			src/app/display/components/buttons/buttons.c \
+			src/app/display/components/buttons/icon.c \
+			src/app/display/components/buttons/dispatch.c \
 			src/app/display/menus/menus.c \
 			src/app/display/menus/main_menu.c \
 			src/app/display/menus/settings.c \
+			src/app/display/menus/select_character.c \
 			\
 			src/app/display/inventory/main_grid.c \
 			src/app/display/inventory/active_grid.c \
@@ -125,7 +156,23 @@ SRC = 		src/main.c \
 			\
 			src/app/loading/loading_company_screen.c \
 			src/app/loading/loading_screen_text.c \
-			src/app/loading/loading_sleep.c
+			src/app/loading/loading_sleep.c \
+			\
+			src/app/core/tasks/brute_force/create_node.c \
+			src/app/core/tasks/brute_force/game_handler.c \
+			src/app/core/tasks/brute_force/reset_setup.c \
+			src/app/core/tasks/brute_force/init_node.c \
+			src/app/core/tasks/brute_force/click.c \
+			src/app/core/tasks/brute_force/released.c \
+			src/app/display/tasks/brute_force/display.c \
+			\
+			src/app/events/handler/closed.c \
+			src/app/events/handler/mouse_button_pressed.c \
+			src/app/events/handler/pressed.c \
+			src/app/events/handler/released.c \
+			src/app/events/handler/text_entered.c \
+			src/app/events/handler/mouse_button_released.c \
+			\
 
 NAME = my_rpg
 
@@ -138,7 +185,7 @@ CFLAGS += -Wall -Wextra -Werror -Wno-unused-command-line-argument -g
 INC = -I./include -I./lib
 
 LDFLAGS = -lcsfml-graphics -lcsfml-system -lcsfml-audio -lcsfml-window \
--L./lib -lmy -lcjson
+-lcsfml-network -L./lib -lmy -lcjson
 
 OBJ = $(SRC:.c=.o)
 

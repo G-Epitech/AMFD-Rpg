@@ -40,7 +40,7 @@ void event_components_levers(renderer_t *renderer, app_t *app, sfEvent event)
     while (node) {
         lever = node->data.lever;
         if (on_lever(lever, app, event, renderer)) {
-            lever->active = !lever->active;
+            event_lever_map[lever->event].function(renderer, app, lever);
             break;
         }
         node = node->next;

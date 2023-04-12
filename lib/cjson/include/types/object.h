@@ -11,10 +11,10 @@
     #include "../types.h"
 
 /**
- * @brief Create a new CJSON element
+ * @brief Create a new CJSON element, object as default
  * @param key Object key
  * @return Created element
- * @note By default, type of created element is null
+ * @note You can change type of element with cjson_set_value
  */
 cjson_t *cjson_new(char *key);
 
@@ -176,21 +176,21 @@ cjson_type_t type);
 void cjson_unset_prop(cjson_t *object, char *key);
 
 /**
- * @brief Set key of given property
- * @param property Property CJSON element of which set key
+ * @brief Set key of given CJSON element
+ * @param cjson CJSON element of which set key
  * @param key Key to set to given element
  * @return 0 on success and -1 on failed
  */
-int cjson_set_prop_key(cjson_t *property, char *key);
+int cjson_set_key(cjson_t *cjson, char *key);
 
 /**
- * @brief Set value of given property
- * @param property Property CJSON element of which set value
+ * @brief Set value of given CJSON element
+ * @param cjson CJSON element of which set value
  * @param value Value to set to given element
  * @param type Type of given value
  * @return 0 on success and -1 on failed
  */
-int cjson_set_prop_value(cjson_t *property, cjson_value_t value,
+int cjson_set_value(cjson_t *cjson, cjson_value_t value,
 cjson_type_t type);
 
 #endif /* !CJSON_OBJECT_H_ */

@@ -113,4 +113,11 @@ void inventory_load(renderer_t *renderer, inventory_r_t *inventory);
  */
 bool inventory_load_item(cjson_t *config, item_t **item);
 
+/**
+ * @brief Load icons ressources
+ * @param renderer Renderer object
+ * @param inventory Structure of icons ressources
+ */
+void icons_load(renderer_t *renderer, icons_r_t *icons);
+
 #endif /* !RESSOURCES_H_ */

@@ -25,7 +25,7 @@ components_r_t *components)
     cmp_config, "backgrounds");
 
     load_screen_add_bar(renderer, 6, "Chargement des ressources...",
-    "Chargement des composents");
+    "Chargement des composants");
     if (!cmp_config || !button_config || !backgrounds_config)
         return cjson_free(cmp_config);
     components->button = ressources_components_button_load(button_config);

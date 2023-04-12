@@ -47,7 +47,7 @@ void loading_preload_screen(renderer_t *renderer)
     renderer_objects_t *objects = renderer->objects;
 
     sfSprite_setTexture(objects->sprite, preload_screen, sfTrue);
-    sfSprite_setPosition(objects->sprite, (sfVector2f) {960, 400});
+    sfSprite_setPosition(objects->sprite, (sfVector2f) {960, 540});
     sfSprite_setOrigin(objects->sprite, (sfVector2f) {500, 450});
     zoom_screen(renderer);
     sfSprite_setOrigin(objects->sprite, (sfVector2f) {0, 0});
