@@ -10,13 +10,16 @@
 #include "app/events/types.h"
 #include "app/network/network.h"
 
-static int movement_is_possible(sfVector2f position, sfVector2f offset,
+static bool movement_is_possible(sfVector2f position, sfVector2f offset,
 int **collision_layer)
 {
-    position.x += offset.x / 16;
-    position.y += offset.y / 16 + 2;
-    return (collision_layer[(int) position.y][(int) position.x] == 0
-    && collision_layer[(int) position.y - 1][(int) position.x] == 0);
+    int collision = 0;
+    int x = position.x + offset.x / 16;
+    int y = position.y + offset.y / 16;
+    collision = collision_layer[(int) y][(int) x];
+    if (collision_layer == 1) {
+        return true;
+    }
 }
 
 static sfVector2f increment_position(sfVector2f position, sfVector2f offset)
