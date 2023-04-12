@@ -67,4 +67,12 @@ button_t *button);
  */
 int developer_reload_json(renderer_t *renderer, app_t *app, button_t *button);
 
+/**
+ * @brief Handle click on usb key
+ * @param renderer Main renderer function
+ * @param app Application structure
+ * @param button Button struct with all settings
+*/
+int brute_force_click(renderer_t *renderer, app_t *app, button_t *button);
+
 #endif /* !APP_H_ */

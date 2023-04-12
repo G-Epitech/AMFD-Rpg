@@ -99,6 +99,7 @@ SRC = 		src/main.c \
 			\
 			src/app/core/tasks/handler.c \
 			src/app/core/tasks/create.c \
+			src/app/core/tasks/find_node.c \
 			src/app/core/tasks/script_bash/create_node.c \
 			src/app/core/tasks/script_bash/init_node.c \
 			src/app/core/tasks/script_bash/game_handler.c \
@@ -134,7 +135,23 @@ SRC = 		src/main.c \
 			\
 			src/app/loading/loading_company_screen.c \
 			src/app/loading/loading_screen_text.c \
-			src/app/loading/loading_sleep.c
+			src/app/loading/loading_sleep.c \
+			\
+			src/app/core/tasks/brute_force/create_node.c \
+			src/app/core/tasks/brute_force/game_handler.c \
+			src/app/core/tasks/brute_force/reset_setup.c \
+			src/app/core/tasks/brute_force/init_node.c \
+			src/app/core/tasks/brute_force/click.c \
+			src/app/core/tasks/brute_force/released.c \
+			src/app/display/tasks/brute_force/display.c \
+			\
+			src/app/events/handler/closed.c \
+			src/app/events/handler/mouse_button_pressed.c \
+			src/app/events/handler/pressed.c \
+			src/app/events/handler/released.c \
+			src/app/events/handler/text_entered.c \
+			src/app/events/handler/mouse_button_released.c \
+			\
 
 NAME = my_rpg
 

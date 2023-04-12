@@ -167,6 +167,15 @@
             "position": {"x": 1055, "y": 267},
             "event": 11,
             "scale": 1
+        },
+        {
+            "icon": "assets/tasks/usb.png",
+            "scale": 2,
+            "app_state": [502],
+            "position": {"x": 837, "y": 479.5},
+            "origin": {"x": 50, "y": 50},
+            "id": 1,
+            "event": 12
         }
     ],
 

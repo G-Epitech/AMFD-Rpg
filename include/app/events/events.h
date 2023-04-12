@@ -55,4 +55,50 @@ void event_components_buttons(renderer_t *renderer, app_t *app, sfEvent event);
 */
 void event_components_levers(renderer_t *renderer, app_t *app, sfEvent event);
 
+/*
+ * @brief Handler of event close
+ * @param window Window of the app
+ * @param event The specific event
+*/
+void event_close(sfRenderWindow *window, sfEvent event);
+
+/**
+ * @brief Handler of event text entered
+ * @param app Application structure
+ * @param event The specific event
+*/
+void event_text_entered(sfEvent event, app_t *app);
+
+/**
+ * @brief Handler of event key entered
+ * @param app Application structure
+ * @param event The specific event
+*/
+void event_key_pressed(sfEvent event, app_t *app);
+
+/**
+ * @brief Handler of event key released
+ * @param app Application structure
+ * @param event The specific event
+*/
+void event_key_released(sfEvent event, app_t *app);
+
+/**
+ * @brief Handler of event mouse button pressed
+ * @param app Application structure
+ * @param renderer Renderer structure
+ * @param event The specific event
+*/
+void event_mouse_button_pressed(app_t *app, renderer_t *renderer,
+sfEvent event);
+
+/**
+ * @brief Handler of event mouse button released
+ * @param app Application structure
+ * @param renderer Renderer structure
+ * @param event The specific event
+*/
+void event_mouse_button_released(app_t *app, renderer_t *renderer,
+sfEvent event);
+
 #endif /* !EVENTS_H_ */

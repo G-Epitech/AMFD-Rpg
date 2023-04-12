@@ -12,39 +12,15 @@
 #include "app/tasks/bash/script_bash.h"
 #include "app/app.h"
 
-static void mouse_event(sfEvent event, app_t *app,
-renderer_t *renderer)
-{
-    sfVector2f coords = sfRenderWindow_mapPixelToCoords(renderer->window,
-    (sfVector2i) {event.mouseButton.x, event.mouseButton.y},
-    renderer->default_view);
-
-    event.mouseButton.x = coords.x;
-    event.mouseButton.y = coords.y;
-    event_components_buttons(renderer, app, event);
-    event_components_levers(renderer, app, event);
-}
-
 static void event_analyse(sfRenderWindow *window, sfEvent event, app_t *app,
 renderer_t *renderer)
 {
-    if (event.type == sfEvtClosed) {
-        event_window_close(window);
-    }
-    if (event.type == sfEvtKeyPressed) {
-        if (app->state == ST_TASK_BASH) {
-            cmd_write(event, app);
-            good_or_bad_result(event, app);
-        }
-        if (app->state == ST_INGAME)
-            keyboard_press_move(event, app);
-    }
-    if (event.type == sfEvtKeyReleased) {
-        keyboard_release_move(event, app);
-    }
-    if (event.type == sfEvtMouseButtonPressed) {
-        mouse_event(event, app, renderer);
-    }
+    event_close(window, event);
+    event_text_entered(event, app);
+    event_key_pressed(event, app);
+    event_key_released(event, app);
+    event_mouse_button_pressed(app, renderer, event);
+    event_mouse_button_released(app, renderer, event);
 }
 
 void event_handler(sfRenderWindow *window, app_t *app, renderer_t *renderer)

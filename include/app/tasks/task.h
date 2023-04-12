@@ -10,6 +10,7 @@
 
     #include "app/types.h"
     #include "types/renderer/types.h"
+    #include "app/tasks/types.h"
 
 /**
  * @brief Handler of display task
@@ -23,5 +24,12 @@ int display_tasks_handler(renderer_t *renderer, app_t *app);
  * @param app Application structure
 */
 int core_tasks_handler(app_t *app);
+
+/**
+ * @brief Handler of core task
+ * @param app Application structure
+ * @param id Id of node
+*/
+task_content_t find_task_node(app_t *app, int id);
 
 #endif /* !TASK_H_ */

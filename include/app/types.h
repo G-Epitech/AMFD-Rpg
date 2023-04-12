@@ -29,6 +29,7 @@ typedef enum e_app_states {
     ST_FIGHT = 350,         //Fight interface
     ST_TASK = 500,          //Task delimiter
     ST_TASK_BASH,           //Task n°1: bash
+    ST_TASK_BRUTEFORCE,     //Task n°2: brute force
     ST_QUIT = 1000          //Quit menu
 } app_states_t;
 

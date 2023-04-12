@@ -23,6 +23,7 @@ void display_components_icon(renderer_t *renderer, button_t *button)
         button->position.x + origin.x,
         button->position.y + origin.y
     };
+
     renderer_objects_reset_sprite(objects);
     sfSprite_setTexture(objects->sprite, button->texture, sfTrue);
     sfSprite_setPosition(objects->sprite, position);

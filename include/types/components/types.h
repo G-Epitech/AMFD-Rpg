@@ -16,6 +16,7 @@
     #include "app/window/window.h"
     #include "app/settings/settings.h"
     #include "app/network/network.h"
+    #include "app/tasks/bruteforce/bruteforce.h"
 
     #define COMPONENTS_CONFIG "configs/components.json"
 
@@ -99,7 +100,8 @@ static const struct {
     {developer_reload_json},
     {network_connexion_host},
     {network_connexion_join},
-    {states_select_character}
+    {states_select_character},
+    {brute_force_click}
 };
 
 static const struct {

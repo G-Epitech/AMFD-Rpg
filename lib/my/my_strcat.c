@@ -19,7 +19,7 @@ char *my_strcat(char *dest, char const *src)
     for (int y = 0; y < dest_len; y++) {
         final[y] = dest[y];
     }
-    for (int y = 0; y < dest_len; y++) {
+    for (int y = 0; y < src_len; y++) {
         final[dest_len + y] = src[y];
     }
     final[dest_len + src_len] = '\0';

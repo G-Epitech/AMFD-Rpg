@@ -12,7 +12,6 @@
 #include "app/tasks/bash/script_bash.h"
 #include "my/include/my.h"
 
-
 static int init_list(node_data_t bash)
 {
     cjson_t *object_file = cjson_parse_file("./configs/tasks/pos_text.json");

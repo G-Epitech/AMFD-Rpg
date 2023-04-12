@@ -20,7 +20,7 @@ static void good_result(int *index_cmd, app_t *app)
         (*index_cmd)--;
         my_putstr("You win\n");
         app->state = ST_INGAME;
-        reset_setup(app);
+        reset_setup_bash(app);
     }
 }
 
@@ -33,7 +33,7 @@ app_t *app, int *index_life)
     if ((*index_life) == 0) {
         my_putstr("You lose\n");
         app->state = ST_INGAME;
-        reset_setup(app);
+        reset_setup_bash(app);
     }
 }
 
@@ -42,7 +42,7 @@ void good_or_bad_result(sfEvent event, app_t *app)
     node_t *current_cmd_model = NULL;
     node_t *current_cmd = NULL;
 
-    if (event.key.code == sfKeyEnter) {
+    if (event.text.unicode == '\r') {
         current_cmd = find_node_cmd(STRUCT_BASH(app).cmd,
         STRUCT_BASH(app).handler_placing->index_cmd);
         current_cmd_model = find_node_cmd(STRUCT_BASH(app).cmd_model,
