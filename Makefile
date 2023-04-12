@@ -33,6 +33,7 @@ SRC = 		src/main.c \
 			\
 			src/types/players/init.c \
 			src/types/players/add.c \
+			src/types/players/inventory.c \
 			\
 			src/types/items/load_all.c \
 			src/types/items/load.c \
@@ -45,6 +46,10 @@ SRC = 		src/main.c \
 			src/types/components/buttons/load.c \
 			src/types/components/levers/append.c \
 			src/types/components/levers/load.c \
+			\
+			src/types/inventory/add.c \
+			src/types/inventory/item.c \
+			src/types/inventory/remove.c \
 			\
 			src/types/ressources/load.c \
 			src/types/ressources/free.c \

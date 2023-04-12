@@ -20,6 +20,7 @@
 typedef struct s_list list_t;
 
 typedef union u_node_data {
+    inventory_item_t *inventory_item;
     task_bash_node_t *node_bash;
     background_t *background;
     npc_dialog_t npc_dialog;

@@ -22,5 +22,12 @@
     #define INVENTORY_GRID_ITEM_SELECTED_RECT ((sfIntRect) {255, 0, 85, 85})
     #define INVENTORY_PROFILE_POS ((sfVector2f) {349, 309})
     #define INVENTORY_PROFILE_SIZE ((sfVector2f) {267, 356})
+    #define INVENTORY_MAX 18
+
+typedef struct s_inventory_item {
+    item_t *target;
+    bool active;
+    int pos;
+} inventory_item_t;
 
 #endif /* !INVENTORY_TYPES_H_ */

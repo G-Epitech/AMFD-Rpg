@@ -17,6 +17,7 @@ static int init_player(app_t *app)
     app->partner = NULL;
     if (!app->player)
         return 84;
+    player_init_inventory(app->player, app->items);
     return 0;
 }
 

@@ -8,6 +8,7 @@
 #ifndef ITEMS_TYPES_H_
     #define ITEMS_TYPES_H_
 
+    #include <stdbool.h>
     #include <SFML/Graphics.h>
 
     #define ITEMS_CONFIG "configs/items.json"
@@ -27,6 +28,7 @@ typedef struct s_item {
     int intelligence;
     float price;
     sfIntRect rect;
+    bool by_default;
 } item_t;
 
 #endif /* !ITEMS_TYPES_H_ */
