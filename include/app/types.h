@@ -13,6 +13,7 @@
     #include "app/network/types.h"
 
 typedef struct s_list list_t;
+typedef struct s_npc npc_t;
 
 typedef enum e_app_states {
     ST_LOADING = 0,         //Loading of the game
@@ -38,12 +39,6 @@ typedef enum e_worlds {
     WL_CITY
 } worlds_t;
 
-typedef enum e_interactions {
-    IT_VOID = 0,
-    IT_WALL,
-    IT_NPC
-} interactions_t;
-
 typedef struct s_control {
     bool direction;         //Move direction
     sfVector2f offset;      //Move offset for the direction
@@ -58,17 +53,27 @@ typedef struct s_settings {
     bool developer;         //Developer mode
 } settings_t;
 
+typedef struct u_interaction_data {
+    npc_t *npc;
+} interaction_data_t;
+
+typedef struct s_interactions {
+    interaction_data_t data;
+    bool interaction;
+} interactions_t;
+
 typedef struct s_app {
-    app_states_t state;     //State of the app
-    worlds_t world;         //Actual wolrd where player is
-    list_t *players;        //List of players
-    player_t *player;       //Player of the client
-    player_t *partner;      //Partner player
-    list_t *npcs;           //NPC of game
-    control_t *control;     //Controller of the player
-    list_t *tasks_setup;    //Taks of the game
-    settings_t *settings;   //Settings of the application
-    network_t *network;     //Network
+    app_states_t state;             //State of the app
+    worlds_t world;                 //Actual wolrd where player is
+    list_t *players;                //List of players
+    player_t *player;               //Player of the client
+    player_t *partner;              //Partner player
+    list_t *npcs;                   //NPC of game
+    control_t *control;             //Controller of the player
+    list_t *tasks_setup;            //Taks of the game
+    settings_t *settings;           //Settings of the application
+    network_t *network;             //Network
+    interactions_t *interaction    //Interaction in the app
 } app_t;
 
 #endif /* !APP_TYPES_H_ */

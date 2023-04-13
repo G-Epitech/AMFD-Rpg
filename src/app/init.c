@@ -51,6 +51,14 @@ static int init_player(app_t *app)
     return 0;
 }
 
+static interactions_t *init_interactions(void)
+{
+    interactions_t *interactions = malloc(sizeof(interactions_t));
+
+    interactions->interaction = false;
+    return interactions;
+}
+
 app_t *app_init(renderer_t *renderer)
 {
     app_t *app = malloc(sizeof(app_t));
@@ -65,6 +73,7 @@ app_t *app_init(renderer_t *renderer)
     app->tasks_setup = task_create();
     app->settings = init_settings();
     app->network = network_init();
+    app->interaction = init_interactions();
     if (!app->players || !app->tasks_setup) {
         free(app);
         return NULL;
