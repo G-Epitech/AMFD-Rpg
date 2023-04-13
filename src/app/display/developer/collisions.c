@@ -20,7 +20,9 @@ static void display_collision_futur(renderer_t *renderer, app_t *app)
 
     for (size_t i = 0; i < 4; i++) {
         x = app->player->position.x + app->control[i].offset.x * 16;
-        y = app->player->position.y + app->control[i].offset.y * 16;
+        y = app->player->position.y + app->control[i].offset.y * 16 + 16;
+        x = (int) (x / 16) * 16;
+        y = (int) (y / 16) * 16;
         renderer_objects_reset_rectangle(renderer->objects);
         sfRectangleShape_setPosition(rectangle, (sfVector2f) {x, y});
         sfRectangleShape_setSize(rectangle, (sfVector2f) {16, 16});

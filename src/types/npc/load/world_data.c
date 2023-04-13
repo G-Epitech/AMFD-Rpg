@@ -37,8 +37,8 @@ static bool load_single_props(cjson_t *config, npc_data_t *world_data)
     if (!position)
         return false;
     world_data->position = get_position_vector(position);
-    world_data->position.x = world_data->position.x / 16 * 16;
-    world_data->position.y = world_data->position.y / 16 * 16;
+    world_data->position.x = (world_data->position.x / 16) * 16;
+    world_data->position.y = (world_data->position.y / 16) * 16;
     return true;
 }
 
