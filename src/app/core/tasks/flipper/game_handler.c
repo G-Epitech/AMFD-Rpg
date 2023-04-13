@@ -36,6 +36,11 @@ int *pres_mili_sec, task_t *node)
         reset_setup_flipper(app, pres_sec, pres_mili_sec);
         app->state = ST_INGAME;
     }
+    if (NB_CIRCLE_HIT(node) == NB_CIRCLE_FLIPPER(node)) {
+        my_putstr("You WIN\n");
+        reset_setup_flipper(app, pres_sec, pres_mili_sec);
+        app->state = ST_INGAME;
+    }
 }
 
 static int circle_create(int time_int, app_t *app,

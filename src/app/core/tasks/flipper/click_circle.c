@@ -36,6 +36,7 @@ bool *good_click, task_t *node)
         if (STATUS_CIRCLE(temp_circle) == OPEN) {
             (*good_click) = true;
             list_remove(LIST_CIRCLE(node), temp_circle);
+            NB_CIRCLE_HIT(node)++;
         } else {
             list_remove(LIST_CIRCLE(node), temp_circle);
         }

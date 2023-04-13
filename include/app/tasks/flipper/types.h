@@ -18,6 +18,7 @@
     #define NB_CIRCLE_FLIPPER(node) node->content.flipper.nb_circles
     #define NB_CIRCLE_CREATE(node) node->content.flipper.nb_circle_create
     #define LIST_CIRCLE(node) node->content.flipper.circles
+    #define NB_CIRCLE_HIT(node) node->content.flipper.nb_circle_hit
     #define OPEN 1
     #define CLOSE 0
     #define STATUS_CIRCLE(temp_circle) temp_circle->data.node_flip->status
@@ -36,6 +37,7 @@ typedef struct s_task_flipper {
     list_t *circles;
     int nb_circles;
     int nb_circle_create;
+    int nb_circle_hit;
     int nb_lifes;
     bool just_started;
 } task_flipper_t;

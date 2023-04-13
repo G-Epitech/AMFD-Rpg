@@ -36,6 +36,7 @@ node_t *task_create_nodes_flipper(void)
     flip.task->content.flipper.nb_lifes = 3;
     flip.task->content.flipper.circles = list_new();
     flip.task->content.flipper.nb_circle_create = 0;
+    flip.task->content.flipper.nb_circle_hit = 0;
     if (init_time(flip) == 84)
         return NULL;
     return node_new(flip);
