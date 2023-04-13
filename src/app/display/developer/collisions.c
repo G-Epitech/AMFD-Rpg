@@ -50,7 +50,7 @@ static void display_box(renderer_t *renderer,
 size_t x, size_t y, sfColor color)
 {
     sfRectangleShape *rectangle = renderer->objects->rectangle;
-    
+
     sfRectangleShape_setPosition(rectangle, (sfVector2f) {x * 16, y * 16});
     sfRectangleShape_setSize(rectangle, (sfVector2f) {16, 16});
     sfRectangleShape_setFillColor(rectangle, (sfColor) {0, 0, 0, 0});
@@ -75,7 +75,7 @@ size_t x, size_t y)
 void display_developer_collisions(renderer_t *renderer, app_t *app)
 {
     map_t *current_map = renderer->ressources->maps->first->data.map;
-    sfVector2u map_size = sfTexture_getSize(current_map->back); 
+    sfVector2u map_size = sfTexture_getSize(current_map->back);
 
     map_size.x /= 16;
     map_size.y /= 16;

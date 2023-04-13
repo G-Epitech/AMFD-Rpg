@@ -19,7 +19,7 @@ static int **get_collisions_by_id(renderer_t *renderer, worlds_t id)
         map = node->data.map;
         if (map->world == id) {
             return map->collision_layer;
-        } 
+        }
         node = node->next;
     }
     return NULL;
@@ -56,4 +56,3 @@ void npcs_include_to_array(renderer_t *renderer, list_t *npcs)
         node = node->next;
     }
 }
-
