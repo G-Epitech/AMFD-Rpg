@@ -28,7 +28,7 @@ static void clear_list(app_t *app)
     return;
 }
 
-void reset_setup_flipper(app_t *app, int *pres_sec, int *pres_mili_sec)
+void reset_setup_flipper(app_t *app, int *prev_sec, int *prev_mili_sec)
 {
     task_t *node = find_task_node(app, 3);
 
@@ -42,6 +42,6 @@ void reset_setup_flipper(app_t *app, int *pres_sec, int *pres_mili_sec)
     NB_CIRCLE_FLIPPER(node) = 10 + rand() % 11;
     NB_CIRCLE_CREATE(node) = 0;
     clear_list(app);
-    (*pres_sec) = 0;
-    (*pres_mili_sec) = 0;
+    (*prev_sec) = 0;
+    (*prev_mili_sec) = 0;
 }
