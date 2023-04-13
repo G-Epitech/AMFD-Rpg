@@ -11,21 +11,28 @@
 #include "app/events/types.h"
 #include "app/network/network.h"
 
-static int movement_is_possible(sfVector2f position, sfVector2f offset,
-sfImage *collision)
+static bool detect_interaction(sfVector2f position, sfImage *collision,
+size_t y)
 {
     sfColor pixel = {0, 0, 0, 255};
 
+    for (size_t x = 0; x < 12; x++) {
+        pixel = sfImage_getPixel(collision, position.x + x,
+        position.y + y);
+        if (pixel.a != 0) {
+            return false;
+        }
+    }
+}
+
+static int movement_is_possible(sfVector2f position, sfVector2f offset,
+sfImage *collision)
+{
     position.x += offset.x + 2;
     position.y += offset.y + 18;
     for (size_t y = 0; y < 14; y++) {
-        for (size_t x = 0; x < 12; x++) {
-            pixel = sfImage_getPixel(collision, position.x + x,
-            position.y + y);
-            if (pixel.a != 0) {
-                return false;
-            }
-        }   
+        if (!detect_interaction(position, collision, y))
+            return false;
     }
     return true;
 }
