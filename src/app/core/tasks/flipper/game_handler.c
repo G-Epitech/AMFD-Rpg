@@ -69,7 +69,7 @@ int app_task_flipper_core(app_t *app)
             return 84;
     }
     time_handler(app, &time_mili_int);
-    game_result(app, pres_sec, pres_mili_sec, node);
+    game_result(app, &pres_sec, &pres_mili_sec, node);
     if (circle_create(node, app, pres_sec, time_int) == 84)
         return 84;
     if (pres_mili_sec < time_mili_int)

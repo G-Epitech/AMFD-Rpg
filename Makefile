@@ -157,6 +157,7 @@ SRC = 		src/main.c \
 			src/app/core/tasks/flipper/init_node.c \
 			src/app/core/tasks/flipper/reset_setup.c \
 			src/app/core/tasks/flipper/create_circle.c \
+			src/app/core/tasks/flipper/circle_handler.c \
 			src/app/display/tasks/flipper/display.c \
 
 
