@@ -34,8 +34,8 @@ static void include_data(renderer_t *renderer, list_t *npc_data)
     while (node) {
         data = node->data.npc_data;
         collisions = get_collisions_by_id(renderer, data.world);
-        if (collisions) { 
-            collisions[(int) data.position.y / 16]
+        if (collisions) {
+            collisions[(int) data.position.y / 16 + 1]
             [(int) data.position.x / 16] = IT_NPC;
         }
         node = node->next;
