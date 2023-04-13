@@ -50,7 +50,8 @@ static int create_circle(app_t *app, int time_int)
     return 0;
 }
 
-int handler_create_circle(int time_int, app_t *app, int pres_mili_int, int time_mili_int)
+int handler_create_circle(int time_int, app_t *app,
+int pres_mili_int, int time_mili_int)
 {
     srand(rand() % 1023415412584);
     if (pres_mili_int < time_mili_int && time_mili_int % 5 == 0) {

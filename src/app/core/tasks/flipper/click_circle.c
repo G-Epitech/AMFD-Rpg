@@ -8,7 +8,7 @@
 #include <stdio.h>
 #include <time.h>
 #include <stdlib.h>
-#include <math.h> 
+#include <math.h>
 #include <SFML/Graphics.h>
 #include "types/renderer/types.h"
 #include "app/tasks/task.h"

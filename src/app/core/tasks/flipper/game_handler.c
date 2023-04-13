@@ -49,7 +49,8 @@ int pres_mili_int, int time_mili_int)
     task_t *node = find_task_node(app, 3);
 
     if (NB_CIRCLE_CREATE(node) != NB_CIRCLE_FLIPPER(node)) {
-        if (handler_create_circle(time_int, app, pres_mili_int, time_mili_int) == 84)
+        if (handler_create_circle(time_int, app,
+        pres_mili_int, time_mili_int) == 84)
             return 84;
     }
     return 0;
