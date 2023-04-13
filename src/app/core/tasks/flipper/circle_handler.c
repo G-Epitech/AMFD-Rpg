@@ -25,7 +25,6 @@ void circle_expension(app_t *app)
         RAYON_CIRCLE(temp_circle) += 3;
         temp_circle = temp_circle->next;
     }
-    return;
 }
 
 static void test_open(node_t *temp_circle, int time_int)

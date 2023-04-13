@@ -58,4 +58,6 @@ void open_circle(app_t *app, int time_int);
 
 void circle_expension(app_t *app);
 
+void event_task_flipper(renderer_t *renderer, app_t *app);
+
 #endif /* !FLIPPER_H_ */

@@ -10,6 +10,7 @@
 #include "types/renderer/types.h"
 #include "app/events/events.h"
 #include "app/tasks/bash/script_bash.h"
+#include "app/tasks/flipper/flipper.h"
 #include "app/app.h"
 
 static void event_analyse(sfRenderWindow *window, sfEvent event, app_t *app,
