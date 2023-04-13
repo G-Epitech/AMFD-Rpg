@@ -9,7 +9,7 @@
 #include "app/types.h"
 #include "types/npc/npc.h"
 #include "types/list/list.h"
-#include "types/sound/sound.h"
+#include "app/sound/sound.h"
 #include "types/players/players.h"
 #include "app/tasks/bash/script_bash.h"
 

@@ -18,6 +18,10 @@
 
 typedef struct s_list list_t;
 
+typedef enum e_sound_index {
+    WALK
+} sound_index_t;
+
 /**
  * @brief Structure for a sound,
  * contains all useful parameters for sound playing

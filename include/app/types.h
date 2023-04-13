@@ -11,7 +11,7 @@
     #include <stdbool.h>
     #include "types/players/types.h"
     #include "app/network/types.h"
-    #include "types/sound/types.h"
+    #include "sound/types.h"
 
 typedef struct s_list list_t;
 

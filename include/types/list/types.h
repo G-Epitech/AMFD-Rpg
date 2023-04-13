@@ -10,7 +10,7 @@
 
     #include <stdbool.h>
     #include "types/npc/types.h"
-    #include "types/sound/types.h"
+    #include "app/sound/types.h"
     #include "types/players/types.h"
     #include "types/components/types.h"
     #include "types/ressources/types.h"

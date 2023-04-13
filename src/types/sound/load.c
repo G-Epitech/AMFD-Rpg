@@ -7,7 +7,7 @@
 
 #include <stddef.h>
 #include <stdlib.h>
-#include "types/sound/types.h"
+#include "app/sound/types.h"
 #include "types/list/list.h"
 #include "cjson/include/cjson.h"
 #include "app/loading/loading.h"
