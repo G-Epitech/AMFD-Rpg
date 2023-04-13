@@ -9,6 +9,7 @@
 #include "app/types.h"
 #include "types/npc/npc.h"
 #include "types/list/list.h"
+#include "types/sound/sound.h"
 #include "types/players/players.h"
 #include "app/tasks/bash/script_bash.h"
 
@@ -62,6 +63,7 @@ app_t *app_init(void)
     app->control = init_controller();
     app->players = players_list_init();
     app->npcs = npcs_load();
+    app->sound_board = sound_load();
     app->tasks_setup = task_create();
     app->settings = init_settings();
     app->network = network_init();

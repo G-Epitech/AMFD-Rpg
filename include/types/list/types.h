@@ -10,6 +10,7 @@
 
     #include <stdbool.h>
     #include "types/npc/types.h"
+    #include "types/sound/types.h"
     #include "types/players/types.h"
     #include "types/components/types.h"
     #include "types/ressources/types.h"
@@ -25,6 +26,7 @@ typedef union u_node_data {
     npc_data_t npc_data;
     player_t *player;
     button_t *button;
+    sound_t *sound;
     lever_t *lever;
     task_t *task;
     list_t *list;

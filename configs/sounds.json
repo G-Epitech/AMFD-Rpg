@@ -1,0 +1,9 @@
+ [
+    {
+        "title": "walking",
+        "buffer": "assets/sounds/walk.ogg",
+        "volume": 30.0,
+        "loop": 0,
+        "status": 0
+    }
+]

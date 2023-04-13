@@ -11,6 +11,7 @@
     #include <stdbool.h>
     #include "types/players/types.h"
     #include "app/network/types.h"
+    #include "types/sound/types.h"
 
 typedef struct s_list list_t;
 
@@ -63,6 +64,7 @@ typedef struct s_app {
     list_t *tasks_setup;    //Taks of the game
     settings_t *settings;   //Settings of the application
     network_t *network;     //Network
+    list_t *sound_board;    //List of sounds for the game
 } app_t;
 
 #endif /* !APP_TYPES_H_ */

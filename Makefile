@@ -17,6 +17,8 @@ SRC = 		src/main.c \
 			src/types/list/append.c \
 			src/types/list/list.c \
 			\
+			src/types/sound/load.c	\
+			\
 			src/types/node/node.c \
 			src/types/node/swap.c \
 			\

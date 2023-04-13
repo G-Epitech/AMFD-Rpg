@@ -18,6 +18,19 @@
 #include "types/components/components.h"
 #include "types/ressources/ressources.h"
 
+void display_sounds(app_t *app)
+{
+    node_t *sounds = app->sound_board->first;
+
+    while (sounds) {
+        my_putstr(sounds->data.sound->title);
+        my_put_nbr(sounds->data.sound->status);
+        my_put_nbr(sounds->data.sound->loop);
+        my_putchar('\n');
+        sounds = sounds->next;
+    }
+}
+
 int main(void)
 {
     renderer_t *renderer = renderer_init();
@@ -25,6 +38,7 @@ int main(void)
 
     load_renderer(renderer);
     app = app_init();
+    display_sounds(app);
     if (!renderer)
         return 84;
     if (!app) {
