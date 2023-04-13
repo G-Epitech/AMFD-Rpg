@@ -20,9 +20,7 @@
  * player move
  * @param collision_layer Layer of collisions
 */
-void core_handle_movement(control_t *control, int **collision_layer,
-app_t *app);
-
+void core_handle_movement(control_t *control, sfImage *collision, app_t *app);
 /**
  * @brief Function that will handle the core actions of the
  * game
