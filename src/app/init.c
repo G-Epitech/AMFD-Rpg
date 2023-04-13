@@ -56,6 +56,7 @@ static interactions_t *init_interactions(void)
     interactions_t *interactions = malloc(sizeof(interactions_t));
 
     interactions->interaction = false;
+    interactions->type = IT_NULL;
     return interactions;
 }
 

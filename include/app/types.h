@@ -13,7 +13,7 @@
     #include "app/network/types.h"
 
 typedef struct s_list list_t;
-typedef struct s_npc npc_t;
+typedef struct s_npc_data npc_data_t;
 
 typedef enum e_app_states {
     ST_LOADING = 0,         //Loading of the game
@@ -53,13 +53,20 @@ typedef struct s_settings {
     bool developer;         //Developer mode
 } settings_t;
 
-typedef struct u_interaction_data {
-    npc_t *npc;
+typedef union u_interaction_data {
+    npc_data_t *npc;
 } interaction_data_t;
+
+typedef enum e_interaction_type {
+    IT_NULL = 0,
+    IT_NPC
+} interaction_type_t;
 
 typedef struct s_interactions {
     interaction_data_t data;
+    interaction_type_t type;
     bool interaction;
+    
 } interactions_t;
 
 typedef struct s_app {

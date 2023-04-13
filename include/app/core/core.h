@@ -29,4 +29,11 @@ void core_handle_movement(control_t *control, sfImage *collision, app_t *app);
 */
 int core_handler(renderer_t *renderer, app_t *app);
 
+/**
+ * @brief Interactions of NPCs
+ * @param id Id of the NPC
+ * @param app Application structure
+ */
+void core_interactions_npc(sfColor pixel, app_t *app);
+
 #endif /* !CORE_H_ */

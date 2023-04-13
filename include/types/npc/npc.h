@@ -83,8 +83,7 @@ void npc_destroy_world_enemy(npc_enemy_t *enemy);
  * @return Pointer to world data or NULL if npc is not in
  * given world
  */
-npc_data_t * npc_get_data_of_world(npc_t *npc, int world);
-
+npc_data_t * npc_get_data_of_world(npc_t *npc, worlds_t world);
 
 /**
  * @brief Include NPCs to collisions array of worlds
@@ -92,5 +91,14 @@ npc_data_t * npc_get_data_of_world(npc_t *npc, int world);
  * @param npcs List of NPCs
  */
 void npcs_include_to_array(renderer_t *renderer, list_t *npcs);
+
+/**
+ * @brief Get npc data by id of NPC
+ * @param npcs List of npcs
+ * @param id Id of the npc
+ * @param world App world
+ * @return npc_data_t* The data of the npc
+ */
+npc_data_t *npc_get_data_by_id(list_t *npcs, int id, worlds_t world);
 
 #endif /* !NPC_H_ */

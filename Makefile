@@ -113,6 +113,7 @@ SRC = 		src/main.c \
 			src/app/display/map/map.c \
 			src/app/display/map/back.c \
 			src/app/display/tasks/script_bash/display.c \
+			src/app/display/tasks/brute_force/display.c \
 			src/app/display/tasks/handler.c \
 			src/app/display/npcs/npcs.c \
 			src/app/display/player/player.c \
@@ -131,9 +132,6 @@ SRC = 		src/main.c \
 			src/app/display/developer/collisions.c \
 			src/app/display/developer/position.c \
 			\
-			src/app/core/handler.c	\
-			src/app/core/movement.c	\
-			\
 			src/app/utils/test.c \
 			\
 			src/app/loading/loading_company_screen.c \
@@ -146,7 +144,9 @@ SRC = 		src/main.c \
 			src/app/core/tasks/brute_force/init_node.c \
 			src/app/core/tasks/brute_force/click.c \
 			src/app/core/tasks/brute_force/released.c \
-			src/app/display/tasks/brute_force/display.c \
+			src/app/core/handler.c	\
+			src/app/core/interactions/movement.c \
+			src/app/core/interactions/npc.c \
 			\
 			src/app/events/handler/closed.c \
 			src/app/events/handler/mouse_button_pressed.c \
