@@ -23,6 +23,7 @@ size_t y)
             return false;
         }
     }
+    return true;
 }
 
 static int movement_is_possible(sfVector2f position, sfVector2f offset,

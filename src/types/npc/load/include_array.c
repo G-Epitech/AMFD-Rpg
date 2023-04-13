@@ -9,15 +9,18 @@
 #include "types/renderer/types.h"
 #include "types/list/types.h"
 
-static void insert_npc(sfImage *collision, sfVector2f position)
+static void insert_npc(sfImage *collision, sfVector2f position, int id)
 {
+    sfColor color = sfYellow;
+
+    color.a = id;
     position.y += 6;
     for (size_t y = 0; y < 26; y++) {
         for (size_t x = 0; x < 16; x++) {
             sfImage_setPixel(
                 collision, position.x + x,
                 position.y + y,
-                sfYellow
+                color
             );
         }
     }
@@ -39,8 +42,9 @@ static sfImage *get_collision_by_id(renderer_t *renderer, worlds_t id)
     return NULL;
 }
 
-static void include_data(renderer_t *renderer, list_t *npc_data)
+static void include_data(renderer_t *renderer, npc_t *npc)
 {
+    list_t *npc_data = npc->worlds_data;
     node_t *node = npc_data->first;
     npc_data_t data;
     sfImage *collision = NULL;
@@ -49,7 +53,7 @@ static void include_data(renderer_t *renderer, list_t *npc_data)
         data = node->data.npc_data;
         collision = get_collision_by_id(renderer, data.world);
         if (collision) {
-            insert_npc(collision, data.position);
+            insert_npc(collision, data.position, npc->id);
         }
         node = node->next;
     }
@@ -67,7 +71,7 @@ void npcs_include_to_array(renderer_t *renderer, list_t *npcs)
     node = npcs->first;
     while (node) {
         npc = node->data.npc;
-        include_data(renderer, npc.worlds_data);
+        include_data(renderer, &npc);
         node = node->next;
     }
 }

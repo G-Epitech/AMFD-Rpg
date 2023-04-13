@@ -73,7 +73,7 @@ typedef struct s_app {
     list_t *tasks_setup;            //Taks of the game
     settings_t *settings;           //Settings of the application
     network_t *network;             //Network
-    interactions_t *interaction    //Interaction in the app
+    interactions_t *interaction;    //Interaction in the app
 } app_t;
 
 #endif /* !APP_TYPES_H_ */
