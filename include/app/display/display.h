@@ -166,18 +166,30 @@ void display_inventory(renderer_t *renderer, app_t *app);
 void display_select_character(renderer_t *renderer, app_t *app);
 
 /**
- * @brief Display main inventory grid
+ * @brief Display box of an inventory item
  * @param renderer Renderer object
- * @param app App object
+ * @param i Index of item for which set box
+ * @param active Specify if item is in active inventory grid
+ * @param empty Specify if given box is occuped by an item
  */
-void display_inventory_main_grid(renderer_t *renderer, app_t *app);
+void display_inventory_item_box(renderer_t *renderer, size_t i,
+bool active, bool empty);
 
 /**
- * @brief Display main inventory grid
+ * @brief Get position of given item
+ * @param i Index of item in inventory
+ * @param active Active status
+ * @param position Position pointer in which set obtained position
+ */
+void display_inventory_get_item_position(size_t i, bool active,
+sfVector2f *position);
+
+/**
+ * @brief Display inventory grids
  * @param renderer Renderer object
  * @param app App object
  */
-void display_inventory_active_grid(renderer_t *renderer, app_t *app);
+void display_inventory_grids(renderer_t *renderer, app_t *app);
 
 /**
  * @brief Display player profile in inventory
