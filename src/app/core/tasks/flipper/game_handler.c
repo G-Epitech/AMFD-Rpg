@@ -28,6 +28,34 @@ static void time_handler(app_t *app, int *time_mili_int)
     (int) TIME(node->content.flipper).microseconds / (100000.0);
 }
 
+static void game_result(app_t *app, int *pres_sec,
+int *pres_mili_sec, task_t *node)
+{
+    if (NB_LIFE_FLIPPER(node) <= 0) {
+        my_putstr("You lose\n");
+        reset_setup_flipper(app, pres_sec, pres_mili_sec);
+        app->state = ST_INGAME;
+    }
+}
+
+static int circle_create(task_t *node, app_t *app,
+int pres_sec, int time_int)
+{
+    if (NB_CIRCLE_CREATE(node) != NB_CIRCLE_FLIPPER(node)) {
+        if (handler_create_circle(app, pres_sec, time_int) == 84)
+            return 84;
+    }
+    return 0;
+}
+
+static void game_second(int pres_sec, int time_int, app_t *app)
+{
+    if (pres_sec < time_int) {
+        open_circle(app, time_int);
+        life_loose(app, time_int);
+    }
+}
+
 int app_task_flipper_core(app_t *app)
 {
     task_t *node = find_task_node(app, 3);
@@ -41,21 +69,12 @@ int app_task_flipper_core(app_t *app)
             return 84;
     }
     time_handler(app, &time_mili_int);
-    if (NB_LIFE_FLIPPER(node) <= 0) {
-        my_putstr("You lose\n");
-        reset_setup_flipper(app, &pres_sec, &pres_mili_sec);
-        app->state = ST_INGAME;
-    }
-    if (NB_CIRCLE_CREATE(node) != NB_CIRCLE_FLIPPER(node)) {
-        if (handler_create_circle(app, pres_sec, time_int) == 84)
-            return 84;
-    }
+    game_result(app, pres_sec, pres_mili_sec, node);
+    if (circle_create(node, app, pres_sec, time_int) == 84)
+        return 84;
     if (pres_mili_sec < time_mili_int)
         circle_expension(app);
-    if (pres_sec < time_int) {
-        open_circle(app, time_int);
-        life_loose(app, time_int);
-    }
+    game_second(pres_sec, time_int, app);
     pres_sec = time_int;
     pres_mili_sec = time_mili_int;
     return 0;

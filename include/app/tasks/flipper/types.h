@@ -23,7 +23,8 @@
     #define STATUS_CIRCLE(temp_circle) temp_circle->data.node_flip->status
     #define RAYON_CIRCLE(temp_circle) temp_circle->data.node_flip->rayon
     #define POS_CIRCLE(temp_circle) temp_circle->data.node_flip->pos
-    #define TIME_CREATION(temp_circle) temp_circle->data.node_flip->time_creation
+    #define TIME_CREATION(temp_circle) temp_circle->\
+    data.node_flip->time_creation
     #define TIME_OPEN(temp_circle) temp_circle->data.node_flip->time_open
 
 typedef struct s_timer_handler timer_handler_t;
