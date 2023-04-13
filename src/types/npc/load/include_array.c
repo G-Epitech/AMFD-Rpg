@@ -9,52 +9,65 @@
 #include "types/renderer/types.h"
 #include "types/list/types.h"
 
-// static int **get_collisions_by_id(renderer_t *renderer, worlds_t id)
-// {
-//     list_t *maps = renderer->ressources->maps;
-//     node_t *node = maps->first;
-//     map_t *map;
+static void insert_npc(sfImage *collision, sfVector2f position)
+{
+    position.y += 6;
+    for (size_t y = 0; y < 26; y++) {
+        for (size_t x = 0; x < 16; x++) {
+            sfImage_setPixel(
+                collision, position.x + x,
+                position.y + y,
+                sfYellow
+            );
+        }
+    }
+}
 
-//     while (node) {
-//         map = node->data.map;
-//         if (map->world == id) {
-//             return map->collision_layer;
-//         }
-//         node = node->next;
-//     }
-//     return NULL;
-// }
+static sfImage *get_collision_by_id(renderer_t *renderer, worlds_t id)
+{
+    list_t *maps = renderer->ressources->maps;
+    node_t *node = maps->first;
+    map_t *map;
 
-// static void include_data(renderer_t *renderer, list_t *npc_data)
-// {
-//     node_t *node = npc_data->first;
-//     npc_data_t data;
-//     int **collisions = NULL;
+    while (node) {
+        map = node->data.map;
+        if (map->world == id) {
+            return map->collision;
+        }
+        node = node->next;
+    }
+    return NULL;
+}
 
-//     while (node) {
-//         data = node->data.npc_data;
-//         collisions = get_collisions_by_id(renderer, data.world);
-//         if (collisions) {
-//             collisions[(int) data.position.y / 16 + 1]
-//             [(int) data.position.x / 16] = IT_NPC;
-//         }
-//         node = node->next;
-//     }
-// }
+static void include_data(renderer_t *renderer, list_t *npc_data)
+{
+    node_t *node = npc_data->first;
+    npc_data_t data;
+    sfImage *collision = NULL;
+
+    while (node) {
+        data = node->data.npc_data;
+        collision = get_collision_by_id(renderer, data.world);
+        if (collision) {
+            insert_npc(collision, data.position);
+        }
+        node = node->next;
+    }
+}
 
 void npcs_include_to_array(renderer_t *renderer, list_t *npcs)
 {
     (void)renderer;
     (void)npcs;
-    // node_t *node = NULL;
-    // npc_t npc;
+    node_t *node = NULL;
+    npc_t npc;
 
-    // if (!npcs)
-    //     return;
-    // node = npcs->first;
-    // while (node) {
-    //     npc = node->data.npc;
-    //     include_data(renderer, npc.worlds_data);
-    //     node = node->next;
-    // }
+    if (!npcs)
+        return;
+    node = npcs->first;
+    while (node) {
+        npc = node->data.npc;
+        include_data(renderer, npc.worlds_data);
+        node = node->next;
+    }
 }
