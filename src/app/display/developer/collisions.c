@@ -47,14 +47,14 @@ static void display_collision_player(renderer_t *renderer, app_t *app)
 }
 
 static void display_box(renderer_t *renderer,
-size_t x, size_t y)
+size_t x, size_t y, sfColor color)
 {
     sfRectangleShape *rectangle = renderer->objects->rectangle;
-
+    
     sfRectangleShape_setPosition(rectangle, (sfVector2f) {x * 16, y * 16});
     sfRectangleShape_setSize(rectangle, (sfVector2f) {16, 16});
     sfRectangleShape_setFillColor(rectangle, (sfColor) {0, 0, 0, 0});
-    sfRectangleShape_setOutlineColor(rectangle, sfRed);
+    sfRectangleShape_setOutlineColor(rectangle, color);
     sfRectangleShape_setOutlineThickness(rectangle, 0.5);
     sfRenderWindow_drawRectangleShape(renderer->window, rectangle, NULL);
 }
@@ -66,8 +66,10 @@ size_t x, size_t y)
     int **collision_map = current_map->collision_layer;
 
     renderer_objects_reset_rectangle(renderer->objects);
-    if (collision_map[y][x] == 1) {
-        display_box(renderer, x, y);
+    if (collision_map[y][x] == IT_WALL)
+        display_box(renderer, x, y, sfRed);
+    if (collision_map[y][x] == IT_NPC) {
+        display_box(renderer, x, y, sfYellow);
     }
 }
 
