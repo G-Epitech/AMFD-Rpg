@@ -1,20 +1,23 @@
-[
-    {
-        "id": 0,
-        "label": "Aubergine",
-        "type": 0,
-        "levels": { "xp": 0, "life": 12, "speed": 12, "intelligence": 134 },
-        "price": 8,
-        "icon": { "x": 0, "y": 12, "width": 34, "height": 90 },
-        "default": true
-    },
-    {
-        "id": 1,
-        "label": "Poire",
-        "type": 0,
-        "levels": { "xp": 0, "life": 12, "speed": 12, "intelligence": 134 },
-        "price": 8,
-        "icon": { "x": 0, "y": 12, "width": 34, "height": 90 },
-        "default": true
-    }
-]
+{
+    "texture": "assets/items.png",
+    "items": [
+        {
+            "id": 0,
+            "label": "Cookie",
+            "type": 0,
+            "levels": { "xp": 0, "life": 12, "speed": 12, "intelligence": 134 },
+            "price": 8,
+            "rect": { "x": 0, "y": 0  },
+            "default": true
+        },
+        {
+            "id": 1,
+            "label": "Pasteque",
+            "type": 0,
+            "levels": { "xp": 0, "life": 12, "speed": 12, "intelligence": 134 },
+            "price": 8,
+            "rect": { "x": 0, "y": 6},
+            "default": true
+        }
+    ]
+}

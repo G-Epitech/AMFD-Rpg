@@ -1,3 +1,4 @@
 {
-    "grid": "assets/inventory/grid.png"
+    "grid": "assets/inventory/grid.png",
+    "items": "assets/inventory/items.png"
 }

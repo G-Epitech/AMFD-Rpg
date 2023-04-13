@@ -22,6 +22,7 @@ sfVector2f *position)
     float item_size = INVENTORY_MAIN_GRID_ITEM_SIZE;
     sfVector2i pos = {0, 0};
 
+    i -= 1;
     if (active) {
         grid_size = INVENTORY_ACTIVE_GRID_SIZE;
         grid_pos = INVENTORY_ACTIVE_GRID_POS;
@@ -71,6 +72,5 @@ size_t i)
 void display_inventory_item_box(renderer_t *renderer, size_t i,
 bool active, bool empty)
 {
-    i -= 1;
     display_item_box(renderer, active, empty, i);
 }

@@ -106,12 +106,11 @@ lever_r_t *ressources_components_lever_load(cjson_t *lever_config);
 void inventory_load(renderer_t *renderer, inventory_r_t *inventory);
 
 /**
- * @brief Load given item from config
- * @param config Configuration of item
- * @param item Item to load
- * @return Status of loading
+ * @brief Load items texture
+ * @param renderer Renderer object
+ * @param ressources Resssources of app
  */
-bool inventory_load_item(cjson_t *config, item_t **item);
+void items_texture_load(renderer_t *renderer, ressources_t *ressources);
 
 /**
  * @brief Load icons ressources

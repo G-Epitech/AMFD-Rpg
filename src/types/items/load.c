@@ -11,6 +11,20 @@
 #include "types/list/list.h"
 #include "cjson/include/cjson.h"
 
+static void set_rect(cjson_t *config, item_t *item)
+{
+    cjson_t *rect_config = cjson_get_prop(config, "rect");
+    sfVector2i position = {0, 0};
+    if (!rect_config)
+        return;
+    item->rect.height = ITEM_SIZE.y;
+    item->rect.width = ITEM_SIZE.x;
+    cjson_get_prop_int(rect_config, "x", &(position.x));
+    cjson_get_prop_int(rect_config, "y", &(position.y));
+    item->rect.left = ITEM_SIZE.x * position.x;
+    item->rect.top = ITEM_SIZE.y * position.y;
+}
+
 static bool load_levels(cjson_t *config, item_t *item)
 {
     cjson_t *levels = cjson_get_prop(config, "levels");
@@ -52,5 +66,6 @@ bool item_load(cjson_t *config, item_t **item)
     if (!cjson_get_prop_float(config, "price", &(*item)->price))
         return false;
     cjson_get_prop_bool(config, "default", &(*item)->by_default);
+    set_rect(config, *item);
     return load_levels(config, *item);
 }

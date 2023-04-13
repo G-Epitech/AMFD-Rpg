@@ -42,7 +42,7 @@ list_t *items_load(void)
         cjson_free(config);
         return NULL;
     }
-    if (!cjson_get_array(config, &array)) {
+    if (!cjson_get_prop_array(config, "items", &array)) {
         list_free(items);
         cjson_free(config);
         return NULL;

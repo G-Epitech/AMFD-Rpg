@@ -18,6 +18,7 @@
 static void display_item(renderer_t *renderer, inventory_item_t *item)
 {
     display_inventory_item_box(renderer, item->pos, item->active, false);
+    display_inventory_item_content(renderer, item);
 }
 
 static void get_boxes_occupations(int **actives_boxes, int **main_boxes)
@@ -29,8 +30,6 @@ static void get_boxes_occupations(int **actives_boxes, int **main_boxes)
 
     *actives_boxes = malloc(size_actives_boxes);
     *main_boxes = malloc(size_main_boxes);
-    printf("actives : %d\n", active_size.x * active_size.y);
-    printf("main : %d\n", main_size.x * main_size.y);
     memset(*actives_boxes, 0, size_actives_boxes);
     memset(*main_boxes, 0, size_main_boxes);
 }
@@ -42,9 +41,8 @@ int *main_boxes)
     sfVector2i main_size = INVENTORY_MAIN_GRID_SIZE;
     int nb_actives_boxes = active_size.x * active_size.y;
     int nb_main_boxes = main_size.x * main_size.y;
-    int pos = item->active ? -item->pos : item->pos;
+    int pos = item->pos - 1;
 
-    pos -= 1;
     if (item->active && pos >= 0 && pos < nb_actives_boxes)
         actives_boxes[pos] = 1;
     else if (pos >= 0 && pos < nb_main_boxes)
@@ -60,7 +58,6 @@ int *main_boxes)
     size_t nb_main_boxes = main_size.x * main_size.y;
 
     for (size_t i = 0; i < nb_actives_boxes; i++) {
-        printf("active[%zu] = %d\n", i, actives_boxes[i]);
         if (actives_boxes[i] == 0)
             display_inventory_item_box(renderer, i + 1, true, true);
     }

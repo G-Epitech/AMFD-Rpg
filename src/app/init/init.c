@@ -37,7 +37,8 @@ app_t *app_init(void)
         }
         member += 1;
     }
-    if (init_player(app) == 84)
+    if (init_player(app) == 84) {
         return NULL;
+    }
     return app;
 }

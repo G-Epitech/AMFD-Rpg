@@ -12,6 +12,7 @@
     #include <SFML/Graphics.h>
 
     #define ITEMS_CONFIG "configs/items.json"
+    #define ITEM_SIZE ((sfVector2i) {46, 46})
 
 typedef enum e_item_type {
     IVT_CONSUMABLE,

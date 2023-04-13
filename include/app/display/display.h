@@ -198,4 +198,12 @@ void display_inventory_grids(renderer_t *renderer, app_t *app);
  */
 void display_inventory_profile(renderer_t *renderer, app_t *app);
 
+/**
+ * @brief Display content of item
+ * @param renderer Renderer object
+ * @param item Item to display
+ */
+void display_inventory_item_content(renderer_t *renderer,
+inventory_item_t *item);
+
 #endif /* !DISPLAY_H_ */

@@ -70,6 +70,8 @@ SRC = 		src/main.c \
 			\
 			src/types/ressources/icons/load.c \
 			\
+			src/types/ressources/items/load.c \
+			\
 			src/types/view/init.c \
 			\
 			src/app/run.c \
@@ -152,6 +154,7 @@ SRC = 		src/main.c \
 			src/app/display/inventory/item_box.c \
 			src/app/display/inventory/profile.c \
 			src/app/display/inventory/inventory.c \
+			src/app/display/inventory/items_content.c \
 			\
 			src/app/core/handler.c	\
 			src/app/core/movement.c	\
