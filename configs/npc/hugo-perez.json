@@ -6,7 +6,7 @@
             "world": 0,
             "skin_id": 3,
             "orientation": 3,
-            "position": { "x": 1137, "y": 1083 },
+            "position": { "x": 1136, "y": 1072 },
             "dialogs": [
                 { "label": "hello", "content": "Hello how are you ?" }
             ]

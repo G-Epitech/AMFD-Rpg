@@ -6,7 +6,7 @@
             "world": 0,
             "skin_id": 1,
             "orientation": 0,
-            "position": { "x": 1630, "y": 1056 },
+            "position": { "x": 1616, "y": 1056 },
             "enemy": {
                 "life": 12,
                 "level": 0,
