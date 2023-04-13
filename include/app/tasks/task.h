@@ -30,6 +30,6 @@ int core_tasks_handler(app_t *app);
  * @param app Application structure
  * @param id Id of node
 */
-task_content_t find_task_node(app_t *app, int id);
+task_t *find_task_node(app_t *app, int id);
 
 #endif /* !TASK_H_ */

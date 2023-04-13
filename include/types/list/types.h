@@ -14,12 +14,14 @@
     #include "types/components/types.h"
     #include "types/ressources/types.h"
     #include "app/tasks/bash/types.h"
+    #include "app/tasks/flipper/types.h"
     #include "app/tasks/types.h"
 
 typedef struct s_list list_t;
 
 typedef union u_node_data {
     task_bash_node_t *node_bash;
+    task_flipper_node_t *node_flip;
     background_t *background;
     npc_dialog_t npc_dialog;
     npc_data_t npc_data;
