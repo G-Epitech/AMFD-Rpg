@@ -59,7 +59,6 @@ size_t x, size_t y, sfColor color)
     sfRenderWindow_drawRectangleShape(renderer->window, rectangle, NULL);
 }
 
-
 static void display_collision(renderer_t *renderer, map_t *current_map,
 size_t x, size_t y)
 {

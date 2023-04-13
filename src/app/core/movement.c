@@ -15,8 +15,8 @@ int **collision_layer)
 {
     position.x += offset.x / 16;
     position.y += offset.y / 16 + 2;
-    return (collision_layer[(int) position.y][(int) position.x] == 0
-    && collision_layer[(int) position.y - 1][(int) position.x] == 0);
+    return (collision_layer[(int) position.y][(int) position.x] == IT_VOID
+    && collision_layer[(int) position.y - 1][(int) position.x] == IT_VOID);
 }
 
 static sfVector2f increment_position(sfVector2f position, sfVector2f offset)
