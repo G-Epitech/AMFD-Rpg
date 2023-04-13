@@ -51,7 +51,6 @@ int *main_boxes)
         main_boxes[pos] = 1;
 }
 
-
 static void display_empty(renderer_t *renderer, int *actives_boxes,
 int *main_boxes)
 {
