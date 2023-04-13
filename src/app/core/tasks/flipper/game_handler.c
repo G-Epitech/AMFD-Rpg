@@ -38,11 +38,13 @@ int *pres_mili_sec, task_t *node)
     }
 }
 
-static int circle_create(task_t *node, app_t *app,
-int pres_sec, int time_int)
+static int circle_create(int time_int, app_t *app,
+int pres_mili_int, int time_mili_int)
 {
+    task_t *node = find_task_node(app, 3);
+
     if (NB_CIRCLE_CREATE(node) != NB_CIRCLE_FLIPPER(node)) {
-        if (handler_create_circle(app, pres_sec, time_int) == 84)
+        if (handler_create_circle(time_int, app, pres_mili_int, time_mili_int) == 84)
             return 84;
     }
     return 0;
@@ -70,7 +72,7 @@ int app_task_flipper_core(app_t *app)
     }
     time_handler(app, &time_mili_int);
     game_result(app, &pres_sec, &pres_mili_sec, node);
-    if (circle_create(node, app, pres_sec, time_int) == 84)
+    if (circle_create(time_int, app, pres_mili_sec, time_mili_int) == 84)
         return 84;
     if (pres_mili_sec < time_mili_int)
         circle_expension(app);

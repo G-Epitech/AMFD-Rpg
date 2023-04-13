@@ -50,7 +50,7 @@ void app_task_flipper_display(renderer_t *renderer, app_t *app);
  * @brief Handler of creation of circle
  * @param app Application structure
 */
-int handler_create_circle(app_t *app, int pres_sec, int time_int);
+int handler_create_circle(int time_int, app_t *app, int pres_mili_int, int time_mili_int);
 
 void life_loose(app_t *app, int time_int);
 

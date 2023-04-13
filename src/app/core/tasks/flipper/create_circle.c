@@ -9,6 +9,7 @@
 #include <time.h>
 #include <stdlib.h>
 #include <SFML/Graphics.h>
+#include <sys/time.h>
 #include "types/renderer/types.h"
 #include "app/tasks/task.h"
 #include "app/tasks/flipper/flipper.h"
@@ -49,10 +50,10 @@ static int create_circle(app_t *app, int time_int)
     return 0;
 }
 
-int handler_create_circle(app_t *app, int pres_sec, int time_int)
+int handler_create_circle(int time_int, app_t *app, int pres_mili_int, int time_mili_int)
 {
-    srand(time(NULL));
-    if (pres_sec < time_int) {
+    srand(rand() % 1023415412584);
+    if (pres_mili_int < time_mili_int && time_mili_int % 5 == 0) {
         if (create_circle(app, time_int) == 84)
             return 84;
     }
