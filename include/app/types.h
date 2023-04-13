@@ -38,6 +38,12 @@ typedef enum e_worlds {
     WL_CITY
 } worlds_t;
 
+typedef enum e_interactions {
+    IT_VOID = 0,
+    IT_WALL,
+    IT_NPC
+} interactions_t;
+
 typedef struct s_control {
     bool direction;         //Move direction
     sfVector2f offset;      //Move offset for the direction

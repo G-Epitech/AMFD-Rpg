@@ -158,4 +158,10 @@ void display_select_character(renderer_t *renderer, app_t *app);
  */
 void display_developer_collisions(renderer_t *renderer, app_t *app);
 
+/**
+ * @brief Display position of the player
+ * @param renderer Renderer structure
+ * @param app Application informations
+ */
+void display_developer_position(renderer_t *renderer, app_t *app);
 #endif /* !DISPLAY_H_ */

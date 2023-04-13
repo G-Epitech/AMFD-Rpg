@@ -5,7 +5,6 @@
 ** Functions that will help player movement
 */
 
-#include <stdio.h>
 #include "app/app.h"
 #include "types/players/players.h"
 #include "app/events/types.h"
@@ -14,15 +13,10 @@
 static int movement_is_possible(sfVector2f position, sfVector2f offset,
 int **collision_layer)
 {
-    int collision = 0;
-    int x = position.x + offset.x / 16;
-    int y = position.y + offset.y / 16;
-
-    collision = collision_layer[(int) y][(int) x];
-    if (collision == 1) {
-        return true;
-    }
-    return false;
+    position.x += offset.x / 16;
+    position.y += offset.y / 16 + 2;
+    return (collision_layer[(int) position.y][(int) position.x] == 0
+    && collision_layer[(int) position.y - 1][(int) position.x] == 0);
 }
 
 static sfVector2f increment_position(sfVector2f position, sfVector2f offset)

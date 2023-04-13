@@ -26,6 +26,7 @@ SRC = 		src/main.c \
 			src/types/npc/load/enemy.c \
 			src/types/npc/load/world_data.c \
 			src/types/npc/load/worlds_data.c \
+			src/types/npc/load/include_array.c \
 			src/types/npc/destroy/worlds_data.c \
 			src/types/npc/destroy/destroy_all.c \
 			src/types/npc/destroy/enemy.c \
@@ -128,6 +129,7 @@ SRC = 		src/main.c \
 			src/app/display/menus/settings.c \
 			src/app/display/menus/select_character.c \
 			src/app/display/developer/collisions.c \
+			src/app/display/developer/position.c \
 			\
 			src/app/core/handler.c	\
 			src/app/core/movement.c	\

@@ -10,6 +10,7 @@
 
     #include "types/npc/types.h"
     #include "cjson/include/cjson.h"
+    #include "types/renderer/types.h"
 
     #define NPC_CONFIG "configs/npcs.json"
 
@@ -22,9 +23,10 @@ void npc_load(list_t *npcs, cjson_t *config);
 
 /**
  * @brief Load all npcs of game
+ * @param renderer Renderer structure
  * @return Loaded list
  */
-list_t *npcs_load(void);
+list_t *npcs_load(renderer_t *renderer);
 
 /**
  * @brief Load npcs worlds data into npc
@@ -82,5 +84,13 @@ void npc_destroy_world_enemy(npc_enemy_t *enemy);
  * given world
  */
 npc_data_t * npc_get_data_of_world(npc_t *npc, int world);
+
+
+/**
+ * @brief Include NPCs to collisions array of worlds
+ * @param renderer Renderer structure
+ * @param npcs List of NPCs
+ */
+void npcs_include_to_array(renderer_t *renderer, list_t *npcs);
 
 #endif /* !NPC_H_ */

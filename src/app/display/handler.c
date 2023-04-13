@@ -30,6 +30,14 @@ static void display_game(renderer_t *renderer, app_t *app)
     }
 }
 
+static void display_elements(renderer_t *renderer, app_t *app)
+{
+    display_components(renderer, app);
+    display_menus(renderer, app);
+    display_tasks_handler(renderer, app);
+    display_developer_position(renderer, app);
+}
+
 void display_handler(renderer_t *renderer, app_t *app)
 {
     renderer_objects_t *objects = renderer->objects;
@@ -39,8 +47,6 @@ void display_handler(renderer_t *renderer, app_t *app)
     display_game(renderer, app);
     sfView_setCenter(renderer->map_view, app->player->position);
     sfRenderWindow_setView(objects->window, renderer->default_view);
-    display_components(renderer, app);
-    display_menus(renderer, app);
-    display_tasks_handler(renderer, app);
+    display_elements(renderer, app);
     sfRenderWindow_display(renderer->window);
 }

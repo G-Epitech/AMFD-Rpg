@@ -46,20 +46,28 @@ static void display_collision_player(renderer_t *renderer, app_t *app)
     sfRenderWindow_drawRectangleShape(renderer->window, rectangle, NULL);
 }
 
-static void display_collision_box(renderer_t *renderer, map_t *current_map,
+static void display_box(renderer_t *renderer,
+size_t x, size_t y)
+{
+    sfRectangleShape *rectangle = renderer->objects->rectangle;
+
+    sfRectangleShape_setPosition(rectangle, (sfVector2f) {x * 16, y * 16});
+    sfRectangleShape_setSize(rectangle, (sfVector2f) {16, 16});
+    sfRectangleShape_setFillColor(rectangle, (sfColor) {0, 0, 0, 0});
+    sfRectangleShape_setOutlineColor(rectangle, sfRed);
+    sfRectangleShape_setOutlineThickness(rectangle, 0.5);
+    sfRenderWindow_drawRectangleShape(renderer->window, rectangle, NULL);
+}
+
+
+static void display_collision(renderer_t *renderer, map_t *current_map,
 size_t x, size_t y)
 {
     int **collision_map = current_map->collision_layer;
-    sfRectangleShape *rectangle = renderer->objects->rectangle;
 
     renderer_objects_reset_rectangle(renderer->objects);
     if (collision_map[y][x] == 1) {
-        sfRectangleShape_setPosition(rectangle, (sfVector2f) {x * 16, y * 16});
-        sfRectangleShape_setSize(rectangle, (sfVector2f) {16, 16});
-        sfRectangleShape_setFillColor(rectangle, (sfColor) {0, 0, 0, 0});
-        sfRectangleShape_setOutlineColor(rectangle, sfRed);
-        sfRectangleShape_setOutlineThickness(rectangle, 0.5);
-        sfRenderWindow_drawRectangleShape(renderer->window, rectangle, NULL);
+        display_box(renderer, x, y);
     }
 }
 
@@ -74,7 +82,7 @@ void display_developer_collisions(renderer_t *renderer, app_t *app)
         return;
     for (size_t y = 0; y < map_size.y; y++) {
         for (size_t x = 0; x < map_size.x; x++) {
-            display_collision_box(renderer, current_map, x, y);
+            display_collision(renderer, current_map, x, y);
         }
     }
     display_collision_player(renderer, app);
