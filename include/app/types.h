@@ -66,7 +66,6 @@ typedef struct s_interactions {
     interaction_data_t data;
     interaction_type_t type;
     bool interaction;
-    
 } interactions_t;
 
 typedef struct s_app {
