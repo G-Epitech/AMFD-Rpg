@@ -9,6 +9,7 @@
 #include "types/players/players.h"
 #include "app/events/types.h"
 #include "app/network/network.h"
+#include "app/sound/sound_control.h"
 
 static int movement_is_possible(sfVector2f position, sfVector2f offset,
 int **collision_layer)

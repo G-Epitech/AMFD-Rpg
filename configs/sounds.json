@@ -5,5 +5,12 @@
         "volume": 30.0,
         "loop": 0,
         "status": 0
+    },
+    {
+        "title": "click_menu",
+        "buffer": "assets/sounds/click_menu.ogg",
+        "volume": 50.0,
+        "loop": 0,
+        "status": 0
     }
 ]
