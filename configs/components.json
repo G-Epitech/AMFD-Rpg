@@ -139,6 +139,13 @@
             "scale": 1
         },
         {
+            "icon": "assets/components/button/close1.png",
+            "app_state": [300],
+            "position": {"x": 1663, "y": 30},
+            "scale": 1.83,
+            "next_state": 100
+        },
+        {
             "icon": "assets/components/button/next_block.png",
             "app_state": [4],
             "position": {"x": 1408, "y": 788},

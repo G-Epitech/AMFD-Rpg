@@ -13,6 +13,7 @@
 
     #define WIN_FPS 120
     #define WIN_VIDEO_MODE ((sfVideoMode) {1920, 1080, 32})
+    #define WIN_TITLE "Hackers Quests"
 
 typedef struct s_renderer renderer_t;
 typedef struct s_button button_t;

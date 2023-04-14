@@ -7,10 +7,11 @@
 
 #include "app/types.h"
 #include "types/list/types.h"
+#include "app/display/types.h"
 #include "app/display/display.h"
 #include "types/renderer/renderer.h"
 #include "types/ressources/ressources.h"
-#include "types/character/types.h"
+#include "types/characters/types.h"
 
 static void display_refuse_character(renderer_t *renderer, sfVector2f position)
 {

@@ -11,7 +11,7 @@
 #include "types/npc/npc.h"
 #include "types/list/list.h"
 #include "cjson/include/cjson.h"
-#include "types/character/types.h"
+#include "types/characters/types.h"
 
 static sfVector2f get_position_vector(cjson_t *position)
 {

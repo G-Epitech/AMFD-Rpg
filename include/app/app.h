@@ -9,7 +9,6 @@
     #define APP_H_
 
     #include "app/types.h"
-    #include "app/utils/utils.h"
 
 typedef struct s_renderer renderer_t;
 typedef struct s_button button_t;
@@ -19,6 +18,12 @@ typedef struct s_button button_t;
  * @return The new app structure
 */
 app_t *app_init(renderer_t *renderer);
+
+/**
+ * @brief Free given app
+ * @param app App object to free
+ */
+void app_free(app_t *app);
 
 /**
  * @brief Run application
@@ -36,6 +41,70 @@ int app_run(renderer_t *renderer, app_t *app);
  * @return false The state is not active
  */
 bool app_on_state(app_t *app, app_states_t *states, size_t size);
+
+/**
+ * @brief Initialize controller of app
+ * @param app App object on which init controller
+ * @param renderer Renderer object
+ * @return Initilalization success status
+ */
+bool app_init_controller(app_t *app, renderer_t *renderer);
+
+/**
+ * @brief Initialize settings of app
+ * @param app App object
+ * @param renderer Renderer object
+ * @return Initialization success status
+ */
+bool app_init_settings(app_t *app, renderer_t *renderer);
+
+/**
+ * @brief Initialize items of game
+ * @param app App object
+ * @param renderer Renderer object
+ * @return Initialization success status
+ */
+bool app_init_items(app_t *app, renderer_t *renderer);
+
+/**
+ * @brief Initialize network of game
+ * @param app App object
+ * @param renderer Renderer object
+ * @return Initialization success status
+ */
+bool app_init_network(app_t *app, renderer_t *renderer);
+
+/**
+ * @brief Initialize npcs of game
+ * @param app App object
+ * @param renderer Renderer object
+ * @return Initialization success status
+ */
+bool app_init_npcs(app_t *app, renderer_t *renderer);
+
+/**
+ * @brief Initialize tasks of game
+ * @param app App object
+ * @param renderer Renderer object
+ * @return Initialization success status
+ */
+bool app_init_tasks(app_t *app, renderer_t *renderer);
+
+/**
+ * @brief Initialize tasks of game
+ * @param app App object
+ * @param renderer Renderer object
+ * @return Initialization success status
+ */
+bool app_init_interactions(app_t *app, renderer_t *renderer);
+
+/**
+ * @brief Initialize players of game
+ * @param app App object
+ * @param renderer Renderer object
+ * @return Initialization success status
+ */
+bool app_init_players(app_t *app, renderer_t *renderer);
 
 /**
  * @brief Down state

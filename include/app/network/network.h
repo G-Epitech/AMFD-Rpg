@@ -9,7 +9,7 @@
     #define NETWORK_H_
 
     #include "types.h"
-    #include "types/character/types.h"
+    #include "types/characters/types.h"
     #include "cjson/include/cjson.h"
 
 typedef struct s_app app_t;

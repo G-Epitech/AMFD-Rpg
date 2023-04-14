@@ -9,7 +9,7 @@
 #include <SFML/Network.h>
 #include "types/renderer/types.h"
 #include "app/types.h"
-#include "types/character/types.h"
+#include "types/characters/types.h"
 
 void network_send_character(app_t *app, skin_textures_t skin)
 {
