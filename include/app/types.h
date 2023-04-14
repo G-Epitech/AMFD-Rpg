@@ -13,6 +13,8 @@
     #include "app/network/types.h"
 
 typedef struct s_list list_t;
+typedef struct s_renderer renderer_t;
+typedef struct s_npc_data npc_data_t;
 
 typedef enum e_app_states {
     ST_LOADING = 0,         //Loading of the game
@@ -53,9 +55,25 @@ typedef struct s_settings {
     bool developer;         //Developer mode
 } settings_t;
 
+typedef union u_interaction_data {
+    npc_data_t *npc;
+} interaction_data_t;
+
+typedef enum e_interaction_type {
+    IT_NULL = 0,
+    IT_NPC
+} interaction_type_t;
+
+typedef struct s_interactions {
+    interaction_data_t data;
+    interaction_type_t type;
+    bool interaction;
+} interactions_t;
+
 typedef struct s_app {
     app_states_t state;     //State of the app
     worlds_t world;         //Actual wolrd where player is
+    list_t *items;          //Items available in game
     list_t *players;        //List of players
     player_t *player;       //Player of the client
     player_t *partner;      //Partner player
@@ -64,6 +82,10 @@ typedef struct s_app {
     list_t *tasks_setup;    //Taks of the game
     settings_t *settings;   //Settings of the application
     network_t *network;     //Network
+    interactions_t *interaction;    //Interaction in the app
 } app_t;
+
+typedef bool (*app_init_member_t)(app_t *app, renderer_t *renderer);
+typedef void (*app_free_member_t)(app_t *app);
 
 #endif /* !APP_TYPES_H_ */

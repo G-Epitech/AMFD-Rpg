@@ -15,6 +15,6 @@ void loading_sleep(int time)
 {
     sfClock *clock = sfClock_create();
 
-    while (sfTime_asMilliseconds(sfClock_getElapsedTime(clock)) != time) {};
+    while (sfTime_asMilliseconds(sfClock_getElapsedTime(clock)) < time);
     sfClock_destroy(clock);
 }

@@ -16,48 +16,19 @@
 #include "app/loading/loading.h"
 #include "my/include/my.h"
 
-static void maps_load_line_collision(map_t *map, cjson_array_t *array)
-{
-    cjson_t *line = NULL;
-    cjson_array_t *lines = NULL;
-    size_t len = 0;
-
-    for (size_t i = 0; i < array->len; i++) {
-        line = array->first;
-        cjson_get_array(line, &lines);
-        map->collision_layer[i] = malloc(sizeof(int) *
-        lines->len);
-        if (map->collision_layer[i] == NULL)
-            return;
-        map->collision_layer[i] = cjson_array_to_int_array(lines, &len);
-        array->first = array->first->next;
-    }
-}
-
-static void maps_load_collision(map_t *map, cjson_t *map_config)
-{
-    cjson_array_t *array = NULL;
-
-    if (!cjson_get_prop_array(map_config, "collision_layer", &array))
-        return;
-    map->collision_layer = malloc(sizeof(int *) * array->len);
-    if (map->collision_layer == NULL)
-        return;
-    maps_load_line_collision(map, array);
-}
-
 static void maps_append_data(map_t *map, cjson_t *map_config)
 {
     char *back = cjson_get_prop_string_unsafe(map_config, "back");
     char *front = cjson_get_prop_string_unsafe(map_config, "front");
+    char *collision = cjson_get_prop_string_unsafe(map_config, "collision");
 
     map->world = cjson_get_prop_int_unsafe(map_config, "world");
     map->back = sfTexture_createFromFile(back, NULL);
     map->front = sfTexture_createFromFile(front, NULL);
-    if (back)
-        free(back);
-    if (front)
-        free(front);
+    map->collision = sfImage_createFromFile(collision);
+    free(back);
+    free(front);
+    free(collision);
 }
 
 static void maps_append(list_t *maps, cjson_t *map_config, int i,
@@ -78,9 +49,6 @@ renderer_t *renderer)
     load_screen_add_bar(renderer, 3, "Chargement des ressources...",
     my_strcat("Map sol ", nbr_to_str(i)));
     maps_append_data(map, map_config);
-    load_screen_add_bar(renderer, 3, "Chargement des ressources...",
-    my_strcat("Map collisions ", nbr_to_str(i)));
-    maps_load_collision(map, map_config);
     list_append(maps, node);
 }
 

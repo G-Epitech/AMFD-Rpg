@@ -10,8 +10,15 @@
 
     #include <SFML/Graphics.h>
     #include "types/renderer/types.h"
-    #include "types/character/types.h"
-    #include "app/display/types.h"
+    #include "types/characters/types.h"
+
+    #define SIZE_UP(pos, scale) ((sfVector2f) {pos.x * scale, pos.y * scale})
+    #define MIDDLE_POS(size, middle) ((sfVector2f)\
+    {size.x + middle.x, middle.y})
+    #define RIGHT_POS(size, middle, right, scale) ((sfVector2f)\
+    {size.x + middle.x * scale+ right.x, right.y})
+    #define GAME_TITLE "Hackers Quests"
+    #define SETTINGS_TITLE "Settings"
 
 /**
  * @brief Display player on map
@@ -126,29 +133,90 @@ void display_settings(renderer_t *renderer, app_t *app);
 /**
  * @brief Display levers
  * @param renderer Renderer structure
- * @param app 1pplication informations
+ * @param app Application informations
  */
 void display_components_levers(renderer_t *renderer, app_t *app);
 
 /**
- * @brief Dispatch display of buttons
- * @param renderer Renderer structure
- * @param app 1pplication informations
+ * @brief Call all buttons displayers
+ * @param button Button to display
+ * @param renderer Renderer object
  */
 void display_buttons_dispatch(button_t *button, renderer_t *renderer);
 
 /**
- * @brief Display button
- * @param renderer Renderer structure
- * @param app 1pplication informations
+ * @brief Display give button
+ * @param button Button to display
+ * @param renderer Renderer object
  */
 void display_button(button_t *button, renderer_t *renderer);
 
 /**
- * @brief Display select character
- * @param renderer Renderer structure
- * @param app 1pplication informations
+ * @brief Display inventory of game
+ * @param renderer Renderer object
+ * @param app App object
+ */
+void display_inventory(renderer_t *renderer, app_t *app);
+
+/**
+ * @brief Display character selector
+ * @param renderer Renderer object
+ * @param app App object
  */
 void display_select_character(renderer_t *renderer, app_t *app);
 
+/**
+ * @brief Display box of an inventory item
+ * @param renderer Renderer object
+ * @param i Index of item for which set box
+ * @param active Specify if item is in active inventory grid
+ * @param empty Specify if given box is occuped by an item
+ */
+void display_inventory_item_box(renderer_t *renderer, size_t i,
+bool active, bool empty);
+
+/**
+ * @brief Get position of given item
+ * @param i Index of item in inventory
+ * @param active Active status
+ * @param position Position pointer in which set obtained position
+ */
+void display_inventory_get_item_position(size_t i, bool active,
+sfVector2f *position);
+
+/**
+ * @brief Display inventory grids
+ * @param renderer Renderer object
+ * @param app App object
+ */
+void display_inventory_grids(renderer_t *renderer, app_t *app);
+
+/**
+ * @brief Display player profile in inventory
+ * @param renderer Renderer object
+ * @param app App object
+ */
+void display_inventory_profile(renderer_t *renderer, app_t *app);
+
+/**
+ * @brief Display content of item
+ * @param renderer Renderer object
+ * @param item Item to display
+ */
+void display_inventory_item_content(renderer_t *renderer,
+inventory_item_t *item);
+
+/**
+ * @brief Display collisions box
+ * @param renderer Renderer structure
+ * @param app Application informations
+ */
+void display_developer_collisions(renderer_t *renderer, app_t *app);
+
+/**
+ * @brief Display position of the player
+ * @param renderer Renderer structure
+ * @param app Application informations
+ */
+void display_developer_position(renderer_t *renderer, app_t *app);
 #endif /* !DISPLAY_H_ */

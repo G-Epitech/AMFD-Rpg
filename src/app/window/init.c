@@ -13,9 +13,9 @@ sfRenderWindow *window_init(bool fullscreen)
 {
     sfRenderWindow *window = NULL;
     sfVideoMode video_mode = WIN_VIDEO_MODE;
-    sfUint32 style = sfResize | sfClose;
-    char *name = "RPG";
+    char *name = WIN_TITLE;
     int fps = WIN_FPS;
+    sfUint32 style = sfResize | sfClose;
 
     if (fullscreen)
         style = sfResize | sfClose | sfFullscreen;

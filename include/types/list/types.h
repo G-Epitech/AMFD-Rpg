@@ -9,8 +9,11 @@
     #define TYPES_H_
 
     #include <stdbool.h>
+    #include "app/tasks/types.h"
     #include "types/npc/types.h"
+    #include "app/items/types.h"
     #include "types/players/types.h"
+    #include "app/tasks/bash/types.h"
     #include "types/components/types.h"
     #include "types/ressources/types.h"
     #include "app/tasks/bash/types.h"
@@ -20,6 +23,7 @@
 typedef struct s_list list_t;
 
 typedef union u_node_data {
+    inventory_item_t *inventory_item;
     task_bash_node_t *node_bash;
     task_flipper_node_t *node_flip;
     background_t *background;
@@ -28,6 +32,7 @@ typedef union u_node_data {
     player_t *player;
     button_t *button;
     lever_t *lever;
+    item_t *item;
     task_t *task;
     list_t *list;
     skin_t skin;

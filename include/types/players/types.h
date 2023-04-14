@@ -23,7 +23,6 @@ typedef struct s_player {
     int xp;                     //Player exeprience
     int orientation;            //Orientation of the player
     sfVector2f position;        //Position of the player
-    sfVector2f colision_pos;    //Position of the player in the colision layer
     list_t *inventory;          //Inventory with all objects
     int skin_id;                //Skin ID
 } player_t;

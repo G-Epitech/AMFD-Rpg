@@ -8,6 +8,7 @@
 #include "types/npc/npc.h"
 #include "types/list/list.h"
 #include "cjson/include/cjson.h"
+#include "types/renderer/types.h"
 
 static void npcs_load_from_array(list_t *npcs, cjson_array_t *array)
 {
@@ -25,7 +26,7 @@ static void npcs_load_from_array(list_t *npcs, cjson_array_t *array)
     }
 }
 
-list_t *npcs_load(void)
+list_t *npcs_load(renderer_t *renderer)
 {
     list_t *npcs = list_new();
     cjson_t *file = cjson_parse_file(NPC_CONFIG);
@@ -42,5 +43,6 @@ list_t *npcs_load(void)
         return NULL;
     }
     npcs_load_from_array(npcs, array);
+    npcs_include_to_array(renderer, npcs);
     return npcs;
 }
