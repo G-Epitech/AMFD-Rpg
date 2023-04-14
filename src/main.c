@@ -33,8 +33,15 @@ void display_sounds(app_t *app)
     }
     while (themes) {
         my_putstr(themes->data.theme->title);
+        my_putchar(' ');
         my_put_nbr(themes->data.theme->status);
+        my_putchar(' ');
         my_put_nbr(themes->data.theme->loop);
+        my_putstr("\nApp states:");
+        for (size_t i = 0; i < themes->data.theme->app_state_size; i++) {
+            my_put_nbr(themes->data.theme->associated_app_state[i]);
+            my_putchar(' ');
+        }
         my_putchar('\n');
         themes = themes->next;
     }

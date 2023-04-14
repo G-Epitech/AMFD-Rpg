@@ -4,7 +4,7 @@
         "buffer": "assets/sounds/menu_theme.ogg",
         "volume": 30.0,
         "loop": 0,
-        "app_state": 1,
+        "app_state": [1, 2, 3],
         "status": 0
     }
 ]
