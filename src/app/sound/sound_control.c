@@ -11,8 +11,8 @@
 
 static int one_time_effect(sound_t *sound, int sound_effect)
 {
-    if (sound_effect == CLICK_MENU) {
-        my_putchar('d');
+    if (sound_effect == CLICK_MENU ||
+    sound_effect == MENU_THEME) {
         sfSound_play(sound->sound);
         return 1;
     }

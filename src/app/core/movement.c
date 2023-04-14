@@ -46,9 +46,8 @@ app_t *app)
             (sfVector2f) {control[i].offset.x / 16, control[i].offset.y / 16});
         }
     }
-    if (player_blocked == true) {
+    if (player_blocked == true)
         sound_control(app->sound_board, WALK, sfStopped);
-    }
     if (app->partner)
         network_send_position(app);
 }

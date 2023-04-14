@@ -26,7 +26,8 @@ static void update_sound(sound_t *sound)
 
 static int is_one_time_sound(sound_t *sound)
 {
-    if (my_strcmp(sound->title, "click_menu") == 0)
+    if (my_strcmp(sound->title, "click_menu") == 0 ||
+    my_strcmp(sound->title, "menu_theme") == 0)
         return 0;
     return 1;
 }

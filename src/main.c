@@ -14,6 +14,7 @@
 #include "types/list/types.h"
 #include "app/events/events.h"
 #include "app/display/display.h"
+#include "app/sound/sound_control.h"
 #include "types/renderer/renderer.h"
 #include "types/components/components.h"
 #include "types/ressources/ressources.h"
@@ -45,6 +46,8 @@ int main(void)
         renderer_destroy(renderer);
         return 84;
     }
+    my_putchar('d');
+    sound_control(app->sound_board, MENU_THEME, sfPlaying);
     while (sfRenderWindow_isOpen(renderer->window)) {
         if (app_run(renderer, app) == 84)
             return 84;

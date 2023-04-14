@@ -20,7 +20,8 @@ typedef struct s_list list_t;
 
 typedef enum e_sound_index {
     WALK,
-    CLICK_MENU
+    CLICK_MENU,
+    MENU_THEME
 } sound_index_t;
 
 /**

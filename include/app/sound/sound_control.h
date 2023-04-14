@@ -17,6 +17,7 @@
  * Current sounds:
  * WALK: walking sound
  * CLICK_MENU: menu button click
+ * MENU_THEME: the music of the menu
  * @param new_sound_status Sets the new status of the sound
  * sfPlaying: Start playing the sound.\n
  * sfPaused: Pause the sound.\n
