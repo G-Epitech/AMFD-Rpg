@@ -86,8 +86,15 @@ SRC = 		src/main.c \
 			src/app/init/players.c \
 			src/app/init/settings.c \
 			src/app/init/tasks.c \
+			src/app/init/animations.c \
+			\
+			src/app/free/animations.c \
 			\
 			src/app/free/free.c \
+			\
+			src/app/animations/handler.c \
+			src/app/animations/event_new.c \
+			src/app/animations/screen/zoom.c \
 			\
 			src/app/states/on_state.c \
 			src/app/states/switch.c \

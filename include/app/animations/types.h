@@ -13,6 +13,8 @@
     #include "types/players/types.h"
 
     #define PLAYER_IN_ANIM(animation) (animation->events->len > 0)
+    #define ZOOM_TIME 10
+    #define ZOOM_RATIO 100
 
 typedef struct s_list list_t;
 
@@ -30,7 +32,16 @@ typedef struct s_animation_event_npc {
     float speed;
 } animation_event_npc_t;
 
+typedef struct s_animation_event_zoom {
+    sfView *view;
+    float zoom;
+    sfInt32 last_time;
+    float speed;
+    int total;
+} animation_event_zoom_t;
+
 typedef union u_animation_event_data {
+    animation_event_zoom_t *zoom;
     animation_event_npc_t *npc;
     animation_event_player_t *player;
 } animation_event_data_t;
@@ -38,9 +49,9 @@ typedef union u_animation_event_data {
 typedef enum e_animation_event_type {
     AE_NULL = 0,
     AE_ZOOM,
+    AE_FADE,
     AE_MOVE_NPC,
-    AE_MOVE_PLAYER,
-    AE_FADE
+    AE_MOVE_PLAYER
 } animation_event_type_t;
 
 typedef struct s_animation_event {
@@ -51,6 +62,7 @@ typedef struct s_animation_event {
 typedef struct s_animations {
     list_t *events;
     list_t *map;
+    sfClock *clock;
 } animations_t;
 
 #endif /* !ANIMATIONS_TYPES_H_ */
