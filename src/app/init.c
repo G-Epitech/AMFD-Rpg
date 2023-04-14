@@ -51,7 +51,16 @@ static int init_player(app_t *app)
     return 0;
 }
 
-app_t *app_init(void)
+static interactions_t *init_interactions(void)
+{
+    interactions_t *interactions = malloc(sizeof(interactions_t));
+
+    interactions->interaction = false;
+    interactions->type = IT_NULL;
+    return interactions;
+}
+
+app_t *app_init(renderer_t *renderer)
 {
     app_t *app = malloc(sizeof(app_t));
 
@@ -61,10 +70,11 @@ app_t *app_init(void)
     app->world = WL_VILLAGE;
     app->control = init_controller();
     app->players = players_list_init();
-    app->npcs = npcs_load();
+    app->npcs = npcs_load(renderer);
     app->tasks_setup = task_create();
     app->settings = init_settings();
     app->network = network_init();
+    app->interaction = init_interactions();
     if (!app->players || !app->tasks_setup) {
         free(app);
         return NULL;

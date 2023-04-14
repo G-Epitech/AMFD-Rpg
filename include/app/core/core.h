@@ -20,9 +20,7 @@
  * player move
  * @param collision_layer Layer of collisions
 */
-void core_handle_movement(control_t *control, int **collision_layer,
-app_t *app);
-
+void core_handle_movement(control_t *control, sfImage *collision, app_t *app);
 /**
  * @brief Function that will handle the core actions of the
  * game
@@ -30,5 +28,12 @@ app_t *app);
  * @param app Main app structure
 */
 int core_handler(renderer_t *renderer, app_t *app);
+
+/**
+ * @brief Interactions of NPCs
+ * @param id Id of the NPC
+ * @param app Application structure
+ */
+void core_interactions_npc(sfColor pixel, app_t *app);
 
 #endif /* !CORE_H_ */

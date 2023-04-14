@@ -18,7 +18,7 @@ typedef struct s_button button_t;
  * @brief Init application
  * @return The new app structure
 */
-app_t *app_init(void);
+app_t *app_init(renderer_t *renderer);
 
 /**
  * @brief Run application
