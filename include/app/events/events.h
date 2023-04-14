@@ -84,6 +84,13 @@ void event_key_pressed(sfEvent event, app_t *app);
 void event_key_released(sfEvent event, app_t *app);
 
 /**
+ * @brief Keyboard E interaction
+ * @param event Event structure
+ * @param app Application structure
+ */
+void keyboard_interaction(sfEvent event, app_t *app);
+
+/**
  * @brief Handler of event mouse button pressed
  * @param app Application structure
  * @param renderer Renderer structure
