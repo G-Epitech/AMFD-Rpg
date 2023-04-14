@@ -14,14 +14,16 @@
     #include <SFML/System/Vector3.h>
     #include <stdbool.h>
 
-    #define SOUND_CONFIG "configs/sounds.json"
+    #define SOUND_FX_CONFIG "configs/sound/sound_fx.json"
+    #define SOUND_THEME_CONFIG "configs/sound/sound_themes.json"
+    #define SOUND_FX app->sound_board->sound_fx
+    #define SOUND_THEME app->sound_board->sound_themes
 
 typedef struct s_list list_t;
 
 typedef enum e_sound_index {
     WALK,
-    CLICK_MENU,
-    MENU_THEME
+    CLICK_MENU
 } sound_index_t;
 
 /**
@@ -37,5 +39,18 @@ typedef struct sound_s {
     sfSound *sound;
 } sound_t;
 
+typedef struct sound_theme_s {
+    char *title;
+    float volume;
+    bool loop;
+    int associated_app_state;
+    sfSoundStatus status;
+    sfMusic *music;
+} sound_theme_t;
+
+typedef struct sound_board_s {
+    list_t *sound_fx;
+    list_t *sound_themes;
+} sound_board_t;
 
 #endif /* !SOUND_TYPES_H_ */

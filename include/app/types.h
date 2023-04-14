@@ -54,17 +54,17 @@ typedef struct s_settings {
 } settings_t;
 
 typedef struct s_app {
-    app_states_t state;     //State of the app
-    worlds_t world;         //Actual wolrd where player is
-    list_t *players;        //List of players
-    player_t *player;       //Player of the client
-    player_t *partner;      //Partner player
-    list_t *npcs;           //NPC of game
-    control_t *control;     //Controller of the player
-    list_t *tasks_setup;    //Taks of the game
-    settings_t *settings;   //Settings of the application
-    network_t *network;     //Network
-    list_t *sound_board;    //List of sounds for the game
+    app_states_t state;         //State of the app
+    worlds_t world;             //Actual wolrd where player is
+    list_t *players;            //List of players
+    player_t *player;           //Player of the client
+    player_t *partner;          //Partner player
+    list_t *npcs;               //NPC of game
+    control_t *control;         //Controller of the player
+    list_t *tasks_setup;        //Taks of the game
+    settings_t *settings;       //Settings of the application
+    network_t *network;         //Network
+    sound_board_t *sound_board; //Soundboard
 } app_t;
 
 #endif /* !APP_TYPES_H_ */

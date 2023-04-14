@@ -18,6 +18,8 @@ SRC = 		src/main.c \
 			src/types/list/list.c \
 			\
 			src/types/sound/load.c	\
+			src/types/sound/load_sound_fx.c	\
+			src/types/sound/load_sound_themes.c	\
 			\
 			src/types/node/node.c \
 			src/types/node/swap.c \

@@ -39,7 +39,7 @@ app_t *app)
         if (control[i].direction && movement_is_possible(player->colision_pos,
         control[i].offset, collision_layer)) {
             player_blocked = false;
-            sound_control(app->sound_board, WALK, sfPlaying);
+            sound_control(SOUND_FX, WALK, sfPlaying);
             player->position = increment_position(player->position,
             control[i].offset);
             player->colision_pos = increment_position(player->colision_pos,
@@ -47,7 +47,7 @@ app_t *app)
         }
     }
     if (player_blocked == true)
-        sound_control(app->sound_board, WALK, sfStopped);
+        sound_control(SOUND_FX, WALK, sfStopped);
     if (app->partner)
         network_send_position(app);
 }

@@ -43,12 +43,12 @@ void event_components_buttons(renderer_t *renderer, app_t *app, sfEvent event)
     while (node) {
         button = node->data.button;
         if (on_button(button, app, event) && button->next_state > 0) {
-            sound_control(app->sound_board, CLICK_MENU, sfPlaying);
+            sound_control(SOUND_FX, CLICK_MENU, sfPlaying);
             app->state = button->next_state;
             break;
         }
         if (on_button(button, app, event)) {
-            sound_control(app->sound_board, CLICK_MENU, sfPlaying);
+            sound_control(SOUND_FX, CLICK_MENU, sfPlaying);
             event_button_map[button->event].function(renderer, app, button);
             break;
         }

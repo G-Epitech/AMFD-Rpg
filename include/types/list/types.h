@@ -23,6 +23,7 @@ typedef union u_node_data {
     task_bash_node_t *node_bash;
     background_t *background;
     npc_dialog_t npc_dialog;
+    sound_theme_t *theme;
     npc_data_t npc_data;
     player_t *player;
     button_t *button;

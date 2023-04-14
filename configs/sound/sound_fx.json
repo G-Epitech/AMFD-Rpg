@@ -1,4 +1,4 @@
- [
+[
     {
         "title": "walking",
         "buffer": "assets/sounds/walk.ogg",
@@ -11,13 +11,6 @@
         "buffer": "assets/sounds/click_menu.ogg",
         "volume": 50.0,
         "loop": 0,
-        "status": 0
-    },
-    {
-        "title": "menu_theme",
-        "buffer": "assets/sounds/menu_theme.ogg",
-        "volume": 5.0,
-        "loop": 1,
         "status": 0
     }
 ]

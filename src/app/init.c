@@ -63,7 +63,7 @@ app_t *app_init(void)
     app->control = init_controller();
     app->players = players_list_init();
     app->npcs = npcs_load();
-    app->sound_board = sound_load();
+    app->sound_board = load_sound_board();
     app->tasks_setup = task_create();
     app->settings = init_settings();
     app->network = network_init();

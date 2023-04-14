@@ -21,7 +21,8 @@
 
 void display_sounds(app_t *app)
 {
-    node_t *sounds = app->sound_board->first;
+    node_t *sounds = app->sound_board->sound_fx->first;
+    node_t *themes = app->sound_board->sound_themes->first;
 
     while (sounds) {
         my_putstr(sounds->data.sound->title);
@@ -30,6 +31,13 @@ void display_sounds(app_t *app)
         my_putchar('\n');
         sounds = sounds->next;
     }
+    while (themes) {
+        my_putstr(themes->data.theme->title);
+        my_put_nbr(themes->data.theme->status);
+        my_put_nbr(themes->data.theme->loop);
+        my_putchar('\n');
+        themes = themes->next;
+    }
 }
 
 int main(void)
@@ -37,6 +45,7 @@ int main(void)
     renderer_t *renderer = renderer_init();
     app_t *app = NULL;
 
+    my_putchar('d');
     load_renderer(renderer);
     app = app_init();
     display_sounds(app);
@@ -46,8 +55,6 @@ int main(void)
         renderer_destroy(renderer);
         return 84;
     }
-    my_putchar('d');
-    sound_control(app->sound_board, MENU_THEME, sfPlaying);
     while (sfRenderWindow_isOpen(renderer->window)) {
         if (app_run(renderer, app) == 84)
             return 84;

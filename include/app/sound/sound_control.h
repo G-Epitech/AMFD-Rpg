@@ -12,7 +12,7 @@
 
 /**
  * @brief Allows you to control game sound
- * @param sound_board List of sounds
+ * @param sound_board Type of sound you want to control
  * @param sound_effect Sound you want to control
  * Current sounds:
  * WALK: walking sound
