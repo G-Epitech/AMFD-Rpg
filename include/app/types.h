@@ -13,6 +13,7 @@
     #include "app/network/types.h"
 
 typedef struct s_list list_t;
+typedef struct s_renderer renderer_t;
 typedef struct s_npc_data npc_data_t;
 
 typedef enum e_app_states {
@@ -69,17 +70,21 @@ typedef struct s_interactions {
 } interactions_t;
 
 typedef struct s_app {
-    app_states_t state;             //State of the app
-    worlds_t world;                 //Actual wolrd where player is
-    list_t *players;                //List of players
-    player_t *player;               //Player of the client
-    player_t *partner;              //Partner player
-    list_t *npcs;                   //NPC of game
-    control_t *control;             //Controller of the player
-    list_t *tasks_setup;            //Taks of the game
-    settings_t *settings;           //Settings of the application
-    network_t *network;             //Network
+    app_states_t state;     //State of the app
+    worlds_t world;         //Actual wolrd where player is
+    list_t *items;          //Items available in game
+    list_t *players;        //List of players
+    player_t *player;       //Player of the client
+    player_t *partner;      //Partner player
+    list_t *npcs;           //NPC of game
+    control_t *control;     //Controller of the player
+    list_t *tasks_setup;    //Taks of the game
+    settings_t *settings;   //Settings of the application
+    network_t *network;     //Network
     interactions_t *interaction;    //Interaction in the app
 } app_t;
+
+typedef bool (*app_init_member_t)(app_t *app, renderer_t *renderer);
+typedef void (*app_free_member_t)(app_t *app);
 
 #endif /* !APP_TYPES_H_ */

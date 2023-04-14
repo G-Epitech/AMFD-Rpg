@@ -34,6 +34,12 @@ SRC = 		src/main.c \
 			\
 			src/types/players/init.c \
 			src/types/players/add.c \
+			src/types/players/inventory.c \
+			\
+			src/types/items/load_all.c \
+			src/types/items/load.c \
+			\
+			src/types/characters/rect.c \
 			\
 			src/types/components/load.c \
 			src/types/components/vector.c \
@@ -41,6 +47,10 @@ SRC = 		src/main.c \
 			src/types/components/buttons/load.c \
 			src/types/components/levers/append.c \
 			src/types/components/levers/load.c \
+			\
+			src/types/inventory/add.c \
+			src/types/inventory/item.c \
+			src/types/inventory/remove.c \
 			\
 			src/types/ressources/load.c \
 			src/types/ressources/free.c \
@@ -61,10 +71,23 @@ SRC = 		src/main.c \
 			\
 			src/types/ressources/icons/load.c \
 			\
+			src/types/ressources/items/load.c \
+			\
 			src/types/view/init.c \
 			\
-			src/app/init.c \
 			src/app/run.c \
+			\
+			src/app/init/controller.c \
+			src/app/init/init.c \
+			src/app/init/interactions.c \
+			src/app/init/items.c \
+			src/app/init/network.c \
+			src/app/init/npcs.c \
+			src/app/init/players.c \
+			src/app/init/settings.c \
+			src/app/init/tasks.c \
+			\
+			src/app/free/free.c \
 			\
 			src/app/states/on_state.c \
 			src/app/states/switch.c \
@@ -130,6 +153,11 @@ SRC = 		src/main.c \
 			src/app/display/menus/main_menu.c \
 			src/app/display/menus/settings.c \
 			src/app/display/menus/select_character.c \
+			src/app/display/inventory/grids.c \
+			src/app/display/inventory/item_box.c \
+			src/app/display/inventory/profile.c \
+			src/app/display/inventory/inventory.c \
+			src/app/display/inventory/items_content.c \
 			src/app/display/developer/collisions.c \
 			src/app/display/developer/position.c \
 			\

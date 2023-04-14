@@ -92,6 +92,7 @@ typedef struct s_ressources {
     list_t *maps;                       //List of maps (textures)
     list_t *skins;                      //List of skins (textures)
     list_t *props;                      //List of props (textures)
+    sfTexture *items;                   //Texture of items
     inventory_r_t *inventory;           //Structure of inventory ressources
     components_r_t *components;         //Structure of components ressources
     icons_r_t *icons;                   //Structure of icons ressources

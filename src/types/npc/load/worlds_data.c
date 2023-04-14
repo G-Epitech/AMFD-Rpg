@@ -11,7 +11,7 @@
 #include "types/npc/npc.h"
 #include "types/list/list.h"
 #include "cjson/include/cjson.h"
-#include "types/character/types.h"
+#include "types/characters/types.h"
 
 bool npc_load_worlds_data(cjson_array_t *config, npc_t *npc)
 {
