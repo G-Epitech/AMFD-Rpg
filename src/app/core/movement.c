@@ -30,6 +30,7 @@ static sfVector2f increment_position(sfVector2f position, sfVector2f offset)
 void core_handle_movement(control_t *control, int **collision_layer,
 app_t *app)
 {
+    bool player_blocked = true;
     player_t *player = app->player;
 
     if (app->state != ST_INGAME)
@@ -37,11 +38,16 @@ app_t *app)
     for (size_t i = 0; i < 4; i++) {
         if (control[i].direction && movement_is_possible(player->colision_pos,
         control[i].offset, collision_layer)) {
+            player_blocked = false;
+            sound_control(app->sound_board, WALK, sfPlaying);
             player->position = increment_position(player->position,
             control[i].offset);
             player->colision_pos = increment_position(player->colision_pos,
             (sfVector2f) {control[i].offset.x / 16, control[i].offset.y / 16});
         }
+    }
+    if (player_blocked == true) {
+        sound_control(app->sound_board, WALK, sfStopped);
     }
     if (app->partner)
         network_send_position(app);
