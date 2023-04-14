@@ -66,6 +66,7 @@ typedef enum e_fight_state {
 typedef struct s_fight {
     npc_data_t *npc;
     fight_state_t state;
+    int choice;
 } fight_t;
 
 typedef union u_interaction_data {

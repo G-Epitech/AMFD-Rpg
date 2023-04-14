@@ -38,6 +38,7 @@ static void set_fight_interaction(interactions_t *interactions)
         return;
     interactions->data.fight->npc = npc;
     interactions->data.fight->state = FT_CHOICE;
+    interactions->data.fight->choice = 0;
 }
 
 void interaction_fight(interactions_t *interactions, app_t *app,

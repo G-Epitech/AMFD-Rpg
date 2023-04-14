@@ -40,9 +40,10 @@ bool npc_load_worlds_data(cjson_array_t *config, npc_t *npc);
  * @brief Load given config into worlds data of npc
  * @param config Configuration of current world for npc
  * @param worlds_data List of npc worlds data
+ * @param npc link npc
  * @return Success of loading
  */
-bool npc_load_world_data(cjson_t *config, list_t *worlds_data);
+bool npc_load_world_data(cjson_t *config, list_t *worlds_data, npc_t *npc);
 
 /**
  * @brief Load dialog for given world

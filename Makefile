@@ -168,6 +168,8 @@ SRC = 		src/main.c \
 			src/app/display/inventory/items_content.c \
 			src/app/display/developer/collisions.c \
 			src/app/display/developer/position.c \
+			src/app/display/fight/fight.c \
+			src/app/display/fight/choice.c \
 			\
 			src/app/utils/test.c \
 			\

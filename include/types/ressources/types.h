@@ -83,6 +83,8 @@ typedef struct s_inventory_ressources {
 typedef struct s_icons_ressources {
     sfTexture *valid;           //Valid icon
     sfTexture *refuse;          //Refuse icon
+    sfTexture *selector_false;  //Selector false icon
+    sfTexture *selector_true;   //Selector true icon
 } icons_r_t;
 
 /**

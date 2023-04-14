@@ -13,6 +13,8 @@
     {size.x + middle.x, middle.y})
     #define RIGHT_POS(size, middle, right, scale) ((sfVector2f)\
     {size.x + middle.x * scale+ right.x, right.y})
+    #define TEXT_DEFAULT_COLOR ((sfColor) {107, 80, 82, 255})
+    #define TEXT_SELECT_COLOR ((sfColor) {218, 164, 99, 255})
     #define GAME_TITLE "Hackers Quests"
     #define SETTINGS_TITLE "Settings"
     #define VOLUME_POSITION ((sfVector2f) {1153, 490})
@@ -21,5 +23,12 @@
     #define VALID_TOM ((sfVector2f) {1173, 646})
     #define REFUSE_LUCAS ((sfVector2f) {653, 649})
     #define REFUSE_TOM ((sfVector2f) {1184, 649})
+    #define FIGHT_CHOICE_TITLE " veut se battre !"
+    #define FIGHT_CHOICE_TITLE_POSITION ((sfVector2f) {526, 810})
+    #define FIGHT_CHOICE_RESPONSIVE ((sfVector2f) {1156, 862})
+    #define FIGHT_CHOICE_RATIO 60
+    #define FIGHT_CHOICE_ICON_X 27
+    #define FIGHT_CHOICE_ICON_Y 5
+    #define FIGHT_CHOICE_CONFIG "configs/fight/choice.json"
 
 #endif /* !DISPLAY_TYPES_H_ */
