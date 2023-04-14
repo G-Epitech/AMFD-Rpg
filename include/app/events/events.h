@@ -108,4 +108,13 @@ sfEvent event);
 void event_mouse_button_released(app_t *app, renderer_t *renderer,
 sfEvent event);
 
+/**
+ * @brief Fight interaction
+ * @param interactions Interactions structure
+ * @param app App object
+ * @param renderer Renderer object
+ */
+void interaction_fight(interactions_t *interactions, app_t *app,
+renderer_t *renderer);
+
 #endif /* !EVENTS_H_ */

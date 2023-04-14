@@ -55,18 +55,34 @@ typedef struct s_settings {
     bool developer;         //Developer mode
 } settings_t;
 
+typedef enum e_fight_state {
+    FT_CHOICE = 0,
+    FT_PLAYER_ATTACK,
+    FT_WAIT,
+    FT_NPC_ATTACK,
+    FT_END
+} fight_state_t;
+
+typedef struct s_fight {
+    npc_data_t *npc;
+    fight_state_t state;
+} fight_t;
+
 typedef union u_interaction_data {
     npc_data_t *npc;
+    fight_t *fight;
 } interaction_data_t;
 
 typedef enum e_interaction_type {
     IT_NULL = 0,
-    IT_NPC
+    IT_NPC,
+    IT_FIGHT
 } interaction_type_t;
 
 typedef struct s_interactions {
     interaction_data_t data;
     interaction_type_t type;
+    bool active;
     bool interaction;
 } interactions_t;
 

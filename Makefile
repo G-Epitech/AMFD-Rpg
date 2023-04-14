@@ -112,7 +112,8 @@ SRC = 		src/main.c \
 			src/app/events/handler.c \
 			src/app/events/window/close.c \
 			src/app/events/keyboard/move.c \
-			src/app/events/keyboard/interaction.c \
+			src/app/events/keyboard/interaction/interaction.c \
+			src/app/events/keyboard/interaction/fight.c \
 			src/app/events/components/buttons.c \
 			src/app/events/components/levers.c \
 			\
