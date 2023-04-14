@@ -15,6 +15,7 @@ static void set_rect(cjson_t *config, item_t *item)
 {
     cjson_t *rect_config = cjson_get_prop(config, "rect");
     sfVector2i position = {0, 0};
+
     if (!rect_config)
         return;
     item->rect.height = ITEM_SIZE.y;

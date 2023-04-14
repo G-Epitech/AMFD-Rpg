@@ -12,8 +12,6 @@
     #include "app/items/types.h"
     #include "app/inventory/types.h"
 
-int inventory_close(renderer_t *renderer, app_t *app, button_t *button);
-
 /**
  * @brief Create a new inventory item
  * @param item Item to

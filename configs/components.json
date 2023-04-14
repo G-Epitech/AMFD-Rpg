@@ -142,8 +142,8 @@
             "icon": "assets/components/button/close1.png",
             "app_state": [300],
             "position": {"x": 1663, "y": 30},
-            "event": 13,
-            "scale": 1.83
+            "scale": 1.83,
+            "next_state": 100
         },
         {
             "icon": "assets/components/button/next_block.png",

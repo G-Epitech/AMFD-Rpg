@@ -102,8 +102,7 @@ static const struct {
     {network_connexion_host},
     {network_connexion_join},
     {states_select_character},
-    {brute_force_click},
-    {inventory_close}
+    {brute_force_click}
 };
 
 static const struct {

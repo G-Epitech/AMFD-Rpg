@@ -105,7 +105,6 @@ SRC = 		src/main.c \
 			src/app/events/keyboard/move.c \
 			src/app/events/components/buttons.c \
 			src/app/events/components/levers.c \
-			src/app/events/inventory/close.c \
 			\
 			src/app/developer/reload_json.c \
 			\
