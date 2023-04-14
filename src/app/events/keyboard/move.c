@@ -9,10 +9,11 @@
 #include "app/app.h"
 #include "types/players/types.h"
 #include "app/events/types.h"
+#include "app/sound/sound_control.h"
 
 void keyboard_press_move(sfEvent event, app_t *app)
 {
-    int current_dir = 0;
+    int current_dir = -1;
 
     for (size_t i = 0; i < 4; i++) {
         if (event.key.code == app->control[i].key) {
@@ -22,6 +23,8 @@ void keyboard_press_move(sfEvent event, app_t *app)
             break;
         }
     }
+    if (current_dir != -1)
+        sound_control(app->sound_board, WALK, sfPlaying);
     for (size_t i = 0; i < 4; i++) {
         if ((int) i != current_dir)
             app->control[i].direction = false;
@@ -31,7 +34,9 @@ void keyboard_press_move(sfEvent event, app_t *app)
 void keyboard_release_move(sfEvent event, app_t *app)
 {
     for (size_t i = 0; i < 4; i++) {
-        if (event.key.code == app->control[i].key)
+        if (event.key.code == app->control[i].key) {
+            sound_control(app->sound_board, WALK, sfStopped);
             app->control[i].direction = false;
+        }
     }
 }

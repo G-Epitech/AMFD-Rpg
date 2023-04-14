@@ -12,7 +12,7 @@
 
 /**
  * @brief Loads the list of sounds
- * @return List of sounds 
+ * @return List of sounds
 */
 list_t *sound_load(void);
 

@@ -13,7 +13,7 @@
     #include <SFML/System/InputStream.h>
     #include <SFML/System/Vector3.h>
     #include <stdbool.h>
-    
+
     #define SOUND_CONFIG "configs/sounds.json"
 
 typedef struct s_list list_t;
@@ -34,5 +34,6 @@ typedef struct sound_s {
     sfSoundStatus status;
     sfSound *sound;
 } sound_t;
+
 
 #endif /* !SOUND_TYPES_H_ */

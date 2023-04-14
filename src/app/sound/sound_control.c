@@ -6,6 +6,7 @@
 */
 
 #include "app/sound/sound.h"
+#include "my/include/my.h"
 #include "types/list/list.h"
 
 void sound_control(list_t *sound_board, int sound_index,
@@ -20,5 +21,6 @@ sfSoundStatus new_sound_status)
         sound_list = sound_list->next;
         i++;
     }
+    my_putstr(sound_list->data.sound->title);
     sound_list->data.sound->status = new_sound_status;
 }

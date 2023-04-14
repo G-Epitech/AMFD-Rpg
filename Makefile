@@ -132,6 +132,7 @@ SRC = 		src/main.c \
 			\
 			src/app/core/handler.c	\
 			src/app/core/movement.c	\
+			src/app/core/sound.c	\
 			\
 			src/app/sound/sound_control.c	\
 			\
