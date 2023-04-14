@@ -19,6 +19,7 @@ static const app_init_member_t app_init_members[] = {
     &app_init_tasks,
     &app_init_settings,
     &app_init_network,
+    &app_init_interactions,
     NULL
 };
 

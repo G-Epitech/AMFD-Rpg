@@ -7,10 +7,12 @@
 
 #include <stdlib.h>
 #include "app/types.h"
+#include "types/renderer/types.h"
 #include "app/items/items.h"
 
-bool app_init_items(app_t *app)
+bool app_init_items(app_t *app, renderer_t *renderer)
 {
+    (void) renderer;
     app->items = items_load();
     return app->items ? true : false;
 }

@@ -26,6 +26,7 @@ SRC = 		src/main.c \
 			src/types/npc/load/enemy.c \
 			src/types/npc/load/world_data.c \
 			src/types/npc/load/worlds_data.c \
+			src/types/npc/load/include_array.c \
 			src/types/npc/destroy/worlds_data.c \
 			src/types/npc/destroy/destroy_all.c \
 			src/types/npc/destroy/enemy.c \
@@ -78,6 +79,7 @@ SRC = 		src/main.c \
 			\
 			src/app/init/controller.c \
 			src/app/init/init.c \
+			src/app/init/interactions.c \
 			src/app/init/items.c \
 			src/app/init/network.c \
 			src/app/init/npcs.c \
@@ -134,6 +136,7 @@ SRC = 		src/main.c \
 			src/app/display/map/map.c \
 			src/app/display/map/back.c \
 			src/app/display/tasks/script_bash/display.c \
+			src/app/display/tasks/brute_force/display.c \
 			src/app/display/tasks/handler.c \
 			src/app/display/npcs/npcs.c \
 			src/app/display/player/player.c \
@@ -154,9 +157,8 @@ SRC = 		src/main.c \
 			src/app/display/inventory/profile.c \
 			src/app/display/inventory/inventory.c \
 			src/app/display/inventory/items_content.c \
-			\
-			src/app/core/handler.c	\
-			src/app/core/movement.c	\
+			src/app/display/developer/collisions.c \
+			src/app/display/developer/position.c \
 			\
 			src/app/utils/test.c \
 			\
@@ -170,7 +172,9 @@ SRC = 		src/main.c \
 			src/app/core/tasks/brute_force/init_node.c \
 			src/app/core/tasks/brute_force/click.c \
 			src/app/core/tasks/brute_force/released.c \
-			src/app/display/tasks/brute_force/display.c \
+			src/app/core/handler.c	\
+			src/app/core/interactions/movement.c \
+			src/app/core/interactions/npc.c \
 			\
 			src/app/events/handler/closed.c \
 			src/app/events/handler/mouse_button_pressed.c \

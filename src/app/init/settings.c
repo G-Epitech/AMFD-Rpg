@@ -7,12 +7,14 @@
 
 
 #include <stdlib.h>
+#include "types/renderer/types.h"
 #include "app/types.h"
 
-bool app_init_settings(app_t *app)
+bool app_init_settings(app_t *app, renderer_t *renderer)
 {
     settings_t *settings = malloc(sizeof(settings_t));
 
+    (void) renderer;
     if (!settings)
         return false;
     settings->developer = false;

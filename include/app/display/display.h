@@ -133,7 +133,7 @@ void display_settings(renderer_t *renderer, app_t *app);
 /**
  * @brief Display levers
  * @param renderer Renderer structure
- * @param app 1pplication informations
+ * @param app Application informations
  */
 void display_components_levers(renderer_t *renderer, app_t *app);
 
@@ -206,4 +206,17 @@ void display_inventory_profile(renderer_t *renderer, app_t *app);
 void display_inventory_item_content(renderer_t *renderer,
 inventory_item_t *item);
 
+/**
+ * @brief Display collisions box
+ * @param renderer Renderer structure
+ * @param app Application informations
+ */
+void display_developer_collisions(renderer_t *renderer, app_t *app);
+
+/**
+ * @brief Display position of the player
+ * @param renderer Renderer structure
+ * @param app Application informations
+ */
+void display_developer_position(renderer_t *renderer, app_t *app);
 #endif /* !DISPLAY_H_ */

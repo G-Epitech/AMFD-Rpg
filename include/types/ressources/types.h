@@ -33,9 +33,9 @@ typedef struct s_skin {
 */
 typedef struct s_map {
     worlds_t world;         //Id of the world where the map must be display
-    int **collision_layer;  //Collision layer for the player
     sfTexture *back;        //Texture of the back of the map
     sfTexture *front;       //Texture of the front of the map
+    sfImage *collision;     //Image of collision
 } map_t;
 
 /**
