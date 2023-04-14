@@ -71,12 +71,12 @@ static void display_circle(renderer_t *renderer, app_t *app)
 
     while (temp_circle) {
         if (STATUS_CIRCLE(temp_circle) == OPEN)
-            sfCircleShape_setOutlineColor(objects->circle, sfGreen);
+            sfCircleShape_setOutlineColor(objects->circle, COLOR_GRENN);
         else
-            sfCircleShape_setOutlineColor(objects->circle, sfRed);
+            sfCircleShape_setOutlineColor(objects->circle, COLOR_RED);
         pos.x = POS_CIRCLE(temp_circle).x - RAYON_CIRCLE(temp_circle);
         pos.y = POS_CIRCLE(temp_circle).y - RAYON_CIRCLE(temp_circle);
-        sfCircleShape_setOutlineThickness(objects->circle, 2);
+        sfCircleShape_setOutlineThickness(objects->circle, 5);
         sfCircleShape_setFillColor(objects->circle, sfTransparent);
         sfCircleShape_setRadius(objects->circle, RAYON_CIRCLE(temp_circle));
         sfCircleShape_setPosition(objects->circle, pos);

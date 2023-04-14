@@ -39,7 +39,7 @@ void reset_setup_flipper(app_t *app, int *prev_sec, int *prev_mili_sec)
     NB_LIFE_FLIPPER(node) = 3;
     srand(time(NULL));
     NB_CIRCLE_HIT(node) = 0;
-    NB_CIRCLE_FLIPPER(node) = 10 + rand() % 11;
+    NB_CIRCLE_FLIPPER(node) = 60 + rand() % 11;
     NB_CIRCLE_CREATE(node) = 0;
     clear_list(app);
     (*prev_sec) = 0;
