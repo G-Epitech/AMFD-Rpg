@@ -32,7 +32,7 @@ node_t *task_create_nodes_flipper(void)
     srand(time(NULL));
     flip.task = task;
     flip.task->content.flipper.just_started = true;
-    flip.task->content.flipper.nb_circles = 10 + rand() % 11;
+    flip.task->content.flipper.nb_circles = 50 + rand() % 11;
     flip.task->content.flipper.nb_lifes = 3;
     flip.task->content.flipper.circles = list_new();
     flip.task->content.flipper.nb_circle_create = 0;

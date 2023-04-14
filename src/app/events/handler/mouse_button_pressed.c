@@ -24,7 +24,8 @@ renderer_t *renderer)
     event.mouseButton.y = coords.y;
     event_components_buttons(renderer, app, event);
     event_components_levers(renderer, app, event);
-    event_task_flipper(renderer, app);
+    if (app->state == ST_TASK_FLIPPER)
+        event_task_flipper(renderer, app);
 }
 
 void event_mouse_button_pressed(app_t *app, renderer_t *renderer,
