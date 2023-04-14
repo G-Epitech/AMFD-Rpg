@@ -23,9 +23,9 @@ static void time_handler(app_t *app, int *time_mili_int)
     TIME(node->content.flipper) =
     sfClock_getElapsedTime(CLOCK(node->content.flipper));
     TIME_FLOAT(node->content.flipper) =
-    TIME(node->content.flipper).microseconds / (1000000.0);
+    TIME(node->content.flipper).microseconds / (SECOND_MICRO);
     (*time_mili_int) =
-    (int) TIME(node->content.flipper).microseconds / (100000.0);
+    (int) TIME(node->content.flipper).microseconds / SECOND_MILI;
 }
 
 static void game_result(app_t *app, int *prev_sec,

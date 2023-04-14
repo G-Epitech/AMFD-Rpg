@@ -18,6 +18,7 @@
     #define TIME_FLOAT(node) node.handler_time->time_float
     #define TIME_INT(node) node.handler_time->timer_int
     #define TIME(node) node.handler_time->time
+    #define SECOND_MICRO 1000000.0
 
 typedef union s_task_content {
     task_bash_t script;

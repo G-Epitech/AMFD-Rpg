@@ -22,7 +22,7 @@ static float distance_click(renderer_t *renderer, node_t *temp_circle)
     sfVector2i pos_click = sfMouse_getPositionRenderWindow(renderer->window);
     sfVector2f pos_world =
     sfRenderWindow_mapPixelToCoords(renderer->objects->window, pos_click, NULL);
-    sfVector2f pos;
+    sfVector2f pos = {0, 0};
 
     pos.x = POS_CIRCLE(temp_circle).x;
     pos.y = POS_CIRCLE(temp_circle).y;

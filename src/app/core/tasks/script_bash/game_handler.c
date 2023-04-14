@@ -20,7 +20,7 @@ static void time_handler(app_t *app)
     TIME(bash->content.script) =
     sfClock_getElapsedTime(CLOCK(bash->content.script));
     TIME_FLOAT(bash->content.script) =
-    TIME(bash->content.script).microseconds / (1000000.0);
+    TIME(bash->content.script).microseconds / SECOND_MICRO;
 }
 
 int app_task_bash_core(app_t *app)

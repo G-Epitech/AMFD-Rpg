@@ -67,7 +67,7 @@ static void display_circle(renderer_t *renderer, app_t *app)
     renderer_objects_t *objects = renderer->objects;
     task_t *node = find_task_node(app, 3);
     node_t *temp_circle = node->content.flipper.circles->first;
-    sfVector2f pos;
+    sfVector2f pos = {0, 0};
 
     while (temp_circle) {
         if (STATUS_CIRCLE(temp_circle) == OPEN)

@@ -21,7 +21,7 @@ static void time_handler(app_t *app)
     TIME(brute->content.force) =
     sfClock_getElapsedTime(CLOCK(brute->content.force));
     TIME_FLOAT(brute->content.force) =
-    TIME(brute->content.force).microseconds / (1000000.0);
+    TIME(brute->content.force).microseconds / SECOND_MICRO;
 }
 
 int app_task_brute_core(app_t *app)

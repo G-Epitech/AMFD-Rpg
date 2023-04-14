@@ -20,7 +20,7 @@
 
 static void init_circle_stat(node_t *circle, int time_int)
 {
-    sfVector2f pos;
+    sfVector2f pos = {0, 0};
 
     circle->data.node_flip->rayon = 1 + rand() % 10;
     circle->data.node_flip->status = CLOSE;
@@ -53,7 +53,7 @@ static int create_circle(app_t *app, int time_int)
 int handler_create_circle(int time_int, app_t *app,
 int pres_mili_int, int time_mili_int)
 {
-    srand(rand() % 1023415412584);
+    srand(rand() % RANDOM_NUMBER);
     if (pres_mili_int < time_mili_int && time_mili_int % 5 == 0) {
         if (create_circle(app, time_int) == 84)
             return 84;

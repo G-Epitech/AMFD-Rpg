@@ -12,7 +12,7 @@
     #include <SFML/System/Clock.h>
     #include <stdbool.h>
 
-    #define FLIPPER(flip) flip.task->content.flipper
+    #define FLIPPER(flip) task->content.flipper
     #define FLIPPER_STARTED(node) node->content.flipper.just_started
     #define NB_LIFE_FLIPPER(node) node->content.flipper.nb_lifes
     #define NB_CIRCLE_FLIPPER(node) node->content.flipper.nb_circles
@@ -29,6 +29,8 @@
     #define TIME_OPEN(temp_circle) temp_circle->data.node_flip->time_open
     #define COLOR_GRENN sfColor_fromRGB(45, 162, 51)
     #define COLOR_RED sfColor_fromRGB(203, 42, 42)
+    #define SECOND_MILI 100000.0
+    #define RANDOM_NUMBER 1023415412584
 
 typedef struct s_timer_handler timer_handler_t;
 typedef struct s_node node_t;
