@@ -183,6 +183,15 @@ SRC = 		src/main.c \
 			src/app/events/handler/text_entered.c \
 			src/app/events/handler/mouse_button_released.c \
 			\
+			src/app/core/tasks/flipper/create_node.c \
+			src/app/core/tasks/flipper/game_handler.c \
+			src/app/core/tasks/flipper/init_node.c \
+			src/app/core/tasks/flipper/reset_setup.c \
+			src/app/core/tasks/flipper/create_circle.c \
+			src/app/core/tasks/flipper/circle_handler.c \
+			src/app/core/tasks/flipper/click_circle.c \
+			src/app/display/tasks/flipper/display.c \
+
 
 NAME = my_rpg
 
@@ -195,7 +204,7 @@ CFLAGS += -Wall -Wextra -Werror -Wno-unused-command-line-argument -g
 INC = -I./include -I./lib
 
 LDFLAGS = -lcsfml-graphics -lcsfml-system -lcsfml-audio -lcsfml-window \
--lcsfml-network -L./lib -lmy -lcjson
+-lcsfml-network -L./lib -lmy -lcjson -lm
 
 OBJ = $(SRC:.c=.o)
 

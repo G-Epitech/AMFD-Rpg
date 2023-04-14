@@ -16,15 +16,17 @@
 
 static void time_handler(app_t *app)
 {
-    task_content_t brute = find_task_node(app, 2);
+    task_t *brute = find_task_node(app, 2);
 
-    TIME(brute.force) = sfClock_getElapsedTime(CLOCK(brute.force));
-    TIME_FLOAT(brute.force) = TIME(brute.force).microseconds / (1000000.0);
+    TIME(brute->content.force) =
+    sfClock_getElapsedTime(CLOCK(brute->content.force));
+    TIME_FLOAT(brute->content.force) =
+    TIME(brute->content.force).microseconds / SECOND_MICRO;
 }
 
 int app_task_brute_core(app_t *app)
 {
-    task_content_t brute = find_task_node(app, 2);
+    task_t *brute = find_task_node(app, 2);
 
     if (JUST_STARTED(app)) {
         if (init_task_brute(app) == 84)
@@ -36,7 +38,7 @@ int app_task_brute_core(app_t *app)
         reset_setup_brute(app);
         app->state = ST_INGAME;
     }
-    if (TIME_FLOAT(brute.force) > 10.0) {
+    if (TIME_FLOAT(brute->content.force) > 10.0) {
         my_putstr("You lose\n");
         reset_setup_brute(app);
         app->state = ST_INGAME;

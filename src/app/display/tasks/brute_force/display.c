@@ -36,7 +36,7 @@ static void display_time(renderer_t *renderer, app_t *app)
 {
     char *char_second = NULL;
     renderer_objects_t *objects = renderer->objects;
-    task_content_t brute = find_task_node(app, 2);
+    task_t *brute = find_task_node(app, 2);
 
     (void) app;
     sfText_setPosition(objects->text, (sfVector2f) {410, 260});
@@ -44,7 +44,7 @@ static void display_time(renderer_t *renderer, app_t *app)
     sfText_setString(objects->text, "Temps :");
     sfRenderWindow_drawText(renderer->window, objects->text, NULL);
     sfText_setPosition(objects->text, (sfVector2f) {525, 260});
-    char_second = nbr_to_str((int) TIME_FLOAT(brute.force));
+    char_second = nbr_to_str((int) TIME_FLOAT(brute->content.force));
     sfText_setString(objects->text, char_second);
     sfRenderWindow_drawText(renderer->window, objects->text, NULL);
 }

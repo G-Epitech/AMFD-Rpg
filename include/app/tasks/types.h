@@ -12,15 +12,18 @@
     #include "types/renderer/types.h"
     #include "app/tasks/bash/types.h"
     #include "app/tasks/bruteforce/types.h"
+    #include "app/tasks/flipper/types.h"
 
     #define CLOCK(node) node.handler_time->clock_time
     #define TIME_FLOAT(node) node.handler_time->time_float
     #define TIME_INT(node) node.handler_time->timer_int
     #define TIME(node) node.handler_time->time
+    #define SECOND_MICRO 1000000.0
 
 typedef union s_task_content {
     task_bash_t script;
     task_brute_t force;
+    task_flipper_t flipper;
 } task_content_t;
 
 typedef struct s_task {
