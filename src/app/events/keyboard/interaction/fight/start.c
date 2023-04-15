@@ -41,7 +41,7 @@ static void set_fight_interaction(interactions_t *interactions)
     interactions->data.fight->choice = 0;
 }
 
-void interaction_fight(interactions_t *interactions, app_t *app,
+void interaction_fight_start(interactions_t *interactions, app_t *app,
 renderer_t *renderer)
 {
     npc_data_t *data;

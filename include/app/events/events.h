@@ -109,12 +109,19 @@ void event_mouse_button_released(app_t *app, renderer_t *renderer,
 sfEvent event);
 
 /**
- * @brief Fight interaction
+ * @brief Fight interaction start
  * @param interactions Interactions structure
  * @param app App object
  * @param renderer Renderer object
  */
-void interaction_fight(interactions_t *interactions, app_t *app,
+void interaction_fight_start(interactions_t *interactions, app_t *app,
 renderer_t *renderer);
+
+/**
+ * @brief Fight interaction choice
+ * @param interactions Interactions structure
+ * @param app App object
+ */
+void keyboard_interaction_choice(sfEvent event, app_t *app);
 
 #endif /* !EVENTS_H_ */
