@@ -78,8 +78,18 @@ void result_camera(renderer_t *renderer, sfEvent event, app_t *app);
 */
 void display_equations(renderer_t *renderer, app_t *app);
 
+/**
+ * @brief Display of win message at the end
+ * @param app Application structure
+ * @param renderer Main renderer function
+*/
 void display_win(renderer_t *renderer, app_t *app);
 
+/**
+ * @brief Display of loose message at the end
+ * @param app Application structure
+ * @param renderer Main renderer function
+*/
 void display_loose(renderer_t *renderer, app_t *app);
 
 #endif /* !CAMERA_H_ */
