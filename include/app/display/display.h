@@ -234,4 +234,11 @@ void display_fight(renderer_t *renderer, app_t *app);
  */
 void display_fight_choice(renderer_t *renderer, app_t *app);
 
+/**
+ * @brief Display fights attack box
+ * @param renderer Renderer structure
+ * @param app Application informations
+ */
+void display_fight_attack(renderer_t *renderer, app_t *app);
+
 #endif /* !DISPLAY_H_ */

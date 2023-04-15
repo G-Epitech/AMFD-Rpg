@@ -15,6 +15,7 @@
     {size.x + middle.x * scale+ right.x, right.y})
     #define TEXT_DEFAULT_COLOR ((sfColor) {107, 80, 82, 255})
     #define TEXT_SELECT_COLOR ((sfColor) {218, 164, 99, 255})
+    #define TEXT_LOCK_COLOR ((sfColor) {58, 58, 80, 255})
     #define GAME_TITLE "Hackers Quests"
     #define SETTINGS_TITLE "Settings"
     #define VOLUME_POSITION ((sfVector2f) {1153, 490})
@@ -30,5 +31,7 @@
     #define FIGHT_CHOICE_ICON_X 27
     #define FIGHT_CHOICE_ICON_Y 5
     #define FIGHT_CHOICE_CONFIG "configs/fight/choice.json"
+    #define FIGHT_ATTACK_RATIO ((sfVector2f) {176, 27})
+
 
 #endif /* !DISPLAY_TYPES_H_ */

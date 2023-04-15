@@ -26,6 +26,7 @@ typedef union u_node_data {
     background_t *background;
     npc_dialog_t npc_dialog;
     npc_data_t npc_data;
+    attack_t *attack;
     player_t *player;
     button_t *button;
     lever_t *lever;

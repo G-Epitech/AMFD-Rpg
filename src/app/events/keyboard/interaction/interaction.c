@@ -20,7 +20,8 @@ void keyboard_interaction(sfEvent event, renderer_t *renderer, app_t *app)
     if (event.key.code == sfKeyF &&
         app->interaction->interaction &&
         !app->interaction->active) {
-        interaction_fight(app->interaction, app, renderer);
+        interaction_fight_start(app->interaction, app, renderer);
         app->interaction->active = true;
     }
+    keyboard_interaction_choice(event, app);
 }

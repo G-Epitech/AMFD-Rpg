@@ -119,4 +119,10 @@ void items_texture_load(renderer_t *renderer, ressources_t *ressources);
  */
 void icons_load(renderer_t *renderer, icons_r_t *icons);
 
+/**
+ * @brief Load fight components
+ * @param config Config of fight
+ */
+list_t *ressources_components_fight_load(cjson_t *config);
+
 #endif /* !RESSOURCES_H_ */

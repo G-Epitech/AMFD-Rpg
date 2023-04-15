@@ -16,4 +16,5 @@ void display_fight(renderer_t *renderer, app_t *app)
     app->interaction->type != IT_FIGHT)
         return;
     display_fight_choice(renderer, app);
+    display_fight_attack(renderer, app);
 }

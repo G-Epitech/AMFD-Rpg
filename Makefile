@@ -66,6 +66,7 @@ SRC = 		src/main.c \
 			src/types/ressources/components/button/load.c \
 			src/types/ressources/components/backgrounds/load.c \
 			src/types/ressources/components/lever/load.c \
+			src/types/ressources/components/fight/load.c \
 			\
 			src/types/ressources/inventory/load.c \
 			\
@@ -113,7 +114,8 @@ SRC = 		src/main.c \
 			src/app/events/window/close.c \
 			src/app/events/keyboard/move.c \
 			src/app/events/keyboard/interaction/interaction.c \
-			src/app/events/keyboard/interaction/fight.c \
+			src/app/events/keyboard/interaction/fight/start.c \
+			src/app/events/keyboard/interaction/fight/choice.c \
 			src/app/events/components/buttons.c \
 			src/app/events/components/levers.c \
 			\
@@ -170,6 +172,7 @@ SRC = 		src/main.c \
 			src/app/display/developer/position.c \
 			src/app/display/fight/fight.c \
 			src/app/display/fight/choice.c \
+			src/app/display/fight/attack.c \
 			\
 			src/app/utils/test.c \
 			\

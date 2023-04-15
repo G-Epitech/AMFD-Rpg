@@ -1,6 +1,7 @@
 {
     "valid": "assets/components/icons/valid.png",
     "refuse": "assets/components/icons/refuse.png",
+    "attack_lock": "assets/components/icons/lock_attack.png",
     "selector_false": "assets/components/icons/selector_false.png",
     "selector_true": "assets/components/icons/selector_true.png"
 }

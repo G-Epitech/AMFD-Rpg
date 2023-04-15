@@ -15,10 +15,15 @@
 #include "types/list/list.h"
 #include "app/animations/animations.h"
 
-static void valid_choice(fight_t *fight)
+static void valid_choice(fight_t *fight, app_t *app)
 {
     if (fight->state == FT_CHOICE) {
-        fight->state = FT_PLAYER_ATTACK;
+        if (fight->choice == 0)
+            fight->state = FT_PLAYER_ATTACK;
+        if (fight->choice == 1) {
+            (void) app;
+            // Stop attacks
+        } 
     }
 }
 
@@ -38,6 +43,6 @@ void keyboard_interaction_choice(sfEvent event, app_t *app)
         fight->choice--;
     }
     if (event.key.code == sfKeyEnter) {
-        valid_choice(fight);
+        valid_choice(fight, app);
     }
 }

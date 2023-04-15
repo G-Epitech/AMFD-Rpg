@@ -25,6 +25,7 @@ typedef struct s_player {
     sfVector2f position;        //Position of the player
     list_t *inventory;          //Inventory with all objects
     int skin_id;                //Skin ID
+    int level;                  //Player level
 } player_t;
 
 #endif /* !PLAYERS_TYPES_H_ */
