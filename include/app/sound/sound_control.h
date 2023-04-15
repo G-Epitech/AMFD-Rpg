@@ -46,7 +46,14 @@ void handle_sound_effects(list_t *sound_fx);
  * @param theme_list List of sound themes 
  * @param app_state Current state of the app
 */
-void handle_sound_themes(list_t *theme_list,
-app_states_t app_state);
+void handle_sound_themes(list_t *theme_list, app_states_t app_state);
+
+/**
+ * @brief Function working with core to handle
+ * app volume
+ * @param app_volume App volume
+ * @param sound_board Soundboard
+*/
+void handle_sound_volume(float app_volume, sound_board_t *sound_board);
 
 #endif /* !SOUND_CONTROL_H_ */
