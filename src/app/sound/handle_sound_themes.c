@@ -42,7 +42,6 @@ void handle_sound_themes(list_t *theme_list, app_states_t app_state)
     if (app_state == old_state)
         return;
     old_state = app_state;
-    my_put_nbr(app_state);
     while (theme) {
         sound_theme_association(theme->data.theme, app_state);
         theme = theme->next;

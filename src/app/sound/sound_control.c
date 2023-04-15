@@ -9,15 +9,6 @@
 #include "my/include/my.h"
 #include "types/list/list.h"
 
-// static int one_time_effect(sound_t *sound, int sound_effect)
-// {
-//     if (sound->lone) {
-//         my_put_nbr(sound_effect);
-//         return 1;
-//     }
-//     return 0;
-// }
-
 void sound_control(list_t *sound_board, int sound_effect,
 sfSoundStatus new_sound_status)
 {
