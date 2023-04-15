@@ -25,9 +25,9 @@ app_t *app);
 
 /**
  * @brief Main function for the sound system
- * @param app List of sounds
+ * @param app Main app structure
 */
-void core_handle_sound(list_t *sound_board);
+void core_handle_sound(app_t *app);
 
 /**
  * @brief Function that will handle the core actions of the
