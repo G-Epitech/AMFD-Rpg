@@ -17,7 +17,7 @@ static void event_analyse(sfRenderWindow *window, sfEvent event, app_t *app,
 renderer_t *renderer)
 {
     event_close(window, event);
-    event_text_entered(event, app);
+    event_text_entered(renderer, event, app);
     event_key_pressed(event, app);
     event_key_released(event, app);
     event_mouse_button_pressed(app, renderer, event);

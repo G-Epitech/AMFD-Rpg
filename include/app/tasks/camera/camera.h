@@ -67,7 +67,15 @@ void solution_write(sfEvent event, app_t *app);
  * @brief Writing the result code
  * @param event The event
  * @param app Application structure
+ * @param renderer Main renderer function
 */
-void result_camera(sfEvent event, app_t *app);
+void result_camera(renderer_t *renderer, sfEvent event, app_t *app);
+
+/**
+ * @brief Display the equations
+ * @param app Application structure
+ * @param renderer Main renderer function
+*/
+void display_equations(renderer_t *renderer, app_t *app);
 
 #endif /* !CAMERA_H_ */

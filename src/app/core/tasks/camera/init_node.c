@@ -48,7 +48,7 @@ static char *find_equation(int index_equa, cjson_t *object_file, app_t *app)
     char *equa_random = 0;
 
     srand(time(NULL));
-    equa_random = nbr_to_str(rand() % 2);
+    equa_random = nbr_to_str(rand() % 7);
     find_solution(index_equation, equa_random, app);
     equation = cjson_get_prop_string_unsafe(level_equation, equa_random);
     return equation;

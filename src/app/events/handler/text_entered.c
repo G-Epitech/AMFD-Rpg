@@ -14,7 +14,7 @@
 #include "app/app.h"
 
 
-void event_text_entered(sfEvent event, app_t *app)
+void event_text_entered(renderer_t *renderer, sfEvent event, app_t *app)
 {
     if (event.type == sfEvtTextEntered) {
         if (app->state == ST_TASK_BASH) {
@@ -23,7 +23,7 @@ void event_text_entered(sfEvent event, app_t *app)
         }
         if (app->state == ST_TASK_CAMERA) {
             solution_write(event, app);
-            result_camera(event, app);
+            result_camera(renderer, event, app);
         }
     }
 }

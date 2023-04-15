@@ -67,21 +67,6 @@ static void display_decorations(renderer_t *renderer)
     sfRenderWindow_drawText(renderer->window, objects->text, NULL);
 }
 
-static void display_equations(renderer_t *renderer, app_t *app)
-{
-    renderer_objects_t *objects = renderer->objects;
-    task_t *node = find_task_node(app, 4);
-    node_t *temp = CAMERA_EQUATIONS(node)->first;
-
-    while (temp != NULL) {
-        sfText_setPosition(objects->text, temp->data.node_camera->pos);
-        sfText_setColor(objects->text, sfWhite);
-        sfText_setString(objects->text, temp->data.node_camera->equation);
-        sfRenderWindow_drawText(renderer->window, objects->text, NULL);
-        temp = temp->next;
-    }
-}
-
 void app_task_camera_display(renderer_t *renderer, app_t *app)
 {
     renderer_objects_t *objects = renderer->objects;

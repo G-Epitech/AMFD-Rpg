@@ -13,8 +13,9 @@
 #include "types/list/list.h"
 #include "my/include/my.h"
 
-static void good_result(app_t *app)
+static void good_result(renderer_t *renderer, app_t *app)
 {
+    (void) renderer;
     my_putstr("You win\n");
     app->state = ST_INGAME;
     reset_setup_camera(app);
@@ -32,13 +33,13 @@ static void bad_result(app_t *app, task_t *node)
     }
 }
 
-void result_camera(sfEvent event, app_t *app)
+void result_camera(renderer_t *renderer, sfEvent event, app_t *app)
 {
     task_t *node = find_task_node(app, 4);
 
     if (event.text.unicode == '\r') {
         if (my_strcmp(CAMERA_SOLUTION(node), CAMERA_RESULT(node)) == 0) {
-            good_result(app);
+            good_result(renderer, app);
         } else {
             bad_result(app, node);
         }
