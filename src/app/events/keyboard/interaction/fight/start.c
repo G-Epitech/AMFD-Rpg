@@ -39,6 +39,8 @@ static void set_fight_interaction(interactions_t *interactions)
     interactions->data.fight->npc = npc;
     interactions->data.fight->state = FT_CHOICE;
     interactions->data.fight->choice = 0;
+    interactions->data.fight->mana = 10;
+    interactions->data.fight->enemy_life = npc->enemy->life;
 }
 
 void interaction_fight_start(interactions_t *interactions, app_t *app,

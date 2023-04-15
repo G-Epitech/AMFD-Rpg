@@ -55,6 +55,14 @@ void event_components_buttons(renderer_t *renderer, app_t *app, sfEvent event);
 */
 void event_components_levers(renderer_t *renderer, app_t *app, sfEvent event);
 
+/**
+ * @brief Handle events on attacks
+ * @param renderer Renderer structure
+ * @param app Application structure
+ * @param event Event click
+*/
+void event_components_attacks(renderer_t *renderer, app_t *app, sfEvent event);
+
 /*
  * @brief Handler of event close
  * @param window Window of the app

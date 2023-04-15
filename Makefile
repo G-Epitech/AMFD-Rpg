@@ -118,6 +118,7 @@ SRC = 		src/main.c \
 			src/app/events/keyboard/interaction/fight/choice.c \
 			src/app/events/components/buttons.c \
 			src/app/events/components/levers.c \
+			src/app/events/components/attacks.c \
 			\
 			src/app/developer/reload_json.c \
 			\

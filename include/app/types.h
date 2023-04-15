@@ -67,6 +67,8 @@ typedef struct s_fight {
     npc_data_t *npc;
     fight_state_t state;
     int choice;
+    int mana;
+    int enemy_life;
 } fight_t;
 
 typedef union u_interaction_data {

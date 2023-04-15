@@ -15,5 +15,6 @@
     #define POSITION_LEFT(position) ((sfVector2f) {position.x - 1, position.y})
     #define POSITION_RIGHT(position) ((sfVector2f)\
     {position.x + 1, position.y})
+    #define ATTACK_BUTTON_SCALE ((sfVector2f) {270, 70})
 
 #endif /* !EVENTS_TYPES_H_ */

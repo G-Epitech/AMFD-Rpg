@@ -33,5 +33,4 @@
     #define FIGHT_CHOICE_CONFIG "configs/fight/choice.json"
     #define FIGHT_ATTACK_RATIO ((sfVector2f) {176, 27})
 
-
 #endif /* !DISPLAY_TYPES_H_ */
