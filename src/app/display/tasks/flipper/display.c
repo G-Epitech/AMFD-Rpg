@@ -38,7 +38,7 @@ static void display_life(renderer_t *renderer, app_t *app)
 
     sfText_setPosition(objects->text, (sfVector2f) {410, 270});
     sfText_setColor(objects->text, sfWhite);
-    sfText_setString(objects->text, "vie :");
+    sfText_setString(objects->text, "Vie :");
     sfRenderWindow_drawText(renderer->window, objects->text, NULL);
     sfText_setPosition(objects->text, (sfVector2f) {505, 270});
     char_life = nbr_to_str(NB_LIFE_FLIPPER(node));

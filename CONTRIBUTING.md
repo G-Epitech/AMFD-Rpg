@@ -8,6 +8,7 @@
 `📒` Types functions  
 `⚡️` Optimisation / Performance  
 `🏗️` Code architecture  
+
 `🍱` Assets  
 `✅` Tests  
 `🚚` Files structure / File rename  
@@ -17,7 +18,7 @@
 `🏷️` Header definition
 `📝` Makefile / CMakeLists  
 `👷‍♂️` CI Github Action  
-`🐛` Simple fix  
+`1` Simple fix  
 `💚` Automation fix  
 `🚑️` Hotfix  
 `🔥` Remove file / function

@@ -191,6 +191,12 @@ SRC = 		src/main.c \
 			src/app/core/tasks/flipper/circle_handler.c \
 			src/app/core/tasks/flipper/click_circle.c \
 			src/app/display/tasks/flipper/display.c \
+			\
+			src/app/core/tasks/camera/create_node.c \
+			src/app/core/tasks/camera/game_handler.c \
+			src/app/core/tasks/camera/reset_setup.c \
+			src/app/core/tasks/camera/init_node.c \
+			src/app/display/tasks/camera/display.c \
 
 
 NAME = my_rpg
