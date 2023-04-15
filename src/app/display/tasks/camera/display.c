@@ -52,7 +52,8 @@ static void display_decorations(renderer_t *renderer)
 
     sfText_setPosition(objects->text, (sfVector2f) {515, 830});
     sfText_setColor(objects->text, sfWhite);
-    sfText_setString(objects->text, "Trouvez le code a 4 chiffres pour desactiver les cameras !");
+    sfText_setString(objects->text,
+    "Trouvez le code a 4 chiffres pour desactiver les cameras !");
     sfRenderWindow_drawText(renderer->window, objects->text, NULL);
     sfText_setPosition(objects->text, (sfVector2f) {800, 250});
     sfText_setColor(objects->text, sfWhite);
@@ -72,7 +73,7 @@ static void display_equations(renderer_t *renderer, app_t *app)
     task_t *node = find_task_node(app, 4);
     node_t *temp = CAMERA_EQUATIONS(node)->first;
 
-    while(temp != NULL) {
+    while (temp != NULL) {
         sfText_setPosition(objects->text, temp->data.node_camera->pos);
         sfText_setColor(objects->text, sfWhite);
         sfText_setString(objects->text, temp->data.node_camera->equation);
@@ -94,10 +95,4 @@ void app_task_camera_display(renderer_t *renderer, app_t *app)
     sfText_setCharacterSize(objects->text, 25);
     display_equations(renderer, app);
     display_solution(renderer, app);
-
-    task_t *node = find_task_node(app, 4);
-    sfText_setPosition(objects->text, (sfVector2f) {500, 500});
-    sfText_setColor(objects->text, sfWhite);
-    sfText_setString(objects->text, CAMERA_RESULT(node));
-    sfRenderWindow_drawText(renderer->window, objects->text, NULL);
 }

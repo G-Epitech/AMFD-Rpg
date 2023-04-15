@@ -19,7 +19,7 @@ static void equation_destroy(app_t *app)
     task_t *node = find_task_node(app, 4);
     node_t *temp = CAMERA_EQUATIONS(node)->first;
 
-    while(temp != NULL) {
+    while (temp != NULL) {
         free(temp->data.node_camera->equation);
         temp = temp->next;
     }
