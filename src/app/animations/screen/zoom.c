@@ -68,7 +68,9 @@ bool animations_screen_zoom(animation_event_zoom_t *zoom, sfClock *clock)
         zoom->last_time = time;
         zoom->total += 1;
     }
-    if (zoom->total >= ZOOM_RATIO - zoom->speed)
+    if (zoom->total >= ZOOM_RATIO - zoom->speed) {
+        free(zoom);
         return true;
+    }
     return false;
 }

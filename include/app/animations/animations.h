@@ -53,4 +53,25 @@ float zoom);
  */
 animation_event_zoom_t *animations_screen_zoom_init(void);
 
+/**
+ * @brief Init new shake attack animations
+ * @return animation_event_zoom_t* The new structure
+ */
+animation_event_shake_attack_t *animations_shake_attack_init(void);
+
+/**
+ * @brief Add a new shake attacks to events list
+ * @param events Event list
+ * @param attack Attack structure (data)
+ */
+void animations_shake_attack_add(list_t *events, attack_t *attack);
+
+/**
+ * @brief Shake attack button animation
+ * @param shake Animation structure
+ * @param clock Clock of animations
+ */
+bool animations_shake_attack(animation_event_shake_attack_t *shake,
+sfClock *clock);
+
 #endif /* !ANIMATIONS_H_ */

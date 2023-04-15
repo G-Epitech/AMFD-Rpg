@@ -47,6 +47,8 @@ attack_t *attack)
         sfSprite_setTexture(sprite, icons->attack_lock, sfTrue);
         text = display_require_level(renderer, attack);
     }
+    if (attack->shake)
+        sfSprite_setColor(sprite, sfRed);
     sfRenderWindow_drawSprite(renderer->window, sprite, NULL);
     if (text)
         sfRenderWindow_drawText(renderer->window, text, NULL);

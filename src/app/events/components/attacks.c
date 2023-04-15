@@ -13,25 +13,28 @@
 #include "app/app.h"
 #include "types/renderer/types.h"
 #include "types/list/types.h"
+#include "app/animations/animations.h"
 
 static bool on_attack(attack_t *attack, app_t *app,
 sfEvent event, fight_t *fight)
 {
+    list_t *events = NULL;
     sfVector2f cursor = (sfVector2f) {event.mouseButton.x,
     event.mouseButton.y};
 
     if (attack->level > app->player->level)
         return false;
-    if (attack->mana > fight->mana) {
-        // Animation impossible
-        return false;
-    }
     if (cursor.x < attack->position.x || cursor.y < attack->position.y)
         return false;
     if (cursor.x > attack->position.x + ATTACK_BUTTON_SCALE.x)
         return false;
     if (cursor.y > attack->position.y + ATTACK_BUTTON_SCALE.y)
         return false;
+    if (attack->mana > fight->mana) {
+        events = animation_event_new(app);
+        animations_shake_attack_add(events, attack);
+        return false;
+    }
     return true;
 }
 

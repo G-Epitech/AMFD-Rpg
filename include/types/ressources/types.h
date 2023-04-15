@@ -74,6 +74,7 @@ typedef struct s_attack {
     int level;
     int mana;
     int damage;
+    bool shake;
 } attack_t;
 
 /**

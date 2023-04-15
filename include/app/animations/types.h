@@ -15,8 +15,11 @@
     #define PLAYER_IN_ANIM(animation) (animation->events->len > 0)
     #define ZOOM_TIME 10
     #define ZOOM_RATIO 100
+    #define SHAKE_TIME 5
+    #define SHAKE_TARGET 500
 
 typedef struct s_list list_t;
+typedef struct s_attack attack_t;
 
 typedef struct s_animation_event_player {
     player_t *player;
@@ -40,10 +43,21 @@ typedef struct s_animation_event_zoom {
     int total;
 } animation_event_zoom_t;
 
+typedef struct s_animation_event_shake_attack {
+    attack_t *attack;
+    sfVector2f origin;
+    sfInt32 last_time;
+    sfInt32 total_time;
+    sfInt32 target_time;
+    int target_offset;
+    int total_offset;
+} animation_event_shake_attack_t;
+
 typedef union u_animation_event_data {
     animation_event_zoom_t *zoom;
     animation_event_npc_t *npc;
     animation_event_player_t *player;
+    animation_event_shake_attack_t *shake_attack;
 } animation_event_data_t;
 
 typedef enum e_animation_event_type {
@@ -51,7 +65,8 @@ typedef enum e_animation_event_type {
     AE_ZOOM,
     AE_FADE,
     AE_MOVE_NPC,
-    AE_MOVE_PLAYER
+    AE_MOVE_PLAYER,
+    AE_SHAKE_ATTACK
 } animation_event_type_t;
 
 typedef struct s_animation_event {

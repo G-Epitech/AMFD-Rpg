@@ -96,6 +96,7 @@ SRC = 		src/main.c \
 			src/app/animations/handler.c \
 			src/app/animations/event_new.c \
 			src/app/animations/screen/zoom.c \
+			src/app/animations/button/shake_attack.c \
 			\
 			src/app/states/on_state.c \
 			src/app/states/switch.c \

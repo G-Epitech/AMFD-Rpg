@@ -15,15 +15,13 @@
 static bool animation_event_data(animations_t *animation,
 animation_event_t *data)
 {
-    bool end = false;
-
-    if (data->type == AE_ZOOM) {
-        if (animations_screen_zoom(data->data.zoom, animation->clock)) { 
-            free(data->data.zoom);
-            end = true;
-        }
-    }
-    return end;
+    if (data->type == AE_ZOOM &&
+    animations_screen_zoom(data->data.zoom, animation->clock))
+        return true;
+    if (data->type == AE_SHAKE_ATTACK &&
+    animations_shake_attack(data->data.shake_attack, animation->clock))
+        return true;
+    return false;
 }
 
 static void animations_event_handler(animations_t *animation)
