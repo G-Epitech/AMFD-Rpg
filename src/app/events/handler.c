@@ -23,7 +23,7 @@ renderer_t *renderer)
     event_mouse_button_pressed(app, renderer, event);
     event_mouse_button_released(app, renderer, event);
     if (event.type == sfEvtMouseWheelScrolled) {
-        app->state = ST_TASK_FLIPPER;
+        app->state = ST_TASK_CAMERA;
     }
 }
 

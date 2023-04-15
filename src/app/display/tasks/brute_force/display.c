@@ -42,6 +42,7 @@ static void display_time(renderer_t *renderer, app_t *app)
     sfText_setPosition(objects->text, (sfVector2f) {410, 260});
     sfText_setColor(objects->text, sfWhite);
     sfText_setString(objects->text, "Temps :");
+    sfText_setCharacterSize(objects->text, 20);
     sfRenderWindow_drawText(renderer->window, objects->text, NULL);
     sfText_setPosition(objects->text, (sfVector2f) {525, 260});
     char_second = nbr_to_str((int) TIME_FLOAT(brute->content.force));

@@ -26,6 +26,7 @@ typedef union u_node_data {
     inventory_item_t *inventory_item;
     task_bash_node_t *node_bash;
     task_flipper_node_t *node_flip;
+    task_camera_node_t *node_camera;
     background_t *background;
     npc_dialog_t npc_dialog;
     npc_data_t npc_data;

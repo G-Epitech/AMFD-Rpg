@@ -50,14 +50,35 @@ static void display_decorations(renderer_t *renderer)
 {
     renderer_objects_t *objects = renderer->objects;
 
-    sfText_setPosition(objects->text, (sfVector2f) {515, 800});
+    sfText_setPosition(objects->text, (sfVector2f) {515, 830});
     sfText_setColor(objects->text, sfWhite);
     sfText_setString(objects->text, "Trouvez le code a 4 chiffres pour desactiver les cameras !");
     sfRenderWindow_drawText(renderer->window, objects->text, NULL);
     sfText_setPosition(objects->text, (sfVector2f) {800, 250});
     sfText_setColor(objects->text, sfWhite);
-    sfText_setString(objects->text, "Code :");
+    sfText_setString(objects->text, "Code : ????");
+    sfText_setCharacterSize(objects->text, 25);
     sfRenderWindow_drawText(renderer->window, objects->text, NULL);
+    sfText_setPosition(objects->text, (sfVector2f) {800, 300});
+    sfText_setColor(objects->text, sfWhite);
+    sfText_setString(objects->text, "Votre reponse : ");
+    sfText_setCharacterSize(objects->text, 25);
+    sfRenderWindow_drawText(renderer->window, objects->text, NULL);
+}
+
+static void display_equations(renderer_t *renderer, app_t *app)
+{
+    renderer_objects_t *objects = renderer->objects;
+    task_t *node = find_task_node(app, 4);
+    node_t *temp = CAMERA_EQUATIONS(node)->first;
+
+    while(temp != NULL) {
+        sfText_setPosition(objects->text, temp->data.node_camera->pos);
+        sfText_setColor(objects->text, sfWhite);
+        sfText_setString(objects->text, temp->data.node_camera->equation);
+        sfRenderWindow_drawText(renderer->window, objects->text, NULL);
+        temp = temp->next;
+    }
 }
 
 void app_task_camera_display(renderer_t *renderer, app_t *app)
@@ -65,8 +86,12 @@ void app_task_camera_display(renderer_t *renderer, app_t *app)
     renderer_objects_t *objects = renderer->objects;
 
     renderer_objects_reset_text(objects);
+    sfText_setCharacterSize(objects->text, 20);
     sfText_setFont(objects->text, renderer->font);
     display_time(renderer, app);
     display_life(renderer, app);
     display_decorations(renderer);
+    sfText_setCharacterSize(objects->text, 25);
+    display_equations(renderer, app);
+    display_solution(renderer, app);
 }

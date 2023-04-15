@@ -7,8 +7,7 @@
 `📑` Files functions  
 `📒` Types functions  
 `⚡️` Optimisation / Performance  
-`🏗️` Code architecture  
-
+`🏗️` Code architecture
 `🍱` Assets  
 `✅` Tests  
 `🚚` Files structure / File rename  
