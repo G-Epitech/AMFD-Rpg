@@ -200,6 +200,7 @@ SRC = 		src/main.c \
 			src/app/core/tasks/camera/write_solution.c \
 			src/app/display/tasks/camera/display.c \
 			src/app/display/tasks/camera/solution.c \
+			src/app/display/tasks/camera/result.c \
 			src/app/display/tasks/camera/equations.c \
 
 

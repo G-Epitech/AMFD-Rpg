@@ -30,6 +30,7 @@ void reset_setup_camera(app_t *app)
     task_t *node = find_task_node(app, 4);
 
     CAMERA_STARTED(node) = true;
+    CAMERA_STATE(node) = IN_TASK;
     sfClock_destroy(CLOCK(node->content.camera));
     TIME_FLOAT(node->content.camera) = 0.0;
     TIME_INT(node->content.camera) = 0;

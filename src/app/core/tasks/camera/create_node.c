@@ -73,6 +73,8 @@ node_t *task_create_nodes_camera(void)
     if (!task)
         return NULL;
     task->content.camera.just_started = true;
+    task->content.camera.states = IN_TASK;
+    task->content.camera.time_ended = 0;
     task->content.camera.nb_lifes = 3;
     task->content.camera.solution = NULL;
     if (init_equations(task) == 84)
