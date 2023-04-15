@@ -13,7 +13,14 @@
 #include "app/tasks/camera/camera.h"
 #include "app/tasks/types.h"
 
-void display_solution()
+void display_solution(renderer_t *renderer, app_t *app)
 {
-    
+    renderer_objects_t *objects = renderer->objects;
+    task_t *node = find_task_node(app, 4);
+
+    sfText_setPosition(objects->text, (sfVector2f) {900, 300});
+    sfText_setColor(objects->text, sfWhite);
+    sfText_setString(objects->text, CAMERA_SOLUTION(node));
+    sfText_setCharacterSize(objects->text, 25);
+    sfRenderWindow_drawText(renderer->window, objects->text, NULL);
 }

@@ -49,4 +49,6 @@ int app_task_camera_core(app_t *app);
 */
 void app_task_camera_display(renderer_t *renderer, app_t *app);
 
+void display_solution(renderer_t *renderer, app_t *app);
+
 #endif /* !CAMERA_H_ */
