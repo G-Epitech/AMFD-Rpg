@@ -32,8 +32,6 @@ sfSoundStatus new_sound_status)
         i++;
     }
     curr_sound = sound_list->data.sound;
-    my_putstr(curr_sound->title);
-    my_put_nbr(curr_sound->lone);
     if (curr_sound->lone)
         sfSound_play(curr_sound->sound);
     curr_sound->status = new_sound_status;
