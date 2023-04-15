@@ -23,7 +23,6 @@ static void realloc_char(char **cmd, char *chr)
     (*cmd) = malloc(sizeof(char) * (my_strlen(save_cmd) + 2));
     my_strcpy((*cmd), save_cmd);
     (*cmd)[my_strlen(save_cmd)] = chr[0];
-    my_putchar(chr[0]);
     (*cmd)[my_strlen(save_cmd) + 1] = '\0';
     free(save_cmd);
 }

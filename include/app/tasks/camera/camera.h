@@ -49,10 +49,25 @@ int app_task_camera_core(app_t *app);
 */
 void app_task_camera_display(renderer_t *renderer, app_t *app);
 
+/**
+ * @brief Function who display solution will be entered
+ * @param renderer Main renderer function
+ * @param app Application structure
+*/
 void display_solution(renderer_t *renderer, app_t *app);
 
+/**
+ * @brief Add a char to solution who was writing
+ * @param event The event
+ * @param app Application structure
+*/
 void solution_write(sfEvent event, app_t *app);
 
+/**
+ * @brief Writing the result code
+ * @param event The event
+ * @param app Application structure
+*/
 void result_camera(sfEvent event, app_t *app);
 
 #endif /* !CAMERA_H_ */
