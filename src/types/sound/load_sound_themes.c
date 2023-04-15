@@ -31,7 +31,8 @@ static void get_theme_properties(sound_theme_t *theme, cjson_t *theme_config)
     theme->volume = cjson_get_prop_float_unsafe(theme_config, "volume");
     theme->loop = cjson_get_prop_bool_unsafe(theme_config, "loop");
     array = cjson_get_prop_array_unsafe(theme_config, "app_state");
-    theme->associated_app_state = (app_states_t *) cjson_array_to_int_array(array, &len);
+    theme->associated_app_state =
+    (app_states_t *) cjson_array_to_int_array(array, &len);
     theme->app_state_size = len;
     theme->status = cjson_get_prop_int_unsafe(theme_config, "status");
     free(theme_file);

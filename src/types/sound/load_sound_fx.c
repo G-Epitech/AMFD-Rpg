@@ -30,7 +30,7 @@ static void get_sound_properties(sound_t *sound, cjson_t *sound_config)
     sound->buffer = sfSoundBuffer_createFromFile(sound_file);
     sound->volume = cjson_get_prop_float_unsafe(sound_config, "volume");
     sound->loop = cjson_get_prop_bool_unsafe(sound_config, "loop");
-    sound->lone = cjson_get_prop_bool_unsafe(sound_config, "lone"); 
+    sound->lone = cjson_get_prop_bool_unsafe(sound_config, "lone");
     sound->status = cjson_get_prop_int_unsafe(sound_config, "status");
     free(sound_file);
 }

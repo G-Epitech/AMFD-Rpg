@@ -43,7 +43,7 @@ void handle_sound_effects(list_t *sound_fx);
 /**
  * @brief Function working with core to handle
  * sound themes
- * @param theme_list List of sound themes 
+ * @param theme_list List of sound themes
  * @param app_state Current state of the app
 */
 void handle_sound_themes(list_t *theme_list, app_states_t app_state);

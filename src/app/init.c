@@ -23,7 +23,7 @@ static settings_t *init_settings(void)
     settings->fps = 120;
     settings->full_screen = false;
     settings->music = true;
-    settings->volume = 15;
+    settings->volume = 60.0;
     return settings;
 }
 

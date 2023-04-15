@@ -47,7 +47,7 @@ typedef struct s_control {
 
 typedef struct s_settings {
     bool music;             //Music in game
-    int volume;             //Volume of the music
+    float volume;             //Volume of the music
     int fps;                //Framerate of the game
     bool full_screen;       //Application in full screen
     bool developer;         //Developer mode
