@@ -20,10 +20,8 @@ static void set_sound_properties(sound_t *sound)
     sfSound_setLoop(sound->sound, (sfBool) sound->loop);
 }
 
-static void sound_append(list_t *sounds, cjson_t *sound_config)
+static void get_sound_properties(sound_t *sound, cjson_t *sound_config)
 {
-    node_t *node = NULL;
-    sound_t *sound = malloc(sizeof(sound_t));
     char *sound_file = NULL;
 
     sound->title = cjson_get_prop_string_unsafe(sound_config, "title");
@@ -33,6 +31,15 @@ static void sound_append(list_t *sounds, cjson_t *sound_config)
     sound->volume = cjson_get_prop_float_unsafe(sound_config, "volume");
     sound->loop = cjson_get_prop_bool_unsafe(sound_config, "loop");
     sound->status = cjson_get_prop_int_unsafe(sound_config, "status");
+    free(sound_file);
+}
+
+static void sound_append(list_t *sounds, cjson_t *sound_config)
+{
+    node_t *node = NULL;
+    sound_t *sound = malloc(sizeof(sound_t));
+
+    get_sound_properties(sound, sound_config);
     set_sound_properties(sound);
     node = node_new((node_data_t) sound);
     if (node) {
@@ -40,7 +47,6 @@ static void sound_append(list_t *sounds, cjson_t *sound_config)
     } else if (sound->buffer) {
         sfSoundBuffer_destroy(sound->buffer);
     }
-    free(sound_file);
 }
 
 list_t *sound_fx_load(void)

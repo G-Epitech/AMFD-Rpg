@@ -18,13 +18,11 @@ static void set_theme_properties(sound_theme_t *theme)
     sfMusic_setVolume(theme->music, theme->volume);
 }
 
-static void theme_append(list_t *themes, cjson_t *theme_config)
+static void get_theme_properties(sound_theme_t *theme, cjson_t *theme_config)
 {
-    node_t *node = NULL;
-    sound_theme_t *theme = malloc(sizeof(sound_theme_t));
-    cjson_array_t *array = NULL;
-    char *theme_file = NULL;
     size_t len = 0;
+    char *theme_file = NULL;
+    cjson_array_t *array = NULL;
 
     theme->title = cjson_get_prop_string_unsafe(theme_config, "title");
     if (!cjson_get_prop_string(theme_config, "buffer", &theme_file))
@@ -36,12 +34,20 @@ static void theme_append(list_t *themes, cjson_t *theme_config)
     theme->associated_app_state = (app_states_t *) cjson_array_to_int_array(array, &len);
     theme->app_state_size = len;
     theme->status = cjson_get_prop_int_unsafe(theme_config, "status");
+    free(theme_file);
+}
+
+static void theme_append(list_t *themes, cjson_t *theme_config)
+{
+    node_t *node = NULL;
+    sound_theme_t *theme = malloc(sizeof(sound_theme_t));
+
+    get_theme_properties(theme, theme_config);
     set_theme_properties(theme);
     node = node_new((node_data_t) theme);
     if (node) {
         list_append(themes, node);
     }
-    free(theme_file);
 }
 
 list_t *sound_themes_load(void)
