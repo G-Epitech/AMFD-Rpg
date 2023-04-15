@@ -28,6 +28,7 @@ void display_sounds(app_t *app)
         my_putstr(sounds->data.sound->title);
         my_put_nbr(sounds->data.sound->status);
         my_put_nbr(sounds->data.sound->loop);
+        my_put_nbr(sounds->data.sound->lone);
         my_putchar('\n');
         sounds = sounds->next;
     }

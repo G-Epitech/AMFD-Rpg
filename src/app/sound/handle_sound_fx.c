@@ -19,17 +19,8 @@ static void update_sound(sound_t *sound)
         sfSound_stop(sound->sound);
         return;
     }
-    if (sound->status == sfPaused) {
+    if (sound->status == sfPaused)
         sfSound_pause(sound->sound);
-    }
-}
-
-static int is_one_time_sound(sound_t *sound)
-{
-    if (my_strcmp(sound->title, "click_menu") == 0 ||
-    my_strcmp(sound->title, "menu_theme") == 0)
-        return 0;
-    return 1;
 }
 
 void handle_sound_effects(list_t *sound_fx)
@@ -39,8 +30,8 @@ void handle_sound_effects(list_t *sound_fx)
 
     while (node) {
         current_sound = node->data.sound;
-        if (sfSound_getStatus(current_sound->sound) !=
-        current_sound->status && is_one_time_sound(current_sound))
+        if (sfSound_getStatus(current_sound->sound) != current_sound->status
+        && current_sound->lone == false)
             update_sound(current_sound);
         node = node->next;
     }

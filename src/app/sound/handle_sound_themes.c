@@ -15,7 +15,6 @@ app_states_t app_state)
     for (size_t i = 0; i < theme->app_state_size; i++) {
         if (theme->associated_app_state[i] == app_state &&
         theme->status != sfPlaying) {
-            my_putchar('d');
             sfMusic_play(theme->music);
             theme->status = sfPlaying;
             return;
@@ -33,7 +32,6 @@ void handle_sound_themes(list_t *theme_list, app_states_t app_state)
     if (app_state == old_state)
         return;
     old_state = app_state;
-    my_put_nbr(app_state);
     while (theme) {
         sound_theme_association(theme->data.theme, app_state);
         theme = theme->next;

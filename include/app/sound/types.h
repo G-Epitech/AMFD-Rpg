@@ -36,6 +36,7 @@ typedef struct sound_s {
     sfSoundBuffer *buffer;
     float volume;
     bool loop;
+    bool lone;
     sfSoundStatus status;
     sfSound *sound;
 } sound_t;
