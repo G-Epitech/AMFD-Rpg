@@ -10,7 +10,7 @@
 
 static float get_volume_percentage(float app_volume, float audio_volume)
 {
-    return (app_volume / (audio_volume + app_volume)) * 100;
+    return (audio_volume * (app_volume / 100));
 }
 
 static void update_sound_fx_volume(float app_volume, list_t *sound_fx_list)
@@ -46,7 +46,7 @@ list_t *sound_theme_list)
 
 void handle_sound_volume(float app_volume, sound_board_t *sound_board)
 {
-    static float old_app_volume = 15.0;
+    static float old_app_volume = 60.0;
 
     if (old_app_volume == app_volume)
         return;
