@@ -8,21 +8,37 @@
 #include <SFML/Graphics.h>
 #include <time.h>
 #include <stdlib.h>
+#include <stdio.h>
 #include "types/renderer/types.h"
 #include "app/tasks/task.h"
 #include "app/tasks/camera/camera.h"
 #include "types/list/types.h"
 #include "my/include/my.h"
 
-static void find_solution(char *index_equation,
-char *index_solution, cjson_t *object_file, app_t *app)
+static void realloc_char(char **cmd, char *chr)
 {
+    char *save_cmd = my_strdup((*cmd));
+
+    (*cmd)[0] = '\0';
+    (*cmd) = malloc(sizeof(char) * (my_strlen(save_cmd) + 2));
+    my_strcpy((*cmd), save_cmd);
+    (*cmd)[my_strlen(save_cmd)] = chr[0];
+    my_putchar(chr[0]);
+    (*cmd)[my_strlen(save_cmd) + 1] = '\0';
+    free(save_cmd);
+}
+
+static void find_solution(char *index_equation,
+char *index_solution, app_t *app)
+{
+    cjson_t *object_file =
+    cjson_parse_file("./configs/tasks/reponse_equation.json");
     cjson_t *level_equation = cjson_get_prop(object_file, index_equation);
     task_t *node = find_task_node(app, 4);
     char *solution = NULL;
 
     solution = cjson_get_prop_string_unsafe(level_equation, index_solution);
-    my_strcat(CAMERA_SOLUTION(node), solution);
+    realloc_char(&CAMERA_RESULT(node), solution);
 }
 
 static char *find_equation(int index_equa, cjson_t *object_file, app_t *app)
@@ -34,7 +50,7 @@ static char *find_equation(int index_equa, cjson_t *object_file, app_t *app)
 
     srand(time(NULL));
     equa_random = nbr_to_str(rand() % 2);
-    find_solution(index_equation, equa_random, object_file, app);
+    find_solution(index_equation, equa_random, app);
     equation = cjson_get_prop_string_unsafe(level_equation, equa_random);
     return equation;
 }
@@ -47,6 +63,8 @@ int init_equation(app_t *app)
 
     CAMERA_SOLUTION(node) = malloc(sizeof(char) * 1);
     CAMERA_SOLUTION(node)[0] = '\0';
+    CAMERA_RESULT(node) = malloc(sizeof(char) * 1);
+    CAMERA_RESULT(node)[0] = '\0';
     for (int index = 1; temp != NULL; index++) {
         temp->data.node_camera->equation =
         find_equation(index, object_file, app);

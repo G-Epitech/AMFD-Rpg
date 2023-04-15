@@ -53,4 +53,6 @@ void display_solution(renderer_t *renderer, app_t *app);
 
 void solution_write(sfEvent event, app_t *app);
 
+void result_camera(sfEvent event, app_t *app);
+
 #endif /* !CAMERA_H_ */

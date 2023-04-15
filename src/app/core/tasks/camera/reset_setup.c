@@ -35,4 +35,6 @@ void reset_setup_camera(app_t *app)
     TIME_INT(node->content.camera) = 0;
     CAMERA_LIFE(node) = 3;
     equation_destroy(app);
+    free(CAMERA_RESULT(node));
+    free(CAMERA_SOLUTION(node));
 }

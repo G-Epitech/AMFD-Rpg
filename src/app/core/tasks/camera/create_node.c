@@ -38,7 +38,7 @@ int init_list_equations(list_t *equation_list, cjson_t *object_file)
     node_t *equation_node = NULL;
     cjson_t *pos_equation = NULL;
     char *equations_tab[5] = {"first_equations", "second_equations",
-    "third_equations", "fourth_equations", "fifth_equations"};
+    "third_equations", "fourth_equations"};
 
     for (int index = 0; index < 4; index++) {
         equation_node = create_node_list_equations();

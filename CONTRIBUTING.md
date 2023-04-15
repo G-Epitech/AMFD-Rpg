@@ -17,7 +17,7 @@
 `🏷️` Header definition
 `📝` Makefile / CMakeLists  
 `👷‍♂️` CI Github Action  
-`1` Simple fix  
+`🐛` Simple fix  
 `💚` Automation fix  
 `🚑️` Hotfix  
 `🔥` Remove file / function

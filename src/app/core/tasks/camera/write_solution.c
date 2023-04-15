@@ -6,7 +6,6 @@
 */
 
 #include <stdlib.h>
-#include <time.h>
 #include "types/renderer/types.h"
 #include "app/tasks/task.h"
 #include "types/list/types.h"

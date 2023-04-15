@@ -94,4 +94,10 @@ void app_task_camera_display(renderer_t *renderer, app_t *app)
     sfText_setCharacterSize(objects->text, 25);
     display_equations(renderer, app);
     display_solution(renderer, app);
+
+    task_t *node = find_task_node(app, 4);
+    sfText_setPosition(objects->text, (sfVector2f) {500, 500});
+    sfText_setColor(objects->text, sfWhite);
+    sfText_setString(objects->text, CAMERA_RESULT(node));
+    sfRenderWindow_drawText(renderer->window, objects->text, NULL);
 }
