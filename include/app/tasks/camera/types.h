@@ -17,6 +17,7 @@
     #define CAMERA_LIFE(node) node->content.camera.nb_lifes
     #define CAMERA_EQUATIONS(task) task->content.camera.equations
     #define CAMERA_SOLUTION(node) node->content.camera.solution
+    #define LENGHT_MAX_SOLUTION 3
 
 typedef struct s_timer_handler timer_handler_t;
 typedef struct s_node node_t;

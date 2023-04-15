@@ -196,6 +196,8 @@ SRC = 		src/main.c \
 			src/app/core/tasks/camera/game_handler.c \
 			src/app/core/tasks/camera/reset_setup.c \
 			src/app/core/tasks/camera/init_node.c \
+			src/app/core/tasks/camera/valid_solution.c \
+			src/app/core/tasks/camera/write_solution.c \
 			src/app/display/tasks/camera/display.c \
 			src/app/display/tasks/camera/solution.c \
 
