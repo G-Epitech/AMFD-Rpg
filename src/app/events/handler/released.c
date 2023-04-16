@@ -17,5 +17,6 @@ void event_key_released(sfEvent event, renderer_t *renderer, app_t *app)
     if (event.type == sfEvtKeyReleased) {
         keyboard_release_move(event, app);
         keyboard_interaction(event, renderer, app);
+        keyboard_inventory(event, app);
     }
 }

@@ -115,6 +115,7 @@ SRC = 		src/main.c \
 			src/app/events/handler.c \
 			src/app/events/window/close.c \
 			src/app/events/keyboard/move.c \
+			src/app/events/keyboard/inventory.c \
 			src/app/events/keyboard/interaction/interaction.c \
 			src/app/events/keyboard/interaction/fight/start.c \
 			src/app/events/keyboard/interaction/fight/choice.c \
