@@ -17,6 +17,8 @@
     #define ZOOM_RATIO 100
     #define SHAKE_TIME 5
     #define SHAKE_TARGET 500
+    #define FLOATING_TEXT_TIME 10
+    #define FLOATING_TEXT_TARGET 1200
 
 typedef struct s_list list_t;
 typedef struct s_attack attack_t;
@@ -53,11 +55,21 @@ typedef struct s_animation_event_shake_attack {
     int total_offset;
 } animation_event_shake_attack_t;
 
+typedef struct s_animation_event_floating_text {
+    sfColor color;
+    sfVector2f position;
+    int size;
+    sfInt32 last_time;
+    sfInt32 total_time;
+    char *content;
+} animation_event_floating_text_t;
+
 typedef union u_animation_event_data {
-    animation_event_zoom_t *zoom;
     animation_event_npc_t *npc;
+    animation_event_zoom_t *zoom;
     animation_event_player_t *player;
     animation_event_shake_attack_t *shake_attack;
+    animation_event_floating_text_t *floating_text;
 } animation_event_data_t;
 
 typedef enum e_animation_event_type {
@@ -66,7 +78,8 @@ typedef enum e_animation_event_type {
     AE_FADE,
     AE_MOVE_NPC,
     AE_MOVE_PLAYER,
-    AE_SHAKE_ATTACK
+    AE_SHAKE_ATTACK,
+    AE_FLOATING_TEXT
 } animation_event_type_t;
 
 typedef struct s_animation_event {

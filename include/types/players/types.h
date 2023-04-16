@@ -26,6 +26,7 @@ typedef struct s_player {
     list_t *inventory;          //Inventory with all objects
     int skin_id;                //Skin ID
     int level;                  //Player level
+    int life;                   //Life of the player
 } player_t;
 
 #endif /* !PLAYERS_TYPES_H_ */

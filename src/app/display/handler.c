@@ -36,6 +36,7 @@ static void display_elements(renderer_t *renderer, app_t *app)
     display_menus(renderer, app);
     display_tasks_handler(renderer, app);
     display_developer_position(renderer, app);
+    display_animations(renderer, app);
 }
 
 static void center_view(renderer_t *renderer, app_t *app)

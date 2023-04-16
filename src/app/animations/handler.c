@@ -21,6 +21,9 @@ animation_event_t *data)
     if (data->type == AE_SHAKE_ATTACK &&
     animations_shake_attack(data->data.shake_attack, animation->clock))
         return true;
+    if (data->type == AE_FLOATING_TEXT &&
+    animations_floating_text(data->data.floating_text, animation->clock))
+        return true;
     return false;
 }
 

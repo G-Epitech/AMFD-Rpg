@@ -241,4 +241,18 @@ void display_fight_choice(renderer_t *renderer, app_t *app);
  */
 void display_fight_attack(renderer_t *renderer, app_t *app);
 
+/**
+ * @brief Display floating text animations
+ * @param renderer Renderer structure
+ * @param app Application informations
+ */
+void display_animations_floating_text(renderer_t *renderer, app_t *app);
+
+/**
+ * @brief Display animations
+ * @param renderer Renderer structure
+ * @param app Application informations
+ */
+void display_animations(renderer_t *renderer, app_t *app);
+
 #endif /* !DISPLAY_H_ */

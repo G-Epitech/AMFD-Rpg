@@ -27,6 +27,7 @@ int core_handler(renderer_t *renderer, app_t *app)
     if (core_tasks_handler(app) == 84)
         return 84;
     core_handle_movement(app->control, current_map->collision, app);
+    core_fight_handler(app);
     network_receive(app);
     return 0;
 }

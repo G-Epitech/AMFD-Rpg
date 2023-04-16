@@ -97,6 +97,7 @@ SRC = 		src/main.c \
 			src/app/animations/event_new.c \
 			src/app/animations/screen/zoom.c \
 			src/app/animations/button/shake_attack.c \
+			src/app/animations/text/floating.c \
 			\
 			src/app/states/on_state.c \
 			src/app/states/switch.c \
@@ -144,6 +145,8 @@ SRC = 		src/main.c \
 			src/app/core/tasks/script_bash/valid_cmd.c \
 			src/app/core/tasks/script_bash/reset_setup.c \
 			src/app/core/tasks/script_bash/create_list.c \
+			src/app/core/fight/handler.c \
+			src/app/core/fight/enemy.c \
 			\
 			src/app/display/handler.c \
 			src/app/display/map/map.c \
@@ -175,6 +178,8 @@ SRC = 		src/main.c \
 			src/app/display/fight/fight.c \
 			src/app/display/fight/choice.c \
 			src/app/display/fight/attack.c \
+			src/app/display/animations/animations.c \
+			src/app/display/animations/floating_text.c \
 			\
 			src/app/utils/test.c \
 			\
