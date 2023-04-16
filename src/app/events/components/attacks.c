@@ -6,6 +6,7 @@
 */
 
 
+#include <stdlib.h>
 #include <stdio.h>
 #include <SFML/Graphics.h>
 #include "app/events/events.h"
@@ -14,6 +15,7 @@
 #include "types/renderer/types.h"
 #include "types/list/types.h"
 #include "app/animations/animations.h"
+#include "my/include/my.h"
 
 static bool on_attack(attack_t *attack, app_t *app,
 sfEvent event, fight_t *fight)
@@ -38,6 +40,33 @@ sfEvent event, fight_t *fight)
     return true;
 }
 
+static void animation_attack(app_t *app, attack_t *attack)
+{
+    list_t *events = animation_event_new(app);
+    char *attack_text = attack->title;
+
+    attack_text = my_strcat(attack_text, "\n-");
+    attack_text = my_strcat(attack_text, nbr_to_str(attack->damage));
+    attack_text = my_strcat(attack_text, " PV");
+    animations_floating_text_add(events, ATTACK_ANIM_COLOR,
+    ATTACK_ANIM_POSITION, my_strdup(attack_text));
+    free(attack_text);
+}
+
+static void attack_win(app_t *app, renderer_t *renderer)
+{
+    list_t *events = NULL;
+
+    if (app->interaction->data.fight->enemy_life <= 0) {
+        app->interaction->active = false;
+        app->interaction->interaction = false;
+        app->state = ST_INGAME;
+        free(app->interaction->data.fight);
+        events = animation_event_new(app);
+        animations_screen_zoom_add(events, renderer->map_view, 70, 2);
+    }
+}
+
 void event_components_attacks(renderer_t *renderer, app_t *app, sfEvent event)
 {
     list_t *attacks = renderer->ressources->components->fight;
@@ -54,6 +83,8 @@ void event_components_attacks(renderer_t *renderer, app_t *app, sfEvent event)
             app->interaction->data.fight->mana -= attack->mana;
             app->interaction->data.fight->enemy_life -= attack->damage;
             app->interaction->data.fight->state = FT_NPC_ATTACK;
+            animation_attack(app, attack);
+            attack_win(app, renderer);
             break;
         }
         node = node->next;

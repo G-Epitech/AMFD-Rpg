@@ -27,6 +27,7 @@ player_t *players_add(list_t *list, char *name)
     player->name = my_strdup(name);
     player->xp = 1;
     player->level = 15;
+    player->life = 20;
     list_append(list, node_new((node_data_t) player));
     return player;
 }

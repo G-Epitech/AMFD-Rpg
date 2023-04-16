@@ -32,12 +32,28 @@ static void applay_attack(cjson_t *node, app_t *app)
     attack = my_strcat(attack, nbr_to_str(damage));
     attack = my_strcat(attack, " PV");
     app->player->life -= damage;
-    animations_floating_text_add(events, sfWhite, ATTACKS_POSITION,
+    animations_floating_text_add(events, sfRed, ATTACKS_POSITION,
     my_strdup(attack));
     free(attack);
 }
 
-void core_fight_enemy(app_t *app)
+static void attack_loose(app_t *app, renderer_t *renderer)
+{
+    list_t *events = NULL;
+
+    if (app->player->life <= 0) {
+        app->interaction->active = false;
+        app->interaction->interaction = false;
+        app->state = ST_INGAME;
+        free(app->interaction->data.fight);
+        events = animation_event_new(app);
+        animations_screen_zoom_add(events, renderer->map_view, 70, 2);
+    } else {
+        app->interaction->data.fight->state = FT_PLAYER_ATTACK;
+    } 
+}
+
+void core_fight_enemy(app_t *app, renderer_t *renderer)
 {
     cjson_t *config = cjson_parse_file(ATTACKS_NPC_CONFIG);
     cjson_array_t *attacks = cjson_get_array_unsafe(config);
@@ -55,6 +71,6 @@ void core_fight_enemy(app_t *app)
         node = node->next;
     }
     applay_attack(node, app);
-    app->interaction->data.fight->state = FT_PLAYER_ATTACK;
+    attack_loose(app, renderer);
     cjson_free(config);
 }
