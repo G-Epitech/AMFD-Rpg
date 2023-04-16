@@ -207,13 +207,14 @@
             "event": 2
         }
     ],
-    "progress": [
+    "progresses": [
         {
             "position": {"x": 460, "y": 446},
             "app_state": 2,
             "sectors": 6,
-            "size": {"width": 120, "height": 30},
-            "color": 0
+            "size": {"x": 120, "y": 30},
+            "color": 0,
+            "getter_value": 0
         }
     ]
 }

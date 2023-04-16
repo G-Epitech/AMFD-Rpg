@@ -104,7 +104,7 @@ typedef struct s_progress {
 typedef struct s_components {
     list_t *buttons;
     list_t *levers;
-    list_t *progress;
+    list_t *progresses;
 } components_t;
 
 static const struct {

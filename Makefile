@@ -47,6 +47,7 @@ SRC = 		src/main.c \
 			src/types/components/buttons/load.c \
 			src/types/components/levers/append.c \
 			src/types/components/levers/load.c \
+			src/types/components/progress/load.c \
 			\
 			src/types/inventory/add.c \
 			src/types/inventory/item.c \
