@@ -74,4 +74,28 @@ void animations_shake_attack_add(list_t *events, attack_t *attack);
 bool animations_shake_attack(animation_event_shake_attack_t *shake,
 sfClock *clock);
 
+/**
+ * @brief Init new floating text animation
+ * @return animation_event_floating_text_t* Structure of the animation
+ */
+animation_event_floating_text_t *animations_floting_text_init(void);
+
+/**
+ * @brief Add new floating text animation
+ * @param events Events list of animations
+ * @param color Color of the text
+ * @param position Position of the text
+ * @param content Content of the text
+ */
+void animations_floating_text_add(list_t *events, sfColor color,
+sfVector2f position, char *content);
+
+/**
+ * @brief Floating text animation
+ * @param text Text structure
+ * @param clock Clock of animations
+ */
+bool animations_floating_text(animation_event_floating_text_t *text,
+sfClock *clock);
+
 #endif /* !ANIMATIONS_H_ */
