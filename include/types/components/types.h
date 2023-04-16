@@ -79,12 +79,32 @@ typedef struct s_lever {
     levers_states_t state;
 } lever_t;
 
+// Colors of progress bar
+typedef enum e_progress_colors {
+    PG_RED,     // Red color
+    PG_GREEN,   // Green color
+    PG_BLUE,    // Blue color
+    PG_YELLOW,  // Yellow color
+    PG_BEIGE    // Beige color
+} progress_colors_t;
+
+// Progress bar
+typedef struct s_progress {
+    sfVector2f position;        // Position of progress bar
+    progress_colors_t color;    // Color of progress bar
+    sfVector2f size;            // Size of progress bar
+    int sectors;                // Number of bar sectors
+    int getter_value;           // Function to get value of completion
+    app_states_t app_state;     // State of app on which display bar
+} progress_t;
+
 /**
  * Structure with all components
 */
 typedef struct s_components {
     list_t *buttons;
     list_t *levers;
+    list_t *progress;
 } components_t;
 
 static const struct {
@@ -111,6 +131,11 @@ static const struct {
     {settings_music},
     {settings_fullscreen},
     {settings_developer}
+};
+
+static const struct {
+    int (*function) (renderer_t *renderer, app_t *app, progress_t *progress);
+} event_progress_map[] = {
 };
 
 #endif /* !COMPONENTS_TYPES_H_ */

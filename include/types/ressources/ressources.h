@@ -99,6 +99,13 @@ list_t *ressources_components_backgrounds_load(cjson_array_t
 lever_r_t *ressources_components_lever_load(cjson_t *lever_config);
 
 /**
+ * @brief Load texture for progress bars
+ * @param config Configuration file at CSJON format
+ * @return Created texture
+ */
+sfTexture *ressources_components_progress_load(cjson_t *config);
+
+/**
  * @brief Load inventory ressources
  * @param renderer Renderer object
  * @param inventory Structure of inventory ressources
