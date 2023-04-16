@@ -5,6 +5,7 @@
 ** Handle core
 */
 
+#include <stdio.h>
 #include <SFML/Graphics.h>
 #include "types/renderer/types.h"
 #include "app/tasks/task.h"

@@ -19,7 +19,7 @@
 
 void core_fight_handler(app_t *app, renderer_t *renderer)
 {
-    if (!app->interaction->interaction && app->interaction->type != IT_FIGHT)
+    if (!app->interaction->interaction || app->interaction->type != IT_FIGHT)
         return;
     if (app->interaction->data.fight->state == FT_NPC_ATTACK) {
         core_fight_enemy(app, renderer);
