@@ -22,7 +22,7 @@ animation_event_floating_text_t *animations_floting_text_init(void)
     if (!text)
         return NULL;
     text->last_time = 0;
-    text->total_time= 0;
+    text->total_time = 0;
     text->color = (sfColor) {0, 0, 0, 0};
     text->position = (sfVector2f) {0, 0};
     text->size = 30;

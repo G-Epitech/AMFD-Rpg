@@ -21,7 +21,7 @@ animation_event_notif_t *animations_notif_init(void)
     if (!notif)
         return NULL;
     notif->last_time = 0;
-    notif->total_time= 0;
+    notif->total_time = 0;
     notif->title = NULL;
     notif->description = NULL;
     notif->icon = NULL;

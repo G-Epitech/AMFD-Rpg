@@ -30,7 +30,7 @@ static void valid_choice(fight_t *fight, app_t *app, renderer_t *renderer)
             free(app->interaction->data.fight);
             events = animation_event_new(app);
             animations_screen_zoom_add(events, renderer->map_view, 70, 2);
-        } 
+        }
     }
 }
 

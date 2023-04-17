@@ -54,7 +54,7 @@ static void attack_loose(app_t *app, renderer_t *renderer)
         ATTACKS_LOOSE_DESCRIPTION);
     } else {
         app->interaction->data.fight->state = FT_PLAYER_ATTACK;
-    } 
+    }
 }
 
 void core_fight_enemy(app_t *app, renderer_t *renderer)

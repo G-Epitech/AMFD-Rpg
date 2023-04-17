@@ -51,7 +51,7 @@ static void center_view(renderer_t *renderer, app_t *app)
 void display_handler(renderer_t *renderer, app_t *app)
 {
     renderer_objects_t *objects = renderer->objects;
-    
+
     sfRenderWindow_clear(renderer->window, sfBlack);
     sfRenderWindow_setView(renderer->window, renderer->map_view);
     display_game(renderer, app);
