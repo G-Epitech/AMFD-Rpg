@@ -2,12 +2,12 @@
 ## Commit / Pull Requests
 ### Emojis
 `✨` New global feature  
-`🔨` Utils functions  
+`🔨` Utils functions 
 `💡` Display functions  
 `📑` Files functions  
 `📒` Types functions  
 `⚡️` Optimisation / Performance  
-`🏗️` Code architecture  
+`🏗️` Code architecture
 `🍱` Assets  
 `✅` Tests  
 `🚚` Files structure / File rename  

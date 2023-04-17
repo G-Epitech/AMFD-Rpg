@@ -144,7 +144,7 @@ SRC = 		src/main.c \
 			src/app/display/player/player.c \
 			src/app/display/characters/character.c \
 			src/app/display/map/front.c	\
-      		src/app/display/components/components.c \
+      src/app/display/components/components.c \
 			src/app/display/components/backgrounds.c \
 			src/app/display/components/levers.c \
 			src/app/display/components/buttons/buttons.c \
@@ -164,6 +164,7 @@ SRC = 		src/main.c \
 			src/app/display/inventory/levels.c \
 			src/app/display/developer/collisions.c \
 			src/app/display/developer/position.c \
+      src/app/getters/progress/inventory.c \
 			\
 			src/app/utils/test.c \
 			\
@@ -197,8 +198,16 @@ SRC = 		src/main.c \
 			src/app/core/tasks/flipper/click_circle.c \
 			src/app/display/tasks/flipper/display.c \
 			\
-			src/app/getters/progress/inventory.c \
-
+			src/app/core/tasks/camera/create_node.c \
+			src/app/core/tasks/camera/game_handler.c \
+			src/app/core/tasks/camera/reset_setup.c \
+			src/app/core/tasks/camera/init_node.c \
+			src/app/core/tasks/camera/valid_solution.c \
+			src/app/core/tasks/camera/write_solution.c \
+			src/app/display/tasks/camera/display.c \
+			src/app/display/tasks/camera/solution.c \
+			src/app/display/tasks/camera/result.c \
+			src/app/display/tasks/camera/equations.c \
 
 NAME = my_rpg
 
