@@ -36,4 +36,12 @@ typedef struct s_inventory_item {
     int pos;
 } inventory_item_t;
 
+typedef struct s_inventory_move {
+    bool pressed;
+    sfVector2f position;
+    bool item_active;
+    int item_pos;
+    int target_pos;
+} inventory_move_t;
+
 #endif /* !INVENTORY_TYPES_H_ */

@@ -86,6 +86,7 @@ SRC = 		src/main.c \
 			src/app/init/controller.c \
 			src/app/init/init.c \
 			src/app/init/interactions.c \
+			src/app/init/inventory_move.c \
 			src/app/init/items.c \
 			src/app/init/network.c \
 			src/app/init/npcs.c \
@@ -95,6 +96,7 @@ SRC = 		src/main.c \
 			src/app/init/tasks.c \
 			\
 			src/app/free/free.c \
+			src/app/free/inventory_move.c \
 			\
 			src/app/states/on_state.c \
 			src/app/states/switch.c \
@@ -149,7 +151,7 @@ SRC = 		src/main.c \
 			src/app/display/player/player.c \
 			src/app/display/characters/character.c \
 			src/app/display/map/front.c	\
-      src/app/display/components/components.c \
+      		src/app/display/components/components.c \
 			src/app/display/components/backgrounds.c \
 			src/app/display/components/levers.c \
 			src/app/display/components/buttons/buttons.c \

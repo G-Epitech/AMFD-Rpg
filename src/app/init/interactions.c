@@ -5,7 +5,6 @@
 ** settings
 */
 
-
 #include <stdlib.h>
 #include "types/renderer/types.h"
 #include "app/types.h"
