@@ -13,16 +13,19 @@
 #include "types/list/list.h"
 #include "my/include/my.h"
 
-static void realloc_char(char **cmd, char chr)
+static int realloc_char(char **cmd, char chr)
 {
     char *save_cmd = my_strdup((*cmd));
 
     (*cmd)[0] = '\0';
     (*cmd) = malloc(sizeof(char) * (my_strlen(save_cmd) + 2));
+    if (!(*cmd))
+        return 84;
     my_strcpy((*cmd), save_cmd);
     (*cmd)[my_strlen(save_cmd)] = chr;
     (*cmd)[my_strlen(save_cmd) + 1] = '\0';
     free(save_cmd);
+    return 0;
 }
 
 void solution_write(sfEvent event, app_t *app)
