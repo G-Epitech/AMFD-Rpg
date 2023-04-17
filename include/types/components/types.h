@@ -20,6 +20,13 @@
     #include "app/tasks/bruteforce/bruteforce.h"
 
     #define COMPONENTS_CONFIG "configs/components.json"
+    #define PROGRESS_MARGIN 4
+    #define PROGRESS_RECT ((sfVector2f) {8, 64})
+    #define PROGRESS_COLOR_POS ((sfVector2f) {80, 0})
+    #define PROGRESS_EMPTY_RECT ((sfIntRect) {68, 0, 8, 64})
+    #define PROGRESS_SEPARATOR_RECT ((sfIntRect) {56, 0, 8, 64})
+    #define PROGRESS_LEFT_BORDER_RECT ((sfIntRect) {0, 0, 24, 64})
+    #define PROGRESS_RIGHT_BORDER_RECT ((sfIntRect) {28, 0, 24, 64})
 
 typedef struct s_list list_t;
 typedef struct s_renderer renderer_t;
