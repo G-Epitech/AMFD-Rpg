@@ -209,11 +209,32 @@
     ],
     "progresses": [
         {
-            "position": {"x": 0, "y": 0},
-            "app_state": 300,
-            "size": {"x": 120, "y": 50},
+            "position": {"x": 845, "y": 790},
+            "app_state": [300],
+            "size": {"x": 300, "y": 50},
+            "color": 2,
+            "getter_value": 1
+        },
+        {
+            "position": {"x": 845, "y": 880},
+            "app_state": [300],
+            "size": {"x": 300, "y": 50},
+            "color": 1,
+            "getter_value": 2
+        },
+        {
+            "position": {"x": 1301, "y": 790},
+            "app_state": [300],
+            "size": {"x": 300, "y": 50},
             "color": 3,
-            "getter_value": 0
+            "getter_value": 4
+        },
+        {
+            "position": {"x": 1301, "y": 880},
+            "app_state": [300],
+            "size": {"x": 300, "y": 50},
+            "color": 0,
+            "getter_value": 3
         }
     ]
 }

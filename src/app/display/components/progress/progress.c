@@ -97,7 +97,7 @@ void display_progress(progress_t *progress, renderer_t *renderer, app_t *app)
     int value = 0;
 
     if (getter)
-        value = getter(app, progress);
+        value = getter(app, progress) / 2;
     get_scale(progress, &scale);
     display_borders(progress, renderer, scale);
     display_sectors(progress, renderer, scale, value);

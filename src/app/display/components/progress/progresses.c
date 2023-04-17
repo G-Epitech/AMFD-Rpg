@@ -20,7 +20,7 @@ void display_components_progresses(renderer_t *renderer, app_t *app)
 
     while (node) {
         progress = node->data.progress;
-        if (progress->app_state == app->state)
+        if (app_on_state(app, progress->app_state, progress->state_size))
             display_progress(progress, renderer, app);
         node = node->next;
     }

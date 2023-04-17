@@ -195,6 +195,8 @@ SRC = 		src/main.c \
 			src/app/core/tasks/flipper/circle_handler.c \
 			src/app/core/tasks/flipper/click_circle.c \
 			src/app/display/tasks/flipper/display.c \
+			\
+			src/app/getters/progress/inventory.c \
 
 
 NAME = my_rpg

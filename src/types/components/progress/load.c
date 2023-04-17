@@ -19,10 +19,14 @@ static void progress_load(list_t *progresses, cjson_t *progress)
 {
     progress_t *data = malloc(sizeof(progress_t));
     node_t *node = NULL;
+    cjson_array_t *array = NULL;
+    size_t len = 0;
 
     if (!data)
         return;
-    cjson_get_prop_int(progress, "app_state", (int *) &data->app_state);
+    cjson_get_prop_array(progress, "app_state", &array);
+    data->app_state = (app_states_t *) cjson_array_to_int_array(array, &len);
+    data->state_size = len;
     cjson_get_prop_int(progress, "color", (int *) &data->color);
     cjson_get_prop_int(progress, "getter_value", &data->getter_value);
     data->size = cjson_vector(progress, "size");

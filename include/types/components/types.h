@@ -101,7 +101,8 @@ typedef struct s_progress {
     progress_colors_t color;    // Color of progress bar
     sfVector2f size;            // Size of progress bar
     int getter_value;           // Function to get value of completion
-    app_states_t app_state;     // State of app on which display bar
+    app_states_t *app_state;    // State of app on which display bar
+    size_t state_size;          // Number of states
 } progress_t;
 
 /**
@@ -142,7 +143,11 @@ static const struct {
 typedef int (*progress_getter_value_t) (app_t *app, progress_t *progress);
 
 const static progress_getter_value_t progress_getters[] = {
-    NULL
+    NULL,
+    &inventory_get_intelligence,
+    &inventory_get_life,
+    &inventory_get_speed,
+    &inventory_get_xp
 };
 
 #endif /* !COMPONENTS_TYPES_H_ */
