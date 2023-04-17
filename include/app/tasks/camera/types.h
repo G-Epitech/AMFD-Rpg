@@ -24,6 +24,9 @@
     #define IN_TASK 0
     #define WIN 1
     #define LOOSE 2
+    #define FILE_POS_EQUATION "./configs/tasks/pos_equations.json"
+    #define FILE_REP_EQUATION "./configs/tasks/reponse_equation.json"
+    #define FILE_EQUATION "./configs/tasks/equation.json"
 
 typedef struct s_timer_handler timer_handler_t;
 typedef struct s_node node_t;

@@ -57,8 +57,7 @@ int init_list_equations(list_t *equation_list, cjson_t *object_file)
 
 static int init_equations(task_t *task)
 {
-    cjson_t *object_file =
-    cjson_parse_file("./configs/tasks/pos_equations.json");
+    cjson_t *object_file = cjson_parse_file(FILE_POS_EQUATION);
 
     CAMERA_EQUATIONS(task) = list_new();
     if (init_list_equations(CAMERA_EQUATIONS(task), object_file) == 84)

@@ -30,14 +30,14 @@ static void realloc_char(char **cmd, char *chr)
 static void find_solution(char *index_equation,
 char *index_solution, app_t *app)
 {
-    cjson_t *object_file =
-    cjson_parse_file("./configs/tasks/reponse_equation.json");
+    cjson_t *object_file = cjson_parse_file(FILE_REP_EQUATION);
     cjson_t *level_equation = cjson_get_prop(object_file, index_equation);
     task_t *node = find_task_node(app, 4);
     char *solution = NULL;
 
     solution = cjson_get_prop_string_unsafe(level_equation, index_solution);
     realloc_char(&CAMERA_RESULT(node), solution);
+    free(solution);
 }
 
 static char *find_equation(int index_equa, cjson_t *object_file, app_t *app)
@@ -51,13 +51,15 @@ static char *find_equation(int index_equa, cjson_t *object_file, app_t *app)
     equa_random = nbr_to_str(rand() % 7);
     find_solution(index_equation, equa_random, app);
     equation = cjson_get_prop_string_unsafe(level_equation, equa_random);
+    free(index_equation);
+    free(equa_random);
     return equation;
 }
 
 int init_equation(app_t *app)
 {
     task_t *node = find_task_node(app, 4);
-    cjson_t *object_file = cjson_parse_file("./configs/tasks/equation.json");
+    cjson_t *object_file = cjson_parse_file(FILE_EQUATION);
     node_t *temp = CAMERA_EQUATIONS(node)->first;
 
     CAMERA_SOLUTION(node) = malloc(sizeof(char) * 1);

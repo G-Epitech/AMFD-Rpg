@@ -50,6 +50,7 @@ static void display_decorations(renderer_t *renderer)
 {
     renderer_objects_t *objects = renderer->objects;
 
+    renderer_objects_reset_text(objects);
     sfText_setPosition(objects->text, (sfVector2f) {515, 830});
     sfText_setColor(objects->text, sfWhite);
     sfText_setString(objects->text,
