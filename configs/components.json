@@ -209,11 +209,10 @@
     ],
     "progresses": [
         {
-            "position": {"x": 460, "y": 446},
-            "app_state": 2,
-            "sectors": 6,
-            "size": {"x": 120, "y": 30},
-            "color": 0,
+            "position": {"x": 0, "y": 0},
+            "app_state": 300,
+            "size": {"x": 120, "y": 50},
+            "color": 3,
             "getter_value": 0
         }
     ]

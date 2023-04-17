@@ -150,6 +150,8 @@ SRC = 		src/main.c \
 			src/app/display/components/buttons/buttons.c \
 			src/app/display/components/buttons/icon.c \
 			src/app/display/components/buttons/dispatch.c \
+			src/app/display/components/progress/progress.c \
+			src/app/display/components/progress/progresses.c \
 			src/app/display/menus/menus.c \
 			src/app/display/menus/main_menu.c \
 			src/app/display/menus/settings.c \

@@ -25,7 +25,6 @@ static void progress_load(list_t *progresses, cjson_t *progress)
     cjson_get_prop_int(progress, "app_state", (int *) &data->app_state);
     cjson_get_prop_int(progress, "color", (int *) &data->color);
     cjson_get_prop_int(progress, "getter_value", &data->getter_value);
-    cjson_get_prop_int(progress, "sectors", &data->sectors);
     data->size = cjson_vector(progress, "size");
     data->position = cjson_vector(progress, "position");
     node = node_new((node_data_t) data);
