@@ -248,7 +248,7 @@
             "app_state": [300],
             "size": {"x": 270, "y": 42},
             "color": 1,
-            "getter_value": 2
+            "getter_value": 3
         },
         {
             "position": {"x": 1297, "y": 786},
@@ -262,7 +262,7 @@
             "app_state": [300],
             "size": {"x": 230, "y": 42},
             "color": 0,
-            "getter_value": 3
+            "getter_value": 2
         }
     ]
 }

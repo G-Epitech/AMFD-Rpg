@@ -27,6 +27,8 @@ typedef struct s_player {
     int skin_id;                //Skin ID
     int level;                  //Player level
     int life;                   //Life of the player
+    int speed;                  //Speed of the player
+    int intellect;              //Intelect of the player
 } player_t;
 
 #endif /* !PLAYERS_TYPES_H_ */
