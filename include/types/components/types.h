@@ -142,7 +142,7 @@ static const struct {
 
 typedef int (*progress_getter_value_t) (app_t *app, progress_t *progress);
 
-const static progress_getter_value_t progress_getters[] = {
+static const progress_getter_value_t progress_getters[] = {
     NULL,
     &inventory_get_intelligence,
     &inventory_get_life,

@@ -17,6 +17,10 @@ SRC = 		src/main.c \
 			src/types/list/append.c \
 			src/types/list/list.c \
 			\
+			src/types/sound/load.c	\
+			src/types/sound/load_sound_fx.c	\
+			src/types/sound/load_sound_themes.c	\
+			\
 			src/types/node/node.c \
 			src/types/node/swap.c \
 			\
@@ -87,6 +91,7 @@ SRC = 		src/main.c \
 			src/app/init/npcs.c \
 			src/app/init/players.c \
 			src/app/init/settings.c \
+			src/app/init/sounds.c \
 			src/app/init/tasks.c \
 			\
 			src/app/free/free.c \
@@ -156,6 +161,14 @@ SRC = 		src/main.c \
 			src/app/display/menus/main_menu.c \
 			src/app/display/menus/settings.c \
 			src/app/display/menus/select_character.c \
+			\
+			src/app/core/handler.c	\
+			src/app/core/sound.c	\
+			\
+			src/app/sound/sound_control.c	\
+			src/app/sound/handle_sound_fx.c	\
+			src/app/sound/handle_sound_themes.c	\
+			src/app/sound/handle_sound_volume.c	\
 			src/app/display/inventory/grids.c \
 			src/app/display/inventory/item_box.c \
 			src/app/display/inventory/profile.c \
@@ -164,7 +177,7 @@ SRC = 		src/main.c \
 			src/app/display/inventory/levels.c \
 			src/app/display/developer/collisions.c \
 			src/app/display/developer/position.c \
-      src/app/getters/progress/inventory.c \
+      		src/app/getters/progress/inventory.c \
 			\
 			src/app/utils/test.c \
 			\
@@ -178,7 +191,6 @@ SRC = 		src/main.c \
 			src/app/core/tasks/brute_force/init_node.c \
 			src/app/core/tasks/brute_force/click.c \
 			src/app/core/tasks/brute_force/released.c \
-			src/app/core/handler.c	\
 			src/app/core/interactions/movement.c \
 			src/app/core/interactions/npc.c \
 			\

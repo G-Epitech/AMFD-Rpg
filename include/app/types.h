@@ -11,6 +11,7 @@
     #include <stdbool.h>
     #include "types/players/types.h"
     #include "app/network/types.h"
+    #include "sound/types.h"
 
 typedef struct s_list list_t;
 typedef struct s_renderer renderer_t;
@@ -50,7 +51,7 @@ typedef struct s_control {
 
 typedef struct s_settings {
     bool music;             //Music in game
-    int volume;             //Volume of the music
+    float volume;             //Volume of the music
     int fps;                //Framerate of the game
     bool full_screen;       //Application in full screen
     bool developer;         //Developer mode
@@ -84,6 +85,7 @@ typedef struct s_app {
     settings_t *settings;   //Settings of the application
     network_t *network;     //Network
     interactions_t *interaction;    //Interaction in the app
+    sound_board_t *sound_board; //Soundboard
 } app_t;
 
 typedef bool (*app_init_member_t)(app_t *app, renderer_t *renderer);

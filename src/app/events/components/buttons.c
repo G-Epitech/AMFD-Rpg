@@ -12,6 +12,7 @@
 #include "app/app.h"
 #include "types/renderer/types.h"
 #include "types/list/types.h"
+#include "app/sound/sound_control.h"
 
 static bool on_button(button_t *button, app_t *app,
 sfEvent event)
@@ -42,10 +43,12 @@ void event_components_buttons(renderer_t *renderer, app_t *app, sfEvent event)
     while (node) {
         button = node->data.button;
         if (on_button(button, app, event) && button->next_state > 0) {
+            sound_control(SOUND_FX, CLICK_MENU, sfPlaying);
             app->state = button->next_state;
             break;
         }
         if (on_button(button, app, event)) {
+            sound_control(SOUND_FX, CLICK_MENU, sfPlaying);
             event_button_map[button->event].function(renderer, app, button);
             break;
         }
