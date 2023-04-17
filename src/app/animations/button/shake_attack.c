@@ -22,7 +22,7 @@ animation_event_shake_attack_t *animations_shake_attack_init(void)
     if (!shake)
         return NULL;
     shake->last_time = 0;
-    shake->total_time= 0;
+    shake->total_time = 0;
     shake->attack = NULL;
     shake->origin = (sfVector2f) {0, 0};
     shake->target_time = SHAKE_TARGET;

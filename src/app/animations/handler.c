@@ -47,7 +47,7 @@ static void animations_event_handler(animations_t *animation)
             node = node->next;
             list_delete(events, tmp);
             continue;
-        } 
+        }
         node = node->next;
     }
     if (events->len == 0)

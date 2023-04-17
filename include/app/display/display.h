@@ -269,6 +269,7 @@ void display_animations(renderer_t *renderer, app_t *app);
  */
 void display_animations_notif(renderer_t *renderer, app_t *app);
 
+/*
  * @brief Display progress bar component
  * @param progress Progress bar component
  * @param renderer Renderer object

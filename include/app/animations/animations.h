@@ -40,9 +40,9 @@ bool animations_screen_zoom(animation_event_zoom_t *zoom, sfClock *clock);
 /**
  * @brief Add new zoom animation
  * @param events Group of animations
- * @param view 
- * @param speed 
- * @param zoom 
+ * @param view View of the app
+ * @param speed Speed of the zoom
+ * @param zoom Size of the zoom
  */
 void animations_screen_zoom_add(list_t *events, sfView *view, float speed,
 float zoom);
