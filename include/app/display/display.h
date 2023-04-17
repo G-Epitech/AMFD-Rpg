@@ -234,4 +234,12 @@ void display_progress(progress_t *progress, renderer_t *renderer, app_t *app);
  * @param app App object
  */
 void display_components_progresses(renderer_t *renderer, app_t *app);
+
+/**
+ * @brief Display inventory levels
+ * @param renderer Renderer object
+ * @param app App object
+ */
+void display_inventory_levels(renderer_t *renderer, app_t *app);
+
 #endif /* !DISPLAY_H_ */

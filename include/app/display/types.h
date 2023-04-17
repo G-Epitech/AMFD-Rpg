@@ -21,5 +21,6 @@
     #define VALID_TOM ((sfVector2f) {1173, 646})
     #define REFUSE_LUCAS ((sfVector2f) {653, 649})
     #define REFUSE_TOM ((sfVector2f) {1184, 649})
+    #define MAIN_COLOR ((sfColor) {107, 80, 82, 255})
 
 #endif /* !DISPLAY_TYPES_H_ */
