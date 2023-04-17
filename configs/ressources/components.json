@@ -14,13 +14,13 @@
         {
             "asset": "assets/components/backgrounds/menu_background.png",
             "scale": 1,
-            "state": [1, 2, 3, 4, 5, 6, 7],
+            "state": [1, 2, 3, 4, 5, 6, 7, 8],
             "position" : {"x": 0, "y": 0}
         },
         {
             "asset": "assets/components/backgrounds/menu.png",
             "scale": 1,
-            "state": [1, 2, 3, 4, 5, 6, 7, 502, 503, 504],
+            "state": [1, 2, 3, 4, 5, 6, 7, 8, 502, 503, 504],
             "position" : {"x": 341, "y": 156}
         },
         {

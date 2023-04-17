@@ -129,7 +129,10 @@ static const struct {
     {network_connexion_host},
     {network_connexion_join},
     {states_select_character},
-    {brute_force_click}
+    {brute_force_click},
+    {settings_resolution_lower},
+    {settings_resolution_medium},
+    {settings_resolution_high}
 };
 
 static const struct {
@@ -142,7 +145,7 @@ static const struct {
 
 typedef int (*progress_getter_value_t) (app_t *app, progress_t *progress);
 
-const static progress_getter_value_t progress_getters[] = {
+static const progress_getter_value_t progress_getters[] = {
     NULL,
     &inventory_get_intelligence,
     &inventory_get_life,
