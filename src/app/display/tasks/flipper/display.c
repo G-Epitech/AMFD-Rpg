@@ -23,10 +23,12 @@ static void display_time(renderer_t *renderer, app_t *app)
     sfText_setPosition(objects->text, (sfVector2f) {410, 230});
     sfText_setColor(objects->text, sfWhite);
     sfText_setString(objects->text, "Temps :");
+    sfText_setCharacterSize(objects->text, 20);
     sfRenderWindow_drawText(renderer->window, objects->text, NULL);
     sfText_setPosition(objects->text, (sfVector2f) {560, 230});
     char_second = nbr_to_str((int) TIME_FLOAT(node->content.flipper));
     sfText_setString(objects->text, char_second);
+    sfText_setCharacterSize(objects->text, 20);
     sfRenderWindow_drawText(renderer->window, objects->text, NULL);
 }
 
@@ -38,7 +40,8 @@ static void display_life(renderer_t *renderer, app_t *app)
 
     sfText_setPosition(objects->text, (sfVector2f) {410, 270});
     sfText_setColor(objects->text, sfWhite);
-    sfText_setString(objects->text, "vie :");
+    sfText_setString(objects->text, "Vie :");
+    sfText_setCharacterSize(objects->text, 20);
     sfRenderWindow_drawText(renderer->window, objects->text, NULL);
     sfText_setPosition(objects->text, (sfVector2f) {505, 270});
     char_life = nbr_to_str(NB_LIFE_FLIPPER(node));
@@ -55,6 +58,7 @@ static void display_nb_circle(renderer_t *renderer, app_t *app)
     sfText_setPosition(objects->text, (sfVector2f) {410, 310});
     sfText_setColor(objects->text, sfWhite);
     sfText_setString(objects->text, "Nombre de cercles :");
+    sfText_setCharacterSize(objects->text, 20);
     sfRenderWindow_drawText(renderer->window, objects->text, NULL);
     sfText_setPosition(objects->text, (sfVector2f) {730, 310});
     char_nb_circle = nbr_to_str(NB_CIRCLE_FLIPPER(node));
