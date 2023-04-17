@@ -13,6 +13,7 @@
     {size.x + middle.x, middle.y})
     #define RIGHT_POS(size, middle, right, scale) ((sfVector2f)\
     {size.x + middle.x * scale+ right.x, right.y})
+    #define MAIN_COLOR ((sfColor) {107, 80, 82, 255})
     #define TEXT_DEFAULT_COLOR ((sfColor) {107, 80, 82, 255})
     #define TEXT_SELECT_COLOR ((sfColor) {218, 164, 99, 255})
     #define TEXT_LOCK_COLOR ((sfColor) {58, 58, 80, 255})

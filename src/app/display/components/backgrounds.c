@@ -32,9 +32,8 @@ void display_components_backgrounds(renderer_t *renderer, app_t *app)
 
     while (node) {
         background = node->data.background;
-        if (app_on_state(app, background->app_state, background->state_size)) {
+        if (app_on_state(app, background->app_state, background->state_size))
             display_background(background, renderer);
-        }
         node = node->next;
     }
 }

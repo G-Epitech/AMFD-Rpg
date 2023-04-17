@@ -269,4 +269,25 @@ void display_animations(renderer_t *renderer, app_t *app);
  */
 void display_animations_notif(renderer_t *renderer, app_t *app);
 
+ * @brief Display progress bar component
+ * @param progress Progress bar component
+ * @param renderer Renderer object
+ * @param app App object
+ */
+void display_progress(progress_t *progress, renderer_t *renderer, app_t *app);
+
+/**
+ * @brief Display all progress bars
+ * @param renderer Renderer object
+ * @param app App object
+ */
+void display_components_progresses(renderer_t *renderer, app_t *app);
+
+/**
+ * @brief Display inventory levels
+ * @param renderer Renderer object
+ * @param app App object
+ */
+void display_inventory_levels(renderer_t *renderer, app_t *app);
+
 #endif /* !DISPLAY_H_ */

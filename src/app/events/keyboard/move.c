@@ -9,6 +9,7 @@
 #include "app/app.h"
 #include "types/players/types.h"
 #include "app/events/types.h"
+#include "app/sound/sound_control.h"
 
 void keyboard_press_move(sfEvent event, app_t *app)
 {
@@ -23,7 +24,8 @@ void keyboard_press_move(sfEvent event, app_t *app)
 void keyboard_release_move(sfEvent event, app_t *app)
 {
     for (size_t i = 0; i < 4; i++) {
-        if (event.key.code == app->control[i].key)
+        if (event.key.code == app->control[i].key) {
             app->control[i].direction = false;
+        }
     }
 }

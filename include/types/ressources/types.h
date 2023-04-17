@@ -85,6 +85,7 @@ typedef struct s_components_r {
     lever_r_t *lever;           //Lever textures
     list_t *backgrounds;        //Backgrounds list
     list_t *fight;              //Fight ressources (attaks)
+    sfTexture *progress;        //Texture for progress bars
 } components_r_t;
 
 typedef struct s_inventory_ressources {

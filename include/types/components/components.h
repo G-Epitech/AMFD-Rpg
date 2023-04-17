@@ -55,6 +55,13 @@ app_states_t app_state);
 void levers_load(components_t *components, cjson_array_t *levers);
 
 /**
+ * @brief Load all progress bar of app
+ * @param components Components list
+ * @param progresses CJSON array of all progress bars
+ */
+void progresses_load(components_t *components, cjson_array_t *progresses);
+
+/**
  * @brief Get cjson vector
  * @param config Json configuration
  * @param prop Key of property to get

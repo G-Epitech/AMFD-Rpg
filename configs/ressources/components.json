@@ -20,7 +20,7 @@
         {
             "asset": "assets/components/backgrounds/menu.png",
             "scale": 1,
-            "state": [1, 2, 3, 4, 5, 6, 7, 502],
+            "state": [1, 2, 3, 4, 5, 6, 7, 502, 503, 504],
             "position" : {"x": 341, "y": 156}
         },
         {
@@ -83,5 +83,7 @@
             "state": [300],
             "position" : {"x": 177, "y": 45}
         }
-    ]
+    ],
+
+    "progress": "assets/components/progress.png"
 }

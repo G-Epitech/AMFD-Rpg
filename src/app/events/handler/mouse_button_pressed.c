@@ -10,6 +10,7 @@
 #include "types/renderer/types.h"
 #include "app/events/events.h"
 #include "app/tasks/bash/script_bash.h"
+#include "app/tasks/flipper/flipper.h"
 #include "app/app.h"
 
 static void mouse_event(sfEvent event, app_t *app,
@@ -24,6 +25,8 @@ renderer_t *renderer)
     event_components_buttons(renderer, app, event);
     event_components_levers(renderer, app, event);
     event_components_attacks(renderer, app, event);
+    if (app->state == ST_TASK_FLIPPER)
+        event_task_flipper(renderer, app);
 }
 
 void event_mouse_button_pressed(app_t *app, renderer_t *renderer,

@@ -17,4 +17,5 @@ void display_inventory(renderer_t *renderer, app_t *app)
         return;
     display_inventory_grids(renderer, app);
     display_inventory_profile(renderer, app);
+    display_inventory_levels(renderer, app);
 }

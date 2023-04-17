@@ -22,6 +22,12 @@
 */
 void core_handle_movement(control_t *control, sfImage *collision, app_t *app);
 /**
+ * @brief Main function for the sound system
+ * @param app Main app structure
+*/
+void core_handle_sound(app_t *app);
+
+/**
  * @brief Function that will handle the core actions of the
  * game
  * @param renderer Main renderer structure

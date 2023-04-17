@@ -24,5 +24,6 @@ components_r_t *ressources_components_init(renderer_t *renderer)
     components->button = NULL;
     components->lever = NULL;
     components->backgrounds = NULL;
+    components->progress = NULL;
     return components;
 }

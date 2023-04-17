@@ -35,5 +35,6 @@ components_r_t *components)
     components->backgrounds = ressources_components_backgrounds_load
     (backgrounds_config);
     components->fight = ressources_components_fight_load(fight_config);
+    components->progress = ressources_components_progress_load(cmp_config);
     cjson_free(cmp_config);
 }
