@@ -183,8 +183,36 @@
             "origin": {"x": 50, "y": 50},
             "id": 1,
             "event": 12
+        },
+        {
+            "icon": "assets/components/button/settings.png",
+            "app_state": [100],
+            "position": {"x": 1819, "y": 950},
+            "scale": 1,
+            "next_state": 302
+        },
+        {
+            "icon": "assets/components/button/pause.png",
+            "app_state": [100],
+            "position": {"x": 1717, "y": 950},
+            "scale": 1,
+            "next_state": 301
+        },
+        {
+            "icon": "assets/components/button/help.png",
+            "app_state": [100],
+            "position": {"x": 1615, "y": 950},
+            "scale": 1,
+            "next_state": 303
+        },
+        {
+            "icon": "assets/components/button/inventory.png",
+            "app_state": [100],
+            "position": {"x": 1513, "y": 950},
+            "scale": 1,
+            "next_state": 300
         }
-    ],
+    ],  
 
     "levers": [
         {

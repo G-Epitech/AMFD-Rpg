@@ -29,6 +29,8 @@ typedef enum e_app_states {
     ST_INGAME = 100,        //Main state, ingame player
     ST_INVENTORY = 300,     //Inventory menu
     ST_BREAK,               //Break menu (save/sound...)
+    ST_IGSETTINGS,          //In game settings
+    ST_IGHELP,              //In game help
     ST_FIGHT = 350,         //Fight interface
     ST_TASK = 500,          //Task delimiter
     ST_TASK_BASH,           //Task n°1: bash
