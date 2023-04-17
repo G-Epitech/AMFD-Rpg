@@ -43,6 +43,8 @@ static void theme_append(list_t *themes, cjson_t *theme_config)
     node_t *node = NULL;
     sound_theme_t *theme = malloc(sizeof(sound_theme_t));
 
+    if (!theme)
+        return;
     get_theme_properties(theme, theme_config);
     set_theme_properties(theme);
     node = node_new((node_data_t) theme);
@@ -70,5 +72,6 @@ list_t *sound_themes_load(void)
         theme = theme->next;
     }
     cjson_free(theme_config);
+    cjson_free(theme);
     return themes;
 }

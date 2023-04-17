@@ -40,6 +40,8 @@ static void sound_append(list_t *sounds, cjson_t *sound_config)
     node_t *node = NULL;
     sound_t *sound = malloc(sizeof(sound_t));
 
+    if (!sound)
+        return;
     get_sound_properties(sound, sound_config);
     set_sound_properties(sound);
     node = node_new((node_data_t) sound);
