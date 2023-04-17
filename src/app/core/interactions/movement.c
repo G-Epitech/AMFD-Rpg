@@ -18,11 +18,11 @@ size_t y, app_t *app)
 {
     sfColor pixel = {0, 0, 0, 255};
 
+    app->interaction->interaction = false;
     for (size_t x = 0; x < 12; x++) {
         pixel = sfImage_getPixel(collision, position.x + x,
         position.y + y);
         if (pixel.a != 0) {
-            app->interaction->interaction = false;
             core_interactions_npc(pixel, app);
             return false;
         }
