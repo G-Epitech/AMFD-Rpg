@@ -14,6 +14,7 @@
 #include "types/list/types.h"
 #include "app/events/events.h"
 #include "app/display/display.h"
+#include "app/sound/sound_control.h"
 #include "types/renderer/renderer.h"
 #include "types/components/components.h"
 #include "types/ressources/ressources.h"

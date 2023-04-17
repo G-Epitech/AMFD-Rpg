@@ -12,7 +12,9 @@ int settings_volume_up(renderer_t *renderer, app_t *app, button_t *button)
 {
     (void) renderer;
     (void) button;
-    app->settings->volume++;
+    if (app->settings->volume < 100) {
+        app->settings->volume++;
+    }
     return 0;
 }
 

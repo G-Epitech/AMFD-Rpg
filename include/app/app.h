@@ -59,6 +59,14 @@ bool app_init_controller(app_t *app, renderer_t *renderer);
 bool app_init_settings(app_t *app, renderer_t *renderer);
 
 /**
+ * @brief Initialize sounds of app
+ * @param app App object
+ * @param renderer Renderer object
+ * @return Initialization success status
+ */
+bool app_init_sounds(app_t *app, renderer_t *renderer);
+
+/**
  * @brief Initialize items of game
  * @param app App object
  * @param renderer Renderer object

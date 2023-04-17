@@ -1,0 +1,18 @@
+[
+    {
+        "title": "walking",
+        "buffer": "assets/sounds/walk.ogg",
+        "volume": 100.0,
+        "loop": false,
+        "lone": false,
+        "status": 0
+    },
+    {
+        "title": "click_menu",
+        "buffer": "assets/sounds/click_menu.ogg",
+        "volume": 50.0,
+        "loop": false,
+        "lone": true,
+        "status": 0
+    }
+]

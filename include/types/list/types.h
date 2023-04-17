@@ -11,6 +11,7 @@
     #include <stdbool.h>
     #include "app/tasks/types.h"
     #include "types/npc/types.h"
+    #include "app/sound/types.h"
     #include "app/items/types.h"
     #include "types/players/types.h"
     #include "app/tasks/bash/types.h"
@@ -29,10 +30,12 @@ typedef union u_node_data {
     task_camera_node_t *node_camera;
     background_t *background;
     npc_dialog_t npc_dialog;
+    sound_theme_t *theme;
     progress_t *progress;
     npc_data_t npc_data;
     player_t *player;
     button_t *button;
+    sound_t *sound;
     lever_t *lever;
     item_t *item;
     task_t *task;
