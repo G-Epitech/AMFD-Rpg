@@ -7,6 +7,7 @@
 
 #include "app/types.h"
 #include "types/list/types.h"
+#include "app/display/types.h"
 #include "app/display/display.h"
 #include "types/renderer/renderer.h"
 #include "types/ressources/ressources.h"

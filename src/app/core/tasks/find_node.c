@@ -10,7 +10,7 @@
 #include "app/tasks/bash/script_bash.h"
 #include "app/tasks/bruteforce/bruteforce.h"
 
-task_content_t find_task_node(app_t *app, int id)
+task_t *find_task_node(app_t *app, int id)
 {
     node_t *task = app->tasks_setup->first;
     int index = 1;
@@ -19,5 +19,5 @@ task_content_t find_task_node(app_t *app, int id)
         task = task->next;
         index++;
     }
-    return task->data.task->content;
+    return task->data.task;
 }

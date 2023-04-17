@@ -30,6 +30,7 @@ SRC = 		src/main.c \
 			src/types/npc/load/enemy.c \
 			src/types/npc/load/world_data.c \
 			src/types/npc/load/worlds_data.c \
+			src/types/npc/load/include_array.c \
 			src/types/npc/destroy/worlds_data.c \
 			src/types/npc/destroy/destroy_all.c \
 			src/types/npc/destroy/enemy.c \
@@ -37,6 +38,12 @@ SRC = 		src/main.c \
 			\
 			src/types/players/init.c \
 			src/types/players/add.c \
+			src/types/players/inventory.c \
+			\
+			src/types/items/load_all.c \
+			src/types/items/load.c \
+			\
+			src/types/characters/rect.c \
 			\
 			src/types/components/load.c \
 			src/types/components/vector.c \
@@ -44,6 +51,11 @@ SRC = 		src/main.c \
 			src/types/components/buttons/load.c \
 			src/types/components/levers/append.c \
 			src/types/components/levers/load.c \
+			src/types/components/progress/load.c \
+			\
+			src/types/inventory/add.c \
+			src/types/inventory/item.c \
+			src/types/inventory/remove.c \
 			\
 			src/types/ressources/load.c \
 			src/types/ressources/free.c \
@@ -59,15 +71,30 @@ SRC = 		src/main.c \
 			src/types/ressources/components/button/load.c \
 			src/types/ressources/components/backgrounds/load.c \
 			src/types/ressources/components/lever/load.c \
+			src/types/ressources/components/progress/load.c \
 			\
 			src/types/ressources/inventory/load.c \
 			\
 			src/types/ressources/icons/load.c \
 			\
+			src/types/ressources/items/load.c \
+			\
 			src/types/view/init.c \
 			\
-			src/app/init.c \
 			src/app/run.c \
+			\
+			src/app/init/controller.c \
+			src/app/init/init.c \
+			src/app/init/interactions.c \
+			src/app/init/items.c \
+			src/app/init/network.c \
+			src/app/init/npcs.c \
+			src/app/init/players.c \
+			src/app/init/settings.c \
+			src/app/init/sounds.c \
+			src/app/init/tasks.c \
+			\
+			src/app/free/free.c \
 			\
 			src/app/states/on_state.c \
 			src/app/states/switch.c \
@@ -116,30 +143,41 @@ SRC = 		src/main.c \
 			src/app/display/map/map.c \
 			src/app/display/map/back.c \
 			src/app/display/tasks/script_bash/display.c \
+			src/app/display/tasks/brute_force/display.c \
 			src/app/display/tasks/handler.c \
 			src/app/display/npcs/npcs.c \
 			src/app/display/player/player.c \
 			src/app/display/characters/character.c \
 			src/app/display/map/front.c	\
-      		src/app/display/components/components.c \
+      src/app/display/components/components.c \
 			src/app/display/components/backgrounds.c \
 			src/app/display/components/levers.c \
 			src/app/display/components/buttons/buttons.c \
 			src/app/display/components/buttons/icon.c \
 			src/app/display/components/buttons/dispatch.c \
+			src/app/display/components/progress/progress.c \
+			src/app/display/components/progress/progresses.c \
 			src/app/display/menus/menus.c \
 			src/app/display/menus/main_menu.c \
 			src/app/display/menus/settings.c \
 			src/app/display/menus/select_character.c \
 			\
 			src/app/core/handler.c	\
-			src/app/core/movement.c	\
 			src/app/core/sound.c	\
 			\
 			src/app/sound/sound_control.c	\
 			src/app/sound/handle_sound_fx.c	\
 			src/app/sound/handle_sound_themes.c	\
 			src/app/sound/handle_sound_volume.c	\
+			src/app/display/inventory/grids.c \
+			src/app/display/inventory/item_box.c \
+			src/app/display/inventory/profile.c \
+			src/app/display/inventory/inventory.c \
+			src/app/display/inventory/items_content.c \
+			src/app/display/inventory/levels.c \
+			src/app/display/developer/collisions.c \
+			src/app/display/developer/position.c \
+      		src/app/getters/progress/inventory.c \
 			\
 			src/app/utils/test.c \
 			\
@@ -153,7 +191,8 @@ SRC = 		src/main.c \
 			src/app/core/tasks/brute_force/init_node.c \
 			src/app/core/tasks/brute_force/click.c \
 			src/app/core/tasks/brute_force/released.c \
-			src/app/display/tasks/brute_force/display.c \
+			src/app/core/interactions/movement.c \
+			src/app/core/interactions/npc.c \
 			\
 			src/app/events/handler/closed.c \
 			src/app/events/handler/mouse_button_pressed.c \
@@ -162,6 +201,25 @@ SRC = 		src/main.c \
 			src/app/events/handler/text_entered.c \
 			src/app/events/handler/mouse_button_released.c \
 			\
+			src/app/core/tasks/flipper/create_node.c \
+			src/app/core/tasks/flipper/game_handler.c \
+			src/app/core/tasks/flipper/init_node.c \
+			src/app/core/tasks/flipper/reset_setup.c \
+			src/app/core/tasks/flipper/create_circle.c \
+			src/app/core/tasks/flipper/circle_handler.c \
+			src/app/core/tasks/flipper/click_circle.c \
+			src/app/display/tasks/flipper/display.c \
+			\
+			src/app/core/tasks/camera/create_node.c \
+			src/app/core/tasks/camera/game_handler.c \
+			src/app/core/tasks/camera/reset_setup.c \
+			src/app/core/tasks/camera/init_node.c \
+			src/app/core/tasks/camera/valid_solution.c \
+			src/app/core/tasks/camera/write_solution.c \
+			src/app/display/tasks/camera/display.c \
+			src/app/display/tasks/camera/solution.c \
+			src/app/display/tasks/camera/result.c \
+			src/app/display/tasks/camera/equations.c \
 
 NAME = my_rpg
 
@@ -174,7 +232,7 @@ CFLAGS += -Wall -Wextra -Werror -Wno-unused-command-line-argument -g
 INC = -I./include -I./lib
 
 LDFLAGS = -lcsfml-graphics -lcsfml-system -lcsfml-audio -lcsfml-window \
--lcsfml-network -L./lib -lmy -lcjson
+-lcsfml-network -L./lib -lmy -lcjson -lm
 
 OBJ = $(SRC:.c=.o)
 

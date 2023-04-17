@@ -15,10 +15,12 @@
 
 static void time_handler(app_t *app)
 {
-    task_content_t bash = find_task_node(app, 1);
+    task_t *bash = find_task_node(app, 1);
 
-    TIME(bash.script) = sfClock_getElapsedTime(CLOCK(bash.script));
-    TIME_FLOAT(bash.script) = TIME(bash.script).microseconds / (1000000.0);
+    TIME(bash->content.script) =
+    sfClock_getElapsedTime(CLOCK(bash->content.script));
+    TIME_FLOAT(bash->content.script) =
+    TIME(bash->content.script).microseconds / SECOND_MICRO;
 }
 
 int app_task_bash_core(app_t *app)

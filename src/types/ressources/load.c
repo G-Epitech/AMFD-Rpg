@@ -48,6 +48,7 @@ ressources_t *ressources_load(renderer_t *renderer)
     }
     maps_load(ressources->maps, renderer);
     skins_load(renderer, ressources->skins);
+    items_texture_load(renderer, ressources);
     inventory_load(renderer, ressources->inventory);
     ressources_components_load(renderer, ressources->components);
     icons_load(renderer, ressources->icons);

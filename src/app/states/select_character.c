@@ -5,7 +5,7 @@
 ** Select your character in the menu
 */
 
-#include "types/character/types.h"
+#include "types/characters/types.h"
 #include "types/renderer/types.h"
 #include "app/network/network.h"
 #include "app/types.h"

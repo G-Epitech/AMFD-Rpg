@@ -13,19 +13,11 @@
 
 void keyboard_press_move(sfEvent event, app_t *app)
 {
-    int current_dir = -1;
-
     for (size_t i = 0; i < 4; i++) {
         if (event.key.code == app->control[i].key) {
             app->player->orientation = i;
             app->control[i].direction = true;
-            current_dir = i;
-            break;
         }
-    }
-    for (size_t i = 0; i < 4; i++) {
-        if ((int) i != current_dir)
-            app->control[i].direction = false;
     }
 }
 

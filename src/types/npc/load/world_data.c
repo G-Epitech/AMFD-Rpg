@@ -11,7 +11,7 @@
 #include "types/npc/npc.h"
 #include "types/list/list.h"
 #include "cjson/include/cjson.h"
-#include "types/character/types.h"
+#include "types/characters/types.h"
 
 static sfVector2f get_position_vector(cjson_t *position)
 {
@@ -37,6 +37,8 @@ static bool load_single_props(cjson_t *config, npc_data_t *world_data)
     if (!position)
         return false;
     world_data->position = get_position_vector(position);
+    world_data->position.x = (world_data->position.x / 16) * 16;
+    world_data->position.y = (world_data->position.y / 16) * 16;
     return true;
 }
 

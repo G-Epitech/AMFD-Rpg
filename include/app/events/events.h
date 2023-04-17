@@ -66,8 +66,9 @@ void event_close(sfRenderWindow *window, sfEvent event);
  * @brief Handler of event text entered
  * @param app Application structure
  * @param event The specific event
+ * @param renderer Renderer structure
 */
-void event_text_entered(sfEvent event, app_t *app);
+void event_text_entered(renderer_t *renderer, sfEvent event, app_t *app);
 
 /**
  * @brief Handler of event key entered

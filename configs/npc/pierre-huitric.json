@@ -1,12 +1,12 @@
 {
     "name": "Pierre Huitric",
-    "id": 0,
+    "id": 3,
     "worlds_data": [
         {
             "world": 0,
             "skin_id": 1,
             "orientation": 0,
-            "position": { "x": 2950, "y": 3035 },
+            "position": { "x": 1616, "y": 1056 },
             "enemy": {
                 "life": 12,
                 "level": 0,

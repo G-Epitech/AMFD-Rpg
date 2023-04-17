@@ -25,7 +25,7 @@ int main(void)
     app_t *app = NULL;
 
     load_renderer(renderer);
-    app = app_init();
+    app = app_init(renderer);
     if (!renderer)
         return 84;
     if (!app) {
@@ -37,5 +37,6 @@ int main(void)
             return 84;
     }
     renderer_destroy(renderer);
+    app_free(app);
     return 0;
 }
