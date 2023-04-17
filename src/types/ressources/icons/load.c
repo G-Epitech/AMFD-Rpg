@@ -15,6 +15,23 @@
 #include "types/players/types.h"
 #include "cjson/include/cjson.h"
 
+static void icons_load_data_notif(icons_r_t *icons, cjson_t *configs)
+{
+    char *notif = cjson_get_prop_string_unsafe(configs, "notif");
+    char *happy = cjson_get_prop_string_unsafe(configs, "happy");
+    char *hungry = cjson_get_prop_string_unsafe(configs, "hungry");
+    char *xp = cjson_get_prop_string_unsafe(configs, "xp");
+
+    icons->notif = sfTexture_createFromFile(notif, NULL);
+    icons->happy = sfTexture_createFromFile(happy, NULL);
+    icons->hungry = sfTexture_createFromFile(hungry, NULL);
+    icons->xp = sfTexture_createFromFile(xp, NULL);
+    free(notif);
+    free(happy);
+    free(hungry);
+    free(xp);
+}
+
 static void icons_load_data_check(icons_r_t *icons, cjson_t *configs)
 {
     char *valid = cjson_get_prop_string_unsafe(configs, "valid");
@@ -45,6 +62,7 @@ static void icons_load_data(icons_r_t *icons, cjson_t *configs)
     free(selector_false);
     free(interaction);
     icons_load_data_check(icons, configs);
+    icons_load_data_notif(icons, configs);
 }
 
 void icons_load(renderer_t *renderer, icons_r_t *icons)

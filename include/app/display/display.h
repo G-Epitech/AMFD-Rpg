@@ -262,4 +262,11 @@ void display_animations_floating_text(renderer_t *renderer, app_t *app);
  */
 void display_animations(renderer_t *renderer, app_t *app);
 
+/**
+ * @brief Display notif animation
+ * @param renderer Renderer structure
+ * @param app Application informations
+ */
+void display_animations_notif(renderer_t *renderer, app_t *app);
+
 #endif /* !DISPLAY_H_ */

@@ -24,6 +24,9 @@ animation_event_t *data)
     if (data->type == AE_FLOATING_TEXT &&
     animations_floating_text(data->data.floating_text, animation->clock))
         return true;
+    if (data->type == AE_NOTIF &&
+    animations_notif(data->data.notif, animation->clock))
+        return true;
     return false;
 }
 

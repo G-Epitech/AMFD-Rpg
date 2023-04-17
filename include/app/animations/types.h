@@ -19,6 +19,11 @@
     #define SHAKE_TARGET 500
     #define FLOATING_TEXT_TIME 10
     #define FLOATING_TEXT_TARGET 1200
+    #define NOTIF_TIME 10
+    #define NOTIF_TARGET_SLIDE 700
+    #define NOTIF_TARGET_AFK 2300
+    #define NOTIF_POSITION_INIT ((sfVector2f) {1900, 728})
+    #define NOTIF_POSITION_TARGET ((sfVector2f) {1369, 728})
 
 typedef struct s_list list_t;
 typedef struct s_attack attack_t;
@@ -64,9 +69,19 @@ typedef struct s_animation_event_floating_text {
     char *content;
 } animation_event_floating_text_t;
 
+typedef struct s_animation_event_notif {
+    char *title;
+    char *description;
+    sfTexture *icon;
+    sfInt32 last_time;
+    sfInt32 total_time;
+    sfVector2f position;
+} animation_event_notif_t;
+
 typedef union u_animation_event_data {
     animation_event_npc_t *npc;
     animation_event_zoom_t *zoom;
+    animation_event_notif_t *notif;
     animation_event_player_t *player;
     animation_event_shake_attack_t *shake_attack;
     animation_event_floating_text_t *floating_text;
@@ -79,7 +94,8 @@ typedef enum e_animation_event_type {
     AE_MOVE_NPC,
     AE_MOVE_PLAYER,
     AE_SHAKE_ATTACK,
-    AE_FLOATING_TEXT
+    AE_FLOATING_TEXT,
+    AE_NOTIF
 } animation_event_type_t;
 
 typedef struct s_animation_event {

@@ -99,6 +99,10 @@ typedef struct s_icons_ressources {
     sfTexture *selector_false;  //Selector false icon
     sfTexture *selector_true;   //Selector true icon
     sfTexture *interaction;     //Interaction info icon
+    sfTexture *notif;           //Notif icon
+    sfTexture *happy;           //Happy icon
+    sfTexture *hungry;          //Hungry icon
+    sfTexture *xp;              //XP icon
 } icons_r_t;
 
 /**

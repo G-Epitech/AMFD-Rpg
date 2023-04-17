@@ -98,4 +98,26 @@ sfVector2f position, char *content);
 bool animations_floating_text(animation_event_floating_text_t *text,
 sfClock *clock);
 
+/**
+ * @brief Init notif animation
+ * @return animation_event_notif_t* Structure of the animation
+ */
+animation_event_notif_t *animations_notif_init(void);
+
+/**
+ * @brief Add new notif animation
+ * @param events Events list of animations
+ * @param icon Icon of notif
+ * @param title Title of notification
+ * @param description Description of notification
+ */
+void animations_notif_add(list_t *events, sfTexture *icon, char *title,
+char *description);
+
+/**
+ * @brief Notification animation
+ * @param notif Notification structure
+ * @param clock Clock of animation
+ */
+bool animations_notif(animation_event_notif_t *notif, sfClock *clock);
 #endif /* !ANIMATIONS_H_ */
