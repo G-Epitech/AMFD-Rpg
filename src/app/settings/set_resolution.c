@@ -15,7 +15,8 @@ app_t *app, button_t *button)
     (void) button;
     sfRenderWindow_close(renderer->window);
     sfRenderWindow_destroy(renderer->window);
-    renderer->window = window_init(app->settings->full_screen, LOWER_WIN_VIDEO_MODE);
+    renderer->window = window_init(app->settings->full_screen,
+    LOWER_WIN_VIDEO_MODE);
     renderer->objects->window = renderer->window;
     renderer->default_view = sfRenderWindow_getDefaultView(renderer->window);
     return 0;
@@ -28,7 +29,8 @@ app_t *app, button_t *button)
     (void) button;
     sfRenderWindow_close(renderer->window);
     sfRenderWindow_destroy(renderer->window);
-    renderer->window = window_init(app->settings->full_screen, MEDIUM_WIN_VIDEO_MODE);
+    renderer->window = window_init(app->settings->full_screen,
+    MEDIUM_WIN_VIDEO_MODE);
     renderer->objects->window = renderer->window;
     renderer->default_view = sfRenderWindow_getDefaultView(renderer->window);
     return 0;
@@ -41,7 +43,8 @@ app_t *app, button_t *button)
     (void) button;
     sfRenderWindow_close(renderer->window);
     sfRenderWindow_destroy(renderer->window);
-    renderer->window = window_init(app->settings->full_screen, HIGH_WIN_VIDEO_MODE);
+    renderer->window = window_init(app->settings->full_screen,
+    HIGH_WIN_VIDEO_MODE);
     renderer->objects->window = renderer->window;
     renderer->default_view = sfRenderWindow_getDefaultView(renderer->window);
     return 0;
