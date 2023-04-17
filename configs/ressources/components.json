@@ -76,6 +76,12 @@
             "scale": 1,
             "state": [300],
             "position" : {"x": 177, "y": 45}
+        },
+        {
+            "asset": "assets/components/backgrounds/resolution_title.png",
+            "scale": 1,
+            "state": [8],
+            "position" : {"x": 632, "y": 295}
         }
     ],
 

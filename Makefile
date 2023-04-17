@@ -146,7 +146,6 @@ SRC = 		src/main.c \
 			src/app/display/menus/main_menu.c \
 			src/app/display/menus/settings.c \
 			src/app/display/menus/select_character.c \
-			src/app/display/menus/resolution.c \
 			src/app/display/inventory/grids.c \
 			src/app/display/inventory/item_box.c \
 			src/app/display/inventory/profile.c \
