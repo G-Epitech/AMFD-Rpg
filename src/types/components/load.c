@@ -21,6 +21,7 @@ components_t *components_init(void)
         return NULL;
     components->buttons = list_new();
     components->levers = list_new();
+    components->progresses = list_new();
     return components;
 }
 
@@ -30,6 +31,7 @@ components_t *components_load(renderer_t *renderer)
     cjson_t *config = cjson_parse_file(COMPONENTS_CONFIG);
     cjson_array_t *buttons = NULL;
     cjson_array_t *levers = NULL;
+    cjson_array_t *progresses = NULL;
 
     if (!components)
         return NULL;
@@ -37,8 +39,11 @@ components_t *components_load(renderer_t *renderer)
         return NULL;
     if (!cjson_get_prop_array(config, "levers", &levers))
         return NULL;
+    if (!cjson_get_prop_array(config, "progresses", &progresses))
+        return NULL;
     buttons_load(renderer, components, buttons);
     levers_load(components, levers);
+    progresses_load(components, progresses);
     cjson_free(config);
     return components;
 }

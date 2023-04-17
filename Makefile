@@ -47,6 +47,7 @@ SRC = 		src/main.c \
 			src/types/components/buttons/load.c \
 			src/types/components/levers/append.c \
 			src/types/components/levers/load.c \
+			src/types/components/progress/load.c \
 			\
 			src/types/inventory/add.c \
 			src/types/inventory/item.c \
@@ -66,6 +67,7 @@ SRC = 		src/main.c \
 			src/types/ressources/components/button/load.c \
 			src/types/ressources/components/backgrounds/load.c \
 			src/types/ressources/components/lever/load.c \
+			src/types/ressources/components/progress/load.c \
 			\
 			src/types/ressources/inventory/load.c \
 			\
@@ -142,12 +144,14 @@ SRC = 		src/main.c \
 			src/app/display/player/player.c \
 			src/app/display/characters/character.c \
 			src/app/display/map/front.c	\
-      		src/app/display/components/components.c \
+      src/app/display/components/components.c \
 			src/app/display/components/backgrounds.c \
 			src/app/display/components/levers.c \
 			src/app/display/components/buttons/buttons.c \
 			src/app/display/components/buttons/icon.c \
 			src/app/display/components/buttons/dispatch.c \
+			src/app/display/components/progress/progress.c \
+			src/app/display/components/progress/progresses.c \
 			src/app/display/menus/menus.c \
 			src/app/display/menus/main_menu.c \
 			src/app/display/menus/settings.c \
@@ -157,8 +161,10 @@ SRC = 		src/main.c \
 			src/app/display/inventory/profile.c \
 			src/app/display/inventory/inventory.c \
 			src/app/display/inventory/items_content.c \
+			src/app/display/inventory/levels.c \
 			src/app/display/developer/collisions.c \
 			src/app/display/developer/position.c \
+      src/app/getters/progress/inventory.c \
 			\
 			src/app/utils/test.c \
 			\
@@ -202,7 +208,6 @@ SRC = 		src/main.c \
 			src/app/display/tasks/camera/solution.c \
 			src/app/display/tasks/camera/result.c \
 			src/app/display/tasks/camera/equations.c \
-
 
 NAME = my_rpg
 

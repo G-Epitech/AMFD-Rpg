@@ -23,6 +23,12 @@
     #define INVENTORY_PROFILE_POS ((sfVector2f) {349, 309})
     #define INVENTORY_PROFILE_SIZE ((sfVector2f) {267, 356})
     #define INVENTORY_MAX 18
+    #define INVENTORY_LEVEL_LABEL_POS ((sfVector2f) {1548, 794})
+    #define INVENTORY_LIFE_LABEL_POS ((sfVector2f) {1548, 905})
+    #define INVENTORY_INTELLIGENCE_LABEL_POS ((sfVector2f) {1119, 794})
+    #define INVENTORY_SPEED_LABEL_POS ((sfVector2f) {1119, 902})
+
+typedef struct s_item item_t;
 
 typedef struct s_inventory_item {
     item_t *target;

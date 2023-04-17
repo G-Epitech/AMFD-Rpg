@@ -73,6 +73,7 @@ typedef struct s_components_r {
     button_r_t *button;         //Button textures
     lever_r_t *lever;           //Lever textures
     list_t *backgrounds;        //Backgrounds list
+    sfTexture *progress;        //Texture for progress bars
 } components_r_t;
 
 typedef struct s_inventory_ressources {

@@ -32,5 +32,6 @@ components_r_t *components)
     components->lever = ressources_components_lever_load(lever_config);
     components->backgrounds = ressources_components_backgrounds_load
     (backgrounds_config);
+    components->progress = ressources_components_progress_load(cmp_config);
     cjson_free(cmp_config);
 }

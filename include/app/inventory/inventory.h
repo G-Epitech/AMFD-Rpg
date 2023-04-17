@@ -12,6 +12,8 @@
     #include "app/items/types.h"
     #include "app/inventory/types.h"
 
+typedef struct s_progress progress_t;
+
 /**
  * @brief Create a new inventory item
  * @param item Item to
@@ -40,5 +42,37 @@ bool inventory_add_item(player_t *player, item_t *target_item);
  */
 void inventory_remove_item(player_t *player,
 inventory_item_t *inventory_item);
+
+/**
+ * @brief Get inventory xp value
+ * @param app App object
+ * @param progress Progress object
+ * @return Percentage of xp
+ */
+int inventory_get_xp(app_t *app, progress_t *progress);
+
+/**
+ * @brief Get inventory life value
+ * @param app App object
+ * @param progress Progress object
+ * @return Percentage of life
+ */
+int inventory_get_life(app_t *app, progress_t *progress);
+
+/**
+ * @brief Get inventory intelligence value
+ * @param app App object
+ * @param progress Progress object
+ * @return Percentage of intelligence
+ */
+int inventory_get_intelligence(app_t *app, progress_t *progress);
+
+/**
+ * @brief Get inventory speed value
+ * @param app App object
+ * @param progress Progress object
+ * @return Percentage of speed
+ */
+int inventory_get_speed(app_t *app, progress_t *progress);
 
 #endif /* !INVENTORY_H_ */

@@ -29,6 +29,7 @@ typedef union u_node_data {
     task_camera_node_t *node_camera;
     background_t *background;
     npc_dialog_t npc_dialog;
+    progress_t *progress;
     npc_data_t npc_data;
     player_t *player;
     button_t *button;
