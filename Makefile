@@ -98,6 +98,7 @@ SRC = 		src/main.c \
 			src/app/animations/screen/zoom.c \
 			src/app/animations/button/shake_attack.c \
 			src/app/animations/text/floating.c \
+			src/app/animations/text/notif.c \
 			\
 			src/app/states/on_state.c \
 			src/app/states/switch.c \
@@ -182,6 +183,7 @@ SRC = 		src/main.c \
 			src/app/display/fight/attack.c \
 			src/app/display/animations/animations.c \
 			src/app/display/animations/floating_text.c \
+			src/app/display/animations/notif.c \
 			\
 			src/app/utils/test.c \
 			\

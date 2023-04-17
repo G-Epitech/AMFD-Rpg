@@ -9,6 +9,7 @@
 #include <stdlib.h>
 #include <time.h>
 #include <SFML/Graphics.h>
+#include "app/core/types.h"
 #include "types/renderer/types.h"
 #include "app/tasks/task.h"
 #include "app/tasks/types.h"
@@ -40,6 +41,7 @@ static void applay_attack(cjson_t *node, app_t *app)
 static void attack_loose(app_t *app, renderer_t *renderer)
 {
     list_t *events = NULL;
+    sfTexture *icon = renderer->ressources->icons->hungry;
 
     if (app->player->life <= 0) {
         app->interaction->active = false;
@@ -48,6 +50,8 @@ static void attack_loose(app_t *app, renderer_t *renderer)
         free(app->interaction->data.fight);
         events = animation_event_new(app);
         animations_screen_zoom_add(events, renderer->map_view, 70, 2);
+        animations_notif_add(events, icon, ATTACKS_LOOSE_TITLE,
+        ATTACKS_LOOSE_DESCRIPTION);
     } else {
         app->interaction->data.fight->state = FT_PLAYER_ATTACK;
     } 

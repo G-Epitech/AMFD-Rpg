@@ -18,5 +18,7 @@
     #define ATTACK_BUTTON_SCALE ((sfVector2f) {270, 70})
     #define ATTACK_ANIM_COLOR ((sfColor) {73, 149, 227, 255})
     #define ATTACK_ANIM_POSITION ((sfVector2f) {536, 700})
+    #define ATTACKS_WIN_TITLE "Victoire !"
+    #define ATTACKS_WIN_DESCRIPTION "Vous venez de gagner le combat."
 
 #endif /* !EVENTS_TYPES_H_ */

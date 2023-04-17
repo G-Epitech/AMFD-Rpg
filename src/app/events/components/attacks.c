@@ -56,6 +56,7 @@ static void animation_attack(app_t *app, attack_t *attack)
 static void attack_win(app_t *app, renderer_t *renderer)
 {
     list_t *events = NULL;
+    sfTexture *icon = renderer->ressources->icons->happy;
 
     if (app->interaction->data.fight->enemy_life <= 0) {
         app->interaction->active = false;
@@ -64,6 +65,8 @@ static void attack_win(app_t *app, renderer_t *renderer)
         free(app->interaction->data.fight);
         events = animation_event_new(app);
         animations_screen_zoom_add(events, renderer->map_view, 70, 2);
+        animations_notif_add(events, icon, ATTACKS_WIN_TITLE,
+        ATTACKS_WIN_DESCRIPTION);
     }
 }
 
