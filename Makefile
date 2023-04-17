@@ -162,6 +162,7 @@ SRC = 		src/main.c \
       		src/app/display/components/components.c \
 			src/app/display/components/backgrounds.c \
 			src/app/display/components/levers.c \
+			src/app/display/components/interaction.c \
 			src/app/display/components/buttons/buttons.c \
 			src/app/display/components/buttons/icon.c \
 			src/app/display/components/buttons/dispatch.c \

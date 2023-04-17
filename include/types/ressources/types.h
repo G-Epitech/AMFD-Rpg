@@ -98,6 +98,7 @@ typedef struct s_icons_ressources {
     sfTexture *attack_lock;     //Refuse icon
     sfTexture *selector_false;  //Selector false icon
     sfTexture *selector_true;   //Selector true icon
+    sfTexture *interaction;     //Interaction info icon
 } icons_r_t;
 
 /**

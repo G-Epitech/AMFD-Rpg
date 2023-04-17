@@ -89,6 +89,13 @@ void display_handler(renderer_t *renderer, app_t *app);
 void display_components_buttons(renderer_t *renderer, app_t *app);
 
 /**
+ * @biref Display interaction icon
+ * @param renderer Renderer structure
+ * @param app Application informations
+*/
+void display_components_interaction(renderer_t *renderer, app_t *app);
+
+/**
  * @biref Display all components
  * @param renderer Renderer structure
  * @param app Application informations

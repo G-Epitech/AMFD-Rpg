@@ -15,26 +15,36 @@
 #include "types/players/types.h"
 #include "cjson/include/cjson.h"
 
-static void icons_load_data(icons_r_t *icons, cjson_t *configs)
+static void icons_load_data_check(icons_r_t *icons, cjson_t *configs)
 {
     char *valid = cjson_get_prop_string_unsafe(configs, "valid");
     char *refuse = cjson_get_prop_string_unsafe(configs, "refuse");
+
+    icons->valid = sfTexture_createFromFile(valid, NULL);
+    icons->refuse = sfTexture_createFromFile(refuse, NULL);
+    free(valid);
+    free(refuse);
+}
+
+static void icons_load_data(icons_r_t *icons, cjson_t *configs)
+{
     char *lock = cjson_get_prop_string_unsafe(configs, "attack_lock");
     char *selector_true = cjson_get_prop_string_unsafe(configs,
     "selector_true");
     char *selector_false = cjson_get_prop_string_unsafe(configs,
     "selector_false");
+    char *interaction = cjson_get_prop_string_unsafe(configs,
+    "interaction");
 
-    icons->valid = sfTexture_createFromFile(valid, NULL);
-    icons->refuse = sfTexture_createFromFile(refuse, NULL);
     icons->attack_lock = sfTexture_createFromFile(lock, NULL);
     icons->selector_true = sfTexture_createFromFile(selector_true, NULL);
     icons->selector_false = sfTexture_createFromFile(selector_false, NULL);
-    free(valid);
-    free(refuse);
+    icons->interaction = sfTexture_createFromFile(interaction, NULL);
     free(lock);
     free(selector_true);
     free(selector_false);
+    free(interaction);
+    icons_load_data_check(icons, configs);
 }
 
 void icons_load(renderer_t *renderer, icons_r_t *icons)

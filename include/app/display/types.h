@@ -32,5 +32,6 @@
     #define FIGHT_CHOICE_ICON_Y 5
     #define FIGHT_CHOICE_CONFIG "configs/fight/choice.json"
     #define FIGHT_ATTACK_RATIO ((sfVector2f) {176, 27})
+    #define INTERACTION_ICON_POSITION ((sfVector2f) {704, 700})
 
 #endif /* !DISPLAY_TYPES_H_ */
