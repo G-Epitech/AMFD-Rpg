@@ -24,6 +24,7 @@ bool app_init_controller(app_t *app, renderer_t *renderer)
         control[i].key = key_codes[i];
         control[i].offset = move_offset[i];
     }
+    control->direction_nb = 0;
     app->control = control;
     return true;
 }

@@ -43,8 +43,12 @@ sfImage *collision, app_t *app)
 }
 
 static sfVector2f increment_position(sfVector2f position, sfVector2f offset,
-app_t *app)
+app_t *app, control_t *control)
 {
+    if (control->direction_nb > 1) {
+        offset.x /= 1.3;
+        offset.y /= 1.3;
+    }
     position.x += offset.x;
     position.y += offset.y;
     if (app->partner)
@@ -62,7 +66,7 @@ void core_handle_movement(control_t *control, sfImage *collision, app_t *app)
         if (control[i].direction && movement_is_possible(player->position,
         control[i].offset, collision, app)) {
             player->position = increment_position(player->position,
-            control[i].offset, app);
+            control[i].offset, app, control);
         }
     }
 }

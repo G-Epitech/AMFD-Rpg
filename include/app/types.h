@@ -45,6 +45,7 @@ typedef enum e_worlds {
 } worlds_t;
 
 typedef struct s_control {
+    int direction_nb;       //Number of directions (useful for diagonal moves)
     bool direction;         //Move direction
     sfVector2f offset;      //Move offset for the direction
     sfKeyCode key;          //Move key code
