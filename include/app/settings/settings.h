@@ -69,4 +69,31 @@ int settings_fps_malus(renderer_t *renderer, app_t *app, button_t *button);
  */
 int settings_fps_up(renderer_t *renderer, app_t *app, button_t *button);
 
+/**
+ * @brief Update a lower resolution (820x600)
+ * @param renderer Renderer structure
+ * @param app Application structure
+ * @param button Button associate
+ */
+int settings_resolution_lower(renderer_t *renderer,
+app_t *app, button_t *button);
+
+/**
+ * @brief Update a medium resolution (1920x1080)
+ * @param renderer Renderer structure
+ * @param app Application structure
+ * @param button Button associate
+ */
+int settings_resolution_medium(renderer_t *renderer,
+app_t *app, button_t *button);
+
+/**
+ * @brief Update a high resolution (2560x1600)
+ * @param renderer Renderer structure
+ * @param app Application structure
+ * @param button Button associate
+ */
+int settings_resolution_high(renderer_t *renderer,
+app_t *app, button_t *button);
+
 #endif /* !SETTINGS_H_ */

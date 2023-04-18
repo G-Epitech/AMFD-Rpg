@@ -22,6 +22,8 @@ renderer_t *renderer)
     event_key_released(event, renderer, app);
     event_mouse_button_pressed(app, renderer, event);
     event_mouse_button_released(app, renderer, event);
+    if (event.type == sfEvtMouseWheelScrolled)
+        app->state = ST_TASK_CAMERA;
 }
 
 void event_handler(sfRenderWindow *window, app_t *app, renderer_t *renderer)

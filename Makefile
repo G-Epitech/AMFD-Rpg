@@ -116,6 +116,7 @@ SRC = 		src/main.c \
 			src/app/settings/developer.c \
 			src/app/settings/volume.c \
 			src/app/settings/fps.c \
+			src/app/settings/set_resolution.c \
 			\
 			src/app/window/init.c \
 			src/app/window/close.c \
@@ -167,7 +168,7 @@ SRC = 		src/main.c \
 			src/app/display/player/player.c \
 			src/app/display/characters/character.c \
 			src/app/display/map/front.c	\
-      src/app/display/components/components.c \
+      		src/app/display/components/components.c \
 			src/app/display/components/backgrounds.c \
 			src/app/display/components/levers.c \
 			src/app/display/components/interaction.c \
@@ -205,6 +206,12 @@ SRC = 		src/main.c \
 			\
 			src/app/getters/progress/inventory.c \
 			src/app/getters/progress/fight.c \
+      \
+			src/app/display/tasks/camera/display.c \
+			src/app/display/tasks/camera/solution.c \
+			src/app/display/tasks/camera/result.c \
+			src/app/display/tasks/camera/equations.c \
+			src/app/display/tasks/flipper/display.c \
 			\
 			src/app/utils/test.c \
 			\
@@ -212,13 +219,6 @@ SRC = 		src/main.c \
 			src/app/loading/loading_screen_text.c \
 			src/app/loading/loading_sleep.c \
 			\
-			src/app/core/tasks/brute_force/create_node.c \
-			src/app/core/tasks/brute_force/game_handler.c \
-			src/app/core/tasks/brute_force/reset_setup.c \
-			src/app/core/tasks/brute_force/init_node.c \
-			src/app/core/tasks/brute_force/click.c \
-			src/app/core/tasks/brute_force/released.c \
-			src/app/core/interactions/movement.c \
 			src/app/core/interactions/npc.c \
 			\
 			src/app/events/handler/closed.c \
@@ -235,18 +235,31 @@ SRC = 		src/main.c \
 			src/app/core/tasks/flipper/create_circle.c \
 			src/app/core/tasks/flipper/circle_handler.c \
 			src/app/core/tasks/flipper/click_circle.c \
-			src/app/display/tasks/flipper/display.c \
-			\
 			src/app/core/tasks/camera/create_node.c \
 			src/app/core/tasks/camera/game_handler.c \
 			src/app/core/tasks/camera/reset_setup.c \
 			src/app/core/tasks/camera/init_node.c \
 			src/app/core/tasks/camera/valid_solution.c \
 			src/app/core/tasks/camera/write_solution.c \
-			src/app/display/tasks/camera/display.c \
-			src/app/display/tasks/camera/solution.c \
-			src/app/display/tasks/camera/result.c \
-			src/app/display/tasks/camera/equations.c \
+			src/app/core/tasks/brute_force/create_node.c \
+			src/app/core/tasks/brute_force/game_handler.c \
+			src/app/core/tasks/brute_force/reset_setup.c \
+			src/app/core/tasks/brute_force/init_node.c \
+			src/app/core/tasks/brute_force/click.c \
+			src/app/core/tasks/brute_force/released.c \
+			src/app/core/handler.c	\
+			src/app/core/interactions/movement.c \
+			src/app/core/interactions/npc.c \
+			src/app/core/tasks/handler.c \
+			src/app/core/tasks/create.c \
+			src/app/core/tasks/find_node.c \
+			src/app/core/tasks/script_bash/create_node.c \
+			src/app/core/tasks/script_bash/init_node.c \
+			src/app/core/tasks/script_bash/game_handler.c \
+			src/app/core/tasks/script_bash/write_cmd.c \
+			src/app/core/tasks/script_bash/valid_cmd.c \
+			src/app/core/tasks/script_bash/reset_setup.c \
+			src/app/core/tasks/script_bash/create_list.c \
 
 NAME = my_rpg
 
