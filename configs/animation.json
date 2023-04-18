@@ -1,0 +1,12 @@
+[
+    {
+        "title": "Idle",
+        "skin_id": 4,
+        "state": 0,
+        "frame_len": 6,
+        "top": 100,
+        "left": 0,
+        "width": 16,
+        "height":32
+    }
+]

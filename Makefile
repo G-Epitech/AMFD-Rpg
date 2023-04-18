@@ -79,6 +79,9 @@ SRC = 		src/main.c \
 			\
 			src/types/ressources/items/load.c \
 			\
+			\
+			src/types/ressources/animation/load.c	\
+			\
 			src/types/view/init.c \
 			\
 			src/app/run.c \

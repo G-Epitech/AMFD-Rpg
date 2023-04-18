@@ -12,6 +12,7 @@
     #include "app/types.h"
 
 static const app_init_member_t app_init_members[] = {
+    &app_init_animations,
     &app_init_controller,
     &app_init_players,
     &app_init_npcs,

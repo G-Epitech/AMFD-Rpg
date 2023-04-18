@@ -15,6 +15,11 @@
 typedef struct s_list list_t;
 typedef struct s_skin skin_t;
 
+typedef enum e_entity_state {
+    IDLE,
+    WALKING
+} enitity_state_t;
+
 /**
  * @brief Structure of a player
 */
@@ -23,6 +28,7 @@ typedef struct s_player {
     int xp;                     //Player exeprience
     int orientation;            //Orientation of the player
     sfVector2f position;        //Position of the player
+    enitity_state_t state;      //State of the player
     list_t *inventory;          //Inventory with all objects
     int skin_id;                //Skin ID
 } player_t;
