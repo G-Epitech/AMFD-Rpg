@@ -180,8 +180,6 @@ SRC = 		src/main.c \
 			src/app/loading/loading_screen_text.c \
 			src/app/loading/loading_sleep.c \
 			\
-			src/app/core/interactions/npc.c \
-			\
 			src/app/events/handler/closed.c \
 			src/app/events/handler/mouse_button_pressed.c \
 			src/app/events/handler/pressed.c \
@@ -208,7 +206,6 @@ SRC = 		src/main.c \
 			src/app/core/tasks/brute_force/init_node.c \
 			src/app/core/tasks/brute_force/click.c \
 			src/app/core/tasks/brute_force/released.c \
-			src/app/core/handler.c	\
 			src/app/core/interactions/movement.c \
 			src/app/core/interactions/npc.c \
 			src/app/core/tasks/handler.c \
