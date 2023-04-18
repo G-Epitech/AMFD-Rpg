@@ -145,16 +145,6 @@ SRC = 		src/main.c \
 			src/app/network/receive/game.c \
 			src/app/network/receive/position.c \
 			\
-			src/app/core/tasks/handler.c \
-			src/app/core/tasks/create.c \
-			src/app/core/tasks/find_node.c \
-			src/app/core/tasks/script_bash/create_node.c \
-			src/app/core/tasks/script_bash/init_node.c \
-			src/app/core/tasks/script_bash/game_handler.c \
-			src/app/core/tasks/script_bash/write_cmd.c \
-			src/app/core/tasks/script_bash/valid_cmd.c \
-			src/app/core/tasks/script_bash/reset_setup.c \
-			src/app/core/tasks/script_bash/create_list.c \
 			src/app/core/fight/handler.c \
 			src/app/core/fight/enemy.c \
 			\
@@ -182,7 +172,6 @@ SRC = 		src/main.c \
 			src/app/display/menus/settings.c \
 			src/app/display/menus/select_character.c \
 			\
-			src/app/core/handler.c	\
 			src/app/core/sound.c	\
 			\
 			src/app/sound/sound_control.c	\
@@ -206,7 +195,7 @@ SRC = 		src/main.c \
 			\
 			src/app/getters/progress/inventory.c \
 			src/app/getters/progress/fight.c \
-      \
+      		\
 			src/app/display/tasks/camera/display.c \
 			src/app/display/tasks/camera/solution.c \
 			src/app/display/tasks/camera/result.c \
@@ -218,8 +207,6 @@ SRC = 		src/main.c \
 			src/app/loading/loading_company_screen.c \
 			src/app/loading/loading_screen_text.c \
 			src/app/loading/loading_sleep.c \
-			\
-			src/app/core/interactions/npc.c \
 			\
 			src/app/events/handler/closed.c \
 			src/app/events/handler/mouse_button_pressed.c \
