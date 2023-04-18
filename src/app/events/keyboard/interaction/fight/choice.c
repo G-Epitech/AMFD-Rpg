@@ -44,13 +44,10 @@ renderer_t *renderer)
     if (app->interaction->type != IT_FIGHT)
         return;
     fight = app->interaction->data.fight;
-    if (event.key.code == sfKeyDown && fight->choice < 1) {
+    if (event.key.code == sfKeyDown && fight->choice < 1)
         fight->choice++;
-    }
-    if (event.key.code == sfKeyUp && fight->choice != 0) {
+    if (event.key.code == sfKeyUp && fight->choice != 0) 
         fight->choice--;
-    }
-    if (event.key.code == sfKeyEnter) {
+    if (event.key.code == sfKeyEnter)
         valid_choice(fight, app, renderer);
-    }
 }
