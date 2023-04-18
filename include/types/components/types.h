@@ -130,7 +130,10 @@ static const struct {
     {network_connexion_host},
     {network_connexion_join},
     {states_select_character},
-    {brute_force_click}
+    {brute_force_click},
+    {settings_resolution_lower},
+    {settings_resolution_medium},
+    {settings_resolution_high}
 };
 
 static const struct {
