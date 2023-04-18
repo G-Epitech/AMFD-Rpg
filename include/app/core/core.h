@@ -42,4 +42,16 @@ int core_handler(renderer_t *renderer, app_t *app);
  */
 void core_interactions_npc(sfColor pixel, app_t *app);
 
+/**
+ * @brief Enemy fight
+ * @param app App object
+ */
+void core_fight_enemy(app_t *app, renderer_t *renderer);
+
+/**
+ * @brief handle fight core
+ * @param app App object
+ */
+void core_fight_handler(app_t *app, renderer_t *renderer);
+
 #endif /* !CORE_H_ */

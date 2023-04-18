@@ -16,6 +16,7 @@
     #define RESSOURCES_MAPS_CONFIG "configs/ressources/maps.json"
     #define RESSOURCES_INVENTORY_CONFIG "configs/ressources/inventory.json"
     #define RESSOURCES_COMPONENTS_CONFIG "configs/ressources/components.json"
+    #define RESSOURCES_COMPONENTS_FIGHT_CONFIG "configs/fight/attacks.json"
     #define RESSOURCES_ICONS_CONFIG "configs/ressources/icons.json"
 
 typedef struct s_list list_t;
@@ -66,6 +67,16 @@ typedef struct s_background {
     sfVector2f position;        //Position of the background
 } background_t;
 
+typedef struct s_attack {
+    sfTexture *texture;
+    sfVector2f position;
+    char *title;
+    int level;
+    int mana;
+    int damage;
+    bool shake;
+} attack_t;
+
 /**
  * @biref Structure with components ressources
 */
@@ -73,6 +84,7 @@ typedef struct s_components_r {
     button_r_t *button;         //Button textures
     lever_r_t *lever;           //Lever textures
     list_t *backgrounds;        //Backgrounds list
+    list_t *fight;              //Fight ressources (attaks)
     sfTexture *progress;        //Texture for progress bars
 } components_r_t;
 
@@ -84,6 +96,14 @@ typedef struct s_inventory_ressources {
 typedef struct s_icons_ressources {
     sfTexture *valid;           //Valid icon
     sfTexture *refuse;          //Refuse icon
+    sfTexture *attack_lock;     //Refuse icon
+    sfTexture *selector_false;  //Selector false icon
+    sfTexture *selector_true;   //Selector true icon
+    sfTexture *interaction;     //Interaction info icon
+    sfTexture *notif;           //Notif icon
+    sfTexture *happy;           //Happy icon
+    sfTexture *hungry;          //Hungry icon
+    sfTexture *xp;              //XP icon
 } icons_r_t;
 
 /**

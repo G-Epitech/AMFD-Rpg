@@ -75,4 +75,19 @@ int inventory_get_intelligence(app_t *app, progress_t *progress);
  */
 int inventory_get_speed(app_t *app, progress_t *progress);
 
+/**
+ * @brief Get mana of fight
+ * @param app App object
+ * @param progress Progress object
+ * @return Percentage of speed
+ */
+int fight_get_mana(app_t *app, progress_t *progress);
+
+/**enemy lifeinventory speed value
+ * @param app App object
+ * @param progress Progress object
+ * @return Percentage of speed
+ */
+int fight_get_enemy_life(app_t *app, progress_t *progress);
+
 #endif /* !INVENTORY_H_ */

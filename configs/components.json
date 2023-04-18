@@ -185,6 +185,34 @@
             "event": 12
         },
         {
+            "icon": "assets/components/button/settings.png",
+            "app_state": [100],
+            "position": {"x": 1819, "y": 950},
+            "scale": 1,
+            "next_state": 302
+        },
+        {
+            "icon": "assets/components/button/pause.png",
+            "app_state": [100],
+            "position": {"x": 1717, "y": 950},
+            "scale": 1,
+            "next_state": 301
+        },
+        {
+            "icon": "assets/components/button/help.png",
+            "app_state": [100],
+            "position": {"x": 1615, "y": 950},
+            "scale": 1,
+            "next_state": 303
+        },
+        {
+            "icon": "assets/components/button/inventory.png",
+            "app_state": [100],
+            "position": {"x": 1513, "y": 950},
+            "scale": 1,
+            "next_state": 300
+        },
+        {
             "icon": "assets/components/button/previous.png",
             "app_state": [8],
             "position": {"x": 1279, "y": 788},
@@ -212,7 +240,7 @@
             "event": 15,
             "scale": 1
         }
-    ],
+    ],  
 
     "levers": [
         {
@@ -235,6 +263,7 @@
             "event": 2
         }
     ],
+
     "progresses": [
         {
             "position": {"x": 827, "y": 786},
@@ -248,7 +277,7 @@
             "app_state": [300],
             "size": {"x": 270, "y": 42},
             "color": 1,
-            "getter_value": 2
+            "getter_value": 3
         },
         {
             "position": {"x": 1297, "y": 786},
@@ -262,7 +291,28 @@
             "app_state": [300],
             "size": {"x": 230, "y": 42},
             "color": 0,
-            "getter_value": 3
+            "getter_value": 2
+        },
+        {
+            "position": {"x": 176, "y": 67},
+            "app_state": [350],
+            "size": {"x": 284, "y": 42},
+            "color": 0,
+            "getter_value": 2
+        },
+        {
+            "position": {"x": 176, "y": 132},
+            "app_state": [350],
+            "size": {"x": 284, "y": 42},
+            "color": 3,
+            "getter_value": 5
+        },
+        {
+            "position": {"x": 1509, "y": 67},
+            "app_state": [350],
+            "size": {"x": 284, "y": 42},
+            "color": 0,
+            "getter_value": 6
         }
     ]
 }

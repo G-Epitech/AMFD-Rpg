@@ -15,8 +15,8 @@
 static void display_inventory_intelligence_speed(renderer_t *renderer,
 player_t *player)
 {
-    char *intelligence = nbr_to_str(player->xp);
-    char *speed = nbr_to_str(player->xp);
+    char *intelligence = nbr_to_str(player->intellect);
+    char *speed = nbr_to_str(player->speed);
 
     sfText_setPosition(renderer->objects->text,
     INVENTORY_INTELLIGENCE_LABEL_POS);
@@ -33,10 +33,11 @@ player_t *player)
 static void display_inventory_level_life(renderer_t *renderer,
 player_t *player)
 {
-    char *level = nbr_to_str(player->xp);
-    char *life = nbr_to_str(player->xp);
+    char *level = nbr_to_str(player->level);
+    char *life = nbr_to_str(player->life);
     char *label_level = my_strcat("Niv. ", level);
-    char *label_life = my_strcat(level, player->xp == 1 ? " vie" : "  vies");
+    char *label_life = my_strcat(life, player->life == 1 ? " vie" :
+    "  vies");
 
     sfText_setPosition(renderer->objects->text,
     INVENTORY_LEVEL_LABEL_POS);

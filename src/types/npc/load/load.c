@@ -5,6 +5,7 @@
 ** load_npc
 */
 
+#include <stdio.h>
 #include <stdlib.h>
 #include "types/npc/npc.h"
 #include "types/list/list.h"

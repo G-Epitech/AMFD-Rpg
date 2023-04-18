@@ -12,6 +12,7 @@
     #include <SFML/Graphics.h>
 
 typedef struct s_list list_t;
+typedef struct s_npc npc_t;
 
 typedef struct s_npc_dialog {
     char *label;
@@ -32,6 +33,7 @@ typedef struct s_npc_data {
     sfVector2f position;
     list_t *dialogs;
     npc_enemy_t *enemy;
+    npc_t *npc;
 } npc_data_t;
 
 typedef struct s_npc {

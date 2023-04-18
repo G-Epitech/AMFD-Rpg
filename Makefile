@@ -71,6 +71,7 @@ SRC = 		src/main.c \
 			src/types/ressources/components/button/load.c \
 			src/types/ressources/components/backgrounds/load.c \
 			src/types/ressources/components/lever/load.c \
+			src/types/ressources/components/fight/load.c \
 			src/types/ressources/components/progress/load.c \
 			\
 			src/types/ressources/inventory/load.c \
@@ -93,8 +94,18 @@ SRC = 		src/main.c \
 			src/app/init/settings.c \
 			src/app/init/sounds.c \
 			src/app/init/tasks.c \
+			src/app/init/animations.c \
+			\
+			src/app/free/animations.c \
 			\
 			src/app/free/free.c \
+			\
+			src/app/animations/handler.c \
+			src/app/animations/event_new.c \
+			src/app/animations/screen/zoom.c \
+			src/app/animations/button/shake_attack.c \
+			src/app/animations/text/floating.c \
+			src/app/animations/text/notif.c \
 			\
 			src/app/states/on_state.c \
 			src/app/states/switch.c \
@@ -113,8 +124,13 @@ SRC = 		src/main.c \
 			src/app/events/handler.c \
 			src/app/events/window/close.c \
 			src/app/events/keyboard/move.c \
+			src/app/events/keyboard/inventory.c \
+			src/app/events/keyboard/interaction/interaction.c \
+			src/app/events/keyboard/interaction/fight/start.c \
+			src/app/events/keyboard/interaction/fight/choice.c \
 			src/app/events/components/buttons.c \
 			src/app/events/components/levers.c \
+			src/app/events/components/attacks.c \
 			\
 			src/app/developer/reload_json.c \
 			\
@@ -129,6 +145,9 @@ SRC = 		src/main.c \
 			src/app/network/receive/game.c \
 			src/app/network/receive/position.c \
 			\
+			src/app/core/fight/handler.c \
+			src/app/core/fight/enemy.c \
+			\
 			src/app/display/handler.c \
 			src/app/display/map/map.c \
 			src/app/display/map/back.c \
@@ -142,6 +161,7 @@ SRC = 		src/main.c \
       		src/app/display/components/components.c \
 			src/app/display/components/backgrounds.c \
 			src/app/display/components/levers.c \
+			src/app/display/components/interaction.c \
 			src/app/display/components/buttons/buttons.c \
 			src/app/display/components/buttons/icon.c \
 			src/app/display/components/buttons/dispatch.c \
@@ -152,7 +172,6 @@ SRC = 		src/main.c \
 			src/app/display/menus/settings.c \
 			src/app/display/menus/select_character.c \
 			\
-			src/app/core/handler.c	\
 			src/app/core/sound.c	\
 			\
 			src/app/sound/sound_control.c	\
@@ -167,20 +186,27 @@ SRC = 		src/main.c \
 			src/app/display/inventory/levels.c \
 			src/app/display/developer/collisions.c \
 			src/app/display/developer/position.c \
+			src/app/display/fight/fight.c \
+			src/app/display/fight/choice.c \
+			src/app/display/fight/attack.c \
+			src/app/display/animations/animations.c \
+			src/app/display/animations/floating_text.c \
+			src/app/display/animations/notif.c \
+			\
+			src/app/getters/progress/inventory.c \
+			src/app/getters/progress/fight.c \
+      		\
 			src/app/display/tasks/camera/display.c \
 			src/app/display/tasks/camera/solution.c \
 			src/app/display/tasks/camera/result.c \
 			src/app/display/tasks/camera/equations.c \
 			src/app/display/tasks/flipper/display.c \
-      		src/app/getters/progress/inventory.c \
 			\
 			src/app/utils/test.c \
 			\
 			src/app/loading/loading_company_screen.c \
 			src/app/loading/loading_screen_text.c \
 			src/app/loading/loading_sleep.c \
-			\
-			src/app/core/interactions/npc.c \
 			\
 			src/app/events/handler/closed.c \
 			src/app/events/handler/mouse_button_pressed.c \

@@ -24,6 +24,7 @@
 typedef struct s_list list_t;
 
 typedef union u_node_data {
+    animation_event_t *animations_event;
     inventory_item_t *inventory_item;
     task_bash_node_t *node_bash;
     task_flipper_node_t *node_flip;
@@ -33,6 +34,7 @@ typedef union u_node_data {
     sound_theme_t *theme;
     progress_t *progress;
     npc_data_t npc_data;
+    attack_t *attack;
     player_t *player;
     button_t *button;
     sound_t *sound;

@@ -36,6 +36,16 @@ static void display_elements(renderer_t *renderer, app_t *app)
     display_menus(renderer, app);
     display_tasks_handler(renderer, app);
     display_developer_position(renderer, app);
+    display_animations(renderer, app);
+}
+
+static void center_view(renderer_t *renderer, app_t *app)
+{
+    sfVector2f center = app->player->position;
+
+    center.x += 8;
+    center.y += 16;
+    sfView_setCenter(renderer->map_view, center);
 }
 
 void display_handler(renderer_t *renderer, app_t *app)
@@ -45,7 +55,7 @@ void display_handler(renderer_t *renderer, app_t *app)
     sfRenderWindow_clear(renderer->window, sfBlack);
     sfRenderWindow_setView(renderer->window, renderer->map_view);
     display_game(renderer, app);
-    sfView_setCenter(renderer->map_view, app->player->position);
+    center_view(renderer, app);
     sfRenderWindow_setView(objects->window, renderer->default_view);
     display_elements(renderer, app);
     sfRenderWindow_display(renderer->window);
