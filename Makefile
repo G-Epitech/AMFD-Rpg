@@ -202,8 +202,9 @@ SRC = 		src/main.c \
 			src/app/display/animations/animations.c \
 			src/app/display/animations/floating_text.c \
 			src/app/display/animations/notif.c \
-      \
-      src/app/getters/progress/inventory.c \
+			\
+			src/app/getters/progress/inventory.c \
+			src/app/getters/progress/fight.c \
 			\
 			src/app/utils/test.c \
 			\

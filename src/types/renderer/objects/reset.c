@@ -32,6 +32,7 @@ void renderer_objects_reset_text(renderer_objects_t *objects)
     sfText_setOrigin(objects->text, origin);
     sfText_setScale(objects->text, scale);
     sfText_setRotation(objects->text, 0);
+    sfText_setOutlineColor(objects->text, sfTransparent);
 }
 
 void renderer_objects_reset_circle(renderer_objects_t *objects)

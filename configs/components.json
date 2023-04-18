@@ -235,6 +235,7 @@
             "event": 2
         }
     ],
+
     "progresses": [
         {
             "position": {"x": 827, "y": 786},
@@ -263,6 +264,27 @@
             "size": {"x": 230, "y": 42},
             "color": 0,
             "getter_value": 2
+        },
+        {
+            "position": {"x": 176, "y": 67},
+            "app_state": [350],
+            "size": {"x": 284, "y": 42},
+            "color": 0,
+            "getter_value": 2
+        },
+        {
+            "position": {"x": 176, "y": 132},
+            "app_state": [350],
+            "size": {"x": 284, "y": 42},
+            "color": 3,
+            "getter_value": 5
+        },
+        {
+            "position": {"x": 1509, "y": 67},
+            "app_state": [350],
+            "size": {"x": 284, "y": 42},
+            "color": 0,
+            "getter_value": 6
         }
     ]
 }

@@ -30,6 +30,7 @@
 
 typedef struct s_list list_t;
 typedef struct s_renderer renderer_t;
+typedef int (*progress_getter_value_t) (app_t *app, progress_t *progress);
 
 /**
  * @brief Enum of buttons states
@@ -140,14 +141,14 @@ static const struct {
     {settings_developer}
 };
 
-typedef int (*progress_getter_value_t) (app_t *app, progress_t *progress);
-
 static const progress_getter_value_t progress_getters[] = {
     NULL,
     &inventory_get_intelligence,
     &inventory_get_life,
     &inventory_get_speed,
-    &inventory_get_xp
+    &inventory_get_xp,
+    &fight_get_mana,
+    &fight_get_enemy_life
 };
 
 #endif /* !COMPONENTS_TYPES_H_ */

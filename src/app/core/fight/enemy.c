@@ -75,6 +75,7 @@ void core_fight_enemy(app_t *app, renderer_t *renderer)
         node = node->next;
     }
     applay_attack(node, app);
+    app->interaction->data.fight->round++;
     attack_loose(app, renderer);
     cjson_free(config);
 }
