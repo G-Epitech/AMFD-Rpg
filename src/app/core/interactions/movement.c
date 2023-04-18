@@ -42,23 +42,10 @@ sfImage *collision, app_t *app)
     return true;
 }
 
-static bool movement_is_diagonal(control_t * control)
-{
-    int direction_cnt = 0;
-
-    for (size_t i = 0; i < 4; i++) {
-        if (control[i].direction)
-            direction_cnt++;
-        if (direction_cnt > 1)
-            return true;
-    }
-    return false;
-}
-
 static sfVector2f increment_position(sfVector2f position, sfVector2f offset,
 app_t *app, control_t *control)
 {
-    if (movement_is_diagonal(control)) {
+    if (control->direction_nb > 1) {
         offset.x /= 1.3;
         offset.y /= 1.3;
     }
