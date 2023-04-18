@@ -42,9 +42,26 @@ sfImage *collision, app_t *app)
     return true;
 }
 
-static sfVector2f increment_position(sfVector2f position, sfVector2f offset,
-app_t *app)
+static bool movement_is_diagonal(control_t * control)
 {
+    int direction_cnt = 0;
+
+    for (size_t i = 0; i < 4; i++) {
+        if (control[i].direction)
+            direction_cnt++;
+        if (direction_cnt > 1)
+            return true;
+    }
+    return false;
+}
+
+static sfVector2f increment_position(sfVector2f position, sfVector2f offset,
+app_t *app, control_t *control)
+{
+    if (movement_is_diagonal(control)) {
+        offset.x /= 1.3;
+        offset.y /= 1.3;
+    }
     position.x += offset.x;
     position.y += offset.y;
     if (app->partner)
@@ -62,7 +79,7 @@ void core_handle_movement(control_t *control, sfImage *collision, app_t *app)
         if (control[i].direction && movement_is_possible(player->position,
         control[i].offset, collision, app)) {
             player->position = increment_position(player->position,
-            control[i].offset, app);
+            control[i].offset, app, control);
         }
     }
 }
