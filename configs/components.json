@@ -70,7 +70,7 @@
         },
         {
             "icon": "assets/components/button/home.png",
-            "app_state": [2, 5, 6],
+            "app_state": [2, 5, 6, 8],
             "position": {"x": 1408, "y": 788},
             "scale": 1,
             "next_state": 1
@@ -86,8 +86,8 @@
             "icon": "assets/components/button/resolutions.png",
             "app_state": [2],
             "position": {"x": 460, "y": 788},
-            "event": 5,
-            "scale": 1
+            "scale": 1,
+            "next_state": 8
         },
         {
             "icon": "assets/components/button/malus.png",
@@ -183,6 +183,34 @@
             "origin": {"x": 50, "y": 50},
             "id": 1,
             "event": 12
+        },
+        {
+            "icon": "assets/components/button/previous.png",
+            "app_state": [8],
+            "position": {"x": 1279, "y": 788},
+            "next_state": 2,
+            "scale": 1
+        },
+        {
+            "icon": "assets/components/button/lower_resolution.png",
+            "app_state": [8],
+            "position": {"x": 446, "y": 498},
+            "event": 13,
+            "scale": 1
+        },
+        {
+            "icon": "assets/components/button/medium_resolution.png",
+            "app_state": [8],
+            "position": {"x": 796, "y": 498},
+            "event": 14,
+            "scale": 1
+        },
+        {
+            "icon": "assets/components/button/high_resolution.png",
+            "app_state": [8],
+            "position": {"x": 1162, "y": 498},
+            "event": 15,
+            "scale": 1
         }
     ],
 

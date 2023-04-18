@@ -9,10 +9,10 @@
 #include <SFML/Graphics.h>
 #include "app/window/window.h"
 
-sfRenderWindow *window_init(bool fullscreen)
+sfRenderWindow *window_init(bool fullscreen, sfVideoMode resolution)
 {
     sfRenderWindow *window = NULL;
-    sfVideoMode video_mode = WIN_VIDEO_MODE;
+    sfVideoMode video_mode = resolution;
     char *name = WIN_TITLE;
     int fps = WIN_FPS;
     sfUint32 style = sfResize | sfClose;

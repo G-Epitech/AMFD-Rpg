@@ -26,6 +26,7 @@ typedef enum e_app_states {
     ST_GAMEMODE,            //Gamemode (solo/duo)
     ST_CONNEXIONMODE,       //Connexion mode (host/join)
     ST_CHOICE,              //Choice of the character
+    ST_RESOLUTION,          //Choose the resolution of game
     ST_INGAME = 100,        //Main state, ingame player
     ST_INVENTORY = 300,     //Inventory menu
     ST_BREAK,               //Break menu (save/sound...)
