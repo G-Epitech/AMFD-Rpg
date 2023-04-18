@@ -33,6 +33,7 @@ typedef enum e_app_states {
     ST_BREAK,               //Break menu (save/sound...)
     ST_IGSETTINGS,          //In game settings
     ST_IGHELP,              //In game help
+    ST_IG_TREE_COMPETENCE,  //In game tree of competence
     ST_FIGHT = 350,         //Fight interface
     ST_TASK = 500,          //Task delimiter
     ST_TASK_BASH,           //Task n°1: bash

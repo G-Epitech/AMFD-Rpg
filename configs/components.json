@@ -239,6 +239,13 @@
             "position": {"x": 1162, "y": 498},
             "event": 15,
             "scale": 1
+        },
+        {
+            "icon": "assets/components/button/tree_icon.png",
+            "app_state": [100],
+            "position": {"x": 1411, "y": 950},
+            "scale": 1,
+            "next_state": 304
         }
     ],  
 
