@@ -18,6 +18,7 @@ void keyboard_press_move(sfEvent event, app_t *app)
             app->player->orientation = i;
             app->control[i].direction = true;
             app->control->direction_nb++;
+            app->player->state = WALKING;
         }
     }
     if (app->control->direction_nb > 1) {
@@ -35,9 +36,12 @@ void keyboard_release_move(sfEvent event, app_t *app)
     for (size_t i = 0; i < 4; i++) {
         if (event.key.code == app->control[i].key) {
             app->control[i].direction = false;
+            app->control->direction_nb--;
         }
         if (app->control[i].direction) {
             app->player->orientation = (int) i;
         }
     }
+    if (app->control->direction_nb == 0)
+        app->player->state = IDLE;
 }

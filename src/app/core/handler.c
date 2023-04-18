@@ -23,6 +23,7 @@ int core_handler(renderer_t *renderer, app_t *app)
         return 84;
     core_handle_movement(app->control, current_map->collision, app);
     core_handle_sound(app);
+    core_handle_animation(app, renderer);
     network_receive(app);
     return 0;
 }

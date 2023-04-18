@@ -16,10 +16,11 @@
 static void get_animation_properties(animation_t *anim, cjson_t *anim_config)
 {
     anim->title = cjson_get_prop_string_unsafe(anim_config, "title");
-    anim->curr_frame = 0;
     anim->skin_id = cjson_get_prop_int_unsafe(anim_config, "skin_id");
+    anim->file = cjson_get_prop_string_unsafe(anim_config, "asset");
     anim->state = cjson_get_prop_int_unsafe(anim_config, "state");
     anim->frames_len = cjson_get_prop_int_unsafe(anim_config, "frame_len");
+    anim->curr_frame = 1;
     anim->rect.top = cjson_get_prop_int_unsafe(anim_config, "top");
     anim->rect.left = cjson_get_prop_int_unsafe(anim_config, "left");
     anim->rect.width = cjson_get_prop_int_unsafe(anim_config, "width");

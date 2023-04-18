@@ -79,7 +79,6 @@ SRC = 		src/main.c \
 			\
 			src/types/ressources/items/load.c \
 			\
-			\
 			src/types/ressources/animation/load.c	\
 			\
 			src/types/view/init.c \
@@ -96,6 +95,8 @@ SRC = 		src/main.c \
 			src/app/init/settings.c \
 			src/app/init/sounds.c \
 			src/app/init/tasks.c \
+			\
+			src/app/animation/animation.c	\
 			\
 			src/app/free/free.c \
 			\
@@ -157,6 +158,7 @@ SRC = 		src/main.c \
 			\
 			src/app/core/handler.c	\
 			src/app/core/sound.c	\
+			src/app/core/animation.c	\
 			\
 			src/app/sound/sound_control.c	\
 			src/app/sound/handle_sound_fx.c	\

@@ -9,6 +9,9 @@
     #define APP_TYPES_H_
 
     #include <stdbool.h>
+    #include <SFML/System/Export.h>
+    #include <SFML/System/Time.h>
+    #include <SFML/System/Types.h>
     #include "types/players/types.h"
     #include "app/network/types.h"
     #include "sound/types.h"
@@ -75,6 +78,7 @@ typedef struct s_interactions {
 } interactions_t;
 
 typedef struct s_app {
+    sfClock *clock;          //Clock of the game
     app_states_t state;     //State of the app
     worlds_t world;         //Actual wolrd where player is
     list_t *items;          //Items available in game

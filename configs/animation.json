@@ -1,10 +1,22 @@
 [
     {
         "title": "Idle",
+        "asset": "assets/skins/lucas.png",
         "skin_id": 4,
         "state": 0,
         "frame_len": 6,
-        "top": 100,
+        "top": 32,
+        "left": 0,
+        "width": 16,
+        "height":32
+    },
+    {
+        "title": "Walking",
+        "asset": "assets/skins/lucas.png",
+        "skin_id": 4,
+        "state": 1,
+        "frame_len": 6,
+        "top": 200,
         "left": 0,
         "width": 16,
         "height":32

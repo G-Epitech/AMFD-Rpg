@@ -19,6 +19,24 @@
 #include "types/components/components.h"
 #include "types/ressources/ressources.h"
 
+void display_anims(list_t *animations)
+{
+    node_t *node = animations->first;
+    animation_t *anim = NULL;
+
+    while (node) {
+        anim = node->data.animation;
+        my_putstr(anim->title);
+        my_putstr(anim->file);
+        my_put_nbr(anim->skin_id);
+        my_put_nbr(anim->state);
+        my_put_nbr(anim->frames_len);
+        printf("Rect top:%d left:%d width:%d height:%d\n",
+        anim->rect.top, anim->rect.left, anim->rect.width, anim->rect.height);
+        node = node->next;
+    }
+}
+
 int main(void)
 {
     renderer_t *renderer = renderer_init();
@@ -32,6 +50,7 @@ int main(void)
         renderer_destroy(renderer);
         return 84;
     }
+    display_anims(app->animations);
     while (sfRenderWindow_isOpen(renderer->window)) {
         if (app_run(renderer, app) == 84)
             return 84;
