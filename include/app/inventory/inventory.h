@@ -96,4 +96,23 @@ void inventory_onpress(app_t *app, sfEvent event);
  */
 void inventory_onmove(app_t *app, sfEvent event);
 
+/**
+ * @brief Get target and selected items of given event
+ * @param inventory Inventory of player
+ * @param event Event of inventory
+ * @param selected Selected item
+ * @param target Target item
+ */
+void inventory_get_target_and_selected(list_t *inventory,
+inventory_event_t *event, inventory_item_t **selected,
+inventory_item_t **target);
+
+/**
+ * @brief Swap event items
+ * @param player Player object
+ * @param event Event object
+ */
+void inventory_swap_items_on_event(player_t *player,
+inventory_event_t *event);
+
 #endif /* !INVENTORY_H_ */

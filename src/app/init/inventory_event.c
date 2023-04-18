@@ -19,6 +19,7 @@ bool app_init_inventory_event(app_t *app, renderer_t *renderer)
     app->inventory_event->pressed = false;
     app->inventory_event->item_pos = 0;
     app->inventory_event->target_pos = 0;
+    app->inventory_event->target_active = false;
     app->inventory_event->position = (sfVector2f) {0, 0};
     return true;
 }

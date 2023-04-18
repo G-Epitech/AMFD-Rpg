@@ -131,6 +131,8 @@ SRC = 		src/main.c \
 			src/app/network/receive/position.c \
 			\
 			src/app/core/inventory/move.c \
+			src/app/core/inventory/swap.c \
+			src/app/core/inventory/get_target_selected.c \
 			src/app/core/inventory/press.c \
 			src/app/core/inventory/release.c \
 			src/app/core/tasks/handler.c \
@@ -175,6 +177,9 @@ SRC = 		src/main.c \
 			src/app/sound/handle_sound_themes.c	\
 			src/app/sound/handle_sound_volume.c	\
 			src/app/display/inventory/grids.c \
+			src/app/display/inventory/grids_taken.c \
+			src/app/display/inventory/grids_empty.c \
+			src/app/display/inventory/grids_specials.c \
 			src/app/display/inventory/item_box.c \
 			src/app/display/inventory/profile.c \
 			src/app/display/inventory/inventory.c \

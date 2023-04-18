@@ -13,13 +13,13 @@
 #include "app/inventory/types.h"
 #include "types/ressources/ressources.h"
 
-static void adapt_scale_and_position(inventory_item_t *item, float *scale,
+static void adapt_scale_and_position(bool active, float *scale,
 sfVector2f *position)
 {
     float size = INVENTORY_MAIN_GRID_ITEM_SIZE;
     sfVector2f real = {ITEM_SIZE.x, ITEM_SIZE.y};
 
-    if (item->active)
+    if (active)
         size = INVENTORY_ACTIVE_GRID_ITEM_SIZE;
     *scale = (float) size / INVENTORY_ACTIVE_GRID_ITEM_SIZE;
     real.x *= *scale;
@@ -28,16 +28,15 @@ sfVector2f *position)
     position->y += (size - real.y) / 2;
 }
 
-static void display_item(renderer_t *renderer, inventory_item_t *item)
+static void display_item(renderer_t *renderer, item_t *item,
+sfVector2f position, bool active)
 {
     sfTexture *texture = renderer->ressources->items;
     sfSprite *sprite = renderer->objects->sprite;
-    sfVector2f position = {0, 0};
-    sfIntRect rect = item->target->rect;
+    sfIntRect rect = item->rect;
     float scale = 0;
 
-    display_inventory_get_item_position(item->pos, item->active, &position);
-    adapt_scale_and_position(item, &scale, &position);
+    adapt_scale_and_position(active, &scale, &position);
     renderer_objects_reset_sprite(renderer->objects);
     sfSprite_setTexture(sprite, texture, sfTrue);
     sfSprite_setTextureRect(sprite, rect);
@@ -46,8 +45,35 @@ static void display_item(renderer_t *renderer, inventory_item_t *item)
     sfRenderWindow_drawSprite(renderer->objects->window, sprite, NULL);
 }
 
-void display_inventory_item_content(renderer_t *renderer,
-inventory_item_t *item)
+static bool prevent_special(renderer_t *renderer,
+inventory_item_t *item, inventory_event_t *event)
 {
-    display_item(renderer, item);
+    sfVector2f position = {0, 0};
+
+    if (!event->moved || !event->pressed)
+        return false;
+    if (event->item_pos == item->pos && item->active == event->item_active) {
+        display_item(renderer, item->target, event->position,
+        event->target_active);
+        return true;
+    }
+    if (event->target_pos == item->pos
+        && item->active == event->target_active) {
+        display_inventory_get_item_position(event->item_pos,
+        event->item_active, &position);
+        display_item(renderer, item->target, position, event->item_active);
+        return true;
+    }
+    return false;
+}
+
+void display_inventory_item_content(renderer_t *renderer,
+inventory_item_t *item, inventory_event_t *event)
+{
+    sfVector2f position = {0, 0};
+
+    if (!prevent_special(renderer, item, event)) {
+        display_inventory_get_item_position(item->pos, item->active, &position);
+        display_item(renderer, item->target, position, item->active);
+    }
 }

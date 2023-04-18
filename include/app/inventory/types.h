@@ -43,6 +43,7 @@ typedef struct s_inventory_move {
     sfVector2f position;
     bool item_active;
     int item_pos;
+    bool target_active;
     int target_pos;
 } inventory_event_t;
 
