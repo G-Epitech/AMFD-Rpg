@@ -9,9 +9,9 @@
 #include "types/renderer/types.h"
 #include "app/types.h"
 
-void app_free_inventory_move(app_t *app)
+void app_free_inventory_event(app_t *app)
 {
-    if (!app->inventory_move)
+    if (!app->inventory_event)
         return;
-    free(app->inventory_move);
+    free(app->inventory_event);
 }

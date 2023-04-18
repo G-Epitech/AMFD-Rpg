@@ -75,4 +75,25 @@ int inventory_get_intelligence(app_t *app, progress_t *progress);
  */
 int inventory_get_speed(app_t *app, progress_t *progress);
 
+/**
+ * @brief Event handler for button releasing on inventory
+ * @param app App object
+ * @param event Event object
+ */
+void inventory_onrelease(app_t *app, sfEvent event);
+
+/**
+ * @brief Event handler for button press on inventory
+ * @param app App object
+ * @param event Event object
+ */
+void inventory_onpress(app_t *app, sfEvent event);
+
+/**
+ * @brief Event handler for button press on inventory
+ * @param app App object
+ * @param event Event object
+ */
+void inventory_onmove(app_t *app, sfEvent event);
+
 #endif /* !INVENTORY_H_ */

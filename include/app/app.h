@@ -80,13 +80,13 @@ bool app_init_items(app_t *app, renderer_t *renderer);
  * @param renderer Renderer object
  * @return Initialization success status
  */
-bool app_init_inventory_move(renderer_t *renderer, app_t *app);
+bool app_init_inventory_event(app_t *app, renderer_t *renderer);
 
 /**
  * @brief Free inventory move
  * @param app App object
  */
-void app_free_inventory_move(app_t *app);
+void app_free_inventory_event(app_t *app);
 
 /**
  * @brief Initialize network of game

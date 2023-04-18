@@ -86,7 +86,7 @@ SRC = 		src/main.c \
 			src/app/init/controller.c \
 			src/app/init/init.c \
 			src/app/init/interactions.c \
-			src/app/init/inventory_move.c \
+			src/app/init/inventory_event.c \
 			src/app/init/items.c \
 			src/app/init/network.c \
 			src/app/init/npcs.c \
@@ -96,7 +96,7 @@ SRC = 		src/main.c \
 			src/app/init/tasks.c \
 			\
 			src/app/free/free.c \
-			src/app/free/inventory_move.c \
+			src/app/free/inventory_event.c \
 			\
 			src/app/states/on_state.c \
 			src/app/states/switch.c \
@@ -130,6 +130,9 @@ SRC = 		src/main.c \
 			src/app/network/receive/game.c \
 			src/app/network/receive/position.c \
 			\
+			src/app/core/inventory/move.c \
+			src/app/core/inventory/press.c \
+			src/app/core/inventory/release.c \
 			src/app/core/tasks/handler.c \
 			src/app/core/tasks/create.c \
 			src/app/core/tasks/find_node.c \
@@ -202,6 +205,7 @@ SRC = 		src/main.c \
 			src/app/events/handler/released.c \
 			src/app/events/handler/text_entered.c \
 			src/app/events/handler/mouse_button_released.c \
+			src/app/events/handler/mouse_move.c \
 			\
 			src/app/core/tasks/flipper/create_node.c \
 			src/app/core/tasks/flipper/game_handler.c \

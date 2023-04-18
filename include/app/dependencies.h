@@ -21,13 +21,13 @@ static const app_init_member_t app_init_members[] = {
     &app_init_network,
     &app_init_interactions,
     &app_init_sounds,
-    &app_init_inventory_move,
+    &app_init_inventory_event,
     NULL
 };
 
 static const app_free_member_t app_free_members[] = {
     NULL,
-    &app_free_inventory_move
+    &app_free_inventory_event
 };
 
 #endif /* !APP_DEPENDENCIES_H_ */

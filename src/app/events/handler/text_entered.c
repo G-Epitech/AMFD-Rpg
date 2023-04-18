@@ -13,7 +13,6 @@
 #include "app/tasks/camera/camera.h"
 #include "app/app.h"
 
-
 void event_text_entered(renderer_t *renderer, sfEvent event, app_t *app)
 {
     if (event.type == sfEvtTextEntered) {

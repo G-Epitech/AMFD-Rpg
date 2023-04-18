@@ -22,6 +22,7 @@ renderer_t *renderer)
     event_key_released(event, app);
     event_mouse_button_pressed(app, renderer, event);
     event_mouse_button_released(app, renderer, event);
+    event_mouse_moved(app, renderer, event);
 }
 
 void event_handler(sfRenderWindow *window, app_t *app, renderer_t *renderer)

@@ -102,4 +102,13 @@ sfEvent event);
 void event_mouse_button_released(app_t *app, renderer_t *renderer,
 sfEvent event);
 
+/**
+ * @brief Handler of mouse move
+ * @param app App object
+ * @param renderer Renderer object
+ * @param event Catched event
+ */
+void event_mouse_moved(app_t *app, renderer_t *renderer,
+sfEvent event);
+
 #endif /* !EVENTS_H_ */

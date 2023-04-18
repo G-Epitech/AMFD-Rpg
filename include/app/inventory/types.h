@@ -38,10 +38,12 @@ typedef struct s_inventory_item {
 
 typedef struct s_inventory_move {
     bool pressed;
+    bool moved;
+    sfVector2f pressed_on;
     sfVector2f position;
     bool item_active;
     int item_pos;
     int target_pos;
-} inventory_move_t;
+} inventory_event_t;
 
 #endif /* !INVENTORY_TYPES_H_ */

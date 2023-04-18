@@ -86,7 +86,7 @@ typedef struct s_app {
     settings_t *settings;               //Settings of the application
     network_t *network;                 //Network
     interactions_t *interaction;        //Interaction in the app
-    inventory_move_t *inventory_move;   //Inventory move
+    inventory_event_t *inventory_event;   //Inventory move
     sound_board_t *sound_board;         //Soundboard
 } app_t;
 
