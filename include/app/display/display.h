@@ -89,6 +89,13 @@ void display_handler(renderer_t *renderer, app_t *app);
 void display_components_buttons(renderer_t *renderer, app_t *app);
 
 /**
+ * @biref Display interaction icon
+ * @param renderer Renderer structure
+ * @param app Application informations
+*/
+void display_components_interaction(renderer_t *renderer, app_t *app);
+
+/**
  * @biref Display all components
  * @param renderer Renderer structure
  * @param app Application informations
@@ -260,6 +267,48 @@ void display_developer_collisions(renderer_t *renderer, app_t *app);
 void display_developer_position(renderer_t *renderer, app_t *app);
 
 /**
+ * @brief Display fights menus
+ * @param renderer Renderer structure
+ * @param app Application informations
+ */
+void display_fight(renderer_t *renderer, app_t *app);
+
+/**
+ * @brief Display fights choice box
+ * @param renderer Renderer structure
+ * @param app Application informations
+ */
+void display_fight_choice(renderer_t *renderer, app_t *app);
+
+/**
+ * @brief Display fights attack box
+ * @param renderer Renderer structure
+ * @param app Application informations
+ */
+void display_fight_attack(renderer_t *renderer, app_t *app);
+
+/**
+ * @brief Display floating text animations
+ * @param renderer Renderer structure
+ * @param app Application informations
+ */
+void display_animations_floating_text(renderer_t *renderer, app_t *app);
+
+/**
+ * @brief Display animations
+ * @param renderer Renderer structure
+ * @param app Application informations
+ */
+void display_animations(renderer_t *renderer, app_t *app);
+
+/**
+ * @brief Display notif animation
+ * @param renderer Renderer structure
+ * @param app Application informations
+ */
+void display_animations_notif(renderer_t *renderer, app_t *app);
+
+/*
  * @brief Display progress bar component
  * @param progress Progress bar component
  * @param renderer Renderer object

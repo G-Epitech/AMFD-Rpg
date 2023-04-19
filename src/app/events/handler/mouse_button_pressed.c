@@ -25,6 +25,7 @@ renderer_t *renderer)
     event.mouseButton.y = coords.y;
     event_components_buttons(renderer, app, event);
     event_components_levers(renderer, app, event);
+    event_components_attacks(renderer, app, event);
     if (app->state == ST_TASK_FLIPPER)
         event_task_flipper(renderer, app);
     if (app->state == ST_INVENTORY)

@@ -12,6 +12,7 @@
     #include "types/players/types.h"
     #include "app/inventory/types.h"
     #include "app/network/types.h"
+    #include "app/animations/types.h"
     #include "sound/types.h"
 
 typedef struct s_list list_t;
@@ -27,9 +28,12 @@ typedef enum e_app_states {
     ST_GAMEMODE,            //Gamemode (solo/duo)
     ST_CONNEXIONMODE,       //Connexion mode (host/join)
     ST_CHOICE,              //Choice of the character
+    ST_RESOLUTION,          //Choose the resolution of game
     ST_INGAME = 100,        //Main state, ingame player
     ST_INVENTORY = 300,     //Inventory menu
     ST_BREAK,               //Break menu (save/sound...)
+    ST_IGSETTINGS,          //In game settings
+    ST_IGHELP,              //In game help
     ST_FIGHT = 350,         //Fight interface
     ST_TASK = 500,          //Task delimiter
     ST_TASK_BASH,           //Task n°1: bash
@@ -45,6 +49,7 @@ typedef enum e_worlds {
 } worlds_t;
 
 typedef struct s_control {
+    int direction_nb;       //Number of directions (useful for diagonal moves)
     bool direction;         //Move direction
     sfVector2f offset;      //Move offset for the direction
     sfKeyCode key;          //Move key code
@@ -58,18 +63,38 @@ typedef struct s_settings {
     bool developer;         //Developer mode
 } settings_t;
 
+typedef enum e_fight_state {
+    FT_CHOICE = 0,
+    FT_PLAYER_ATTACK,
+    FT_WAIT,
+    FT_NPC_ATTACK,
+    FT_END
+} fight_state_t;
+
+typedef struct s_fight {
+    npc_data_t *npc;
+    fight_state_t state;
+    int choice;
+    int mana;
+    int enemy_life;
+    int round;
+} fight_t;
+
 typedef union u_interaction_data {
     npc_data_t *npc;
+    fight_t *fight;
 } interaction_data_t;
 
 typedef enum e_interaction_type {
     IT_NULL = 0,
-    IT_NPC
+    IT_NPC,
+    IT_FIGHT
 } interaction_type_t;
 
 typedef struct s_interactions {
     interaction_data_t data;
     interaction_type_t type;
+    bool active;
     bool interaction;
 } interactions_t;
 
@@ -86,7 +111,8 @@ typedef struct s_app {
     settings_t *settings;               //Settings of the application
     network_t *network;                 //Network
     interactions_t *interaction;        //Interaction in the app
-    inventory_event_t *inventory_event;   //Inventory move
+    inventory_event_t *inventory_event; //Inventory move
+    animations_t *animations;           //Animations in the app
     sound_board_t *sound_board;         //Soundboard
 } app_t;
 

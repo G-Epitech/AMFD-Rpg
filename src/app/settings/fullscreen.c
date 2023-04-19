@@ -16,7 +16,7 @@ int settings_fullscreen(renderer_t *renderer, app_t *app, lever_t *lever)
     lever->active = app->settings->full_screen;
     sfRenderWindow_close(renderer->window);
     sfRenderWindow_destroy(renderer->window);
-    renderer->window = window_init(app->settings->full_screen);
+    renderer->window = window_init(app->settings->full_screen, WIN_VIDEO_MODE);
     renderer->objects->window = renderer->window;
     renderer->default_view = sfRenderWindow_getDefaultView(renderer->window);
     return 0;

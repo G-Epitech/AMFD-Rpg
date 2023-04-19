@@ -55,6 +55,14 @@ void event_components_buttons(renderer_t *renderer, app_t *app, sfEvent event);
 */
 void event_components_levers(renderer_t *renderer, app_t *app, sfEvent event);
 
+/**
+ * @brief Handle events on attacks
+ * @param renderer Renderer structure
+ * @param app Application structure
+ * @param event Event click
+*/
+void event_components_attacks(renderer_t *renderer, app_t *app, sfEvent event);
+
 /*
  * @brief Handler of event close
  * @param window Window of the app
@@ -82,7 +90,14 @@ void event_key_pressed(sfEvent event, app_t *app);
  * @param app Application structure
  * @param event The specific event
 */
-void event_key_released(sfEvent event, app_t *app);
+void event_key_released(sfEvent event, renderer_t *renderer, app_t *app);
+
+/**
+ * @brief Keyboard E interaction
+ * @param event Event structure
+ * @param app Application structure
+ */
+void keyboard_interaction(sfEvent event, renderer_t *renderer, app_t *app);
 
 /**
  * @brief Handler of event mouse button pressed
@@ -110,5 +125,30 @@ sfEvent event);
  */
 void event_mouse_moved(app_t *app, renderer_t *renderer,
 sfEvent event);
+
+/**
+ * @brief Fight interaction start
+ * @param interactions Interactions structure
+ * @param app App object
+ * @param renderer Renderer object
+ */
+void interaction_fight_start(interactions_t *interactions, app_t *app,
+renderer_t *renderer);
+
+/**
+ * @brief Fight interaction choice
+ * @param interactions Interactions structure
+ * @param app App object
+ * @param renderer Renderer object
+ */
+void keyboard_interaction_choice(sfEvent event, app_t *app,
+renderer_t *renderer);
+
+/**
+ * @brief Inventory keyboard
+ * @param event Event structure
+ * @param app App object
+ */
+void keyboard_inventory(sfEvent event, app_t *app);
 
 #endif /* !EVENTS_H_ */

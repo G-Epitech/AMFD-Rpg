@@ -1,0 +1,50 @@
+[
+    {
+        "title": "Coup de poing",
+        "level": 1,
+        "mana": 1,
+        "damage": 3,
+        "position": {"x": 526, "y": 813},
+        "texture": "assets/components/button/coup_poing.png"
+    },
+    {
+        "title": "Coup de genou",
+        "level": 2,
+        "mana": 2,
+        "damage": 4,
+        "position": {"x": 526, "y": 895},
+        "texture": "assets/components/button/coup_genou.png"
+    },
+    {
+        "title": "Grande batte",
+        "level": 5,
+        "mana": 6,
+        "damage": 10,
+        "position": {"x": 827, "y": 813},
+        "texture": "assets/components/button/batte.png"
+    },
+    {
+        "title": "Petite hache",
+        "level": 7,
+        "mana": 8,
+        "damage": 15,
+        "position": {"x": 827, "y": 895},
+        "texture": "assets/components/button/hache.png"
+    },
+    {
+        "title": "Super taser",
+        "level": 10,
+        "mana": 15,
+        "damage": 25,
+        "position": {"x": 1128, "y": 813},
+        "texture": "assets/components/button/taser.png"
+    },
+    {
+        "title": "Arme a feu",
+        "level": 15,
+        "mana": 20,
+        "damage": 35,
+        "position": {"x": 1128, "y": 895},
+        "texture": "assets/components/button/arme_feu.png"
+    }
+]

@@ -115,4 +115,19 @@ inventory_item_t **target);
 void inventory_swap_items_on_event(player_t *player,
 inventory_event_t *event);
 
+/**
+ * @brief Get mana of fight
+ * @param app App object
+ * @param progress Progress object
+ * @return Percentage of speed
+ */
+int fight_get_mana(app_t *app, progress_t *progress);
+
+/**enemy lifeinventory speed value
+ * @param app App object
+ * @param progress Progress object
+ * @return Percentage of speed
+ */
+int fight_get_enemy_life(app_t *app, progress_t *progress);
+
 #endif /* !INVENTORY_H_ */

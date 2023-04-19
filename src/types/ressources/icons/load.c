@@ -15,7 +15,24 @@
 #include "types/players/types.h"
 #include "cjson/include/cjson.h"
 
-static void icons_load_data(icons_r_t *icons, cjson_t *configs)
+static void icons_load_data_notif(icons_r_t *icons, cjson_t *configs)
+{
+    char *notif = cjson_get_prop_string_unsafe(configs, "notif");
+    char *happy = cjson_get_prop_string_unsafe(configs, "happy");
+    char *hungry = cjson_get_prop_string_unsafe(configs, "hungry");
+    char *xp = cjson_get_prop_string_unsafe(configs, "xp");
+
+    icons->notif = sfTexture_createFromFile(notif, NULL);
+    icons->happy = sfTexture_createFromFile(happy, NULL);
+    icons->hungry = sfTexture_createFromFile(hungry, NULL);
+    icons->xp = sfTexture_createFromFile(xp, NULL);
+    free(notif);
+    free(happy);
+    free(hungry);
+    free(xp);
+}
+
+static void icons_load_data_check(icons_r_t *icons, cjson_t *configs)
 {
     char *valid = cjson_get_prop_string_unsafe(configs, "valid");
     char *refuse = cjson_get_prop_string_unsafe(configs, "refuse");
@@ -24,6 +41,28 @@ static void icons_load_data(icons_r_t *icons, cjson_t *configs)
     icons->refuse = sfTexture_createFromFile(refuse, NULL);
     free(valid);
     free(refuse);
+}
+
+static void icons_load_data(icons_r_t *icons, cjson_t *configs)
+{
+    char *lock = cjson_get_prop_string_unsafe(configs, "attack_lock");
+    char *selector_true = cjson_get_prop_string_unsafe(configs,
+    "selector_true");
+    char *selector_false = cjson_get_prop_string_unsafe(configs,
+    "selector_false");
+    char *interaction = cjson_get_prop_string_unsafe(configs,
+    "interaction");
+
+    icons->attack_lock = sfTexture_createFromFile(lock, NULL);
+    icons->selector_true = sfTexture_createFromFile(selector_true, NULL);
+    icons->selector_false = sfTexture_createFromFile(selector_false, NULL);
+    icons->interaction = sfTexture_createFromFile(interaction, NULL);
+    free(lock);
+    free(selector_true);
+    free(selector_false);
+    free(interaction);
+    icons_load_data_check(icons, configs);
+    icons_load_data_notif(icons, configs);
 }
 
 void icons_load(renderer_t *renderer, icons_r_t *icons)

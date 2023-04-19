@@ -14,13 +14,13 @@
         {
             "asset": "assets/components/backgrounds/menu_background.png",
             "scale": 1,
-            "state": [1, 2, 3, 4, 5, 6, 7],
+            "state": [1, 2, 3, 4, 5, 6, 7, 8],
             "position" : {"x": 0, "y": 0}
         },
         {
             "asset": "assets/components/backgrounds/menu.png",
             "scale": 1,
-            "state": [1, 2, 3, 4, 5, 6, 7, 502, 503, 504],
+            "state": [1, 2, 3, 4, 5, 6, 7, 8, 502, 503, 504],
             "position" : {"x": 341, "y": 156}
         },
         {
@@ -66,6 +66,24 @@
             "position" : {"x": 589, "y": 730}
         },
         {
+            "asset": "assets/components/backgrounds/fight_choice.png",
+            "scale": 1,
+            "state": [350],
+            "position" : {"x": 457, "y": 744}
+        },
+        {
+            "asset": "assets/components/backgrounds/player_fight.png",
+            "scale": 1,
+            "state": [350],
+            "position" : {"x": 42, "y": 13}
+        },
+        {
+            "asset": "assets/components/backgrounds/enemy_fight.png",
+            "scale": 1,
+            "state": [350],
+            "position" : {"x": 1370, "y": 13}
+        },
+        {
             "asset": "assets/tasks/phone.png",
             "scale": 1,
             "state": [501],
@@ -76,6 +94,12 @@
             "scale": 1,
             "state": [300],
             "position" : {"x": 177, "y": 45}
+        },
+        {
+            "asset": "assets/components/backgrounds/resolution_title.png",
+            "scale": 1,
+            "state": [8],
+            "position" : {"x": 632, "y": 295}
         }
     ],
 
