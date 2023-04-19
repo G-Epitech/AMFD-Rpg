@@ -15,11 +15,13 @@
     #define BRUTE_FORCE_ID 2
     #define FLIPPER_ID 3
     #define GO_BUSTER_ID 4
+    #define COMPETENCE_UNLOCK(comptence) competence->data.competence->unlock
 
 typedef struct s_competences_node {
     int id;
-    bool competences;
-    sfVector2f pos;
+    bool unlock;
+    sfVector2f pos_competence;
+    sfVector2f pos_pipe;
 } competences_node_t;
 
 #endif /* !TYPES_COMPETENCES_TREE_H_ */
