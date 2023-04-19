@@ -20,7 +20,7 @@
         {
             "asset": "assets/components/backgrounds/menu.png",
             "scale": 1,
-            "state": [1, 2, 3, 4, 5, 6, 7, 8, 302, 303, 304, 305, 502, 503, 504],
+            "state": [1, 2, 3, 4, 5, 6, 7, 8, 302, 303, 304, 305, 306, 307, 308, 309, 502, 503, 504],
             "position" : {"x": 341, "y": 156}
         },
         {
@@ -38,13 +38,13 @@
         {
             "asset": "assets/components/backgrounds/reglages.png",
             "scale": 1,
-            "state": [2, 302],
+            "state": [2, 302, 306],
             "position" : {"x": 575, "y": 292}
         },
         {
             "asset": "assets/components/backgrounds/help_1.png",
             "scale": 1,
-            "state": [3, 303],
+            "state": [3, 303, 307],
             "position" : {"x": 457, "y": 292}
         },
         {
@@ -98,7 +98,7 @@
         {
             "asset": "assets/components/backgrounds/resolution_title.png",
             "scale": 1,
-            "state": [8, 305],
+            "state": [8, 305, 309],
             "position" : {"x": 632, "y": 295}
         }
     ],

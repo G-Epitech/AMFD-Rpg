@@ -91,49 +91,49 @@
         },
         {
             "icon": "assets/components/button/malus.png",
-            "app_state": [2, 302],
+            "app_state": [2, 302, 306],
             "position": {"x": 1007, "y": 468},
             "event": 4,
             "scale": 1
         },
         {
             "icon": "assets/components/button/malus.png",
-            "app_state": [2, 302],
+            "app_state": [2, 302, 306],
             "position": {"x": 1007, "y": 558},
             "event": 6,
             "scale": 1
         },
         {
             "icon": "assets/components/button/sup.png",
-            "app_state": [2, 302],
+            "app_state": [2, 302, 306],
             "position": {"x": 1290, "y": 468},
             "event": 5,
             "scale": 1
         },
         {
             "icon": "assets/components/button/sup.png",
-            "app_state": [2, 302],
+            "app_state": [2, 302, 306],
             "position": {"x": 1290, "y": 558},
             "event": 7,
             "scale": 1
         },
         {
             "icon": "assets/components/button/previous_block.png",
-            "app_state": [3, 303],
+            "app_state": [3, 303, 307],
             "position": {"x": 1279, "y": 788},
             "event": 0,
             "scale": 1
         },
         {
             "icon": "assets/components/button/previous.png",
-            "app_state": [4, 304],
+            "app_state": [4, 304, 308],
             "position": {"x": 1279, "y": 788},
             "event": 2,
             "scale": 1
         },
         {
             "icon": "assets/components/button/next.png",
-            "app_state": [3, 303],
+            "app_state": [3, 303, 307],
             "position": {"x": 1408, "y": 788},
             "event": 3,
             "scale": 1
@@ -147,7 +147,7 @@
         },
         {
             "icon": "assets/components/button/next_block.png",
-            "app_state": [4, 304],
+            "app_state": [4, 304, 308],
             "position": {"x": 1408, "y": 788},
             "event": 0,
             "scale": 1
@@ -189,7 +189,35 @@
             "app_state": [100],
             "position": {"x": 1819, "y": 950},
             "scale": 1,
-            "next_state": 302
+            "next_state": 306
+        },
+        {
+            "icon": "assets/components/button/previous.png",
+            "app_state": [306],
+            "position": {"x": 1400 , "y": 788},
+            "event": 16,
+            "scale": 1
+        },
+        {
+            "icon": "assets/components/button/resolutions.png",
+            "app_state": [306],
+            "position": {"x": 460, "y": 788},
+            "scale": 1,
+            "next_state": 309
+        },
+        {
+            "icon": "assets/components/button/previous.png",
+            "app_state": [309],
+            "position": {"x": 1400, "y": 788},
+            "next_state": 306,
+            "scale": 1
+        },
+        {
+            "icon": "assets/components/button/cross.png",
+            "app_state": [307],
+            "position": {"x": 1410, "y": 248},
+            "event": 16,
+            "scale": 2
         },
         {
             "icon": "assets/components/button/pause.png",
@@ -203,7 +231,7 @@
             "app_state": [100],
             "position": {"x": 1615, "y": 950},
             "scale": 1,
-            "next_state": 303
+            "next_state": 307
         },
         {
             "icon": "assets/components/button/inventory.png",
@@ -221,21 +249,21 @@
         },
         {
             "icon": "assets/components/button/lower_resolution.png",
-            "app_state": [8, 305],
+            "app_state": [8, 305, 309],
             "position": {"x": 446, "y": 498},
             "event": 13,
             "scale": 1
         },
         {
             "icon": "assets/components/button/medium_resolution.png",
-            "app_state": [8, 305],
+            "app_state": [8, 305, 309],
             "position": {"x": 796, "y": 498},
             "event": 14,
             "scale": 1
         },
         {
             "icon": "assets/components/button/high_resolution.png",
-            "app_state": [8, 305],
+            "app_state": [8, 305, 309],
             "position": {"x": 1162, "y": 498},
             "event": 15,
             "scale": 1
@@ -355,6 +383,25 @@
         {
             "position": {"x": 460, "y": 631},
             "app_state": 302,
+            "scale": 1,
+            "event": 2
+        },
+        {
+            "position": {"x": 460, "y": 446},
+            "app_state": 306,
+            "scale": 1,
+            "event": 0,
+            "on": true
+        },
+        {
+            "position": {"x": 460, "y": 540},
+            "app_state": 306,
+            "scale": 1,
+            "event": 1
+        },
+        {
+            "position": {"x": 460, "y": 631},
+            "app_state": 306,
             "scale": 1,
             "event": 2
         }
