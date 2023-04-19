@@ -13,7 +13,7 @@
         {
             "id": 1,
             "label": "Pasteque",
-            "type": 0,
+            "type": 1,
             "levels": { "xp": 0, "life": 12, "speed": 12, "intelligence": 134 },
             "price": 8,
             "rect": { "x": 0, "y": 6},

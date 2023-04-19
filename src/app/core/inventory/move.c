@@ -45,7 +45,8 @@ static void check_target(sfVector2f mouse, inventory_event_t *event)
         }
     }
     for (int i = 1; i <= (active_size.x * active_size.y); i++) {
-        if (is_on_item(mouse, i, true, event)) {
+        if (is_on_item(mouse, i, true, event)
+            && event->ref->type == IVT_EQUIPEMENT) {
             event->target_pos = i;
             event->target_active = true;
             return;

@@ -45,6 +45,7 @@ typedef struct s_inventory_move {
     int item_pos;
     bool target_active;
     int target_pos;
+    item_t *ref;
 } inventory_event_t;
 
 #endif /* !INVENTORY_TYPES_H_ */

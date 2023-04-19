@@ -45,6 +45,7 @@ sfVector2f mouse)
     event->pressed = true;
     event->moved = false;
     event->pressed_on = mouse;
+    event->ref = item->target;
 }
 
 static bool check_item_selected(sfVector2f mouse, inventory_event_t *event,
