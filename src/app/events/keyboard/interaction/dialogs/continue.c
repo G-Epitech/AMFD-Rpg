@@ -20,7 +20,6 @@ app_t *app)
 {
     interaction_dialogs_t *dialogs = NULL;
 
-    (void) renderer;
     if (event.key.code != sfKeyEnter || app->interaction->type != IT_DIALOGS)
         return;
     dialogs = app->interaction->data.dialogs;
