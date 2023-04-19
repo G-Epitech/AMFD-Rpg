@@ -200,7 +200,7 @@
         },
         {
             "icon": "assets/components/button/help.png",
-            "app_state": [100],
+            "app_state": [100, 302],
             "position": {"x": 1615, "y": 950},
             "scale": 1,
             "next_state": 303
@@ -239,8 +239,49 @@
             "position": {"x": 1162, "y": 498},
             "event": 15,
             "scale": 1
+        },
+        {
+            "title": "Continue",
+            "position": {"x": 168, "y": 132},
+            "app_state": [301],
+            "color": {"r": 191, "g": 173, "b": 147, "a": 255},
+            "color_text": {"r": 103, "g": 81, "b": 82, "a":  255},
+            "scale": 1
+        },
+        {
+            "title": "Sauvegarde",
+            "position": {"x": 168, "y": 282},
+            "app_state": [301],
+            "color": {"r": 191, "g": 173, "b": 147, "a": 255},
+            "color_text": {"r": 103, "g": 81, "b": 82, "a":  255},
+            "scale": 1
+        },
+        {
+            "title": "Load",
+            "position": {"x": 168, "y": 432},
+            "app_state": [301],
+            "color": {"r": 191, "g": 173, "b": 147, "a": 255},
+            "color_text": {"r": 103, "g": 81, "b": 82, "a":  255},
+            "scale": 1
+        },
+        {
+            "title": "Inventaire",
+            "position": {"x": 165, "y": 582},
+            "app_state": [301],
+            "color": {"r": 191, "g": 173, "b": 147, "a": 255},
+            "color_text": {"r": 103, "g": 81, "b": 82, "a":  255},
+            "scale": 1
+        },
+        {
+            "title": "Settings",
+            "position": {"x": 165, "y": 732},
+            "app_state": [301],
+            "color": {"r": 191, "g": 173, "b": 147, "a": 255},
+            "color_text": {"r": 103, "g": 81, "b": 82, "a":  255},
+            "scale": 1,
+            "next_state": 302
         }
-    ],  
+    ],
 
     "levers": [
         {

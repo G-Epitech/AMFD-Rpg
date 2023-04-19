@@ -133,7 +133,7 @@ SRC = 		src/main.c \
 			src/app/events/components/buttons.c \
 			src/app/events/components/levers.c \
 			src/app/events/components/attacks.c \
-			\
+			src/app/events/components/in_game_menu.c	\
 			src/app/developer/reload_json.c \
 			\
 			src/app/network/init.c \
