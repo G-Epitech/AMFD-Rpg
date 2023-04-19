@@ -44,6 +44,7 @@ void event_components_buttons(renderer_t *renderer, app_t *app, sfEvent event)
         button = node->data.button;
         if (on_button(button, app, event) && button->next_state > 0) {
             sound_control(SOUND_FX, CLICK_MENU, sfPlaying);
+            app->prev_state = app->state;
             app->state = button->next_state;
             break;
         }

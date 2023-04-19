@@ -119,21 +119,21 @@
         },
         {
             "icon": "assets/components/button/previous_block.png",
-            "app_state": [3],
+            "app_state": [3, 303],
             "position": {"x": 1279, "y": 788},
             "event": 0,
             "scale": 1
         },
         {
             "icon": "assets/components/button/previous.png",
-            "app_state": [4],
+            "app_state": [4, 304],
             "position": {"x": 1279, "y": 788},
             "event": 2,
             "scale": 1
         },
         {
             "icon": "assets/components/button/next.png",
-            "app_state": [3],
+            "app_state": [3, 303],
             "position": {"x": 1408, "y": 788},
             "event": 3,
             "scale": 1
@@ -147,7 +147,7 @@
         },
         {
             "icon": "assets/components/button/next_block.png",
-            "app_state": [4],
+            "app_state": [4, 304],
             "position": {"x": 1408, "y": 788},
             "event": 0,
             "scale": 1
@@ -266,7 +266,7 @@
         },
         {
             "title": "Inventaire",
-            "position": {"x": 165, "y": 582},
+            "position": {"x": 165, "y": 732},
             "app_state": [301],
             "color": {"r": 191, "g": 173, "b": 147, "a": 255},
             "color_text": {"r": 103, "g": 81, "b": 82, "a":  255},
@@ -274,7 +274,7 @@
         },
         {
             "title": "Settings",
-            "position": {"x": 165, "y": 732},
+            "position": {"x": 165, "y": 582},
             "app_state": [301],
             "color": {"r": 191, "g": 173, "b": 147, "a": 255},
             "color_text": {"r": 103, "g": 81, "b": 82, "a":  255},
@@ -310,29 +310,11 @@
             "next_state": 303
         },
         {
-            "icon": "assets/components/button/previous.png",
+            "icon": "assets/components/button/cross.png",
             "app_state": [303],
-            "position": {"x": 1400, "y": 788},
+            "position": {"x": 1410, "y": 248},
             "next_state": 302,
-            "scale": 1
-        },
-        {
-            "title": "Page 2",
-            "position": {"x": 1340, "y": 262},
-            "app_state": [303],
-            "color": {"r": 191, "g": 173, "b": 147, "a": 255},
-            "color_text": {"r": 103, "g": 81, "b": 82, "a":  255},
-            "scale": 0.7,
-            "next_state": 304
-        },
-        {
-            "title": "Page 1",
-            "position": {"x": 450, "y": 262},
-            "app_state": [304],
-            "color": {"r": 191, "g": 173, "b": 147, "a": 255},
-            "color_text": {"r": 103, "g": 81, "b": 82, "a":  255},
-            "scale": 0.7,
-            "next_state": 303
+            "scale": 2
         }
     ],
 
