@@ -30,7 +30,7 @@ static void rotate_npc(npc_data_t *data, player_t *player)
 
 static void set_fight_interaction(interactions_t *interactions)
 {
-    npc_data_t *npc = interactions->data.npc;
+    npc_data_t *npc = interactions->data.dialogs->npc;
 
     interactions->type = IT_FIGHT;
     interactions->data.fight = malloc(sizeof(fight_t));
@@ -50,9 +50,9 @@ renderer_t *renderer)
     npc_data_t *data;
     list_t *events = NULL;
 
-    if (interactions->type != IT_NPC)
+    if (interactions->type != IT_DIALOGS)
         return;
-    data = interactions->data.npc;
+    data = interactions->data.dialogs->npc;
     if (data->enemy) {
         interactions->active = true;
         app->state = ST_FIGHT;

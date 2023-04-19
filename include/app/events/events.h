@@ -136,10 +136,26 @@ void keyboard_interaction_choice(sfEvent event, app_t *app,
 renderer_t *renderer);
 
 /**
+ * @brief Dialogs interaction
+ * @param app App object
+ * @param renderer Renderer object
+ */
+void keyboard_interaction_dialogs(renderer_t *renderer, app_t *app);
+
+/**
  * @brief Inventory keyboard
  * @param event Event structure
  * @param app App object
  */
 void keyboard_inventory(sfEvent event, app_t *app);
+
+/**
+ * @brief Continue actual dialogs
+ * @param event Event structure
+ * @param renderer Renderer object
+ * @param app App object
+ */
+void keyboard_interaction_dialogs_continue(sfEvent event, renderer_t *renderer,
+app_t *app);
 
 #endif /* !EVENTS_H_ */
