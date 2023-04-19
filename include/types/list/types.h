@@ -19,6 +19,7 @@
     #include "types/ressources/types.h"
     #include "app/tasks/bash/types.h"
     #include "app/tasks/flipper/types.h"
+    #include "app/competences_tree/types.h"
     #include "app/tasks/types.h"
 
 typedef struct s_list list_t;
@@ -26,9 +27,10 @@ typedef struct s_list list_t;
 typedef union u_node_data {
     animation_event_t *animations_event;
     inventory_item_t *inventory_item;
-    task_bash_node_t *node_bash;
-    task_flipper_node_t *node_flip;
     task_camera_node_t *node_camera;
+    task_flipper_node_t *node_flip;
+    competences_node_t *competence;
+    task_bash_node_t *node_bash;
     background_t *background;
     npc_dialog_t npc_dialog;
     sound_theme_t *theme;

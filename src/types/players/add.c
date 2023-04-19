@@ -11,6 +11,8 @@
 #include "types/list/types.h"
 #include "types/players/types.h"
 #include "types/characters/types.h"
+#include "app/animations/animations.h"
+#include "app/competences_tree/competences_tree.h"
 
 player_t *players_add(list_t *list, char *name)
 {
@@ -30,6 +32,7 @@ player_t *players_add(list_t *list, char *name)
     player->life = 20;
     player->intellect = 7;
     player->speed = 8;
+    player->competences = player_init_competence();
     list_append(list, node_new((node_data_t) player));
     return player;
 }

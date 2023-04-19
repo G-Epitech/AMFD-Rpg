@@ -39,6 +39,7 @@ SRC = 		src/main.c \
 			src/types/players/init.c \
 			src/types/players/add.c \
 			src/types/players/inventory.c \
+			src/types/players/competences.c \
 			\
 			src/types/items/load_all.c \
 			src/types/items/load.c \
