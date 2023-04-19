@@ -20,8 +20,6 @@
 typedef struct s_competences_node {
     int id;
     bool unlock;
-    sfVector2f pos_competence;
-    sfVector2f pos_pipe;
 } competences_node_t;
 
 #endif /* !TYPES_COMPETENCES_TREE_H_ */
