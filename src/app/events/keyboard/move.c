@@ -33,15 +33,17 @@ void keyboard_press_move(sfEvent event, app_t *app)
 
 void keyboard_release_move(sfEvent event, app_t *app)
 {
+    int pressed_count = 0;
+
     for (size_t i = 0; i < 4; i++) {
         if (event.key.code == app->control[i].key) {
             app->control[i].direction = false;
-            app->control->direction_nb--;
         }
         if (app->control[i].direction) {
+            pressed_count++;
             app->player->orientation = (int) i;
         }
     }
-    if (app->control->direction_nb == 0)
+    if (pressed_count == 0)
         app->player->state = IDLE;
 }

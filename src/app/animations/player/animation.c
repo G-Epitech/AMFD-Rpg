@@ -11,29 +11,30 @@
 #include "types/list/types.h"
 #include "my/include/my.h"
 
+static void restart_frames(animation_t *anim)
+{
+    if (anim->curr_frame == anim->frames_len + 1) {
+        anim->curr_frame = 1;
+    }
+}
+
 static void attribute_new_skin(list_t *animations, skin_t *skin,
 player_t *player)
 {
     node_t *node = animations->first;
     animation_t *anim = node->data.animation;
+    int orientation_offset = 0;
 
-    my_put_nbr(anim->curr_frame);
-    my_putchar('d');
-    if (anim->curr_frame == anim->frames_len + 1) {
-        my_putchar('e');
-        anim->rect.left -= (anim->frames_len * anim->rect.width);
-        printf("Rect left %d\n", anim->frames_len * anim->rect.width);
-        anim->curr_frame = 1;
-    }
     while (node) {
         anim = node->data.animation;
         if (anim->skin_id == skin->id && anim->state == player->state) {
+            orientation_offset = player->orientation * anim->frames_len +
+            anim->curr_frame - 1;
             sfTexture_destroy(skin->texture);
-            printf("Rect top:%d left:%d width:%d height:%d\n",
-        anim->rect.top, anim->rect.left, anim->rect.width, anim->rect.height);
+            anim->rect.left = orientation_offset * anim->rect.width;
             skin->texture = sfTexture_createFromFile(anim->file, &anim->rect);
             anim->curr_frame++;
-            anim->rect.left += anim->rect.width;
+            restart_frames(anim);
         }
         node = node->next;
     }
@@ -60,7 +61,7 @@ void animate_player(app_t *app, renderer_t *renderer)
 
     time = sfClock_getElapsedTime(app->clock);
     seconds = time.microseconds / 1000000.0;
-    if (seconds > 0.17) {
+    if (seconds > 0.12) {
         change_player_skin(app->animations, renderer->ressources->skins,
         app->player);
         sfClock_restart(app->clock);
