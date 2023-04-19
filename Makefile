@@ -129,6 +129,7 @@ SRC = 		src/main.c \
 			src/app/events/keyboard/interaction/fight/start.c \
 			src/app/events/keyboard/interaction/fight/choice.c \
 			src/app/events/keyboard/interaction/dialogs/dialogs.c \
+			src/app/events/keyboard/interaction/dialogs/continue.c \
 			src/app/events/components/buttons.c \
 			src/app/events/components/levers.c \
 			src/app/events/components/attacks.c \

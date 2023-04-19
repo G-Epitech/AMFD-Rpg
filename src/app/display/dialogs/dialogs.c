@@ -61,7 +61,8 @@ void display_dialogs(renderer_t *renderer, app_t *app)
 {
     interaction_dialogs_t *dialogs = NULL;
 
-    if (app->interaction->type != IT_DIALOGS)
+    if (!app->interaction->interaction ||
+    app->interaction->type != IT_DIALOGS)
         return;
     dialogs = app->interaction->data.dialogs;
     display_text(dialogs->npc->npc->name, renderer, 36,

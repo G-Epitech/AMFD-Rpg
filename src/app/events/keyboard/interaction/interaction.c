@@ -21,7 +21,7 @@ void keyboard_interaction(sfEvent event, renderer_t *renderer, app_t *app)
         app->interaction->interaction &&
         !app->interaction->active) {
         keyboard_interaction_dialogs(renderer, app);
-        interaction_fight_start(app->interaction, app, renderer);
     }
     keyboard_interaction_choice(event, app, renderer);
+    keyboard_interaction_dialogs_continue(event, renderer, app);
 }
