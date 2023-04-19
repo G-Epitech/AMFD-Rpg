@@ -13,9 +13,10 @@
 void event_pause_menu(sfEvent event, app_t *app)
 {
     if (event.key.code == sfKeyEscape && app->state == ST_INGAME) {
+        app->prev_state = app->state;
         app->state = ST_BREAK;
         return;
     }
     if (event.key.code == sfKeyEscape && app->state == ST_BREAK)
-        app->state = ST_INGAME;
+        app->state = app->prev_state;
 }

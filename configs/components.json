@@ -91,28 +91,28 @@
         },
         {
             "icon": "assets/components/button/malus.png",
-            "app_state": [2],
+            "app_state": [2, 302],
             "position": {"x": 1007, "y": 468},
             "event": 4,
             "scale": 1
         },
         {
             "icon": "assets/components/button/malus.png",
-            "app_state": [2],
+            "app_state": [2, 302],
             "position": {"x": 1007, "y": 558},
             "event": 6,
             "scale": 1
         },
         {
             "icon": "assets/components/button/sup.png",
-            "app_state": [2],
+            "app_state": [2, 302],
             "position": {"x": 1290, "y": 468},
             "event": 5,
             "scale": 1
         },
         {
             "icon": "assets/components/button/sup.png",
-            "app_state": [2],
+            "app_state": [2, 302],
             "position": {"x": 1290, "y": 558},
             "event": 7,
             "scale": 1
@@ -200,7 +200,7 @@
         },
         {
             "icon": "assets/components/button/help.png",
-            "app_state": [100, 302],
+            "app_state": [100],
             "position": {"x": 1615, "y": 950},
             "scale": 1,
             "next_state": 303
@@ -221,21 +221,21 @@
         },
         {
             "icon": "assets/components/button/lower_resolution.png",
-            "app_state": [8],
+            "app_state": [8, 305],
             "position": {"x": 446, "y": 498},
             "event": 13,
             "scale": 1
         },
         {
             "icon": "assets/components/button/medium_resolution.png",
-            "app_state": [8],
+            "app_state": [8, 305],
             "position": {"x": 796, "y": 498},
             "event": 14,
             "scale": 1
         },
         {
             "icon": "assets/components/button/high_resolution.png",
-            "app_state": [8],
+            "app_state": [8, 305],
             "position": {"x": 1162, "y": 498},
             "event": 15,
             "scale": 1
@@ -280,6 +280,59 @@
             "color_text": {"r": 103, "g": 81, "b": 82, "a":  255},
             "scale": 1,
             "next_state": 302
+        },
+        {
+            "icon": "assets/components/button/previous.png",
+            "app_state": [302],
+            "position": {"x": 1400 , "y": 788},
+            "next_state": 301,
+            "scale": 1
+        },
+        {
+            "icon": "assets/components/button/resolutions.png",
+            "app_state": [302],
+            "position": {"x": 460, "y": 788},
+            "scale": 1,
+            "next_state": 305
+        },
+        {
+            "icon": "assets/components/button/previous.png",
+            "app_state": [305],
+            "position": {"x": 1400, "y": 788},
+            "next_state": 302,
+            "scale": 1
+        },
+        {
+            "icon": "assets/components/button/help.png",
+            "app_state": [1, 2, 302],
+            "position": {"x": 1279, "y": 788},
+            "scale": 1,
+            "next_state": 303
+        },
+        {
+            "icon": "assets/components/button/previous.png",
+            "app_state": [303],
+            "position": {"x": 1400, "y": 788},
+            "next_state": 302,
+            "scale": 1
+        },
+        {
+            "title": "Page 2",
+            "position": {"x": 1340, "y": 262},
+            "app_state": [303],
+            "color": {"r": 191, "g": 173, "b": 147, "a": 255},
+            "color_text": {"r": 103, "g": 81, "b": 82, "a":  255},
+            "scale": 0.7,
+            "next_state": 304
+        },
+        {
+            "title": "Page 1",
+            "position": {"x": 450, "y": 262},
+            "app_state": [304],
+            "color": {"r": 191, "g": 173, "b": 147, "a": 255},
+            "color_text": {"r": 103, "g": 81, "b": 82, "a":  255},
+            "scale": 0.7,
+            "next_state": 303
         }
     ],
 
@@ -300,6 +353,25 @@
         {
             "position": {"x": 460, "y": 631},
             "app_state": 2,
+            "scale": 1,
+            "event": 2
+        },
+        {
+            "position": {"x": 460, "y": 446},
+            "app_state": 302,
+            "scale": 1,
+            "event": 0,
+            "on": true
+        },
+        {
+            "position": {"x": 460, "y": 540},
+            "app_state": 302,
+            "scale": 1,
+            "event": 1
+        },
+        {
+            "position": {"x": 460, "y": 631},
+            "app_state": 302,
             "scale": 1,
             "event": 2
         }

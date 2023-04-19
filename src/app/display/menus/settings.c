@@ -28,7 +28,7 @@ sfVector2f position)
 void display_settings(renderer_t *renderer, app_t *app)
 {
     (void) renderer;
-    if (app->state != ST_SETTINGS)
+    if (app->state != ST_SETTINGS && app->state != ST_IGSETTINGS)
         return;
     display_int_value(renderer, app->settings->volume, VOLUME_POSITION);
     display_int_value(renderer, app->settings->fps, FPS_POSITION);
