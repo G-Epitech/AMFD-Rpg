@@ -2,9 +2,93 @@
   "maps": [
     {
       "world": 0,
-      "back": "assets/village/Village_back.png",
-      "front": "assets/village/Village_front.png",
-      "collision": "assets/village/Village_collision.png"
+      "back": "assets/worlds/village/Village_back.png",
+      "front": "assets/worlds/village/Village_front.png",
+      "collision": "assets/worlds/village/Village_collision.png"
+    },
+    {
+      "world": 1,
+      "back": "assets/worlds/player_house/ph1_back.png",
+      "front": "assets/worlds/player_house/ph1_front.png",
+      "collision": "assets/worlds/player_house/ph1_col.png"
+    },
+    {
+      "world": 2,
+      "back": "assets/worlds/player_house/ph2_back.png",
+      "front": "assets/worlds/player_house/ph2_front.png",
+      "collision": "assets/worlds/player_house/ph2_col.png"
+    },
+    {
+      "world": 3,
+      "back": "assets/worlds/university/uni1_back.png",
+      "front": "assets/worlds/university/uni1_front.png",
+      "collision": "assets/worlds/university/uni1_col.png"
+    },
+    {
+      "world": 4,
+      "back": "assets/worlds/university/uni2_back.png",
+      "front": "assets/worlds/university/uni2_front.png",
+      "collision": "assets/worlds/university/uni2_col.png"
+    },
+    {
+      "world": 5,
+      "back": "assets/worlds/store/sup_back.png",
+      "front": "assets/worlds/store/sup_front.png",
+      "collision": "assets/worlds/store/sup_col.png"
+    },
+    {
+      "world": 6,
+      "back": "assets/worlds/prison/prison_back.png",
+      "front": "assets/worlds/prison/prison_front.png",
+      "collision": "assets/worlds/prison/prison_col.png"
+    },
+    {
+      "world": 7,
+      "back": "assets/worlds/mairie/mair1_back.png",
+      "front": "assets/worlds/mairie/mair1_front.png",
+      "collision": "assets/worlds/mairie/mair1_col.png"
+    },
+    {
+      "world": 8,
+      "back": "assets/worlds/mairie/mair2_back.png",
+      "front": "assets/worlds/mairie/mair2_front.png",
+      "collision": "assets/worlds/mairie/mair2_col.png"
+    },
+    {
+      "world": 9,
+      "back": "assets/worlds/mairie/mair3_back.png",
+      "front": "assets/worlds/mairie/mair3_front.png",
+      "collision": "assets/worlds/mairie/mair3_col.png"
+    },
+    {
+      "world": 10,
+      "back": "assets/worlds/mairie/mair4_back.png",
+      "front": "assets/worlds/mairie/mair4_front.png",
+      "collision": "assets/worlds/mairie/mair4_col.png"
+    },
+    {
+      "world": 11,
+      "back": "assets/worlds/hospital/hos1_back.png",
+      "front": "assets/worlds/hospital/hos1_front.png",
+      "collision": "assets/worlds/hospital/hos1_col.png"
+    },
+    {
+      "world": 12,
+      "back": "assets/worlds/hospital/hos2_back.png",
+      "front": "assets/worlds/hospital/hos2_front.png",
+      "collision": "assets/worlds/hospital/hos2_col.png"
+    },
+    {
+      "world": 13,
+      "back": "assets/worlds/hospital/hos3_back.png",
+      "front": "assets/worlds/hospital/hos3_front.png",
+      "collision": "assets/worlds/hospital/hos3_col.png"
+    },
+    {
+      "world": 14,
+      "back": "assets/worlds/aymeric_desk/aym_back.png",
+      "front": "assets/worlds/aymeric_desk/aym_front.png",
+      "collision": "assets/worlds/aymeric_desk/aym_col.png"
     }
   ]
 }
