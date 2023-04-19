@@ -34,6 +34,7 @@ typedef enum e_app_states {
     ST_IGSETTINGS,          //In game settings
     ST_IGHELP,              //In game help
     ST_FIGHT = 350,         //Fight interface
+    ST_DIALOGS = 400,       //Dialogs state
     ST_TASK = 500,          //Task delimiter
     ST_TASK_BASH,           //Task n°1: bash
     ST_TASK_BRUTEFORCE,     //Task n°2: brute force
@@ -79,14 +80,21 @@ typedef struct s_fight {
     int round;
 } fight_t;
 
+typedef struct s_interaction_dialogs {
+    npc_data_t *npc;
+    int index;
+} interaction_dialogs_t;
+
 typedef union u_interaction_data {
     npc_data_t *npc;
     fight_t *fight;
+    interaction_dialogs_t *dialogs;
 } interaction_data_t;
 
 typedef enum e_interaction_type {
     IT_NULL = 0,
     IT_NPC,
+    IT_DIALOGS,
     IT_FIGHT
 } interaction_type_t;
 
