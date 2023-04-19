@@ -10,7 +10,11 @@
       "world": 1,
       "back": "assets/worlds/player_house/ph1_back.png",
       "front": "assets/worlds/player_house/ph1_front.png",
-      "collision": "assets/worlds/player_house/ph1_col.png"
+      "collision": "assets/worlds/player_house/ph1_col.png",
+      "building": true,
+      "city": 0,
+      "enter": {"x": 0, "y": 0},
+      "exit": {"x": 0, "y": 0}
     },
     {
       "world": 2,

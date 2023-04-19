@@ -45,6 +45,20 @@ typedef enum e_app_states {
 
 typedef enum e_worlds {
     WL_VILLAGE = 0,
+    WL_PLAYER_HOME_1,
+    WL_PLAYER_HOME_2,
+    WL_UNIVERSITY_1,
+    WL_UNIVERSITY_2,
+    WL_STORE,
+    WL_PRISON,
+    WL_MAIRIE_1,
+    WL_MAIRIE_2,
+    WL_MAIRIE_3,
+    WL_MAIRIE_4,
+    WL_HOSPITAL_1,
+    WL_HOSPITAL_2,
+    WL_HOSPITAL_3,
+    WL_AYMERIC,
     WL_CITY
 } worlds_t;
 

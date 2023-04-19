@@ -10,7 +10,7 @@
 
     #include <SFML/Graphics.h>
 
-    #define PLAYER_DEFAULT_SPAWN ((sfVector2f) {1000, 1015})
+    #define PLAYER_DEFAULT_SPAWN ((sfVector2f) {42, 46})
 
 typedef struct s_list list_t;
 typedef struct s_skin skin_t;
