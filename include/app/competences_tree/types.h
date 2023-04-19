@@ -15,7 +15,8 @@
     #define BRUTE_FORCE_ID 2
     #define FLIPPER_ID 3
     #define GO_BUSTER_ID 4
-    #define COMPETENCE_UNLOCK(comptence) competence->data.competence->unlock
+    #define COMPETENCE_UNLOCK(competence) competence->data.competence->unlock
+    #define COMPETENCE_ID(temp_competence) temp_competence->data.competence->id
 
 typedef struct s_competences_node {
     int id;
