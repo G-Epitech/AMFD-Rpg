@@ -90,6 +90,24 @@
             "price": 8,
             "consumer": -1,
             "rect": { "x": 6, "y": 2}
+        },
+        {
+            "id": 10,
+            "label": "Telephone",
+            "type": 1,
+            "levels": { "xp": 0, "life": 0, "speed": 12, "intelligence": 9 },
+            "price": 30,
+            "consumer": -1,
+            "rect": { "x": 1, "y": 8}
+        },
+        {
+            "id": 11,
+            "label": "Clef USB",
+            "type": 1,
+            "levels": { "xp": 0, "life": 0, "speed": 12, "intelligence": 9 },
+            "price": 14,
+            "consumer": -1,
+            "rect": { "x": 0, "y": 8}
         }
     ]
 }
