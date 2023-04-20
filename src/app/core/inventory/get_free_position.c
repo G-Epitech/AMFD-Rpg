@@ -12,16 +12,16 @@
 
 static int get_x(int i, int real)
 {
-    int col_real = real / INVENTORY_MAIN_GRID_SIZE.y;
+    int line_real = real / INVENTORY_MAIN_GRID_SIZE.x;
     int x = real + i;
-    int col_new = x / INVENTORY_MAIN_GRID_SIZE.y;
+    int line_new = x / INVENTORY_MAIN_GRID_SIZE.x;
 
-    return (col_real != col_new || x <= 0) ? -1 : x;
+    return (line_real != line_new || x <= 0) ? -1 : x;
 }
 
 static int get_y(int i, int real)
 {
-    int y = real + (INVENTORY_MAIN_GRID_SIZE.x * i) - 1;
+    int y = real + (INVENTORY_MAIN_GRID_SIZE.x * i);
     int line = y / INVENTORY_MAIN_GRID_SIZE.x;
 
     return line < 0 || line >= INVENTORY_MAIN_GRID_SIZE.x ? -1 : y;
@@ -32,15 +32,18 @@ inventory_event_t *event)
 {
     int x_l = get_x(-i, event->target.pos);
     int x_r = get_x(i, event->target.pos);
-    inventory_item_t *i_l = inventory_get_item_at_pos(inventory, x_l, true);
-    inventory_item_t *i_r = inventory_get_item_at_pos(inventory, x_r, true);
+    inventory_item_t *i_l = inventory_get_item_at_pos(inventory, x_l, false);
+    inventory_item_t *i_r = inventory_get_item_at_pos(inventory, x_r, false);
+    bool valid = false;
 
-    if (!i_l && x_l > 0) {
+    if (!i_l && x_l > 0 && x_l <= INVENTORY_MAX) {
         event->target_ref_tmp.pos = x_l;
-    } else if (!i_r && x_r > 0) {
+        valid = true;
+    } else if (!i_r && x_r > 0 && x_r <= INVENTORY_MAX) {
         event->target_ref_tmp.pos = x_r;
+        valid = true;
     }
-    return (!i_l && x_l > 0) || (!i_r && x_r > 0) ? true : false;
+    return valid;
 }
 
 static bool check_positions_y(int i, list_t *inventory,
@@ -48,14 +51,18 @@ inventory_event_t *event)
 {
     int y_t = get_y(-i, event->target.pos);
     int y_b = get_y(i, event->target.pos);
-    inventory_item_t *i_t = inventory_get_item_at_pos(inventory, y_t, true);
-    inventory_item_t *i_b = inventory_get_item_at_pos(inventory, y_b, true);
+    inventory_item_t *i_t = inventory_get_item_at_pos(inventory, y_t, false);
+    inventory_item_t *i_b = inventory_get_item_at_pos(inventory, y_b, false);
+    bool valid = false;
 
-    if (!i_t)
+    if (!i_t && y_t > 0 && y_t <= INVENTORY_MAX) {
         event->target_ref_tmp.pos = y_t;
-    else if (!i_b)
+        valid = true;
+    } else if (!i_b && y_b > 0 && y_b <= INVENTORY_MAX) {
         event->target_ref_tmp.pos = y_b;
-    return !i_t || !i_b ? true : false;
+        valid = true;
+    }
+    return valid;
 }
 
 bool inventory_onmove_get_free_positions(int i, list_t *inventory,

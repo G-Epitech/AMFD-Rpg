@@ -329,4 +329,14 @@ void display_components_progresses(renderer_t *renderer, app_t *app);
  */
 void display_inventory_levels(renderer_t *renderer, app_t *app);
 
+/**
+ * @brief Display masks on given item
+ * @param renderer Renderer object
+ * @param item Item object
+ * @param position Position of item
+ * @param scale Scale of item
+ */
+void inventory_display_item_masks(renderer_t *renderer, item_t *item,
+sfVector2f position, float scale);
+
 #endif /* !DISPLAY_H_ */

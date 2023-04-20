@@ -195,6 +195,7 @@ SRC = 		src/main.c \
 			src/app/display/inventory/profile.c \
 			src/app/display/inventory/inventory.c \
 			src/app/display/inventory/items_content.c \
+			src/app/display/inventory/items_masks.c \
 			src/app/display/inventory/levels.c \
 			src/app/display/developer/collisions.c \
 			src/app/display/developer/position.c \

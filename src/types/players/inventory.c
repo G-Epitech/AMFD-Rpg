@@ -14,7 +14,7 @@
 void player_init_inventory(player_t *player, list_t *items)
 {
     node_t *node = items ? items->first : NULL;
-    int i = items->len;
+    int i = 0;
 
     while (i < INVENTORY_MAX && node) {
         if (!(node->data.item->by_default)) {

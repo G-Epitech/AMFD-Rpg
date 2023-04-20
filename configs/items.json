@@ -13,10 +13,82 @@
         {
             "id": 1,
             "label": "Pasteque",
-            "type": 1,
+            "type": 0,
             "levels": { "xp": 0, "life": 12, "speed": 12, "intelligence": 134 },
             "price": 8,
             "rect": { "x": 0, "y": 6},
+            "default": true
+        },
+        {
+            "id": 2,
+            "label": "Fraise",
+            "type": 0,
+            "levels": { "xp": 0, "life": 12, "speed": 12, "intelligence": 134 },
+            "price": 8,
+            "rect": { "x": 1, "y": 4},
+            "default": true
+        },
+        {
+            "id": 3,
+            "label": "Oeufs",
+            "type": 0,
+            "levels": { "xp": 0, "life": 12, "speed": 12, "intelligence": 134 },
+            "price": 8,
+            "rect": { "x": 0, "y": 2},
+            "default": true
+        },
+        {
+            "id": 4,
+            "label": "Poulet",
+            "type": 0,
+            "levels": { "xp": 0, "life": 12, "speed": 12, "intelligence": 134 },
+            "price": 8,
+            "rect": { "x": 1, "y": 3},
+            "default": true
+        },
+        {
+            "id": 5,
+            "label": "Biere",
+            "type": 0,
+            "levels": { "xp": 0, "life": 12, "speed": 12, "intelligence": 134 },
+            "price": 8,
+            "rect": { "x": 4, "y": 2},
+            "default": true
+        },
+        {
+            "id": 6,
+            "label": "Saucisson",
+            "type": 0,
+            "levels": { "xp": 0, "life": 12, "speed": 12, "intelligence": 134 },
+            "price": 8,
+            "rect": { "x": 1, "y": 5},
+            "default": true
+        },
+        {
+            "id": 7,
+            "label": "Bretzel",
+            "type": 0,
+            "levels": { "xp": 0, "life": 12, "speed": 12, "intelligence": 134 },
+            "price": 8,
+            "rect": { "x": 0, "y": 5},
+            "default": true
+        },
+        {
+            "id": 8,
+            "label": "Confiture",
+            "type": 1,
+            "levels": { "xp": 0, "life": 12, "speed": 12, "intelligence": 134 },
+            "price": 8,
+            "rect": { "x": 3, "y": 1},
+            "default": true
+        },
+        {
+            "id": 9,
+            "label": "Vin",
+            "type": 1,
+            "levels": { "xp": 0, "life": 12, "speed": 12, "intelligence": 134 },
+            "price": 8,
+            "rect": { "x": 6, "y": 2},
             "default": true
         }
     ]

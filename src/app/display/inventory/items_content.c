@@ -34,6 +34,7 @@ sfVector2f position, bool active)
     sfTexture *texture = renderer->ressources->items;
     sfSprite *sprite = renderer->objects->sprite;
     sfIntRect rect = item->rect;
+    sfVector2f position_original = position;
     float scale = 0;
 
     adapt_scale_and_position(active, &scale, &position);
@@ -43,6 +44,7 @@ sfVector2f position, bool active)
     sfSprite_setPosition(sprite, position);
     sfSprite_setScale(sprite, (sfVector2f) {scale, scale});
     sfRenderWindow_drawSprite(renderer->objects->window, sprite, NULL);
+    inventory_display_item_masks(renderer, item, position_original, scale);
 }
 
 static bool prevent_special(renderer_t *renderer,

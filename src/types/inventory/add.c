@@ -5,6 +5,7 @@
 ** add
 */
 
+#include <stdio.h>
 #include <stdlib.h>
 #include "types/list/list.h"
 #include "app/inventory/types.h"
