@@ -130,6 +130,8 @@ SRC = 		src/main.c \
 			src/app/events/keyboard/interaction/interaction.c \
 			src/app/events/keyboard/interaction/fight/start.c \
 			src/app/events/keyboard/interaction/fight/choice.c \
+			src/app/events/keyboard/interaction/dialogs/dialogs.c \
+			src/app/events/keyboard/interaction/dialogs/continue.c \
 			src/app/events/components/buttons.c \
 			src/app/events/components/levers.c \
 			src/app/events/components/attacks.c \
@@ -154,8 +156,6 @@ SRC = 		src/main.c \
 			src/app/core/inventory/get_item_at_pos.c \
 			src/app/core/inventory/press.c \
 			src/app/core/inventory/release.c \
-			src/app/core/fight/handler.c \
-			src/app/core/fight/enemy.c \
 			\
 			src/app/display/handler.c \
 			src/app/display/map/map.c \
@@ -180,13 +180,6 @@ SRC = 		src/main.c \
 			src/app/display/menus/main_menu.c \
 			src/app/display/menus/settings.c \
 			src/app/display/menus/select_character.c \
-			\
-			src/app/core/sound.c	\
-			\
-			src/app/sound/sound_control.c	\
-			src/app/sound/handle_sound_fx.c	\
-			src/app/sound/handle_sound_themes.c	\
-			src/app/sound/handle_sound_volume.c	\
 			src/app/display/inventory/grids.c \
 			src/app/display/inventory/grids_taken.c \
 			src/app/display/inventory/grids_empty.c \
@@ -205,6 +198,7 @@ SRC = 		src/main.c \
 			src/app/display/animations/animations.c \
 			src/app/display/animations/floating_text.c \
 			src/app/display/animations/notif.c \
+			src/app/display/dialogs/dialogs.c \
 			\
 			src/app/getters/progress/inventory.c \
 			src/app/getters/progress/fight.c \
@@ -261,6 +255,14 @@ SRC = 		src/main.c \
 			src/app/core/tasks/script_bash/valid_cmd.c \
 			src/app/core/tasks/script_bash/reset_setup.c \
 			src/app/core/tasks/script_bash/create_list.c \
+			src/app/core/fight/handler.c \
+			src/app/core/fight/enemy.c \
+			src/app/core/sound.c \
+			\
+			src/app/sound/sound_control.c \
+			src/app/sound/handle_sound_fx.c	\
+			src/app/sound/handle_sound_themes.c	\
+			src/app/sound/handle_sound_volume.c
 
 NAME = my_rpg
 

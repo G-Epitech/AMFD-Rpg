@@ -68,7 +68,7 @@
         {
             "asset": "assets/components/backgrounds/fight_choice.png",
             "scale": 1,
-            "state": [350],
+            "state": [350, 400],
             "position" : {"x": 457, "y": 744}
         },
         {

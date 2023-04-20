@@ -339,4 +339,11 @@ void display_inventory_levels(renderer_t *renderer, app_t *app);
 void inventory_display_item_masks(renderer_t *renderer, item_t *item,
 sfVector2f position, float scale);
 
+/**
+ * @brief Display NPC dialogs
+ * @param renderer Renderer object
+ * @param app App object
+ */
+void display_dialogs(renderer_t *renderer, app_t *app);
+
 #endif /* !DISPLAY_H_ */
