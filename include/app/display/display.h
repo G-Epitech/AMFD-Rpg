@@ -340,6 +340,21 @@ void inventory_display_item_masks(renderer_t *renderer, item_t *item,
 sfVector2f position, float scale);
 
 /**
+ * @brief Display given dialog box
+ * @param renderer Renderer object
+ * @param dialog_box Dialog box to display
+ */
+void display_dialog_box(renderer_t *renderer, dialog_box_t *dialog_box);
+
+/**
+ * @brief Display options of dialog box
+ * @param renderer Renderer object
+ * @param dialog_box Dialog box
+ */
+void display_dialog_box_options(renderer_t *renderer,
+dialog_box_t *dialog_box);
+
+/**
  * @brief Display NPC dialogs
  * @param renderer Renderer object
  * @param app App object

@@ -24,5 +24,7 @@ sfEvent event)
 {
     if (event.type != sfEvtMouseEntered && event.type != sfEvtMouseMoved)
         return;
+    if (app->dialog_box->show)
+        return;
     mouse_event(app, renderer, event);
 }

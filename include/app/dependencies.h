@@ -23,6 +23,7 @@ static const app_init_member_t app_init_members[] = {
     &app_init_animations,
     &app_init_sounds,
     &app_init_inventory_event,
+    &app_init_dialog_box,
     NULL
 };
 

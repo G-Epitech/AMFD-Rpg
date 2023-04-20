@@ -37,5 +37,6 @@ sfEvent event)
 {
     if (event.type != sfEvtMouseButtonPressed)
         return;
-    mouse_event(event, app, renderer);
+    if (!app->dialog_box->show)
+        mouse_event(event, app, renderer);
 }

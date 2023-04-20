@@ -17,6 +17,8 @@ sfEvent event)
 {
     if (event.type != sfEvtMouseButtonReleased)
         return;
+    if (app->dialog_box->show)
+        return;
     if (app->state == ST_TASK_BRUTEFORCE)
         brute_force_released(renderer, app);
     if (app->state == ST_INVENTORY)

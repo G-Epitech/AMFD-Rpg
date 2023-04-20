@@ -167,4 +167,11 @@ void keyboard_inventory(sfEvent event, app_t *app);
 void keyboard_interaction_dialogs_continue(sfEvent event, renderer_t *renderer,
 app_t *app);
 
+/**
+ * @brief Handle dialog box onkeypress event
+ * @param app App object
+ * @param event Event object
+ */
+void events_dialog_box_onkeypress(app_t *app, sfEvent event);
+
 #endif /* !EVENTS_H_ */

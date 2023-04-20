@@ -13,6 +13,7 @@
     #include "app/inventory/types.h"
     #include "app/network/types.h"
     #include "app/animations/types.h"
+    #include "types/dialog_box/types.h"
     #include "sound/types.h"
 
 typedef struct s_list list_t;
@@ -120,6 +121,7 @@ typedef struct s_app {
     network_t *network;                 //Network
     interactions_t *interaction;        //Interaction in the app
     inventory_event_t *inventory_event; //Inventory move
+    dialog_box_t *dialog_box;           //Dialog box
     animations_t *animations;           //Animations in the app
     sound_board_t *sound_board;         //Soundboard
 } app_t;

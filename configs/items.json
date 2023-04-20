@@ -7,6 +7,7 @@
             "type": 0,
             "levels": { "xp": 0, "life": 12, "speed": 12, "intelligence": 3 },
             "price": 8,
+            "consumer": -1,
             "rect": { "x": 0, "y": 0  }
         },
         {
@@ -15,6 +16,7 @@
             "type": 0,
             "levels": { "xp": 0, "life": 12, "speed": 12, "intelligence": 1 },
             "price": 8,
+            "consumer": -1,
             "rect": { "x": 0, "y": 6}
         },
         {
@@ -23,6 +25,7 @@
             "type": 0,
             "levels": { "xp": 0, "life": 12, "speed": 12, "intelligence": 134 },
             "price": 8,
+            "consumer": -1,
             "rect": { "x": 1, "y": 4}
         },
         {
@@ -31,6 +34,7 @@
             "type": 0,
             "levels": { "xp": 0, "life": 12, "speed": 12, "intelligence": 18 },
             "price": 8,
+            "consumer": -1,
             "rect": { "x": 0, "y": 2}
         },
         {
@@ -39,6 +43,7 @@
             "type": 0,
             "levels": { "xp": 0, "life": 12, "speed": 12, "intelligence": 1 },
             "price": 8,
+            "consumer": -1,
             "rect": { "x": 1, "y": 3}
         },
         {
@@ -47,6 +52,7 @@
             "type": 0,
             "levels": { "xp": 0, "life": 12, "speed": 12, "intelligence": 4 },
             "price": 8,
+            "consumer": -1,
             "rect": { "x": 4, "y": 2}
         },
         {
@@ -55,6 +61,7 @@
             "type": 0,
             "levels": { "xp": 0, "life": 12, "speed": 12, "intelligence": 6 },
             "price": 8,
+            "consumer": -1,
             "rect": { "x": 1, "y": 5}
         },
         {
@@ -63,6 +70,7 @@
             "type": 0,
             "levels": { "xp": 0, "life": 12, "speed": 12, "intelligence": 1 },
             "price": 8,
+            "consumer": -1,
             "rect": { "x": 0, "y": 5}
         },
         {
@@ -71,6 +79,7 @@
             "type": 1,
             "levels": { "xp": 0, "life": 12, "speed": 12, "intelligence": 2 },
             "price": 8,
+            "consumer": -1,
             "rect": { "x": 3, "y": 1}
         },
         {
@@ -79,6 +88,7 @@
             "type": 1,
             "levels": { "xp": 0, "life": 12, "speed": 12, "intelligence": 9 },
             "price": 8,
+            "consumer": -1,
             "rect": { "x": 6, "y": 2}
         }
     ]

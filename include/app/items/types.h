@@ -14,6 +14,8 @@
     #define ITEMS_CONFIG "configs/items.json"
     #define ITEM_SIZE ((sfVector2i) {46, 46})
 
+typedef struct s_app app_t;
+
 typedef enum e_item_type {
     IVT_CONSUMABLE,
     IVT_EQUIPEMENT
@@ -29,6 +31,13 @@ typedef struct s_item {
     int intelligence;
     float price;
     sfIntRect rect;
+    int consumer;
 } item_t;
+
+typedef void (*item_consumer_t)(app_t *app, item_t *item);
+
+static const item_consumer_t item_consumers[] = {
+    NULL
+};
 
 #endif /* !ITEMS_TYPES_H_ */
