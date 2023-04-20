@@ -150,6 +150,7 @@ SRC = 		src/main.c \
 			src/app/network/receive/position.c \
 			\
 			src/app/core/inventory/move.c \
+			src/app/core/inventory/onclick.c \
 			src/app/core/inventory/swap.c \
 			src/app/core/inventory/bad_move.c \
 			src/app/core/inventory/get_free_position.c \

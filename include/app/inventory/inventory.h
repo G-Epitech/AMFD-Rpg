@@ -156,4 +156,10 @@ inventory_event_t *event);
 bool inventory_onmove_get_free_positions(int i, list_t *inventory,
 inventory_event_t *event);
 
+/**
+ * @brief Handler for inventory item click
+ * @param app App object
+ */
+void inventory_onclick(app_t *app);
+
 #endif /* !INVENTORY_H_ */

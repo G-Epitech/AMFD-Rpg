@@ -17,7 +17,7 @@ void inventory_onrelease(app_t *app, sfEvent event)
     if (!app->inventory_event->pressed)
         return;
     if (!app->inventory_event->moved) {
-        my_putstr("Just clic\n");
+        inventory_onclick(app);
     } else {
         inventory_swap_items_on_event(app->player, app->inventory_event);
     }
