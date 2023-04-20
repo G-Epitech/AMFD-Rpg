@@ -118,6 +118,13 @@ void event_mouse_button_released(app_t *app, renderer_t *renderer,
 sfEvent event);
 
 /**
+ * @brief Handler for the pause menu events
+ * @param event The specific event
+ * @param app App object
+*/
+void event_pause_menu(sfEvent event, app_t *app);
+
+/**
  * @brief Fight interaction start
  * @param interactions Interactions structure
  * @param app App object
