@@ -41,7 +41,6 @@ void event_components_buttons(renderer_t *renderer, app_t *app, sfEvent event)
     node_t *node = buttons->first;
     button_t *button = NULL;
 
-    printf("Prev state %d\n", app->prev_state);
     while (node) {
         button = node->data.button;
         if (on_button(button, app, event) && button->next_state > 0) {
