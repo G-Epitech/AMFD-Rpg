@@ -157,6 +157,7 @@ SRC = 		src/main.c \
 			src/app/display/tasks/handler.c \
 			src/app/display/npcs/npcs.c \
 			src/app/display/player/player.c \
+			src/app/display/player/competences_tree.c \
 			src/app/display/characters/character.c \
 			src/app/display/map/front.c	\
       		src/app/display/components/components.c \
