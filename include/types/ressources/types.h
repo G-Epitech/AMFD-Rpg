@@ -37,6 +37,11 @@ typedef struct s_map {
     sfTexture *back;        //Texture of the back of the map
     sfTexture *front;       //Texture of the front of the map
     sfImage *collision;     //Image of collision
+    bool building;          //Map is a building
+    int city;               //City of the map
+    sfVector2f enter;       //Enter coordinates
+    sfVector2f exit;        //Exit coordinates
+    sfVector2f door;        //Coordinates of the door
 } map_t;
 
 /**

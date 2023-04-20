@@ -11,6 +11,7 @@
 #include "types/list/list.h"
 #include "types/ressources/types.h"
 #include "types/ressources/ressources.h"
+#include "types/components/components.h"
 #include "types/players/types.h"
 #include "cjson/include/cjson.h"
 #include "app/loading/loading.h"
@@ -26,6 +27,11 @@ static void maps_append_data(map_t *map, cjson_t *map_config)
     map->back = sfTexture_createFromFile(back, NULL);
     map->front = sfTexture_createFromFile(front, NULL);
     map->collision = sfImage_createFromFile(collision);
+    map->building = cjson_get_prop_bool_unsafe(map_config, "building");
+    map->city = cjson_get_prop_int_unsafe(map_config, "city");
+    map->enter = cjson_vector(map_config, "enter");
+    map->exit = cjson_vector(map_config, "exit");
+    map->door = cjson_vector(map_config, "door");
     free(back);
     free(front);
     free(collision);
