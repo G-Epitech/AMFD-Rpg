@@ -95,6 +95,7 @@ SRC = 		src/main.c \
 			src/app/init/sounds.c \
 			src/app/init/tasks.c \
 			src/app/init/animations.c \
+			src/app/init/quests.c \
 			\
 			src/app/free/animations.c \
 			\

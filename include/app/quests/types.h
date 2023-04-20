@@ -8,6 +8,8 @@
 #ifndef QUESTS_TYPES_H_
     #define QUESTS_TYPES_H_
 
+    #define QUESTS_CONFIG "configs/quests/quests.json"
+
 typedef struct s_list list_t;
 
 typedef struct s_quest {
