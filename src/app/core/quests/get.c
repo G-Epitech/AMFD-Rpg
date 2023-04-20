@@ -1,6 +1,6 @@
 /*
 ** EPITECH PROJECT, 2023
-** get.c 
+** get.c
 ** File description:
 ** Get quest by index or actual
 */
