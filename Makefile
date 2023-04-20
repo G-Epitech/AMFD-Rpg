@@ -244,6 +244,11 @@ SRC = 		src/main.c \
 			src/app/core/fight/handler.c \
 			src/app/core/fight/enemy.c \
 			src/app/core/sound.c \
+			src/app/core/quests/quests.c \
+			src/app/core/quests/npc.c \
+			src/app/core/quests/get.c \
+			src/app/core/quests/upgrade.c \
+			src/app/core/quests/world.c \
 			\
 			src/app/sound/sound_control.c \
 			src/app/sound/handle_sound_fx.c	\
