@@ -17,6 +17,7 @@ bool app_init_interactions(app_t *app, renderer_t *renderer)
     if (!app->interaction)
         return false;
     app->interaction->interaction = false;
+    app->interaction->active = false;
     app->interaction->type = IT_NULL;
     return true;
 }

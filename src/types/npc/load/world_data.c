@@ -51,9 +51,13 @@ static void append_world_data(npc_data_t *world_data, list_t *worlds_data)
     list_append(worlds_data, node);
 }
 
-bool npc_load_world_data(cjson_t *config, list_t *worlds_data)
+bool npc_load_world_data(cjson_t *config, list_t *worlds_data, npc_t *npc)
 {
-    npc_data_t world_data = {0, 0, SO_FACE, (sfVector2f) {0, 0}, NULL, NULL};
+    npc_data_t world_data = {
+        0, 0,
+        SO_FACE, (sfVector2f) {0, 0},
+        NULL, NULL, NULL
+    };
     cjson_t *enemy = NULL;
     cjson_array_t *dialogs = NULL;
 
@@ -66,5 +70,6 @@ bool npc_load_world_data(cjson_t *config, list_t *worlds_data)
         npc_load_world_enemy(enemy, &world_data);
     npc_load_world_dialogs(dialogs, &world_data);
     append_world_data(&world_data, worlds_data);
+    world_data.npc = npc;
     return true;
 }

@@ -5,6 +5,7 @@
 ** reset
 */
 
+#include <stdio.h>
 #include <SFML/Graphics.h>
 #include "types/renderer/types.h"
 
@@ -18,6 +19,7 @@ void renderer_objects_reset_sprite(renderer_objects_t *objects)
     sfSprite_setOrigin(objects->sprite, origin);
     sfSprite_setScale(objects->sprite, scale);
     sfSprite_setRotation(objects->sprite, 0);
+    sfSprite_setColor(objects->sprite, sfWhite);
 }
 
 void renderer_objects_reset_text(renderer_objects_t *objects)
@@ -30,6 +32,7 @@ void renderer_objects_reset_text(renderer_objects_t *objects)
     sfText_setOrigin(objects->text, origin);
     sfText_setScale(objects->text, scale);
     sfText_setRotation(objects->text, 0);
+    sfText_setOutlineColor(objects->text, sfTransparent);
 }
 
 void renderer_objects_reset_circle(renderer_objects_t *objects)

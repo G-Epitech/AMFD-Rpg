@@ -14,6 +14,7 @@
     #include <SFML/System/Types.h>
     #include "types/players/types.h"
     #include "app/network/types.h"
+    #include "app/animations/types.h"
     #include "sound/types.h"
 
 typedef struct s_list list_t;
@@ -33,7 +34,10 @@ typedef enum e_app_states {
     ST_INGAME = 100,        //Main state, ingame player
     ST_INVENTORY = 300,     //Inventory menu
     ST_BREAK,               //Break menu (save/sound...)
+    ST_IGSETTINGS,          //In game settings
+    ST_IGHELP,              //In game help
     ST_FIGHT = 350,         //Fight interface
+    ST_DIALOGS = 400,       //Dialogs state
     ST_TASK = 500,          //Task delimiter
     ST_TASK_BASH,           //Task n°1: bash
     ST_TASK_BRUTEFORCE,     //Task n°2: brute force
@@ -62,37 +66,65 @@ typedef struct s_settings {
     bool developer;         //Developer mode
 } settings_t;
 
+typedef enum e_fight_state {
+    FT_CHOICE = 0,
+    FT_PLAYER_ATTACK,
+    FT_WAIT,
+    FT_NPC_ATTACK,
+    FT_END
+} fight_state_t;
+
+typedef struct s_fight {
+    npc_data_t *npc;
+    fight_state_t state;
+    int choice;
+    int mana;
+    int enemy_life;
+    int round;
+} fight_t;
+
+typedef struct s_interaction_dialogs {
+    npc_data_t *npc;
+    int index;
+} interaction_dialogs_t;
+
 typedef union u_interaction_data {
     npc_data_t *npc;
+    fight_t *fight;
+    interaction_dialogs_t *dialogs;
 } interaction_data_t;
 
 typedef enum e_interaction_type {
     IT_NULL = 0,
-    IT_NPC
+    IT_NPC,
+    IT_DIALOGS,
+    IT_FIGHT
 } interaction_type_t;
 
 typedef struct s_interactions {
     interaction_data_t data;
     interaction_type_t type;
+    bool active;
     bool interaction;
 } interactions_t;
 
 typedef struct s_app {
-    sfClock *clock;          //Clock of the game
-    app_states_t state;     //State of the app
-    worlds_t world;         //Actual wolrd where player is
-    list_t *items;          //Items available in game
-    list_t *players;        //List of players
-    player_t *player;       //Player of the client
-    player_t *partner;      //Partner player
-    list_t *npcs;           //NPC of game
-    control_t *control;     //Controller of the player
-    list_t *tasks_setup;    //Taks of the game
-    list_t *animations;     //Animations for entities
-    settings_t *settings;   //Settings of the application
-    network_t *network;     //Network
+    sfClock *clock;                 //Clock of the game
+    app_states_t state;             //State of the app
+    worlds_t world;                 //Actual wolrd where player is
+    list_t *items;                  //Items available in game
+    list_t *players;                //List of players
+    player_t *player;               //Player of the client
+    player_t *partner;              //Partner player
+    list_t *npcs;                   //NPC of game
+    control_t *control;             //Controller of the player
+    list_t *tasks_setup;            //Taks of the game
+    list_t *player_anim;            //Animations for entities
+    settings_t *settings;           //Settings of the application
+    network_t *network;             //Network
     interactions_t *interaction;    //Interaction in the app
-    sound_board_t *sound_board; //Soundboard
+    animations_t *animations;       //Animations in the app
+    sound_board_t *sound_board;     //Soundboard
 } app_t;
 
 typedef bool (*app_init_member_t)(app_t *app, renderer_t *renderer);

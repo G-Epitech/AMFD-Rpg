@@ -21,7 +21,7 @@ bool npc_load_worlds_data(cjson_array_t *config, npc_t *npc)
     if (!worlds_data)
         return false;
     while (world_data) {
-        npc_load_world_data(world_data, worlds_data);
+        npc_load_world_data(world_data, worlds_data, npc);
         world_data = world_data->next;
     }
     npc->worlds_data = worlds_data;

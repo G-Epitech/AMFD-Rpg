@@ -5,6 +5,7 @@
 ** get
 */
 
+#include <stdio.h>
 #include "app/types.h"
 #include "types/npc/npc.h"
 #include "types/list/list.h"
@@ -28,8 +29,10 @@ npc_data_t *npc_get_data_of_world(npc_t *npc, worlds_t world)
     node_t *node = npc->worlds_data ? npc->worlds_data->first : NULL;
 
     while (node) {
-        if (node->data.npc_data.world == (int) world)
+        if (node->data.npc_data.world == (int) world) {
+            node->data.npc_data.npc = npc;
             return &node->data.npc_data;
+        }
         node = node->next;
     }
     return NULL;

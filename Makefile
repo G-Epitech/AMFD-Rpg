@@ -71,6 +71,7 @@ SRC = 		src/main.c \
 			src/types/ressources/components/button/load.c \
 			src/types/ressources/components/backgrounds/load.c \
 			src/types/ressources/components/lever/load.c \
+			src/types/ressources/components/fight/load.c \
 			src/types/ressources/components/progress/load.c \
 			\
 			src/types/ressources/inventory/load.c \
@@ -95,10 +96,20 @@ SRC = 		src/main.c \
 			src/app/init/settings.c \
 			src/app/init/sounds.c \
 			src/app/init/tasks.c \
+			src/app/init/animations.c \
+			\
+			src/app/free/animations.c \
 			\
 			src/app/animations/player/animation.c	\
 			\
 			src/app/free/free.c \
+			\
+			src/app/animations/handler.c \
+			src/app/animations/event_new.c \
+			src/app/animations/screen/zoom.c \
+			src/app/animations/button/shake_attack.c \
+			src/app/animations/text/floating.c \
+			src/app/animations/text/notif.c \
 			\
 			src/app/states/on_state.c \
 			src/app/states/switch.c \
@@ -117,8 +128,15 @@ SRC = 		src/main.c \
 			src/app/events/handler.c \
 			src/app/events/window/close.c \
 			src/app/events/keyboard/move.c \
+			src/app/events/keyboard/inventory.c \
+			src/app/events/keyboard/interaction/interaction.c \
+			src/app/events/keyboard/interaction/fight/start.c \
+			src/app/events/keyboard/interaction/fight/choice.c \
+			src/app/events/keyboard/interaction/dialogs/dialogs.c \
+			src/app/events/keyboard/interaction/dialogs/continue.c \
 			src/app/events/components/buttons.c \
 			src/app/events/components/levers.c \
+			src/app/events/components/attacks.c \
 			\
 			src/app/developer/reload_json.c \
 			\
@@ -146,6 +164,7 @@ SRC = 		src/main.c \
       		src/app/display/components/components.c \
 			src/app/display/components/backgrounds.c \
 			src/app/display/components/levers.c \
+			src/app/display/components/interaction.c \
 			src/app/display/components/buttons/buttons.c \
 			src/app/display/components/buttons/icon.c \
 			src/app/display/components/buttons/dispatch.c \
@@ -155,15 +174,6 @@ SRC = 		src/main.c \
 			src/app/display/menus/main_menu.c \
 			src/app/display/menus/settings.c \
 			src/app/display/menus/select_character.c \
-			\
-			src/app/core/handler.c	\
-			src/app/core/sound.c	\
-			src/app/core/animation.c	\
-			\
-			src/app/sound/sound_control.c	\
-			src/app/sound/handle_sound_fx.c	\
-			src/app/sound/handle_sound_themes.c	\
-			src/app/sound/handle_sound_volume.c	\
 			src/app/display/inventory/grids.c \
 			src/app/display/inventory/item_box.c \
 			src/app/display/inventory/profile.c \
@@ -172,12 +182,22 @@ SRC = 		src/main.c \
 			src/app/display/inventory/levels.c \
 			src/app/display/developer/collisions.c \
 			src/app/display/developer/position.c \
+			src/app/display/fight/fight.c \
+			src/app/display/fight/choice.c \
+			src/app/display/fight/attack.c \
+			src/app/display/animations/animations.c \
+			src/app/display/animations/floating_text.c \
+			src/app/display/animations/notif.c \
+			src/app/display/dialogs/dialogs.c \
+			\
+			src/app/getters/progress/inventory.c \
+			src/app/getters/progress/fight.c \
+      		\
 			src/app/display/tasks/camera/display.c \
 			src/app/display/tasks/camera/solution.c \
 			src/app/display/tasks/camera/result.c \
 			src/app/display/tasks/camera/equations.c \
 			src/app/display/tasks/flipper/display.c \
-      		src/app/getters/progress/inventory.c \
 			\
 			src/app/utils/test.c \
 			\
@@ -191,6 +211,9 @@ SRC = 		src/main.c \
 			src/app/events/handler/released.c \
 			src/app/events/handler/text_entered.c \
 			src/app/events/handler/mouse_button_released.c \
+			\
+			src/app/core/handler.c	\
+			src/app/core/animation.c	\
 			\
 			src/app/core/tasks/flipper/create_node.c \
 			src/app/core/tasks/flipper/game_handler.c \
@@ -223,6 +246,14 @@ SRC = 		src/main.c \
 			src/app/core/tasks/script_bash/valid_cmd.c \
 			src/app/core/tasks/script_bash/reset_setup.c \
 			src/app/core/tasks/script_bash/create_list.c \
+			src/app/core/fight/handler.c \
+			src/app/core/fight/enemy.c \
+			src/app/core/sound.c \
+			\
+			src/app/sound/sound_control.c \
+			src/app/sound/handle_sound_fx.c	\
+			src/app/sound/handle_sound_themes.c	\
+			src/app/sound/handle_sound_volume.c
 
 NAME = my_rpg
 

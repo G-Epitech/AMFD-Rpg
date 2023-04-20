@@ -20,11 +20,12 @@
     #include "app/tasks/bash/types.h"
     #include "app/tasks/flipper/types.h"
     #include "app/tasks/types.h"
-    #include "app/animation/type.h"
+    #include "app/animate_player/type.h"
 
 typedef struct s_list list_t;
 
 typedef union u_node_data {
+    animation_event_t *animations_event;
     inventory_item_t *inventory_item;
     task_camera_node_t *node_camera;
     task_flipper_node_t *node_flip;
@@ -35,6 +36,7 @@ typedef union u_node_data {
     sound_theme_t *theme;
     progress_t *progress;
     npc_data_t npc_data;
+    attack_t *attack;
     player_t *player;
     button_t *button;
     sound_t *sound;

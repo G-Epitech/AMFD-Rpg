@@ -115,12 +115,26 @@ bool app_init_interactions(app_t *app, renderer_t *renderer);
 bool app_init_players(app_t *app, renderer_t *renderer);
 
 /**
- * @brief Initialize animations of game
+ * @brief Initialize player animations lists
  * @param app App object
  * @param renderer Renderer object
  * @return Initialization success status
-*/
+ */
+bool app_init_player_animations(app_t *app, renderer_t *renderer);
+
+/**
+ * @brief Initialize animations lists
+ * @param app App object
+ * @param renderer Renderer object
+ * @return Initialization success status
+ */
 bool app_init_animations(app_t *app, renderer_t *renderer);
+
+/**
+ * @brief Free animations
+ * @param app App object
+ */
+void app_free_animations(app_t *app);
 
 /**
  * @brief Down state

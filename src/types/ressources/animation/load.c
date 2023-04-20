@@ -10,7 +10,7 @@
 #include "types/list/list.h"
 #include "cjson/include/cjson.h"
 #include "app/loading/loading.h"
-#include "app/animation/type.h"
+#include "app/animate_player/type.h"
 #include "app/app.h"
 
 static void get_animation_properties(animation_t *anim, cjson_t *anim_config)
@@ -64,9 +64,9 @@ static list_t *load_animations(void)
     return animations;
 }
 
-bool app_init_animations(app_t *app, renderer_t *renderer)
+bool app_init_player_animations(app_t *app, renderer_t *renderer)
 {
     (void) renderer;
-    app->animations = load_animations();
-    return app->animations ? true : false;
+    app->player_anim = load_animations();
+    return app->player_anim ? true : false;
 }

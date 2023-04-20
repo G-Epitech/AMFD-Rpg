@@ -62,7 +62,7 @@ void animate_player(app_t *app, renderer_t *renderer)
     time = sfClock_getElapsedTime(app->clock);
     seconds = time.microseconds / 1000000.0;
     if (seconds > 0.12) {
-        change_player_skin(app->animations, renderer->ressources->skins,
+        change_player_skin(app->player_anim, renderer->ressources->skins,
         app->player);
         sfClock_restart(app->clock);
     }

@@ -66,6 +66,24 @@
             "position" : {"x": 589, "y": 730}
         },
         {
+            "asset": "assets/components/backgrounds/fight_choice.png",
+            "scale": 1,
+            "state": [350, 400],
+            "position" : {"x": 457, "y": 744}
+        },
+        {
+            "asset": "assets/components/backgrounds/player_fight.png",
+            "scale": 1,
+            "state": [350],
+            "position" : {"x": 42, "y": 13}
+        },
+        {
+            "asset": "assets/components/backgrounds/enemy_fight.png",
+            "scale": 1,
+            "state": [350],
+            "position" : {"x": 1370, "y": 13}
+        },
+        {
             "asset": "assets/tasks/phone.png",
             "scale": 1,
             "state": [501],
