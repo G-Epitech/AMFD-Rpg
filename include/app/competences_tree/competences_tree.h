@@ -16,6 +16,8 @@ typedef struct s_app app_t;
 
 list_t *player_init_competence(void);
 
+void competences_tree(renderer_t *renderer, app_t *app);
+
 void display_competences_tree(renderer_t *renderer, app_t *app);
 
 #endif /* !CORE_H_ */

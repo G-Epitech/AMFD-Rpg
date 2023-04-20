@@ -115,7 +115,7 @@ typedef struct s_icons_ressources {
     sfTexture *happy;           //Happy icon
     sfTexture *hungry;          //Hungry icon
     sfTexture *xp;              //XP icon
-    icons_competences_t *tree   //icons of competences tree
+    icons_competences_t *tree;  //icons of competences tree
 } icons_r_t;
 
 /**

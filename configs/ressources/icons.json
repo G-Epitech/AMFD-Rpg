@@ -8,5 +8,13 @@
     "notif": "assets/components/icons/notif.png",
     "happy": "assets/components/icons/happy.png",
     "hungry": "assets/components/icons/hungry.png",
-    "xp": "assets/components/icons/xp.png"
+    "xp": "assets/components/icons/xp.png",
+    "script_bash_unlock": "assets/components/icons/left_unlock.png",
+    "script_bash_lock": "assets/components/icons/left_lock.png",
+    "flipper_lock": "assets/components/icons/right_lock.png",
+    "flipper_unlock": "assets/components/icons/right_unlock.png",
+    "go_buster_unlock": "assets/components/icons/middle_unlock.png",
+    "go_buster_lock": "assets/components/icons/middle_lock.png",
+    "brute_force_lock": "assets/components/icons/top_lock.png",
+    "brute_force_unlock": "assets/components/icons/top_unlock.png"
 }

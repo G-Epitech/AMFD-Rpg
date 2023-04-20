@@ -13,42 +13,65 @@
 
 static void display_script_bash(node_t *competence, renderer_t *renderer)
 {
-    (void) renderer;
+    sfSprite *sprite = renderer->objects->sprite;
+
+    renderer_objects_reset_sprite(renderer->objects);
     if (COMPETENCE_UNLOCK(competence)) {
-        return;
+        sfSprite_setTexture(sprite, TEXTURE_BASH_UNLOCK, sfTrue);
+        sfSprite_setPosition(sprite, POS_BASH_SPRITE);
+        sfRenderWindow_drawSprite(renderer->window, sprite, NULL);
     } else {
-        return;
+        sfSprite_setTexture(sprite, TEXTURE_BASH_LOCK, sfTrue);
+        sfSprite_setPosition(sprite, POS_BASH_SPRITE);
+        sfRenderWindow_drawSprite(renderer->window, sprite, NULL);
     }
 }
 
 static void display_flipper(node_t *competence, renderer_t *renderer)
 {
-    (void) renderer;
+    sfSprite *sprite = renderer->objects->sprite;
+
+    renderer_objects_reset_sprite(renderer->objects);
     if (COMPETENCE_UNLOCK(competence)) {
-        return;
+        sfSprite_setTexture(sprite, TEXTURE_FLIPPER_UNLOCK, sfTrue);
+        sfSprite_setPosition(sprite, POS_FLIPPER_SPRITE);
+        sfRenderWindow_drawSprite(renderer->window, sprite, NULL);
     } else {
-        return;
+        sfSprite_setTexture(sprite, TEXTURE_FLIPPER_LOCK, sfTrue);
+        sfSprite_setPosition(sprite, POS_FLIPPER_SPRITE);
+        sfRenderWindow_drawSprite(renderer->window, sprite, NULL);
     }
 }
 
 static void display_brute_force(node_t *competence, renderer_t *renderer)
 {
-    (void) renderer;
+    sfSprite *sprite = renderer->objects->sprite;
+
+    renderer_objects_reset_sprite(renderer->objects);
     if (COMPETENCE_UNLOCK(competence)) {
-        return;
+        sfSprite_setTexture(sprite, TEXTURE_BRUTE_UNLOCK, sfTrue);
+        sfSprite_setPosition(sprite, POS_BRUTE_SPRITE);
+        sfRenderWindow_drawSprite(renderer->window, sprite, NULL);
     } else {
-        return;
+        sfSprite_setTexture(sprite, TEXTURE_BRUTE_LOCK, sfTrue);
+        sfSprite_setPosition(sprite, POS_BRUTE_SPRITE);
+        sfRenderWindow_drawSprite(renderer->window, sprite, NULL);
     }
 }
 
 static void display_go_buster(node_t *competence, renderer_t *renderer)
 {
-    (void) renderer;
+    sfSprite *sprite = renderer->objects->sprite;
+
+    renderer_objects_reset_sprite(renderer->objects);
     if (COMPETENCE_UNLOCK(competence)) {
-        sfRenderWindow_drawSprite
-        return;
+        sfSprite_setTexture(sprite, TEXTURE_GOBUSTER_UNLOCK, sfTrue);
+        sfSprite_setPosition(sprite, POS_GOBUSTER_SPRITE);
+        sfRenderWindow_drawSprite(renderer->window, sprite, NULL);
     } else {
-        return;
+        sfSprite_setTexture(sprite, TEXTURE_GOBUSTER_LOCK, sfTrue);
+        sfSprite_setPosition(sprite, POS_GOBUSTER_SPRITE);
+        sfRenderWindow_drawSprite(renderer->window, sprite, NULL);
     }
 }
 

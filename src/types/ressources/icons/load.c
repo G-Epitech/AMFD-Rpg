@@ -63,6 +63,7 @@ static void icons_load_data(icons_r_t *icons, cjson_t *configs)
     free(interaction);
     icons_load_data_check(icons, configs);
     icons_load_data_notif(icons, configs);
+    icons_load_data_competence(icons->tree, configs);
 }
 
 void icons_load(renderer_t *renderer, icons_r_t *icons)

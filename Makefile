@@ -9,6 +9,7 @@ SRC = 		src/main.c \
 			\
 			src/types/renderer/init.c \
 			src/types/renderer/load.c	\
+			src/types/ressources/icons/load_skills_tree.c \
 			src/types/renderer/destroy.c \
 			src/types/renderer/objects/init.c \
 			src/types/renderer/objects/destroy.c \
