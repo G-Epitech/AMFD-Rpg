@@ -103,16 +103,10 @@
             "position" : {"x": 632, "y": 295}
         },
         {
-            "asset": "assets/components/backgrounds/pause_menu.png",
+            "asset": "assets/components/backgrounds/pause_background.png",
             "scale": 1,
             "state": [301],
-            "position" : {"x": 572, "y": 255}
-        },
-        {
-            "asset": "assets/components/backgrounds/bras_gauche.png",
-            "scale": 0.8,
-            "state": [301],
-            "position" : {"x": 912, "y": 455}
+            "position" : {"x": 912, "y": 265}
         }
     ],
 
