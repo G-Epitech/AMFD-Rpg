@@ -29,6 +29,7 @@ typedef struct s_player {
     sfVector2f position;        //Position of the player
     enitity_state_t state;      //State of the player
     list_t *inventory;          //Inventory with all objects
+    sfIntRect rect;             //Player rect
     int skin_id;                //Skin ID
     int level;                  //Player level
     int life;                   //Life of the player

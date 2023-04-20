@@ -24,7 +24,7 @@
     {
         "title": "Idle",
         "asset": "assets/skins/tom.png",
-        "skin_id": 5    ,
+        "skin_id": 5,
         "state": 0,
         "frame_len": 6,
         "top": 32,

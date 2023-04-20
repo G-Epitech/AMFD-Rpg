@@ -5,8 +5,8 @@
 ** Types for animation of the player
 */
 
-#ifndef TYPE_H_
-    #define TYPE_H_
+#ifndef PLAYER_ANIM_TYPE_H_
+    #define PLAYER_ANIM_TYPE_H_
 
     #include <SFML/Graphics.h>
 
@@ -25,4 +25,4 @@ typedef struct s_animation {
     sfIntRect rect;                     //Animation rect
 } animation_t;
 
-#endif /* !TYPE_H_ */
+#endif /* !PLAYER_ANIM_TYPE_H_ */

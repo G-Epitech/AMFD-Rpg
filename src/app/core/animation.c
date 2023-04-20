@@ -8,7 +8,7 @@
 #include "app/app.h"
 #include "app/animate_player/animation.h"
 
-void core_handle_animation(app_t *app, renderer_t *renderer)
+void core_handle_animation(app_t *app)
 {
-    animate_player(app, renderer);
+    animate_player(app);
 }

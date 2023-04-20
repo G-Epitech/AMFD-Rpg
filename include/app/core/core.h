@@ -47,7 +47,7 @@ void core_interactions_npc(sfColor pixel, app_t *app);
  * @param app App of object
  * @param renderer Renderer object
 */
-void core_handle_animation(app_t *app, renderer_t *renderer);
+void core_handle_animation(app_t *app);
 
 /**
  * @brief Enemy fight

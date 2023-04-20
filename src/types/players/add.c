@@ -26,6 +26,7 @@ player_t *players_add(list_t *list, char *name)
     player->skin_id = -1;
     player->orientation = SO_LEFT;
     player->name = my_strdup(name);
+    player->rect = (sfIntRect) {0, 0, 0, 0};
     player->xp = 1;
     player->level = 15;
     player->life = 20;
