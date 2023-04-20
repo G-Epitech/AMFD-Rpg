@@ -29,7 +29,6 @@ typedef struct s_item {
     int intelligence;
     float price;
     sfIntRect rect;
-    bool by_default;
 } item_t;
 
 #endif /* !ITEMS_TYPES_H_ */

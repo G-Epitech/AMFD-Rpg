@@ -7,8 +7,7 @@
             "type": 0,
             "levels": { "xp": 0, "life": 12, "speed": 12, "intelligence": 134 },
             "price": 8,
-            "rect": { "x": 0, "y": 0  },
-            "default": true
+            "rect": { "x": 0, "y": 0  }
         },
         {
             "id": 1,
@@ -16,8 +15,7 @@
             "type": 0,
             "levels": { "xp": 0, "life": 12, "speed": 12, "intelligence": 134 },
             "price": 8,
-            "rect": { "x": 0, "y": 6},
-            "default": true
+            "rect": { "x": 0, "y": 6}
         },
         {
             "id": 2,
@@ -25,8 +23,7 @@
             "type": 0,
             "levels": { "xp": 0, "life": 12, "speed": 12, "intelligence": 134 },
             "price": 8,
-            "rect": { "x": 1, "y": 4},
-            "default": true
+            "rect": { "x": 1, "y": 4}
         },
         {
             "id": 3,
@@ -34,8 +31,7 @@
             "type": 0,
             "levels": { "xp": 0, "life": 12, "speed": 12, "intelligence": 134 },
             "price": 8,
-            "rect": { "x": 0, "y": 2},
-            "default": true
+            "rect": { "x": 0, "y": 2}
         },
         {
             "id": 4,
@@ -43,8 +39,7 @@
             "type": 0,
             "levels": { "xp": 0, "life": 12, "speed": 12, "intelligence": 134 },
             "price": 8,
-            "rect": { "x": 1, "y": 3},
-            "default": true
+            "rect": { "x": 1, "y": 3}
         },
         {
             "id": 5,
@@ -52,8 +47,7 @@
             "type": 0,
             "levels": { "xp": 0, "life": 12, "speed": 12, "intelligence": 134 },
             "price": 8,
-            "rect": { "x": 4, "y": 2},
-            "default": true
+            "rect": { "x": 4, "y": 2}
         },
         {
             "id": 6,
@@ -61,8 +55,7 @@
             "type": 0,
             "levels": { "xp": 0, "life": 12, "speed": 12, "intelligence": 134 },
             "price": 8,
-            "rect": { "x": 1, "y": 5},
-            "default": true
+            "rect": { "x": 1, "y": 5}
         },
         {
             "id": 7,
@@ -70,8 +63,7 @@
             "type": 0,
             "levels": { "xp": 0, "life": 12, "speed": 12, "intelligence": 134 },
             "price": 8,
-            "rect": { "x": 0, "y": 5},
-            "default": true
+            "rect": { "x": 0, "y": 5}
         },
         {
             "id": 8,
@@ -79,8 +71,7 @@
             "type": 1,
             "levels": { "xp": 0, "life": 12, "speed": 12, "intelligence": 134 },
             "price": 8,
-            "rect": { "x": 3, "y": 1},
-            "default": true
+            "rect": { "x": 3, "y": 1}
         },
         {
             "id": 9,
@@ -88,8 +79,7 @@
             "type": 1,
             "levels": { "xp": 0, "life": 12, "speed": 12, "intelligence": 134 },
             "price": 8,
-            "rect": { "x": 6, "y": 2},
-            "default": true
+            "rect": { "x": 6, "y": 2}
         }
     ]
 }

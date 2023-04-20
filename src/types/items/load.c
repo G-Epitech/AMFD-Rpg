@@ -49,7 +49,6 @@ static void item_init(item_t *item)
     item->speed = 0;
     item->xp = 0;
     item->rect = (sfIntRect) {0, 0, 0, 0};
-    item->by_default = false;
 }
 
 bool item_load(cjson_t *config, item_t **item)
@@ -66,7 +65,6 @@ bool item_load(cjson_t *config, item_t **item)
         return false;
     if (!cjson_get_prop_float(config, "price", &(*item)->price))
         return false;
-    cjson_get_prop_bool(config, "default", &(*item)->by_default);
     set_rect(config, *item);
     return load_levels(config, *item);
 }
