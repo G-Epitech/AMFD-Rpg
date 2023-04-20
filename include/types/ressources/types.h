@@ -93,6 +93,17 @@ typedef struct s_inventory_ressources {
     sfTexture *items;           //Inventory items texture
 } inventory_r_t;
 
+typedef struct s_icons_competences {
+    sfTexture *script_bash_unlock;   //icon of script bash unlock
+    sfTexture *script_bash_lock;     //icon of script bash lock
+    sfTexture *flipper_unlock;       //icon of flipper unlock
+    sfTexture *flipper_lock;         //icon of flipper lock
+    sfTexture *go_buster_unlock;     //icon of GoBuster unlock
+    sfTexture *go_buster_lock;       //icon of GoBuster lock
+    sfTexture *brute_force_unlock;   //icon of brute_force unlock
+    sfTexture *brute_force_lock;     //icon of brute_force lock
+} icons_competences_t;
+
 typedef struct s_icons_ressources {
     sfTexture *valid;           //Valid icon
     sfTexture *refuse;          //Refuse icon
@@ -104,6 +115,7 @@ typedef struct s_icons_ressources {
     sfTexture *happy;           //Happy icon
     sfTexture *hungry;          //Hungry icon
     sfTexture *xp;              //XP icon
+    icons_competences_t *tree   //icons of competences tree
 } icons_r_t;
 
 /**

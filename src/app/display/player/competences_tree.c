@@ -13,6 +13,7 @@
 
 static void display_script_bash(node_t *competence, renderer_t *renderer)
 {
+    (void) renderer;
     if (COMPETENCE_UNLOCK(competence)) {
         return;
     } else {
@@ -22,6 +23,7 @@ static void display_script_bash(node_t *competence, renderer_t *renderer)
 
 static void display_flipper(node_t *competence, renderer_t *renderer)
 {
+    (void) renderer;
     if (COMPETENCE_UNLOCK(competence)) {
         return;
     } else {
@@ -31,6 +33,7 @@ static void display_flipper(node_t *competence, renderer_t *renderer)
 
 static void display_brute_force(node_t *competence, renderer_t *renderer)
 {
+    (void) renderer;
     if (COMPETENCE_UNLOCK(competence)) {
         return;
     } else {
@@ -40,7 +43,9 @@ static void display_brute_force(node_t *competence, renderer_t *renderer)
 
 static void display_go_buster(node_t *competence, renderer_t *renderer)
 {
+    (void) renderer;
     if (COMPETENCE_UNLOCK(competence)) {
+        sfRenderWindow_drawSprite
         return;
     } else {
         return;
