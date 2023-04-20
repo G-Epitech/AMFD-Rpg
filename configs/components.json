@@ -247,6 +247,13 @@
             "scale": 1,
             "next_state": 304
         }
+        {
+            "icon": "assets/components/button/tree_icon.png",
+            "app_state": [304],
+            "position": {"x": 1401, "y": 248},
+            "scale": 1,
+            "next_state": 100
+        }
     ],  
 
     "levers": [

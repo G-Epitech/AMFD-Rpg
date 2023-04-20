@@ -31,7 +31,7 @@ typedef enum e_app_states {
     ST_INGAME = 100,        //Main state, ingame player
     ST_INVENTORY = 300,     //Inventory menu
     ST_BREAK,               //Break menu (save/sound...)
-    ST_IGSETTINGS,          //In game settings
+    IGSETTINGS,          //In game settings
     ST_IGHELP,              //In game help
     ST_IG_TREE_COMPETENCE,  //In game tree of competence
     ST_FIGHT = 350,         //Fight interface
