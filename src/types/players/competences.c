@@ -33,8 +33,8 @@ list_t *player_init_competence(void)
     if (!script_bash || !brute_force || !flipper || !go_buster)
         return NULL;
     list_append(competences, script_bash);
-    list_append(competences, brute_force);
     list_append(competences, flipper);
     list_append(competences, go_buster);
+    list_append(competences, brute_force);
     return competences;
 }

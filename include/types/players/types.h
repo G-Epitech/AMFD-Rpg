@@ -29,6 +29,7 @@ typedef struct s_player {
     int life;                   //Life of the player
     int speed;                  //Speed of the player
     int intellect;              //Intelect of the player
+    int credits;                //Credit of player for earn competence
     list_t *competences;        //competence tree of the player
 } player_t;
 

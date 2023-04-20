@@ -133,6 +133,8 @@ SRC = 		src/main.c \
 			src/app/events/components/buttons.c \
 			src/app/events/components/levers.c \
 			src/app/events/components/attacks.c \
+			src/app/events/skills_tree/detect.c \
+			src/app/events/skills_tree/find_competence.c \
 			\
 			src/app/developer/reload_json.c \
 			\

@@ -20,4 +20,8 @@ void competences_tree(renderer_t *renderer, app_t *app);
 
 void display_competences_tree(renderer_t *renderer, app_t *app);
 
+void event_handler_skills_tree(app_t *app, renderer_t *renderer);
+
+competences_node_t *find_skill(app_t *app, int id);
+
 #endif /* !CORE_H_ */
