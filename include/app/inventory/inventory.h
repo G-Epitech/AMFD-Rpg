@@ -97,15 +97,14 @@ void inventory_onpress(app_t *app, sfEvent event);
 void inventory_onmove(app_t *app, sfEvent event);
 
 /**
- * @brief Get target and selected items of given event
+ * @brief Get item at given position on grid
  * @param inventory Inventory of player
- * @param event Event of inventory
- * @param selected Selected item
- * @param target Target item
+ * @param pos Position of wanted item
+ * @param active Active status of wanted item
+ * @return Found item
  */
-void inventory_get_target_and_selected(list_t *inventory,
-inventory_event_t *event, inventory_item_t **selected,
-inventory_item_t **target);
+inventory_item_t * inventory_get_item_at_pos(list_t *inventory,
+int pos, bool active);
 
 /**
  * @brief Swap event items
@@ -123,11 +122,38 @@ inventory_event_t *event);
  */
 int fight_get_mana(app_t *app, progress_t *progress);
 
-/**enemy lifeinventory speed value
+/**
+ * @brief Life inventory speed value
  * @param app App object
  * @param progress Progress object
  * @return Percentage of speed
  */
 int fight_get_enemy_life(app_t *app, progress_t *progress);
+
+/**
+ * @brief Inventory set target position
+ * @param inventory Inventory of player
+ * @param event Event object
+ */
+void inventory_set_target_position(list_t *inventory,
+inventory_event_t *event);
+
+/**
+ * @brief On inventory item moved prevent bad move
+ * @param inventory Inventory of player
+ * @param event Event object
+ */
+void inventory_onmove_prevent_bad(list_t *inventory,
+inventory_event_t *event);
+
+/**
+ * @brief Get free position on distance i from target item of event
+ * @param i Distance max to free box
+ * @param inventory Inventory of player
+ * @param event Event object
+ * @return Status of free box availability
+ */
+bool inventory_onmove_get_free_positions(int i, list_t *inventory,
+inventory_event_t *event);
 
 #endif /* !INVENTORY_H_ */

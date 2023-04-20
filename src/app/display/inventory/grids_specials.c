@@ -15,36 +15,35 @@
 #include "app/inventory/types.h"
 #include "types/ressources/ressources.h"
 
-static void display_selected(renderer_t *renderer, inventory_event_t *event,
-inventory_item_t *selected)
+static void display_selected(renderer_t *renderer, inventory_event_t *event)
 {
     display_inventory_item_box_at_pos(renderer, event->position,
-    event->target_active, false);
-    display_inventory_item_content(renderer, selected, event);
+    event->target.active, false);
+    display_inventory_item_content(renderer, event->selected, event);
 }
 
-static void display_target(renderer_t *renderer, inventory_event_t *event,
-inventory_item_t *target)
+static void display_target(renderer_t *renderer, inventory_event_t *event)
 {
-    if (!target) {
-        display_inventory_item_box(renderer, event->item_pos,
-        event->item_active, true);
-    } else {
-        display_inventory_item_box(renderer, event->item_pos,
-        event->item_active, false);
-        display_inventory_item_content(renderer, target, event);
+    if (!event->target_ref) {
+        display_inventory_item_box(renderer, event->selected->pos,
+        event->selected->active, true);
+        return;
+    }
+    display_inventory_item_box(renderer, event->target_ref_tmp.pos,
+    event->target_ref_tmp.active, event->target_ref == event->selected);
+    display_inventory_item_content(renderer, event->target_ref, event);
+    if (event->target_ref_tmp.active != event->selected->active &&
+        event->target_ref_tmp.pos != event->selected->pos) {
+        display_inventory_item_box(renderer, event->selected->pos,
+        event->selected->active, true);
     }
 }
 
-void display_inventory_grids_specials(renderer_t *renderer, list_t *inventory,
+void display_inventory_grids_specials(renderer_t *renderer,
 inventory_event_t *event)
 {
-    inventory_item_t *target = NULL;
-    inventory_item_t *selected = NULL;
-
     if (!event->pressed || !event->moved)
         return;
-    inventory_get_target_and_selected(inventory, event, &selected, &target);
-    display_target(renderer, event, target);
-    display_selected(renderer, event, selected);
+    display_target(renderer, event);
+    display_selected(renderer, event);
 }

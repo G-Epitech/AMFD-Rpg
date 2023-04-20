@@ -52,16 +52,16 @@ inventory_item_t *item, inventory_event_t *event)
 
     if (!event->moved || !event->pressed)
         return false;
-    if (event->item_pos == item->pos && item->active == event->item_active) {
+    if (event->selected == item) {
         display_item(renderer, item->target, event->position,
-        event->target_active);
+        event->target.active);
         return true;
     }
-    if (event->target_pos == item->pos
-        && item->active == event->target_active) {
-        display_inventory_get_item_position(event->item_pos,
-        event->item_active, &position);
-        display_item(renderer, item->target, position, event->item_active);
+    if (event->target_ref == item) {
+        display_inventory_get_item_position(event->target_ref_tmp.pos,
+        event->target_ref_tmp.active, &position);
+        display_item(renderer, item->target, position,
+        event->target_ref_tmp.active);
         return true;
     }
     return false;
@@ -71,7 +71,7 @@ void display_inventory_item_content(renderer_t *renderer,
 inventory_item_t *item, inventory_event_t *event)
 {
     sfVector2f position = {0, 0};
-
+    (void) event;
     if (!prevent_special(renderer, item, event)) {
         display_inventory_get_item_position(item->pos, item->active, &position);
         display_item(renderer, item->target, position, item->active);

@@ -32,8 +32,7 @@ static bool is_on_item(sfVector2f mouse, int pos, bool active)
 static void set_item(inventory_event_t *event, inventory_item_t *item,
 sfVector2f mouse)
 {
-    event->item_active = item->active;
-    event->item_pos = item->pos;
+    event->selected = item;
     event->position = mouse;
     if (item->active) {
         event->position.x -= INVENTORY_ACTIVE_GRID_ITEM_SIZE / 2;
@@ -45,7 +44,6 @@ sfVector2f mouse)
     event->pressed = true;
     event->moved = false;
     event->pressed_on = mouse;
-    event->ref = item->target;
 }
 
 static bool check_item_selected(sfVector2f mouse, inventory_event_t *event,

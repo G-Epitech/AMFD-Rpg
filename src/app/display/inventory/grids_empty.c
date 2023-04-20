@@ -19,9 +19,9 @@ static bool is_special(int i, bool active, inventory_event_t *event)
 {
     if (!event->pressed || !event->moved)
         return false;
-    if (i == event->target_pos && active == event->target_active)
+    if (i == event->target.pos && active == event->target.active)
         return true;
-    if (i == event->item_pos && active == event->item_active)
+    if (i == event->selected->pos && active == event->selected->active)
         return true;
     return false;
 }

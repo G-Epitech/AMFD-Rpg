@@ -230,10 +230,9 @@ inventory_event_t *event);
 /**
  * @brief Display specials element on grids
  * @param renderer Renderer object
- * @param inventory Inventory of player
  * @param event Event of inventory
  */
-void display_inventory_grids_specials(renderer_t *renderer, list_t *inventory,
+void display_inventory_grids_specials(renderer_t *renderer,
 inventory_event_t *event);
 
 /**

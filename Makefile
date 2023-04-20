@@ -149,7 +149,9 @@ SRC = 		src/main.c \
 			\
 			src/app/core/inventory/move.c \
 			src/app/core/inventory/swap.c \
-			src/app/core/inventory/get_target_selected.c \
+			src/app/core/inventory/bad_move.c \
+			src/app/core/inventory/get_free_position.c \
+			src/app/core/inventory/get_item_at_pos.c \
 			src/app/core/inventory/press.c \
 			src/app/core/inventory/release.c \
 			src/app/core/fight/handler.c \

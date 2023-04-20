@@ -18,10 +18,8 @@
 static void display_item(renderer_t *renderer, inventory_event_t *event,
 inventory_item_t *item)
 {
-    bool is_target = event->target_pos == item->pos
-    && event->target_active == item->active;
-    bool is_selected = event->item_pos == item->pos
-    && event->item_active == item->active;
+    bool is_target = item == event->target_ref;
+    bool is_selected = item == event->selected;
 
     if (event->moved && (is_selected || is_target))
         return;

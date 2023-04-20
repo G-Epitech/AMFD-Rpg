@@ -51,7 +51,7 @@ int *actives_boxes, int *main_boxes)
 
     display_inventory_grids_empty(renderer, actives_boxes, main_boxes, event);
     display_inventory_grids_taken(renderer, inventory, event);
-    display_inventory_grids_specials(renderer, inventory, event);
+    display_inventory_grids_specials(renderer, event);
 }
 
 void display_inventory_grids(renderer_t *renderer, app_t *app)

@@ -41,11 +41,10 @@ typedef struct s_inventory_move {
     bool moved;
     sfVector2f pressed_on;
     sfVector2f position;
-    bool item_active;
-    int item_pos;
-    bool target_active;
-    int target_pos;
-    item_t *ref;
+    inventory_item_t *selected;
+    inventory_item_t target;
+    inventory_item_t *target_ref;
+    inventory_item_t target_ref_tmp;
 } inventory_event_t;
 
 #endif /* !INVENTORY_TYPES_H_ */

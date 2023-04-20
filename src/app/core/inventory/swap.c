@@ -12,17 +12,16 @@
 void inventory_swap_items_on_event(player_t *player,
 inventory_event_t *event)
 {
-    inventory_item_t *target = NULL;
-    inventory_item_t *selected = NULL;
-    list_t *inventory = player->inventory;
+    inventory_item_t *target = event->target_ref;
+    inventory_item_t *selected = event->selected;
 
-    if (event->target_pos <= 0)
+    (void) player;
+    if (event->target.pos <= 0)
         return;
-    inventory_get_target_and_selected(inventory, event, &selected, &target);
     if (target) {
-        target->pos = event->item_pos;
-        target->active = event->item_active;
+        target->pos = event->target_ref_tmp.pos;
+        target->active = event->target_ref_tmp.active;
     }
-    selected->pos = event->target_pos;
-    selected->active = event->target_active;
+    selected->pos = event->target.pos;
+    selected->active = event->target.active;
 }
