@@ -13,6 +13,7 @@
     #include "app/network/types.h"
     #include "app/animations/types.h"
     #include "sound/types.h"
+    #include "app/quests/types.h"
 
 typedef struct s_list list_t;
 typedef struct s_renderer renderer_t;
@@ -134,6 +135,7 @@ typedef struct s_app {
     interactions_t *interaction;    //Interaction in the app
     animations_t *animations;       //Animations in the app
     sound_board_t *sound_board;     //Soundboard
+    app_quests_t *quests;           //Quests of the game
 } app_t;
 
 typedef bool (*app_init_member_t)(app_t *app, renderer_t *renderer);
