@@ -29,7 +29,7 @@ typedef struct s_item {
     int life;
     int speed;
     int intelligence;
-    float price;
+    int price;
     sfIntRect rect;
     int consumer;
 } item_t;

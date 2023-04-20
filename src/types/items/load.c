@@ -72,7 +72,7 @@ bool item_load(cjson_t *config, item_t **item)
         return false;
     if (!cjson_get_prop_int(config, "type", (int *)(&(*item)->type)))
         return false;
-    if (!cjson_get_prop_float(config, "price", &(*item)->price))
+    if (!cjson_get_prop_int(config, "price", &(*item)->price))
         return false;
     set_consumer(config, *item);
     set_rect(config, *item);

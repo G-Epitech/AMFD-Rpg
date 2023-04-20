@@ -18,7 +18,7 @@ static bool id_used(list_t *inventory, int id)
 
     while (node && !used) {
         if (node->data.inventory_item->pos == id
-            && !node->data.inventory_item->active) {
+            && node->data.inventory_item->active) {
             used = true;
         }
         node = node->next;
@@ -28,32 +28,34 @@ static bool id_used(list_t *inventory, int id)
 
 static int get_next_non_used_id(list_t *inventory)
 {
-    for (int i = 1; i <= INVENTORY_MAX; i++) {
+    for (int i = 1; i <= INVENTORY_ACTIVE_MAX; i++) {
         if (!id_used(inventory, i))
             return i;
     }
     return -1;
 }
 
-bool inventory_add_item(player_t *player, item_t *target_item)
+bool inventory_set_item_active(player_t *player,
+inventory_item_t *inventory_item)
 {
     list_t *inventory = player ? player->inventory : NULL;
-    node_t *node = NULL;
-    inventory_item_t *inventory_item = NULL;
-    int available = INVENTORY_MAX - (inventory ? inventory->len : 0);
+    int id = get_next_non_used_id(inventory);
 
-    if (available <= 0)
+    if (id == -1)
         return false;
-    inventory_item = inventory_item_new(target_item);
-    if (!inventory_item)
-        return false;
-    node = node_new((node_data_t) inventory_item);
-    if (!node) {
-        free(inventory_item);
-        return false;
-    }
-    inventory_item->pos = get_next_non_used_id(inventory);
-    inventory_item->active = false;
-    list_append(inventory, node);
+    inventory_item->pos = id;
+    inventory_item->active = true;
     return true;
+}
+
+void inventory_set_item_inactive(player_t *player,
+inventory_item_t *inventory_item)
+{
+    item_t *model = NULL;
+
+    if (!inventory_item)
+        return;
+    model = inventory_item->target;
+    inventory_remove_item(player, inventory_item);
+    inventory_add_item(player, model);
 }

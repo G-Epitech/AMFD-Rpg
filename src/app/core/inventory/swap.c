@@ -15,11 +15,11 @@ inventory_event_t *event)
     if (event->selected->active == event->target.active)
         return;
     if (event->target.active) {
-        player->intellect += event->selected->target->intelligence;
-        player->speed += event->selected->target->speed;
+        inventory_item_impact_player(player, event->selected, 1);
+        inventory_item_impact_player(player, event->target_ref, -1);
     } else {
-        player->intellect -= event->selected->target->intelligence;
-        player->speed -= event->selected->target->speed;
+        inventory_item_impact_player(player, event->selected, -1);
+        inventory_item_impact_player(player, event->target_ref, 1);
     }
 }
 

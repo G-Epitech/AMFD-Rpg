@@ -62,6 +62,7 @@ SRC = 		src/main.c \
 			src/types/components/progress/load.c \
 			\
 			src/types/inventory/add.c \
+			src/types/inventory/active.c \
 			src/types/inventory/item.c \
 			src/types/inventory/remove.c \
 			\
@@ -145,7 +146,7 @@ SRC = 		src/main.c \
 			src/app/events/components/buttons.c \
 			src/app/events/components/levers.c \
 			src/app/events/components/attacks.c \
-			src/app/events/dialog_box/onkeypress.c \
+			src/app/events/components/dialog_box.c \
 			\
 			src/app/developer/reload_json.c \
 			\
@@ -162,10 +163,14 @@ SRC = 		src/main.c \
 			\
 			src/app/core/inventory/move.c \
 			src/app/core/inventory/onclick.c \
+			src/app/core/inventory/onclick_active.c \
+			src/app/core/inventory/onclick_consumable.c \
+			src/app/core/inventory/onclick_equipement.c \
 			src/app/core/inventory/swap.c \
 			src/app/core/inventory/bad_move.c \
 			src/app/core/inventory/get_free_position.c \
 			src/app/core/inventory/get_item_at_pos.c \
+			src/app/core/inventory/impact_player.c \
 			src/app/core/inventory/press.c \
 			src/app/core/inventory/release.c \
 			\

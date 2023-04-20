@@ -162,4 +162,52 @@ inventory_event_t *event);
  */
 void inventory_onclick(app_t *app);
 
+/**
+ * @brief Event handler on item active click
+ * @param app App object
+ * @param item Clicked item
+ */
+void inventory_onclick_item_active(app_t *app, inventory_item_t *item);
+
+/**
+ * @brief Event handler on item consumable click
+ * @param app App object
+ * @param item Clicked item
+ */
+void inventory_onclick_item_consumable(app_t *app, inventory_item_t *item);
+
+/**
+ * @brief Event handler on item equipement click
+ * @param app App object
+ * @param item Clicked item
+ */
+void inventory_onclick_item_equipement(app_t *app, inventory_item_t *item);
+
+/**
+ * @brief Disable given item
+ * @param player Player on which set inventory
+ * @param inventory_item Inventory item to disable
+ * @return Status of disabling
+ */
+void inventory_set_item_inactive(player_t *player,
+inventory_item_t *inventory_item);
+
+/**
+ * @brief Enable given item
+ * @param player Player on which set inventory
+ * @param inventory_item Inventory item to enable
+ * @return Status of enabling
+ */
+bool inventory_set_item_active(player_t *player,
+inventory_item_t *inventory_item);
+
+/**
+ * @brief Apply characteritics of added and removed items on player
+ * @param player Player to impact
+ * @param Item Item of which apply characteritics
+ * @param factor Factor of gain
+ */
+void inventory_item_impact_player(player_t *player,
+inventory_item_t *item, int factor);
+
 #endif /* !INVENTORY_H_ */

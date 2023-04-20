@@ -28,7 +28,7 @@ static void set_option(dialog_box_t *dialog_box, sfKeyCode code)
     int nb = get_nb_options(dialog_box);
     int option = dialog_box->option;
 
-    option += code == sfKeyUp ? 1 : -1;
+    option += code == sfKeyUp ? -1 : 1;
     if (option > nb)
         option = 1;
     if (option <= 0)
