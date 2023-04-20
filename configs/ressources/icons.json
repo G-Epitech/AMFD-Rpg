@@ -16,5 +16,8 @@
     "go_buster_unlock": "assets/components/icons/middle_unlock.png",
     "go_buster_lock": "assets/components/icons/middle_lock.png",
     "brute_force_lock": "assets/components/icons/top_lock.png",
-    "brute_force_unlock": "assets/components/icons/top_unlock.png"
+    "brute_force_unlock": "assets/components/icons/top_unlock.png",
+    "one_credits": "assets/components/icons/one_cred.png",
+    "three_credits": "assets/components/icons/three_cred.png",
+    "five_credits": "assets/components/icons/five_cred.png"
 }

@@ -102,6 +102,9 @@ typedef struct s_icons_competences {
     sfTexture *go_buster_lock;       //icon of GoBuster lock
     sfTexture *brute_force_unlock;   //icon of brute_force unlock
     sfTexture *brute_force_lock;     //icon of brute_force lock
+    sfTexture *one_credit;           //icon of one credit
+    sfTexture *three_credit;         //icon of three credit
+    sfTexture *five_credit;          //icon of five credit
 } icons_competences_t;
 
 typedef struct s_icons_ressources {

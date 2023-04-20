@@ -15,12 +15,27 @@
 #include "types/players/types.h"
 #include "cjson/include/cjson.h"
 
+static void icon_load_data_credit(icons_competences_t *tree, cjson_t *configs)
+{
+    char *one_cred = cjson_get_prop_string_unsafe(configs, "one_credits");
+    char *three_cred = cjson_get_prop_string_unsafe(configs, "three_credits");
+    char *five_cred = cjson_get_prop_string_unsafe(configs, "five_credits");
+
+    tree->one_credit = sfTexture_createFromFile(one_cred, NULL);
+    tree->three_credit = sfTexture_createFromFile(three_cred, NULL);
+    tree->five_credit = sfTexture_createFromFile(five_cred, NULL);
+    free(one_cred);
+    free(three_cred);
+    free(five_cred);
+}
+
 static void first_competence(icons_competences_t *tree, cjson_t *configs)
 {
     char *left_lock = cjson_get_prop_string_unsafe(configs, "script_bash_lock");
     char *left_unlock = cjson_get_prop_string_unsafe(configs, "script_bash_unlock");
     char *right_lock = cjson_get_prop_string_unsafe(configs, "flipper_lock");
-    char *right_unlock = cjson_get_prop_string_unsafe(configs, "flipper_unlock");
+    char *right_unlock =
+    cjson_get_prop_string_unsafe(configs, "flipper_unlock");
 
     tree->script_bash_lock = sfTexture_createFromFile(left_lock, NULL);
     tree->script_bash_unlock = sfTexture_createFromFile(left_unlock, NULL);
@@ -30,6 +45,7 @@ static void first_competence(icons_competences_t *tree, cjson_t *configs)
     free(left_unlock);
     free(right_lock);
     free(right_unlock);
+    icon_load_data_credit(tree, configs);
 }
 
 void icons_load_data_competence(icons_competences_t *tree, cjson_t *configs)
