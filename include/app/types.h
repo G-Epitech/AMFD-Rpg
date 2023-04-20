@@ -31,10 +31,19 @@ typedef enum e_app_states {
     ST_INGAME = 100,        //Main state, ingame player
     ST_INVENTORY = 300,     //Inventory menu
     ST_BREAK,               //Break menu (save/sound...)
-    IGSETTINGS,          //In game settings
-    ST_IGHELP,              //In game help
+    ST_IGSETTINGS,          //In game settings
+    ST_IGHELP1,             //In game help 1
+    ST_IGHELP2,             //In game help 2
+    ST_IGRESOLUTION,        //In game resolution
+    ST_SMSETTINGS,          //Side menu settings
+    ST_SMHELP1,             //Side menu help1
+    ST_SMHELP2,             //Side menu help2
+    ST_SMRESOLUTION,        //Side menu resolution
+    ST_IGSAVE,              //In game save
+    ST_IGLOAD,              //In game load
     ST_IG_TREE_COMPETENCE,  //In game tree of competence
     ST_FIGHT = 350,         //Fight interface
+    ST_DIALOGS = 400,       //Dialogs state
     ST_TASK = 500,          //Task delimiter
     ST_TASK_BASH,           //Task n°1: bash
     ST_TASK_BRUTEFORCE,     //Task n°2: brute force
@@ -80,14 +89,21 @@ typedef struct s_fight {
     int round;
 } fight_t;
 
+typedef struct s_interaction_dialogs {
+    npc_data_t *npc;
+    int index;
+} interaction_dialogs_t;
+
 typedef union u_interaction_data {
     npc_data_t *npc;
     fight_t *fight;
+    interaction_dialogs_t *dialogs;
 } interaction_data_t;
 
 typedef enum e_interaction_type {
     IT_NULL = 0,
     IT_NPC,
+    IT_DIALOGS,
     IT_FIGHT
 } interaction_type_t;
 
@@ -100,6 +116,7 @@ typedef struct s_interactions {
 
 typedef struct s_app {
     app_states_t state;             //State of the app
+    app_states_t prev_state;   //Previous state of the game
     worlds_t world;                 //Actual wolrd where player is
     list_t *items;                  //Items available in game
     list_t *players;                //List of players

@@ -99,6 +99,8 @@ SRC = 		src/main.c \
 			src/app/init/animations.c \
 			\
 			src/app/free/animations.c \
+			src/app/free/characters.c	\
+			src/app/free/sounds.c	\
 			\
 			src/app/free/free.c \
 			\
@@ -130,11 +132,14 @@ SRC = 		src/main.c \
 			src/app/events/keyboard/interaction/interaction.c \
 			src/app/events/keyboard/interaction/fight/start.c \
 			src/app/events/keyboard/interaction/fight/choice.c \
+			src/app/events/keyboard/interaction/dialogs/dialogs.c \
+			src/app/events/keyboard/interaction/dialogs/continue.c \
 			src/app/events/components/buttons.c \
 			src/app/events/components/levers.c \
 			src/app/events/components/attacks.c \
 			src/app/events/skills_tree/detect.c \
 			src/app/events/skills_tree/find_competence.c \
+			src/app/events/components/in_game_menu.c	\
 			\
 			src/app/developer/reload_json.c \
 			\
@@ -148,9 +153,6 @@ SRC = 		src/main.c \
 			src/app/network/receive/character.c \
 			src/app/network/receive/game.c \
 			src/app/network/receive/position.c \
-			\
-			src/app/core/fight/handler.c \
-			src/app/core/fight/enemy.c \
 			\
 			src/app/display/handler.c \
 			src/app/display/map/map.c \
@@ -176,13 +178,6 @@ SRC = 		src/main.c \
 			src/app/display/menus/main_menu.c \
 			src/app/display/menus/settings.c \
 			src/app/display/menus/select_character.c \
-			\
-			src/app/core/sound.c	\
-			\
-			src/app/sound/sound_control.c	\
-			src/app/sound/handle_sound_fx.c	\
-			src/app/sound/handle_sound_themes.c	\
-			src/app/sound/handle_sound_volume.c	\
 			src/app/display/inventory/grids.c \
 			src/app/display/inventory/item_box.c \
 			src/app/display/inventory/profile.c \
@@ -197,6 +192,7 @@ SRC = 		src/main.c \
 			src/app/display/animations/animations.c \
 			src/app/display/animations/floating_text.c \
 			src/app/display/animations/notif.c \
+			src/app/display/dialogs/dialogs.c \
 			\
 			src/app/getters/progress/inventory.c \
 			src/app/getters/progress/fight.c \
@@ -252,6 +248,16 @@ SRC = 		src/main.c \
 			src/app/core/tasks/script_bash/valid_cmd.c \
 			src/app/core/tasks/script_bash/reset_setup.c \
 			src/app/core/tasks/script_bash/create_list.c \
+			src/app/core/fight/handler.c \
+			src/app/core/fight/enemy.c \
+			src/app/core/sound.c \
+			\
+			src/app/sound/sound_control.c \
+			src/app/sound/handle_sound_fx.c	\
+			src/app/sound/handle_sound_themes.c	\
+			src/app/sound/handle_sound_volume.c	\
+			\
+			src/app/in_game_menu/in_game_menu.c	\
 
 NAME = my_rpg
 

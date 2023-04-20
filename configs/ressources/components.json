@@ -20,7 +20,8 @@
         {
             "asset": "assets/components/backgrounds/menu.png",
             "scale": 1,
-            "state": [1, 2, 3, 4, 5, 6, 7, 8, 502, 503, 504, 304],
+            "state": [1, 2, 3, 4, 5, 6, 7, 8, 301,302, 303, 304, 305, 306, 307,
+            308, 309, 310, 311, 312, 502, 503, 504],
             "position" : {"x": 341, "y": 156}
         },
         {
@@ -38,13 +39,13 @@
         {
             "asset": "assets/components/backgrounds/reglages.png",
             "scale": 1,
-            "state": [2],
+            "state": [2, 302, 306],
             "position" : {"x": 575, "y": 292}
         },
         {
             "asset": "assets/components/backgrounds/help_1.png",
             "scale": 1,
-            "state": [3],
+            "state": [3, 303, 307],
             "position" : {"x": 457, "y": 292}
         },
         {
@@ -68,7 +69,7 @@
         {
             "asset": "assets/components/backgrounds/fight_choice.png",
             "scale": 1,
-            "state": [350],
+            "state": [350, 400],
             "position" : {"x": 457, "y": 744}
         },
         {
@@ -98,8 +99,14 @@
         {
             "asset": "assets/components/backgrounds/resolution_title.png",
             "scale": 1,
-            "state": [8],
+            "state": [8, 305, 309],
             "position" : {"x": 632, "y": 295}
+        },
+        {
+            "asset": "assets/components/backgrounds/pause_background.png",
+            "scale": 1,
+            "state": [301],
+            "position" : {"x": 912, "y": 265}
         }
     ],
 

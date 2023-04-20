@@ -291,4 +291,11 @@ void display_components_progresses(renderer_t *renderer, app_t *app);
  */
 void display_inventory_levels(renderer_t *renderer, app_t *app);
 
+/**
+ * @brief Display NPC dialogs
+ * @param renderer Renderer object
+ * @param app App object
+ */
+void display_dialogs(renderer_t *renderer, app_t *app);
+
 #endif /* !DISPLAY_H_ */
