@@ -37,5 +37,8 @@
     #define DIALOGS_TITLE_POSITION ((sfVector2f) {537, 813})
     #define DIALOGS_CONTENT_POSITION ((sfVector2f) {537, 879})
     #define DIALOGS_ICON_POSITION ((sfVector2f) {1382, 942})
+    #define QUESTS_CONTENT_POS ((sfVector2f) {100, 212})
+    #define QUESTS_TITLE_POS ((sfVector2f) {100, 164})
+    #define QUESTS_TITLE_POS_UP ((sfVector2f) {100, 176})
 
 #endif /* !DISPLAY_TYPES_H_ */
