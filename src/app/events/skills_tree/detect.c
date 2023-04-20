@@ -20,7 +20,8 @@ static void detect_click_bash(app_t *app, renderer_t *renderer)
     sfRenderWindow_mapPixelToCoords(renderer->window, mouse_pos, NULL);
     competences_node_t *skill = NULL;
 
-    if (RECT_BASH_SPRITE(world_pos)) {
+    if (RECT_BASH_SPRITE(world_pos)
+    && app->player->credits >= 1) {
         skill = find_skill(app, SCRIPT_BASH_ID);
         skill->unlock = true;
         app->player->credits -= 1;
@@ -34,7 +35,7 @@ static void detect_click_flipper(app_t *app, renderer_t *renderer)
     sfRenderWindow_mapPixelToCoords(renderer->window, mouse_pos, NULL);
     competences_node_t *skill = NULL;
 
-    if (RECT_FLIPPER(world_pos)) {
+    if (RECT_FLIPPER(world_pos) && app->player->credits >= 3) {
         skill = find_skill(app, FLIPPER_ID);
         skill->unlock = true;
         app->player->credits -= 3;
@@ -50,7 +51,8 @@ static void detect_click_go_buster(app_t *app, renderer_t *renderer)
     competences_node_t *bash = find_skill(app, SCRIPT_BASH_ID);
     competences_node_t *flipper = find_skill(app, FLIPPER_ID);
 
-    if (RECT_GOBUSTER(world_pos) && flipper->unlock && bash->unlock) {
+    if (RECT_GOBUSTER(world_pos) && flipper->unlock && bash->unlock
+    && app->player->credits >= 3) {
         skill = find_skill(app, GO_BUSTER_ID);
         skill->unlock = true;
         app->player->credits -= 3;
@@ -65,7 +67,7 @@ static void detect_click_brute(app_t *app, renderer_t *renderer)
     competences_node_t *buster = find_skill(app, GO_BUSTER_ID);
     competences_node_t *skill = NULL;
 
-    if (RECT_BRUTE(world_pos) && buster->unlock) {
+    if (RECT_BRUTE(world_pos) && buster->unlock && app->player->credits >= 5) {
         skill = find_skill(app, BRUTE_FORCE_ID);
         skill->unlock = true;
         app->player->credits -= 5;

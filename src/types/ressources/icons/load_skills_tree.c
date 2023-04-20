@@ -32,7 +32,8 @@ static void icon_load_data_credit(icons_competences_t *tree, cjson_t *configs)
 static void first_competence(icons_competences_t *tree, cjson_t *configs)
 {
     char *left_lock = cjson_get_prop_string_unsafe(configs, "script_bash_lock");
-    char *left_unlock = cjson_get_prop_string_unsafe(configs, "script_bash_unlock");
+    char *left_unlock =
+    cjson_get_prop_string_unsafe(configs, "script_bash_unlock");
     char *right_lock = cjson_get_prop_string_unsafe(configs, "flipper_lock");
     char *right_unlock =
     cjson_get_prop_string_unsafe(configs, "flipper_unlock");
@@ -50,10 +51,13 @@ static void first_competence(icons_competences_t *tree, cjson_t *configs)
 
 void icons_load_data_competence(icons_competences_t *tree, cjson_t *configs)
 {
-    char *top_lock = cjson_get_prop_string_unsafe(configs, "brute_force_lock");
-    char *top_unlock = cjson_get_prop_string_unsafe(configs, "brute_force_unlock");
+    char *top_lock =
+    cjson_get_prop_string_unsafe(configs, "brute_force_lock");
+    char *top_unlock =
+    cjson_get_prop_string_unsafe(configs, "brute_force_unlock");
     char *middle_lock = cjson_get_prop_string_unsafe(configs, "go_buster_lock");
-    char *middle_unlock = cjson_get_prop_string_unsafe(configs, "go_buster_unlock");
+    char *middle_unlock =
+    cjson_get_prop_string_unsafe(configs, "go_buster_unlock");
 
     tree->brute_force_lock = sfTexture_createFromFile(top_lock, NULL);
     tree->brute_force_unlock = sfTexture_createFromFile(top_unlock, NULL);
