@@ -21,3 +21,12 @@ int in_game_menu_exit(renderer_t *renderer, app_t *app, button_t *button)
     app->state = app->prev_state;
     return 0;
 }
+
+int in_game_menu_exit_to_title(renderer_t *renderer, app_t *app,
+button_t *button)
+{
+    (void) button;
+    (void) app;
+    app = app_init(renderer);
+    return 0;
+}

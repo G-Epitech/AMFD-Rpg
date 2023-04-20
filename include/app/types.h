@@ -39,6 +39,8 @@ typedef enum e_app_states {
     ST_SMHELP1,             //Side menu help1
     ST_SMHELP2,             //Side menu help2
     ST_SMRESOLUTION,        //Side menu resolution
+    ST_IGSAVE,              //In game save
+    ST_IGLOAD,              //In game load
     ST_FIGHT = 350,         //Fight interface
     ST_DIALOGS = 400,       //Dialogs state
     ST_TASK = 500,          //Task delimiter

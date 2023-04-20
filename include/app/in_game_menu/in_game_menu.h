@@ -24,4 +24,13 @@ void update_prev_app_state(app_t *app);
 */
 int in_game_menu_exit(renderer_t *renderer, app_t *app, button_t *button);
 
+/**
+ * @brief Takes the user back to the title screen and restarts app
+ * @param renderer Renderer object
+ * @param app App object
+ * @param button Button object
+*/
+int in_game_menu_exit_to_title(renderer_t *renderer, app_t *app,
+button_t *button);
+
 #endif /* !IN_GAME_MENU_H_ */

@@ -135,7 +135,8 @@ static const struct {
     {settings_resolution_lower},
     {settings_resolution_medium},
     {settings_resolution_high},
-    {in_game_menu_exit}
+    {in_game_menu_exit},
+    {in_game_menu_exit_to_title}
 };
 
 static const struct {
