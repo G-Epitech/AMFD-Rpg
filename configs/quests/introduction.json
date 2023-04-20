@@ -1,0 +1,22 @@
+[
+    {
+        "title": "Rend toi a l'universite",
+        "type": "world",
+        "state": 3
+    },
+    {
+        "title": "Parle au lacost TN",
+        "type": "NPC",
+        "id": 1
+    },
+    {
+        "title": "Parle au directeur",
+        "type": "NPC",
+        "id": 1
+    },
+    {
+        "title": "Apprend le bash",
+        "type": "tree",
+        "id": 0
+    }
+]
