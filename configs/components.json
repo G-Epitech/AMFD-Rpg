@@ -270,47 +270,47 @@
         },
         {
             "title": "Continue",
-            "position": {"x": 168, "y": 132},
+            "position": {"x": 468, "y": 282},
             "app_state": [301],
             "color": {"r": 191, "g": 173, "b": 147, "a": 255},
             "color_text": {"r": 103, "g": 81, "b": 82, "a":  255},
-            "scale": 1,
+            "scale": 0.6,
             "event": 16
         },
         {
             "title": "Sauvegarde",
-            "position": {"x": 168, "y": 282},
+            "position": {"x": 468, "y": 392},
             "app_state": [301],
             "color": {"r": 191, "g": 173, "b": 147, "a": 255},
             "color_text": {"r": 103, "g": 81, "b": 82, "a":  255},
-            "scale": 1,
+            "scale": 0.6,
             "next_state": 310
         },
         {
             "title": "Load",
-            "position": {"x": 168, "y": 432},
+            "position": {"x": 468, "y": 502},
             "app_state": [301],
             "color": {"r": 191, "g": 173, "b": 147, "a": 255},
             "color_text": {"r": 103, "g": 81, "b": 82, "a":  255},
-            "scale": 1,
+            "scale": 0.6,
             "next_state": 311
         },
         {
             "title": "Menu Principal",
-            "position": {"x": 165, "y": 732},
+            "position": {"x": 468, "y": 722},
             "app_state": [301],
             "color": {"r": 191, "g": 173, "b": 147, "a": 255},
             "color_text": {"r": 103, "g": 81, "b": 82, "a":  255},
-            "scale": 1,
+            "scale": 0.6,
             "event": 17
         },
         {
             "title": "Parametres",
-            "position": {"x": 165, "y": 582},
+            "position": {"x": 468, "y": 612},
             "app_state": [301],
             "color": {"r": 191, "g": 173, "b": 147, "a": 255},
             "color_text": {"r": 103, "g": 81, "b": 82, "a":  255},
-            "scale": 1,
+            "scale": 0.6,
             "next_state": 302
         },
         {
