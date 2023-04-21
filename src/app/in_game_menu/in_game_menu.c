@@ -29,6 +29,6 @@ button_t *button)
 {
     (void) button;
     app_free(app);
-    app = app_init(renderer);
+    *app = *app_init(renderer);
     return 0;
 }

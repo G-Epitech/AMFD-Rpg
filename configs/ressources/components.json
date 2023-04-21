@@ -116,5 +116,7 @@
         }
     ],
 
-    "progress": "assets/components/progress.png"
+    "progress": "assets/components/progress.png",
+
+    "dialog_box": "assets/components/dialog_box.png"
 }

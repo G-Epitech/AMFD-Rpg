@@ -106,6 +106,13 @@ lever_r_t *ressources_components_lever_load(cjson_t *lever_config);
 sfTexture *ressources_components_progress_load(cjson_t *config);
 
 /**
+ * @brief Load texture for dialog box bars
+ * @param config Configuration file at CSJON format
+ * @return Created texture
+ */
+sfTexture *ressources_components_dialog_box_load(cjson_t *config);
+
+/**
  * @brief Load inventory ressources
  * @param renderer Renderer object
  * @param inventory Structure of inventory ressources

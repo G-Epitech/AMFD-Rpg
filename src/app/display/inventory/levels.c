@@ -37,7 +37,7 @@ player_t *player)
     char *life = nbr_to_str(player->life);
     char *label_level = my_strcat("Niv. ", level);
     char *label_life = my_strcat(life, player->life == 1 ? " vie" :
-    "  vies");
+    " vies");
 
     sfText_setPosition(renderer->objects->text,
     INVENTORY_LEVEL_LABEL_POS);
@@ -60,6 +60,6 @@ void display_inventory_levels(renderer_t *renderer, app_t *app)
     sfText_setColor(renderer->objects->text, MAIN_COLOR);
     sfText_setCharacterSize(renderer->objects->text, 22);
     display_inventory_intelligence_speed(renderer, app->player);
-    sfText_setCharacterSize(renderer->objects->text, 20);
+    sfText_setCharacterSize(renderer->objects->text, 18);
     display_inventory_level_life(renderer, app->player);
 }
