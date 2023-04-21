@@ -13,12 +13,14 @@
 static void reset_player_inventory(player_t *player)
 {
     node_t *node = player->inventory->first;
+    node_t *next = NULL;
     inventory_item_t *item = NULL;
 
     while (node) {
+        next = node->next;
         item = node->data.inventory_item;
         inventory_remove_item(player, item);
-        node = node->next;
+        node = next;
     }
 }
 
