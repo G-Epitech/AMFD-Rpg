@@ -30,6 +30,7 @@ player_t *players_add(list_t *list, char *name)
     player->life = 20;
     player->intellect = 7;
     player->speed = 8;
+    player->map_stage = 2;
     list_append(list, node_new((node_data_t) player));
     return player;
 }

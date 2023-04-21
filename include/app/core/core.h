@@ -69,4 +69,12 @@ bool core_interaction_detect_color(sfColor pixel, sfColor interaction_color);
 */
 void core_interactions_travel(sfColor pixel, app_t *app);
 
+/**
+ * @brief Handles traveling
+ * @param renderer Renderer object
+ * @param app App object
+ * @param curr_map Current map
+*/
+void core_handle_travel(renderer_t *renderer, app_t *app, map_t *curr_map);
+
 #endif /* !CORE_H_ */

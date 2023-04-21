@@ -109,7 +109,9 @@ typedef enum e_interaction_type {
     IT_NULL = 0,
     IT_NPC,
     IT_DIALOGS,
-    IT_FIGHT
+    IT_FIGHT,
+    IT_EXIT,
+    IT_ENTER
 } interaction_type_t;
 
 typedef struct s_interactions {

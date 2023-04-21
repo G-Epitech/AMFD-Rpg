@@ -29,6 +29,7 @@ typedef struct s_player {
     int life;                   //Life of the player
     int speed;                  //Speed of the player
     int intellect;              //Intelect of the player
+    int map_stage;              //Map stage the player is currently in
 } player_t;
 
 #endif /* !PLAYERS_TYPES_H_ */

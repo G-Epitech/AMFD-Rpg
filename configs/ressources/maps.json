@@ -19,7 +19,7 @@
       "building": true,
       "city": 0,
       "enter": {"x": 0, "y": 0},
-      "exit": {"x": 0, "y": 0},
+      "exit": {"x": 1184, "y": 314},
       "door": {"x": 0, "y": 0}
     },
     {
@@ -30,7 +30,7 @@
       "building": true,
       "city": 0,
       "enter": {"x": 0, "y": 0},
-      "exit": {"x": 0, "y": 0},
+      "exit": {"x": 183, "y": 35},
       "door": {"x": 0, "y": 0}
     },
     {

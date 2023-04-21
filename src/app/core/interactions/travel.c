@@ -14,5 +14,11 @@
 void core_interactions_travel(sfColor pixel, app_t *app)
 {
     if (core_interaction_detect_color(pixel, EXIT_COLOR) == true)
-        travel_exit(app);
+        app->interaction->type = IT_EXIT;
+}
+
+void core_handle_travel(renderer_t *renderer, app_t *app, map_t *curr_map)
+{
+    if (PLAYER_ON_EXIT(app->interaction->type))
+        travel_exit(app, renderer, curr_map);
 }
