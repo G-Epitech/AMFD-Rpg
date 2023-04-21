@@ -11,5 +11,5 @@
 void internal_cjson_string_size_string(cjson_t *cjson, size_t *size)
 {
     *size += 2;
-    *size += internal_cjson_strlen(cjson->value.v_string);
+    *size += internal_cjson_strlen_with_specials(cjson->value.v_string);
 }

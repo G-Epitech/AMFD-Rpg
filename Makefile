@@ -9,6 +9,7 @@ SRC = 		src/main.c \
 			\
 			src/types/renderer/init.c \
 			src/types/renderer/load.c	\
+			src/types/ressources/icons/load_skills_tree.c \
 			src/types/renderer/destroy.c \
 			src/types/renderer/objects/init.c \
 			src/types/renderer/objects/destroy.c \
@@ -39,6 +40,7 @@ SRC = 		src/main.c \
 			src/types/players/init.c \
 			src/types/players/add.c \
 			src/types/players/inventory.c \
+			src/types/players/competences.c \
 			\
 			src/types/items/load_all.c \
 			src/types/items/consume.c \
@@ -153,7 +155,9 @@ SRC = 		src/main.c \
 			src/app/events/components/buttons.c \
 			src/app/events/components/levers.c \
 			src/app/events/components/attacks.c \
-			src/app/events/components/in_game_menu.c \
+			src/app/events/skills_tree/detect.c \
+			src/app/events/skills_tree/find_competence.c \
+			src/app/events/components/in_game_menu.c	\
 			src/app/events/components/dialog_box.c \
 			\
 			src/app/developer/reload_json.c \
@@ -190,6 +194,7 @@ SRC = 		src/main.c \
 			src/app/display/tasks/handler.c \
 			src/app/display/npcs/npcs.c \
 			src/app/display/player/player.c \
+			src/app/display/player/competences_tree.c \
 			src/app/display/characters/character.c \
 			src/app/display/map/front.c	\
       src/app/display/components/components.c \

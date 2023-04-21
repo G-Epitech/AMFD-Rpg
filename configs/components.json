@@ -269,6 +269,13 @@
             "scale": 1
         },
         {
+            "icon": "assets/components/button/tree_icon.png",
+            "app_state": [100],
+            "position": {"x": 1411, "y": 950},
+            "scale": 1,
+            "next_state": 312
+        },
+        {
             "title": "Continue",
             "position": {"x": 491, "y": 282},
             "app_state": [301],
@@ -346,6 +353,13 @@
             "app_state": [303],
             "position": {"x": 1410, "y": 248},
             "next_state": 302,
+            "scale": 2
+        },
+        {
+            "icon": "assets/components/button/cross.png",
+            "app_state": [312],
+            "position": {"x": 1401, "y": 248},
+            "next_state": 100,
             "scale": 2
         }
     ],

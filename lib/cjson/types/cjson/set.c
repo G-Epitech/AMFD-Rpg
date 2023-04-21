@@ -6,7 +6,6 @@
 */
 
 #include <stdlib.h>
-#include <stdio.h>
 #include "cjson.h"
 #include "internal/utils.h"
 
@@ -26,40 +25,32 @@ cjson_type_t type)
         return 0;
     cjson_unset_prop(object, key);
     prop = cjson_new(key);
-    if (cjson_set_value(prop, value, type) == -1) {
-        cjson_free(prop);
+    if (!prop)
         return -1;
-    }
-    prop->next = object->value.v_object;
-    if (prop->next)
-        prop->next->prev = prop;
-    prop->prev = NULL;
-    object->value.v_object = prop;
+    prop->type = type;
+    prop->value = value;
     return 0;
 }
 
-int cjson_set_key(cjson_t *cjson, char *key)
+int cjson_set_prop_key(cjson_t *prop, char *key)
 {
-    if (!cjson)
+    if (!prop)
         return 0;
-    if (cjson->key)
-        free(cjson->key);
-    cjson->key = internal_cjson_strdup(key);
-    if (!cjson->key)
+    if (prop->key)
+        free(prop->key);
+    prop->key = internal_cjson_strdup(key);
+    if (!prop->key)
         return -1;
     return 0;
 }
 
-int cjson_set_value(cjson_t *cjson, cjson_value_t value,
+int cjson_set_prop_value(cjson_t *prop, cjson_value_t value,
 cjson_type_t type)
 {
-    if (!cjson)
+    if (!prop)
         return -1;
-    cjson_free_value(cjson);
-    cjson->type = type;
-    if (type == CJSON_STRING_T && value.v_string)
-        cjson->value = CJSON(internal_cjson_strdup(value.v_string));
-    else
-        cjson->value = value;
+    cjson_free_value(prop);
+    prop->type = type;
+    prop->value = value;
     return 0;
 }

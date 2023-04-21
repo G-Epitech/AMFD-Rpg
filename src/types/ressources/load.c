@@ -25,8 +25,9 @@ ressources_t *ressources_init(void)
     ressources->props = list_new();
     ressources->inventory = malloc(sizeof(inventory_r_t));
     ressources->icons = malloc(sizeof(icons_r_t));
-    if (!ressources->maps || !ressources->skins || !ressources->props
-    || !ressources->inventory || !ressources->icons) {
+    ressources->icons->tree = malloc(sizeof(icons_competences_t));
+    if (!ressources->maps || !ressources->skins || !ressources->props ||
+    !ressources->inventory || !ressources->icons || !ressources->icons->tree) {
         list_free(ressources->maps);
         list_free(ressources->skins);
         list_free(ressources->props);
