@@ -15,7 +15,8 @@
 #include "types/players/types.h"
 #include "cjson/include/cjson.h"
 
-static void free_configs(void)
+static void free_configs(cjson_t *pos_config, cjson_t *rect_back_config,
+cjson_t *rect_front_config)
 {
     free(pos_config);
     free(rect_back_config);
@@ -43,7 +44,7 @@ static void anim_append_position(anim_t *anim, cjson_t *anim_config)
     cjson_get_prop_int_unsafe(rect_front_config, "width");
     anim->front_rect.height =
     cjson_get_prop_int_unsafe(rect_front_config, "height");
-    free_configs();
+    free_configs(pos_config, rect_back_config, rect_front_config);
 }
 
 static void anim_append_data(anim_t *anim, cjson_t *anim_config)
