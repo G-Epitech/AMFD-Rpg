@@ -137,6 +137,14 @@ bool app_init_interactions(app_t *app, renderer_t *renderer);
 bool app_init_players(app_t *app, renderer_t *renderer);
 
 /**
+ * @brief Initialize player animations lists
+ * @param app App object
+ * @param renderer Renderer object
+ * @return Initialization success status
+ */
+bool app_init_player_animations(app_t *app, renderer_t *renderer);
+
+/**
  * @brief Frees players
  * @param app App object
 */

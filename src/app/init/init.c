@@ -31,6 +31,7 @@ app_t *app_init(renderer_t *renderer)
     app->state = ST_MAIN_MENU;
     app->prev_state = app->state;
     app->world = WL_VILLAGE;
+    app->clock = sfClock_create();
     while (app_init_members[member]) {
         if (!(app_init_members[member](app, renderer))) {
             app_free(app);

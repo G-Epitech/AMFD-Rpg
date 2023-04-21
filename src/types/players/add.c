@@ -35,9 +35,11 @@ player_t *players_add(list_t *list, char *name)
     if (!player->inventory)
         return NULL;
     player->position = PLAYER_DEFAULT_SPAWN;
+    player->state = IDLE;
     player->skin_id = -1;
     player->orientation = SO_LEFT;
     player->name = my_strdup(name);
+    player->rect = (sfIntRect) {0, 0, 0, 0};
     init_levels(player);
     list_append(list, node_new((node_data_t) player));
     return player;
