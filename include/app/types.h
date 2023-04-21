@@ -33,7 +33,15 @@ typedef enum e_app_states {
     ST_INVENTORY = 300,     //Inventory menu
     ST_BREAK,               //Break menu (save/sound...)
     ST_IGSETTINGS,          //In game settings
-    ST_IGHELP,              //In game help
+    ST_IGHELP1,             //In game help 1
+    ST_IGHELP2,             //In game help 2
+    ST_IGRESOLUTION,        //In game resolution
+    ST_SMSETTINGS,          //Side menu settings
+    ST_SMHELP1,             //Side menu help1
+    ST_SMHELP2,             //Side menu help2
+    ST_SMRESOLUTION,        //Side menu resolution
+    ST_IGSAVE,              //In game save
+    ST_IGLOAD,              //In game load
     ST_FIGHT = 350,         //Fight interface
     ST_DIALOGS = 400,       //Dialogs state
     ST_TASK = 500,          //Task delimiter
@@ -122,6 +130,7 @@ typedef struct s_interactions {
 
 typedef struct s_app {
     app_states_t state;             //State of the app
+    app_states_t prev_state;   //Previous state of the game
     worlds_t world;                 //Actual wolrd where player is
     list_t *items;                  //Items available in game
     list_t *players;                //List of players

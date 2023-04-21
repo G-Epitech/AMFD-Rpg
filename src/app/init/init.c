@@ -29,6 +29,7 @@ app_t *app_init(renderer_t *renderer)
     if (!app)
         return NULL;
     app->state = ST_MAIN_MENU;
+    app->prev_state = app->state;
     app->world = WL_VILLAGE;
     while (app_init_members[member]) {
         if (!(app_init_members[member](app, renderer))) {

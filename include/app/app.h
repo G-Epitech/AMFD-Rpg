@@ -115,6 +115,12 @@ bool app_init_interactions(app_t *app, renderer_t *renderer);
 bool app_init_players(app_t *app, renderer_t *renderer);
 
 /**
+ * @brief Frees players
+ * @param app App object
+*/
+void app_free_players(app_t *app);
+
+/**
  * @brief Initialize animations lists
  * @param app App object
  * @param renderer Renderer object
@@ -135,6 +141,12 @@ bool app_init_quests(app_t *app, renderer_t *renderer);
  * @param app App object
  */
 void app_free_animations(app_t *app);
+
+/**
+ * @brief Free sounds
+ * @param app App object
+*/
+void app_free_sounds(app_t *app);
 
 /**
  * @brief Down state
