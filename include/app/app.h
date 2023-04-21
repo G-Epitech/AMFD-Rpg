@@ -75,6 +75,28 @@ bool app_init_sounds(app_t *app, renderer_t *renderer);
 bool app_init_items(app_t *app, renderer_t *renderer);
 
 /**
+ * @brief Initialize inventory move
+ * @param app App object
+ * @param renderer Renderer object
+ * @return Initialization success status
+ */
+bool app_init_inventory_event(app_t *app, renderer_t *renderer);
+
+/**
+ * @brief Initialize dialog box of app
+ * @param app App object
+ * @param renderer Renderer object
+ * @return Initialization success status
+ */
+bool app_init_dialog_box(app_t *app, renderer_t *renderer);
+
+/**
+ * @brief Free inventory move
+ * @param app App object
+ */
+void app_free_inventory_event(app_t *app);
+
+/**
  * @brief Initialize network of game
  * @param app App object
  * @param renderer Renderer object

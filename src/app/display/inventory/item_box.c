@@ -48,8 +48,8 @@ float *scale)
         *scale = INVENTORY_MAIN_GRID_ITEM_SIZE / (float) rect->width;
 }
 
-static void display_item_box(renderer_t *renderer, bool active, bool empty,
-size_t i)
+void display_inventory_item_box(renderer_t *renderer, size_t i,
+bool active, bool empty)
 {
     sfVector2f position = {0, 0};
     sfTexture *utils = renderer->ressources->inventory->grid;
@@ -69,8 +69,21 @@ size_t i)
     sfRenderWindow_drawSprite(renderer->objects->window, sprite, NULL);
 }
 
-void display_inventory_item_box(renderer_t *renderer, size_t i,
-bool active, bool empty)
+void display_inventory_item_box_at_pos(renderer_t *renderer,
+sfVector2f position, bool active, bool empty)
 {
-    display_item_box(renderer, active, empty, i);
+    sfTexture *utils = renderer->ressources->inventory->grid;
+    sfSprite *sprite = renderer->objects->sprite;
+    sfIntRect rect = {0, 0, 0, 0};
+    float scale = 0;
+
+    get_rect_and_scale(active, empty, &rect, &scale);
+    if (!utils)
+        return;
+    renderer_objects_reset_sprite(renderer->objects);
+    sfSprite_setTexture(sprite, utils, sfTrue);
+    sfSprite_setTextureRect(sprite, rect);
+    sfSprite_setPosition(sprite, position);
+    sfSprite_setScale(sprite, (sfVector2f) {scale, scale});
+    sfRenderWindow_drawSprite(renderer->objects->window, sprite, NULL);
 }

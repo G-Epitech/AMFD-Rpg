@@ -23,10 +23,13 @@ static const app_init_member_t app_init_members[] = {
     &app_init_interactions,
     &app_init_player_animations,
     &app_init_sounds,
+    &app_init_inventory_event,
+    &app_init_dialog_box,
     NULL
 };
 
 static const app_free_member_t app_free_members[] = {
+    &app_free_inventory_event,
     &app_free_animations,
     &app_free_players,
     &app_free_sounds,

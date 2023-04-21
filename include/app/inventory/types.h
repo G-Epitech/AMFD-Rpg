@@ -23,10 +23,11 @@
     #define INVENTORY_PROFILE_POS ((sfVector2f) {349, 309})
     #define INVENTORY_PROFILE_SIZE ((sfVector2f) {267, 356})
     #define INVENTORY_MAX 18
-    #define INVENTORY_LEVEL_LABEL_POS ((sfVector2f) {1548, 794})
-    #define INVENTORY_LIFE_LABEL_POS ((sfVector2f) {1548, 905})
-    #define INVENTORY_INTELLIGENCE_LABEL_POS ((sfVector2f) {1119, 794})
-    #define INVENTORY_SPEED_LABEL_POS ((sfVector2f) {1119, 902})
+    #define INVENTORY_ACTIVE_MAX 6
+    #define INVENTORY_LEVEL_LABEL_POS ((sfVector2f) {1540, 794})
+    #define INVENTORY_LIFE_LABEL_POS ((sfVector2f) {1540, 905})
+    #define INVENTORY_INTELLIGENCE_LABEL_POS ((sfVector2f) {1111, 794})
+    #define INVENTORY_SPEED_LABEL_POS ((sfVector2f) {1111, 902})
 
 typedef struct s_item item_t;
 
@@ -35,5 +36,16 @@ typedef struct s_inventory_item {
     bool active;
     int pos;
 } inventory_item_t;
+
+typedef struct s_inventory_move {
+    bool pressed;
+    bool moved;
+    sfVector2f pressed_on;
+    sfVector2f position;
+    inventory_item_t *selected;
+    inventory_item_t target;
+    inventory_item_t *target_ref;
+    inventory_item_t target_ref_tmp;
+} inventory_event_t;
 
 #endif /* !INVENTORY_TYPES_H_ */
