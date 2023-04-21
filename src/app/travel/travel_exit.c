@@ -11,9 +11,8 @@
 #include "app/travel/travel.h"
 #include "types/renderer/types.h"
 
-void travel_exit_in_building(app_t *app, renderer_t *renderer, map_t *curr_map)
+void travel_exit_in_building(app_t *app, map_t *curr_map)
 {
-    (void) renderer;
     if (app->player->map_stage > 1) {
         app->world--;
     } else {
@@ -29,7 +28,7 @@ void travel_exit(app_t *app, renderer_t *renderer, map_t *curr_map)
     (void) renderer;
     printf("Exit\n");
     if (curr_map->building) {
-        travel_exit_in_building(app, renderer, curr_map);
+        travel_exit_in_building(app, curr_map);
         printf("Curr is building\n");
     }
     printf("Player map stage %d\n", app->player->map_stage);

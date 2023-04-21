@@ -17,7 +17,7 @@
 #include "app/network/network.h"
 #include "app/animations/animations.h"
 
-static map_t *get_current_map(renderer_t *renderer, app_t *app)
+map_t *get_current_map(renderer_t *renderer, app_t *app)
 {
     node_t *node = renderer->ressources->maps->first;
     size_t index = 0;

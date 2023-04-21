@@ -18,7 +18,7 @@
       "collision": "assets/worlds/player_house/ph1_col.png",
       "building": true,
       "city": 0,
-      "enter": {"x": 0, "y": 0},
+      "enter": {"x": 182, "y": 144},
       "exit": {"x": 1184, "y": 314},
       "door": {"x": 0, "y": 0}
     },
@@ -29,8 +29,8 @@
       "collision": "assets/worlds/player_house/ph2_col.png",
       "building": true,
       "city": 0,
-      "enter": {"x": 0, "y": 0},
-      "exit": {"x": 183, "y": 35},
+      "enter": {"x": 225, "y": 51},
+      "exit": {"x": 183, "y": 65},
       "door": {"x": 0, "y": 0}
     },
     {
