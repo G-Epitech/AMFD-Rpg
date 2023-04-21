@@ -9,6 +9,9 @@
     #define APP_TYPES_H_
 
     #include <stdbool.h>
+    #include <SFML/System/Export.h>
+    #include <SFML/System/Time.h>
+    #include <SFML/System/Types.h>
     #include "types/players/types.h"
     #include "app/inventory/types.h"
     #include "app/network/types.h"
@@ -149,6 +152,7 @@ typedef struct s_app {
     animations_t *animations;           //Animations in the app
     sound_board_t *sound_board;         //Soundboard
     app_quests_t *quests;               //Quests of the game
+    sfClock *clock;                     //Clock of the game
 } app_t;
 
 typedef bool (*app_init_member_t)(app_t *app, renderer_t *renderer);

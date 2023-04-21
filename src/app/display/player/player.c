@@ -7,16 +7,23 @@
 
 #include <stdio.h>
 #include "app/display/display.h"
+#include "app/animate_player/animation.h"
 #include "types/renderer/renderer.h"
 #include "types/ressources/ressources.h"
 
-static void display_specific_player(renderer_t *renderer, player_t *player)
+void display_specific_player(renderer_t *renderer, player_t *player)
 {
-    sfVector2f position = player->position;
-    int skin_id = player->skin_id;
-    skin_orientation_t orientation = player->orientation;
+    sfSprite *sprite = renderer->objects->sprite;
+    list_t *skins = renderer->ressources->skins;
+    const skin_t *skin = ressources_get_skin(skins, player->skin_id);
 
-    display_character(renderer, position, skin_id, orientation);
+    if (!skin)
+        return;
+    renderer_objects_reset_sprite(renderer->objects);
+    sfSprite_setTexture(sprite, skin->texture, sfTrue);
+    sfSprite_setTextureRect(sprite, player->rect);
+    sfSprite_setPosition(sprite, player->position);
+    sfRenderWindow_drawSprite(renderer->objects->window, sprite, NULL);
 }
 
 void display_player(renderer_t *renderer, app_t *app)

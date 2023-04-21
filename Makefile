@@ -90,6 +90,8 @@ SRC = 		src/main.c \
 			\
 			src/types/ressources/items/load.c \
 			\
+			src/types/ressources/animation/load.c	\
+			\
 			src/types/view/init.c \
 			\
 			src/app/run.c \
@@ -110,6 +112,8 @@ SRC = 		src/main.c \
 			src/app/init/quests.c \
 			\
 			src/app/free/animations.c \
+			src/app/free/characters.c	\
+			src/app/free/sounds.c	\
 			src/app/free/free.c \
 			src/app/free/inventory_event.c \
 			src/app/free/dialog_box.c \
@@ -122,6 +126,7 @@ SRC = 		src/main.c \
 			src/app/animations/button/shake_attack.c \
 			src/app/animations/text/floating.c \
 			src/app/animations/text/notif.c \
+      src/app/animations/player/animation.c	\
 			\
 			src/app/states/on_state.c \
 			src/app/states/switch.c \
@@ -188,7 +193,7 @@ SRC = 		src/main.c \
 			src/app/display/player/player.c \
 			src/app/display/characters/character.c \
 			src/app/display/map/front.c	\
-      		src/app/display/components/components.c \
+      src/app/display/components/components.c \
 			src/app/display/components/backgrounds.c \
 			src/app/display/components/levers.c \
 			src/app/display/components/interaction.c \
@@ -226,7 +231,7 @@ SRC = 		src/main.c \
 			\
 			src/app/getters/progress/inventory.c \
 			src/app/getters/progress/fight.c \
-      		\
+      \
 			src/app/display/tasks/camera/display.c \
 			src/app/display/tasks/camera/solution.c \
 			src/app/display/tasks/camera/result.c \
@@ -247,6 +252,9 @@ SRC = 		src/main.c \
 			src/app/events/handler/mouse_button_released.c \
 			src/app/events/handler/mouse_move.c \
 			\
+			src/app/core/handler.c	\
+			src/app/core/animation.c	\
+			\
 			src/app/core/tasks/flipper/create_node.c \
 			src/app/core/tasks/flipper/game_handler.c \
 			src/app/core/tasks/flipper/init_node.c \
@@ -266,7 +274,6 @@ SRC = 		src/main.c \
 			src/app/core/tasks/brute_force/init_node.c \
 			src/app/core/tasks/brute_force/click.c \
 			src/app/core/tasks/brute_force/released.c \
-			src/app/core/handler.c	\
 			src/app/core/interactions/movement.c \
 			src/app/core/interactions/npc.c \
 			src/app/core/tasks/handler.c \
