@@ -112,13 +112,11 @@ SRC = 		src/main.c \
 			src/app/init/quests.c \
 			\
 			src/app/free/animations.c \
-			src/app/free/characters.c	\
 			src/app/free/sounds.c	\
 			src/app/free/free.c \
 			src/app/free/inventory_event.c \
 			src/app/free/dialog_box.c \
 			src/app/free/characters.c \
-			src/app/free/sounds.c \
 			\
 			src/app/animations/handler.c \
 			src/app/animations/event_new.c \
