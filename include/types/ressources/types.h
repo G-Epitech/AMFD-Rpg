@@ -86,6 +86,7 @@ typedef struct s_components_r {
     list_t *backgrounds;        //Backgrounds list
     list_t *fight;              //Fight ressources (attaks)
     sfTexture *progress;        //Texture for progress bars
+    sfTexture *dialog_box;      //Texture for dialog boxes
 } components_r_t;
 
 typedef struct s_inventory_ressources {
