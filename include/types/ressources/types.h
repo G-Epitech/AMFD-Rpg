@@ -45,12 +45,14 @@ typedef struct s_map {
  * @brief Structure of a animations
 */
 typedef struct s_anim {
-    worlds_t world;         //Id of the world where the map must be display
-    sfTexture *back;        //Texture of the back of the map
-    sfTexture *front;       //Texture of the front of the map
-    sfImage *collision;     //Image of collision
-    float off_set;            //Number offset of asset
-    float speed;              //Number of speed animation
+    worlds_t world;             //Id of the world where the map must be display
+    sfTexture *back;            //Texture of the back of the map
+    sfTexture *front;           //Texture of the front of the map
+    sfImage *collision;         //Image of collision
+    float off_set;              //Number offset of asset
+    float speed;                //Number of speed animation
+    sfVector2f position_front;  //Position of front texture
+    sfVector2f position_back;   //Position of back texture
 } anim_t;
 
 /**

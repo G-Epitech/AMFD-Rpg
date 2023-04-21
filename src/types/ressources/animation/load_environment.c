@@ -15,6 +15,19 @@
 #include "types/players/types.h"
 #include "cjson/include/cjson.h"
 
+static void anim_append_position(anim_t *anim, cjson_t *anim_config)
+{
+    cjson_t *pos_front_config = cjson_get_prop(anim_config, "pos_front");
+    cjson_t *pos_back_config = cjson_get_prop(anim_config, "pos_back");
+
+    anim->position_front.x = cjson_get_prop_int_unsafe(pos_front_config, "x");
+    anim->position_front.y = cjson_get_prop_int_unsafe(pos_front_config, "y");
+    anim->position_back.x = cjson_get_prop_int_unsafe(pos_back_config, "x");
+    anim->position_back.y = cjson_get_prop_int_unsafe(pos_back_config, "y");
+    free(pos_front_config);
+    free(pos_back_config);
+}
+
 static void anim_append_data(anim_t *anim, cjson_t *anim_config)
 {
     char *back = cjson_get_prop_string_unsafe(anim_config, "back");
@@ -27,6 +40,7 @@ static void anim_append_data(anim_t *anim, cjson_t *anim_config)
     anim->collision = sfImage_createFromFile(collision);
     anim->speed = cjson_get_prop_float_unsafe(anim_config, "speed");
     anim->off_set = cjson_get_prop_float_unsafe(anim_config, "offset");
+    anim_append_position(anim, anim_config);
     free(back);
     free(front);
     free(collision);

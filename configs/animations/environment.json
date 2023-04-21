@@ -6,7 +6,9 @@
         "front": "assets/worlds/village/Village_front.png",
         "collision": "assets/worlds/village/Village_collision.png",
         "speed": 0.10,
-        "offset": 100.5
+        "offset": 100.5,
+        "pos_back": {"x": 827, "y": 813},
+        "pos_front": {"x": 827, "y": 813}
       }
     ]
   }
