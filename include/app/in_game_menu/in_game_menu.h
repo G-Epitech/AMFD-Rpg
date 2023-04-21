@@ -45,4 +45,10 @@ void restart_session(app_t *app);
 */
 void restart_player(player_t *player);
 
+/**
+ * @brief Restarts sound themes
+ * @param soundboard Soundboard object
+*/
+void restart_sound(sound_board_t *soundboard);
+
 #endif /* !IN_GAME_MENU_H_ */

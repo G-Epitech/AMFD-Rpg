@@ -16,5 +16,6 @@ void restart_session(app_t *app)
     app->world = 0;
     restart_player(app->player);
     restart_player(app->partner);
+    restart_sound(app->sound_board);
     sfClock_restart(app->clock);
 }
