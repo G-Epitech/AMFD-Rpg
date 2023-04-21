@@ -20,7 +20,13 @@ void utils_give_xp(renderer_t *renderer, app_t *app, int xp)
 
     app->player->xp += xp;
     if (app->player->xp >= max) {
-        //skip
+        app->player->xp = app->player->xp - max;
+        app->player->level++;
+        app->player->xp_max = app->player->level * 10;
+        description = my_strcat("Vous venez de passer au\nniveau ",
+        nbr_to_str(app->player->level));
+        animations_notif_add(events, renderer->ressources->icons->xp,
+        "Nouveau niveau", my_strdup(description));
     } else {
         description = my_strcat("Vous venez de gagner ", nbr_to_str(xp));
         description = my_strcat(description, " XP.");
