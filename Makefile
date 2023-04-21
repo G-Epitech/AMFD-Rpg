@@ -230,6 +230,8 @@ SRC = 		src/main.c \
 			src/app/core/handler.c	\
 			src/app/core/interactions/movement.c \
 			src/app/core/interactions/npc.c \
+			src/app/core/interactions/travel.c	\
+			src/app/core/interactions/interactions.c	\
 			src/app/core/tasks/handler.c \
 			src/app/core/tasks/create.c \
 			src/app/core/tasks/find_node.c \
@@ -247,7 +249,9 @@ SRC = 		src/main.c \
 			src/app/sound/sound_control.c \
 			src/app/sound/handle_sound_fx.c	\
 			src/app/sound/handle_sound_themes.c	\
-			src/app/sound/handle_sound_volume.c
+			src/app/sound/handle_sound_volume.c	\
+			\
+			src/app/travel/travel_interaction.c	\
 
 NAME = my_rpg
 
