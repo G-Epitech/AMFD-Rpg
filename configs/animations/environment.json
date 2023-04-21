@@ -1,38 +1,5 @@
 {
     "animations": [
-      {
-        "world": 0,
-        "asset": "assets/worlds/animations/turbine.png",
-        "collision": "assets/worlds/village/Village_collision.png",
-        "frame_duration": 0.10,
-        "offset": 112,
-        "nb_frame": 8,
-        "pos": {"x": 1205, "y": 1066},
-        "rect_back": {"left": 0, "top": 143, "width": 112, "height": 17},
-        "rect_front": {"left": 0, "top": 0, "width": 112, "height": 143}
-      },
-      {
-        "world": 0,
-        "asset": "assets/worlds/animations/turbine.png",
-        "collision": "assets/worlds/village/Village_collision.png",
-        "frame_duration": 0.08,
-        "offset": 112,
-        "nb_frame": 8,
-        "pos": {"x": 1005, "y": 1066},
-        "rect_back": {"left": 0, "top": 143, "width": 112, "height": 17},
-        "rect_front": {"left": 0, "top": 0, "width": 112, "height": 143}
-      },
-      {
-        "world": 0,
-        "asset": "assets/worlds/animations/turbine.png",
-        "collision": "assets/worlds/village/Village_collision.png",
-        "frame_duration": 0.04,
-        "offset": 112,
-        "nb_frame": 8,
-        "pos": {"x": 1105, "y": 1066},
-        "rect_back": {"left": 0, "top": 143, "width": 112, "height": 17},
-        "rect_front": {"left": 0, "top": 0, "width": 112, "height": 143}
-      }
     ]
   }
   

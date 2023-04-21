@@ -50,19 +50,16 @@ static void anim_append_position(anim_t *anim, cjson_t *anim_config)
 static void anim_append_data(anim_t *anim, cjson_t *anim_config)
 {
     char *asset = cjson_get_prop_string_unsafe(anim_config, "asset");
-    char *collision = cjson_get_prop_string_unsafe(anim_config, "collision");
 
     anim->world = cjson_get_prop_int_unsafe(anim_config, "world");
     anim->nb_frame = cjson_get_prop_int_unsafe(anim_config, "nb_frame");
     anim->asset = sfTexture_createFromFile(asset, NULL);
-    anim->collision = sfImage_createFromFile(collision);
     anim->time_elapsed = 0;
     anim->frame_duration =
     cjson_get_prop_float_unsafe(anim_config, "frame_duration");
     anim->off_set = cjson_get_prop_int_unsafe(anim_config, "offset");
     anim_append_position(anim, anim_config);
     free(asset);
-    free(collision);
 }
 
 static void anim_append(list_t *animations, cjson_t *anim_config,
