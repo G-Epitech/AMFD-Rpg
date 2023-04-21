@@ -11,6 +11,8 @@
 #include "types/list/types.h"
 #include "types/players/types.h"
 #include "types/characters/types.h"
+#include "app/animations/animations.h"
+#include "app/competences_tree/competences_tree.h"
 
 static void init_levels(player_t *player)
 {
@@ -23,6 +25,7 @@ static void init_levels(player_t *player)
     player->speed_max = 100;
     player->life_max = 100;
     player->xp_max = 50;
+    player->credits = 0;
 }
 
 player_t *players_add(list_t *list, char *name)
@@ -39,8 +42,9 @@ player_t *players_add(list_t *list, char *name)
     player->skin_id = -1;
     player->orientation = SO_LEFT;
     player->name = my_strdup(name);
-    player->rect = (sfIntRect) {0, 0, 0, 0};
-    init_levels(player);
+    init_levels(player)
+    player->competences = player_init_competence();
+    player->rect = (sfIntRect) {0, 0, 0, 0};;
     list_append(list, node_new((node_data_t) player));
     return player;
 }

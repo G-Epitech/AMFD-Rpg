@@ -12,6 +12,7 @@
     #include "types/list/types.h"
 
 typedef struct s_renderer renderer_t;
+typedef struct s_icons_competences icons_competences_t;
 
 /**
  * @brief Free ressources
@@ -132,6 +133,13 @@ void items_texture_load(renderer_t *renderer, ressources_t *ressources);
  * @param inventory Structure of icons ressources
  */
 void icons_load(renderer_t *renderer, icons_r_t *icons);
+
+/**
+ * @brief Load icons ressources
+ * @param tree Tree struct of texture
+ * @param config Configuration file at CSJON format
+ */
+void icons_load_data_competence(icons_competences_t *tree, cjson_t *configs);
 
 /**
  * @brief Load fight components

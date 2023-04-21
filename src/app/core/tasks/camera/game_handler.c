@@ -34,7 +34,8 @@ int app_task_camera_core(app_t *app)
     if (TIME_FLOAT(node->content.camera) > 30.0) {
         my_putstr("You lose\n");
         CAMERA_STATE(node) = LOOSE;
-        CAMERA_TIME_ENDED(node) = TIME_FLOAT(node->content.camera);
+        app->state = ST_INGAME;
+        reset_setup_camera(app);
     }
     return 0;
 }
