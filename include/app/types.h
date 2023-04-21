@@ -136,6 +136,7 @@ typedef struct s_app {
     dialog_box_t *dialog_box;           //Dialog box
     animations_t *animations;           //Animations in the app
     sound_board_t *sound_board;         //Soundboard
+    list_t *player_anim;                //Player animations
     sfClock *clock;                     //Clock of the game
 } app_t;
 
