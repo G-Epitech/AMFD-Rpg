@@ -20,7 +20,6 @@ static void remove_equipement(app_t *app)
         return;
     inventory_item_impact_player(app->player, item, -1);
     inventory_set_item_inactive(app->player, item);
-
 }
 
 void inventory_onclick_item_active(app_t *app, inventory_item_t *item)
