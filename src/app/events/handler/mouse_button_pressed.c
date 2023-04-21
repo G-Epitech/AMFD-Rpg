@@ -7,11 +7,12 @@
 
 #include <stdio.h>
 #include <SFML/Graphics.h>
-#include "types/renderer/types.h"
+#include "app/app.h"
 #include "app/events/events.h"
+#include "types/renderer/types.h"
+#include "app/inventory/inventory.h"
 #include "app/tasks/bash/script_bash.h"
 #include "app/tasks/flipper/flipper.h"
-#include "app/app.h"
 
 static void mouse_event(sfEvent event, app_t *app,
 renderer_t *renderer)
@@ -27,12 +28,15 @@ renderer_t *renderer)
     event_components_attacks(renderer, app, event);
     if (app->state == ST_TASK_FLIPPER)
         event_task_flipper(renderer, app);
+    if (app->state == ST_INVENTORY)
+        inventory_onpress(app, event);
 }
 
 void event_mouse_button_pressed(app_t *app, renderer_t *renderer,
 sfEvent event)
 {
-    if (event.type == sfEvtMouseButtonPressed) {
+    if (event.type != sfEvtMouseButtonPressed)
+        return;
+    if (!app->dialog_box->show)
         mouse_event(event, app, renderer);
-    }
 }

@@ -15,6 +15,12 @@
 #include "types/players/types.h"
 #include "cjson/include/cjson.h"
 
+static void load_lone_textures(components_r_t *components, cjson_t *cmp_config)
+{
+    components->progress = ressources_components_progress_load(cmp_config);
+    components->dialog_box = ressources_components_dialog_box_load(cmp_config);
+}
+
 void ressources_components_load(renderer_t *renderer,
 components_r_t *components)
 {
@@ -35,6 +41,6 @@ components_r_t *components)
     components->backgrounds = ressources_components_backgrounds_load
     (backgrounds_config);
     components->fight = ressources_components_fight_load(fight_config);
-    components->progress = ressources_components_progress_load(cmp_config);
+    load_lone_textures(components, cmp_config);
     cjson_free(cmp_config);
 }

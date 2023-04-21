@@ -14,6 +14,8 @@
 
 void event_key_released(sfEvent event, renderer_t *renderer, app_t *app)
 {
+    if (app->dialog_box->show)
+        return;
     if (event.type == sfEvtKeyReleased) {
         keyboard_release_move(event, app);
         keyboard_interaction(event, renderer, app);

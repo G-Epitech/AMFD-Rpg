@@ -13,9 +13,10 @@
 #include "app/tasks/camera/camera.h"
 #include "app/app.h"
 
-
 void event_text_entered(renderer_t *renderer, sfEvent event, app_t *app)
 {
+    if (app->dialog_box->show)
+        return;
     if (event.type == sfEvtTextEntered) {
         if (app->state == ST_TASK_BASH) {
             cmd_write(event, app);

@@ -183,6 +183,16 @@ void display_inventory_item_box(renderer_t *renderer, size_t i,
 bool active, bool empty);
 
 /**
+ * @brief Display box of an inventory item at given position
+ * @param renderer Renderer object
+ * @param position Position on which display given box
+ * @param active Specify if item is in active inventory grid
+ * @param empty Specify if given box is occuped by an item
+ */
+void display_inventory_item_box_at_pos(renderer_t *renderer,
+sfVector2f position, bool active, bool empty);
+
+/**
  * @brief Get position of given item
  * @param i Index of item in inventory
  * @param active Active status
@@ -199,6 +209,33 @@ sfVector2f *position);
 void display_inventory_grids(renderer_t *renderer, app_t *app);
 
 /**
+ * @brief Display empty boxes on grids
+ * @param renderer Renderer object
+ * @param actives_boxes Actives boxes occupation array
+ * @param main_boxes Main boxes occupation array
+ * @param event Inventory event
+ */
+void display_inventory_grids_empty(renderer_t *renderer, int *actives_boxes,
+int *main_boxes, inventory_event_t *event);
+
+/**
+ * @brief Display taken boxes on grids
+ * @param renderer Renderer object
+ * @param inventory Inventory of player
+ * @param event Event on inventory
+ */
+void display_inventory_grids_taken(renderer_t *renderer, list_t *inventory,
+inventory_event_t *event);
+
+/**
+ * @brief Display specials element on grids
+ * @param renderer Renderer object
+ * @param event Event of inventory
+ */
+void display_inventory_grids_specials(renderer_t *renderer,
+inventory_event_t *event);
+
+/**
  * @brief Display player profile in inventory
  * @param renderer Renderer object
  * @param app App object
@@ -209,9 +246,10 @@ void display_inventory_profile(renderer_t *renderer, app_t *app);
  * @brief Display content of item
  * @param renderer Renderer object
  * @param item Item to display
+ * @param event Inventory event
  */
 void display_inventory_item_content(renderer_t *renderer,
-inventory_item_t *item);
+inventory_item_t *item, inventory_event_t *event);
 
 /**
  * @brief Display collisions box
@@ -290,6 +328,31 @@ void display_components_progresses(renderer_t *renderer, app_t *app);
  * @param app App object
  */
 void display_inventory_levels(renderer_t *renderer, app_t *app);
+
+/**
+ * @brief Display masks on given item
+ * @param renderer Renderer object
+ * @param item Item object
+ * @param position Position of item
+ * @param scale Scale of item
+ */
+void inventory_display_item_masks(renderer_t *renderer, item_t *item,
+sfVector2f position, float scale);
+
+/**
+ * @brief Display given dialog box
+ * @param renderer Renderer object
+ * @param dialog_box Dialog box to display
+ */
+void display_dialog_box(renderer_t *renderer, dialog_box_t *dialog_box);
+
+/**
+ * @brief Display options of dialog box
+ * @param renderer Renderer object
+ * @param dialog_box Dialog box
+ */
+void display_dialog_box_options(renderer_t *renderer,
+dialog_box_t *dialog_box);
 
 /**
  * @brief Display NPC dialogs
