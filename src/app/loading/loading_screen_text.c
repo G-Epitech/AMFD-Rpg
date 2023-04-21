@@ -78,7 +78,7 @@ char *info)
         NULL);
     }
     sfRenderWindow_display(renderer->window);
-    loading_sleep(300);
+    loading_sleep(150);
     sfTexture_destroy(texture);
 }
 

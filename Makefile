@@ -109,6 +109,7 @@ SRC = 		src/main.c \
 			src/app/init/sounds.c \
 			src/app/init/tasks.c \
 			src/app/init/animations.c \
+			src/app/init/quests.c \
 			\
 			src/app/free/animations.c \
 			src/app/free/characters.c	\
@@ -226,6 +227,7 @@ SRC = 		src/main.c \
 			src/app/display/animations/floating_text.c \
 			src/app/display/animations/notif.c \
 			src/app/display/dialogs/dialogs.c \
+			src/app/display/hud/hud.c \
 			\
 			src/app/getters/progress/inventory.c \
 			src/app/getters/progress/fight.c \
@@ -287,6 +289,11 @@ SRC = 		src/main.c \
 			src/app/core/fight/handler.c \
 			src/app/core/fight/enemy.c \
 			src/app/core/sound.c \
+			src/app/core/quests/quests.c \
+			src/app/core/quests/npc.c \
+			src/app/core/quests/get.c \
+			src/app/core/quests/upgrade.c \
+			src/app/core/quests/world.c \
 			\
 			src/app/sound/sound_control.c \
 			src/app/sound/handle_sound_fx.c	\

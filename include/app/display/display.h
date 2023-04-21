@@ -361,4 +361,11 @@ dialog_box_t *dialog_box);
  */
 void display_dialogs(renderer_t *renderer, app_t *app);
 
+/**
+ * @brief Display hud quests
+ * @param renderer Renderer object
+ * @param app App object
+ */
+void display_hud(renderer_t *renderer, app_t *app);
+
 #endif /* !DISPLAY_H_ */

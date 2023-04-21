@@ -103,6 +103,12 @@
             "position" : {"x": 632, "y": 295}
         },
         {
+            "asset": "assets/components/backgrounds/player_hud.png",
+            "scale": 1,
+            "state": [100],
+            "position" : {"x": 42, "y": 13}
+        },
+        {
             "asset": "assets/components/backgrounds/pause_background.png",
             "scale": 1,
             "state": [301],

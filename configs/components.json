@@ -459,6 +459,20 @@
             "size": {"x": 284, "y": 42},
             "color": 0,
             "getter_value": 6
+        },
+        {
+            "position": {"x": 175, "y": 64},
+            "app_state": [100],
+            "size": {"x": 284, "y": 42},
+            "color": 0,
+            "getter_value": 2
+        },
+        {
+            "position": {"x": 175, "y": 116},
+            "app_state": [100],
+            "size": {"x": 284, "y": 42},
+            "color": 3,
+            "getter_value": 4
         }
     ]
 }

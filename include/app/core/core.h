@@ -61,4 +61,10 @@ void core_fight_enemy(app_t *app, renderer_t *renderer);
  */
 void core_fight_handler(app_t *app, renderer_t *renderer);
 
+/**
+ * @brief handle quests core
+ * @param app App object
+ */
+void core_quests(app_t *app);
+
 #endif /* !CORE_H_ */

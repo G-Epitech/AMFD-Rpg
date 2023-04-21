@@ -1,0 +1,22 @@
+[
+    {
+        "title": "Nouveau depart",
+        "config": "configs/quests/introduction.json"
+    },
+    {
+        "title": "Premirere superette",
+        "config": ""
+    },
+    {
+        "title": "A moi la liberte",
+        "config": ""
+    },
+    {
+        "title": "400 coups",
+        "config": ""
+    },
+    {
+        "title": "Derniere etape",
+        "config": ""
+    }
+]
