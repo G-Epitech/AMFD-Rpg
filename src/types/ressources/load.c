@@ -6,6 +6,7 @@
 */
 
 #include <stdlib.h>
+#include <stdio.h>
 #include "types/list/types.h"
 #include "types/list/list.h"
 #include "types/ressources/types.h"

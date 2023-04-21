@@ -5,6 +5,7 @@
 ** Load up components, ressources, view in renderer
 */
 
+#include <stdio.h>
 #include "types/renderer/types.h"
 #include "app/loading/loading.h"
 #include "types/components/components.h"

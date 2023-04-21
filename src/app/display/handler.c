@@ -22,6 +22,8 @@ static void display_game(renderer_t *renderer, app_t *app)
         renderer_objects_reset_sprite(objects);
         display_map_back(ressources->maps, renderer->window, objects->sprite,
         app->world);
+        display_animations_environments_back(ressources->animations,
+        renderer->window, objects->sprite, app->world);
         display_npcs_of_world(renderer, app->npcs, app->world);
         display_player(renderer, app);
         display_map_front(ressources->maps, objects->window, objects->sprite,

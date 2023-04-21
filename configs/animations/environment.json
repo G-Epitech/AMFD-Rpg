@@ -2,13 +2,12 @@
     "animations": [
       {
         "world": 0,
-        "back": "assets/worlds/village/Village_back.png",
-        "front": "assets/worlds/village/Village_front.png",
+        "asset": "assets/worlds/village/Village_back.png",
         "collision": "assets/worlds/village/Village_collision.png",
         "speed": 0.10,
-        "offset": 100.5,
-        "pos_back": {"x": 827, "y": 813},
-        "pos_front": {"x": 827, "y": 813}
+        "offset": 112,
+        "pos": {"x": 1208, "y": 1002},
+        "rect_back": {"left": 0, "top": 130, "width": 112, "height": 30}
       }
     ]
   }

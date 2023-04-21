@@ -368,4 +368,14 @@ void display_dialogs(renderer_t *renderer, app_t *app);
  */
 void display_hud(renderer_t *renderer, app_t *app);
 
+/**
+ * @brief Display hud quests
+ * @param animations List of animations
+ * @param window Window where display thing
+ * @param sprite Sprite object for display texture
+ * @param world Actual world
+ */
+void display_animations_environments_back(list_t *animations,
+sfRenderWindow *window, sfSprite *sprite, worlds_t world);
+
 #endif /* !DISPLAY_H_ */
