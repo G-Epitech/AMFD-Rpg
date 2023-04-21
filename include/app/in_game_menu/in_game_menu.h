@@ -33,4 +33,16 @@ int in_game_menu_exit(renderer_t *renderer, app_t *app, button_t *button);
 int in_game_menu_exit_to_title(renderer_t *renderer, app_t *app,
 button_t *button);
 
+/**
+ * @brief Restarts the session when exiting to title
+ * @param app App object
+*/
+void restart_session(app_t *app);
+
+/**
+ * @brief Restarts a player
+ * @param player Player
+*/
+void restart_player(player_t *player);
+
 #endif /* !IN_GAME_MENU_H_ */

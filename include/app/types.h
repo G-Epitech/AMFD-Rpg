@@ -143,7 +143,7 @@ typedef struct s_app {
     player_t *partner;                  //Partner player
     list_t *npcs;                       //NPC of game
     control_t *control;                 //Controller of the player
-    list_t *tasks_setup;                //Taks of the game
+    list_t *tasks_setup;                //Tasks of the game
     settings_t *settings;               //Settings of the application
     network_t *network;                 //Network
     interactions_t *interaction;        //Interaction in the app

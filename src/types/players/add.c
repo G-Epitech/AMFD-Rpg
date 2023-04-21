@@ -12,7 +12,7 @@
 #include "types/players/types.h"
 #include "types/characters/types.h"
 
-static void init_levels(player_t *player)
+void init_levels(player_t *player)
 {
     player->xp = 10;
     player->level = 15;
