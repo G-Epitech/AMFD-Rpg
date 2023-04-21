@@ -9,6 +9,7 @@
     #define CJSON_H_
 
     #include "types.h"
+    #include "export.h"
     #include "display.h"
     #include "parsing.h"
     #include "getters.h"

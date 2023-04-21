@@ -61,11 +61,13 @@ bool *error)
     return json.content;
 }
 
-char *cjson_stringify(cjson_t *cjson)
+char *cjson_stringify(cjson_t *cjson, size_t *size)
 {
-    size_t size = 0;
+    size_t internal_size = 0;
     bool error = false;
 
+    if (size)
+        *size = 0;
     if (!cjson)
         return NULL;
     if (!CJSON_IS_OBJECT(cjson) && !CJSON_IS_ARRAY(cjson)) {
@@ -73,8 +75,9 @@ char *cjson_stringify(cjson_t *cjson)
         NULL);
         return NULL;
     }
-    internal_cjson_string_size(cjson, &size, 0, &error);
+    internal_cjson_string_size(cjson, &internal_size, 0, &error);
     if (error)
         return NULL;
-    return get_final_string(cjson, size, &error);
+    *size = internal_size;
+    return get_final_string(cjson, internal_size, &error);
 }

@@ -39,6 +39,25 @@ cjson_value_t internal_cjson_parse_array(char *json, int *i, bool *error);
 cjson_value_t internal_cjson_parse_string(char *json, int *i, bool *error);
 
 /**
+ * @brief Get length of current parsed string
+ * @param json JSON string
+ * @param i Current index
+ * @param error Error status
+ * @return Computed lentgh of string
+ */
+size_t internal_cjson_parse_string_get_len(char *json,
+int i, bool *error);
+
+/**
+ * @brief Duplicate string of current parsed string
+ * @param json JSON string
+ * @param i Current index
+ * @param len Computed lentgh of string
+ * @return Duplicated string or NULL on fail
+ */
+char *internal_cjson_parse_string_dup(char *json, int *i, size_t len);
+
+/**
  * @brief Parse json number
  * @param json JSON string
  * @param i Current index
