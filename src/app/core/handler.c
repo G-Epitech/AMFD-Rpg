@@ -12,14 +12,28 @@
 #include "app/tasks/types.h"
 #include "types/players/players.h"
 #include "app/core/core.h"
-#include "types/list/types.h"
+#include "types/list/list.h"
 #include "app/app.h"
 #include "app/network/network.h"
 #include "app/animations/animations.h"
 
+static map_t *get_current_map(renderer_t *renderer, app_t *app)
+{
+    node_t *node = renderer->ressources->maps->first;
+    size_t index = 0;
+
+    while (node) {
+        if (index == app->world)
+            return node->data.map;
+        index++;
+        node = node->next;
+    }
+    return NULL;
+}
+
 int core_handler(renderer_t *renderer, app_t *app)
 {
-    map_t *current_map = renderer->ressources->maps->first->data.map;
+    map_t *current_map = get_current_map(renderer, app);
 
     if (PLAYER_IN_ANIM(app->animations)) {
         animations_handler(renderer, app);
@@ -30,6 +44,8 @@ int core_handler(renderer_t *renderer, app_t *app)
     core_handle_movement(app->control, current_map->collision, app);
     core_fight_handler(app, renderer);
     core_handle_sound(app);
+    core_quests(app);
+    core_handle_animation(app);
     network_receive(app);
     return 0;
 }

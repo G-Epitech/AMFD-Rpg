@@ -21,7 +21,8 @@ int skin_id, skin_orientation_t orientation)
         return;
     renderer_objects_reset_sprite(renderer->objects);
     sfSprite_setTexture(sprite, skin->texture, sfTrue);
-    sfSprite_setTextureRect(sprite, rect);
+    if (skin_id != 4 && skin_id != 5)
+        sfSprite_setTextureRect(sprite, rect);
     sfSprite_setPosition(sprite, position);
     sfRenderWindow_drawSprite(renderer->objects->window, sprite, NULL);
 }

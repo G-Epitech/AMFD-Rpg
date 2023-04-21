@@ -21,6 +21,8 @@
     #include "app/tasks/flipper/types.h"
     #include "app/competences_tree/types.h"
     #include "app/tasks/types.h"
+    #include "app/quests/types.h"
+    #include "app/animate_player/type.h"
 
 typedef struct s_list list_t;
 
@@ -33,12 +35,15 @@ typedef union u_node_data {
     task_bash_node_t *node_bash;
     background_t *background;
     npc_dialog_t npc_dialog;
+    animation_t *animation;
     sound_theme_t *theme;
     progress_t *progress;
     npc_data_t npc_data;
     attack_t *attack;
+    quests_t *quests;
     player_t *player;
     button_t *button;
+    quest_t *quest;
     sound_t *sound;
     lever_t *lever;
     item_t *item;

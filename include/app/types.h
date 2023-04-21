@@ -9,12 +9,16 @@
     #define APP_TYPES_H_
 
     #include <stdbool.h>
+    #include <SFML/System/Export.h>
+    #include <SFML/System/Time.h>
+    #include <SFML/System/Types.h>
     #include "types/players/types.h"
     #include "app/inventory/types.h"
     #include "app/network/types.h"
     #include "app/animations/types.h"
     #include "types/dialog_box/types.h"
     #include "sound/types.h"
+    #include "app/quests/types.h"
 
 typedef struct s_list list_t;
 typedef struct s_renderer renderer_t;
@@ -56,6 +60,20 @@ typedef enum e_app_states {
 
 typedef enum e_worlds {
     WL_VILLAGE = 0,
+    WL_PLAYER_HOME_1,
+    WL_PLAYER_HOME_2,
+    WL_UNIVERSITY_1,
+    WL_UNIVERSITY_2,
+    WL_STORE,
+    WL_PRISON,
+    WL_MAIRIE_1,
+    WL_MAIRIE_2,
+    WL_MAIRIE_3,
+    WL_MAIRIE_4,
+    WL_HOSPITAL_1,
+    WL_HOSPITAL_2,
+    WL_HOSPITAL_3,
+    WL_AYMERIC,
     WL_CITY
 } worlds_t;
 
@@ -134,6 +152,9 @@ typedef struct s_app {
     dialog_box_t *dialog_box;           //Dialog box
     animations_t *animations;           //Animations in the app
     sound_board_t *sound_board;         //Soundboard
+    list_t *player_anim;                //Player animations
+    app_quests_t *quests;               //Quests of the game
+    sfClock *clock;                     //Clock of the game
 } app_t;
 
 typedef bool (*app_init_member_t)(app_t *app, renderer_t *renderer);

@@ -13,7 +13,11 @@
     #define PLAYER_DEFAULT_SPAWN ((sfVector2f) {1000, 1015})
 
 typedef struct s_list list_t;
-typedef struct s_skin skin_t;
+
+typedef enum e_entity_state {
+    IDLE,
+    WALKING
+} enitity_state_t;
 
 /**
  * @brief Structure of a player
@@ -23,7 +27,9 @@ typedef struct s_player {
     int xp;                     //Player exeprience
     int orientation;            //Orientation of the player
     sfVector2f position;        //Position of the player
+    enitity_state_t state;      //State of the player
     list_t *inventory;          //Inventory with all objects
+    sfIntRect rect;             //Player rect
     int skin_id;                //Skin ID
     int level;                  //Player level
     int life;                   //Life of the player

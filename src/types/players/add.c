@@ -25,15 +25,7 @@ static void init_levels(player_t *player)
     player->speed_max = 100;
     player->life_max = 100;
     player->xp_max = 50;
-}
-
-static void init_characteristics(player_t *player)
-{
-    player->xp = 1;
-    player->level = 15;
-    player->life = 20;
-    player->intellect = 7;
-    player->speed = 8;
+    player->credits = 0;
 }
 
 player_t *players_add(list_t *list, char *name)
@@ -46,13 +38,13 @@ player_t *players_add(list_t *list, char *name)
     if (!player->inventory)
         return NULL;
     player->position = PLAYER_DEFAULT_SPAWN;
+    player->state = IDLE;
     player->skin_id = -1;
     player->orientation = SO_LEFT;
     player->name = my_strdup(name);
-    init_characteristics(player);
-    player->credits = 0;
+    init_levels(player)
     player->competences = player_init_competence();
-    init_levels(player);
+    player->rect = (sfIntRect) {0, 0, 0, 0};;
     list_append(list, node_new((node_data_t) player));
     return player;
 }
