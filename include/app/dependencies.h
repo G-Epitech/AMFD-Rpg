@@ -30,6 +30,8 @@ static const app_init_member_t app_init_members[] = {
 static const app_free_member_t app_free_members[] = {
     &app_free_inventory_event,
     &app_free_animations,
+    &app_free_players,
+    &app_free_sounds,
     NULL
 };
 

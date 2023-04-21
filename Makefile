@@ -112,6 +112,8 @@ SRC = 		src/main.c \
 			src/app/free/free.c \
 			src/app/free/inventory_event.c \
 			src/app/free/dialog_box.c \
+			src/app/free/characters.c \
+			src/app/free/sounds.c \
 			\
 			src/app/animations/handler.c \
 			src/app/animations/event_new.c \
@@ -146,6 +148,7 @@ SRC = 		src/main.c \
 			src/app/events/components/buttons.c \
 			src/app/events/components/levers.c \
 			src/app/events/components/attacks.c \
+			src/app/events/components/in_game_menu.c \
 			src/app/events/components/dialog_box.c \
 			\
 			src/app/developer/reload_json.c \
@@ -281,7 +284,9 @@ SRC = 		src/main.c \
 			src/app/sound/sound_control.c \
 			src/app/sound/handle_sound_fx.c	\
 			src/app/sound/handle_sound_themes.c	\
-			src/app/sound/handle_sound_volume.c
+			src/app/sound/handle_sound_volume.c	\
+			\
+			src/app/in_game_menu/in_game_menu.c	\
 
 NAME = my_rpg
 
