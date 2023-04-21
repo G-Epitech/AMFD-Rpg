@@ -119,6 +119,7 @@ SRC = 		src/main.c \
 			src/app/free/characters.c \
 			\
 			src/app/animations/handler.c \
+			src/app/animations/active.c \
 			src/app/animations/event_new.c \
 			src/app/animations/screen/zoom.c \
 			src/app/animations/button/shake_attack.c \
@@ -237,6 +238,7 @@ SRC = 		src/main.c \
 			src/app/display/tasks/flipper/display.c \
 			\
 			src/app/utils/test.c \
+			src/app/utils/player/give_xp.c \
 			\
 			src/app/loading/loading_company_screen.c \
 			src/app/loading/loading_screen_text.c \
