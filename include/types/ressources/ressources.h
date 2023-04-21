@@ -139,4 +139,11 @@ void icons_load(renderer_t *renderer, icons_r_t *icons);
  */
 list_t *ressources_components_fight_load(cjson_t *config);
 
+/**
+ * @brief Load all animations from configs
+ * @param renderer Renderer object
+ * @param animations List of animations
+ */
+void animations_load(renderer_t *renderer, list_t *animations);
+
 #endif /* !RESSOURCES_H_ */

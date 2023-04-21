@@ -1,0 +1,13 @@
+{
+    "animations": [
+      {
+        "world": 0,
+        "back": "assets/worlds/village/Village_back.png",
+        "front": "assets/worlds/village/Village_front.png",
+        "collision": "assets/worlds/village/Village_collision.png",
+        "speed": 0.10,
+        "offset": 100.5
+      }
+    ]
+  }
+  

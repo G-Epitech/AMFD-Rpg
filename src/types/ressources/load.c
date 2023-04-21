@@ -23,6 +23,7 @@ ressources_t *ressources_init(void)
     ressources->maps = list_new();
     ressources->skins = list_new();
     ressources->props = list_new();
+    ressources->animations = list_new();
     ressources->inventory = malloc(sizeof(inventory_r_t));
     ressources->icons = malloc(sizeof(icons_r_t));
     if (!ressources->maps || !ressources->skins || !ressources->props
@@ -52,5 +53,6 @@ ressources_t *ressources_load(renderer_t *renderer)
     inventory_load(renderer, ressources->inventory);
     ressources_components_load(renderer, ressources->components);
     icons_load(renderer, ressources->icons);
+    animations_load(renderer, ressources->animations);
     return ressources;
 }

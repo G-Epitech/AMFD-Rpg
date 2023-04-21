@@ -14,6 +14,8 @@
     #define RESSOURCES_SKINS_CONFIG "configs/skins.json"
     #define RESSOURCES_SKINS_RECT ((sfVector2i) { 16, 32 })
     #define RESSOURCES_MAPS_CONFIG "configs/ressources/maps.json"
+    #define RESSOURCES_MAPS_CONFIG "configs/ressources/maps.json"
+    #define RESSOURCES_ANIMATIONS_CONFIG "configs/animations/environment.json"
     #define RESSOURCES_INVENTORY_CONFIG "configs/ressources/inventory.json"
     #define RESSOURCES_COMPONENTS_CONFIG "configs/ressources/components.json"
     #define RESSOURCES_COMPONENTS_FIGHT_CONFIG "configs/fight/attacks.json"
@@ -38,6 +40,18 @@ typedef struct s_map {
     sfTexture *front;       //Texture of the front of the map
     sfImage *collision;     //Image of collision
 } map_t;
+
+/**
+ * @brief Structure of a animations
+*/
+typedef struct s_anim {
+    worlds_t world;         //Id of the world where the map must be display
+    sfTexture *back;        //Texture of the back of the map
+    sfTexture *front;       //Texture of the front of the map
+    sfImage *collision;     //Image of collision
+    float off_set;            //Number offset of asset
+    float speed;              //Number of speed animation
+} anim_t;
 
 /**
  * @biref Structure of a button ressource
@@ -114,6 +128,7 @@ typedef struct s_ressources {
     list_t *maps;                       //List of maps (textures)
     list_t *skins;                      //List of skins (textures)
     list_t *props;                      //List of props (textures)
+    list_t *animations;                 //List of animation
     sfTexture *items;                   //Texture of items
     inventory_r_t *inventory;           //Structure of inventory ressources
     components_r_t *components;         //Structure of components ressources

@@ -90,7 +90,8 @@ SRC = 		src/main.c \
 			\
 			src/types/ressources/items/load.c \
 			\
-			src/types/ressources/animation/load.c	\
+			src/types/ressources/animation/load_player.c	\
+			src/types/ressources/animation/load_environment.c \
 			\
 			src/types/view/init.c \
 			\
@@ -191,7 +192,7 @@ SRC = 		src/main.c \
 			src/app/display/player/player.c \
 			src/app/display/characters/character.c \
 			src/app/display/map/front.c	\
-      src/app/display/components/components.c \
+      		src/app/display/components/components.c \
 			src/app/display/components/backgrounds.c \
 			src/app/display/components/levers.c \
 			src/app/display/components/interaction.c \

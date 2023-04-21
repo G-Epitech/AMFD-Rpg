@@ -10,7 +10,7 @@
 
     #include <SFML/Graphics.h>
 
-    #define ANIMATION_CONFIG "configs/animation.json"
+    #define ANIMATION_CONFIG "configs/animations/player.json"
 
 typedef enum e_entity_state enitity_state_t;
 typedef enum e_skin_orientation skin_orientation_t;
