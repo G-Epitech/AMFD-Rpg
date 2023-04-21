@@ -120,4 +120,10 @@ char *description);
  * @param clock Clock of animation
  */
 bool animations_notif(animation_event_notif_t *notif, sfClock *clock);
+
+/**
+ * @brief If there are an animation active
+ * @param animations Animations object
+ */
+bool animations_active(animations_t *animations);
 #endif /* !ANIMATIONS_H_ */

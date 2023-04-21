@@ -5,6 +5,7 @@
 ** Animation handler
 */
 
+#include <stdio.h>
 #include <SFML/Graphics.h>
 #include <stdlib.h>
 #include "app/animations/animations.h"
@@ -57,5 +58,7 @@ static void animations_event_handler(animations_t *animation)
 void animations_handler(renderer_t *renderer, app_t *app)
 {
     (void) renderer;
+    if (app->animations->events->len <= 0)
+        return;
     animations_event_handler(app->animations);
 }
