@@ -19,15 +19,21 @@ static void anim_append_position(anim_t *anim, cjson_t *anim_config)
 {
     cjson_t *pos_config = cjson_get_prop(anim_config, "pos");
     cjson_t *rect_back_config = cjson_get_prop(anim_config, "rect_back");
+    cjson_t *rect_front_config = cjson_get_prop(anim_config, "rect_front");
 
     anim->position.x = cjson_get_prop_int_unsafe(pos_config, "x");
     anim->position.y = cjson_get_prop_int_unsafe(pos_config, "y");
-    anim->back.left = cjson_get_prop_int_unsafe(rect_back_config, "left");
-    anim->back.top = cjson_get_prop_int_unsafe(rect_back_config, "top");
-    anim->back.width = cjson_get_prop_int_unsafe(rect_back_config, "width");
-    anim->back.height = cjson_get_prop_int_unsafe(rect_back_config, "height");
+    anim->back_rect.left = cjson_get_prop_int_unsafe(rect_back_config, "left");
+    anim->back_rect.top = cjson_get_prop_int_unsafe(rect_back_config, "top");
+    anim->back_rect.width = cjson_get_prop_int_unsafe(rect_back_config, "width");
+    anim->back_rect.height = cjson_get_prop_int_unsafe(rect_back_config, "height");
+    anim->front_rect.left = cjson_get_prop_int_unsafe(rect_front_config, "left");
+    anim->front_rect.top = cjson_get_prop_int_unsafe(rect_front_config, "top");
+    anim->front_rect.width = cjson_get_prop_int_unsafe(rect_front_config, "width");
+    anim->front_rect.height = cjson_get_prop_int_unsafe(rect_front_config, "height");
     free(pos_config);
     free(rect_back_config);
+    free(rect_front_config);
 }
 
 static void anim_append_data(anim_t *anim, cjson_t *anim_config)
@@ -36,10 +42,12 @@ static void anim_append_data(anim_t *anim, cjson_t *anim_config)
     char *collision = cjson_get_prop_string_unsafe(anim_config, "collision");
 
     anim->world = cjson_get_prop_int_unsafe(anim_config, "world");
+    anim->nb_frame = cjson_get_prop_int_unsafe(anim_config, "nb_frame");
     anim->asset = sfTexture_createFromFile(asset, NULL);
     anim->collision = sfImage_createFromFile(collision);
-    anim->speed = cjson_get_prop_float_unsafe(anim_config, "speed");
-    anim->off_set = cjson_get_prop_float_unsafe(anim_config, "offset");
+    anim->time_elapsed = 0;
+    anim->frame_duration = cjson_get_prop_float_unsafe(anim_config, "frame_duration");
+    anim->off_set = cjson_get_prop_int_unsafe(anim_config, "offset");
     anim_append_position(anim, anim_config);
     free(asset);
     free(collision);

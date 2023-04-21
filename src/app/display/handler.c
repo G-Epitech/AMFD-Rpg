@@ -28,6 +28,8 @@ static void display_game(renderer_t *renderer, app_t *app)
         display_player(renderer, app);
         display_map_front(ressources->maps, objects->window, objects->sprite,
         app->world);
+        display_animations_environments_front(app,
+        renderer->window, objects->sprite, renderer);
         display_developer_collisions(renderer, app);
     }
 }

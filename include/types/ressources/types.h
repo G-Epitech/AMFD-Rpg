@@ -46,12 +46,15 @@ typedef struct s_map {
 */
 typedef struct s_anim {
     worlds_t world;             //Id of the world where the map must be display
-    sfTexture *asset;            //Texture of asset
+    sfTexture *asset;           //Texture of asset
     sfImage *collision;         //Image of collision
-    float off_set;              //Number offset of asset
-    float speed;                //Number of speed animation
+    int off_set;                //Number offset of asset
+    float frame_duration;       //Number of speed animation
+    int nb_frame;               //Number of frame of asset
+    float time_elapsed;         //Time elapsed of anim
     sfVector2f position;        //Position texture
-    sfIntRect back;             //Back rect of 
+    sfIntRect back_rect;        //Back rect of asset
+    sfIntRect front_rect;       //Front rect of asset
 } anim_t;
 
 /**
@@ -134,6 +137,8 @@ typedef struct s_ressources {
     inventory_r_t *inventory;           //Structure of inventory ressources
     components_r_t *components;         //Structure of components ressources
     icons_r_t *icons;                   //Structure of icons ressources
+    sfClock *clock;                     //Clock of ressources
+    float elapsed_time;                 //Time elasped
 } ressources_t;
 
 #endif /* !RESSOURCES_TYPES_H_ */

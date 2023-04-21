@@ -55,5 +55,7 @@ ressources_t *ressources_load(renderer_t *renderer)
     ressources_components_load(renderer, ressources->components);
     icons_load(renderer, ressources->icons);
     animations_load(renderer, ressources->animations);
+    ressources->clock = sfClock_create();
+    ressources->elapsed_time = 0.0;
     return ressources;
 }
