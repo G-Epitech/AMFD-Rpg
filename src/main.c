@@ -19,6 +19,37 @@
 #include "types/components/components.h"
 #include "types/ressources/ressources.h"
 
+void display_vector(sfVector2f v)
+{
+    printf(" vector x:%.0f y:%.0f\n", v.x, v.y);
+}
+
+void display_entry(list_t *maps)
+{
+    node_t *node = maps->first;
+    node_t *entry = NULL;
+    entry_t *entry_obj = NULL;
+    int i = 0;
+
+    while (node) {
+        if (!node->data.map->entry)
+            break;
+        entry = node->data.map->entry->first;
+        printf("World %d\n", node->data.map->world);
+        while (entry) {
+            entry_obj = entry->data.entry;
+            printf("%d: Dir %d, child %d, tile_size %d", i, entry_obj->direction,
+            entry_obj->child, entry_obj->tile_size);
+            display_vector(entry_obj->pos);
+            display_vector(entry_obj->player_spawn);
+            entry = entry->next;
+        }
+        printf("----------------\n");
+        i++;
+        node = node->next;
+    }
+}
+
 int main(void)
 {
     renderer_t *renderer = renderer_init();
@@ -32,6 +63,7 @@ int main(void)
         renderer_destroy(renderer);
         return 84;
     }
+    display_entry(renderer->ressources->maps);
     while (sfRenderWindow_isOpen(renderer->window)) {
         if (app_run(renderer, app) == 84)
             return 84;

@@ -5,30 +5,73 @@
       "back": "assets/worlds/mairie/mair1_back.png",
       "front": "assets/worlds/mairie/mair1_col.png",
       "collision": "assets/test_vill.png",
-      "building": false,
-      "city": 0,
-      "enter": {"x": 0, "y": 0},
-      "exit": {"x": 0, "y": 0}
+      "entry" : [
+        {
+          "direction": 1,
+          "child": 1,
+          "pos": {"x": 182, "y": 144},
+          "player_spawn": {"x": 182, "y": 144},
+          "tile_size": 2
+        },
+        {
+          "direction": 1,
+          "child": 1,
+          "pos": {"x": 182, "y": 144},
+          "player_spawn": {"x": 182, "y": 144},
+          "tile_size": 2
+        }
+      ]
     },
     {
       "world": 1,
       "back": "assets/worlds/player_house/ph1_back.png",
       "front": "assets/worlds/player_house/ph1_front.png",
       "collision": "assets/worlds/player_house/ph1_col.png",
-      "building": true,
-      "city": 0,
-      "enter": {"x": 182, "y": 144},
-      "exit": {"x": 50, "y": 50}
+      "entry" : [
+        {
+          "direction": 4,
+          "child": 1,
+          "pos": {"x": 184, "y": 143},
+          "player_spawn": {"x": 182, "y": 144},
+          "tile_size": 2
+        },
+        {
+          "direction": 4,
+          "child": 1,
+          "pos": {"x": 182, "y": 144},
+          "player_spawn": {"x": 182, "y": 144},
+          "tile_size": 2
+        }
+      ]
     },
     {
       "world": 2,
       "back": "assets/worlds/player_house/ph2_back.png",
       "front": "assets/worlds/player_house/ph2_front.png",
       "collision": "assets/worlds/player_house/ph2_col.png",
-      "building": true,
-      "city": 0,
-      "enter": {"x": 225, "y": 51},
-      "exit": {"x": 183, "y": 65}
+      "entry" : [
+        {
+          "direction": 234,
+          "child": 243,
+          "pos": {"x": 1844, "y": 2143},
+          "player_spawn": {"x": 2182, "y": 1144},
+          "tile_size": 232
+        },
+        {
+          "direction": 213,
+          "child": 123,
+          "pos": {"x": 18223, "y": 23144},
+          "player_spawn": {"x": 1812, "y": 2144},
+          "tile_size": 23
+        },
+        {
+          "direction": 213,
+          "child": 123,
+          "pos": {"x":223, "y": 23144},
+          "player_spawn": {"x": 1812, "y": 2144},
+          "tile_size": 23
+        }
+      ]
     },
     {
       "world": 3,

@@ -27,11 +27,7 @@ static void maps_append_data(map_t *map, cjson_t *map_config)
     map->back = sfTexture_createFromFile(back, NULL);
     map->front = sfTexture_createFromFile(front, NULL);
     map->collision = sfImage_createFromFile(collision);
-    map->building = cjson_get_prop_bool_unsafe(map_config, "building");
-    map->city = cjson_get_prop_int_unsafe(map_config, "city");
-    map->enter = cjson_vector(map_config, "enter");
-    map->exit = cjson_vector(map_config, "exit");
-    map->door = cjson_vector(map_config, "door");
+    map->entry = map_load_entry(map_config);
     free(back);
     free(front);
     free(collision);

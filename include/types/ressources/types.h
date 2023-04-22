@@ -29,6 +29,15 @@ typedef struct s_skin {
     sfTexture *texture;     //Texture of corresponding to skin
 } skin_t;
 
+
+typedef struct entry_s {
+    int direction;
+    worlds_t child;
+    sfVector2f pos;
+    sfVector2f player_spawn;
+    int tile_size;
+} entry_t;
+
 /**
  * @brief Structure of a map
 */
@@ -37,11 +46,7 @@ typedef struct s_map {
     sfTexture *back;        //Texture of the back of the map
     sfTexture *front;       //Texture of the front of the map
     sfImage *collision;     //Image of collision
-    bool building;          //Map is a building
-    int city;               //City of the map
-    sfVector2f enter;       //Enter coordinates
-    sfVector2f exit;        //Exit coordinates
-    sfVector2f door;        //Coordinates of the door
+    list_t *entry;          //Map entries
 } map_t;
 
 /**

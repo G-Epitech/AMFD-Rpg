@@ -60,6 +60,7 @@ SRC = 		src/main.c \
 			src/types/ressources/load.c \
 			src/types/ressources/free.c \
 			src/types/ressources/maps/load.c \
+			src/types/ressources/maps/load_entry.c	\
 			src/types/ressources/maps/free.c \
 			\
 			src/types/ressources/skins/load.c \
