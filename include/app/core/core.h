@@ -62,6 +62,29 @@ void core_fight_enemy(app_t *app, renderer_t *renderer);
 void core_fight_handler(app_t *app, renderer_t *renderer);
 
 /**
+ * @brief Detects color interaction
+ * @param pixel Current color near the player
+ * @param interaction_color Color to check
+ * @return True if color is the right one, false if not
+*/
+bool core_interaction_detect_color(sfColor pixel, sfColor interaction_color);
+
+/**
+ * @brief Interactions at exit or entry
+ * @param pixel Pixel near the player
+ * @param app App object
+*/
+void core_interactions_travel(sfColor pixel, app_t *app);
+
+/**
+ * @brief Handles traveling
+ * @param renderer Renderer object
+ * @param app App object
+ * @param curr_map Current map
+*/
+void core_handle_travel(renderer_t *renderer, app_t *app, map_t *curr_map);
+
+/**
  * @brief handle quests core
  * @param app App object
  */

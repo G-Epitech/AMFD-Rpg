@@ -26,6 +26,7 @@ void init_levels(player_t *player)
     player->life_max = 20;
     player->xp_max = 10;
     player->credits = 0;
+    player->map_stage = 2;
 }
 
 player_t *players_add(list_t *list, char *name)

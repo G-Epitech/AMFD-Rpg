@@ -35,6 +35,7 @@ typedef struct s_player {
     int life;                   //Life of the player
     int speed;                  //Speed of the player
     int intellect;              //Intelect of the player
+    int map_stage;              //Map stage the player is currently in
     int credits;                //Credit of player for earn competence
     list_t *competences;        //competence tree of the player
     int life_max;               //Life max of the player
