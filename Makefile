@@ -92,7 +92,8 @@ SRC = 		src/main.c \
 			\
 			src/types/ressources/items/load.c \
 			\
-			src/types/ressources/animation/load.c	\
+			src/types/ressources/animation/load_player.c	\
+			src/types/ressources/animation/load_environment.c \
 			\
 			src/types/view/init.c \
 			\
@@ -197,7 +198,7 @@ SRC = 		src/main.c \
 			src/app/display/player/competences_tree.c \
 			src/app/display/characters/character.c \
 			src/app/display/map/front.c	\
-      src/app/display/components/components.c \
+      		src/app/display/components/components.c \
 			src/app/display/components/backgrounds.c \
 			src/app/display/components/levers.c \
 			src/app/display/components/interaction.c \
@@ -232,6 +233,7 @@ SRC = 		src/main.c \
 			src/app/display/animations/notif.c \
 			src/app/display/dialogs/dialogs.c \
 			src/app/display/hud/hud.c \
+			src/app/display/animations/environment.c \
 			\
 			src/app/getters/progress/inventory.c \
 			src/app/getters/progress/fight.c \

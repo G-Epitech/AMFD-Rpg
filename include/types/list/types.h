@@ -51,6 +51,7 @@ typedef union u_node_data {
     list_t *list;
     skin_t skin;
     map_t *map;
+    anim_t *anim;
     npc_t npc;
 } node_data_t;
 
