@@ -17,7 +17,9 @@ void core_interactions_travel(sfColor pixel, app_t *app)
 {
     if (core_interaction_detect_color(pixel, sfBlue)) {
         app->interaction->type = IT_TRAVEL;
-        app->interaction->value = 255 - pixel.a ;
+        app->interaction->data.entry_id = 255 - pixel.a;
+        app->interaction->interaction = true;
+        app->interaction->active = false;
     }
 }
 
@@ -39,17 +41,22 @@ static entry_t *get_entry_by_id(list_t *entries, int entry_id)
 static void travel_player(app_t *app, map_t *curr_map)
 {
     player_t *player = app->player;
-    entry_t *entry = get_entry_by_id(curr_map->entry, app->interaction->value);
+    entry_t *entry = get_entry_by_id(curr_map->entry,
+    app->interaction->data.entry_id);
 
     app->world = entry->child;
     player->position.x = entry->player_spawn.x;
     player->position.y = entry->player_spawn.y;
     app->interaction->type = IT_NULL;
+    app->interaction->interaction = false;
+    app->interaction->active = false;
 }
 
 void core_handle_travel(renderer_t *renderer, app_t *app, map_t *curr_map)
 {
     (void) renderer;
-    if (PLAYER_TRAVELING(app->interaction->type))
+    if (PLAYER_TRAVELING(app->interaction->type) &&
+    app->interaction->active) {
         travel_player(app, curr_map);
+    }
 }

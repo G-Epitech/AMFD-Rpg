@@ -103,6 +103,7 @@ typedef union u_interaction_data {
     npc_data_t *npc;
     fight_t *fight;
     interaction_dialogs_t *dialogs;
+    int entry_id;
 } interaction_data_t;
 
 typedef enum e_interaction_type {
