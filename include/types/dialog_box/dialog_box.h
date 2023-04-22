@@ -84,4 +84,11 @@ void dialog_box_set_input(dialog_box_t *dialog_box, char *input);
  */
 char *dialog_box_get_input(dialog_box_t *dialog_box);
 
+/**
+ * @brief Reset event handler of given dialog box
+ * @param dialog_box Dialog box of which reset events
+ * @param reset_after Specify if after functions have to been reset
+ */
+void dialog_box_reset_events(dialog_box_t *dialog_box, bool rester_after);
+
 #endif /* !DIALOG_BOX_H_ */

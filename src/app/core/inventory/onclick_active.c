@@ -35,9 +35,8 @@ void inventory_onclick_item_active(app_t *app, inventory_item_t *item)
     dialog_box_set_option1(app->dialog_box, "Retirer");
     dialog_box_set_option2(app->dialog_box, "Annuler");
     dialog_box_set_option3(app->dialog_box, NULL);
+    dialog_box_reset_events(app->dialog_box, true);
     app->dialog_box->onoption1 = &remove_equipement;
-    app->dialog_box->onoption2 = NULL;
-    app->dialog_box->onoption3 = NULL;
     app->dialog_box->option = 1;
     app->dialog_box->show = true;
 }

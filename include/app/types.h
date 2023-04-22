@@ -155,7 +155,6 @@ typedef struct s_app {
     list_t *player_anim;                //Player animations
     app_quests_t *quests;               //Quests of the game
     sfClock *clock;                     //Clock of the game
-    saver_t *saver;                     //Saver
 } app_t;
 
 typedef bool (*app_init_member_t)(app_t *app, renderer_t *renderer);

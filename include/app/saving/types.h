@@ -8,8 +8,13 @@
 #ifndef TYPES_SAVING_H_
     #define TYPES_SAVING_H_
 
+    #include <stdbool.h>
+    #include <SFML/Graphics.h>
+
 typedef struct s_saver {
     char *filename;
+    bool close_window;
+    sfRenderWindow *window;
 } saver_t;
 
 #endif /* !TYPES_SAVING_H_ */

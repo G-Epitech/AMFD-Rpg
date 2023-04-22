@@ -163,6 +163,10 @@ SRC = 		src/main.c \
 			\
 			src/app/developer/reload_json.c \
 			\
+			src/app/saving/onexit.c \
+			src/app/saving/save_ask_file.c \
+			src/app/saving/load_ask_file.c \
+			\
 			src/app/network/init.c \
 			src/app/network/connexion/host.c \
 			src/app/network/connexion/join.c \

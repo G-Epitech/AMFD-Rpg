@@ -67,9 +67,9 @@ void inventory_onclick_item_consumable(app_t *app, inventory_item_t *item)
     dialog_box_set_option1(app->dialog_box, "Consommer");
     dialog_box_set_option2(app->dialog_box, "Vendre");
     dialog_box_set_option3(app->dialog_box, "Annuler");
+    dialog_box_reset_events(app->dialog_box, true);
     app->dialog_box->onoption1 = &consume_item;
     app->dialog_box->onoption2 = &sell_item;
-    app->dialog_box->onoption3 = NULL;
     app->dialog_box->show = true;
     app->dialog_box->option = 1;
 }

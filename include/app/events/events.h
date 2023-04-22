@@ -63,12 +63,13 @@ void event_components_levers(renderer_t *renderer, app_t *app, sfEvent event);
 */
 void event_components_attacks(renderer_t *renderer, app_t *app, sfEvent event);
 
-/*
+/**
  * @brief Handler of event close
  * @param window Window of the app
  * @param event The specific event
+ * @param app App object
 */
-void event_close(sfRenderWindow *window, sfEvent event);
+void event_close(sfRenderWindow *window, sfEvent event, app_t *app);
 
 /**
  * @brief Handler of event text entered

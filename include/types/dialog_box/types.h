@@ -47,9 +47,13 @@ typedef struct s_dialog_box {
     char *option3;
     int option;
     bool show;
+    void *context;
     dialog_box_callback_t onoption1;
     dialog_box_callback_t onoption2;
     dialog_box_callback_t onoption3;
+    dialog_box_callback_t afteroption1;
+    dialog_box_callback_t afteroption2;
+    dialog_box_callback_t afteroption3;
 } dialog_box_t;
 
 #endif /* !DIALOG_BOX_TYPES_H_ */
