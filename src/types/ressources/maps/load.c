@@ -11,6 +11,7 @@
 #include "types/list/list.h"
 #include "types/ressources/types.h"
 #include "types/ressources/ressources.h"
+#include "types/components/components.h"
 #include "types/players/types.h"
 #include "cjson/include/cjson.h"
 #include "app/loading/loading.h"
@@ -26,6 +27,7 @@ static void maps_append_data(map_t *map, cjson_t *map_config)
     map->back = sfTexture_createFromFile(back, NULL);
     map->front = sfTexture_createFromFile(front, NULL);
     map->collision = sfImage_createFromFile(collision);
+    map->entry = map_load_entry(map_config);
     free(back);
     free(front);
     free(collision);
@@ -71,5 +73,6 @@ void maps_load(list_t *maps, renderer_t *renderer)
         maps_append(maps, map, i, renderer);
         map = map->next;
     }
+    entry_include_to_array(maps);
     cjson_free(maps_config);
 }
