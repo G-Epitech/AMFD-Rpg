@@ -35,8 +35,8 @@ void zoom_screen(renderer_t *renderer)
         NULL);
         sfRenderWindow_display(renderer->window);
         elapsed = sfClock_getElapsedTime(clock);
-        scale.x += 0.006;
-        scale.y += 0.006;
+        scale.x += 0.0045;
+        scale.y += 0.0045;
     }
     sfClock_destroy(clock);
 }
@@ -49,7 +49,7 @@ void loading_preload_screen(renderer_t *renderer)
 
     sfMusic_play(intro);
     sfSprite_setTexture(objects->sprite, preload_screen, sfTrue);
-    sfSprite_setPosition(objects->sprite, (sfVector2f) {960, 540});
+    sfSprite_setPosition(objects->sprite, (sfVector2f) {960, 440});
     sfSprite_setOrigin(objects->sprite, (sfVector2f) {500, 450});
     zoom_screen(renderer);
     sfSprite_setOrigin(objects->sprite, (sfVector2f) {0, 0});
