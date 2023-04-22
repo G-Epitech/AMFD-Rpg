@@ -54,7 +54,7 @@ static void sell_equipement(app_t *app, char *data)
 
 void inventory_onclick_item_equipement(app_t *app, inventory_item_t *item)
 {
-    char *tmp = my_strcat("Voulez-vous equiper de l'objet \n\"",
+    char *tmp = my_strcat("Voulez-vous vous equiper de l'objet \n\"",
     item->target->label);
     char *tmp2 = my_strcat(tmp, "\" ou alors le vendre pour\n");
     char *price = nbr_to_str(item->target->price);
