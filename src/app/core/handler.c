@@ -43,7 +43,7 @@ int core_handler(renderer_t *renderer, app_t *app)
     core_handle_movement(app->control, current_map->collision, app);
     core_fight_handler(app, renderer);
     core_handle_sound(app);
-    core_quests(app);
+    core_quests(renderer, app);
     core_handle_animation(app);
     network_receive(app);
     return 0;

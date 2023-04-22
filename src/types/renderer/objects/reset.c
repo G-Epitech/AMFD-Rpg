@@ -34,6 +34,7 @@ void renderer_objects_reset_text(renderer_objects_t *objects)
     sfText_setScale(objects->text, scale);
     sfText_setRotation(objects->text, 0);
     sfText_setOutlineColor(objects->text, sfTransparent);
+    sfText_setOutlineThickness(objects->text, 0);
     sfText_setColor(objects->text, TEXT_DEFAULT_COLOR);
 }
 

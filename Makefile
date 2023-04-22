@@ -126,6 +126,7 @@ SRC = 		src/main.c \
 			src/app/animations/handler.c \
 			src/app/animations/active.c \
 			src/app/animations/event_new.c \
+			src/app/animations/event_actual.c \
 			src/app/animations/screen/zoom.c \
 			src/app/animations/button/shake_attack.c \
 			src/app/animations/text/floating.c \

@@ -25,7 +25,7 @@
 
 static void applay_attack(cjson_t *node, app_t *app)
 {
-    list_t *events = animation_event_new(app);
+    list_t *events = animation_event_actual(app);
     char *attack = cjson_get_prop_string_unsafe(node, "title");
     int damage = cjson_get_prop_int_unsafe(node, "damage");
 
@@ -48,8 +48,9 @@ static void attack_loose(app_t *app, renderer_t *renderer)
         app->interaction->interaction = false;
         app->state = ST_INGAME;
         free(app->interaction->data.fight);
-        events = animation_event_new(app);
+        events = animation_event_actual(app);
         animations_screen_zoom_add(events, renderer->map_view, 70, 2);
+        events = animation_event_new(app);
         animations_notif_add(events, icon, ATTACKS_LOOSE_TITLE,
         ATTACKS_LOOSE_DESCRIPTION);
     } else {
