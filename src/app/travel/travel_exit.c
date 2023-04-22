@@ -13,7 +13,7 @@
 
 void travel_exit(app_t *app, renderer_t *renderer, map_t *curr_map)
 {
-    (void) renderer;
+    (void) app;
     (void) curr_map;
     (void) renderer;
 }

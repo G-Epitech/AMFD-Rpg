@@ -61,6 +61,7 @@ SRC = 		src/main.c \
 			src/types/ressources/free.c \
 			src/types/ressources/maps/load.c \
 			src/types/ressources/maps/load_entry.c	\
+			src/types/ressources/maps/include_array.c	\
 			src/types/ressources/maps/free.c \
 			\
 			src/types/ressources/skins/load.c \
@@ -261,7 +262,7 @@ FTEST_REPO = https://github.com/Atomot/ftest/
 
 FTEST_V = ftest-0.1.0-1.x86_64.rpm
 
-CFLAGS += -Wall -Wextra -Werror -Wno-unused-command-line-argument -g
+CFLAGS += -Wall -Wextra -Wno-unused-command-line-argument -g
 
 INC = -I./include -I./lib
 

@@ -46,6 +46,7 @@ typedef struct s_map {
     sfTexture *back;        //Texture of the back of the map
     sfTexture *front;       //Texture of the front of the map
     sfImage *collision;     //Image of collision
+    sfTexture *col_texture; //Used in dev mode
     list_t *entry;          //Map entries
 } map_t;
 

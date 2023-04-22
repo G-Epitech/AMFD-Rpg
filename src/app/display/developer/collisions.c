@@ -33,6 +33,23 @@ static void display_collision_futur(renderer_t *renderer, app_t *app)
     }
 }
 
+static void display_collisions_map(renderer_t *renderer, app_t *app)
+{
+    node_t *node = renderer->ressources->maps->first;
+    map_t *map = NULL;
+
+    while (node) {
+        map = node->data.map;
+        if (app->world == map->world) {
+            sfSprite_setTexture(renderer->objects->sprite, map->col_texture,
+            sfTrue);
+            sfRenderWindow_drawSprite(renderer->window,
+            renderer->objects->sprite, NULL);
+        }
+        node = node->next;
+    }
+}
+
 static void display_collision_player(renderer_t *renderer, app_t *app)
 {
     sfRectangleShape *rectangle = renderer->objects->rectangle;
@@ -54,4 +71,5 @@ void display_developer_collisions(renderer_t *renderer, app_t *app)
         return;
     display_collision_player(renderer, app);
     display_collision_futur(renderer, app);
+    display_collisions_map(renderer, app);
 }

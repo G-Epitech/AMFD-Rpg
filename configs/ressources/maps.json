@@ -7,16 +7,16 @@
       "collision": "assets/test_vill.png",
       "entry" : [
         {
-          "direction": 1,
+          "direction": 2,
           "child": 1,
-          "pos": {"x": 182, "y": 144},
+          "pos": {"x": 10, "y": 10},
           "player_spawn": {"x": 182, "y": 144},
           "tile_size": 2
         },
         {
           "direction": 1,
           "child": 1,
-          "pos": {"x": 182, "y": 144},
+          "pos": {"x": 10, "y": 10},
           "player_spawn": {"x": 182, "y": 144},
           "tile_size": 2
         }
@@ -29,14 +29,14 @@
       "collision": "assets/worlds/player_house/ph1_col.png",
       "entry" : [
         {
-          "direction": 4,
+          "direction": 2,
           "child": 1,
-          "pos": {"x": 184, "y": 143},
+          "pos": {"x": 10, "y": 10},
           "player_spawn": {"x": 182, "y": 144},
           "tile_size": 2
         },
         {
-          "direction": 4,
+          "direction": 1,
           "child": 1,
           "pos": {"x": 182, "y": 144},
           "player_spawn": {"x": 182, "y": 144},
@@ -51,25 +51,11 @@
       "collision": "assets/worlds/player_house/ph2_col.png",
       "entry" : [
         {
-          "direction": 234,
-          "child": 243,
-          "pos": {"x": 1844, "y": 2143},
-          "player_spawn": {"x": 2182, "y": 1144},
-          "tile_size": 232
-        },
-        {
-          "direction": 213,
-          "child": 123,
-          "pos": {"x": 18223, "y": 23144},
-          "player_spawn": {"x": 1812, "y": 2144},
-          "tile_size": 23
-        },
-        {
-          "direction": 213,
-          "child": 123,
-          "pos": {"x":223, "y": 23144},
-          "player_spawn": {"x": 1812, "y": 2144},
-          "tile_size": 23
+          "direction": 2,
+          "child": 234,
+          "pos": {"x": 208, "y": 15},
+          "player_spawn": {"x": 100, "y": 100},
+          "tile_size": 3
         }
       ]
     },
@@ -78,120 +64,264 @@
       "back": "assets/worlds/university/uni1_back.png",
       "front": "assets/worlds/university/uni1_front.png",
       "collision": "assets/worlds/university/uni1_col.png",
-      "building": true,
-      "city": 0,
-      "enter": {"x": 328, "y": 900},
-      "exit": {"x": 96, "y": 65}
+      "entry" : [
+        {
+          "direction": 2,
+          "child": 1,
+          "pos": {"x": 10, "y": 10},
+          "player_spawn": {"x": 182, "y": 144},
+          "tile_size": 2
+        },
+        {
+          "direction": 1,
+          "child": 1,
+          "pos": {"x": 10, "y": 10},
+          "player_spawn": {"x": 182, "y": 144},
+          "tile_size": 2
+        }
+      ]
     },
     {
       "world": 4,
       "back": "assets/worlds/university/uni2_back.png",
       "front": "assets/worlds/university/uni2_front.png",
       "collision": "assets/worlds/university/uni2_col.png",
-      "building": true,
-      "city": 0,
-      "enter": {"x":170, "y": 53},
-      "exit": {"x": 351, "y": 150}
+      "entry" : [
+        {
+          "direction": 2,
+          "child": 1,
+          "pos": {"x": 10, "y": 10},
+          "player_spawn": {"x": 182, "y": 144},
+          "tile_size": 2
+        },
+        {
+          "direction": 1,
+          "child": 1,
+          "pos": {"x": 10, "y": 10},
+          "player_spawn": {"x": 182, "y": 144},
+          "tile_size": 2
+        }
+      ]
     },
     {
       "world": 5,
       "back": "assets/worlds/store/sup_back.png",
       "front": "assets/worlds/store/sup_front.png",
       "collision": "assets/worlds/store/sup_col.png",
-      "building": true,
-      "city": 0,
-      "enter": {"x": 256, "y": 245},
-      "exit": {"x": 96, "y": 65}
+      "entry" : [
+        {
+          "direction": 2,
+          "child": 1,
+          "pos": {"x": 10, "y": 10},
+          "player_spawn": {"x": 182, "y": 144},
+          "tile_size": 2
+        },
+        {
+          "direction": 1,
+          "child": 1,
+          "pos": {"x": 10, "y": 10},
+          "player_spawn": {"x": 182, "y": 144},
+          "tile_size": 2
+        }
+      ]
     },
     {
       "world": 6,
       "back": "assets/worlds/prison/prison_back.png",
       "front": "assets/worlds/prison/prison_front.png",
       "collision": "assets/worlds/prison/prison_col.png",
-      "building": true,
-      "city": 0,
-      "enter": {"x": 240, "y": 290},
-      "exit": {"x": 96, "y": 65}
+      "entry" : [
+        {
+          "direction": 2,
+          "child": 1,
+          "pos": {"x": 10, "y": 10},
+          "player_spawn": {"x": 182, "y": 144},
+          "tile_size": 2
+        },
+        {
+          "direction": 1,
+          "child": 1,
+          "pos": {"x": 182, "y": 144},
+          "player_spawn": {"x": 182, "y": 144},
+          "tile_size": 2
+        }
+      ]
     },
     {
       "world": 7,
       "back": "assets/worlds/mairie/mair1_back.png",
       "front": "assets/worlds/mairie/mair1_front.png",
       "collision": "assets/worlds/mairie/mair1_col.png",
-      "building": true,
-      "city": 0,
-      "enter": {"x": 232, "y": 243},
-      "exit": {"x": 96, "y": 65}
+      "entry" : [
+        {
+          "direction": 2,
+          "child": 1,
+          "pos": {"x": 10, "y": 10},
+          "player_spawn": {"x": 182, "y": 144},
+          "tile_size": 2
+        },
+        {
+          "direction": 1,
+          "child": 1,
+          "pos": {"x": 182, "y": 144},
+          "player_spawn": {"x": 182, "y": 144},
+          "tile_size": 2
+        }
+      ]
     },
     {
       "world": 8,
       "back": "assets/worlds/mairie/mair2_back.png",
       "front": "assets/worlds/mairie/mair2_front.png",
       "collision": "assets/worlds/mairie/mair2_col.png",
-      "building": true,
-      "city": 0,
-      "enter": {"x": 63, "y": 253},
-      "exit": {"x": 63, "y": 46}
+      "entry" : [
+        {
+          "direction": 2,
+          "child": 1,
+          "pos": {"x": 10, "y": 10},
+          "player_spawn": {"x": 182, "y": 144},
+          "tile_size": 2
+        },
+        {
+          "direction": 1,
+          "child": 1,
+          "pos": {"x": 182, "y": 144},
+          "player_spawn": {"x": 182, "y": 144},
+          "tile_size": 2
+        }
+      ]
     },
     {
       "world": 9,
       "back": "assets/worlds/mairie/mair3_back.png",
       "front": "assets/worlds/mairie/mair3_front.png",
       "collision": "assets/worlds/mairie/mair3_col.png",
-      "building": true,
-      "city": 0,
-      "enter": {"x": 63, "y": 212},
-      "exit": {"x": 63, "y": 39}
+      "entry" : [
+        {
+          "direction": 2,
+          "child": 1,
+          "pos": {"x": 10, "y": 10},
+          "player_spawn": {"x": 182, "y": 144},
+          "tile_size": 2
+        },
+        {
+          "direction": 1,
+          "child": 1,
+          "pos": {"x": 182, "y": 144},
+          "player_spawn": {"x": 182, "y": 144},
+          "tile_size": 2
+        }
+      ]
     },
     {
       "world": 10,
       "back": "assets/worlds/mairie/mair4_back.png",
       "front": "assets/worlds/mairie/mair4_front.png",
       "collision": "assets/worlds/mairie/mair4_col.png",
-      "building": true,
-      "city": 0,
-      "enter": {"x": 213, "y": 138},
-      "exit": {"x": 233, "y": 39}
+      "entry" : [
+        {
+          "direction": 2,
+          "child": 1,
+          "pos": {"x": 10, "y": 10},
+          "player_spawn": {"x": 182, "y": 144},
+          "tile_size": 2
+        },
+        {
+          "direction": 1,
+          "child": 1,
+          "pos": {"x": 182, "y": 144},
+          "player_spawn": {"x": 182, "y": 144},
+          "tile_size": 2
+        }
+      ]
     },
     {
       "world": 11,
       "back": "assets/worlds/hospital/hos1_back.png",
       "front": "assets/worlds/hospital/hos1_front.png",
       "collision": "assets/worlds/hospital/hos1_col.png",
-      "building": true,
-      "city": 0,
-      "enter": {"x": 111, "y": 455},
-      "exit": {"x": 96, "y": 65}
+      "entry" : [
+        {
+          "direction": 2,
+          "child": 1,
+          "pos": {"x": 10, "y": 10},
+          "player_spawn": {"x": 182, "y": 144},
+          "tile_size": 2
+        },
+        {
+          "direction": 1,
+          "child": 1,
+          "pos": {"x": 182, "y": 144},
+          "player_spawn": {"x": 182, "y": 144},
+          "tile_size": 2
+        }
+      ]
     },
     {
       "world": 12,
       "back": "assets/worlds/hospital/hos2_back.png",
       "front": "assets/worlds/hospital/hos2_front.png",
       "collision": "assets/worlds/hospital/hos2_col.png",
-      "building": true,
-      "city": 0,
-      "enter": {"x": 151, "y": 155},
-      "exit": {"x": 151, "y": 455}
+      "entry" : [
+        {
+          "direction": 2,
+          "child": 1,
+          "pos": {"x": 10, "y": 10},
+          "player_spawn": {"x": 182, "y": 144},
+          "tile_size": 2
+        },
+        {
+          "direction": 1,
+          "child": 1,
+          "pos": {"x": 182, "y": 144},
+          "player_spawn": {"x": 182, "y": 144},
+          "tile_size": 2
+        }
+      ]
     },
     {
       "world": 13,
       "back": "assets/worlds/hospital/hos3_back.png",
       "front": "assets/worlds/hospital/hos3_front.png",
       "collision": "assets/worlds/hospital/hos3_col.png",
-      "building": true,
-      "city": 0,
-      "enter": {"x": 280, "y": 207},
-      "exit": {"x": 0, "y": 0}
+      "entry" : [
+        {
+          "direction": 2,
+          "child": 1,
+          "pos": {"x": 10, "y": 10},
+          "player_spawn": {"x": 182, "y": 144},
+          "tile_size": 2
+        },
+        {
+          "direction": 1,
+          "child": 1,
+          "pos": {"x": 182, "y": 144},
+          "player_spawn": {"x": 182, "y": 144},
+          "tile_size": 2
+        }
+      ]
     },
     {
       "world": 14,
       "back": "assets/worlds/aymeric_desk/aym_back.png",
       "front": "assets/worlds/aymeric_desk/aym_front.png",
       "collision": "assets/worlds/aymeric_desk/aym_col.png",
-      "building": true,
-      "city": 0,
-      "enter": {"x": 151, "y": 244},
-      "exit": {"x": 328, "y": 900}
+      "entry" : [
+        {
+          "direction": 2,
+          "child": 1,
+          "pos": {"x": 10, "y": 10},
+          "player_spawn": {"x": 182, "y": 144},
+          "tile_size": 2
+        },
+        {
+          "direction": 1,
+          "child": 1,
+          "pos": {"x": 182, "y": 144},
+          "player_spawn": {"x": 182, "y": 144},
+          "tile_size": 2
+        }
+      ]
     }
   ]
 }

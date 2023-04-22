@@ -73,5 +73,6 @@ void maps_load(list_t *maps, renderer_t *renderer)
         maps_append(maps, map, i, renderer);
         map = map->next;
     }
+    entry_include_to_array(maps);
     cjson_free(maps_config);
 }
