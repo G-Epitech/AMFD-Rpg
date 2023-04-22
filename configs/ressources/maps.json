@@ -37,6 +37,14 @@
           "pos": {"x": 1991, "y": 897},
           "player_spawn": {"x": 256, "y": 245},
           "tile_size": 2
+        },
+        {
+          "id": 5,
+          "direction": 1,
+          "child": 15,
+          "pos": {"x": 1532, "y": 861},
+          "player_spawn": {"x": 88, "y": 90},
+          "tile_size": 1
         }
       ]
     },
@@ -349,6 +357,22 @@
           "pos": {"x": 182, "y": 144},
           "player_spawn": {"x": 182, "y": 144},
           "tile_size": 2
+        }
+      ]
+    },
+    {
+      "world": 15,
+      "back": "assets/worlds/shady_shop/shady_shop_back.png",
+      "front": "assets/worlds/shady_shop/shady_shop_front.png",
+      "collision": "assets/worlds/shady_shop/shady_shop_col.png",
+      "entry" : [
+        {
+          "id": 1,
+          "direction": 2,
+          "child": 0,
+          "pos": {"x": 63, "y": 153},
+          "player_spawn": {"x": 1534, "y": 827},
+          "tile_size": 4
         }
       ]
     }
