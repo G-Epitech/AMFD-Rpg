@@ -19,6 +19,7 @@
     #include "types/ressources/types.h"
     #include "app/tasks/bash/types.h"
     #include "app/tasks/flipper/types.h"
+    #include "app/competences_tree/types.h"
     #include "app/tasks/types.h"
     #include "app/quests/types.h"
     #include "app/animate_player/type.h"
@@ -30,6 +31,7 @@ typedef union u_node_data {
     inventory_item_t *inventory_item;
     task_camera_node_t *node_camera;
     task_flipper_node_t *node_flip;
+    competences_node_t *competence;
     task_bash_node_t *node_bash;
     background_t *background;
     npc_dialog_t npc_dialog;
@@ -49,6 +51,7 @@ typedef union u_node_data {
     list_t *list;
     skin_t skin;
     map_t *map;
+    anim_t *anim;
     npc_t npc;
 } node_data_t;
 

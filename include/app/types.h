@@ -21,6 +21,8 @@
     #include "sound/types.h"
     #include "app/quests/types.h"
 
+    #define CURSOR_FILE "assets/components/cursor.png"
+
 typedef struct s_list list_t;
 typedef struct s_renderer renderer_t;
 typedef struct s_npc_data npc_data_t;
@@ -48,6 +50,7 @@ typedef enum e_app_states {
     ST_SMRESOLUTION,        //Side menu resolution
     ST_IGSAVE,              //In game save
     ST_IGLOAD,              //In game load
+    ST_IG_TREE_COMPETENCE,  //In game tree of competence
     ST_FIGHT = 350,         //Fight interface
     ST_DIALOGS = 400,       //Dialogs state
     ST_TASK = 500,          //Task delimiter
@@ -77,11 +80,17 @@ typedef enum e_worlds {
     WL_CITY
 } worlds_t;
 
+typedef struct cursor_s {
+    sfVector2f pos;
+    sfTexture *texture;
+} cursor_t;
+
 typedef struct s_control {
     int direction_nb;       //Number of directions (useful for diagonal moves)
     bool direction;         //Move direction
     sfVector2f offset;      //Move offset for the direction
     sfKeyCode key;          //Move key code
+    cursor_t *cursor;
 } control_t;
 
 typedef struct s_settings {
@@ -144,7 +153,7 @@ typedef struct s_app {
     player_t *partner;                  //Partner player
     list_t *npcs;                       //NPC of game
     control_t *control;                 //Controller of the player
-    list_t *tasks_setup;                //Taks of the game
+    list_t *tasks_setup;                //Tasks of the game
     settings_t *settings;               //Settings of the application
     network_t *network;                 //Network
     interactions_t *interaction;        //Interaction in the app

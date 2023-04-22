@@ -16,6 +16,7 @@
 #include "types/list/types.h"
 #include "app/animations/animations.h"
 #include "my/include/my.h"
+#include "app/utils/utils.h"
 
 static bool on_attack(attack_t *attack, app_t *app,
 sfEvent event, fight_t *fight)
@@ -57,8 +58,10 @@ static void attack_win(app_t *app, renderer_t *renderer)
 {
     list_t *events = NULL;
     sfTexture *icon = renderer->ressources->icons->happy;
+    int xp = 0;
 
     if (app->interaction->data.fight->enemy_life <= 0) {
+        xp = app->interaction->data.fight->npc->enemy->level;
         app->interaction->active = false;
         app->interaction->interaction = false;
         app->state = ST_INGAME;
@@ -67,6 +70,7 @@ static void attack_win(app_t *app, renderer_t *renderer)
         animations_screen_zoom_add(events, renderer->map_view, 70, 2);
         animations_notif_add(events, icon, ATTACKS_WIN_TITLE,
         ATTACKS_WIN_DESCRIPTION);
+        utils_give_xp(renderer, app, xp);
     }
 }
 

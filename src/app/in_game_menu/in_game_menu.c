@@ -6,7 +6,7 @@
 */
 
 #include "app/app.h"
-#include "types/npc/npc.h"
+#include "app/in_game_menu/in_game_menu.h"
 #include "types/renderer/renderer.h"
 
 void update_prev_app_state(app_t *app)
@@ -28,7 +28,7 @@ int in_game_menu_exit_to_title(renderer_t *renderer, app_t *app,
 button_t *button)
 {
     (void) button;
-    app_free(app);
-    *app = *app_init(renderer);
+    (void) renderer;
+    restart_session(app);
     return 0;
 }

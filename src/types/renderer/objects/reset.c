@@ -8,6 +8,7 @@
 #include <stdio.h>
 #include <SFML/Graphics.h>
 #include "types/renderer/types.h"
+#include "app/display/types.h"
 
 void renderer_objects_reset_sprite(renderer_objects_t *objects)
 {
@@ -33,6 +34,7 @@ void renderer_objects_reset_text(renderer_objects_t *objects)
     sfText_setScale(objects->text, scale);
     sfText_setRotation(objects->text, 0);
     sfText_setOutlineColor(objects->text, sfTransparent);
+    sfText_setColor(objects->text, TEXT_DEFAULT_COLOR);
 }
 
 void renderer_objects_reset_circle(renderer_objects_t *objects)
