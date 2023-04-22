@@ -17,7 +17,7 @@
 #include "app/network/network.h"
 #include "app/animations/animations.h"
 
-map_t *get_current_map(renderer_t *renderer, app_t *app)
+static map_t *get_current_map(renderer_t *renderer, app_t *app)
 {
     node_t *node = renderer->ressources->maps->first;
     size_t index = 0;
@@ -41,7 +41,6 @@ int core_handler(renderer_t *renderer, app_t *app)
     if (core_tasks_handler(app) == 84)
         return 84;
     core_handle_movement(app->control, current_map->collision, app);
-    core_handle_travel(renderer, app, current_map);
     core_fight_handler(app, renderer);
     core_handle_sound(app);
     core_quests(app);

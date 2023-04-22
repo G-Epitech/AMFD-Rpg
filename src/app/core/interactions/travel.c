@@ -12,7 +12,6 @@
 #include "app/travel/travel.h"
 #include "types/list/list.h"
 
-
 void core_interactions_travel(sfColor pixel, app_t *app)
 {
     if (core_interaction_detect_color(pixel, sfBlue)) {
@@ -55,8 +54,7 @@ static void travel_player(app_t *app, map_t *curr_map)
 void core_handle_travel(renderer_t *renderer, app_t *app, map_t *curr_map)
 {
     (void) renderer;
-    if (PLAYER_TRAVELING(app->interaction->type) &&
-    app->interaction->active) {
+    if (PLAYER_TRAVELING(app->interaction->type)) {
         travel_player(app, curr_map);
     }
 }
