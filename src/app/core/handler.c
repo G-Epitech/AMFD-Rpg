@@ -35,10 +35,9 @@ int core_handler(renderer_t *renderer, app_t *app)
 {
     map_t *current_map = get_current_map(renderer, app);
 
-    if (PLAYER_IN_ANIM(app->animations)) {
-        animations_handler(renderer, app);
+    animations_handler(renderer, app);
+    if (animations_active(app->animations))
         return 1;
-    }
     if (core_tasks_handler(app) == 84)
         return 84;
     core_handle_movement(app->control, current_map->collision, app);

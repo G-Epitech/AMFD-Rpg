@@ -16,15 +16,15 @@
 
 static void init_levels(player_t *player)
 {
-    player->xp = 10;
-    player->level = 15;
+    player->xp = 0;
+    player->level = 0;
     player->life = 20;
-    player->intellect = 7;
-    player->speed = 8;
-    player->intellect_max = 100;
-    player->speed_max = 100;
-    player->life_max = 100;
-    player->xp_max = 50;
+    player->intellect = 3;
+    player->speed = 3;
+    player->intellect_max = 10;
+    player->speed_max = 10;
+    player->life_max = 20;
+    player->xp_max = 10;
     player->credits = 0;
 }
 
