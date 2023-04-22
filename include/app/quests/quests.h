@@ -28,20 +28,22 @@ quests_t *core_quests_get(app_t *app);
  * @brief Upgrade quests indexs (next)
  * @param app Application object
  */
-void core_quests_upgrade(app_t *app);
+void core_quests_upgrade(renderer_t *renderer, app_t *app);
 
 /**
  * @brief Handle world quests
+ * @param renderer Renderer object
  * @param quest Actual quest
  * @param app Application objects
  */
-void core_quests_world(quest_t *quest, app_t *app);
+void core_quests_world(renderer_t *renderer, quest_t *quest, app_t *app);
 
 /**
  * @brief Handle NPC quests
+ * @param renderer Renderer object
  * @param quest Actual quest
  * @param app Application objects
  */
-void core_quests_npc(quest_t *quest, app_t *app);
+void core_quests_npc(renderer_t *renderer, quest_t *quest, app_t *app);
 
 #endif /* !QUESTS_H_ */
