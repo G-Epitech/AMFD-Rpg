@@ -15,6 +15,13 @@
 #include "cjson/include/cjson.h"
 #include "app/loading/loading.h"
 
+static void free_list(ressources_t *ressources)
+{
+    list_free(ressources->maps);
+    list_free(ressources->skins);
+    list_free(ressources->props);
+}
+
 ressources_t *ressources_init(void)
 {
     ressources_t *ressources = malloc(sizeof(ressources_t));
@@ -30,9 +37,7 @@ ressources_t *ressources_init(void)
     ressources->icons->tree = malloc(sizeof(icons_competences_t));
     if (!ressources->maps || !ressources->skins || !ressources->props ||
     !ressources->inventory || !ressources->icons || !ressources->icons->tree) {
-        list_free(ressources->maps);
-        list_free(ressources->skins);
-        list_free(ressources->props);
+        free_list(ressources);
         free(ressources->inventory);
         free(ressources->icons);
         return NULL;
