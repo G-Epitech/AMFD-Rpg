@@ -45,6 +45,14 @@
           "pos": {"x": 1532, "y": 861},
           "player_spawn": {"x": 155, "y": 42},
           "tile_size": 1
+        },
+        {
+          "id": 6,
+          "direction": 1,
+          "child": 16,
+          "pos": {"x": 336, "y": 344},
+          "player_spawn": {"x": 105, "y": 56},
+          "tile_size": 1
         }
       ]
     },
@@ -372,6 +380,22 @@
           "child": 0,
           "pos": {"x": 145, "y": 30},
           "player_spawn": {"x": 1534, "y": 827},
+          "tile_size": 2
+        }
+      ]
+    },
+    {
+      "world": 16,
+      "back": "assets/worlds/camping/trailer1_back.png",
+      "front": "assets/worlds/camping/trailer1_front.png",
+      "collision": "assets/worlds/camping/trailer1_col.png",
+      "entry" : [
+        {
+          "id": 1,
+          "direction": 2,
+          "child": 0,
+          "pos": {"x": 96, "y": 99},
+          "player_spawn": {"x": 336, "y": 354},
           "tile_size": 2
         }
       ]

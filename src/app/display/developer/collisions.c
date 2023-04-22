@@ -41,6 +41,7 @@ static void display_collisions_map(renderer_t *renderer, app_t *app)
     while (node) {
         map = node->data.map;
         if (app->world == map->world) {
+            renderer_objects_reset_sprite(renderer->objects);
             sfSprite_setTexture(renderer->objects->sprite, map->col_texture,
             sfTrue);
             sfRenderWindow_drawSprite(renderer->window,
