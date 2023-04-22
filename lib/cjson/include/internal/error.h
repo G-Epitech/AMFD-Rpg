@@ -9,6 +9,7 @@
     #define CJSON_INTERNAL_ERROR_H_
 
     #include <stdbool.h>
+    #include <stdio.h>
 
 /**
  * @brief Display error on stderr

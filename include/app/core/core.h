@@ -43,6 +43,13 @@ int core_handler(renderer_t *renderer, app_t *app);
 void core_interactions_npc(sfColor pixel, app_t *app);
 
 /**
+ * @brief Animations of the game
+ * @param app App of object
+ * @param renderer Renderer object
+*/
+void core_handle_animation(app_t *app);
+
+/**
  * @brief Enemy fight
  * @param app App object
  */
@@ -76,5 +83,11 @@ void core_interactions_travel(sfColor pixel, app_t *app);
  * @param curr_map Current map
 */
 void core_handle_travel(renderer_t *renderer, app_t *app, map_t *curr_map);
+
+/**
+ * @brief handle quests core
+ * @param app App object
+ */
+void core_quests(app_t *app);
 
 #endif /* !CORE_H_ */

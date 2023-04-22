@@ -91,49 +91,49 @@
         },
         {
             "icon": "assets/components/button/malus.png",
-            "app_state": [2],
+            "app_state": [2, 302, 306],
             "position": {"x": 1007, "y": 468},
             "event": 4,
             "scale": 1
         },
         {
             "icon": "assets/components/button/malus.png",
-            "app_state": [2],
+            "app_state": [2, 302, 306],
             "position": {"x": 1007, "y": 558},
             "event": 6,
             "scale": 1
         },
         {
             "icon": "assets/components/button/sup.png",
-            "app_state": [2],
+            "app_state": [2, 302, 306],
             "position": {"x": 1290, "y": 468},
             "event": 5,
             "scale": 1
         },
         {
             "icon": "assets/components/button/sup.png",
-            "app_state": [2],
+            "app_state": [2, 302, 306],
             "position": {"x": 1290, "y": 558},
             "event": 7,
             "scale": 1
         },
         {
             "icon": "assets/components/button/previous_block.png",
-            "app_state": [3],
+            "app_state": [3, 303, 307],
             "position": {"x": 1279, "y": 788},
             "event": 0,
             "scale": 1
         },
         {
             "icon": "assets/components/button/previous.png",
-            "app_state": [4],
+            "app_state": [4, 304, 308],
             "position": {"x": 1279, "y": 788},
             "event": 2,
             "scale": 1
         },
         {
             "icon": "assets/components/button/next.png",
-            "app_state": [3],
+            "app_state": [3, 303, 307],
             "position": {"x": 1408, "y": 788},
             "event": 3,
             "scale": 1
@@ -147,7 +147,7 @@
         },
         {
             "icon": "assets/components/button/next_block.png",
-            "app_state": [4],
+            "app_state": [4, 304, 308],
             "position": {"x": 1408, "y": 788},
             "event": 0,
             "scale": 1
@@ -187,23 +187,51 @@
         {
             "icon": "assets/components/button/settings.png",
             "app_state": [100],
-            "position": {"x": 1819, "y": 950},
+            "position": {"x": 1717, "y": 950},
             "scale": 1,
-            "next_state": 302
+            "next_state": 306
+        },
+        {
+            "icon": "assets/components/button/cross.png",
+            "app_state": [306],
+            "position": {"x": 1410, "y": 248},
+            "event": 16,
+            "scale": 2
+        },
+        {
+            "icon": "assets/components/button/resolutions.png",
+            "app_state": [306],
+            "position": {"x": 460, "y": 788},
+            "scale": 1,
+            "next_state": 309
+        },
+        {
+            "icon": "assets/components/button/previous.png",
+            "app_state": [309],
+            "position": {"x": 1400, "y": 788},
+            "next_state": 306,
+            "scale": 1
+        },
+        {
+            "icon": "assets/components/button/cross.png",
+            "app_state": [307],
+            "position": {"x": 1410, "y": 248},
+            "event": 16,
+            "scale": 2
         },
         {
             "icon": "assets/components/button/pause.png",
             "app_state": [100],
-            "position": {"x": 1717, "y": 950},
+            "position": {"x": 1615, "y": 950},
             "scale": 1,
             "next_state": 301
         },
         {
             "icon": "assets/components/button/help.png",
             "app_state": [100],
-            "position": {"x": 1615, "y": 950},
+            "position": {"x": 1819, "y": 950},
             "scale": 1,
-            "next_state": 303
+            "next_state": 307
         },
         {
             "icon": "assets/components/button/inventory.png",
@@ -221,26 +249,120 @@
         },
         {
             "icon": "assets/components/button/lower_resolution.png",
-            "app_state": [8],
+            "app_state": [8, 305, 309],
             "position": {"x": 446, "y": 498},
             "event": 13,
             "scale": 1
         },
         {
             "icon": "assets/components/button/medium_resolution.png",
-            "app_state": [8],
+            "app_state": [8, 305, 309],
             "position": {"x": 796, "y": 498},
             "event": 14,
             "scale": 1
         },
         {
             "icon": "assets/components/button/high_resolution.png",
-            "app_state": [8],
+            "app_state": [8, 305, 309],
             "position": {"x": 1162, "y": 498},
             "event": 15,
             "scale": 1
+        },
+        {
+            "icon": "assets/components/button/tree_icon.png",
+            "app_state": [100],
+            "position": {"x": 1411, "y": 950},
+            "scale": 1,
+            "next_state": 312
+        },
+        {
+            "title": "Continue",
+            "position": {"x": 491, "y": 282},
+            "app_state": [301],
+            "color": {"r": 191, "g": 173, "b": 147, "a": 255},
+            "color_text": {"r": 103, "g": 81, "b": 82, "a":  255},
+            "scale": 0.75,
+            "event": 16
+        },
+        {
+            "title": "Sauvegarde",
+            "position": {"x": 468, "y": 392},
+            "app_state": [301],
+            "color": {"r": 191, "g": 173, "b": 147, "a": 255},
+            "color_text": {"r": 103, "g": 81, "b": 82, "a":  255},
+            "scale": 0.75,
+            "next_state": 310
+        },
+        {
+            "title": "Load",
+            "position": {"x": 525, "y": 502},
+            "app_state": [301],
+            "color": {"r": 191, "g": 173, "b": 147, "a": 255},
+            "color_text": {"r": 103, "g": 81, "b": 82, "a":  255},
+            "scale": 0.75,
+            "next_state": 311
+        },
+        {
+            "title": "Menu Principal",
+            "position": {"x": 458, "y": 722},
+            "app_state": [301],
+            "color": {"r": 191, "g": 173, "b": 147, "a": 255},
+            "color_text": {"r": 103, "g": 81, "b": 82, "a":  255},
+            "scale": 0.75,
+            "event": 17
+        },
+        {
+            "title": "Parametres",
+            "position": {"x": 478, "y": 612},
+            "app_state": [301],
+            "color": {"r": 191, "g": 173, "b": 147, "a": 255},
+            "color_text": {"r": 103, "g": 81, "b": 82, "a":  255},
+            "scale": 0.75,
+            "next_state": 302
+        },
+        {
+            "icon": "assets/components/button/previous.png",
+            "app_state": [302, 310, 311],
+            "position": {"x": 1400 , "y": 788},
+            "next_state": 301,
+            "scale": 1
+        },
+        {
+            "icon": "assets/components/button/resolutions.png",
+            "app_state": [302],
+            "position": {"x": 460, "y": 788},
+            "scale": 1,
+            "next_state": 305
+        },
+        {
+            "icon": "assets/components/button/previous.png",
+            "app_state": [305],
+            "position": {"x": 1400, "y": 788},
+            "next_state": 302,
+            "scale": 1
+        },
+        {
+            "icon": "assets/components/button/help.png",
+            "app_state": [1, 2, 302],
+            "position": {"x": 1279, "y": 788},
+            "scale": 1,
+            "next_state": 303
+        },
+        {
+            "icon": "assets/components/button/cross.png",
+            "app_state": [303],
+            "position": {"x": 1410, "y": 248},
+            "next_state": 302,
+            "scale": 2
+        },
+        {
+            "icon": "assets/components/button/cross.png",
+            "app_state": [312],
+            "position": {"x": 1401, "y": 248},
+            "next_state": 100,
+            "scale": 2
         }
-    ],  
+    ],
 
     "levers": [
         {
@@ -259,6 +381,44 @@
         {
             "position": {"x": 460, "y": 631},
             "app_state": 2,
+            "scale": 1,
+            "event": 2
+        },
+        {
+            "position": {"x": 460, "y": 446},
+            "app_state": 302,
+            "scale": 1,
+            "event": 0,
+            "on": true
+        },
+        {
+            "position": {"x": 460, "y": 540},
+            "app_state": 302,
+            "scale": 1,
+            "event": 1
+        },
+        {
+            "position": {"x": 460, "y": 631},
+            "app_state": 302,
+            "scale": 1,
+            "event": 2
+        },
+        {
+            "position": {"x": 460, "y": 446},
+            "app_state": 306,
+            "scale": 1,
+            "event": 0,
+            "on": true
+        },
+        {
+            "position": {"x": 460, "y": 540},
+            "app_state": 306,
+            "scale": 1,
+            "event": 1
+        },
+        {
+            "position": {"x": 460, "y": 631},
+            "app_state": 306,
             "scale": 1,
             "event": 2
         }
@@ -313,6 +473,20 @@
             "size": {"x": 284, "y": 42},
             "color": 0,
             "getter_value": 6
+        },
+        {
+            "position": {"x": 175, "y": 64},
+            "app_state": [100],
+            "size": {"x": 284, "y": 42},
+            "color": 0,
+            "getter_value": 2
+        },
+        {
+            "position": {"x": 175, "y": 116},
+            "app_state": [100],
+            "size": {"x": 284, "y": 42},
+            "color": 3,
+            "getter_value": 4
         }
     ]
 }

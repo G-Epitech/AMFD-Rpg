@@ -40,7 +40,7 @@ char *nbr_to_str(int num)
     int nb_moment = 0;
 
     if (num == 0)
-        return "0";
+        return my_strdup("0");
     handle_negative(&num, number_str, &index_number);
     for (int index = 0; index < len_num; index++, index_number++) {
         if (index == len_num - 1) {

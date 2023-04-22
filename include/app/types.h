@@ -9,10 +9,18 @@
     #define APP_TYPES_H_
 
     #include <stdbool.h>
+    #include <SFML/System/Export.h>
+    #include <SFML/System/Time.h>
+    #include <SFML/System/Types.h>
     #include "types/players/types.h"
+    #include "app/inventory/types.h"
     #include "app/network/types.h"
     #include "app/animations/types.h"
+    #include "types/dialog_box/types.h"
     #include "sound/types.h"
+    #include "app/quests/types.h"
+
+    #define CURSOR_FILE "assets/components/cursor.png"
 
 typedef struct s_list list_t;
 typedef struct s_renderer renderer_t;
@@ -32,7 +40,16 @@ typedef enum e_app_states {
     ST_INVENTORY = 300,     //Inventory menu
     ST_BREAK,               //Break menu (save/sound...)
     ST_IGSETTINGS,          //In game settings
-    ST_IGHELP,              //In game help
+    ST_IGHELP1,             //In game help 1
+    ST_IGHELP2,             //In game help 2
+    ST_IGRESOLUTION,        //In game resolution
+    ST_SMSETTINGS,          //Side menu settings
+    ST_SMHELP1,             //Side menu help1
+    ST_SMHELP2,             //Side menu help2
+    ST_SMRESOLUTION,        //Side menu resolution
+    ST_IGSAVE,              //In game save
+    ST_IGLOAD,              //In game load
+    ST_IG_TREE_COMPETENCE,  //In game tree of competence
     ST_FIGHT = 350,         //Fight interface
     ST_DIALOGS = 400,       //Dialogs state
     ST_TASK = 500,          //Task delimiter
@@ -62,11 +79,17 @@ typedef enum e_worlds {
     WL_CITY
 } worlds_t;
 
+typedef struct cursor_s {
+    sfVector2f pos;
+    sfTexture *texture;
+} cursor_t;
+
 typedef struct s_control {
     int direction_nb;       //Number of directions (useful for diagonal moves)
     bool direction;         //Move direction
     sfVector2f offset;      //Move offset for the direction
     sfKeyCode key;          //Move key code
+    cursor_t *cursor;
 } control_t;
 
 typedef struct s_settings {
@@ -123,20 +146,26 @@ typedef struct s_interactions {
 } interactions_t;
 
 typedef struct s_app {
-    app_states_t state;             //State of the app
-    worlds_t world;                 //Actual wolrd where player is
-    list_t *items;                  //Items available in game
-    list_t *players;                //List of players
-    player_t *player;               //Player of the client
-    player_t *partner;              //Partner player
-    list_t *npcs;                   //NPC of game
-    control_t *control;             //Controller of the player
-    list_t *tasks_setup;            //Taks of the game
-    settings_t *settings;           //Settings of the application
-    network_t *network;             //Network
-    interactions_t *interaction;    //Interaction in the app
-    animations_t *animations;       //Animations in the app
-    sound_board_t *sound_board;     //Soundboard
+    app_states_t state;                 //State of the app
+    app_states_t prev_state;            //Previous state of the game
+    worlds_t world;                     //Actual wolrd where player is
+    list_t *items;                      //Items available in game
+    list_t *players;                    //List of players
+    player_t *player;                   //Player of the client
+    player_t *partner;                  //Partner player
+    list_t *npcs;                       //NPC of game
+    control_t *control;                 //Controller of the player
+    list_t *tasks_setup;                //Tasks of the game
+    settings_t *settings;               //Settings of the application
+    network_t *network;                 //Network
+    interactions_t *interaction;        //Interaction in the app
+    inventory_event_t *inventory_event; //Inventory move
+    dialog_box_t *dialog_box;           //Dialog box
+    animations_t *animations;           //Animations in the app
+    sound_board_t *sound_board;         //Soundboard
+    list_t *player_anim;                //Player animations
+    app_quests_t *quests;               //Quests of the game
+    sfClock *clock;                     //Clock of the game
 } app_t;
 
 typedef bool (*app_init_member_t)(app_t *app, renderer_t *renderer);

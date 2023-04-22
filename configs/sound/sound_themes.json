@@ -10,9 +10,9 @@
     {
         "title": "game_theme",
         "buffer": "assets/sounds/game_theme.ogg",
-        "volume": 0.0,
+        "volume": 20.0,
         "loop": 1,
-        "app_state": [100],
+        "app_state": [100, 300],
         "status": 0
     }
 ]

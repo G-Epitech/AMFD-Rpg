@@ -60,8 +60,12 @@ app_t *app, control_t *control)
 void core_handle_movement(control_t *control, sfImage *collision, app_t *app)
 {
     player_t *player = app->player;
+    sfTime time = (sfTime) {0.0};
+    float seconds = 0.0;
 
-    if (app->state != ST_INGAME)
+    time = sfClock_getElapsedTime(app->clock);
+    seconds = time.microseconds / 1000000.0;
+    if (app->state != ST_INGAME || seconds < 0.005)
         return;
     for (size_t i = 0; i < 4; i++) {
         if (control[i].direction && movement_is_possible(player->position,

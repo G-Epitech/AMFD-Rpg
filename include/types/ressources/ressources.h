@@ -12,6 +12,7 @@
     #include "types/list/types.h"
 
 typedef struct s_renderer renderer_t;
+typedef struct s_icons_competences icons_competences_t;
 
 /**
  * @brief Free ressources
@@ -120,6 +121,13 @@ lever_r_t *ressources_components_lever_load(cjson_t *lever_config);
 sfTexture *ressources_components_progress_load(cjson_t *config);
 
 /**
+ * @brief Load texture for dialog box bars
+ * @param config Configuration file at CSJON format
+ * @return Created texture
+ */
+sfTexture *ressources_components_dialog_box_load(cjson_t *config);
+
+/**
  * @brief Load inventory ressources
  * @param renderer Renderer object
  * @param inventory Structure of inventory ressources
@@ -141,9 +149,23 @@ void items_texture_load(renderer_t *renderer, ressources_t *ressources);
 void icons_load(renderer_t *renderer, icons_r_t *icons);
 
 /**
+ * @brief Load icons ressources
+ * @param tree Tree struct of texture
+ * @param config Configuration file at CSJON format
+ */
+void icons_load_data_competence(icons_competences_t *tree, cjson_t *configs);
+
+/**
  * @brief Load fight components
  * @param config Config of fight
  */
 list_t *ressources_components_fight_load(cjson_t *config);
+
+/**
+ * @brief Load all animations from configs
+ * @param renderer Renderer object
+ * @param animations List of animations
+ */
+void animations_load(renderer_t *renderer, list_t *animations);
 
 #endif /* !RESSOURCES_H_ */

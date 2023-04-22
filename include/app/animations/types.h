@@ -12,7 +12,6 @@
     #include "types/npc/types.h"
     #include "types/players/types.h"
 
-    #define PLAYER_IN_ANIM(animation) (animation->events->len > 0)
     #define ZOOM_TIME 10
     #define ZOOM_RATIO 100
     #define SHAKE_TIME 5

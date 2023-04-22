@@ -9,7 +9,7 @@
             "position": { "x": 1163, "y": 1056 },
             "enemy": {
                 "life": 12,
-                "level": 0,
+                "level": 8,
                 "attacks": [ 0, 1 ]
             },
             "dialogs": [

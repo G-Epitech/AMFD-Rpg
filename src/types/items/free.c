@@ -24,5 +24,5 @@ void items_free(list_t *items)
         node = node->next;
     }
     list_free(items);
-    return items;
+    return;
 }
