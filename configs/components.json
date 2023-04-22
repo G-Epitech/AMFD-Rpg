@@ -279,7 +279,7 @@
             "next_state": 312
         },
         {
-            "title": "Continue",
+            "title": "Reprendre",
             "position": {"x": 458, "y": 282},
             "app_state": [301],
             "color": {"r": 191, "g": 173, "b": 147, "a": 255},

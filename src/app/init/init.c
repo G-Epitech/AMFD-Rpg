@@ -32,12 +32,12 @@ app_t *app_init(renderer_t *renderer)
     app->prev_state = app->state;
     app->world = WL_VILLAGE;
     app->clock = sfClock_create();
+    app->game_file = NULL;
     while (app_init_members[member]) {
-        if (!(app_init_members[member](app, renderer))) {
+        if (!(app_init_members[member++](app, renderer))) {
             app_free(app);
             return NULL;
         }
-        member += 1;
     }
     if (init_player(app) == 84) {
         return NULL;

@@ -170,7 +170,12 @@ SRC = 		src/main.c \
 			src/app/developer/reload_json.c \
 			\
 			src/app/saving/onexit.c \
-			src/app/saving/save_ask_file.c \
+			src/app/saving/save/save_ask_file.c \
+			src/app/saving/save/player.c \
+			src/app/saving/save/quests.c \
+			src/app/saving/save/inventory.c \
+			src/app/saving/save/competences.c \
+			src/app/saving/save/save.c \
 			src/app/saving/load_ask_file.c \
 			\
 			src/app/network/init.c \

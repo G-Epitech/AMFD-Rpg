@@ -11,6 +11,8 @@
     #include <stdbool.h>
     #include <SFML/Graphics.h>
 
+    #define SAVING_TEMPLATE "configs/game.json"
+
 typedef struct s_saver {
     char *filename;
     bool close_window;

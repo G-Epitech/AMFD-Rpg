@@ -24,12 +24,13 @@ static void on_save(app_t *app, char *input)
     saver_t *saver = (saver_t *) app->dialog_box->context;
 
     app->dialog_box->afteroption1 = NULL;
-    printf("Saved into [%s]\n", input);
+    save_save(app, input, true);
     check_close_window(saver);
     saver_free(saver);
 }
 
-static void set_up_dialog(dialog_box_t *dialog_box, saver_t *saver)
+static void set_up_dialog(dialog_box_t *dialog_box, char *current_file,
+saver_t *saver)
 {
     dialog_box->context = NULL;
     dialog_box->mode = DGBOX_INPUT;
@@ -39,7 +40,8 @@ static void set_up_dialog(dialog_box_t *dialog_box, saver_t *saver)
         dialog_box,
         "Saisissez le nom du fichier dans\nlequel enregistrer la partie :"
     );
-    dialog_box_set_input(dialog_box, "ma_partie.hksqt");
+    current_file = current_file ? current_file : "ma_partie.hksqt";
+    dialog_box_set_input(dialog_box, current_file);
     dialog_box_set_option1(dialog_box, "Valider");
     dialog_box_set_option2(dialog_box, "Annuler");
     dialog_box_set_option3(dialog_box, NULL);
@@ -50,5 +52,5 @@ static void set_up_dialog(dialog_box_t *dialog_box, saver_t *saver)
 
 void save_ask_file(app_t *app, saver_t *saver)
 {
-    set_up_dialog(app->dialog_box, saver);
+    set_up_dialog(app->dialog_box, app->game_file, saver);
 }

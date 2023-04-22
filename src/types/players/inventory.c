@@ -14,6 +14,12 @@
 
 void player_init_inventory(player_t *player, list_t *items)
 {
-    (void) items;
-    (void) player;
+    node_t *node = items ? items->first : NULL;
+    int i = 0;
+
+    while (i < INVENTORY_MAX && node) {
+        if (inventory_add_item(player, node->data.item))
+            i += 1;
+        node = node->next;
+    }
 }
