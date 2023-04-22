@@ -31,4 +31,10 @@ player_t *players_add(list_t *list, char *name);
  */
 void player_init_inventory(player_t *player, list_t *items);
 
+/**
+ * @brief Initializes player characteristics
+ * @param player Player
+*/
+void init_levels(player_t *player);
+
 #endif /* !PLAYERS_H_ */

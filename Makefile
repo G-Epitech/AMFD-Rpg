@@ -308,6 +308,9 @@ SRC = 		src/main.c \
 			src/app/sound/handle_sound_volume.c	\
 			\
 			src/app/in_game_menu/in_game_menu.c	\
+			src/app/in_game_menu/restart_session/restart_session.c	\
+			src/app/in_game_menu/restart_session/restart_player.c	\
+			src/app/in_game_menu/restart_session/restart_sound.c	\
 
 NAME = my_rpg
 

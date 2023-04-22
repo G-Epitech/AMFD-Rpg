@@ -14,7 +14,7 @@
 #include "app/animations/animations.h"
 #include "app/competences_tree/competences_tree.h"
 
-static void init_levels(player_t *player)
+void init_levels(player_t *player)
 {
     player->xp = 0;
     player->level = 0;
