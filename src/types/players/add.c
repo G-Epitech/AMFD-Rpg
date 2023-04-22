@@ -42,7 +42,7 @@ player_t *players_add(list_t *list, char *name)
     player->skin_id = -1;
     player->orientation = SO_LEFT;
     player->name = my_strdup(name);
-    init_levels(player)
+    init_levels(player);
     player->competences = player_init_competence();
     player->rect = (sfIntRect) {0, 0, 0, 0};;
     list_append(list, node_new((node_data_t) player));

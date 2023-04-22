@@ -26,7 +26,7 @@ void zoom_screen(renderer_t *renderer)
     sfTime elapsed = sfClock_getElapsedTime(clock);
     sfVector2f scale = (sfVector2f) {0.1, 0.1};
 
-    while (sfTime_asSeconds(elapsed) <= 2 &&
+    while (sfTime_asSeconds(elapsed) <= 2.7 &&
     sfRenderWindow_isOpen(renderer->window)) {
         sfSprite_setScale(objects->sprite, scale);
         loading_screen_events(renderer);
@@ -43,13 +43,17 @@ void zoom_screen(renderer_t *renderer)
 
 void loading_preload_screen(renderer_t *renderer)
 {
+    sfMusic *intro = sfMusic_createFromFile("assets/sounds/intro.ogg");
     sfTexture *preload_screen = sfTexture_createFromFile(LOGO_PATH, NULL);
     renderer_objects_t *objects = renderer->objects;
 
+    sfMusic_play(intro);
     sfSprite_setTexture(objects->sprite, preload_screen, sfTrue);
     sfSprite_setPosition(objects->sprite, (sfVector2f) {960, 540});
     sfSprite_setOrigin(objects->sprite, (sfVector2f) {500, 450});
     zoom_screen(renderer);
     sfSprite_setOrigin(objects->sprite, (sfVector2f) {0, 0});
     sfTexture_destroy(preload_screen);
+    sfMusic_stop(intro);
+    sfMusic_destroy(intro);
 }
