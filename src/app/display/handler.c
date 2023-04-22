@@ -55,6 +55,14 @@ static void center_view(renderer_t *renderer, app_t *app)
     sfView_setCenter(renderer->map_view, center);
 }
 
+static void display_cursor(cursor_t *cursor, renderer_t *renderer)
+{
+    sfSprite_setTexture(renderer->objects->sprite, cursor->texture, sfTrue);
+    sfSprite_setPosition(renderer->objects->sprite, cursor->pos);
+    sfRenderWindow_drawSprite(renderer->window, renderer->objects->sprite,
+    NULL);
+}
+
 void display_handler(renderer_t *renderer, app_t *app)
 {
     renderer_objects_t *objects = renderer->objects;
@@ -65,5 +73,6 @@ void display_handler(renderer_t *renderer, app_t *app)
     center_view(renderer, app);
     sfRenderWindow_setView(objects->window, renderer->default_view);
     display_elements(renderer, app);
+    display_cursor(app->control->cursor, renderer);
     sfRenderWindow_display(renderer->window);
 }

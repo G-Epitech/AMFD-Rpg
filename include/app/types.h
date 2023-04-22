@@ -20,6 +20,8 @@
     #include "sound/types.h"
     #include "app/quests/types.h"
 
+    #define CURSOR_FILE "assets/components/cursor.png"
+
 typedef struct s_list list_t;
 typedef struct s_renderer renderer_t;
 typedef struct s_npc_data npc_data_t;
@@ -77,11 +79,17 @@ typedef enum e_worlds {
     WL_CITY
 } worlds_t;
 
+typedef struct cursor_s {
+    sfVector2f pos;
+    sfTexture *texture;
+} cursor_t;
+
 typedef struct s_control {
     int direction_nb;       //Number of directions (useful for diagonal moves)
     bool direction;         //Move direction
     sfVector2f offset;      //Move offset for the direction
     sfKeyCode key;          //Move key code
+    cursor_t *cursor;
 } control_t;
 
 typedef struct s_settings {
