@@ -24,7 +24,7 @@ static void on_save(app_t *app, char *input)
     saver_t *saver = (saver_t *) app->dialog_box->context;
 
     app->dialog_box->afteroption1 = NULL;
-    save_save(app, input, true);
+    save_save(app, input, true, saver);
     check_close_window(saver);
     saver_free(saver);
 }
@@ -32,7 +32,6 @@ static void on_save(app_t *app, char *input)
 static void set_up_dialog(dialog_box_t *dialog_box, char *current_file,
 saver_t *saver)
 {
-    dialog_box->context = NULL;
     dialog_box->mode = DGBOX_INPUT;
     dialog_box->show = true;
     dialog_box_reset_events(dialog_box, false);

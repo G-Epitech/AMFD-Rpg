@@ -8,6 +8,7 @@
 #include <stdio.h>
 #include <stdbool.h>
 #include "app/types.h"
+#include "my/include/my.h"
 #include "app/saving/saving.h"
 #include "types/components/components.h"
 #include "types/dialog_box/dialog_box.h"
@@ -15,7 +16,9 @@
 static void on_load(app_t *app, char *input)
 {
     (void) app;
-    printf("Load from [%s]\n", input);
+    my_putstr("Load from [");
+    my_putstr(input);
+    my_putstr("]\n");
 }
 
 static void set_up_dialog(dialog_box_t *dialog_box)

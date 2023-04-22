@@ -14,8 +14,8 @@ saver_t *saver_new(void)
 
     if (!saver)
         return NULL;
-    saver->filename = NULL;
     saver->window = NULL;
     saver->close_window = false;
+    saver->renderer = NULL;
     return saver;
 }

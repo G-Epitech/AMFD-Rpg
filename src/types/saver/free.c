@@ -12,6 +12,5 @@ void saver_free(saver_t *saver)
 {
     if (!saver)
         return;
-    free(saver->filename);
     free(saver);
 }

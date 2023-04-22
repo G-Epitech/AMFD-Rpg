@@ -303,7 +303,7 @@
             "color": {"r": 191, "g": 173, "b": 147, "a": 255},
             "color_text": {"r": 103, "g": 81, "b": 82, "a":  255},
             "scale": 0.75,
-            "next_state": 310
+            "event": 19
         },
         {
             "title": "Menu Principal",

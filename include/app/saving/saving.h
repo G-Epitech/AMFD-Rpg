@@ -10,6 +10,7 @@
 
     #include <stdbool.h>
     #include "cjson/include/cjson.h"
+    #include "types.h"
 
 typedef struct s_app app_t;
 typedef struct s_button button_t;
@@ -63,8 +64,18 @@ void save_player(player_t *player, cjson_t *export);
  * @param app App object
  * @param filename Filename in which export game
  * @param notify Notify at end of saving
+ * @param saver Saver used during saving step
  */
-void save_save(app_t *app, char *filename, bool notify);
+void save_save(app_t *app, char *filename, bool notify, saver_t *saver);
+
+/**
+ * @brief Save in game handler
+ * @param renderer Renderer object
+ * @param app App object
+ * @param button Button clicked
+ * @return Status of handler
+ */
+int save_in_game(renderer_t *renderer, app_t *app, button_t *button);
 
 /**
  * @brief Create a new saver util

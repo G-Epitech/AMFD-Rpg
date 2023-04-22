@@ -13,10 +13,12 @@
 
     #define SAVING_TEMPLATE "configs/game.json"
 
+typedef struct s_renderer renderer_t;
+
 typedef struct s_saver {
-    char *filename;
     bool close_window;
     sfRenderWindow *window;
+    renderer_t *renderer;
 } saver_t;
 
 #endif /* !TYPES_SAVING_H_ */

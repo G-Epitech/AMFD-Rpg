@@ -19,7 +19,7 @@ static void append_item(inventory_item_t *item, cjson_array_t *array)
     cjson_set_prop(export, "id",
     CJSON_NUMBER(item->target->id), CJSON_NUMBER_T);
     cjson_set_prop(export, "active",
-    CJSON_NUMBER(item->active), CJSON_BOOL_T);
+    CJSON_BOOL(item->active), CJSON_BOOL_T);
     cjson_array_append(array, export);
 }
 
