@@ -12,11 +12,17 @@
 #include "types/renderer/types.h"
 #include "app/inventory/inventory.h"
 
+static void update_cursor(cursor_t *cursor, sfRenderWindow *window)
+{
+    cursor->pos = sfRenderWindow_mapPixelToCoords(window,
+    sfMouse_getPositionRenderWindow(window), NULL);
+}
+
 static void mouse_event(app_t *app,
 renderer_t *renderer, sfEvent event)
 {
-    (void) renderer;
     inventory_onmove(app, event);
+    update_cursor(app->control->cursor, renderer->window);
 }
 
 void event_mouse_moved(app_t *app, renderer_t *renderer,

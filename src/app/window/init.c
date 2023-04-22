@@ -10,26 +10,6 @@
 #include <SFML/Graphics.h>
 #include "app/window/window.h"
 
-static void window_set_cursor(sfRenderWindow *window)
-{
-    sfImage *cursor_img = sfImage_createFromFile(CURSOR_FILE);
-    sfCursor *cursor = NULL;
-    const sfUint8 *cursor_pixel = NULL;
-    sfVector2u cursor_size = (sfVector2u) {0, 0};
-    sfVector2u hotspot = (sfVector2u) {0, 0};
-
-    if (!cursor_img) {
-        return;
-    }
-    cursor_pixel = sfImage_getPixelsPtr(cursor_img);
-    if (!cursor_pixel) {
-        return;
-    }
-    cursor_size = sfImage_getSize(cursor_img);
-    cursor = sfCursor_createFromPixels(cursor_pixel, cursor_size, hotspot);
-    sfRenderWindow_setMouseCursor(window, cursor);
-}
-
 static void window_set_icon(sfRenderWindow *window)
 {
     sfImage *icon = sfImage_createFromFile(ICON_FILE);
@@ -57,6 +37,6 @@ sfRenderWindow *window_init(bool fullscreen, sfVideoMode resolution)
     window = sfRenderWindow_create(video_mode, name, style, NULL);
     sfRenderWindow_setFramerateLimit(window, fps);
     window_set_icon(window);
-    window_set_cursor(window);
+    sfRenderWindow_setMouseCursorVisible(window, sfFalse);
     return window;
 }

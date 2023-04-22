@@ -18,7 +18,6 @@
     #define HIGH_WIN_VIDEO_MODE ((sfVideoMode) {2560, 1600, 32})
     #define WIN_TITLE "Hackers Quests"
     #define ICON_FILE "assets/components/backgrounds/bras_gauche.png"
-    #define CURSOR_FILE "assets/components/cursor.png"
 
 typedef struct s_renderer renderer_t;
 typedef struct s_button button_t;
