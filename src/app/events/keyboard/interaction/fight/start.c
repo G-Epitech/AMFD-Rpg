@@ -56,7 +56,7 @@ renderer_t *renderer)
     if (data->enemy) {
         interactions->active = true;
         app->state = ST_FIGHT;
-        events = animation_event_new(app);
+        events = animation_event_actual(app);
         animations_screen_zoom_add(events, renderer->map_view, 70, 0.5);
         rotate_npc(data, app->player);
         set_fight_interaction(interactions);

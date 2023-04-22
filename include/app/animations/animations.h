@@ -126,4 +126,11 @@ bool animations_notif(animation_event_notif_t *notif, sfClock *clock);
  * @param animations Animations object
  */
 bool animations_active(animations_t *animations);
+
+/**
+ * @brief Get actual event list or create new one
+ * @param app App object
+ * @return list_t* Events list
+ */
+list_t *animation_event_actual(app_t *app);
 #endif /* !ANIMATIONS_H_ */
