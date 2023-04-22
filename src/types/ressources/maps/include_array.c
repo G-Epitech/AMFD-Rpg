@@ -20,7 +20,7 @@ static void insert_entry(entry_t *entry, sfImage *collision)
         y_offset = entry->tile_size * 16;
     if (entry->direction == 2)
         x_offset = entry->tile_size * 16;
-    color.a = (sfUint8) (entry->child + 1);
+    color.a = (sfUint8) (255 - entry->id);
     for (size_t y = 0; y < y_offset; y++) {
         for (size_t x = 0; x < x_offset; x++) {
             sfImage_setPixel(collision,
@@ -58,7 +58,6 @@ void entry_include_to_array(list_t *map_list)
             include_data(entry, map);
             entries = entries->next;
         }
-        printf("World %d\n", map->world);
         maps = maps->next;
     }
 }

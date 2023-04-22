@@ -8,10 +8,7 @@
 #ifndef TRAVEL_H_
     #define TRAVEL_H_
 
-    #define ENTER_COLOR sfColor_fromRGBA(119, 184, 223, 255)
-    #define EXIT_COLOR sfColor_fromRGBA(75, 153, 156, 255)
-    #define PLAYER_ON_EXIT(state) ((state) == (IT_EXIT) ? (1) : (0))
-    #define PLAYER_ON_ENTER(state) ((state) == (IT_ENTER) ? (1) : (0))
+    #define PLAYER_TRAVELING(state) ((state) == (IT_TRAVEL) ? (1) : (0))
 
 typedef struct s_map map_t;
 

@@ -21,6 +21,7 @@ static void load_entry_properties(cjson_t *config, list_t *entry_list)
     entry->direction = cjson_get_prop_int_unsafe(config, "direction");
     entry->tile_size = cjson_get_prop_int_unsafe(config, "tile_size");
     entry->player_spawn = cjson_vector(config, "player_spawn");
+    entry->id = cjson_get_prop_int_unsafe(config, "id");
     entry->pos = cjson_vector(config, "pos");
     node = node_new((node_data_t) entry);
     if (node)

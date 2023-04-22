@@ -36,6 +36,7 @@ typedef struct entry_s {
     sfVector2f pos;
     sfVector2f player_spawn;
     int tile_size;
+    int id;
 } entry_t;
 
 /**

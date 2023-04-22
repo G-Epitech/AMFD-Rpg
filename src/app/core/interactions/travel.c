@@ -10,33 +10,46 @@
 #include "app/app.h"
 #include "app/core/core.h"
 #include "app/travel/travel.h"
+#include "types/list/list.h"
 
-static bool detect_enter_color(sfColor pixel)
-{
-    if (pixel.r < ENTER_COLOR.r || pixel.b != ENTER_COLOR.b ||
-    pixel.g < ENTER_COLOR.g)
-        return false;
-    return true;
-}
 
 void core_interactions_travel(sfColor pixel, app_t *app)
 {
-    printf("r%d g%d %d\n", pixel.r, pixel.g, pixel.b);
-    if (core_interaction_detect_color(pixel, EXIT_COLOR)) {
-        app->interaction->type = IT_EXIT;
-        return;
+    if (core_interaction_detect_color(pixel, sfBlue)) {
+        app->interaction->type = IT_TRAVEL;
+        app->interaction->value = 255 - pixel.a ;
     }
-    if (detect_enter_color(pixel)) {
-        app->interaction->type = IT_ENTER;
-        app->interaction->value = 135 - pixel.r;
+}
+
+static entry_t *get_entry_by_id(list_t *entries, int entry_id)
+{
+    node_t *node = entries->first;
+    entry_t *entry = NULL;
+
+    while (node) {
+        entry = node->data.entry;
+        if (entry->id == entry_id) {
+            return entry;
+        }
+        node = node->next;
     }
+    return NULL;
+}
+
+static void travel_player(app_t *app, map_t *curr_map)
+{
+    player_t *player = app->player;
+    entry_t *entry = get_entry_by_id(curr_map->entry, app->interaction->value);
+
+    app->world = entry->child;
+    player->position.x = entry->player_spawn.x;
+    player->position.y = entry->player_spawn.y;
+    app->interaction->type = IT_NULL;
 }
 
 void core_handle_travel(renderer_t *renderer, app_t *app, map_t *curr_map)
 {
-    if (PLAYER_ON_EXIT(app->interaction->type))
-        travel_exit(app, renderer, curr_map);
-    if (PLAYER_ON_ENTER(app->interaction->type)) {
-        travel_enter(app, renderer, curr_map);
-    }
+    (void) renderer;
+    if (PLAYER_TRAVELING(app->interaction->type))
+        travel_player(app, curr_map);
 }

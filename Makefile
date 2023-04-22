@@ -252,9 +252,6 @@ SRC = 		src/main.c \
 			src/app/sound/handle_sound_fx.c	\
 			src/app/sound/handle_sound_themes.c	\
 			src/app/sound/handle_sound_volume.c	\
-			\
-			src/app/travel/travel_exit.c	\
-			src/app/travel/travel_enter.c	\
 
 NAME = my_rpg
 
