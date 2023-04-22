@@ -41,6 +41,20 @@ void maps_load(list_t *maps, renderer_t *renderer);
 void maps_free(list_t *maps);
 
 /**
+ * @brief Loads list of entries for a map
+ * @param map Map
+ * @param map_config Map config
+ * @return List of entries
+*/
+list_t *map_load_entry(cjson_t *map_config);
+
+/**
+ * @brief Draws the entries on the collision layer
+ * @param maps Maps list
+*/
+void entry_include_to_array(list_t *maps);
+
+/**
  * @brief Load all skins from configs
  * @param renderer Renderer object
  * @param skins List of skins

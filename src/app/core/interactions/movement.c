@@ -24,6 +24,7 @@ size_t y, app_t *app)
         position.y + y);
         if (pixel.a != 0) {
             core_interactions_npc(pixel, app);
+            core_interactions_travel(pixel, app);
             return false;
         }
     }
