@@ -13,11 +13,12 @@
 #include "app/display/display.h"
 #include "types/dialog_box/dialog_box.h"
 
-static void consume_item(app_t *app)
+static void consume_item(app_t *app, char *data)
 {
     inventory_item_t *item = app->inventory_event->selected;
     item_consumer_t consumer = NULL;
 
+    (void) data;
     if (!item)
         return;
     consumer = item_get_consumer(item->target);
@@ -26,10 +27,11 @@ static void consume_item(app_t *app)
     inventory_remove_item(app->player, item);
 }
 
-static void sell_item(app_t *app)
+static void sell_item(app_t *app, char *data)
 {
     inventory_item_t *item = app->inventory_event->selected;
 
+    (void) data;
     my_putstr("Item vendu !\n");
     inventory_remove_item(app->player, item);
 }

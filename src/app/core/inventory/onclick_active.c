@@ -12,10 +12,11 @@
 #include "app/inventory/types.h"
 #include "app/display/display.h"
 
-static void remove_equipement(app_t *app)
+static void remove_equipement(app_t *app, char *data)
 {
     inventory_item_t *item = app->inventory_event->selected;
 
+    (void) data;
     if (!item)
         return;
     inventory_item_impact_player(app->player, item, -1);

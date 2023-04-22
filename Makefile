@@ -51,6 +51,7 @@ SRC = 		src/main.c \
 			src/types/dialog_box/free.c \
 			src/types/dialog_box/new.c \
 			src/types/dialog_box/options.c \
+			src/types/dialog_box/input.c \
 			src/types/dialog_box/message.c \
 			\
 			src/types/components/load.c \
@@ -91,6 +92,9 @@ SRC = 		src/main.c \
 			src/types/ressources/items/load.c \
 			\
 			src/types/ressources/animation/load.c	\
+			\
+			src/types/saver/new.c \
+			src/types/saver/free.c \
 			\
 			src/types/view/init.c \
 			\
@@ -153,7 +157,9 @@ SRC = 		src/main.c \
 			src/app/events/components/levers.c \
 			src/app/events/components/attacks.c \
 			src/app/events/components/in_game_menu.c \
-			src/app/events/components/dialog_box.c \
+			src/app/events/components/dialog_box/dialog_box.c \
+			src/app/events/components/dialog_box/options.c \
+			src/app/events/components/dialog_box/input.c \
 			\
 			src/app/developer/reload_json.c \
 			\
@@ -191,7 +197,7 @@ SRC = 		src/main.c \
 			src/app/display/player/player.c \
 			src/app/display/characters/character.c \
 			src/app/display/map/front.c	\
-      src/app/display/components/components.c \
+      		src/app/display/components/components.c \
 			src/app/display/components/backgrounds.c \
 			src/app/display/components/levers.c \
 			src/app/display/components/interaction.c \
@@ -218,6 +224,7 @@ SRC = 		src/main.c \
 			src/app/display/developer/position.c \
 			src/app/display/dialog_box/dialog_box.c \
 			src/app/display/dialog_box/options.c \
+			src/app/display/dialog_box/input.c \
 			src/app/display/fight/fight.c \
 			src/app/display/fight/choice.c \
 			src/app/display/fight/attack.c \

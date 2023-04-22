@@ -29,10 +29,11 @@ static void unable_to_consume(app_t *app)
     app->dialog_box->option = 1;
 }
 
-static void consume_equipement(app_t *app)
+static void consume_equipement(app_t *app, char *data)
 {
     inventory_item_t *item = app->inventory_event->selected;
 
+    (void) data;
     if (!item)
         return;
     if (!inventory_set_item_active(app->player, item)) {
@@ -42,10 +43,11 @@ static void consume_equipement(app_t *app)
     }
 }
 
-static void sell_equipement(app_t *app)
+static void sell_equipement(app_t *app, char *data)
 {
     inventory_item_t *item = app->inventory_event->selected;
 
+    (void) data;
     my_putstr("Equipement vendu !\n");
     inventory_remove_item(app->player, item);
 }
