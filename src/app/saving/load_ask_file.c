@@ -33,6 +33,7 @@ static void set_up_dialog(dialog_box_t *dialog_box)
     dialog_box_set_option1(dialog_box, "Ouvrir");
     dialog_box_set_option2(dialog_box, "Annuler");
     dialog_box_set_option3(dialog_box, NULL);
+    dialog_box->option = 1;
     dialog_box->onoption1 = &on_load;
 }
 
