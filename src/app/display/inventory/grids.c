@@ -15,12 +15,6 @@
 #include "app/inventory/types.h"
 #include "types/ressources/ressources.h"
 
-static void display_item(renderer_t *renderer, inventory_item_t *item)
-{
-    display_inventory_item_box(renderer, item->pos, item->active, false);
-    display_inventory_item_content(renderer, item);
-}
-
 static void get_boxes_occupations(int **actives_boxes, int **main_boxes)
 {
     sfVector2i active_size = INVENTORY_ACTIVE_GRID_SIZE;
@@ -49,22 +43,15 @@ int *main_boxes)
         main_boxes[pos] = 1;
 }
 
-static void display_empty(renderer_t *renderer, int *actives_boxes,
-int *main_boxes)
+static void display_all_grids(renderer_t *renderer, app_t *app,
+int *actives_boxes, int *main_boxes)
 {
-    sfVector2i active_size = INVENTORY_ACTIVE_GRID_SIZE;
-    sfVector2i main_size = INVENTORY_MAIN_GRID_SIZE;
-    size_t nb_actives_boxes = active_size.x * active_size.y;
-    size_t nb_main_boxes = main_size.x * main_size.y;
+    inventory_event_t *event = app->inventory_event;
+    list_t *inventory = app->player->inventory;
 
-    for (size_t i = 0; i < nb_actives_boxes; i++) {
-        if (actives_boxes[i] == 0)
-            display_inventory_item_box(renderer, i + 1, true, true);
-    }
-    for (size_t i = 0; i < nb_main_boxes; i++) {
-        if (main_boxes[i] == 0)
-            display_inventory_item_box(renderer, i + 1, false, true);
-    }
+    display_inventory_grids_empty(renderer, actives_boxes, main_boxes, event);
+    display_inventory_grids_taken(renderer, inventory, event);
+    display_inventory_grids_specials(renderer, event);
 }
 
 void display_inventory_grids(renderer_t *renderer, app_t *app)
@@ -78,13 +65,11 @@ void display_inventory_grids(renderer_t *renderer, app_t *app)
     get_boxes_occupations(&actives_boxes, &main_boxes);
     while (node) {
         item = node->data.inventory_item;
-        if (item) {
-            display_item(renderer, item);
+        if (item)
             set_box_occupation(item, actives_boxes, main_boxes);
-        }
         node = node->next;
     }
-    display_empty(renderer, actives_boxes, main_boxes);
+    display_all_grids(renderer, app, actives_boxes, main_boxes);
     free(actives_boxes);
     free(main_boxes);
 }

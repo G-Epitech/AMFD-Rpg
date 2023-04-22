@@ -14,6 +14,8 @@
     #define RESSOURCES_SKINS_CONFIG "configs/skins.json"
     #define RESSOURCES_SKINS_RECT ((sfVector2i) { 16, 32 })
     #define RESSOURCES_MAPS_CONFIG "configs/ressources/maps.json"
+    #define RESSOURCES_MAPS_CONFIG "configs/ressources/maps.json"
+    #define RESSOURCES_ANIMATIONS_CONFIG "configs/animations/environment.json"
     #define RESSOURCES_INVENTORY_CONFIG "configs/ressources/inventory.json"
     #define RESSOURCES_COMPONENTS_CONFIG "configs/ressources/components.json"
     #define RESSOURCES_COMPONENTS_FIGHT_CONFIG "configs/fight/attacks.json"
@@ -50,6 +52,22 @@ typedef struct s_map {
     sfTexture *col_texture; //Used in dev mode
     list_t *entry;          //Map entries
 } map_t;
+
+/**
+ * @brief Structure of a animations
+*/
+typedef struct s_anim {
+    worlds_t world;             //Id of the world where the map must be display
+    sfTexture *asset;           //Texture of asset
+    sfImage *collision;         //Image of collision
+    int off_set;                //Number offset of asset
+    float frame_duration;       //Number of speed animation
+    int nb_frame;               //Number of frame of asset
+    float time_elapsed;         //Time elapsed of anim
+    sfVector2f position;        //Position texture
+    sfIntRect back_rect;        //Back rect of asset
+    sfIntRect front_rect;       //Front rect of asset
+} anim_t;
 
 /**
  * @biref Structure of a button ressource
@@ -98,12 +116,27 @@ typedef struct s_components_r {
     list_t *backgrounds;        //Backgrounds list
     list_t *fight;              //Fight ressources (attaks)
     sfTexture *progress;        //Texture for progress bars
+    sfTexture *dialog_box;      //Texture for dialog boxes
 } components_r_t;
 
 typedef struct s_inventory_ressources {
     sfTexture *grid;            //Grid utils texture
     sfTexture *items;           //Inventory items texture
 } inventory_r_t;
+
+typedef struct s_icons_competences {
+    sfTexture *script_bash_unlock;   //icon of script bash unlock
+    sfTexture *script_bash_lock;     //icon of script bash lock
+    sfTexture *flipper_unlock;       //icon of flipper unlock
+    sfTexture *flipper_lock;         //icon of flipper lock
+    sfTexture *go_buster_unlock;     //icon of GoBuster unlock
+    sfTexture *go_buster_lock;       //icon of GoBuster lock
+    sfTexture *brute_force_unlock;   //icon of brute_force unlock
+    sfTexture *brute_force_lock;     //icon of brute_force lock
+    sfTexture *one_credit;           //icon of one credit
+    sfTexture *three_credit;         //icon of three credit
+    sfTexture *five_credit;          //icon of five credit
+} icons_competences_t;
 
 typedef struct s_icons_ressources {
     sfTexture *valid;           //Valid icon
@@ -116,6 +149,7 @@ typedef struct s_icons_ressources {
     sfTexture *happy;           //Happy icon
     sfTexture *hungry;          //Hungry icon
     sfTexture *xp;              //XP icon
+    icons_competences_t *tree;  //icons of competences tree
 } icons_r_t;
 
 /**
@@ -125,10 +159,13 @@ typedef struct s_ressources {
     list_t *maps;                       //List of maps (textures)
     list_t *skins;                      //List of skins (textures)
     list_t *props;                      //List of props (textures)
+    list_t *animations;                 //List of animation
     sfTexture *items;                   //Texture of items
     inventory_r_t *inventory;           //Structure of inventory ressources
     components_r_t *components;         //Structure of components ressources
     icons_r_t *icons;                   //Structure of icons ressources
+    sfClock *clock;                     //Clock of ressources
+    float elapsed_time;                 //Time elasped
 } ressources_t;
 
 #endif /* !RESSOURCES_TYPES_H_ */

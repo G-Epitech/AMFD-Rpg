@@ -33,4 +33,11 @@ void items_free(list_t *items);
  */
 bool item_load(cjson_t *config, item_t **item);
 
+/**
+ * @brief Get consumer of given item
+ * @param item Item to consume
+ * @return Found consumer or NULL if not found or not set
+ */
+item_consumer_t item_get_consumer(item_t *item);
+
 #endif /* !ITEMS_H_ */

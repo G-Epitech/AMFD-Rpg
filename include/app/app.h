@@ -75,6 +75,28 @@ bool app_init_sounds(app_t *app, renderer_t *renderer);
 bool app_init_items(app_t *app, renderer_t *renderer);
 
 /**
+ * @brief Initialize inventory move
+ * @param app App object
+ * @param renderer Renderer object
+ * @return Initialization success status
+ */
+bool app_init_inventory_event(app_t *app, renderer_t *renderer);
+
+/**
+ * @brief Initialize dialog box of app
+ * @param app App object
+ * @param renderer Renderer object
+ * @return Initialization success status
+ */
+bool app_init_dialog_box(app_t *app, renderer_t *renderer);
+
+/**
+ * @brief Free inventory move
+ * @param app App object
+ */
+void app_free_inventory_event(app_t *app);
+
+/**
  * @brief Initialize network of game
  * @param app App object
  * @param renderer Renderer object
@@ -115,6 +137,20 @@ bool app_init_interactions(app_t *app, renderer_t *renderer);
 bool app_init_players(app_t *app, renderer_t *renderer);
 
 /**
+ * @brief Initialize player animations lists
+ * @param app App object
+ * @param renderer Renderer object
+ * @return Initialization success status
+ */
+bool app_init_player_animations(app_t *app, renderer_t *renderer);
+
+/**
+ * @brief Frees players
+ * @param app App object
+*/
+void app_free_players(app_t *app);
+
+/**
  * @brief Initialize animations lists
  * @param app App object
  * @param renderer Renderer object
@@ -123,10 +159,24 @@ bool app_init_players(app_t *app, renderer_t *renderer);
 bool app_init_animations(app_t *app, renderer_t *renderer);
 
 /**
+ * @brief Initialize quests list
+ * @param app App object
+ * @param renderer Renderer object
+ * @return Initialization success status
+ */
+bool app_init_quests(app_t *app, renderer_t *renderer);
+
+/**
  * @brief Free animations
  * @param app App object
  */
 void app_free_animations(app_t *app);
+
+/**
+ * @brief Free sounds
+ * @param app App object
+*/
+void app_free_sounds(app_t *app);
 
 /**
  * @brief Down state

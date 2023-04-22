@@ -14,11 +14,15 @@ SRC =		display/array.c \
 			display/object.c \
 			display/string.c \
 			\
+			export/export.c \
+			\
 			getters/array.c \
 			getters/bool.c \
 			getters/number.c \
 			getters/string.c \
 			\
+			parse/values/string/dup.c \
+			parse/values/string/len.c \
 			parse/values/array.c \
 			parse/values/bool.c \
 			parse/values/null.c \

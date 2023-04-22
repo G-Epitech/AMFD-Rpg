@@ -5,19 +5,109 @@
             "id": 0,
             "label": "Cookie",
             "type": 0,
-            "levels": { "xp": 0, "life": 12, "speed": 12, "intelligence": 134 },
+            "levels": { "xp": 0, "life": 12, "speed": 12, "intelligence": 3 },
             "price": 8,
-            "rect": { "x": 0, "y": 0  },
-            "default": true
+            "consumer": -1,
+            "rect": { "x": 0, "y": 0  }
         },
         {
             "id": 1,
             "label": "Pasteque",
             "type": 0,
+            "levels": { "xp": 0, "life": 12, "speed": 12, "intelligence": 1 },
+            "price": 8,
+            "consumer": -1,
+            "rect": { "x": 0, "y": 6}
+        },
+        {
+            "id": 2,
+            "label": "Fraise",
+            "type": 0,
             "levels": { "xp": 0, "life": 12, "speed": 12, "intelligence": 134 },
             "price": 8,
-            "rect": { "x": 0, "y": 6},
-            "default": true
+            "consumer": -1,
+            "rect": { "x": 1, "y": 4}
+        },
+        {
+            "id": 3,
+            "label": "Oeufs",
+            "type": 0,
+            "levels": { "xp": 0, "life": 12, "speed": 12, "intelligence": 18 },
+            "price": 8,
+            "consumer": -1,
+            "rect": { "x": 0, "y": 2}
+        },
+        {
+            "id": 4,
+            "label": "Poulet",
+            "type": 0,
+            "levels": { "xp": 0, "life": 12, "speed": 12, "intelligence": 1 },
+            "price": 8,
+            "consumer": -1,
+            "rect": { "x": 1, "y": 3}
+        },
+        {
+            "id": 5,
+            "label": "Biere",
+            "type": 0,
+            "levels": { "xp": 0, "life": 12, "speed": 12, "intelligence": 4 },
+            "price": 8,
+            "consumer": -1,
+            "rect": { "x": 4, "y": 2}
+        },
+        {
+            "id": 6,
+            "label": "Saucisson",
+            "type": 0,
+            "levels": { "xp": 0, "life": 12, "speed": 12, "intelligence": 6 },
+            "price": 8,
+            "consumer": -1,
+            "rect": { "x": 1, "y": 5}
+        },
+        {
+            "id": 7,
+            "label": "Bretzel",
+            "type": 0,
+            "levels": { "xp": 0, "life": 12, "speed": 12, "intelligence": 1 },
+            "price": 8,
+            "consumer": -1,
+            "rect": { "x": 0, "y": 5}
+        },
+        {
+            "id": 8,
+            "label": "Confiture",
+            "type": 1,
+            "levels": { "xp": 0, "life": 12, "speed": 12, "intelligence": 2 },
+            "price": 8,
+            "consumer": -1,
+            "rect": { "x": 3, "y": 1}
+        },
+        {
+            "id": 9,
+            "label": "Vin",
+            "type": 1,
+            "levels": { "xp": 0, "life": 12, "speed": 12, "intelligence": 9 },
+            "price": 8,
+            "consumer": -1,
+            "rect": { "x": 6, "y": 2}
+        },
+        {
+            "id": 10,
+            "label": "Telephone",
+            "type": 1,
+            "levels": { "xp": 0, "life": 0, "speed": 12, "intelligence": 9 },
+            "price": 30,
+            "consumer": -1,
+            "rect": { "x": 1, "y": 8}
+        },
+        {
+            "id": 11,
+            "label": "Clef USB",
+            "type": 1,
+            "levels": { "xp": 0, "life": 0, "speed": 12, "intelligence": 9 },
+            "price": 14,
+            "consumer": -1,
+            "rect": { "x": 0, "y": 8}
         }
     ]
 }

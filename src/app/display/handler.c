@@ -22,10 +22,14 @@ static void display_game(renderer_t *renderer, app_t *app)
         renderer_objects_reset_sprite(objects);
         display_map_back(ressources->maps, renderer->window, objects->sprite,
         app->world);
+        display_animations_environments_back(ressources->animations,
+        renderer->window, objects->sprite, app->world);
         display_npcs_of_world(renderer, app->npcs, app->world);
         display_player(renderer, app);
         display_map_front(ressources->maps, objects->window, objects->sprite,
         app->world);
+        display_animations_environments_front(app,
+        renderer->window, objects->sprite, renderer);
         display_developer_collisions(renderer, app);
     }
 }
@@ -38,6 +42,8 @@ static void display_elements(renderer_t *renderer, app_t *app)
     display_developer_position(renderer, app);
     display_animations(renderer, app);
     display_dialogs(renderer, app);
+    display_hud(renderer, app);
+    display_dialog_box(renderer, app->dialog_box);
 }
 
 static void center_view(renderer_t *renderer, app_t *app)
@@ -47,6 +53,14 @@ static void center_view(renderer_t *renderer, app_t *app)
     center.x += 8;
     center.y += 16;
     sfView_setCenter(renderer->map_view, center);
+}
+
+static void display_cursor(cursor_t *cursor, renderer_t *renderer)
+{
+    sfSprite_setTexture(renderer->objects->sprite, cursor->texture, sfTrue);
+    sfSprite_setPosition(renderer->objects->sprite, cursor->pos);
+    sfRenderWindow_drawSprite(renderer->window, renderer->objects->sprite,
+    NULL);
 }
 
 void display_handler(renderer_t *renderer, app_t *app)
@@ -59,5 +73,6 @@ void display_handler(renderer_t *renderer, app_t *app)
     center_view(renderer, app);
     sfRenderWindow_setView(objects->window, renderer->default_view);
     display_elements(renderer, app);
+    display_cursor(app->control->cursor, renderer);
     sfRenderWindow_display(renderer->window);
 }
