@@ -2,14 +2,13 @@
   "maps": [
     {
       "world": 0,
-      "back": "assets/worlds/village/Village_back.png",
-      "front": "assets/worlds/village/Village_front.png",
-      "collision": "assets/worlds/village/Village_collision.png",
+      "back": "assets/worlds/mairie/mair1_back.png",
+      "front": "assets/worlds/mairie/mair1_col.png",
+      "collision": "assets/test_vill.png",
       "building": false,
       "city": 0,
       "enter": {"x": 0, "y": 0},
-      "exit": {"x": 0, "y": 0},
-      "door": {"x": 0, "y": 0}
+      "exit": {"x": 0, "y": 0}
     },
     {
       "world": 1,
@@ -19,8 +18,7 @@
       "building": true,
       "city": 0,
       "enter": {"x": 182, "y": 144},
-      "exit": {"x": 1184, "y": 314},
-      "door": {"x": 0, "y": 0}
+      "exit": {"x": 50, "y": 50}
     },
     {
       "world": 2,
@@ -30,8 +28,7 @@
       "building": true,
       "city": 0,
       "enter": {"x": 225, "y": 51},
-      "exit": {"x": 183, "y": 65},
-      "door": {"x": 0, "y": 0}
+      "exit": {"x": 183, "y": 65}
     },
     {
       "world": 3,
@@ -40,9 +37,8 @@
       "collision": "assets/worlds/university/uni1_col.png",
       "building": true,
       "city": 0,
-      "enter": {"x": 0, "y": 0},
-      "exit": {"x": 0, "y": 0},
-      "door": {"x": 0, "y": 0}
+      "enter": {"x": 328, "y": 900},
+      "exit": {"x": 96, "y": 65}
     },
     {
       "world": 4,
@@ -51,9 +47,8 @@
       "collision": "assets/worlds/university/uni2_col.png",
       "building": true,
       "city": 0,
-      "enter": {"x": 0, "y": 0},
-      "exit": {"x": 0, "y": 0},
-      "door": {"x": 0, "y": 0}
+      "enter": {"x":170, "y": 53},
+      "exit": {"x": 351, "y": 150}
     },
     {
       "world": 5,
@@ -62,9 +57,8 @@
       "collision": "assets/worlds/store/sup_col.png",
       "building": true,
       "city": 0,
-      "enter": {"x": 0, "y": 0},
-      "exit": {"x": 0, "y": 0},
-      "door": {"x": 0, "y": 0}
+      "enter": {"x": 256, "y": 245},
+      "exit": {"x": 96, "y": 65}
     },
     {
       "world": 6,
@@ -73,9 +67,8 @@
       "collision": "assets/worlds/prison/prison_col.png",
       "building": true,
       "city": 0,
-      "enter": {"x": 0, "y": 0},
-      "exit": {"x": 0, "y": 0},
-      "door": {"x": 0, "y": 0}
+      "enter": {"x": 240, "y": 290},
+      "exit": {"x": 96, "y": 65}
     },
     {
       "world": 7,
@@ -84,9 +77,8 @@
       "collision": "assets/worlds/mairie/mair1_col.png",
       "building": true,
       "city": 0,
-      "enter": {"x": 0, "y": 0},
-      "exit": {"x": 0, "y": 0},
-      "door": {"x": 0, "y": 0}
+      "enter": {"x": 232, "y": 243},
+      "exit": {"x": 96, "y": 65}
     },
     {
       "world": 8,
@@ -95,9 +87,8 @@
       "collision": "assets/worlds/mairie/mair2_col.png",
       "building": true,
       "city": 0,
-      "enter": {"x": 0, "y": 0},
-      "exit": {"x": 0, "y": 0},
-      "door": {"x": 0, "y": 0}
+      "enter": {"x": 63, "y": 253},
+      "exit": {"x": 63, "y": 46}
     },
     {
       "world": 9,
@@ -106,9 +97,8 @@
       "collision": "assets/worlds/mairie/mair3_col.png",
       "building": true,
       "city": 0,
-      "enter": {"x": 0, "y": 0},
-      "exit": {"x": 0, "y": 0},
-      "door": {"x": 0, "y": 0}
+      "enter": {"x": 63, "y": 212},
+      "exit": {"x": 63, "y": 39}
     },
     {
       "world": 10,
@@ -117,9 +107,8 @@
       "collision": "assets/worlds/mairie/mair4_col.png",
       "building": true,
       "city": 0,
-      "enter": {"x": 0, "y": 0},
-      "exit": {"x": 0, "y": 0},
-      "door": {"x": 0, "y": 0}
+      "enter": {"x": 213, "y": 138},
+      "exit": {"x": 233, "y": 39}
     },
     {
       "world": 11,
@@ -128,9 +117,8 @@
       "collision": "assets/worlds/hospital/hos1_col.png",
       "building": true,
       "city": 0,
-      "enter": {"x": 0, "y": 0},
-      "exit": {"x": 0, "y": 0},
-      "door": {"x": 0, "y": 0}
+      "enter": {"x": 111, "y": 455},
+      "exit": {"x": 96, "y": 65}
     },
     {
       "world": 12,
@@ -139,9 +127,8 @@
       "collision": "assets/worlds/hospital/hos2_col.png",
       "building": true,
       "city": 0,
-      "enter": {"x": 0, "y": 0},
-      "exit": {"x": 0, "y": 0},
-      "door": {"x": 0, "y": 0}
+      "enter": {"x": 151, "y": 155},
+      "exit": {"x": 151, "y": 455}
     },
     {
       "world": 13,
@@ -150,9 +137,8 @@
       "collision": "assets/worlds/hospital/hos3_col.png",
       "building": true,
       "city": 0,
-      "enter": {"x": 0, "y": 0},
-      "exit": {"x": 0, "y": 0},
-      "door": {"x": 0, "y": 0}
+      "enter": {"x": 280, "y": 207},
+      "exit": {"x": 0, "y": 0}
     },
     {
       "world": 14,
@@ -161,9 +147,8 @@
       "collision": "assets/worlds/aymeric_desk/aym_col.png",
       "building": true,
       "city": 0,
-      "enter": {"x": 0, "y": 0},
-      "exit": {"x": 0, "y": 0},
-      "door": {"x": 0, "y": 0}
+      "enter": {"x": 151, "y": 244},
+      "exit": {"x": 328, "y": 900}
     }
   ]
 }
