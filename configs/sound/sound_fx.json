@@ -14,5 +14,21 @@
         "loop": false,
         "lone": true,
         "status": 0
+    },
+    {
+        "title": "new_coin",
+        "buffer": "assets/sounds/new_coin.ogg",
+        "volume": 50.0,
+        "loop": false,
+        "lone": true,
+        "status": 0
+    },
+    {
+        "title": "new_level",
+        "buffer": "assets/sounds/new_level.ogg",
+        "volume": 50.0,
+        "loop": false,
+        "lone": true,
+        "status": 0
     }
 ]

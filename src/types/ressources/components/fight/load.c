@@ -31,6 +31,7 @@ static void insert_data(list_t *list, cjson_t *config)
     cjson_get_prop_int(config, "level", &attack->level);
     cjson_get_prop_int(config, "mana", &attack->mana);
     cjson_get_prop_int(config, "damage", &attack->damage);
+    cjson_get_prop_int(config, "fx", &attack->fx);
     attack->position = cjson_vector(config, "position");
     attack->shake = false;
     data.attack = attack;

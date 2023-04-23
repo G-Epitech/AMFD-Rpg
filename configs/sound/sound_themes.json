@@ -4,7 +4,7 @@
         "buffer": "assets/sounds/menu_theme.ogg",
         "volume": 50.0,
         "loop": 1,
-        "app_state": [1, 2, 3, 4, 5, 6, 7, 301],
+        "app_state": [1, 2, 3, 4, 5, 6, 7],
         "status": 0
     },
     {
@@ -12,7 +12,15 @@
         "buffer": "assets/sounds/game_theme.ogg",
         "volume": 20.0,
         "loop": 1,
-        "app_state": [100, 300],
+        "app_state": [100, 300, 301, 302, 303, 304, 305, 306, 307, 308, 309, 310, 311, 312, 400],
+        "status": 0
+    },
+    {
+        "title": "fight_theme",
+        "buffer": "assets/sounds/fight_theme.ogg",
+        "volume": 20.0,
+        "loop": 1,
+        "app_state": [350],
         "status": 0
     }
 ]

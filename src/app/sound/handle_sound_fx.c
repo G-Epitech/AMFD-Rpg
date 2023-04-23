@@ -5,6 +5,7 @@
 ** Functions working with core to handle sound effects
 */
 
+#include <stdio.h>
 #include "app/app.h"
 #include "types/list/types.h"
 #include "my/include/my.h"
@@ -31,8 +32,9 @@ void handle_sound_effects(list_t *sound_fx)
     while (node) {
         current_sound = node->data.sound;
         if (sfSound_getStatus(current_sound->sound) != current_sound->status
-        && current_sound->lone == false)
+        && current_sound->lone == false) {
             update_sound(current_sound);
+        }
         node = node->next;
     }
 }

@@ -10,6 +10,7 @@
 #include "app/types.h"
 #include "my/include/my.h"
 #include "types/list/list.h"
+#include "app/sound/sound_control.h"
 
 void core_quests_upgrade(app_t *app)
 {
@@ -22,4 +23,5 @@ void core_quests_upgrade(app_t *app)
     } else {
         app_quests->index_quest++;
     }
+    sound_control(app->sound_board->sound_fx, NEW_LEVEL, sfPlaying);
 }

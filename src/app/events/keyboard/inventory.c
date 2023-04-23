@@ -19,5 +19,8 @@ void keyboard_inventory(sfEvent event, app_t *app)
 {
     if (event.key.code == sfKeyE && app->state == ST_INGAME) {
         app->state = ST_INVENTORY;
+        return;
     }
+    if (event.key.code == sfKeyE && app->state == ST_INVENTORY)
+        app->state = ST_INGAME;
 }

@@ -17,6 +17,7 @@
 #include "app/animations/animations.h"
 #include "my/include/my.h"
 #include "app/utils/utils.h"
+#include "app/sound/sound_control.h"
 
 static bool on_attack(attack_t *attack, app_t *app,
 sfEvent event, fight_t *fight)
@@ -51,6 +52,8 @@ static void animation_attack(app_t *app, attack_t *attack)
     attack_text = my_strcat(attack_text, " PV");
     animations_floating_text_add(events, ATTACK_ANIM_COLOR,
     ATTACK_ANIM_POSITION, my_strdup(attack_text));
+    if (attack->fx >= 0)
+        sound_control(app->sound_board->sound_fx, attack->fx, sfPlaying);
     free(attack_text);
 }
 

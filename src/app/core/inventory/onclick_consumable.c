@@ -12,6 +12,7 @@
 #include "app/inventory/types.h"
 #include "app/display/display.h"
 #include "types/dialog_box/dialog_box.h"
+#include "app/sound/sound_control.h"
 
 static void consume_item(app_t *app, char *data)
 {
@@ -33,6 +34,7 @@ static void sell_item(app_t *app, char *data)
 
     (void) data;
     my_putstr("Item vendu !\n");
+    sound_control(app->sound_board->sound_fx, NEW_COIN, sfPlaying);
     inventory_remove_item(app->player, item);
 }
 

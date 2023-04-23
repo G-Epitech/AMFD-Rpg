@@ -5,6 +5,7 @@
 ** Sound controlling functions for the soundboard
 */
 
+#include <stdio.h>
 #include "app/sound/sound.h"
 #include "my/include/my.h"
 #include "types/list/list.h"
