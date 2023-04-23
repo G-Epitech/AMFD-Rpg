@@ -308,6 +308,7 @@ SRC = 		src/main.c \
 			src/app/core/quests/get.c \
 			src/app/core/quests/upgrade.c \
 			src/app/core/quests/world.c \
+			src/app/core/quests/tree.c \
 			\
 			src/app/sound/sound_control.c \
 			src/app/sound/handle_sound_fx.c	\

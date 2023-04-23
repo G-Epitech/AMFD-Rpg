@@ -46,4 +46,12 @@ void core_quests_world(renderer_t *renderer, quest_t *quest, app_t *app);
  */
 void core_quests_npc(renderer_t *renderer, quest_t *quest, app_t *app);
 
+/**
+ * @brief Handle tree quests
+ * @param renderer Renderer object
+ * @param quest Actual quest
+ * @param app Application objects
+ */
+void core_quests_tree(renderer_t *renderer, quest_t *quest, app_t *app);
+
 #endif /* !QUESTS_H_ */

@@ -42,7 +42,7 @@ int states_select_character(renderer_t *renderer, app_t *app, button_t *button)
     if (!app->partner) {
         set_select_skin_solo(app, button);
         app->state = ST_INGAME;
-        animations_screen_fade_add(events, true, WL_AYMERIC,
+        animations_screen_fade_add(events, true, app->world,
         app->player->position);
         return 0;
     }

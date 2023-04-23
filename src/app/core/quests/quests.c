@@ -14,6 +14,7 @@ static void quests_dispatch(renderer_t *renderer, quest_t *quest, app_t *app)
 {
     core_quests_world(renderer, quest, app);
     core_quests_npc(renderer, quest, app);
+    core_quests_tree(renderer, quest, app);
 }
 
 void core_quests(renderer_t *renderer, app_t *app)

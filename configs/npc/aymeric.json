@@ -8,7 +8,7 @@
             "orientation": 3,
             "position": { "x": 82, "y": 64 },
             "dialogs": [
-                { "label": "hello", "content": "Bonsoir jeune homme, je suis Aymeric, le\ndirecteurde cette ecole." },
+                { "label": "hello", "content": "Bonsoir jeune homme, je suis Aymeric, le\ndirecteur de cette ecole." },
                 { "label": "nul", "content": "Tu viens de te faire exploser par un eleve,\nc'est mal."},
                 { "label": "allez", "content": "Tu vois bien que tu n'a aucune chance face\na ce genre de personnes !"},
                 { "label": "apprend", "content": "Je vais t'apprendre un outil qui te servira\nvraiment dans la vie."},

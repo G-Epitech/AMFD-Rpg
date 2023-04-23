@@ -42,7 +42,7 @@ static void applay_attack(cjson_t *node, app_t *app)
 static void teleport_player(app_t *app, list_t *events)
 {
     if (app->quests->index_quests == 0 &&
-    app->quests->index_quest == 3) {
+    app->quests->index_quest == 2) {
         animations_screen_fade_add(events, false, WL_AYMERIC,
         AYMERIC_SPAWN);
     } else {
