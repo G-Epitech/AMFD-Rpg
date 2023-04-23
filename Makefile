@@ -203,10 +203,12 @@ SRC = 		src/main.c \
 			src/app/network/send/character.c \
 			src/app/network/send/position.c \
 			src/app/network/send/string.c \
+			src/app/network/send/quests.c \
 			src/app/network/receive/receive.c \
 			src/app/network/receive/character.c \
 			src/app/network/receive/game.c \
 			src/app/network/receive/position.c \
+			src/app/network/receive/quests.c \
 			\
 			src/app/core/inventory/move.c \
 			src/app/core/inventory/onclick.c \

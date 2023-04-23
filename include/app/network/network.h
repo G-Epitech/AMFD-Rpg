@@ -57,7 +57,7 @@ void network_receive_character(app_t *app);
  * @brief Handle receive packets
  * @param app Application structure
  */
-void network_receive(app_t *app);
+void network_receive(app_t *app, renderer_t *renderer);
 
 /**
  * @brief Send string by TCP
@@ -76,7 +76,7 @@ void network_send_position(app_t *app);
  * @brief Receive game data (json stringify)
  * @param app Application structure
  */
-void network_receive_game(app_t *app);
+void network_receive_game(app_t *app, renderer_t *renderer);
 
 /**
  * @brief Receive position data
@@ -84,4 +84,17 @@ void network_receive_game(app_t *app);
  * @param data Data in json
  */
 void network_receive_position(app_t *app, cjson_t *data);
+
+/**
+ * @brief Link quests by network
+ * @param app App object
+ */
+void network_send_quests(app_t *app);
+
+/**
+ * @brief receive quests
+ * @param app App object
+ * @param renderer Renderer object
+ */
+void network_receive_quests(app_t *app, renderer_t *renderer);
 #endif /* !NETWORK_H_ */
