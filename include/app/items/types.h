@@ -39,7 +39,7 @@ typedef void (*item_consumer_t)(app_t *app, item_t *item);
 void tasks_bash_use(app_t *app, item_t *item);
 
 static const item_consumer_t item_consumers[] = {
-    &tasks_bash_use, 
+    &tasks_bash_use,
     NULL
 };
 

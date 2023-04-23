@@ -47,7 +47,7 @@ int app_task_brute_core(app_t *app, renderer_t *renderer)
     }
     time_handler(app);
     if (NB_CLICK(app) >= OBJECTIF(app))
-       win_game(app, renderer);
+        win_game(app, renderer);
     if (TIME_FLOAT(brute->content.force) > 10.0) {
         events = animation_event_actual(app);
         animations_notif_add(events, renderer->ressources->icons->happy,
