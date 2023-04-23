@@ -40,4 +40,12 @@ bool item_load(cjson_t *config, item_t **item);
  */
 item_consumer_t item_get_consumer(item_t *item);
 
+/**
+ * @brief Get item by id
+ * @param id Id of the item
+ * @param app App object
+ * @return item_t* Item or NULL if do not find
+ */
+item_t *item_get_by_id(int id, app_t *app);
+
 #endif /* !ITEMS_H_ */
