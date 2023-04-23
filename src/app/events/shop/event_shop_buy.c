@@ -15,6 +15,17 @@
 #include "types/list/types.h"
 #include "app/inventory/inventory.h"
 
+static bool click_on_grird(player_t *player, item_t *item)
+{
+    if (player->gold >= item->price) {
+        player->gold -= item->price;
+        inventory_add_item(player, item);
+        return true;
+    } else {
+        return false;
+    }
+}
+
 static void check_item_buy(player_t *player, sfEvent event,
 shop_t *shop)
 {
@@ -25,14 +36,9 @@ shop_t *shop)
         rect = shop->grid[i];
         printf("Player gold %d\n", player->gold);
         if (sfIntRect_contains(&rect, event.mouseButton.x,
-        event.mouseButton.y) && event.mouseButton.button == sfMouseLeft &&
-        player->gold >= stock->curr_items[i].price) {
-            player->gold -= stock->curr_items[i].price;
-            inventory_add_item(player, &stock->curr_items[i]);
-            shop->stock->active = true;
+        event.mouseButton.y) && event.mouseButton.button == sfMouseLeft) {
+            shop->stock->active = click_on_grird(player, &stock->curr_items[i]);
             return;
-        } else {
-            shop->stock->active = false;
         }
     }
 }
