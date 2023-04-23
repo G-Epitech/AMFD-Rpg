@@ -96,4 +96,58 @@ void saver_free(saver_t *saver);
  */
 void save_quests(app_quests_t *quests, cjson_t *export);
 
+/**
+ * @brief At file loading, check player fields
+ * @param player Player to check
+ * @param valid Status of checking validity
+ */
+void save_load_file_check_validity_player(cjson_t *player,
+bool *valid);
+
+/**
+ * @brief Check validity of given file
+ * @param file File to check
+ * @return Status of file validity
+ */
+bool save_load_file_check_validity(cjson_t *file);
+
+/**
+ * @brief Restore inventory of player
+ * @param player Player object
+ * @param player_file Player parsed in saved file
+ * @param items Items references of game
+ */
+void save_load_restore_player_inventory(player_t *player,
+cjson_t *player_file, list_t *items);
+
+/**
+ * @brief Restore competences of player
+ * @param player Player object
+ * @param player_file Player parsed in saved file
+ */
+void save_load_restore_player_competences(player_t *player,
+cjson_t *player_file);
+
+/**
+ * @brief Restore player object from given player_file
+ * @param app App object
+ * @param player_file Player file based on saved file
+ */
+void save_load_restore_player(app_t *app, cjson_t *player_file);
+
+/**
+ * @brief Restore quests object from given quests_file
+ * @param app App object
+ * @param quests_file Quests file based on saved file
+ */
+void save_load_restore_quests(app_t *app, cjson_t *quests_file);
+
+/**
+ * @brief Load file of saved game
+ * @param app App object
+ * @param filename File to load
+ * @param renderer Renderer object
+ */
+void save_load(app_t *app, char *filename, renderer_t *renderer);
+
 #endif /* !SAVING_H_ */

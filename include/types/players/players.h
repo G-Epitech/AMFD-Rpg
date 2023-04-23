@@ -25,13 +25,6 @@ list_t *players_list_init(void);
 player_t *players_add(list_t *list, char *name);
 
 /**
- * @brief Init inventory for given player
- * @param player Player of which set inventory
- * @param items Base items of app
- */
-void player_init_inventory(player_t *player, list_t *items);
-
-/**
  * @brief Initializes player characteristics
  * @param player Player
 */

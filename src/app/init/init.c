@@ -8,8 +8,21 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "app/types.h"
+#include "types/list/list.h"
 #include "app/dependencies.h"
 #include "types/players/players.h"
+
+void init_player_fake_inventory(player_t *player, list_t *items)
+{
+    node_t *node = items ? items->first : NULL;
+    int i = 0;
+
+    while (i < INVENTORY_MAX && node) {
+        if (inventory_add_item(player, node->data.item))
+            i += 1;
+        node = node->next;
+    }
+}
 
 static int init_player(app_t *app)
 {
@@ -17,7 +30,6 @@ static int init_player(app_t *app)
     app->partner = NULL;
     if (!app->player)
         return 84;
-    player_init_inventory(app->player, app->items);
     return 0;
 }
 

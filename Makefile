@@ -39,7 +39,6 @@ SRC = 		src/main.c \
 			\
 			src/types/players/init.c \
 			src/types/players/add.c \
-			src/types/players/inventory.c \
 			src/types/players/competences.c \
 			\
 			src/types/items/load_all.c \
@@ -173,13 +172,20 @@ SRC = 		src/main.c \
 			\
 			src/app/saving/onexit.c \
 			src/app/saving/ingame.c \
+			src/app/saving/load_ask_file.c \
 			src/app/saving/save/save_ask_file.c \
 			src/app/saving/save/player.c \
 			src/app/saving/save/quests.c \
 			src/app/saving/save/inventory.c \
 			src/app/saving/save/competences.c \
 			src/app/saving/save/save.c \
-			src/app/saving/load_ask_file.c \
+			src/app/saving/load/check_player.c \
+			src/app/saving/load/check.c \
+			src/app/saving/load/load.c \
+			src/app/saving/load/inventory.c \
+			src/app/saving/load/quests.c \
+			src/app/saving/load/competences.c \
+			src/app/saving/load/player.c \
 			\
 			src/app/network/init.c \
 			src/app/network/connexion/host.c \
@@ -339,7 +345,7 @@ FTEST_REPO = https://github.com/Atomot/ftest/
 
 FTEST_V = ftest-0.1.0-1.x86_64.rpm
 
-CFLAGS += -Wall -Wextra -Wno-unused-command-line-argument -g
+CFLAGS += -Wall -Wextra -Werror -Wno-unused-command-line-argument -g
 
 INC = -I./include -I./lib
 

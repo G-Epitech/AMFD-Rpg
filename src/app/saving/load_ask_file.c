@@ -15,15 +15,13 @@
 
 static void on_load(app_t *app, char *input)
 {
-    (void) app;
-    my_putstr("Load from [");
-    my_putstr(input);
-    my_putstr("]\n");
+    renderer_t *renderer = (renderer_t *) app->dialog_box->context;
+
+    save_load(app, input, renderer);
 }
 
 static void set_up_dialog(dialog_box_t *dialog_box)
 {
-    dialog_box->context = NULL;
     dialog_box->mode = DGBOX_INPUT;
     dialog_box->show = true;
     dialog_box_reset_events(dialog_box, true);
@@ -42,8 +40,8 @@ static void set_up_dialog(dialog_box_t *dialog_box)
 
 int save_load_ask_file(renderer_t *renderer, app_t *app, button_t *button)
 {
-    (void) renderer;
     (void) button;
+    app->dialog_box->context = renderer;
     set_up_dialog(app->dialog_box);
     return 0;
 }

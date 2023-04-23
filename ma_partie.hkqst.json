@@ -1,0 +1,39 @@
+{
+    "world": 0,
+    "quests": {
+        "index_quest": 0,
+        "index_quests": 0
+    },
+    "player": {
+        "competences": [
+            {
+                "unlock": false,
+                "id": 1
+            },
+            {
+                "unlock": false,
+                "id": 3
+            },
+            {
+                "unlock": false,
+                "id": 4
+            },
+            {
+                "unlock": false,
+                "id": 2
+            }
+        ],
+        "inventory": [],
+        "level": 0,
+        "xp_max": 10,
+        "credits": 0,
+        "state": 0,
+        "orientation": 2,
+        "position": {
+            "y": 1015,
+            "x": 1000
+        },
+        "skin_id": 4,
+        "name": "Player1"
+    }
+}
