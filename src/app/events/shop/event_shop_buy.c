@@ -29,7 +29,10 @@ shop_t *shop)
         player->gold >= stock->curr_items[i].price) {
             player->gold -= stock->curr_items[i].price;
             inventory_add_item(player, &stock->curr_items[i]);
+            shop->stock->active = true;
             return;
+        } else {
+            shop->stock->active = false;
         }
     }
 }

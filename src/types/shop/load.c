@@ -33,6 +33,7 @@ static shop_stock_t *shop_load_stock(cjson_t *shop_config)
         stock->curr_items_len = 8;
     }
     stock->curr_items = malloc(sizeof(item_t) * stock->curr_items_len);
+    stock->active = true;
     if (!stock->curr_items)
         return NULL;
     return stock;
