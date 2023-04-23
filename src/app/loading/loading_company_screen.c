@@ -6,7 +6,15 @@
 */
 
 #include "app/loading/types.h"
-#include "types/renderer/types.h"
+#include "types/renderer/renderer.h"
+
+static void get_position(sfVector2f *position, sfRenderWindow *window)
+{
+    sfVector2u win_size = sfRenderWindow_getSize(window);
+
+    position->x = (float) win_size.x / 2;
+    position->y = (float) win_size.y / 2;
+}
 
 void loading_screen_events(renderer_t *renderer)
 {
@@ -26,7 +34,7 @@ void zoom_screen(renderer_t *renderer)
     sfTime elapsed = sfClock_getElapsedTime(clock);
     sfVector2f scale = (sfVector2f) {0.1, 0.1};
 
-    while (sfTime_asSeconds(elapsed) <= 2.7 &&
+    while (sfTime_asSeconds(elapsed) <= 4.5 &&
     sfRenderWindow_isOpen(renderer->window)) {
         sfSprite_setScale(objects->sprite, scale);
         loading_screen_events(renderer);
@@ -35,8 +43,10 @@ void zoom_screen(renderer_t *renderer)
         NULL);
         sfRenderWindow_display(renderer->window);
         elapsed = sfClock_getElapsedTime(clock);
-        scale.x += 0.0045;
-        scale.y += 0.0045;
+        if (sfTime_asSeconds(elapsed) <= 3.0) {
+            scale.x += 0.0045;
+            scale.y += 0.0045;
+        }
     }
     sfClock_destroy(clock);
 }
@@ -46,13 +56,15 @@ void loading_preload_screen(renderer_t *renderer)
     sfMusic *intro = sfMusic_createFromFile("assets/sounds/intro.ogg");
     sfTexture *preload_screen = sfTexture_createFromFile(LOGO_PATH, NULL);
     renderer_objects_t *objects = renderer->objects;
+    sfVector2f position = {0, 0};
 
+    get_position(&position, renderer->window);
+    renderer_objects_reset_sprite(objects);
     sfMusic_play(intro);
     sfSprite_setTexture(objects->sprite, preload_screen, sfTrue);
-    sfSprite_setPosition(objects->sprite, (sfVector2f) {960, 440});
-    sfSprite_setOrigin(objects->sprite, (sfVector2f) {500, 450});
+    sfSprite_setPosition(objects->sprite, position);
+    sfSprite_setOrigin(objects->sprite, (sfVector2f) {364, 66});
     zoom_screen(renderer);
-    sfSprite_setOrigin(objects->sprite, (sfVector2f) {0, 0});
     sfTexture_destroy(preload_screen);
     sfMusic_stop(intro);
     sfMusic_destroy(intro);
