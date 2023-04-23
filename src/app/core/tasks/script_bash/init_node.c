@@ -64,6 +64,8 @@ static int init_cmd(app_t *app)
 
 int init_task_bash(app_t *app)
 {
+    task_t *bash = find_task_node(app, 1);
+
     STRUCT_BASH(app).handler_time->clock_time = sfClock_create();
     if (STRUCT_BASH(app).handler_time->clock_time == NULL)
         return 84;
@@ -72,5 +74,6 @@ int init_task_bash(app_t *app)
     if (init_cmd(app) == 84)
         return 84;
     STRUCT_BASH(app).handler_placing->just_started = false;
+
     return 0;
 }
