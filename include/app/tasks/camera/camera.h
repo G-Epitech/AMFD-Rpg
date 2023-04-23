@@ -40,7 +40,7 @@ void reset_setup_camera(app_t *app);
  * @brief Core handler of task camera
  * @param app Application structure
 */
-int app_task_camera_core(app_t *app);
+int app_task_camera_core(app_t *app, renderer_t *renderer);
 
 /**
  * @brief Display handler of task camera

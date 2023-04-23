@@ -16,6 +16,7 @@ typedef struct s_quest {
     char *title;
     char *type;
     int id;
+    int xp;
 } quest_t;
 
 typedef struct s_quests {

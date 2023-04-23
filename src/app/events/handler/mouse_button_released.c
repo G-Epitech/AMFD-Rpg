@@ -5,6 +5,7 @@
 ** Handle events
 */
 
+#include <stdio.h>
 #include <SFML/Graphics.h>
 #include "app/app.h"
 #include "app/events/events.h"

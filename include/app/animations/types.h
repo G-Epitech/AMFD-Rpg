@@ -23,6 +23,8 @@
     #define NOTIF_TARGET_AFK 2300
     #define NOTIF_POSITION_INIT ((sfVector2f) {1900, 728})
     #define NOTIF_POSITION_TARGET ((sfVector2f) {1369, 728})
+    #define FADE_TIME 10
+    #define FADE_RATIO 2200
 
 typedef struct s_list list_t;
 typedef struct s_attack attack_t;
@@ -48,6 +50,14 @@ typedef struct s_animation_event_zoom {
     float speed;
     int total;
 } animation_event_zoom_t;
+
+typedef struct s_animation_event_fade {
+    sfInt32 last_time;
+    int total;
+    sfColor color;
+    sfVector2f coords;
+    int world;
+} animation_event_fade_t;
 
 typedef struct s_animation_event_shake_attack {
     attack_t *attack;
@@ -80,6 +90,7 @@ typedef struct s_animation_event_notif {
 typedef union u_animation_event_data {
     animation_event_npc_t *npc;
     animation_event_zoom_t *zoom;
+    animation_event_fade_t *fade;
     animation_event_notif_t *notif;
     animation_event_player_t *player;
     animation_event_shake_attack_t *shake_attack;

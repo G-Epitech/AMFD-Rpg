@@ -38,12 +38,12 @@ int core_handler(renderer_t *renderer, app_t *app)
     animations_handler(renderer, app);
     if (animations_active(app->animations))
         return 1;
-    if (core_tasks_handler(app) == 84)
+    if (core_tasks_handler(app, renderer) == 84)
         return 84;
     core_handle_movement(app->control, current_map->collision, app);
     core_fight_handler(app, renderer);
     core_handle_sound(app);
-    core_quests(app);
+    core_quests(renderer, app);
     core_handle_animation(app);
     network_receive(app);
     return 0;

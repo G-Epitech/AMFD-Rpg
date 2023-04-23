@@ -1,0 +1,19 @@
+{
+    "name": "Aymeric",
+    "id": 4,
+    "worlds_data": [
+        {
+            "world": 14,
+            "skin_id": 6,
+            "orientation": 3,
+            "position": { "x": 82, "y": 64 },
+            "dialogs": [
+                { "label": "hello", "content": "Bonsoir jeune homme, je suis Aymeric, le\ndirecteur de cette ecole." },
+                { "label": "nul", "content": "Tu viens de te faire exploser par un eleve,\nc'est mal."},
+                { "label": "allez", "content": "Tu vois bien que tu n'a aucune chance face\na ce genre de personnes !"},
+                { "label": "apprend", "content": "Je vais t'apprendre un outil qui te servira\nvraiment dans la vie."},
+                { "label": "vasy", "content": "Allez, rend-toi dans l'arbre des competences\net apprend le bash."}
+            ]
+        }
+    ]
+}

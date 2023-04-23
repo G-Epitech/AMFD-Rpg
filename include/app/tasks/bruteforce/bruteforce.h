@@ -34,7 +34,7 @@ void app_task_brute_display(renderer_t *renderer, app_t *app);
  * @brief Core handler of task brute
  * @param app Application structure
 */
-int app_task_brute_core(app_t *app);
+int app_task_brute_core(app_t *app, renderer_t *renderer);
 
 /**
  * @brief Reset setup of brute_force struct when its finish

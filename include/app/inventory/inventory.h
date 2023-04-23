@@ -210,4 +210,12 @@ inventory_item_t *inventory_item);
 void inventory_item_impact_player(player_t *player,
 inventory_item_t *item, int factor);
 
+/**
+ * @brief Add item by id
+ * @param app App object
+ * @param id Target id to item
+ * @return Adding success status
+ */
+bool inventory_add_item_by_id(app_t *app, int id);
+
 #endif /* !INVENTORY_H_ */

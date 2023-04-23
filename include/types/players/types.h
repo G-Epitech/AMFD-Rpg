@@ -10,7 +10,8 @@
 
     #include <SFML/Graphics.h>
 
-    #define PLAYER_DEFAULT_SPAWN ((sfVector2f) {1000, 1015})
+    #define PLAYER_DEFAULT_SPAWN ((sfVector2f) {37, 53})
+    #define AYMERIC_SPAWN ((sfVector2f) {182, 144})
 
 typedef struct s_list list_t;
 

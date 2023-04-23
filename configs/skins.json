@@ -22,5 +22,9 @@
     {
         "id": 5,
         "texture": "assets/skins/tom.png"
+    },
+    {
+        "id": 6,
+        "texture": "assets/skins/aymeric.png"
     }
 ]

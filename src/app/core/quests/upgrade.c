@@ -12,10 +12,11 @@
 #include "types/list/list.h"
 #include "app/sound/sound_control.h"
 
-void core_quests_upgrade(app_t *app)
+void core_quests_upgrade(renderer_t *renderer, app_t *app)
 {
     app_quests_t *app_quests = app->quests;
     quests_t *quests = core_quests_get(app);
+    quest_t *quest = core_quest_get(app);
 
     if (quests->quests->len == app_quests->index_quest + 1) {
         app_quests->index_quest = 0;
@@ -24,4 +25,5 @@ void core_quests_upgrade(app_t *app)
         app_quests->index_quest++;
     }
     sound_control(app->sound_board->sound_fx, NEW_LEVEL, sfPlaying);
+    utils_give_xp(renderer, app, quest->xp);
 }
