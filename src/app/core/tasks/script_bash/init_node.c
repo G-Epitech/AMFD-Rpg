@@ -76,5 +76,6 @@ int init_task_bash(app_t *app)
     STRUCT_BASH(app).handler_placing->just_started = false;
     INDEX_LIFE(app) = app->player->intellect;
     TIME_INT(bash->content.script) = (app->player->speed) * 10;
+    TIME_EXPENSIVE(bash->content.camera) = (app->player->speed) * 10;
     return 0;
 }

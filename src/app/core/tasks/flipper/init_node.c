@@ -6,6 +6,7 @@
 */
 
 #include <stdio.h>
+#include <stdlib.h>
 #include "types/renderer/types.h"
 #include "app/tasks/task.h"
 #include "app/tasks/flipper/flipper.h"
