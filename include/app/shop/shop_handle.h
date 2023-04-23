@@ -27,4 +27,13 @@ void shop_handler(app_t *app);
 */
 void load_items_stock(app_t *app);
 
+/**
+ * @brief Displays shop interface
+ * @param shops Shop list
+ * @param curr_shop_id Current id of the shop
+ * @param renderer Renderer
+ */
+void display_shop_interface(list_t *shops, int curr_shop_id,
+renderer_t *renderer);
+
 #endif /* !SHOP_HANDLE_H_ */

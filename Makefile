@@ -242,6 +242,7 @@ SRC = 		src/main.c \
 			src/app/display/hud/hud.c \
 			src/app/display/animations/environment.c \
 			src/app/display/shop/shop.c	\
+			src/app/display/shop/display_stock.c	\
 			\
 			src/app/getters/progress/inventory.c \
 			src/app/getters/progress/fight.c \

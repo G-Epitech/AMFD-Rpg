@@ -42,13 +42,16 @@ void print_shop_stock_items(list_t *shops)
 
     while (node) {
         shop = node->data.shop;
-        printf("Loading items for shop %s\n", shop->name);
+            printf("Loading items for shop %s\n", shop->name);
         for (size_t i = 0; i < shop->stock->curr_items_len; i++) {
-            printf("Item %ld has id %d, label %s, price %d, type %d, consumer %d, life %d, speed %d, xp %d\n",
+            printf("Item %ld has id %d, label %s, price %d, type %d, consumer %d, life %d, speed %d, xp %d\n"
+            "rect top %d, left %d, width %d, height %d\n",
             i, shop->stock->curr_items[i].id, shop->stock->curr_items[i].label,
             shop->stock->curr_items[i].price, shop->stock->curr_items[i].type,
             shop->stock->curr_items[i].consumer, shop->stock->curr_items[i].life,
-            shop->stock->curr_items[i].speed, shop->stock->curr_items[i].xp);
+            shop->stock->curr_items[i].speed, shop->stock->curr_items[i].xp,
+            shop->stock->curr_items[i].rect.top, shop->stock->curr_items[i].rect.left,
+            shop->stock->curr_items[i].rect.width, shop->stock->curr_items[i].rect.height);
         }
         node = node->next;
     }
