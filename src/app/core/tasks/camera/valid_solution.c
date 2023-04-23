@@ -43,7 +43,7 @@ void result_camera(renderer_t *renderer, sfEvent event, app_t *app)
 {
     task_t *node = find_task_node(app, 4);
 
-    if (event.text.unicode == '\r') {
+    if (event.text.unicode == '\r' || event.text.unicode == '\n') {
         if (my_strcmp(CAMERA_SOLUTION(node), CAMERA_RESULT(node)) == 0) {
             good_result(renderer, app);
         } else {

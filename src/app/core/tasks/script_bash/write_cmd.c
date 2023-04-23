@@ -45,7 +45,8 @@ void cmd_write(sfEvent event, app_t *app)
     if (!STR_CMD(app) || !current_cmd)
         return;
     if (0 < event.text.unicode && event.text.unicode < 128
-    && event.text.unicode != '\r' && my_strlen(STR_CMD(app)) <= LEN_MAX_CMD
+    && event.text.unicode != '\r' && event.text.unicode != '\n'
+    && my_strlen(STR_CMD(app)) <= LEN_MAX_CMD
     && event.text.unicode != '\b')
         realloc_char(&STR_CMD(app), event.text.unicode);
     if (event.text.unicode == '\b')

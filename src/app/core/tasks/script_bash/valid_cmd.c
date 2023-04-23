@@ -5,6 +5,7 @@
 ** handler
 */
 
+#include <stdio.h>
 #include <SFML/Graphics.h>
 #include "types/renderer/types.h"
 #include "app/tasks/task.h"
@@ -54,7 +55,7 @@ void good_or_bad_result(sfEvent event, app_t *app, renderer_t *renderer)
     node_t *current_cmd_model = NULL;
     node_t *current_cmd = NULL;
 
-    if (event.text.unicode == '\r') {
+    if (event.text.unicode == '\r' || event.text.unicode == '\n') {
         current_cmd = find_node_cmd(STRUCT_BASH(app).cmd,
         STRUCT_BASH(app).handler_placing->index_cmd);
         current_cmd_model = find_node_cmd(STRUCT_BASH(app).cmd_model,
