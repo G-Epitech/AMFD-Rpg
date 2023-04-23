@@ -39,7 +39,6 @@ SRC = 		src/main.c \
 			\
 			src/types/players/init.c \
 			src/types/players/add.c \
-			src/types/players/inventory.c \
 			src/types/players/competences.c \
 			\
 			src/types/items/load_all.c \
@@ -53,6 +52,7 @@ SRC = 		src/main.c \
 			src/types/dialog_box/free.c \
 			src/types/dialog_box/new.c \
 			src/types/dialog_box/options.c \
+			src/types/dialog_box/input.c \
 			src/types/dialog_box/message.c \
 			\
 			src/types/components/load.c \
@@ -96,6 +96,9 @@ SRC = 		src/main.c \
 			\
 			src/types/ressources/animation/load_player.c	\
 			src/types/ressources/animation/load_environment.c \
+			\
+			src/types/saver/new.c \
+			src/types/saver/free.c \
 			\
 			src/types/view/init.c \
 			\
@@ -158,12 +161,31 @@ SRC = 		src/main.c \
 			src/app/events/components/buttons.c \
 			src/app/events/components/levers.c \
 			src/app/events/components/attacks.c \
+			src/app/events/components/in_game_menu.c \
+			src/app/events/components/dialog_box/dialog_box.c \
+			src/app/events/components/dialog_box/options.c \
+			src/app/events/components/dialog_box/input.c \
 			src/app/events/skills_tree/detect.c \
 			src/app/events/skills_tree/find_competence.c \
-			src/app/events/components/in_game_menu.c	\
-			src/app/events/components/dialog_box.c \
 			\
 			src/app/developer/reload_json.c \
+			\
+			src/app/saving/onexit.c \
+			src/app/saving/ingame.c \
+			src/app/saving/load_ask_file.c \
+			src/app/saving/save/save_ask_file.c \
+			src/app/saving/save/player.c \
+			src/app/saving/save/quests.c \
+			src/app/saving/save/inventory.c \
+			src/app/saving/save/competences.c \
+			src/app/saving/save/save.c \
+			src/app/saving/load/check_player.c \
+			src/app/saving/load/check.c \
+			src/app/saving/load/load.c \
+			src/app/saving/load/inventory.c \
+			src/app/saving/load/quests.c \
+			src/app/saving/load/competences.c \
+			src/app/saving/load/player.c \
 			\
 			src/app/network/init.c \
 			src/app/network/connexion/host.c \
@@ -227,6 +249,7 @@ SRC = 		src/main.c \
 			src/app/display/developer/position.c \
 			src/app/display/dialog_box/dialog_box.c \
 			src/app/display/dialog_box/options.c \
+			src/app/display/dialog_box/input.c \
 			src/app/display/fight/fight.c \
 			src/app/display/fight/choice.c \
 			src/app/display/fight/attack.c \
@@ -322,7 +345,7 @@ FTEST_REPO = https://github.com/Atomot/ftest/
 
 FTEST_V = ftest-0.1.0-1.x86_64.rpm
 
-CFLAGS += -Wall -Wextra -Wno-unused-command-line-argument -g
+CFLAGS += -Wall -Wextra -Werror -Wno-unused-command-line-argument -g
 
 INC = -I./include -I./lib
 

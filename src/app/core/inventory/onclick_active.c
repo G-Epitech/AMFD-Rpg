@@ -12,10 +12,11 @@
 #include "app/inventory/types.h"
 #include "app/display/display.h"
 
-static void remove_equipement(app_t *app)
+static void remove_equipement(app_t *app, char *data)
 {
     inventory_item_t *item = app->inventory_event->selected;
 
+    (void) data;
     if (!item)
         return;
     inventory_item_impact_player(app->player, item, -1);
@@ -34,9 +35,9 @@ void inventory_onclick_item_active(app_t *app, inventory_item_t *item)
     dialog_box_set_option1(app->dialog_box, "Retirer");
     dialog_box_set_option2(app->dialog_box, "Annuler");
     dialog_box_set_option3(app->dialog_box, NULL);
+    dialog_box_reset_events(app->dialog_box, true);
+    app->dialog_box->mode = DGBOX_DIALOG;
     app->dialog_box->onoption1 = &remove_equipement;
-    app->dialog_box->onoption2 = NULL;
-    app->dialog_box->onoption3 = NULL;
     app->dialog_box->option = 1;
     app->dialog_box->show = true;
 }

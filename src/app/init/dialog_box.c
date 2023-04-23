@@ -17,5 +17,6 @@ bool app_init_dialog_box(app_t *app, renderer_t *renderer)
     if (!app->dialog_box)
         return false;
     app->dialog_box->show = false;
+    app->dialog_box->mode = DGBOX_DIALOG;
     return true;
 }

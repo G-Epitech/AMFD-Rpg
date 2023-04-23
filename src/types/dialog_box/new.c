@@ -15,9 +15,10 @@ dialog_box_t *dialog_box_new(void)
     if (!dialog)
         return NULL;
     *dialog = (dialog_box_t) {
-        NULL, NULL, NULL, NULL,
-        1, false,
-        NULL, NULL, NULL
+        DGBOX_DIALOG,
+        NULL, NULL, NULL, NULL, NULL,
+        1, false, NULL,
+        NULL, NULL, NULL, NULL, NULL, NULL
     };
     return dialog;
 }

@@ -8,7 +8,7 @@
 #include <stdio.h>
 #include <SFML/Graphics.h>
 #include "app/display/display.h"
-#include "types/renderer/types.h"
+#include "types/renderer/renderer.h"
 #include "types/list/types.h"
 #include "app/app.h"
 
@@ -16,6 +16,7 @@ static void display_rectangle(button_t *button, renderer_t *renderer)
 {
     renderer_objects_t *objects = renderer->objects;
 
+    renderer_objects_reset_rectangle(objects);
     sfRectangleShape_setPosition(objects->rectangle,
     (sfVector2f){button->position.x + 13 * button->scale,
     button->position.y});
