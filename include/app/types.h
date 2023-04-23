@@ -17,6 +17,7 @@
     #include "app/network/types.h"
     #include "app/animations/types.h"
     #include "types/dialog_box/types.h"
+    #include "app/saving/types.h"
     #include "sound/types.h"
     #include "app/quests/types.h"
 
@@ -79,8 +80,10 @@ typedef enum e_worlds {
     WL_HOSPITAL_1,
     WL_HOSPITAL_2,
     WL_HOSPITAL_3,
-    WL_CITY,
-    WL_AYMERIC
+    WL_AYMERIC,
+    WL_SHADY_SHOP,
+    WL_TRAILER,
+    WL_CITY
 } worlds_t;
 
 typedef struct shop_stock_s {
@@ -199,6 +202,7 @@ typedef struct s_app {
     app_quests_t *quests;               //Quests of the game
     sfClock *clock;                     //Clock of the game
     list_t *shops;                      //Shops of the game
+    char *game_file;                    //Saving game file
 } app_t;
 
 typedef bool (*app_init_member_t)(app_t *app, renderer_t *renderer);

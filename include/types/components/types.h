@@ -18,7 +18,9 @@
     #include "app/settings/settings.h"
     #include "app/network/network.h"
     #include "app/tasks/bruteforce/bruteforce.h"
+    #include "app/saving/saving.h"
     #include "app/in_game_menu/in_game_menu.h"
+    #include "app/saving/saving.h"
 
     #define COMPONENTS_CONFIG "configs/components.json"
     #define PROGRESS_MARGIN 4
@@ -136,7 +138,9 @@ static const struct {
     {settings_resolution_medium},
     {settings_resolution_high},
     {in_game_menu_exit},
-    {in_game_menu_exit_to_title}
+    {in_game_menu_exit_to_title},
+    {save_load_ask_file},
+    {save_in_game}
 };
 
 static const struct {

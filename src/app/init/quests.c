@@ -29,6 +29,7 @@ static list_t *load_chapter(char *config)
         cjson_get_prop_string(cjson, "title", &quest->title);
         cjson_get_prop_string(cjson, "type", &quest->type);
         cjson_get_prop_int(cjson, "id", &quest->id);
+        cjson_get_prop_int(cjson, "xp", &quest->xp);
         list_append(quests, node_new((node_data_t) quest));
         cjson = cjson->next;
     }

@@ -15,7 +15,7 @@
 void display_components_interaction(renderer_t *renderer, app_t *app)
 {
     sfSprite *sprite = renderer->objects->sprite;
-
+ 
     if (app->interaction->interaction && !app->interaction->active &&
     app->state == ST_INGAME) {
         renderer_objects_reset_sprite(renderer->objects);

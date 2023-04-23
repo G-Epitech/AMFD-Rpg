@@ -5,7 +5,9 @@
 ** handler
 */
 
+#include <stdlib.h>
 #include <stdio.h>
+#include <stdlib.h>
 #include "types/renderer/renderer.h"
 #include "app/tasks/task.h"
 #include "types/list/types.h"
@@ -25,9 +27,12 @@ static void display_time(renderer_t *renderer, app_t *app)
     sfText_setString(objects->text, "Temps :");
     sfRenderWindow_drawText(renderer->window, objects->text, NULL);
     sfText_setPosition(objects->text, (sfVector2f) {560, 230});
-    char_second = nbr_to_str((int) TIME_FLOAT(node->content.camera));
+    char_second =
+    nbr_to_str(TIME_INT(node->content.camera) -
+    ((int) TIME_FLOAT(node->content.camera)));
     sfText_setString(objects->text, char_second);
     sfRenderWindow_drawText(renderer->window, objects->text, NULL);
+    free(char_second);
 }
 
 static void display_life(renderer_t *renderer, app_t *app)

@@ -21,6 +21,7 @@ renderer_objects_t *renderer_objects_init(sfRenderWindow *window)
     objects->circle = sfCircleShape_create();
     objects->rectangle = sfRectangleShape_create();
     objects->window = window;
+    objects->font = NULL;
     return objects;
 }
 

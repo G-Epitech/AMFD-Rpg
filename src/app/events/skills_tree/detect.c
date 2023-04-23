@@ -25,6 +25,7 @@ static void detect_click_bash(app_t *app, renderer_t *renderer)
         skill = find_skill(app, SCRIPT_BASH_ID);
         skill->unlock = true;
         app->player->credits -= 1;
+        inventory_add_item_by_id(app, 10);
     }
 }
 

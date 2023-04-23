@@ -34,7 +34,7 @@ sfEvent event, fight_t *fight)
     if (cursor.y > attack->position.y + ATTACK_BUTTON_SCALE.y)
         return false;
     if (attack->mana > fight->mana) {
-        events = animation_event_new(app);
+        events = animation_event_actual(app);
         animations_shake_attack_add(events, attack);
         return false;
     }
@@ -43,7 +43,7 @@ sfEvent event, fight_t *fight)
 
 static void animation_attack(app_t *app, attack_t *attack)
 {
-    list_t *events = animation_event_new(app);
+    list_t *events = animation_event_actual(app);
     char *attack_text = attack->title;
 
     attack_text = my_strcat(attack_text, "\n-");

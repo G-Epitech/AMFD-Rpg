@@ -355,6 +355,13 @@ void display_dialog_box_options(renderer_t *renderer,
 dialog_box_t *dialog_box);
 
 /**
+ * @brief Display input when dialog box is in input mode
+ * @param renderer Renderer object
+ * @param dialog_box Dialog box
+ */
+void display_dialog_box_input(renderer_t *renderer, dialog_box_t *dialog_box);
+
+/**
  * @brief Display NPC dialogs
  * @param renderer Renderer object
  * @param app App object
@@ -394,5 +401,12 @@ sfRenderWindow *window, sfSprite *sprite, renderer_t *renderer);
  * @param renderer Renderer object
 */
 void display_shop(app_t *app, renderer_t *renderer);
+
+/*
+ * @brief Display fade animation
+ * @param renderer Renderer object
+ * @param app App object
+ */
+void display_animations_fade(renderer_t *renderer, app_t *app);
 
 #endif /* !DISPLAY_H_ */

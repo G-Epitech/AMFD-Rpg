@@ -39,13 +39,13 @@ SRC = 		src/main.c \
 			\
 			src/types/players/init.c \
 			src/types/players/add.c \
-			src/types/players/inventory.c \
 			src/types/players/competences.c \
 			\
 			src/types/items/load_all.c \
 			src/types/items/consume.c \
 			src/types/items/free.c \
 			src/types/items/load.c \
+			src/types/items/id.c \
 			\
 			src/types/characters/rect.c \
 			\
@@ -53,6 +53,7 @@ SRC = 		src/main.c \
 			src/types/dialog_box/free.c \
 			src/types/dialog_box/new.c \
 			src/types/dialog_box/options.c \
+			src/types/dialog_box/input.c \
 			src/types/dialog_box/message.c \
 			\
 			src/types/components/load.c \
@@ -67,6 +68,7 @@ SRC = 		src/main.c \
 			src/types/inventory/active.c \
 			src/types/inventory/item.c \
 			src/types/inventory/remove.c \
+			src/types/inventory/id.c \
 			\
 			src/types/ressources/load.c \
 			src/types/ressources/free.c \
@@ -98,6 +100,9 @@ SRC = 		src/main.c \
 			src/types/ressources/animation/load_player.c	\
 			src/types/ressources/animation/load_environment.c \
 			\
+			src/types/saver/new.c \
+			src/types/saver/free.c \
+			\
 			src/types/view/init.c \
 			\
 			src/app/run.c \
@@ -128,11 +133,13 @@ SRC = 		src/main.c \
 			src/app/animations/handler.c \
 			src/app/animations/active.c \
 			src/app/animations/event_new.c \
+			src/app/animations/event_actual.c \
 			src/app/animations/screen/zoom.c \
+			src/app/animations/screen/fade.c \
 			src/app/animations/button/shake_attack.c \
 			src/app/animations/text/floating.c \
 			src/app/animations/text/notif.c \
-      		src/app/animations/player/animation.c	\
+      src/app/animations/player/animation.c	\
 			\
 			src/app/states/on_state.c \
 			src/app/states/switch.c \
@@ -164,12 +171,31 @@ SRC = 		src/main.c \
 			src/app/events/components/buttons.c \
 			src/app/events/components/levers.c \
 			src/app/events/components/attacks.c \
+			src/app/events/components/in_game_menu.c \
+			src/app/events/components/dialog_box/dialog_box.c \
+			src/app/events/components/dialog_box/options.c \
+			src/app/events/components/dialog_box/input.c \
 			src/app/events/skills_tree/detect.c \
 			src/app/events/skills_tree/find_competence.c \
-			src/app/events/components/in_game_menu.c	\
-			src/app/events/components/dialog_box.c \
 			\
 			src/app/developer/reload_json.c \
+			\
+			src/app/saving/onexit.c \
+			src/app/saving/ingame.c \
+			src/app/saving/load_ask_file.c \
+			src/app/saving/save/save_ask_file.c \
+			src/app/saving/save/player.c \
+			src/app/saving/save/quests.c \
+			src/app/saving/save/inventory.c \
+			src/app/saving/save/competences.c \
+			src/app/saving/save/save.c \
+			src/app/saving/load/check_player.c \
+			src/app/saving/load/check.c \
+			src/app/saving/load/load.c \
+			src/app/saving/load/inventory.c \
+			src/app/saving/load/quests.c \
+			src/app/saving/load/competences.c \
+			src/app/saving/load/player.c \
 			\
 			src/app/network/init.c \
 			src/app/network/connexion/host.c \
@@ -206,7 +232,7 @@ SRC = 		src/main.c \
 			src/app/display/player/competences_tree.c \
 			src/app/display/characters/character.c \
 			src/app/display/map/front.c	\
-      		src/app/display/components/components.c \
+      src/app/display/components/components.c \
 			src/app/display/components/backgrounds.c \
 			src/app/display/components/levers.c \
 			src/app/display/components/interaction.c \
@@ -233,12 +259,14 @@ SRC = 		src/main.c \
 			src/app/display/developer/position.c \
 			src/app/display/dialog_box/dialog_box.c \
 			src/app/display/dialog_box/options.c \
+			src/app/display/dialog_box/input.c \
 			src/app/display/fight/fight.c \
 			src/app/display/fight/choice.c \
 			src/app/display/fight/attack.c \
 			src/app/display/animations/animations.c \
 			src/app/display/animations/floating_text.c \
 			src/app/display/animations/notif.c \
+			src/app/display/animations/fade.c \
 			src/app/display/dialogs/dialogs.c \
 			src/app/display/hud/hud.c \
 			src/app/display/animations/environment.c \
@@ -316,6 +344,8 @@ SRC = 		src/main.c \
 			src/app/core/quests/get.c \
 			src/app/core/quests/upgrade.c \
 			src/app/core/quests/world.c \
+			src/app/core/quests/tree.c \
+			src/app/core/quests/bash.c \
 			\
 			src/app/sound/sound_control.c \
 			src/app/sound/handle_sound_fx.c	\
@@ -329,6 +359,7 @@ SRC = 		src/main.c \
 			\
 			src/types/shop/load.c	\
 			src/types/shop/include_array.c	\
+			src/app/tasks/bash_use.c \
 
 NAME = my_rpg
 
@@ -336,7 +367,7 @@ FTEST_REPO = https://github.com/Atomot/ftest/
 
 FTEST_V = ftest-0.1.0-1.x86_64.rpm
 
-CFLAGS += -Wall -Wextra -Wno-unused-command-line-argument -g
+CFLAGS += -Wall -Wextra -Werror -Wno-unused-command-line-argument -g
 
 INC = -I./include -I./lib
 

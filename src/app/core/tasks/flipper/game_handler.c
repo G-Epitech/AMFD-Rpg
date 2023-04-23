@@ -15,6 +15,7 @@
 #include "types/list/types.h"
 #include "my/include/my.h"
 #include "types/list/list.h"
+#include "app/animations/animations.h"
 
 static void time_handler(app_t *app, int *time_mili_int)
 {
@@ -29,17 +30,26 @@ static void time_handler(app_t *app, int *time_mili_int)
 }
 
 static void game_result(app_t *app, int *prev_sec,
-int *prev_mili_sec, task_t *node)
+int *prev_mili_sec, renderer_t *renderer)
 {
+    task_t *node = find_task_node(app, 3);
+    list_t *events = NULL;
+
     if (NB_LIFE_FLIPPER(node) <= 0) {
-        my_putstr("You lose\n");
+        events = animation_event_actual(app);
+        animations_notif_add(events, renderer->ressources->icons->hungry,
+        "Flipper", "Vous n'avez pas reussi a utiliser\nle flipper.");
         reset_setup_flipper(app, prev_sec, prev_mili_sec);
         app->state = ST_INGAME;
+        app->interaction->active = false;
     }
     if (NB_CIRCLE_HIT(node) == NB_CIRCLE_FLIPPER(node)) {
-        my_putstr("You WIN\n");
+        events = animation_event_actual(app);
+        animations_notif_add(events, renderer->ressources->icons->happy,
+        "Flipper", "Vous avez reussi l'attaque avec\nle flipper !");
         reset_setup_flipper(app, prev_sec, prev_mili_sec);
         app->state = ST_INGAME;
+        app->interaction->active = false;
     }
 }
 
@@ -64,7 +74,7 @@ static void game_second(int prev_sec, int time_int, app_t *app)
     }
 }
 
-int app_task_flipper_core(app_t *app)
+int app_task_flipper_core(app_t *app, renderer_t *renderer)
 {
     task_t *node = find_task_node(app, 3);
     static int prev_sec = 0;
@@ -77,7 +87,7 @@ int app_task_flipper_core(app_t *app)
             return 84;
     }
     time_handler(app, &time_mili_int);
-    game_result(app, &prev_sec, &prev_mili_sec, node);
+    game_result(app, &prev_sec, &prev_mili_sec, renderer);
     if (circle_create(time_int, app, prev_mili_sec, time_mili_int) == 84)
         return 84;
     if (prev_mili_sec < time_mili_int)

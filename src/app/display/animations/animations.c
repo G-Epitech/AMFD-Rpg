@@ -13,4 +13,5 @@ void display_animations(renderer_t *renderer, app_t *app)
 {
     display_animations_floating_text(renderer, app);
     display_animations_notif(renderer, app);
+    display_animations_fade(renderer, app);
 }

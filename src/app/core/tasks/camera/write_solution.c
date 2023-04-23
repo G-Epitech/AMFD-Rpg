@@ -33,7 +33,8 @@ void solution_write(sfEvent event, app_t *app)
     task_t *node = find_task_node(app, 4);
 
     if (0 < event.text.unicode && event.text.unicode < 128 &&
-    event.text.unicode != '\r' && my_strlen(CAMERA_SOLUTION(node))
+    event.text.unicode != '\r' && event.text.unicode != '\n' &&
+    my_strlen(CAMERA_SOLUTION(node))
     <= LENGHT_MAX_SOLUTION && event.text.unicode != '\b')
         realloc_char(&CAMERA_SOLUTION(node), event.text.unicode);
     if (event.text.unicode == '\b')

@@ -88,7 +88,7 @@ void core_handle_travel(renderer_t *renderer, app_t *app, map_t *curr_map);
  * @brief handle quests core
  * @param app App object
  */
-void core_quests(app_t *app);
+void core_quests(renderer_t *renderer, app_t *app);
 
 /**
  * @brief handle shop interactions

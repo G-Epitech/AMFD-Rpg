@@ -9,6 +9,7 @@
 #include "types/renderer/types.h"
 #include "app/network/network.h"
 #include "app/types.h"
+#include "app/animations/animations.h"
 
 static void set_select_skin_duo(app_t *app, button_t *button)
 {
@@ -36,10 +37,13 @@ static void set_select_skin_solo(app_t *app, button_t *button)
 
 int states_select_character(renderer_t *renderer, app_t *app, button_t *button)
 {
+    list_t *events = animation_event_new(app);
     (void) renderer;
     if (!app->partner) {
         set_select_skin_solo(app, button);
         app->state = ST_INGAME;
+        animations_screen_fade_add(events, true, WL_PLAYER_HOME_2,
+        PLAYER_DEFAULT_SPAWN);
         return 0;
     }
     if (app->player->skin_id != -1)

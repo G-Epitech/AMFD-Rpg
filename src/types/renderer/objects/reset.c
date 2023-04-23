@@ -29,11 +29,13 @@ void renderer_objects_reset_text(renderer_objects_t *objects)
     sfVector2f origin = { 0, 0 };
     sfVector2f scale = { 1, 1 };
 
+    sfText_setFont(objects->text, objects->font);
     sfText_setPosition(objects->text, position);
     sfText_setOrigin(objects->text, origin);
     sfText_setScale(objects->text, scale);
     sfText_setRotation(objects->text, 0);
     sfText_setOutlineColor(objects->text, sfTransparent);
+    sfText_setOutlineThickness(objects->text, 0);
     sfText_setColor(objects->text, TEXT_DEFAULT_COLOR);
 }
 

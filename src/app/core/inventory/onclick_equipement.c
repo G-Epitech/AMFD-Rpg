@@ -22,17 +22,17 @@ static void unable_to_consume(app_t *app)
     dialog_box_set_option1(app->dialog_box, "OK");
     dialog_box_set_option2(app->dialog_box, NULL);
     dialog_box_set_option3(app->dialog_box, NULL);
-    app->dialog_box->onoption1 = NULL;
-    app->dialog_box->onoption2 = NULL;
-    app->dialog_box->onoption3 = NULL;
+    dialog_box_reset_events(app->dialog_box, true);
+    app->dialog_box->mode = DGBOX_DIALOG;
     app->dialog_box->show = true;
     app->dialog_box->option = 1;
 }
 
-static void consume_equipement(app_t *app)
+static void consume_equipement(app_t *app, char *data)
 {
     inventory_item_t *item = app->inventory_event->selected;
 
+    (void) data;
     if (!item)
         return;
     if (!inventory_set_item_active(app->player, item)) {
@@ -42,34 +42,42 @@ static void consume_equipement(app_t *app)
     }
 }
 
-static void sell_equipement(app_t *app)
+static void sell_equipement(app_t *app, char *data)
 {
     inventory_item_t *item = app->inventory_event->selected;
 
+    (void) data;
     my_putstr("Equipement vendu !\n");
     inventory_remove_item(app->player, item);
 }
 
-void inventory_onclick_item_equipement(app_t *app, inventory_item_t *item)
+static void set_up_dialog_texts(dialog_box_t *dialog_box, item_t *item)
 {
-    char *tmp = my_strcat("Voulez-vous equiper de l'objet \n\"",
-    item->target->label);
-    char *tmp2 = my_strcat(tmp, "\" ou alors le\nvendre pour ");
-    char *price = nbr_to_str(item->target->price);
+    char *tmp = my_strcat("Voulez-vous vous equiper de l'objet \n\"",
+    item->label);
+    char *tmp2 = my_strcat(tmp, "\" ou alors le vendre pour\n");
+    char *price = nbr_to_str(item->price);
 
     free(tmp);
-    tmp = my_strcat(tmp2, price);
+    tmp = my_strcat(tmp2, nbr_to_str(item->price));
     free(tmp2);
     tmp2 = my_strcat(tmp, " pieces ?");
-    dialog_box_set_message(app->dialog_box, tmp2);
+    dialog_box_set_message(dialog_box, tmp2);
     free(tmp2);
     free(tmp);
-    dialog_box_set_option1(app->dialog_box, "M'equiper");
-    dialog_box_set_option2(app->dialog_box, "Vendre");
-    dialog_box_set_option3(app->dialog_box, "Annuler");
+    dialog_box_set_option1(dialog_box, "M'equiper");
+    dialog_box_set_option2(dialog_box, "Vendre");
+    dialog_box_set_option3(dialog_box, "Annuler");
+    free(price);
+}
+
+void inventory_onclick_item_equipement(app_t *app, inventory_item_t *item)
+{
+    set_up_dialog_texts(app->dialog_box, item->target);
+    dialog_box_reset_events(app->dialog_box, true);
     app->dialog_box->onoption1 = &consume_equipement;
     app->dialog_box->onoption2 = &sell_equipement;
-    app->dialog_box->onoption3 = NULL;
+    app->dialog_box->mode = DGBOX_DIALOG;
     app->dialog_box->show = true;
     app->dialog_box->option = 1;
 }

@@ -34,7 +34,7 @@ void app_task_bash_display(renderer_t *renderer, app_t *app);
  * @brief Core handler of task bash
  * @param app Application structure
 */
-int app_task_bash_core(app_t *app);
+int app_task_bash_core(app_t *app, renderer_t *renderer);
 
 /**
  * @brief Init task bash when first entrance
@@ -54,7 +54,7 @@ void cmd_write(sfEvent event, app_t *app);
  * @param event The event
  * @param app Application structure
 */
-void good_or_bad_result(sfEvent event, app_t *app);
+void good_or_bad_result(sfEvent event, app_t *app, renderer_t *renderer);
 
 /**
  * @brief Find the node relative to index_cmd

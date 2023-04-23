@@ -21,5 +21,6 @@ int init_task_brute(app_t *app)
     if (CLOCK(brute->content.force) == NULL)
         return 84;
     JUST_STARTED(app) = false;
+    OBJECTIF(app) = 90 - (app->player->speed * 10);
     return 0;
 }

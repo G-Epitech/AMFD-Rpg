@@ -5,6 +5,7 @@
 ** released
 */
 
+#include <stdio.h>
 #include "app/types.h"
 #include "my/include/my.h"
 #include "app/display/display.h"

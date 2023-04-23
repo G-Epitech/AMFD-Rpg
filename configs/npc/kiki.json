@@ -1,15 +1,20 @@
 {
-    "name": "Kiki la Valgrind",
+    "name": "Kiki le delinquant",
     "id": 1,
     "worlds_data": [
         {
-            "world": 0,
+            "world": 4,
             "skin_id": 2,
             "orientation": 1,
-            "position": { "x": 1328, "y": 1104 },
+            "position": { "x": 240, "y": 58 },
             "dialogs": [
-                { "label": "hello", "content": "Hello how are you ? I am Kiki la valgrind more famous as 'THE KIKIIII'" }
-            ]
+                { "label": "Encule", "content": "C'est toi le nouveau ? Tu va vite regreter\nd'etre venu ici." }
+            ],
+            "enemy": {
+                "life": 30,
+                "level": 15,
+                "attacks": [ 0, 1 ]
+            }
         }
     ]
 }

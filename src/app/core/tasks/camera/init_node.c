@@ -83,5 +83,8 @@ int init_task_camera(app_t *app)
     CAMERA_STARTED(camera) = false;
     if (init_equation(app) == 84)
         return 84;
+    CAMERA_LIFE(camera) = app->player->intellect;
+    TIME_INT(camera->content.camera) = (app->player->speed) * 10;
+    TIME_EXPENSIVE(camera->content.camera) = app->player->speed * 10;
     return 0;
 }
