@@ -35,6 +35,25 @@ void print_shops(list_t *shops)
     }
 }
 
+void print_shop_stock_items(list_t *shops)
+{
+    node_t *node = shops->first;
+    shop_t *shop = NULL;
+
+    while (node) {
+        shop = node->data.shop;
+        printf("Loading items for shop %s\n", shop->name);
+        for (size_t i = 0; i < shop->stock->curr_items_len; i++) {
+            printf("Item %ld has id %d, label %s, price %d, type %d, consumer %d, life %d, speed %d, xp %d\n",
+            i, shop->stock->curr_items[i].id, shop->stock->curr_items[i].label,
+            shop->stock->curr_items[i].price, shop->stock->curr_items[i].type,
+            shop->stock->curr_items[i].consumer, shop->stock->curr_items[i].life,
+            shop->stock->curr_items[i].speed, shop->stock->curr_items[i].xp);
+        }
+        node = node->next;
+    }
+}
+
 int main(void)
 {
     renderer_t *renderer = renderer_init();
@@ -48,7 +67,9 @@ int main(void)
         renderer_destroy(renderer);
         return 84;
     }
+    my_put_nbr(app->items->len);
     print_shops(app->shops);
+    print_shop_stock_items(app->shops);
     while (sfRenderWindow_isOpen(renderer->window)) {
         if (app_run(renderer, app) == 84)
             return 84;

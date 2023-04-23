@@ -146,6 +146,7 @@ SRC = 		src/main.c \
 			src/app/settings/set_resolution.c \
 			\
 			src/app/shop/shop_handler.c	\
+			src/app/shop/shop_load_stock.c	\
 			\
 			src/app/window/init.c \
 			src/app/window/close.c \

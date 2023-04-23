@@ -5,6 +5,7 @@
 ** Handles player shopping
 */
 
+#include "stdio.h"
 #include <stdbool.h>
 #include "types/list/list.h"
 #include "app/shop/shop_handle.h"

@@ -13,10 +13,18 @@
     #define GRID_NEXT_POS_OFFSET 100
     #define GRID_BASIC_RECT (sfIntRect) {0, 0, 85, 85}
 
+    #include "app/app.h"
+
 /**
  * @brief Handles player shopping
  * @param app App object
 */
 void shop_handler(app_t *app);
+
+/**
+ * @brief Loads items in shop stock
+ * @param app App object
+*/
+void load_items_stock(app_t *app);
 
 #endif /* !SHOP_HANDLE_H_ */
