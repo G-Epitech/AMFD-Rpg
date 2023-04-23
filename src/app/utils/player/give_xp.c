@@ -22,6 +22,7 @@ void utils_give_xp(renderer_t *renderer, app_t *app, int xp)
     if (app->player->xp >= max) {
         app->player->xp = app->player->xp - max;
         app->player->level++;
+        app->player->credits++;
         app->player->xp_max = app->player->level * 10;
         description = my_strcat("Vous venez de passer au\nniveau ",
         nbr_to_str(app->player->level));
