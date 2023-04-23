@@ -74,6 +74,7 @@ int init_task_bash(app_t *app)
     if (init_cmd(app) == 84)
         return 84;
     STRUCT_BASH(app).handler_placing->just_started = false;
-
+    INDEX_LIFE(app) = app->player->intellect;
+    TIME_INT(bash->content.script) = (app->player->speed) * 10;
     return 0;
 }
