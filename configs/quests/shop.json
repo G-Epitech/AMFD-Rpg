@@ -4,5 +4,11 @@
         "type": "world",
         "id": 3,
         "xp": 10
+    },
+    {
+        "title": "Cette quete n'est pas encore\ndisponible.",
+        "type": "world",
+        "id": 1000,
+        "xp": 10
     }
 ]
