@@ -19,6 +19,7 @@
     #define TIME_FLOAT(node) node.handler_time->time_float
     #define TIME_INT(node) node.handler_time->timer_int
     #define TIME(node) node.handler_time->time
+    #define TIME_EXPENSIVE(node) node.handler_time->time_expensive
     #define SECOND_MICRO 1000000.0
 
 typedef union s_task_content {
@@ -37,6 +38,7 @@ typedef struct s_timer_handler {
     sfTime time;
     float time_float;
     int timer_int;
+    float time_expensive;
 } timer_handler_t;
 
 #endif /* !TYPE_TASK_H_ */

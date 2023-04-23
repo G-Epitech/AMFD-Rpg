@@ -33,7 +33,8 @@ int app_task_camera_core(app_t *app, renderer_t *renderer)
             return 84;
     }
     time_handler(app);
-    if (TIME_FLOAT(node->content.camera) > 30.0) {
+    if (TIME_FLOAT(node->content.camera) >
+    TIME_EXPENSIVE(node->content.camera)) {
         events = animation_event_actual(app);
         animations_notif_add(events, renderer->ressources->icons->hungry,
         "Camera", "Vous n'avez pas reussi à hack les cameras.");

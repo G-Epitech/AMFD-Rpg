@@ -27,13 +27,15 @@ static void time_handler(app_t *app)
 int app_task_bash_core(app_t *app, renderer_t *renderer)
 {
     list_t *events = NULL;
+    task_t *bash = find_task_node(app, 1);
 
     if (STRUCT_BASH(app).handler_placing->just_started) {
         if (init_task_bash(app) == 84)
             return 84;
     }
     time_handler(app);
-    if (STRUCT_BASH(app).handler_time->time_float > 20.0) {
+    if (STRUCT_BASH(app).handler_time->time_float >
+    TIME_EXPENSIVE(bash->content.camera)) {
         events = animation_event_actual(app);
         animations_notif_add(events, renderer->ressources->icons->hungry,
         "Script bash", "Vous n'avez pas reussi à hack el systeme.");
