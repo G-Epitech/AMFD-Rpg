@@ -289,6 +289,7 @@ SRC = 		src/main.c \
 			src/app/core/interactions/npc.c \
 			src/app/core/interactions/travel.c	\
 			src/app/core/interactions/interactions.c	\
+			src/app/core/interactions/shop.c	\
 			src/app/core/tasks/handler.c \
 			src/app/core/tasks/create.c \
 			src/app/core/tasks/find_node.c \
@@ -318,8 +319,8 @@ SRC = 		src/main.c \
 			src/app/in_game_menu/restart_session/restart_player.c	\
 			src/app/in_game_menu/restart_session/restart_sound.c	\
 			\
-			src/app/shop/load.c	\
-			src/app/shop/include_array.c	\
+			src/types/shop/load.c	\
+			src/types/shop/include_array.c	\
 
 NAME = my_rpg
 

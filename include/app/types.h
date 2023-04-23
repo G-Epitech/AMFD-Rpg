@@ -21,6 +21,9 @@
     #include "app/quests/types.h"
 
     #define CURSOR_FILE "assets/components/cursor.png"
+    #define NPC_COLOR sfYellow
+    #define SHOP_COLOR sfRed
+    #define ENTRY_COLOR sfBlue
 
 typedef struct s_list list_t;
 typedef struct s_renderer renderer_t;
@@ -140,6 +143,7 @@ typedef union u_interaction_data {
     fight_t *fight;
     interaction_dialogs_t *dialogs;
     int entry_id;
+    int shop_id;
 } interaction_data_t;
 
 typedef enum e_interaction_type {
@@ -147,7 +151,8 @@ typedef enum e_interaction_type {
     IT_NPC,
     IT_DIALOGS,
     IT_FIGHT,
-    IT_TRAVEL
+    IT_TRAVEL,
+    IT_SHOP
 } interaction_type_t;
 
 typedef struct s_interactions {

@@ -14,7 +14,7 @@
 
 void core_interactions_travel(sfColor pixel, app_t *app)
 {
-    if (core_interaction_detect_color(pixel, sfBlue)) {
+    if (core_interaction_detect_color(pixel, ENTRY_COLOR)) {
         app->interaction->type = IT_TRAVEL;
         app->interaction->data.entry_id = 255 - pixel.a;
         app->interaction->interaction = true;
