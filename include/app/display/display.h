@@ -388,4 +388,11 @@ sfRenderWindow *window, sfSprite *sprite, worlds_t world);
 void display_animations_environments_front(app_t *app,
 sfRenderWindow *window, sfSprite *sprite, renderer_t *renderer);
 
+/**
+ * @brief Display shop interface
+ * @param app App object
+ * @param renderer Renderer object
+*/
+void display_shop(app_t *app, renderer_t *renderer);
+
 #endif /* !DISPLAY_H_ */

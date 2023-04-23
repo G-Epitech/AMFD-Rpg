@@ -9,6 +9,8 @@
     #define SHOP_H_
 
     #define SHOP_CONFIG "configs/shops.json"
+    #define GRID_FILE "assets/inventory/grid.png"
+    #define ITEMS_MAX 8
 
 typedef struct s_list list_t;
 

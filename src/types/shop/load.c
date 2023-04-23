@@ -14,26 +14,53 @@
 #include "app/shop/shop.h"
 #include "types/components/components.h"
 
+static shop_stock_t *shop_load_stock(cjson_t *shop_config)
+{
+    shop_stock_t *stock = malloc(sizeof(shop_stock_t));
+    cjson_array_t *array = NULL;
+    size_t len = 0;
+
+    if (!stock)
+        return NULL;
+    array = cjson_get_prop_array_unsafe(shop_config, "items");
+    stock->total_items = cjson_array_to_int_array(array, &len);
+    stock->total_items_len = len;
+    stock->curr_items_len = cjson_get_prop_int_unsafe(shop_config,
+    "curr_items_len");
+    if (stock->curr_items_len > ITEMS_MAX) {
+        my_putstr("Too many current items in the shop, (capped to 8)\n");
+    }
+    stock->curr_items = malloc(sizeof(item_t) * stock->curr_items_len);
+    stock->item_grid = sfTexture_createFromFile(GRID_FILE, NULL);
+    if (!stock->curr_items || !stock->item_grid)
+        return NULL;
+    return stock;
+}
+
+static bool shop_load_props(shop_t *shop, cjson_t *shop_config)
+{
+    shop->stock = shop_load_stock(shop_config);
+    if (!shop->stock)
+        return false;
+    shop->name = cjson_get_prop_string_unsafe(shop_config, "name");
+    shop->world = cjson_get_prop_int_unsafe(shop_config, "world");
+    shop->pos = cjson_vector(shop_config, "pos");
+    shop->tile_len = cjson_get_prop_int_unsafe(shop_config, "tile_len");
+    shop->direction = cjson_get_prop_int_unsafe(shop_config, "direction");
+    shop->id = cjson_get_prop_int_unsafe(shop_config, "id");
+    shop->clock = sfClock_create();
+    if (!shop->clock)
+        return false;
+    return true;
+}
+
 static void shop_append(list_t *shops, cjson_t *shop_config)
 {
     node_t *node = NULL;
     shop_t *shop = malloc(sizeof(shop_t));
-    cjson_array_t *array = NULL;
-    size_t len = 0;
 
-    if (!shop)
+    if (!shop || shop_load_props(shop, shop_config) == false)
         return;
-    shop->name = cjson_get_prop_string_unsafe(shop_config, "name");
-    shop->world = cjson_get_prop_int_unsafe(shop_config, "world");
-    shop->pos = cjson_vector(shop_config, "pos");
-    array = cjson_get_prop_array_unsafe(shop_config, "items");
-    shop->total_items = cjson_array_to_int_array(array, &len);
-    shop->total_items_len = len;
-    shop->curr_items_len = cjson_get_prop_int_unsafe(shop_config,
-    "curr_items_len");
-    shop->tile_len = cjson_get_prop_int_unsafe(shop_config, "tile_len");
-    shop->direction = cjson_get_prop_int_unsafe(shop_config, "direction");
-    shop->id = cjson_get_prop_int_unsafe(shop_config, "id");
     node = node_new((node_data_t) shop);
     if (node)
         list_append(shops, node);

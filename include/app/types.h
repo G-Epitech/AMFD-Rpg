@@ -83,17 +83,24 @@ typedef enum e_worlds {
     WL_AYMERIC
 } worlds_t;
 
-typedef struct shop_s {
-    int id;
-    char *name;
-    worlds_t world;
-    sfVector2f pos;
+typedef struct shop_stock_s {
     item_t *curr_items;
     int *total_items;
     size_t total_items_len;
     size_t curr_items_len;
+    sfTexture *item_grid;
+    bool active;
+} shop_stock_t;
+
+typedef struct shop_s {
+    int id;
+    char *name;
+    shop_stock_t *stock;
+    worlds_t world;
+    sfVector2f pos;
     int tile_len;
     int direction;
+    sfClock *clock;
 } shop_t;
 
 typedef struct cursor_s {

@@ -5,7 +5,7 @@
         "world": 5,
         "pos": {"x": 265, "y": 148},
         "items": [0, 1, 2, 3, 4],
-        "curr_items_len": 4,
+        "curr_items_len": 8,
         "tile_len": 3,
         "direction": 1
     },
@@ -15,7 +15,7 @@
         "world": 2,
         "pos": {"x": 70, "y": 32},
         "items": [0, 1, 2, 3, 4],
-        "curr_items_len": 4,
+        "curr_items_len": 8,
         "tile_len": 2,
         "direction": 1
     }

@@ -11,22 +11,6 @@
 #include "types/list/types.h"
 #include "my/include/my.h"
 
-void print_shops(list_t *shops)
-{
-    node_t *node = shops->first;
-    shop_t *shop = NULL;
-
-    while (node) {
-        shop = node->data.shop;
-        printf("%s is in world %d has id%d, at x:%.0f y:%.0f has %ld items and a max of"
-        "%ld curr items direction %d and tile len of %d\n", shop->name, shop->world, shop->id,
-        shop->pos.x, shop->pos.y,
-        shop->total_items_len, shop->curr_items_len, shop->direction,
-        shop->tile_len);
-        node = node->next;
-    }
-}
-
 static void insert_shop(shop_t *shop, sfImage *collision)
 {
     float x_offset = 16;
@@ -82,7 +66,6 @@ void shop_include_to_array(renderer_t *renderer, list_t *shops)
     node_t *node = shops->first;
     shop_t *shop = NULL;
 
-    print_shops(shops);
     if (!node)
         return;
     while (node) {
