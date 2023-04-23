@@ -76,6 +76,7 @@ SRC = 		src/main.c \
 			src/types/ressources/maps/load_entry.c	\
 			src/types/ressources/maps/include_array.c	\
 			src/types/ressources/maps/free.c \
+			src/types/ressources/maps/prep_collision_layer.c	\
 			\
 			src/types/ressources/skins/load.c \
 			src/types/ressources/skins/free.c \
@@ -120,6 +121,7 @@ SRC = 		src/main.c \
 			src/app/init/tasks.c \
 			src/app/init/animations.c \
 			src/app/init/quests.c \
+			src/app/init/shops.c	\
 			\
 			src/app/free/animations.c \
 			src/app/free/sounds.c	\
@@ -137,7 +139,7 @@ SRC = 		src/main.c \
 			src/app/animations/button/shake_attack.c \
 			src/app/animations/text/floating.c \
 			src/app/animations/text/notif.c \
-      		src/app/animations/player/animation.c \
+      src/app/animations/player/animation.c	\
 			\
 			src/app/states/on_state.c \
 			src/app/states/switch.c \
@@ -149,6 +151,10 @@ SRC = 		src/main.c \
 			src/app/settings/volume.c \
 			src/app/settings/fps.c \
 			src/app/settings/set_resolution.c \
+			\
+			src/app/shop/shop_handler.c	\
+			src/app/shop/shop_load_stock.c	\
+			src/app/shop/shop_update_stock.c	\
 			\
 			src/app/window/init.c \
 			src/app/window/close.c \
@@ -226,7 +232,7 @@ SRC = 		src/main.c \
 			src/app/display/player/competences_tree.c \
 			src/app/display/characters/character.c \
 			src/app/display/map/front.c	\
-      		src/app/display/components/components.c \
+      src/app/display/components/components.c \
 			src/app/display/components/backgrounds.c \
 			src/app/display/components/levers.c \
 			src/app/display/components/interaction.c \
@@ -264,6 +270,9 @@ SRC = 		src/main.c \
 			src/app/display/dialogs/dialogs.c \
 			src/app/display/hud/hud.c \
 			src/app/display/animations/environment.c \
+			src/app/display/shop/shop.c	\
+			src/app/display/shop/display_stock.c	\
+			src/app/display/shop/display_shop_info.c	\
 			\
 			src/app/getters/progress/inventory.c \
 			src/app/getters/progress/fight.c \
@@ -288,6 +297,7 @@ SRC = 		src/main.c \
 			src/app/events/handler/text_entered.c \
 			src/app/events/handler/mouse_button_released.c \
 			src/app/events/handler/mouse_move.c \
+			src/app/events/shop/event_shop_buy.c \
 			\
 			src/app/core/handler.c	\
 			src/app/core/animation.c	\
@@ -315,6 +325,7 @@ SRC = 		src/main.c \
 			src/app/core/interactions/npc.c \
 			src/app/core/interactions/travel.c	\
 			src/app/core/interactions/interactions.c	\
+			src/app/core/interactions/shop.c	\
 			src/app/core/tasks/handler.c \
 			src/app/core/tasks/create.c \
 			src/app/core/tasks/find_node.c \
@@ -346,6 +357,8 @@ SRC = 		src/main.c \
 			src/app/in_game_menu/restart_session/restart_player.c	\
 			src/app/in_game_menu/restart_session/restart_sound.c	\
 			\
+			src/types/shop/load.c	\
+			src/types/shop/include_array.c	\
 			src/app/tasks/bash_use.c \
 
 NAME = my_rpg

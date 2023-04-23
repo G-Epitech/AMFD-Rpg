@@ -25,6 +25,7 @@ size_t y, app_t *app)
         if (pixel.a != 0) {
             core_interactions_npc(pixel, app);
             core_interactions_travel(pixel, app);
+            core_interactions_shop(pixel, app);
             return false;
         }
     }

@@ -90,4 +90,17 @@ void core_handle_travel(renderer_t *renderer, app_t *app, map_t *curr_map);
  */
 void core_quests(renderer_t *renderer, app_t *app);
 
+/**
+ * @brief handle shop interactions
+ * @param pixel Pixel near the player
+ * @param app App object
+*/
+void core_interactions_shop(sfColor pixel, app_t *app);
+
+/**
+ * @brief Periodically updates shop stock
+ * @param app App object
+ */
+void core_shop_update_stock(app_t *app);
+
 #endif /* !CORE_H_ */

@@ -26,6 +26,7 @@ static const app_init_member_t app_init_members[] = {
     &app_init_quests,
     &app_init_inventory_event,
     &app_init_dialog_box,
+    &app_init_shops,
     NULL
 };
 

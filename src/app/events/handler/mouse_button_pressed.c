@@ -8,6 +8,7 @@
 #include <stdio.h>
 #include <SFML/Graphics.h>
 #include "app/app.h"
+#include "app/shop/shop_handle.h"
 #include "app/events/events.h"
 #include "types/renderer/types.h"
 #include "app/inventory/inventory.h"
@@ -28,6 +29,7 @@ renderer_t *renderer)
     event_components_buttons(renderer, app, event);
     event_components_levers(renderer, app, event);
     event_components_attacks(renderer, app, event);
+    buy_item(app, event);
     if (app->state == ST_TASK_FLIPPER)
         event_task_flipper(renderer, app);
     event_handler_skills_tree(app, renderer);

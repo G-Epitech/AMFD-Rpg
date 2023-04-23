@@ -36,7 +36,6 @@ static void include_data(entry_t *entry, map_t *map)
     if (entry->direction != 1 && entry->direction != 2)
         return;
     insert_entry(entry, map->collision);
-    map->col_texture = sfTexture_createFromImage(map->collision, NULL);
 }
 
 void entry_include_to_array(list_t *map_list)

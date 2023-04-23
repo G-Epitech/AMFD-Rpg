@@ -44,6 +44,7 @@ static void display_elements(renderer_t *renderer, app_t *app)
     display_dialogs(renderer, app);
     display_hud(renderer, app);
     display_dialog_box(renderer, app->dialog_box);
+    display_shop(app, renderer);
 }
 
 static void center_view(renderer_t *renderer, app_t *app)

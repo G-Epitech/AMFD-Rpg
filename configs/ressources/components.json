@@ -113,6 +113,12 @@
             "scale": 1,
             "state": [301],
             "position" : {"x": 912, "y": 265}
+        },
+        {
+            "asset": "assets/components/backgrounds/shop_background.png",
+            "scale": 1,
+            "state": [200],
+            "position" : {"x": 341, "y": 156}
         }
     ],
 

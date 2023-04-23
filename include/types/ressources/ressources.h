@@ -49,6 +49,12 @@ void maps_free(list_t *maps);
 list_t *map_load_entry(cjson_t *map_config);
 
 /**
+ * @brief Create all the collision map textures to see in dev mode
+ * @param maps List of maps
+*/
+void map_charge_collision_textures(list_t *maps);
+
+/**
  * @brief Draws the entries on the collision layer
  * @param maps Maps list
 */

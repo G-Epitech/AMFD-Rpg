@@ -34,6 +34,7 @@ static void sell_item(app_t *app, char *data)
 
     (void) data;
     my_putstr("Item vendu !\n");
+    app->player->gold += item->target->price;
     inventory_remove_item(app->player, item);
 }
 

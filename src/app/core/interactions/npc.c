@@ -15,7 +15,7 @@ void core_interactions_npc(sfColor pixel, app_t *app)
 {
     int id = pixel.a;
 
-    if (core_interaction_detect_color(pixel, sfYellow) == false)
+    if (core_interaction_detect_color(pixel, NPC_COLOR) == false)
         return;
     app->interaction->interaction = true;
     app->interaction->type = IT_NPC;
