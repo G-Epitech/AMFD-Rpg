@@ -6,9 +6,9 @@
             "world": 0,
             "skin_id": 3,
             "orientation": 3,
-            "position": { "x": 1136, "y": 1072 },
+            "position": { "x": 1781, "y": 324 },
             "dialogs": [
-                { "label": "hello", "content": "Hello how are you ?" }
+                { "label": "hello", "content": "Salut l'ami, je suis pas sense\netre ici mais bon, ce jeu est cool" }
             ]
         }
     ]
