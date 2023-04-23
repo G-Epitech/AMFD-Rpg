@@ -55,6 +55,8 @@ typedef struct s_animation_event_fade {
     sfInt32 last_time;
     int total;
     sfColor color;
+    sfVector2f coords;
+    int world;
 } animation_event_fade_t;
 
 typedef struct s_animation_event_shake_attack {

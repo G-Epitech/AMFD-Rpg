@@ -139,7 +139,8 @@ list_t *animation_event_actual(app_t *app);
  * @param fade Fade object
  * @param clock Animation global clock
  */
-bool animations_screen_fade(animation_event_fade_t *fade, sfClock *clock);
+bool animations_screen_fade(animation_event_fade_t *fade, sfClock *clock,
+app_t *app);
 
 /**
  * @brief Initalisation of the fade animation
@@ -151,6 +152,9 @@ animation_event_fade_t *animations_screen_fade_init(void);
  * @brief Add new fade animation
  * @param events Event list
  * @param out If its just a fade out
+ * @param world Id of the world
+ * @param coords Futur coords of the player
  */
-void animations_screen_fade_add(list_t *events, bool out);
+void animations_screen_fade_add(list_t *events, bool out, int world,
+sfVector2f coords);
 #endif /* !ANIMATIONS_H_ */

@@ -53,6 +53,8 @@ static void attack_loose(app_t *app, renderer_t *renderer)
         events = animation_event_new(app);
         animations_notif_add(events, icon, ATTACKS_LOOSE_TITLE,
         ATTACKS_LOOSE_DESCRIPTION);
+        animations_screen_fade_add(events, false, WL_PLAYER_HOME_2,
+        PLAYER_DEFAULT_SPAWN);
     } else {
         app->interaction->data.fight->state = FT_PLAYER_ATTACK;
     }

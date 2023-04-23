@@ -14,7 +14,7 @@
 #include "types/list/list.h"
 
 static bool animation_event_data(animations_t *animation,
-animation_event_t *data)
+animation_event_t *data, app_t *app)
 {
     if (data->type == AE_ZOOM &&
     animations_screen_zoom(data->data.zoom, animation->clock))
@@ -29,12 +29,12 @@ animation_event_t *data)
     animations_notif(data->data.notif, animation->clock))
         return true;
     if (data->type == AE_FADE &&
-    animations_screen_fade(data->data.fade, animation->clock))
+    animations_screen_fade(data->data.fade, animation->clock, app))
         return true;
     return false;
 }
 
-static void animations_event_handler(animations_t *animation)
+static void animations_event_handler(animations_t *animation, app_t *app)
 {
     list_t *events = animation->events->first->data.list;
     node_t *node = NULL;
@@ -46,7 +46,7 @@ static void animations_event_handler(animations_t *animation)
     node = events->first;
     while (node) {
         data = node->data.animations_event;
-        if (animation_event_data(animation, data)) {
+        if (animation_event_data(animation, data, app)) {
             tmp = node;
             node = node->next;
             list_delete(events, tmp);
@@ -63,5 +63,5 @@ void animations_handler(renderer_t *renderer, app_t *app)
     (void) renderer;
     if (app->animations->events->len <= 0)
         return;
-    animations_event_handler(app->animations);
+    animations_event_handler(app->animations, app);
 }
