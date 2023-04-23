@@ -35,7 +35,7 @@ int app_task_bash_core(app_t *app, renderer_t *renderer)
     }
     time_handler(app);
     if (STRUCT_BASH(app).handler_time->time_float >
-    TIME_EXPENSIVE(bash->content.camera)) {
+    TIME_EXPENSIVE(bash->content.script)) {
         events = animation_event_actual(app);
         animations_notif_add(events, renderer->ressources->icons->hungry,
         "Script bash", "Vous n'avez pas reussi à hack el systeme.");
