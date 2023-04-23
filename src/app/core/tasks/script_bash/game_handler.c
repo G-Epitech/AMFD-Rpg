@@ -33,7 +33,7 @@ int app_task_bash_core(app_t *app)
     }
     time_handler(app);
     if (STRUCT_BASH(app).handler_time->time_float >
-    TIME_EXPENSIVE(bash->content.camera)) {
+    TIME_EXPENSIVE(bash->content.script)) {
         app->state = ST_INGAME;
         reset_setup_bash(app);
     }
