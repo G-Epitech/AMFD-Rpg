@@ -85,8 +85,9 @@ void dialog_box_reset_events(dialog_box_t *dialog_box, bool rester_after)
 void dialog_box_onvalid(dialog_box_t *dialog_box, app_t *app)
 {
     dialog_box->show = false;
-    if (dialog_box->option == 1)
+    if (dialog_box->option == 1) {
         return dialog_box_onoption1(dialog_box, app);
+    }
     if (dialog_box->option == 2)
         return dialog_box_onoption2(dialog_box, app);
     if (dialog_box->option == 3)

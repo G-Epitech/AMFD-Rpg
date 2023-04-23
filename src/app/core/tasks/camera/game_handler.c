@@ -11,6 +11,7 @@
 #include "app/tasks/camera/camera.h"
 #include "types/list/types.h"
 #include "my/include/my.h"
+#include "app/animations/animations.h"
 
 static void time_handler(app_t *app)
 {
@@ -22,8 +23,9 @@ static void time_handler(app_t *app)
     TIME(camera->content.camera).microseconds / SECOND_MICRO;
 }
 
-int app_task_camera_core(app_t *app)
+int app_task_camera_core(app_t *app, renderer_t *renderer)
 {
+    list_t *events = NULL;
     task_t *node = find_task_node(app, 4);
 
     if (CAMERA_STARTED(node)) {
@@ -33,8 +35,12 @@ int app_task_camera_core(app_t *app)
     time_handler(app);
     if (TIME_FLOAT(node->content.camera) >
     TIME_EXPENSIVE(node->content.camera)) {
+        events = animation_event_actual(app);
+        animations_notif_add(events, renderer->ressources->icons->hungry,
+        "Camera", "Vous n'avez pas reussi a hack\nles cameras.");
         CAMERA_STATE(node) = LOOSE;
         app->state = ST_INGAME;
+        app->interaction->active = false;
         reset_setup_camera(app);
     }
     return 0;

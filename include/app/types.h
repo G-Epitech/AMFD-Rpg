@@ -67,7 +67,6 @@ typedef enum e_worlds {
     WL_PLAYER_HOME_2,
     WL_UNIVERSITY_1,
     WL_UNIVERSITY_2,
-    WL_AYMERIC,
     WL_STORE,
     WL_PRISON,
     WL_MAIRIE_1,
@@ -77,6 +76,9 @@ typedef enum e_worlds {
     WL_HOSPITAL_1,
     WL_HOSPITAL_2,
     WL_HOSPITAL_3,
+    WL_AYMERIC,
+    WL_SHADY_SHOP,
+    WL_TRAILER,
     WL_CITY
 } worlds_t;
 

@@ -1,22 +1,32 @@
 [
     {
-        "title": "Rend toi a l'universite",
+        "title": "Rend toi a l'universite.",
         "type": "world",
-        "id": 3
+        "id": 3,
+        "xp": 10
     },
     {
-        "title": "Parle au lacost TN",
+        "title": "Parle au lacoste TN au deuxieme\netage.",
         "type": "NPC",
-        "id": 1
+        "id": 1,
+        "xp": 5
     },
     {
-        "title": "Parle au directeur",
+        "title": "Parle au directeur.",
         "type": "NPC",
-        "id": 1
+        "id": 4,
+        "xp": 5
     },
     {
-        "title": "Apprend le bash",
+        "title": "Apprend le bash dans l'arbre de\ncompetence.",
         "type": "tree",
-        "id": 0
+        "id": 1,
+        "xp": 5
+    },
+    {
+        "title": "Utilise un script bash sur le garcon\nlacoste TN",
+        "type": "bash",
+        "id": 1,
+        "xp": 5
     }
 ]

@@ -1,5 +1,24 @@
 {
     "animations": [
+      {
+        "world": 0,
+        "asset": "assets/worlds/animations/turbine.png",
+        "frame_duration": 0.10,
+        "offset": 112,
+        "nb_frame": 8,
+        "pos": {"x": 1890, "y": 445},
+        "rect_back": {"left": 0, "top": 143, "width": 112, "height": 17},
+        "rect_front": {"left": 0, "top": 0, "width": 112, "height": 143}
+      },
+      {
+        "world": 0,
+        "asset": "assets/worlds/animations/school_flag.png",
+        "frame_duration": 0.12,
+        "offset": 48,
+        "nb_frame": 8,
+        "pos": {"x": 930, "y": 860},
+        "rect_back": {"left": 0, "top": 104, "width": 48, "height": 40},
+        "rect_front": {"left": 0, "top": 0, "width": 48, "height": 104}
+      }
     ]
-  }
-  
+}

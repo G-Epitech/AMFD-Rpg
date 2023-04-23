@@ -22,10 +22,11 @@
 #include "app/animations/animations.h"
 #include "cjson/include/cjson.h"
 #include "my/include/my.h"
+#include "app/quests/types.h"
 
 static void applay_attack(cjson_t *node, app_t *app)
 {
-    list_t *events = animation_event_new(app);
+    list_t *events = animation_event_actual(app);
     char *attack = cjson_get_prop_string_unsafe(node, "title");
     int damage = cjson_get_prop_int_unsafe(node, "damage");
 
@@ -38,6 +39,18 @@ static void applay_attack(cjson_t *node, app_t *app)
     free(attack);
 }
 
+static void teleport_player(app_t *app, list_t *events)
+{
+    if (app->quests->index_quests == 0 &&
+    app->quests->index_quest == 2) {
+        animations_screen_fade_add(events, false, WL_AYMERIC,
+        AYMERIC_SPAWN);
+    } else {
+        animations_screen_fade_add(events, false, WL_PLAYER_HOME_2,
+        PLAYER_DEFAULT_SPAWN);
+    }
+}
+
 static void attack_loose(app_t *app, renderer_t *renderer)
 {
     list_t *events = NULL;
@@ -48,10 +61,13 @@ static void attack_loose(app_t *app, renderer_t *renderer)
         app->interaction->interaction = false;
         app->state = ST_INGAME;
         free(app->interaction->data.fight);
-        events = animation_event_new(app);
+        events = animation_event_actual(app);
         animations_screen_zoom_add(events, renderer->map_view, 70, 2);
+        events = animation_event_new(app);
         animations_notif_add(events, icon, ATTACKS_LOOSE_TITLE,
         ATTACKS_LOOSE_DESCRIPTION);
+        teleport_player(app, events);
+        app->player->life = app->player->life_max;
     } else {
         app->interaction->data.fight->state = FT_PLAYER_ATTACK;
     }

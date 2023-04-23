@@ -45,6 +45,7 @@ SRC = 		src/main.c \
 			src/types/items/consume.c \
 			src/types/items/free.c \
 			src/types/items/load.c \
+			src/types/items/id.c \
 			\
 			src/types/characters/rect.c \
 			\
@@ -67,6 +68,7 @@ SRC = 		src/main.c \
 			src/types/inventory/active.c \
 			src/types/inventory/item.c \
 			src/types/inventory/remove.c \
+			src/types/inventory/id.c \
 			\
 			src/types/ressources/load.c \
 			src/types/ressources/free.c \
@@ -129,11 +131,13 @@ SRC = 		src/main.c \
 			src/app/animations/handler.c \
 			src/app/animations/active.c \
 			src/app/animations/event_new.c \
+			src/app/animations/event_actual.c \
 			src/app/animations/screen/zoom.c \
+			src/app/animations/screen/fade.c \
 			src/app/animations/button/shake_attack.c \
 			src/app/animations/text/floating.c \
 			src/app/animations/text/notif.c \
-      src/app/animations/player/animation.c	\
+      		src/app/animations/player/animation.c \
 			\
 			src/app/states/on_state.c \
 			src/app/states/switch.c \
@@ -256,13 +260,14 @@ SRC = 		src/main.c \
 			src/app/display/animations/animations.c \
 			src/app/display/animations/floating_text.c \
 			src/app/display/animations/notif.c \
+			src/app/display/animations/fade.c \
 			src/app/display/dialogs/dialogs.c \
 			src/app/display/hud/hud.c \
 			src/app/display/animations/environment.c \
 			\
 			src/app/getters/progress/inventory.c \
 			src/app/getters/progress/fight.c \
-      \
+      		\
 			src/app/display/tasks/camera/display.c \
 			src/app/display/tasks/camera/solution.c \
 			src/app/display/tasks/camera/result.c \
@@ -328,6 +333,8 @@ SRC = 		src/main.c \
 			src/app/core/quests/get.c \
 			src/app/core/quests/upgrade.c \
 			src/app/core/quests/world.c \
+			src/app/core/quests/tree.c \
+			src/app/core/quests/bash.c \
 			\
 			src/app/sound/sound_control.c \
 			src/app/sound/handle_sound_fx.c	\
@@ -338,6 +345,8 @@ SRC = 		src/main.c \
 			src/app/in_game_menu/restart_session/restart_session.c	\
 			src/app/in_game_menu/restart_session/restart_player.c	\
 			src/app/in_game_menu/restart_session/restart_sound.c	\
+			\
+			src/app/tasks/bash_use.c \
 
 NAME = my_rpg
 

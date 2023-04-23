@@ -21,6 +21,7 @@ static void good_result(renderer_t *renderer, app_t *app)
     my_putstr("You win\n");
     CAMERA_STATE(node) = WIN;
     app->state = ST_INGAME;
+    app->interaction->active = false;
     reset_setup_camera(app);
 }
 
@@ -33,6 +34,7 @@ static void bad_result(task_t *node, app_t *app)
         my_putstr("You lose\n");
         CAMERA_STATE(node) = LOOSE;
         app->state = ST_INGAME;
+        app->interaction->active = false;
         reset_setup_camera(app);
     }
 }
@@ -41,7 +43,7 @@ void result_camera(renderer_t *renderer, sfEvent event, app_t *app)
 {
     task_t *node = find_task_node(app, 4);
 
-    if (event.text.unicode == '\r') {
+    if (event.text.unicode == '\r' || event.text.unicode == '\n') {
         if (my_strcmp(CAMERA_SOLUTION(node), CAMERA_RESULT(node)) == 0) {
             good_result(renderer, app);
         } else {
