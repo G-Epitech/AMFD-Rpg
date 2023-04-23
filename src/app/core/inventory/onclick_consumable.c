@@ -34,8 +34,8 @@ static void sell_item(app_t *app, char *data)
     inventory_item_t *item = app->inventory_event->selected;
 
     (void) data;
-    my_putstr("Item vendu !\n");
     sound_control(app->sound_board->sound_fx, NEW_COIN, sfPlaying);
+    app->player->gold += item->target->price;
     inventory_remove_item(app->player, item);
 }
 

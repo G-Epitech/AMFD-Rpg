@@ -16,5 +16,7 @@ network_t *network_init(void)
         return NULL;
     network->listener = NULL;
     network->socket = NULL;
+    network->position = (sfVector2f) {0 , 0};
+    network->state = 0;
     return network;
 }

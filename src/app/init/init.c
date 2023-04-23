@@ -11,6 +11,7 @@
 #include "types/list/list.h"
 #include "app/dependencies.h"
 #include "types/players/players.h"
+#include "types/ressources/ressources.h"
 
 void init_player_fake_inventory(player_t *player, list_t *items)
 {
@@ -52,8 +53,8 @@ app_t *app_init(renderer_t *renderer)
             return NULL;
         }
     }
-    if (init_player(app) == 84) {
+    map_charge_collision_textures(renderer->ressources->maps);
+    if (init_player(app) == 84)
         return NULL;
-    }
     return app;
 }

@@ -8,6 +8,7 @@
 #include "types/renderer/renderer.h"
 #include "types/ressources/ressources.h"
 #include "types/components/components.h"
+#include "app/shop/shop.h"
 #include "app/loading/loading.h"
 #include "app/types.h"
 
@@ -17,8 +18,8 @@ int developer_reload_json(renderer_t *renderer, app_t *app, button_t *button)
     (void) button;
     ressources_free(renderer->ressources);
     renderer->ressources = ressources_load(renderer);
-    load_screen_add_bar(renderer, 7, "Rechargelent des composents...",
+    load_screen_add_bar(renderer, 7, "Rechargement des composents...",
     "Rechargement developpeur");
-    renderer->components = components_load(renderer);
+    map_charge_collision_textures(renderer->ressources->maps);
     return 0;
 }

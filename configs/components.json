@@ -355,6 +355,13 @@
             "position": {"x": 1401, "y": 248},
             "next_state": 100,
             "scale": 2
+        },
+        {
+            "icon": "assets/components/button/cross.png",
+            "app_state": [200],
+            "position": {"x": 1410, "y": 248},
+            "next_state": 100,
+            "scale": 2
         }
     ],
 

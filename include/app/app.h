@@ -216,4 +216,12 @@ int developer_reload_json(renderer_t *renderer, app_t *app, button_t *button);
 */
 int brute_force_click(renderer_t *renderer, app_t *app, button_t *button);
 
+/**
+ * @brief Init shops
+ * @param app App object
+ * @param renderer Renderer object
+ * @return Initialization success status
+*/
+bool app_init_shops(app_t *app, renderer_t *renderer);
+
 #endif /* !APP_H_ */

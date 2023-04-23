@@ -42,6 +42,7 @@ player_t *players_add(list_t *list, char *name)
     player->state = IDLE;
     player->skin_id = -1;
     player->orientation = SO_LEFT;
+    player->gold = 100;
     player->name = my_strdup(name);
     init_levels(player);
     player->competences = player_init_competence();

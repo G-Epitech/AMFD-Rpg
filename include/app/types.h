@@ -22,6 +22,9 @@
     #include "app/quests/types.h"
 
     #define CURSOR_FILE "assets/components/cursor.png"
+    #define NPC_COLOR sfYellow
+    #define SHOP_COLOR sfRed
+    #define ENTRY_COLOR sfBlue
 
 typedef struct s_list list_t;
 typedef struct s_renderer renderer_t;
@@ -38,6 +41,7 @@ typedef enum e_app_states {
     ST_CHOICE,              //Choice of the character
     ST_RESOLUTION,          //Choose the resolution of game
     ST_INGAME = 100,        //Main state, ingame player
+    ST_SHOP = 200,          //Shop
     ST_INVENTORY = 300,     //Inventory menu
     ST_BREAK,               //Break menu (save/sound...)
     ST_IGSETTINGS,          //In game settings
@@ -81,6 +85,32 @@ typedef enum e_worlds {
     WL_TRAILER,
     WL_CITY
 } worlds_t;
+
+typedef struct shop_stock_s {
+    item_t *curr_items;
+    int *total_items;
+    size_t total_items_len;
+    size_t curr_items_len;
+    bool active;
+} shop_stock_t;
+
+typedef struct shop_ressources_s {
+    sfTexture *item_grid;
+    sfTexture *small_coin;
+} shop_ressources_t;
+
+typedef struct shop_s {
+    int id;
+    char *name;
+    shop_stock_t *stock;
+    worlds_t world;
+    sfVector2f pos;
+    int tile_len;
+    int direction;
+    sfClock *clock;
+    sfIntRect *grid;
+    shop_ressources_t *ressources;
+} shop_t;
 
 typedef struct cursor_s {
     sfVector2f pos;
@@ -130,6 +160,7 @@ typedef union u_interaction_data {
     fight_t *fight;
     interaction_dialogs_t *dialogs;
     int entry_id;
+    int shop_id;
 } interaction_data_t;
 
 typedef enum e_interaction_type {
@@ -137,7 +168,8 @@ typedef enum e_interaction_type {
     IT_NPC,
     IT_DIALOGS,
     IT_FIGHT,
-    IT_TRAVEL
+    IT_TRAVEL,
+    IT_SHOP
 } interaction_type_t;
 
 typedef struct s_interactions {
@@ -169,6 +201,7 @@ typedef struct s_app {
     list_t *player_anim;                //Player animations
     app_quests_t *quests;               //Quests of the game
     sfClock *clock;                     //Clock of the game
+    list_t *shops;                      //Shops of the game
     char *game_file;                    //Saving game file
 } app_t;
 
