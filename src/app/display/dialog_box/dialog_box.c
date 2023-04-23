@@ -46,4 +46,6 @@ void display_dialog_box(renderer_t *renderer, dialog_box_t *dialog_box)
     display_box(renderer);
     display_message(renderer, dialog_box);
     display_dialog_box_options(renderer, dialog_box);
+    if (dialog_box->mode == DGBOX_INPUT)
+        display_dialog_box_input(renderer, dialog_box);
 }

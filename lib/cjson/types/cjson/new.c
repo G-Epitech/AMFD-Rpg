@@ -17,7 +17,7 @@ cjson_t *cjson_new(char *key)
         return NULL;
     cjson->next = NULL;
     cjson->prev = NULL;
-    cjson->type = CJSON_NULL_T;
+    cjson->type = CJSON_OBJECT_T;
     cjson->value = CJSON_NULL;
     if (key)
         cjson->key = internal_cjson_strdup(key);

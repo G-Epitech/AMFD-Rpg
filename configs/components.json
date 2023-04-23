@@ -1,20 +1,23 @@
 {
     "buttons": [
         {
-            "title": "Jouer",
-            "position": {"x": 615, "y": 462},
+            "icon": "assets/components/button/new_game.png",
+            "position": {"x": 561, "y": 465},
             "app_state": [1],
-            "color": {"r": 191, "g": 173, "b": 147, "a": 255},
-            "color_text": {"r": 103, "g": 81, "b": 82, "a":  255},
-            "scale": 1.4,
+            "scale": 1,
             "next_state": 5
         },
         {
-            "title": "Quitter",
-            "position": {"x": 1000, "y": 462},
+            "icon": "assets/components/button/load_game.png",
+            "position": {"x": 1009, "y": 465},
             "app_state": [1],
-            "color": {"r": 191, "g": 173, "b": 147, "a": 255},
-            "color_text": {"r": 103, "g": 81, "b": 82, "a":  255},
+            "scale": 1,
+            "event": 18
+        },
+        {
+            "icon": "assets/components/button/exit.png",
+            "position": {"x": 846, "y": 694},
+            "app_state": [1],
             "scale": 1.4,
             "event": 1
         },
@@ -276,8 +279,8 @@
             "next_state": 312
         },
         {
-            "title": "Continue",
-            "position": {"x": 491, "y": 282},
+            "title": "Reprendre",
+            "position": {"x": 458, "y": 282},
             "app_state": [301],
             "color": {"r": 191, "g": 173, "b": 147, "a": 255},
             "color_text": {"r": 103, "g": 81, "b": 82, "a":  255},
@@ -285,22 +288,22 @@
             "event": 16
         },
         {
-            "title": "Sauvegarde",
-            "position": {"x": 468, "y": 392},
+            "title": "Parametres",
+            "position": {"x": 458, "y": 502},
             "app_state": [301],
             "color": {"r": 191, "g": 173, "b": 147, "a": 255},
             "color_text": {"r": 103, "g": 81, "b": 82, "a":  255},
             "scale": 0.75,
-            "next_state": 310
+            "next_state": 302
         },
         {
-            "title": "Load",
-            "position": {"x": 525, "y": 502},
+            "title": "Sauvegarde",
+            "position": {"x": 458, "y": 612},
             "app_state": [301],
             "color": {"r": 191, "g": 173, "b": 147, "a": 255},
             "color_text": {"r": 103, "g": 81, "b": 82, "a":  255},
             "scale": 0.75,
-            "next_state": 311
+            "event": 19
         },
         {
             "title": "Menu Principal",
@@ -310,15 +313,6 @@
             "color_text": {"r": 103, "g": 81, "b": 82, "a":  255},
             "scale": 0.75,
             "event": 17
-        },
-        {
-            "title": "Parametres",
-            "position": {"x": 478, "y": 612},
-            "app_state": [301],
-            "color": {"r": 191, "g": 173, "b": 147, "a": 255},
-            "color_text": {"r": 103, "g": 81, "b": 82, "a":  255},
-            "scale": 0.75,
-            "next_state": 302
         },
         {
             "icon": "assets/components/button/previous.png",
