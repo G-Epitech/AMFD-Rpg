@@ -1,10 +1,12 @@
 [
     {
         "title": "Petit couteau",
+        "fx": 8,
         "damage": 12
     },
     {
         "title": "Coup de sacoche",
-        "damage": 9
+        "damage": 9,
+        "fx": 4
     }  
 ]

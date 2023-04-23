@@ -5,7 +5,7 @@
         "mana": 1,
         "damage": 3,
         "position": {"x": 526, "y": 813},
-        "fx": 0,
+        "fx": 4,
         "texture": "assets/components/button/coup_poing.png"
     },
     {
@@ -13,7 +13,7 @@
         "level": 2,
         "mana": 2,
         "damage": 4,
-        "fx": 0,
+        "fx": 5,
         "position": {"x": 526, "y": 895},
         "texture": "assets/components/button/coup_genou.png"
     },
@@ -22,7 +22,7 @@
         "level": 5,
         "mana": 6,
         "damage": 10,
-        "fx": 0,
+        "fx": 4,
         "position": {"x": 827, "y": 813},
         "texture": "assets/components/button/batte.png"
     },
@@ -31,7 +31,7 @@
         "level": 7,
         "mana": 8,
         "damage": 15,
-        "fx": 0,
+        "fx": 5,
         "position": {"x": 827, "y": 895},
         "texture": "assets/components/button/hache.png"
     },
@@ -40,7 +40,7 @@
         "level": 10,
         "mana": 15,
         "damage": 25,
-        "fx": 0,
+        "fx": 6,
         "position": {"x": 1128, "y": 813},
         "texture": "assets/components/button/taser.png"
     },
@@ -49,7 +49,7 @@
         "level": 15,
         "mana": 20,
         "damage": 35,
-        "fx": 0,
+        "fx": 7,
         "position": {"x": 1128, "y": 895},
         "texture": "assets/components/button/arme_feu.png"
     }
