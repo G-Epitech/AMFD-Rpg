@@ -63,12 +63,13 @@ void event_components_levers(renderer_t *renderer, app_t *app, sfEvent event);
 */
 void event_components_attacks(renderer_t *renderer, app_t *app, sfEvent event);
 
-/*
+/**
  * @brief Handler of event close
  * @param window Window of the app
  * @param event The specific event
+ * @param app App object
 */
-void event_close(sfRenderWindow *window, sfEvent event);
+void event_close(sfRenderWindow *window, sfEvent event, app_t *app);
 
 /**
  * @brief Handler of event text entered
@@ -179,6 +180,20 @@ app_t *app);
  * @param app App object
  * @param event Event object
  */
-void events_dialog_box_onkeypress(app_t *app, sfEvent event);
+void event_dialog_box_onkeypress(app_t *app, sfEvent event);
+
+/**
+ * @brief Handle dialog box ontextenter event
+ * @param app App object
+ * @param event Event object
+ */
+void event_dialog_box_ontextentered(app_t *app, sfEvent event);
+
+/**
+ * @brief Set option on keypress on dialogbox
+ * @param dialog_box Dialog box
+ * @param code Code typed by user
+ */
+void event_dialog_box_set_option(dialog_box_t *dialog_box, sfKeyCode code);
 
 #endif /* !EVENTS_H_ */

@@ -1,0 +1,19 @@
+{
+    "player": {
+        "name": "",
+        "skin_id": 0,
+        "position": { "x": 0, "y": 0 },
+        "orientation": 0,
+        "state": 0,
+        "inventory": [],
+        "competences": [],
+        "credits": 0,
+        "xp_max": 0,
+        "level": 0
+    },
+    "world": 0,
+    "quests": {
+        "main": 0,
+        "sub": 0
+    }
+}

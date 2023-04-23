@@ -355,6 +355,13 @@ void display_dialog_box_options(renderer_t *renderer,
 dialog_box_t *dialog_box);
 
 /**
+ * @brief Display input when dialog box is in input mode
+ * @param renderer Renderer object
+ * @param dialog_box Dialog box
+ */
+void display_dialog_box_input(renderer_t *renderer, dialog_box_t *dialog_box);
+
+/**
  * @brief Display NPC dialogs
  * @param renderer Renderer object
  * @param app App object

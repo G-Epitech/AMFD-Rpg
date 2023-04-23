@@ -70,7 +70,9 @@ SRC =		display/array.c \
 			types/cjson/free.c \
 			types/cjson/new.c \
 			types/cjson/prop.c \
-			types/cjson/set.c \
+			types/cjson/set_key.c \
+			types/cjson/set_value.c \
+			types/cjson/set_prop.c \
 			\
 			utils/charstr.c \
 			utils/error.c \

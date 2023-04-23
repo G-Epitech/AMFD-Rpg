@@ -57,7 +57,7 @@
         },
         {
             "id": 6,
-            "label": "Saucisson",
+            "label": "Saucisson au poivre",
             "type": 0,
             "levels": { "xp": 0, "life": 12, "speed": 12, "intelligence": 6 },
             "price": 8,

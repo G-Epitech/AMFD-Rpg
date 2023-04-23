@@ -12,6 +12,7 @@ void dialog_box_free(dialog_box_t *dialog_box)
 {
     if (!dialog_box)
         return;
+    free(dialog_box->input);
     free(dialog_box->message);
     free(dialog_box->option1);
     free(dialog_box->option2);

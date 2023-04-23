@@ -5,6 +5,7 @@
 ** object
 */
 
+#include <stdio.h>
 #include <unistd.h>
 #include "internal/utils.h"
 #include "internal/display.h"

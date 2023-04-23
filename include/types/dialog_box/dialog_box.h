@@ -57,4 +57,38 @@ void dialog_box_set_message(dialog_box_t *dialog_box, char *message);
  */
 void dialog_box_onvalid(dialog_box_t *dialog_box, app_t *app);
 
+/**
+ * @brief Add given char to current dialog box input
+ * @param dialog_box Dialog box of which add char to input
+ * @param c Char to add to input
+ */
+void dialog_box_add_input_char(dialog_box_t *dialog_box, char c);
+
+/**
+ * @brief Remove last char of given dialog box input
+ * @param dialog_box Dialog box
+ */
+void dialog_box_remove_input_char(dialog_box_t *dialog_box);
+
+/**
+ * @brief Set input to display in dialog_box
+ * @param dialog_box Dialog box
+ * @param input Input to set to diaog box
+ */
+void dialog_box_set_input(dialog_box_t *dialog_box, char *input);
+
+/**
+ * @brief Get input typed by user in dialog box
+ * @param dialog_box Dialog box of which get input
+ * @return Input of dialog box
+ */
+char *dialog_box_get_input(dialog_box_t *dialog_box);
+
+/**
+ * @brief Reset event handler of given dialog box
+ * @param dialog_box Dialog box of which reset events
+ * @param reset_after Specify if after functions have to been reset
+ */
+void dialog_box_reset_events(dialog_box_t *dialog_box, bool rester_after);
+
 #endif /* !DIALOG_BOX_H_ */

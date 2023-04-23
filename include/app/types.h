@@ -17,6 +17,7 @@
     #include "app/network/types.h"
     #include "app/animations/types.h"
     #include "types/dialog_box/types.h"
+    #include "app/saving/types.h"
     #include "sound/types.h"
     #include "app/quests/types.h"
 
@@ -168,6 +169,7 @@ typedef struct s_app {
     list_t *player_anim;                //Player animations
     app_quests_t *quests;               //Quests of the game
     sfClock *clock;                     //Clock of the game
+    char *game_file;                    //Saving game file
 } app_t;
 
 typedef bool (*app_init_member_t)(app_t *app, renderer_t *renderer);
