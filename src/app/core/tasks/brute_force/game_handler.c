@@ -37,11 +37,13 @@ int app_task_brute_core(app_t *app)
         my_putstr("You Win\n");
         reset_setup_brute(app);
         app->state = ST_INGAME;
+        app->interaction->active = false;
     }
     if (TIME_FLOAT(brute->content.force) > 10.0) {
         my_putstr("You lose\n");
         reset_setup_brute(app);
         app->state = ST_INGAME;
+        app->interaction->active = false;
     }
     return 0;
 }

@@ -11,6 +11,7 @@
     #include "app/types.h"
     #include "types/renderer/types.h"
     #include "app/tasks/types.h"
+    #include "app/items/types.h"
 
 /**
  * @brief Handler of display task
@@ -31,5 +32,12 @@ int core_tasks_handler(app_t *app);
  * @param id Id of node
 */
 task_t *find_task_node(app_t *app, int id);
+
+/**
+ * @brief Use a bash script
+ * @param app App object
+ * @param item Item object
+ */
+void tasks_bash_use(app_t *app, item_t *item);
 
 #endif /* !TASK_H_ */

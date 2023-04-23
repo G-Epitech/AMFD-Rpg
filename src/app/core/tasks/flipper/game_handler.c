@@ -35,11 +35,13 @@ int *prev_mili_sec, task_t *node)
         my_putstr("You lose\n");
         reset_setup_flipper(app, prev_sec, prev_mili_sec);
         app->state = ST_INGAME;
+        app->interaction->active = false;
     }
     if (NB_CIRCLE_HIT(node) == NB_CIRCLE_FLIPPER(node)) {
         my_putstr("You WIN\n");
         reset_setup_flipper(app, prev_sec, prev_mili_sec);
         app->state = ST_INGAME;
+        app->interaction->active = false;
     }
 }
 

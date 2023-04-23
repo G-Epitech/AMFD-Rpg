@@ -321,6 +321,8 @@ SRC = 		src/main.c \
 			src/app/in_game_menu/restart_session/restart_session.c	\
 			src/app/in_game_menu/restart_session/restart_player.c	\
 			src/app/in_game_menu/restart_session/restart_sound.c	\
+			\
+			src/app/tasks/bash_use.c \
 
 NAME = my_rpg
 

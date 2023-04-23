@@ -32,6 +32,7 @@ int app_task_bash_core(app_t *app)
     time_handler(app);
     if (STRUCT_BASH(app).handler_time->time_float > 20.0) {
         app->state = ST_INGAME;
+        app->interaction->active = false;
         my_putstr("You lose\n");
         reset_setup_bash(app);
     }

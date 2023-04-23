@@ -35,6 +35,7 @@ int app_task_camera_core(app_t *app)
         my_putstr("You lose\n");
         CAMERA_STATE(node) = LOOSE;
         app->state = ST_INGAME;
+        app->interaction->active = false;
         reset_setup_camera(app);
     }
     return 0;
