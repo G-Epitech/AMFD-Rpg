@@ -55,6 +55,7 @@ static void attack_loose(app_t *app, renderer_t *renderer)
         ATTACKS_LOOSE_DESCRIPTION);
         animations_screen_fade_add(events, false, WL_PLAYER_HOME_2,
         PLAYER_DEFAULT_SPAWN);
+        app->player->life = app->player->life_max;
     } else {
         app->interaction->data.fight->state = FT_PLAYER_ATTACK;
     }
