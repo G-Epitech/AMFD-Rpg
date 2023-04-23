@@ -54,4 +54,10 @@ void core_quests_npc(renderer_t *renderer, quest_t *quest, app_t *app);
  */
 void core_quests_tree(renderer_t *renderer, quest_t *quest, app_t *app);
 
+/**
+ * @brief Handle bash quests
+ * @param renderer Renderer object
+ * @param app App ojbect
+ */
+void core_quests_bash(renderer_t *renderer, app_t *app);
 #endif /* !QUESTS_H_ */

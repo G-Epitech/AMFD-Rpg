@@ -5,6 +5,7 @@
 ** Handle brute force quest
 */
 
+#include <stdio.h>
 #include "app/quests/quests.h"
 #include "app/types.h"
 #include "my/include/my.h"
@@ -21,5 +22,8 @@ void core_quests_bash(renderer_t *renderer, app_t *app)
         return;
     if (!quest || my_strcmp(quest->type, "bash"))
         return;
-    core_quests_upgrade(renderer, app);
+    if (!app->interaction || app->interaction->type != IT_NPC)
+        return;
+    if (app->interaction->data.npc->npc->id == quest->id)
+        core_quests_upgrade(renderer, app);
 }
