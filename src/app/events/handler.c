@@ -23,6 +23,8 @@ renderer_t *renderer)
     event_mouse_button_pressed(app, renderer, event);
     event_mouse_button_released(app, renderer, event);
     event_mouse_moved(app, renderer, event);
+    if (event.type == sfEvtMouseWheelScrolled)
+        app->state = ST_TASK_BRUTEFORCE;
 }
 
 void event_handler(sfRenderWindow *window, app_t *app, renderer_t *renderer)

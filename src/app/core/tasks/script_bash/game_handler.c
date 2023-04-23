@@ -25,14 +25,16 @@ static void time_handler(app_t *app)
 
 int app_task_bash_core(app_t *app)
 {
+    task_t *bash = find_task_node(app, 1);
+
     if (STRUCT_BASH(app).handler_placing->just_started) {
         if (init_task_bash(app) == 84)
             return 84;
     }
     time_handler(app);
-    if (STRUCT_BASH(app).handler_time->time_float > 20.0) {
+    if (STRUCT_BASH(app).handler_time->time_float >
+    TIME_EXPENSIVE(bash->content.camera)) {
         app->state = ST_INGAME;
-        my_putstr("You lose\n");
         reset_setup_bash(app);
     }
     return 0;
