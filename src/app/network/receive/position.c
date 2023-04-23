@@ -17,15 +17,21 @@ void network_receive_position(app_t *app, cjson_t *data)
 {
     float x = 0;
     float y = 0;
-    int orientation = 0;
+    sfIntRect rect = {0, 0, 0, 0};
 
     if (!cjson_get_prop_float(data, "x", &x))
         return;
     if (!cjson_get_prop_float(data, "y", &y))
         return;
-    if (!cjson_get_prop_int(data, "orientation", &orientation))
+    if (!cjson_get_prop_int(data, "height", &rect.height))
+        return;
+    if (!cjson_get_prop_int(data, "width", &rect.width))
+        return;
+    if (!cjson_get_prop_int(data, "left", &rect.left))
+        return;
+    if (!cjson_get_prop_int(data, "top", &rect.top))
         return;
     app->partner->position.x = x;
     app->partner->position.y = y;
-    app->partner->orientation = orientation;
+    app->partner->rect = rect;
 }
