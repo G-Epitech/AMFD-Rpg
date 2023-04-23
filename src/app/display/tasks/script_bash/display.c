@@ -23,7 +23,7 @@ static void display_time(renderer_t *renderer, app_t *app)
     sfText_setPosition(objects->text, (sfVector2f) {800, 220});
     sfText_setColor(objects->text, sfWhite);
     sfText_setString(objects->text, "Temps:");
-    sfText_setCharacterSize(objects->text, 20);
+    sfText_setCharacterSize(objects->text, 30);
     sfRenderWindow_drawText(renderer->window, objects->text, NULL);
     sfText_setPosition(objects->text, (sfVector2f) {880, 220});
     char_second =
@@ -56,7 +56,7 @@ static void display_life(renderer_t *renderer, app_t *app)
     sfText_setPosition(objects->text, (sfVector2f) {980, 220});
     sfText_setColor(objects->text, sfWhite);
     sfText_setString(objects->text, ": Vie");
-    sfText_setCharacterSize(objects->text, 20);
+    sfText_setCharacterSize(objects->text, 30);
     sfRenderWindow_drawText(renderer->window, objects->text, NULL);
     sfText_setPosition(objects->text, (sfVector2f) {955, 220});
     char_life = nbr_to_str(INDEX_LIFE(app));
