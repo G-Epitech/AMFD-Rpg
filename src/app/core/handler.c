@@ -45,6 +45,6 @@ int core_handler(renderer_t *renderer, app_t *app)
     core_handle_sound(app);
     core_quests(renderer, app);
     core_handle_animation(app);
-    network_receive(app);
+    network_receive(app, renderer);
     return 0;
 }

@@ -14,7 +14,7 @@
 #include "cjson/include/cjson.h"
 #include "my/include/my.h"
 
-static void dispatch_data(app_t *app, char *data)
+static void dispatch_data(app_t *app, char *data, renderer_t *renderer)
 {
     cjson_t *json = cjson_parse(data);
     char *event = NULL;
@@ -23,9 +23,11 @@ static void dispatch_data(app_t *app, char *data)
         return;
     if (!my_strcmp(event, "position"))
         network_receive_position(app, json);
+    if (!my_strcmp(event, "quests"))
+        network_receive_quests(app, renderer);
 }
 
-void network_receive_game(app_t *app)
+void network_receive_game(app_t *app, renderer_t *renderer)
 {
     sfTcpSocket *socket = app->network->socket;
     sfSocketStatus status = sfSocketNotReady;
@@ -37,7 +39,7 @@ void network_receive_game(app_t *app)
     if (status == sfSocketDone) {
         data = malloc(sfPacket_getDataSize(packet));
         sfPacket_readString(packet, data);
-        dispatch_data(app, data);
+        dispatch_data(app, data, renderer);
         free(data);
     }
     sfPacket_destroy(packet);

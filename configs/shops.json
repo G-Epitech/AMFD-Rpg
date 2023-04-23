@@ -12,11 +12,11 @@
     {
         "id": 2,
         "name": "Magasin de l'ombre",
-        "world": 2,
-        "pos": {"x": 70, "y": 32},
+        "world": 15,
+        "pos": {"x": 50, "y": 72},
         "items": [0, 1, 2, 3, 4],
         "curr_items_len": 8,
-        "tile_len": 2,
-        "direction": 1
+        "tile_len": 6,
+        "direction": 2
     }
 ]

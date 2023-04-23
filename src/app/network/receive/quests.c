@@ -1,18 +1,22 @@
 /*
 ** EPITECH PROJECT, 2023
-** upgrade.c
+** receive.c
 ** File description:
-** Ugrade quests index
+** Receive packets
 */
 
 #include <stdio.h>
-#include "app/quests/quests.h"
+#include <stdlib.h>
+#include <SFML/Network.h>
 #include "app/types.h"
+#include "app/network/network.h"
+#include "cjson/include/cjson.h"
 #include "my/include/my.h"
+#include "app/quests/quests.h"
 #include "types/list/list.h"
 #include "app/sound/sound_control.h"
 
-void core_quests_upgrade(renderer_t *renderer, app_t *app)
+void network_receive_quests(app_t *app, renderer_t *renderer)
 {
     app_quests_t *app_quests = app->quests;
     quests_t *quests = core_quests_get(app);
@@ -26,6 +30,4 @@ void core_quests_upgrade(renderer_t *renderer, app_t *app)
     }
     sound_control(app->sound_board->sound_fx, NEW_LEVEL, sfPlaying);
     utils_give_xp(renderer, app, quest->xp);
-    if (app->partner)
-        network_send_quests(app);
 }
