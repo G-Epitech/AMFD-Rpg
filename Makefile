@@ -132,7 +132,7 @@ SRC = 		src/main.c \
 			src/app/animations/button/shake_attack.c \
 			src/app/animations/text/floating.c \
 			src/app/animations/text/notif.c \
-      src/app/animations/player/animation.c	\
+      		src/app/animations/player/animation.c	\
 			\
 			src/app/states/on_state.c \
 			src/app/states/switch.c \
@@ -144,6 +144,8 @@ SRC = 		src/main.c \
 			src/app/settings/volume.c \
 			src/app/settings/fps.c \
 			src/app/settings/set_resolution.c \
+			\
+			src/app/shop/shop_handler.c	\
 			\
 			src/app/window/init.c \
 			src/app/window/close.c \

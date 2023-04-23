@@ -10,4 +10,10 @@
 
     #define PLAYER_SHOPING(state) ((state) == (IT_SHOP) ? (1) : (0))
 
+/**
+ * @brief Handles player shopping
+ * @param app App object
+*/
+void shop_handler(app_t *app);
+
 #endif /* !SHOP_HANDLE_H_ */

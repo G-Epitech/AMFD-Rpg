@@ -40,6 +40,7 @@ typedef enum e_app_states {
     ST_CHOICE,              //Choice of the character
     ST_RESOLUTION,          //Choose the resolution of game
     ST_INGAME = 100,        //Main state, ingame player
+    ST_SHOP = 200,          //Shop
     ST_INVENTORY = 300,     //Inventory menu
     ST_BREAK,               //Break menu (save/sound...)
     ST_IGSETTINGS,          //In game settings
