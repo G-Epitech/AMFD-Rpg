@@ -25,7 +25,7 @@ void shop_handler(app_t *app);
  * @brief Loads items in shop stock
  * @param app App object
 */
-void load_items_stock(app_t *app);
+bool load_items_stock(app_t *app);
 
 /**
  * @brief Displays shop interface
@@ -35,5 +35,12 @@ void load_items_stock(app_t *app);
  */
 void display_shop_interface(list_t *shops, int curr_shop_id,
 renderer_t *renderer);
+
+/**
+ * @brief Event for buying items
+ * @param app App object
+ * @param event Event object
+*/
+void buy_item(app_t *app, sfEvent event);
 
 #endif /* !SHOP_HANDLE_H_ */

@@ -13,6 +13,24 @@
 #include "types/list/list.h"
 #include "app/app.h"
 
+static sfIntRect *set_grid_rect(shop_t *shop)
+{
+    shop_stock_t *stock = shop->stock;
+    sfIntRect *rect = malloc(sizeof(sfIntRect) * stock->curr_items_len);
+    sfVector2f pos = GRID_POS;
+
+    if (!rect)
+        return NULL;
+    for (size_t i = 0; i < stock->curr_items_len; i++) {
+        rect[i].top = pos.y;
+        rect[i].left = pos.x;
+        rect[i].width = GRID_BASIC_RECT.width;
+        rect[i].height = GRID_BASIC_RECT.height;
+        pos.x += GRID_NEXT_POS_OFFSET;
+    }
+    return rect;
+}
+
 static void copy_item(item_t *shop_item, item_t *game_item)
 {
     shop_item->consumer = game_item->consumer;
@@ -44,7 +62,7 @@ int shop_item_len)
     }
 }
 
-void load_items_stock(app_t *app)
+bool load_items_stock(app_t *app)
 {
     node_t *node = app->shops->first;
     shop_t *shop = NULL;
@@ -56,6 +74,10 @@ void load_items_stock(app_t *app)
             choose_random_item(&shop->stock->curr_items[i], app->items,
             shop->stock->total_items_len - 1);
         }
+        shop->grid = set_grid_rect(shop);
+        if (!shop->grid)
+            return false;
         node = node->next;
     }
+    return true;
 }

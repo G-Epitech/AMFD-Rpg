@@ -10,7 +10,7 @@
 
     #include <SFML/Graphics.h>
 
-    #define PLAYER_DEFAULT_SPAWN ((sfVector2f) {1000, 1015})
+    #define PLAYER_DEFAULT_SPAWN ((sfVector2f) {200, 120})
 
 typedef struct s_list list_t;
 
@@ -41,7 +41,8 @@ typedef struct s_player {
     int life_max;               //Life max of the player
     int speed_max;              //Speed max of the player
     int intellect_max;          //Intelect max of the player
-    int xp_max;          //Intelect max of the player
+    int xp_max;                 //Intelect max of the player
+    int gold;                   //Gold of the player
 } player_t;
 
 #endif /* !PLAYERS_TYPES_H_ */

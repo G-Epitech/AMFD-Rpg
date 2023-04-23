@@ -13,6 +13,7 @@
 #include "cjson/include/cjson.h"
 #include "app/shop/shop.h"
 #include "types/components/components.h"
+#include "app/shop/shop_handle.h"
 
 static shop_stock_t *shop_load_stock(cjson_t *shop_config)
 {

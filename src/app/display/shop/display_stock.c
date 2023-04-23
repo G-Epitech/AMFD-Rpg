@@ -44,9 +44,10 @@ renderer_objects_t *objects, sfVector2f grid_pos, sfTexture *item_grid)
     sfRenderWindow_drawSprite(window, objects->sprite, NULL);
 }
 
-static void display_shop_item_stock(shop_stock_t *stock,
+static void display_shop_item_stock(shop_t *shop,
 sfRenderWindow *window, renderer_objects_t *objects, sfTexture *item_texture)
 {
+    shop_stock_t *stock = shop->stock;
     sfVector2f grid_pos = GRID_POS;
 
     for (size_t i = 0; i < stock->curr_items_len; i++) {
@@ -67,7 +68,7 @@ renderer_t *renderer)
     while (node) {
         shop = node->data.shop;
         if (curr_shop_id == shop->id) {
-            display_shop_item_stock(shop->stock, renderer->window,
+            display_shop_item_stock(shop, renderer->window,
             renderer->objects, renderer->ressources->items);
         }
         node = node->next;

@@ -267,6 +267,7 @@ SRC = 		src/main.c \
 			src/app/events/handler/text_entered.c \
 			src/app/events/handler/mouse_button_released.c \
 			src/app/events/handler/mouse_move.c \
+			src/app/events/shop/event_shop_buy.c \
 			\
 			src/app/core/handler.c	\
 			src/app/core/animation.c	\

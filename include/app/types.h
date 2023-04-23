@@ -101,6 +101,7 @@ typedef struct shop_s {
     int tile_len;
     int direction;
     sfClock *clock;
+    sfIntRect *grid;
 } shop_t;
 
 typedef struct cursor_s {
