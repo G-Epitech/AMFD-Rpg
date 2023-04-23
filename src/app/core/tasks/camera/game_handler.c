@@ -37,7 +37,7 @@ int app_task_camera_core(app_t *app, renderer_t *renderer)
     TIME_EXPENSIVE(node->content.camera)) {
         events = animation_event_actual(app);
         animations_notif_add(events, renderer->ressources->icons->hungry,
-        "Camera", "Vous n'avez pas reussi à hack les cameras.");
+        "Camera", "Vous n'avez pas reussi a hack\nles cameras.");
         CAMERA_STATE(node) = LOOSE;
         app->state = ST_INGAME;
         app->interaction->active = false;

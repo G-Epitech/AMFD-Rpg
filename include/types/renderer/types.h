@@ -21,6 +21,7 @@ typedef struct s_render_objects {
     sfText *text;
     sfCircleShape *circle;
     sfRectangleShape *rectangle;
+    sfFont *font;
 } renderer_objects_t;
 
 /**

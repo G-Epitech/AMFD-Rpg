@@ -38,7 +38,7 @@ int app_task_bash_core(app_t *app, renderer_t *renderer)
     TIME_EXPENSIVE(bash->content.script)) {
         events = animation_event_actual(app);
         animations_notif_add(events, renderer->ressources->icons->hungry,
-        "Script bash", "Vous n'avez pas reussi à hack el systeme.");
+        "Script bash", "Vous n'avez pas reussi a hack\nle systeme.");
         app->state = ST_INGAME;
         app->interaction->active = false;
         reset_setup_bash(app);

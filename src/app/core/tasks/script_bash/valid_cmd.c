@@ -23,10 +23,10 @@ static void good_result(int *index_cmd, app_t *app, renderer_t *renderer)
     (*index_cmd)++;
     if ((*index_cmd) == 6) {
         events = animation_event_new(app);
-        animations_notif_add(events, renderer->ressources->icons->hungry,
-        "Script bash", "Vous venez de hack le telephone avec succes.");
-        (*index_cmd)--;
+        animations_notif_add(events, renderer->ressources->icons->happy,
+        "Script bash", "Vous venez de hack le telephone\navec succes.");
         core_quests_bash(renderer, app);
+        (*index_cmd)--;
         app->state = ST_INGAME;
         app->interaction->active = false;
         reset_setup_bash(app);
@@ -43,7 +43,7 @@ app_t *app, int *index_life, renderer_t *renderer)
     if ((*index_life) == 0) {
         events = animation_event_new(app);
         animations_notif_add(events, renderer->ressources->icons->hungry,
-        "Script bash", "Vous n'avez pas reussi à hack le systeme.");
+        "Script bash", "Vous n'avez pas reussi a hack\nle systeme.");
         app->state = ST_INGAME;
         app->interaction->active = false;
         reset_setup_bash(app);

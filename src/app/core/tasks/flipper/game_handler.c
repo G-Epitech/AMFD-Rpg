@@ -38,7 +38,7 @@ int *prev_mili_sec, renderer_t *renderer)
     if (NB_LIFE_FLIPPER(node) <= 0) {
         events = animation_event_actual(app);
         animations_notif_add(events, renderer->ressources->icons->hungry,
-        "Flipper", "Vous n'avez pas reussi à utiliser le flipper.");
+        "Flipper", "Vous n'avez pas reussi a utiliser\nle flipper.");
         reset_setup_flipper(app, prev_sec, prev_mili_sec);
         app->state = ST_INGAME;
         app->interaction->active = false;
@@ -46,7 +46,7 @@ int *prev_mili_sec, renderer_t *renderer)
     if (NB_CIRCLE_HIT(node) == NB_CIRCLE_FLIPPER(node)) {
         events = animation_event_actual(app);
         animations_notif_add(events, renderer->ressources->icons->happy,
-        "Flipper", "Vous avez reussi l'attaque avec le flipper !");
+        "Flipper", "Vous avez reussi l'attaque avec\nle flipper !");
         reset_setup_flipper(app, prev_sec, prev_mili_sec);
         app->state = ST_INGAME;
         app->interaction->active = false;
