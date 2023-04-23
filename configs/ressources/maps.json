@@ -353,7 +353,7 @@
         {
           "id": 2,
           "direction": 2,
-          "child": 1,
+          "child": 2,
           "pos": {"x": 144, "y": 288},
           "player_spawn": {"x": 182, "y": 144},
           "tile_size": 2
