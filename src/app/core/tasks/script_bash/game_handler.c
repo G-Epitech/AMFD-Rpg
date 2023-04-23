@@ -12,6 +12,7 @@
 #include "app/tasks/bash/script_bash.h"
 #include "types/list/types.h"
 #include "my/include/my.h"
+#include "app/animations/animations.h"
 
 static void time_handler(app_t *app)
 {
@@ -23,17 +24,21 @@ static void time_handler(app_t *app)
     TIME(bash->content.script).microseconds / SECOND_MICRO;
 }
 
-int app_task_bash_core(app_t *app)
+int app_task_bash_core(app_t *app, renderer_t *renderer)
 {
+    list_t *events = NULL;
+
     if (STRUCT_BASH(app).handler_placing->just_started) {
         if (init_task_bash(app) == 84)
             return 84;
     }
     time_handler(app);
     if (STRUCT_BASH(app).handler_time->time_float > 20.0) {
+        events = animation_event_actual(app);
+        animations_notif_add(events, renderer->ressources->icons->hungry,
+        "Script bash", "Vous n'avez pas reussi à hack el systeme.");
         app->state = ST_INGAME;
         app->interaction->active = false;
-        my_putstr("You lose\n");
         reset_setup_bash(app);
     }
     return 0;

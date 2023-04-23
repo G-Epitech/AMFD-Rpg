@@ -13,6 +13,7 @@
 #include "app/tasks/bruteforce/types.h"
 #include "types/list/types.h"
 #include "my/include/my.h"
+#include "app/animations/animations.h"
 
 static void time_handler(app_t *app)
 {
@@ -24,8 +25,20 @@ static void time_handler(app_t *app)
     TIME(brute->content.force).microseconds / SECOND_MICRO;
 }
 
-int app_task_brute_core(app_t *app)
+static void win_game(app_t *app, renderer_t *renderer)
 {
+    list_t *events = animation_event_actual(app);
+
+    animations_notif_add(events, renderer->ressources->icons->happy,
+    "Brute force", "Vous venez de brute force le systeme !\nBravo a vous.");
+    reset_setup_brute(app);
+    app->state = ST_INGAME;
+    app->interaction->active = false;
+}
+
+int app_task_brute_core(app_t *app, renderer_t *renderer)
+{
+    list_t *events = NULL;
     task_t *brute = find_task_node(app, 2);
 
     if (JUST_STARTED(app)) {
@@ -33,14 +46,12 @@ int app_task_brute_core(app_t *app)
             return 84;
     }
     time_handler(app);
-    if (NB_CLICK(app) >= OBJECTIF(app)) {
-        my_putstr("You Win\n");
-        reset_setup_brute(app);
-        app->state = ST_INGAME;
-        app->interaction->active = false;
-    }
+    if (NB_CLICK(app) >= OBJECTIF(app))
+       win_game(app, renderer);
     if (TIME_FLOAT(brute->content.force) > 10.0) {
-        my_putstr("You lose\n");
+        events = animation_event_actual(app);
+        animations_notif_add(events, renderer->ressources->icons->happy,
+        "Brute force", "Vous n'avez pas reussi a brute force le systeme.");
         reset_setup_brute(app);
         app->state = ST_INGAME;
         app->interaction->active = false;

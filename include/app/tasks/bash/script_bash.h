@@ -34,7 +34,7 @@ void app_task_bash_display(renderer_t *renderer, app_t *app);
  * @brief Core handler of task bash
  * @param app Application structure
 */
-int app_task_bash_core(app_t *app);
+int app_task_bash_core(app_t *app, renderer_t *renderer);
 
 /**
  * @brief Init task bash when first entrance

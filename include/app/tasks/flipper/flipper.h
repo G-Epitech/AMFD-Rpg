@@ -25,7 +25,7 @@ node_t *task_create_nodes_flipper(void);
  * @brief Core handler of task flipper
  * @param app Application structure
 */
-int app_task_flipper_core(app_t *app);
+int app_task_flipper_core(app_t *app, renderer_t *renderer);
 
 /**
  * @brief Reset setup of flipper struct when its finish

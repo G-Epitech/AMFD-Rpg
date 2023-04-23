@@ -38,7 +38,7 @@ int core_handler(renderer_t *renderer, app_t *app)
     animations_handler(renderer, app);
     if (animations_active(app->animations))
         return 1;
-    if (core_tasks_handler(app) == 84)
+    if (core_tasks_handler(app, renderer) == 84)
         return 84;
     core_handle_movement(app->control, current_map->collision, app);
     core_fight_handler(app, renderer);

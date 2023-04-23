@@ -24,7 +24,7 @@ int display_tasks_handler(renderer_t *renderer, app_t *app);
  * @brief Handler of core task
  * @param app Application structure
 */
-int core_tasks_handler(app_t *app);
+int core_tasks_handler(app_t *app, renderer_t *renderer);
 
 /**
  * @brief Handler of core task
