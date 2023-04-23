@@ -33,7 +33,7 @@ void network_receive_position(app_t *app, cjson_t *data)
     float x = 0;
     float y = 0;
     int state = 0;
-    
+
     if (!cjson_get_prop_float(data, "x", &x))
         return;
     if (!cjson_get_prop_float(data, "y", &y))

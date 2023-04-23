@@ -19,8 +19,9 @@ static bool improve_position(app_t *app)
     sfVector2f position = app->player->position;
     sfVector2f last_position = app->network->position;
 
-    if (last_position.x - position.x > - 2 && last_position.x - position.x < 2 &&
-    last_position.y - position.y > - 2 && last_position.y - position.y < 2)
+    if (last_position.x - position.x > - 2 && last_position.x - position.x
+    < 2 && last_position.y - position.y > - 2 && last_position.y - position.y
+    < 2)
         return false;
     return true;
 }
