@@ -1,7 +1,7 @@
 {
-    "world": 0,
+    "world": 14,
     "quests": {
-        "index_quest": 0,
+        "index_quest": 2,
         "index_quests": 0
     },
     "player": {
@@ -24,14 +24,14 @@
             }
         ],
         "inventory": [],
-        "level": 0,
+        "level": 1,
         "xp_max": 10,
-        "credits": 0,
+        "credits": 1,
         "state": 0,
         "orientation": 3,
         "position": {
-            "y": 424.230224,
-            "x": 1182
+            "y": 146.307678,
+            "x": 151.230957
         },
         "skin_id": 5,
         "name": "Player1"
