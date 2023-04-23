@@ -5,6 +5,7 @@
 ** handler
 */
 
+#include <stdlib.h>
 #include <stdio.h>
 #include "types/renderer/renderer.h"
 #include "app/tasks/task.h"
