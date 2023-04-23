@@ -28,6 +28,9 @@ animation_event_t *data)
     if (data->type == AE_NOTIF &&
     animations_notif(data->data.notif, animation->clock))
         return true;
+    if (data->type == AE_FADE &&
+    animations_screen_fade(data->data.fade, animation->clock))
+        return true;
     return false;
 }
 

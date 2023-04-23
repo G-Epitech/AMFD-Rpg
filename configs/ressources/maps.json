@@ -43,7 +43,7 @@
           "direction": 1,
           "child": 15,
           "pos": {"x": 1532, "y": 861},
-          "player_spawn": {"x": 155, "y": 42},
+          "player_spawn": {"x": 158, "y": 42},
           "tile_size": 1
         },
         {

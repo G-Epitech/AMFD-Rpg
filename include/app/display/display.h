@@ -388,4 +388,10 @@ sfRenderWindow *window, sfSprite *sprite, worlds_t world);
 void display_animations_environments_front(app_t *app,
 sfRenderWindow *window, sfSprite *sprite, renderer_t *renderer);
 
+/**
+ * @brief Display fade animation
+ * @param renderer Renderer object
+ * @param app App object
+ */
+void display_animations_fade(renderer_t *renderer, app_t *app);
 #endif /* !DISPLAY_H_ */

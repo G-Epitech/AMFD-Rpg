@@ -128,10 +128,11 @@ SRC = 		src/main.c \
 			src/app/animations/event_new.c \
 			src/app/animations/event_actual.c \
 			src/app/animations/screen/zoom.c \
+			src/app/animations/screen/fade.c \
 			src/app/animations/button/shake_attack.c \
 			src/app/animations/text/floating.c \
 			src/app/animations/text/notif.c \
-      src/app/animations/player/animation.c	\
+      		src/app/animations/player/animation.c \
 			\
 			src/app/states/on_state.c \
 			src/app/states/switch.c \
@@ -234,13 +235,14 @@ SRC = 		src/main.c \
 			src/app/display/animations/animations.c \
 			src/app/display/animations/floating_text.c \
 			src/app/display/animations/notif.c \
+			src/app/display/animations/fade.c \
 			src/app/display/dialogs/dialogs.c \
 			src/app/display/hud/hud.c \
 			src/app/display/animations/environment.c \
 			\
 			src/app/getters/progress/inventory.c \
 			src/app/getters/progress/fight.c \
-      \
+      		\
 			src/app/display/tasks/camera/display.c \
 			src/app/display/tasks/camera/solution.c \
 			src/app/display/tasks/camera/result.c \
@@ -323,7 +325,7 @@ FTEST_REPO = https://github.com/Atomot/ftest/
 
 FTEST_V = ftest-0.1.0-1.x86_64.rpm
 
-CFLAGS += -Wall -Wextra -Wno-unused-command-line-argument -g
+CFLAGS += -Werror -Wall -Wextra -Wno-unused-command-line-argument -g
 
 INC = -I./include -I./lib
 

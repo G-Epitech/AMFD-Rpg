@@ -133,4 +133,24 @@ bool animations_active(animations_t *animations);
  * @return list_t* Events list
  */
 list_t *animation_event_actual(app_t *app);
+
+/**
+ * @brief Screen fade animation
+ * @param fade Fade object
+ * @param clock Animation global clock
+ */
+bool animations_screen_fade(animation_event_fade_t *fade, sfClock *clock);
+
+/**
+ * @brief Initalisation of the fade animation
+ * @return animation_event_fade_t* Fade object
+ */
+animation_event_fade_t *animations_screen_fade_init(void);
+
+/**
+ * @brief Add new fade animation
+ * @param events Event list
+ * @param out If its just a fade out
+ */
+void animations_screen_fade_add(list_t *events, bool out);
 #endif /* !ANIMATIONS_H_ */
