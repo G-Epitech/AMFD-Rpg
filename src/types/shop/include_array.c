@@ -17,7 +17,6 @@ static void insert_shop(shop_t *shop, sfImage *collision)
     float y_offset = 16;
     sfColor color = sfRed;
 
-    my_putchar('d');
     if (shop->direction == 1)
         y_offset = shop->tile_len * 16;
     if (shop->direction == 2)
@@ -51,7 +50,6 @@ static map_t *get_map_by_id(renderer_t *renderer, worlds_t id)
 
 static void include_data(shop_t *shop, renderer_t *renderer)
 {
-    printf("Shold world %d\n", shop->world);
     map_t *map = get_map_by_id(renderer, shop->world);
 
     if (!map)

@@ -13,6 +13,7 @@
 #include "app/inventory/types.h"
 #include "app/display/display.h"
 #include "types/dialog_box/dialog_box.h"
+#include "app/sound/sound_control.h"
 
 static void consume_item(app_t *app, char *data)
 {
@@ -33,7 +34,7 @@ static void sell_item(app_t *app, char *data)
     inventory_item_t *item = app->inventory_event->selected;
 
     (void) data;
-    my_putstr("Item vendu !\n");
+    sound_control(app->sound_board->sound_fx, NEW_COIN, sfPlaying);
     app->player->gold += item->target->price;
     inventory_remove_item(app->player, item);
 }
@@ -45,10 +46,10 @@ static char *get_label(inventory_item_t *item)
     char *second = NULL;
 
     if (len > 10) {
-        first = my_strcat("Voulez-vous consommer l'objet \n\"",
+        first = my_strcat("Voulez-vous utiliser l'objet \n\"",
         item->target->label);
     } else {
-        first = my_strcat("Voulez-vous consommer l'objet \"",
+        first = my_strcat("Voulez-vous utiliser l'objet \"",
         item->target->label);
     }
     if (len > 10)
@@ -66,7 +67,7 @@ void inventory_onclick_item_consumable(app_t *app, inventory_item_t *item)
     char *label = get_label(item);
 
     dialog_box_set_message(app->dialog_box, label);
-    dialog_box_set_option1(app->dialog_box, "Consommer");
+    dialog_box_set_option1(app->dialog_box, "Utiliser");
     dialog_box_set_option2(app->dialog_box, "Vendre");
     dialog_box_set_option3(app->dialog_box, "Annuler");
     dialog_box_reset_events(app->dialog_box, true);

@@ -14,6 +14,8 @@ void restart_session(app_t *app)
     app->state = 1;
     app->prev_state = 1;
     app->world = 0;
+    app->quests->index_quest = 0;
+    app->quests->index_quests = 0;
     restart_player(app->player);
     restart_player(app->partner);
     restart_sound(app->sound_board);

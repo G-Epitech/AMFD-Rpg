@@ -10,6 +10,7 @@
 
     #include <SFML/Graphics.h>
     #include "app/types.h"
+    #include "app/sound/types.h"
 
     #define RESSOURCES_SKINS_CONFIG "configs/skins.json"
     #define RESSOURCES_SKINS_RECT ((sfVector2i) { 16, 32 })
@@ -104,6 +105,7 @@ typedef struct s_attack {
     int level;
     int mana;
     int damage;
+    int fx;
     bool shake;
 } attack_t;
 

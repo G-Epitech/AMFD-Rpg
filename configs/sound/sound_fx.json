@@ -14,5 +14,61 @@
         "loop": false,
         "lone": true,
         "status": 0
+    },
+    {
+        "title": "new_coin",
+        "buffer": "assets/sounds/new_coin.ogg",
+        "volume": 50.0,
+        "loop": false,
+        "lone": true,
+        "status": 0
+    },
+    {
+        "title": "new_level",
+        "buffer": "assets/sounds/new_level.ogg",
+        "volume": 100.0,
+        "loop": false,
+        "lone": true,
+        "status": 0
+    },
+    {
+        "title": "coup_poing",
+        "buffer": "assets/sounds/coup_poing.ogg",
+        "volume": 100.0,
+        "loop": false,
+        "lone": true,
+        "status": 0
+    },
+    {
+        "title": "coup_poing2",
+        "buffer": "assets/sounds/coup_poing2.ogg",
+        "volume": 100.0,
+        "loop": false,
+        "lone": true,
+        "status": 0
+    },
+    {
+        "title": "taser",
+        "buffer": "assets/sounds/taser.ogg",
+        "volume": 100.0,
+        "loop": false,
+        "lone": true,
+        "status": 0
+    },
+    {
+        "title": "gunshot",
+        "buffer": "assets/sounds/gunshot.ogg",
+        "volume": 100.0,
+        "loop": false,
+        "lone": true,
+        "status": 0
+    },
+    {
+        "title": "knife",
+        "buffer": "assets/sounds/knife.ogg",
+        "volume": 100.0,
+        "loop": false,
+        "lone": true,
+        "status": 0
     }
 ]

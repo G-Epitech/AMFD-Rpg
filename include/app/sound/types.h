@@ -24,7 +24,9 @@ typedef enum e_app_states app_states_t;
 
 typedef enum e_sound_index {
     WALK,
-    CLICK_MENU
+    CLICK_MENU,
+    NEW_COIN,
+    NEW_LEVEL
 } sound_index_t;
 
 /**

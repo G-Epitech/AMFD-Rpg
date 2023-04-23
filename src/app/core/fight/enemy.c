@@ -23,12 +23,14 @@
 #include "cjson/include/cjson.h"
 #include "my/include/my.h"
 #include "app/quests/types.h"
+#include "app/sound/sound_control.h"
 
 static void applay_attack(cjson_t *node, app_t *app)
 {
     list_t *events = animation_event_actual(app);
     char *attack = cjson_get_prop_string_unsafe(node, "title");
     int damage = cjson_get_prop_int_unsafe(node, "damage");
+    int fx = cjson_get_prop_int_unsafe(node, "fx");
 
     attack = my_strcat(attack, "\n-");
     attack = my_strcat(attack, nbr_to_str(damage));
@@ -36,6 +38,8 @@ static void applay_attack(cjson_t *node, app_t *app)
     app->player->life -= damage;
     animations_floating_text_add(events, sfRed, ATTACKS_POSITION,
     my_strdup(attack));
+    if (fx >= 0)
+        sound_control(app->sound_board->sound_fx, fx, sfPlaying);
     free(attack);
 }
 

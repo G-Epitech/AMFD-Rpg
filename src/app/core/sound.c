@@ -13,6 +13,6 @@ void core_handle_sound(app_t *app)
 {
     handle_sound_effects(app->sound_board->sound_fx);
     handle_sound_themes(app->sound_board->sound_themes,
-    app->state);
+    app->state, app->settings->music);
     handle_sound_volume(app->settings->volume, app->sound_board);
 }

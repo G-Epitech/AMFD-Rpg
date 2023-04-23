@@ -12,6 +12,7 @@
 #include "app/inventory/types.h"
 #include "app/display/display.h"
 #include "types/dialog_box/dialog_box.h"
+#include "app/sound/sound_control.h"
 
 static void unable_to_consume(app_t *app)
 {
@@ -47,7 +48,7 @@ static void sell_equipement(app_t *app, char *data)
     inventory_item_t *item = app->inventory_event->selected;
 
     (void) data;
-    my_putstr("Equipement vendu !\n");
+    sound_control(app->sound_board->sound_fx, NEW_COIN, sfPlaying);
     inventory_remove_item(app->player, item);
 }
 

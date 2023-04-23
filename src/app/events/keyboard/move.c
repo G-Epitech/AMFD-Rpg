@@ -19,6 +19,7 @@ void keyboard_press_move(sfEvent event, app_t *app)
             app->control[i].direction = true;
             app->control->direction_nb++;
             app->player->state = WALKING;
+            sound_control(app->sound_board->sound_fx, WALK, sfPlaying);
         }
     }
     if (app->control->direction_nb > 1) {
@@ -44,6 +45,8 @@ void keyboard_release_move(sfEvent event, app_t *app)
             app->player->orientation = (int) i;
         }
     }
-    if (pressed_count == 0)
+    if (pressed_count == 0) {
         app->player->state = IDLE;
+        sound_control(app->sound_board->sound_fx, WALK, sfStopped);
+    }
 }
