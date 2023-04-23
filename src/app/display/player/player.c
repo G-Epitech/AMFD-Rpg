@@ -28,13 +28,8 @@ void display_specific_player(renderer_t *renderer, player_t *player)
 
 void display_player(renderer_t *renderer, app_t *app)
 {
-    list_t *players = app->players;
-    node_t *node = players->first;
-    player_t *player = NULL;
-
-    while (node) {
-        player = node->data.player;
-        display_specific_player(renderer, player);
-        node = node->next;
+    display_specific_player(renderer, app->player);
+    if (app->partner && app->network->state == (int) app->world) {
+        display_specific_player(renderer, app->partner);
     }
 }

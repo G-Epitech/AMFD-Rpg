@@ -78,6 +78,7 @@ char *cjson_stringify(cjson_t *cjson, size_t *size)
     internal_cjson_string_size(cjson, &internal_size, 0, &error);
     if (error)
         return NULL;
-    *size = internal_size;
+    if (size)
+        *size = internal_size;
     return get_final_string(cjson, internal_size, &error);
 }
