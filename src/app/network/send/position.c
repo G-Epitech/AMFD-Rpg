@@ -29,6 +29,7 @@ void network_send_position(app_t *app)
 {
     sfVector2f position = app->player->position;
     sfIntRect rect = app->player->rect;
+    int state = app->world;
     char *event = "position";
     cjson_t *data = cjson_new("Packet");
 
@@ -41,6 +42,7 @@ void network_send_position(app_t *app)
     cjson_set_prop(data, "width", CJSON_NUMBER(rect.width), CJSON_NUMBER_T);
     cjson_set_prop(data, "left", CJSON_NUMBER(rect.left), CJSON_NUMBER_T);
     cjson_set_prop(data, "top", CJSON_NUMBER(rect.top), CJSON_NUMBER_T);
+    cjson_set_prop(data, "state", CJSON_NUMBER(state), CJSON_NUMBER_T);
     network_send_string(app, cjson_stringify(data, NULL));
     app->network->position = position;
     cjson_free(data);

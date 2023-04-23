@@ -15,6 +15,7 @@ typedef struct s_network {
     sfTcpListener *listener;
     sfTcpSocket *socket;
     sfVector2f position;
+    int state;
 } network_t;
 
 #endif /* !NETWORK_TYPES_H_ */
