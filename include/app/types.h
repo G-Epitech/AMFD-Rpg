@@ -79,6 +79,16 @@ typedef enum e_worlds {
     WL_CITY
 } worlds_t;
 
+typedef struct shop_s {
+    char *name;
+    worlds_t world;
+    sfVector2f pos;
+    item_t *curr_items;
+    int *total_items;
+    size_t total_items_len;
+    size_t curr_items_len;
+} shop_t;
+
 typedef struct cursor_s {
     sfVector2f pos;
     sfTexture *texture;
@@ -166,6 +176,7 @@ typedef struct s_app {
     list_t *player_anim;                //Player animations
     app_quests_t *quests;               //Quests of the game
     sfClock *clock;                     //Clock of the game
+    list_t *shops;                      //Shops of the game
 } app_t;
 
 typedef bool (*app_init_member_t)(app_t *app, renderer_t *renderer);

@@ -115,6 +115,7 @@ SRC = 		src/main.c \
 			src/app/init/tasks.c \
 			src/app/init/animations.c \
 			src/app/init/quests.c \
+			src/app/init/shops.c	\
 			\
 			src/app/free/animations.c \
 			src/app/free/sounds.c	\
@@ -315,6 +316,8 @@ SRC = 		src/main.c \
 			src/app/in_game_menu/restart_session/restart_session.c	\
 			src/app/in_game_menu/restart_session/restart_player.c	\
 			src/app/in_game_menu/restart_session/restart_sound.c	\
+			\
+			src/app/shop/load.c	\
 
 NAME = my_rpg
 

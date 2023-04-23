@@ -47,6 +47,7 @@ typedef union u_node_data {
     sound_t *sound;
     lever_t *lever;
     entry_t *entry;
+    shop_t *shop;
     item_t *item;
     task_t *task;
     list_t *list;

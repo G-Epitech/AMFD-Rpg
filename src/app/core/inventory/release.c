@@ -10,7 +10,6 @@
 #include "app/display/display.h"
 #include "app/inventory/types.h"
 
-
 void inventory_onrelease(app_t *app, sfEvent event)
 {
     (void) event;

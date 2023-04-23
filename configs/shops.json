@@ -1,0 +1,16 @@
+[
+    {
+        "name": "Superette d'Olivier",
+        "world": 6,
+        "pos": {"x": 70, "y": 32},
+        "items": [0, 1, 2, 3, 4],
+        "curr_items_len": 4
+    },
+    {
+        "name": "Magasin de l'ombre",
+        "world": 2,
+        "pos": {"x": 70, "y": 32},
+        "items": [0, 1, 2, 3, 4],
+        "curr_items_len": 4
+    }
+]
