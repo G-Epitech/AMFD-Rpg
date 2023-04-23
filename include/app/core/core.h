@@ -97,4 +97,10 @@ void core_quests(app_t *app);
 */
 void core_interactions_shop(sfColor pixel, app_t *app);
 
+/**
+ * @brief Periodically updates shop stock
+ * @param app App object
+ */
+void core_shop_update_stock(app_t *app);
+
 #endif /* !CORE_H_ */

@@ -6,7 +6,7 @@
 */
 
 #include "stdio.h"
-#include "stdlib.h"
+#include <stdlib.h>
 #include "time.h"
 #include "my/include/my.h"
 #include "app/shop/shop_handle.h"
@@ -62,22 +62,14 @@ int shop_item_len)
     }
 }
 
-bool load_items_stock(app_t *app)
+bool load_items_stock(shop_t *shop, app_t *app)
 {
-    node_t *node = app->shops->first;
-    shop_t *shop = NULL;
-
-    srand(time(NULL));
-    while (node) {
-        shop = node->data.shop;
-        for (size_t i = 0; i < shop->stock->curr_items_len; i++) {
-            choose_random_item(&shop->stock->curr_items[i], app->items,
-            shop->stock->total_items_len - 1);
-        }
-        shop->grid = set_grid_rect(shop);
-        if (!shop->grid)
-            return false;
-        node = node->next;
+    for (size_t i = 0; i < shop->stock->curr_items_len; i++) {
+        choose_random_item(&shop->stock->curr_items[i], app->items,
+        shop->stock->total_items_len - 1);
     }
+    shop->grid = set_grid_rect(shop);
+    if (!shop->grid)
+        return false;
     return true;
 }

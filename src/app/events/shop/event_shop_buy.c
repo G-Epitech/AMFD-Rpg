@@ -34,7 +34,6 @@ shop_t *shop)
 
     for (size_t i = 0; i < shop->stock->curr_items_len; i++) {
         rect = shop->grid[i];
-        printf("Player gold %d\n", player->gold);
         if (sfIntRect_contains(&rect, event.mouseButton.x,
         event.mouseButton.y) && event.mouseButton.button == sfMouseLeft) {
             shop->stock->active = click_on_grird(player, &stock->curr_items[i]);

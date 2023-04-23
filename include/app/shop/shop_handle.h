@@ -9,11 +9,11 @@
     #define SHOP_HANDLE_H_
 
     #define PLAYER_SHOPING(state) ((state) == (IT_SHOP) ? (1) : (0))
-    #define GRID_POS (sfVector2f) {570, 650}
+    #define GRID_POS ((sfVector2f) {570, 650})
     #define GRID_NEXT_POS_OFFSET 100
-    #define GRID_BASIC_RECT (sfIntRect) {0, 0, 85, 85}
-    #define GRID_ACTIVE_RECT (sfIntRect) {0, 255, 85, 85}
-    #define SHOP_PLAYER_GOLD_VALUE_POS (sfVector2f) {480, 830}
+    #define GRID_BASIC_RECT ((sfIntRect) {0, 0, 85, 85})
+    #define GRID_ACTIVE_RECT ((sfIntRect) {0, 255, 85, 85})
+    #define SHOP_PLAYER_GOLD_VALUE_POS ((sfVector2f) {480, 830})
 
     #include "app/app.h"
 
@@ -28,8 +28,9 @@ void shop_handler(app_t *app);
 /**
  * @brief Loads items in shop stock
  * @param app App object
+ * @param shop Current shop
 */
-bool load_items_stock(app_t *app);
+bool load_items_stock(shop_t *shop, app_t *app);
 
 /**
  * @brief Displays shop info
@@ -57,6 +58,5 @@ renderer_objects_t *objects, sfTexture *item_texture);
  * @param event Event object
 */
 void buy_item(app_t *app, sfEvent event);
-
 
 #endif /* !SHOP_HANDLE_H_ */

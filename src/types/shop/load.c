@@ -95,8 +95,8 @@ list_t *load_shop(renderer_t *renderer)
     }
     shop = array->first;
     while (shop) {
-       shop_append(shops,shop);
-       shop = shop->next;
+        shop_append(shops, shop);
+        shop = shop->next;
     }
     cjson_free(shop_config);
     shop_include_to_array(renderer, shops);

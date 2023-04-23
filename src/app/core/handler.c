@@ -45,6 +45,7 @@ int core_handler(renderer_t *renderer, app_t *app)
     core_handle_sound(app);
     core_quests(app);
     core_handle_animation(app);
+    core_shop_update_stock(app);
     network_receive(app);
     return 0;
 }
