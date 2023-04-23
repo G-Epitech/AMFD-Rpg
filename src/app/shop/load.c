@@ -23,7 +23,6 @@ static void shop_append(list_t *shops, cjson_t *shop_config)
 
     if (!shop)
         return;
-    my_putchar('d');
     shop->name = cjson_get_prop_string_unsafe(shop_config, "name");
     shop->world = cjson_get_prop_int_unsafe(shop_config, "world");
     shop->pos = cjson_vector(shop_config, "pos");
@@ -32,12 +31,15 @@ static void shop_append(list_t *shops, cjson_t *shop_config)
     shop->total_items_len = len;
     shop->curr_items_len = cjson_get_prop_int_unsafe(shop_config,
     "curr_items_len");
+    shop->tile_len = cjson_get_prop_int_unsafe(shop_config, "tile_len");
+    shop->direction = cjson_get_prop_int_unsafe(shop_config, "direction");
+    shop->id = cjson_get_prop_int_unsafe(shop_config, "id");
     node = node_new((node_data_t) shop);
     if (node)
         list_append(shops, node);
 }
 
-list_t *load_shop(void)
+list_t *load_shop(renderer_t *renderer)
 {
     list_t *shops = list_new();
     cjson_t *shop_config = cjson_parse_file(SHOP_CONFIG);
@@ -56,5 +58,6 @@ list_t *load_shop(void)
        shop = shop->next;
     }
     cjson_free(shop_config);
+    shop_include_to_array(renderer, shops);
     return shops;
 }

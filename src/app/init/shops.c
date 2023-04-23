@@ -11,7 +11,6 @@
 
 bool app_init_shops(app_t *app, renderer_t *renderer)
 {
-    (void) renderer;
-    app->shops = load_shop();
+    app->shops = load_shop(renderer);
     return app->shops ? true : false;
 }

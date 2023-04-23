@@ -10,6 +10,7 @@
 #include "app/types.h"
 #include "app/dependencies.h"
 #include "types/players/players.h"
+#include "types/ressources/ressources.h"
 
 static int init_player(app_t *app)
 {
@@ -39,6 +40,7 @@ app_t *app_init(renderer_t *renderer)
         }
         member += 1;
     }
+    map_charge_collision_textures(renderer->ressources->maps);
     if (init_player(app) == 84) {
         return NULL;
     }

@@ -66,7 +66,6 @@ typedef enum e_worlds {
     WL_PLAYER_HOME_2,
     WL_UNIVERSITY_1,
     WL_UNIVERSITY_2,
-    WL_AYMERIC,
     WL_STORE,
     WL_PRISON,
     WL_MAIRIE_1,
@@ -76,10 +75,12 @@ typedef enum e_worlds {
     WL_HOSPITAL_1,
     WL_HOSPITAL_2,
     WL_HOSPITAL_3,
-    WL_CITY
+    WL_CITY,
+    WL_AYMERIC
 } worlds_t;
 
 typedef struct shop_s {
+    int id;
     char *name;
     worlds_t world;
     sfVector2f pos;
@@ -87,6 +88,8 @@ typedef struct shop_s {
     int *total_items;
     size_t total_items_len;
     size_t curr_items_len;
+    int tile_len;
+    int direction;
 } shop_t;
 
 typedef struct cursor_s {

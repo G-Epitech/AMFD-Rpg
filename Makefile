@@ -74,6 +74,7 @@ SRC = 		src/main.c \
 			src/types/ressources/maps/load_entry.c	\
 			src/types/ressources/maps/include_array.c	\
 			src/types/ressources/maps/free.c \
+			src/types/ressources/maps/prep_collision_layer.c	\
 			\
 			src/types/ressources/skins/load.c \
 			src/types/ressources/skins/free.c \
@@ -318,6 +319,7 @@ SRC = 		src/main.c \
 			src/app/in_game_menu/restart_session/restart_sound.c	\
 			\
 			src/app/shop/load.c	\
+			src/app/shop/include_array.c	\
 
 NAME = my_rpg
 
