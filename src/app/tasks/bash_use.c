@@ -13,7 +13,7 @@ void tasks_bash_use(app_t *app, item_t *item)
 {
     if (app->interaction->interaction &&
     app->interaction->type == IT_NPC && !app->interaction->active) {
-        app->state = ST_TASK_BRUTEFORCE;
+        app->state = ST_TASK_BASH;
         app->interaction->active = true;
     }
     inventory_add_item(app->player, item);
