@@ -243,10 +243,11 @@ SRC = 		src/main.c \
 			src/app/display/animations/environment.c \
 			src/app/display/shop/shop.c	\
 			src/app/display/shop/display_stock.c	\
+			src/app/display/shop/display_shop_info.c	\
 			\
 			src/app/getters/progress/inventory.c \
 			src/app/getters/progress/fight.c \
-      \
+      		\
 			src/app/display/tasks/camera/display.c \
 			src/app/display/tasks/camera/solution.c \
 			src/app/display/tasks/camera/result.c \

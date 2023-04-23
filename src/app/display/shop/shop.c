@@ -18,5 +18,5 @@ void display_shop(app_t *app, renderer_t *renderer)
     if (app->state != ST_SHOP)
         return;
     display_shop_interface(app->shops, app->interaction->data.shop_id,
-    renderer);
+    app->player->gold, renderer);
 }

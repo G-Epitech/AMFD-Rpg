@@ -59,7 +59,7 @@ sfRenderWindow *window, renderer_objects_t *objects, sfTexture *item_texture)
     }
 }
 
-void display_shop_interface(list_t *shops, int curr_shop_id,
+void display_shop_interface(list_t *shops, int curr_shop_id, int player_gold,
 renderer_t *renderer)
 {
     node_t *node = shops->first;
@@ -70,6 +70,8 @@ renderer_t *renderer)
         if (curr_shop_id == shop->id) {
             display_shop_item_stock(shop, renderer->window,
             renderer->objects, renderer->ressources->items);
+            display_shop_info(shop, renderer->objects, renderer->window,
+            player_gold);
         }
         node = node->next;
     }
