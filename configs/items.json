@@ -94,8 +94,8 @@
         {
             "id": 10,
             "label": "Telephone",
-            "type": 1,
-            "levels": { "xp": 0, "life": 0, "speed": 12, "intelligence": 9 },
+            "type": 0,
+            "levels": { "xp": 0, "life": 0, "speed": 0, "intelligence": 0 },
             "price": 30,
             "consumer": -1,
             "rect": { "x": 1, "y": 8}

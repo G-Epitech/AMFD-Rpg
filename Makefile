@@ -46,6 +46,7 @@ SRC = 		src/main.c \
 			src/types/items/consume.c \
 			src/types/items/free.c \
 			src/types/items/load.c \
+			src/types/items/id.c \
 			\
 			src/types/characters/rect.c \
 			\
@@ -67,6 +68,7 @@ SRC = 		src/main.c \
 			src/types/inventory/active.c \
 			src/types/inventory/item.c \
 			src/types/inventory/remove.c \
+			src/types/inventory/id.c \
 			\
 			src/types/ressources/load.c \
 			src/types/ressources/free.c \
