@@ -88,9 +88,13 @@ typedef struct shop_stock_s {
     int *total_items;
     size_t total_items_len;
     size_t curr_items_len;
-    sfTexture *item_grid;
     bool active;
 } shop_stock_t;
+
+typedef struct shop_ressources_s {
+    sfTexture *item_grid;
+    sfTexture *small_coin;
+} shop_ressources_t;
 
 typedef struct shop_s {
     int id;
@@ -102,6 +106,7 @@ typedef struct shop_s {
     int direction;
     sfClock *clock;
     sfIntRect *grid;
+    shop_ressources_t *ressources;
 } shop_t;
 
 typedef struct cursor_s {

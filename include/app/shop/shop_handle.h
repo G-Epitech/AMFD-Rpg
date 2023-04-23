@@ -13,7 +13,6 @@
     #define GRID_NEXT_POS_OFFSET 100
     #define GRID_BASIC_RECT (sfIntRect) {0, 0, 85, 85}
     #define GRID_ACTIVE_RECT (sfIntRect) {0, 255, 85, 85}
-    #define SHOP_NAME_POS (sfVector2f) {400, 250}
     #define SHOP_PLAYER_GOLD_VALUE_POS (sfVector2f) {480, 830}
 
     #include "app/app.h"
@@ -43,13 +42,14 @@ void display_shop_info(shop_t *shop, renderer_objects_t *objects,
 sfRenderWindow *window, int player_gold);
 
 /**
- * @brief Displays shop interface
- * @param shops Shop list
- * @param curr_shop_id Current id of the shop
- * @param renderer Renderer
- */
-void display_shop_interface(list_t *shops, int curr_shop_id, int player_gold,
-renderer_t *renderer);
+ * @brief Displays what the shop sells
+ * @param shop Shop object
+ * @param window Window
+ * @param objects Renderer objects
+ * @param item_texture Item spritesheet
+*/
+void display_shop_item_stock(shop_t *shop, sfRenderWindow *window,
+renderer_objects_t *objects, sfTexture *item_texture);
 
 /**
  * @brief Event for buying items

@@ -31,6 +31,7 @@ static void sell_item(app_t *app)
     inventory_item_t *item = app->inventory_event->selected;
 
     my_putstr("Item vendu !\n");
+    app->player->gold += item->target->price;
     inventory_remove_item(app->player, item);
 }
 

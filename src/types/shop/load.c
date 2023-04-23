@@ -30,12 +30,23 @@ static shop_stock_t *shop_load_stock(cjson_t *shop_config)
     "curr_items_len");
     if (stock->curr_items_len > ITEMS_MAX) {
         my_putstr("Too many current items in the shop, (capped to 8)\n");
+        stock->curr_items_len = 8;
     }
     stock->curr_items = malloc(sizeof(item_t) * stock->curr_items_len);
-    stock->item_grid = sfTexture_createFromFile(GRID_FILE, NULL);
-    if (!stock->curr_items || !stock->item_grid)
+    if (!stock->curr_items)
         return NULL;
     return stock;
+}
+
+static shop_ressources_t *shop_load_ressources(void)
+{
+    shop_ressources_t *ressources = malloc(sizeof(shop_ressources_t));
+
+    if (!ressources)
+        return NULL;
+    ressources->item_grid = sfTexture_createFromFile(GRID_FILE, NULL);
+    ressources->small_coin = sfTexture_createFromFile(SMALL_COIN_FILE, NULL);
+    return ressources;
 }
 
 static bool shop_load_props(shop_t *shop, cjson_t *shop_config)
@@ -50,6 +61,7 @@ static bool shop_load_props(shop_t *shop, cjson_t *shop_config)
     shop->direction = cjson_get_prop_int_unsafe(shop_config, "direction");
     shop->id = cjson_get_prop_int_unsafe(shop_config, "id");
     shop->clock = sfClock_create();
+    shop->ressources = shop_load_ressources();
     if (!shop->clock)
         return false;
     return true;
