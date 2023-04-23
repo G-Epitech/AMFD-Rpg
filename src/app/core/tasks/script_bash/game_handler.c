@@ -35,7 +35,6 @@ int app_task_bash_core(app_t *app)
     if (STRUCT_BASH(app).handler_time->time_float >
     TIME_EXPENSIVE(bash->content.camera)) {
         app->state = ST_INGAME;
-        my_putstr("You lose\n");
         reset_setup_bash(app);
     }
     return 0;

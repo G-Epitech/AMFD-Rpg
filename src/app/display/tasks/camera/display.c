@@ -30,6 +30,7 @@ static void display_time(renderer_t *renderer, app_t *app)
     ((int) TIME_FLOAT(node->content.camera)));
     sfText_setString(objects->text, char_second);
     sfRenderWindow_drawText(renderer->window, objects->text, NULL);
+    free(char_second);
 }
 
 static void display_life(renderer_t *renderer, app_t *app)
