@@ -21,7 +21,7 @@ void event_text_entered(renderer_t *renderer, sfEvent event, app_t *app)
         return event_dialog_box_ontextentered(app, event);
     if (app->state == ST_TASK_BASH) {
         cmd_write(event, app);
-        good_or_bad_result(event, app);
+        good_or_bad_result(event, app, renderer);
     }
     if (app->state == ST_TASK_CAMERA) {
         solution_write(event, app);
