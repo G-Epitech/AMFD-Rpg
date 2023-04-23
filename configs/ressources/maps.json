@@ -351,18 +351,10 @@
       "collision": "assets/worlds/aymeric_desk/aym_col.png",
       "entry" : [
         {
-          "id": 1,
+          "id": 2,
           "direction": 2,
           "child": 1,
-          "pos": {"x": 10, "y": 10},
-          "player_spawn": {"x": 182, "y": 144},
-          "tile_size": 2
-        },
-        {
-          "id": 2,
-          "direction": 1,
-          "child": 1,
-          "pos": {"x": 182, "y": 144},
+          "pos": {"x": 144, "y": 288},
           "player_spawn": {"x": 182, "y": 144},
           "tile_size": 2
         }

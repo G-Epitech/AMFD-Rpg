@@ -22,6 +22,7 @@
 #include "app/animations/animations.h"
 #include "cjson/include/cjson.h"
 #include "my/include/my.h"
+#include "app/quests/types.h"
 
 static void applay_attack(cjson_t *node, app_t *app)
 {
@@ -36,6 +37,18 @@ static void applay_attack(cjson_t *node, app_t *app)
     animations_floating_text_add(events, sfRed, ATTACKS_POSITION,
     my_strdup(attack));
     free(attack);
+}
+
+static void teleport_player(app_t *app, list_t *events)
+{
+    if (app->quests->index_quests == 0 &&
+    app->quests->index_quest == 3) {
+        animations_screen_fade_add(events, false, WL_AYMERIC,
+        AYMERIC_SPAWN);
+    } else {
+        animations_screen_fade_add(events, false, WL_PLAYER_HOME_2,
+        PLAYER_DEFAULT_SPAWN);
+    }   
 }
 
 static void attack_loose(app_t *app, renderer_t *renderer)
@@ -53,8 +66,7 @@ static void attack_loose(app_t *app, renderer_t *renderer)
         events = animation_event_new(app);
         animations_notif_add(events, icon, ATTACKS_LOOSE_TITLE,
         ATTACKS_LOOSE_DESCRIPTION);
-        animations_screen_fade_add(events, false, WL_PLAYER_HOME_2,
-        PLAYER_DEFAULT_SPAWN);
+        teleport_player(app, events);
         app->player->life = app->player->life_max;
     } else {
         app->interaction->data.fight->state = FT_PLAYER_ATTACK;
