@@ -5,6 +5,8 @@ It’s your turn to create your final fantasy
 - [📦 Group remote repository](https://github.com/Hackers-Quest/RPG)
 - [📄 PDF Project](https://intra.epitech.eu/module/2022/B-MUL-200/NAN-2-1/acti-591823/project/file/B-MUL-200_my_rpg.pdf)
 
+<img width="1072" alt="image" src="https://user-images.githubusercontent.com/58297773/236694949-893833e6-0fb1-4e38-a963-47e7a2148e02.png">
+
 ### Usage
 To test this project, compile it, and then launch it with follwing command : `./my_rpg`.
 
