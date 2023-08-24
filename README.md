@@ -1,4 +1,4 @@
-# 🕹️ My RPG
+# 🕹️ My RPG (Multiplayers)
 It’s your turn to create your final fantasy
 
 - [📦 Epitech private repository](https://github.com/EpitechPromo2027/B-MUL-200-NAN-2-1-myrpg-matheo.coquet)
